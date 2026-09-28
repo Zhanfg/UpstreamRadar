@@ -1,0 +1,102 @@
+name: Verify UpstreamRadar PAT
+
+on:
+  push:
+    paths:
+      - ".github/workflows/verify-upstreamradar-pat.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN_TEST: ${{ secrets.UPSTREAMRADAR_PAT }}
+
+    steps:
+      - name: Verify secret and token permissions
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -z "${GH_TOKEN_TEST:-}" ]; then
+            echo "::error::UPSTREAMRADAR_PAT is missing or empty"
+            exit 1
+          fi
+
+          api() {
+            local method="$1"
+            local url="$2"
+            local data="${3:-}"
+            if [ -n "$data" ]; then
+              curl -sS -o /tmp/resp.json -w "%{http_code}" \
+                -X "$method" \
+                -H "Accept: application/vnd.github+json" \
+                -H "Authorization: Bearer ${GH_TOKEN_TEST}" \
+                -H "X-GitHub-Api-Version: 2022-11-28" \
+                "$url" \
+                -d "$data"
+            else
+              curl -sS -o /tmp/resp.json -w "%{http_code}" \
+                -X "$method" \
+                -H "Accept: application/vnd.github+json" \
+                -H "Authorization: Bearer ${GH_TOKEN_TEST}" \
+                -H "X-GitHub-Api-Version: 2022-11-28" \
+                "$url"
+            fi
+          }
+
+          USER_CODE="$(api GET https://api.github.com/user)"
+          if [ "$USER_CODE" != "200" ]; then
+            echo "::error::Authentication failed (HTTP $USER_CODE)"
+            exit 1
+          fi
+
+          LOGIN="$(python3 - <<'PY'
+          import json
+          with open('/tmp/resp.json', 'r', encoding='utf-8') as f:
+              print(json.load(f).get('login', '<unknown>'))
+          PY
+          )"
+          echo "AUTH=PASS login=$LOGIN"
+
+          REPO_CODE="$(api GET "https://api.github.com/repos/${GITHUB_REPOSITORY}")"
+          if [ "$REPO_CODE" != "200" ]; then
+            echo "::error::Repository access failed (HTTP $REPO_CODE)"
+            exit 1
+          fi
+          echo "REPO_READ=PASS"
+
+          BLOB_CODE="$(api POST "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/blobs" '{"content":"UpstreamRadar token verification","encoding":"utf-8"}')"
+          if [ "$BLOB_CODE" = "201" ]; then
+            echo "CONTENTS_WRITE=PASS"
+          else
+            echo "::error::Contents write permission failed (HTTP $BLOB_CODE)"
+            exit 1
+          fi
+
+          ISSUE_CODE="$(api POST "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues" '{"title":""}')"
+          if [ "$ISSUE_CODE" = "422" ]; then
+            echo "ISSUES_WRITE=PASS (validation probe only; no issue created)"
+          elif [ "$ISSUE_CODE" = "201" ]; then
+            echo "::error::Unexpected issue creation during validation probe"
+            exit 1
+          else
+            echo "::error::Issues write permission failed (HTTP $ISSUE_CODE)"
+            exit 1
+          fi
+
+          PR_CODE="$(api POST "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls" '{"title":"","head":"","base":""}')"
+          if [ "$PR_CODE" = "422" ]; then
+            echo "PULL_REQUESTS_WRITE=PASS (validation probe only; no PR created)"
+          elif [ "$PR_CODE" = "201" ]; then
+            echo "::error::Unexpected PR creation during validation probe"
+            exit 1
+          else
+            echo "::error::Pull requests write permission failed (HTTP $PR_CODE)"
+            exit 1
+          fi
+
+          echo "TOKEN_VERIFICATION=PASS"
