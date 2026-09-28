@@ -1,0 +1,206 @@
+{
+  "changed": [
+    "pytorch/pytorch",
+    "git/git",
+    "vllm-project/vllm",
+    "WireGuard/wireguard-go",
+    "torvalds/linux",
+    "openai/openai-python",
+    "tailscale/tailscale",
+    "anthropics/anthropic-sdk-python",
+    "modelcontextprotocol/python-sdk",
+    "openai/openai-agents-python",
+    "cloudflare/cloudflared",
+    "nodejs/node",
+    "astral-sh/ruff",
+    "astral-sh/uv",
+    "google/osv-scanner",
+    "vitejs/vite"
+  ],
+  "errors": [],
+  "gate_probability": 0.7,
+  "gate_sample": 0.4939144640536496,
+  "local_time": "2026-09-29T06:44:47+08:00",
+  "observed_at": "2026-09-28T22:44:47Z",
+  "scores": [
+    {
+      "anomaly": 0.37074189,
+      "change_probability": 0.125,
+      "cost": 3,
+      "ecosystem": "ai",
+      "full_name": "pytorch/pytorch",
+      "graph_influence": 1.0,
+      "uncertainty": 0.28867513,
+      "utility": 0.54712071
+    },
+    {
+      "anomaly": 0.54398888,
+      "change_probability": 0.125,
+      "cost": 2,
+      "ecosystem": "developer-tools",
+      "full_name": "git/git",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.50796668
+    },
+    {
+      "anomaly": 0.52461213,
+      "change_probability": 0.125,
+      "cost": 2,
+      "ecosystem": "ai-runtime",
+      "full_name": "vllm-project/vllm",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.50107494
+    },
+    {
+      "anomaly": 0.53522244,
+      "change_probability": 0.125,
+      "cost": 2,
+      "ecosystem": "network",
+      "full_name": "WireGuard/wireguard-go",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.49380468
+    },
+    {
+      "anomaly": 0.3208213,
+      "change_probability": 0.125,
+      "cost": 3,
+      "ecosystem": "kernel",
+      "full_name": "torvalds/linux",
+      "graph_influence": 0.77447114,
+      "uncertainty": 0.28867513,
+      "utility": 0.46116124
+    },
+    {
+      "anomaly": 0.35276236,
+      "change_probability": 0.125,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "full_name": "openai/openai-python",
+      "graph_influence": 0.53065615,
+      "uncertainty": 0.28867513,
+      "utility": 0.45711654
+    },
+    {
+      "anomaly": 0.46380376,
+      "change_probability": 0.125,
+      "cost": 2,
+      "ecosystem": "network",
+      "full_name": "tailscale/tailscale",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.44370219
+    },
+    {
+      "anomaly": 0.35276236,
+      "change_probability": 0.125,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "full_name": "anthropics/anthropic-sdk-python",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.40564955
+    },
+    {
+      "anomaly": 0.35276236,
+      "change_probability": 0.125,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "full_name": "modelcontextprotocol/python-sdk",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.40564955
+    },
+    {
+      "anomaly": 0.35276236,
+      "change_probability": 0.125,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "full_name": "openai/openai-agents-python",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.40564955
+    },
+    {
+      "anomaly": 0.35276236,
+      "change_probability": 0.125,
+      "cost": 2,
+      "ecosystem": "network",
+      "full_name": "cloudflare/cloudflared",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.39680419
+    },
+    {
+      "anomaly": 0.35276236,
+      "change_probability": 0.125,
+      "cost": 2,
+      "ecosystem": "runtime",
+      "full_name": "nodejs/node",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.39680419
+    },
+    {
+      "anomaly": 0.3208213,
+      "change_probability": 0.125,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "full_name": "astral-sh/ruff",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.37284952
+    },
+    {
+      "anomaly": 0.3208213,
+      "change_probability": 0.125,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "full_name": "astral-sh/uv",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.37284952
+    },
+    {
+      "anomaly": 0.3208213,
+      "change_probability": 0.125,
+      "cost": 1,
+      "ecosystem": "security",
+      "full_name": "google/osv-scanner",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.37284952
+    },
+    {
+      "anomaly": 0.3208213,
+      "change_probability": 0.125,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "full_name": "vitejs/vite",
+      "graph_influence": 0.28684116,
+      "uncertainty": 0.28867513,
+      "utility": 0.37284952
+    }
+  ],
+  "selected": [
+    "pytorch/pytorch",
+    "git/git",
+    "vllm-project/vllm",
+    "WireGuard/wireguard-go",
+    "torvalds/linux",
+    "openai/openai-python",
+    "tailscale/tailscale",
+    "anthropics/anthropic-sdk-python",
+    "modelcontextprotocol/python-sdk",
+    "openai/openai-agents-python",
+    "cloudflare/cloudflared",
+    "nodejs/node",
+    "astral-sh/ruff",
+    "astral-sh/uv",
+    "google/osv-scanner",
+    "vitejs/vite"
+  ],
+  "unchanged": []
+}
