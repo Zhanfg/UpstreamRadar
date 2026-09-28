@@ -3,6 +3,14 @@ name: Upstream Radar
 on:
   schedule:
     - cron: "*/15 * * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "upstreamradar/collector.py"
+      - "upstreamradar/engine.py"
+      - "config/repositories.json"
+      - ".github/workflows/radar.yml"
   workflow_dispatch:
 
 permissions:
