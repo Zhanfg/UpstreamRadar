@@ -71,7 +71,7 @@ dependencies = {
 
 result = HarmonyScheduler().schedule(
     records,
-    budget=10,
+    budget=12,
     dependencies=dependencies,
     min_per_ecosystem={"kernel": 1, "android": 1, "ai": 1},
 )
