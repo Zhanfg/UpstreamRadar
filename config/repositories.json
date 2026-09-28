@@ -1,0 +1,354 @@
+{
+  "version": 1,
+  "scheduling": {
+    "budget": 28,
+    "max_repositories_per_run": 16,
+    "max_per_ecosystem": 6
+  },
+  "repositories": [
+    {
+      "full_name": "torvalds/linux",
+      "ecosystem": "kernel",
+      "cost": 3,
+      "importance": 10,
+      "security": 8
+    },
+    {
+      "full_name": "llvm/llvm-project",
+      "ecosystem": "toolchain",
+      "cost": 3,
+      "importance": 9,
+      "security": 5
+    },
+    {
+      "full_name": "rust-lang/rust",
+      "ecosystem": "language",
+      "cost": 3,
+      "importance": 9,
+      "security": 5,
+      "dependencies": [
+        "llvm/llvm-project"
+      ]
+    },
+    {
+      "full_name": "golang/go",
+      "ecosystem": "language",
+      "cost": 2,
+      "importance": 8,
+      "security": 5
+    },
+    {
+      "full_name": "python/cpython",
+      "ecosystem": "language",
+      "cost": 2,
+      "importance": 9,
+      "security": 5
+    },
+    {
+      "full_name": "nodejs/node",
+      "ecosystem": "runtime",
+      "cost": 2,
+      "importance": 8,
+      "security": 6
+    },
+    {
+      "full_name": "kubernetes/kubernetes",
+      "ecosystem": "cloud",
+      "cost": 3,
+      "importance": 10,
+      "security": 7
+    },
+    {
+      "full_name": "systemd/systemd",
+      "ecosystem": "linux",
+      "cost": 2,
+      "importance": 8,
+      "security": 6,
+      "dependencies": [
+        "torvalds/linux"
+      ]
+    },
+    {
+      "full_name": "curl/curl",
+      "ecosystem": "network",
+      "cost": 2,
+      "importance": 8,
+      "security": 8
+    },
+    {
+      "full_name": "git/git",
+      "ecosystem": "developer-tools",
+      "cost": 2,
+      "importance": 9,
+      "security": 6
+    },
+    {
+      "full_name": "openssl/openssl",
+      "ecosystem": "security",
+      "cost": 2,
+      "importance": 10,
+      "security": 10
+    },
+    {
+      "full_name": "nginx/nginx",
+      "ecosystem": "network",
+      "cost": 2,
+      "importance": 8,
+      "security": 7
+    },
+    {
+      "full_name": "pytorch/pytorch",
+      "ecosystem": "ai",
+      "cost": 3,
+      "importance": 10,
+      "security": 5
+    },
+    {
+      "full_name": "tensorflow/tensorflow",
+      "ecosystem": "ai",
+      "cost": 3,
+      "importance": 9,
+      "security": 5
+    },
+    {
+      "full_name": "huggingface/transformers",
+      "ecosystem": "ai",
+      "cost": 2,
+      "importance": 9,
+      "security": 4,
+      "dependencies": [
+        "pytorch/pytorch"
+      ]
+    },
+    {
+      "full_name": "huggingface/diffusers",
+      "ecosystem": "ai",
+      "cost": 2,
+      "importance": 7,
+      "security": 3,
+      "dependencies": [
+        "pytorch/pytorch",
+        "huggingface/transformers"
+      ]
+    },
+    {
+      "full_name": "jax-ml/jax",
+      "ecosystem": "ai",
+      "cost": 2,
+      "importance": 8,
+      "security": 4
+    },
+    {
+      "full_name": "openai/openai-python",
+      "ecosystem": "ai-agents",
+      "cost": 1,
+      "importance": 8,
+      "security": 5
+    },
+    {
+      "full_name": "openai/openai-agents-python",
+      "ecosystem": "ai-agents",
+      "cost": 1,
+      "importance": 8,
+      "security": 5,
+      "dependencies": [
+        "openai/openai-python"
+      ]
+    },
+    {
+      "full_name": "anthropics/anthropic-sdk-python",
+      "ecosystem": "ai-agents",
+      "cost": 1,
+      "importance": 8,
+      "security": 5
+    },
+    {
+      "full_name": "langchain-ai/langchain",
+      "ecosystem": "ai-agents",
+      "cost": 2,
+      "importance": 8,
+      "security": 4
+    },
+    {
+      "full_name": "microsoft/autogen",
+      "ecosystem": "ai-agents",
+      "cost": 2,
+      "importance": 8,
+      "security": 4
+    },
+    {
+      "full_name": "crewAIInc/crewAI",
+      "ecosystem": "ai-agents",
+      "cost": 2,
+      "importance": 7,
+      "security": 4
+    },
+    {
+      "full_name": "vllm-project/vllm",
+      "ecosystem": "ai-runtime",
+      "cost": 2,
+      "importance": 9,
+      "security": 5,
+      "dependencies": [
+        "pytorch/pytorch"
+      ]
+    },
+    {
+      "full_name": "ollama/ollama",
+      "ecosystem": "ai-runtime",
+      "cost": 2,
+      "importance": 8,
+      "security": 4
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "ecosystem": "ai-runtime",
+      "cost": 2,
+      "importance": 9,
+      "security": 4
+    },
+    {
+      "full_name": "modelcontextprotocol/python-sdk",
+      "ecosystem": "ai-agents",
+      "cost": 1,
+      "importance": 8,
+      "security": 5
+    },
+    {
+      "full_name": "microsoft/semantic-kernel",
+      "ecosystem": "ai-agents",
+      "cost": 2,
+      "importance": 7,
+      "security": 4
+    },
+    {
+      "full_name": "SagerNet/sing-box",
+      "ecosystem": "network",
+      "cost": 2,
+      "importance": 8,
+      "security": 7
+    },
+    {
+      "full_name": "MetaCubeX/mihomo",
+      "ecosystem": "network",
+      "cost": 2,
+      "importance": 8,
+      "security": 7
+    },
+    {
+      "full_name": "tailscale/tailscale",
+      "ecosystem": "network",
+      "cost": 2,
+      "importance": 9,
+      "security": 8
+    },
+    {
+      "full_name": "WireGuard/wireguard-go",
+      "ecosystem": "network",
+      "cost": 2,
+      "importance": 9,
+      "security": 9
+    },
+    {
+      "full_name": "cloudflare/cloudflared",
+      "ecosystem": "network",
+      "cost": 2,
+      "importance": 8,
+      "security": 8
+    },
+    {
+      "full_name": "cilium/cilium",
+      "ecosystem": "network",
+      "cost": 3,
+      "importance": 9,
+      "security": 8,
+      "dependencies": [
+        "torvalds/linux"
+      ]
+    },
+    {
+      "full_name": "envoyproxy/envoy",
+      "ecosystem": "network",
+      "cost": 3,
+      "importance": 9,
+      "security": 7
+    },
+    {
+      "full_name": "haproxy/haproxy",
+      "ecosystem": "network",
+      "cost": 2,
+      "importance": 8,
+      "security": 7
+    },
+    {
+      "full_name": "aquasecurity/trivy",
+      "ecosystem": "security",
+      "cost": 2,
+      "importance": 9,
+      "security": 10
+    },
+    {
+      "full_name": "ossf/scorecard",
+      "ecosystem": "security",
+      "cost": 1,
+      "importance": 8,
+      "security": 10
+    },
+    {
+      "full_name": "google/osv-scanner",
+      "ecosystem": "security",
+      "cost": 1,
+      "importance": 9,
+      "security": 10
+    },
+    {
+      "full_name": "neovim/neovim",
+      "ecosystem": "developer-tools",
+      "cost": 2,
+      "importance": 7,
+      "security": 3
+    },
+    {
+      "full_name": "microsoft/vscode",
+      "ecosystem": "developer-tools",
+      "cost": 2,
+      "importance": 9,
+      "security": 4
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "ecosystem": "developer-tools",
+      "cost": 1,
+      "importance": 8,
+      "security": 4
+    },
+    {
+      "full_name": "astral-sh/ruff",
+      "ecosystem": "developer-tools",
+      "cost": 1,
+      "importance": 8,
+      "security": 4
+    },
+    {
+      "full_name": "pnpm/pnpm",
+      "ecosystem": "developer-tools",
+      "cost": 1,
+      "importance": 7,
+      "security": 4
+    },
+    {
+      "full_name": "vitejs/vite",
+      "ecosystem": "developer-tools",
+      "cost": 1,
+      "importance": 8,
+      "security": 4
+    },
+    {
+      "full_name": "denoland/deno",
+      "ecosystem": "runtime",
+      "cost": 2,
+      "importance": 8,
+      "security": 5
+    }
+  ]
+}
