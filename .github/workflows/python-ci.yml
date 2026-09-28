@@ -5,9 +5,23 @@ on:
     branches:
       - main
       - "feat/**"
+    paths:
+      - "upstreamradar/**"
+      - "tests/**"
+      - "examples/**"
+      - "config/**"
+      - "pyproject.toml"
+      - ".github/workflows/python-ci.yml"
   pull_request:
     branches:
       - main
+    paths:
+      - "upstreamradar/**"
+      - "tests/**"
+      - "examples/**"
+      - "config/**"
+      - "pyproject.toml"
+      - ".github/workflows/python-ci.yml"
 
 permissions:
   contents: read
@@ -38,3 +52,17 @@ jobs:
 
       - name: Run example
         run: python -m examples.harmony_demo
+
+      - name: Validate collector configuration
+        if: matrix.python-version == '3.13'
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from upstreamradar.collector import load_targets
+
+          targets, config = load_targets(Path("config/repositories.json"))
+          assert len(targets) >= 40
+          assert config["scheduling"]["max_repositories_per_run"] > 0
+          print(f"validated {len(targets)} configured upstream repositories")
+          PY
