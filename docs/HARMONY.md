@@ -16,10 +16,10 @@ Each feature is normalized **inside its own ecosystem** instead of globally.
 
 For feature (x):
 
-[
+$$
 z = mathrm{clip}left(rac{x-mathrm{median}(X)}
 {1.4826cdotmathrm{MAD}(X)+epsilon}, -c, cight)
-]
+$$
 
 This makes Android, Linux, AI tooling, and other ecosystems comparable even when their raw activity distributions differ by orders of magnitude.
 
@@ -31,35 +31,35 @@ The normalized vector is not flattened immediately.
 
 First, HARMONY constructs two latent subspaces:
 
-[
+$$
 A =
 0.34z_{commit}
 +0.22z_{release}
 +0.16z_{issue}
 +0.18z_{maintainer}
 +0.10z_{novelty}
-]
+$$
 
-[
+$$
 R =
 0.42z_{security}
 +0.36z_{breakage}
 +0.22z_{dependency}
-]
+$$
 
 where (A) is development activity and (R) is operational risk.
 
 The interaction term is:
 
-[
+$$
 I = sigma(A)sigma(R)
-]
+$$
 
 and the final local signal is:
 
-[
+$$
 L = sigma(0.54A + 0.46R + 0.55I)
-]
+$$
 
 The interaction term is important: high activity and high risk together should be more interesting than either signal alone.
 
@@ -67,39 +67,39 @@ The interaction term is important: high activity and high risk together should b
 
 Every repository carries a Beta prior:
 
-[
+$$
 p sim Beta(alpha,eta)
-]
+$$
 
 After observing successful and unsuccessful change detections:
 
-[
+$$
 alpha' = alpha + hits
-]
+$$
 
-[
+$$
 eta' = eta + misses
-]
+$$
 
 The posterior mean is:
 
-[
+$$
 E[p] = rac{alpha'}{alpha'+eta'}
-]
+$$
 
 Freshness is then applied using an exponential half-life:
 
-[
+$$
 d(t)=2^{-t/h}
-]
+$$
 
 where (h) is the configured half-life.
 
 HARMONY keeps a 20% long-tail prior rather than erasing old evidence completely:
 
-[
+$$
 P_{change}=E[p](0.2+0.8d(t))
-]
+$$
 
 Posterior variance is retained as an **uncertainty signal**, which later creates an exploration bonus.
 
@@ -111,15 +111,15 @@ Repositories form a directed dependency graph.
 
 If:
 
-[
+$$
 A ightarrow B
-]
+$$
 
 then A depends on B. HARMONY reverses contribution flow during PageRank-style diffusion so B receives influence from its dependents.
 
 For node (i):
 
-[
+$$
 r_i^{(k+1)}
 =
 rac{1-d}{N}
@@ -130,7 +130,7 @@ sum_{jightarrow i}rac{r_j^{(k)}}{out(j)}
 +
 rac{D^{(k)}}{N}
 ight)
-]
+$$
 
 where (D) is the dangling-node mass.
 
@@ -146,13 +146,13 @@ HARMONY computes separate feature-group energies:
 
 For each group (G):
 
-[
+$$
 E_G = sqrt{rac{1}{|G|}sum_{zin G}z^2}
-]
+$$
 
 Then:
 
-[
+$$
 A_{outlier}
 =
 sigma(
@@ -161,7 +161,7 @@ sigma(
 +0.20E_{context}
 -0.75
 )
-]
+$$
 
 This intentionally differs from the local signal. A repository can have moderate absolute utility while still being statistically unusual relative to peers.
 
@@ -169,7 +169,7 @@ This intentionally differs from the local signal. A repository can have moderate
 
 The base utility is:
 
-[
+$$
 U =
 w_L L
 +w_P P_{change}
@@ -177,7 +177,7 @@ w_L L
 +w_A A_{outlier}
 +w_Q Q
 +w_S S
-]
+$$
 
 where:
 
@@ -187,9 +187,9 @@ where:
 
 A mild information-density term adjusts the result by scan cost:
 
-[
+$$
 U' = Uleft(1+0.08log(1+rac{1}{cost})ight)
-]
+$$
 
 The adjustment is deliberately weak so tiny jobs do not dominate just because they are cheap.
 
@@ -199,7 +199,7 @@ Simple sorting is insufficient because the utility of one candidate changes afte
 
 For candidate (c) and partial schedule (S):
 
-[
+$$
 Delta U(c|S)
 =
 U'_c
@@ -211,25 +211,25 @@ B_{exploration}
 P_{redundancy}
 -
 P_{dependency-overlap}
-]
+$$
 
 ### Diversity bonus
 
-[
+$$
 B_{diversity}
 =
 rac{lambda_d}{1+n_{ecosystem}}
-]
+$$
 
 The first candidate from an ecosystem gets a stronger bonus than its fifth.
 
 ### Redundancy penalty
 
-[
+$$
 P_{redundancy}
 =
 lambda_r n_{ecosystem}
-]
+$$
 
 This prevents a single noisy ecosystem from consuming the entire budget.
 
@@ -237,9 +237,9 @@ This prevents a single noisy ecosystem from consuming the entire budget.
 
 For dependency sets (D_a) and (D_b), HARMONY computes Jaccard overlap:
 
-[
+$$
 J(a,b)=rac{|D_acap D_b|}{|D_acup D_b|}
-]
+$$
 
 The maximum overlap with already selected candidates becomes a penalty.
 
@@ -259,13 +259,13 @@ Exact exhaustive search grows exponentially, so HARMONY uses a bounded **beam se
 6. keep only the best (B) states;
 7. enforce ecosystem minimums at the end.
 
-With (N) repositories and beam width (B), the practical scheduling stage is approximately:
+With N repositories, beam width B, and average dependency-set operation cost D, the current implementation has a conservative worst-case scheduling bound of roughly:
 
-[
-O(NB^2D)
-]
+$
+O(NB(ND + log B))
+$
 
-in the current implementation when dependency-overlap checks dominate, where (D) is the average selected-set comparison cost. The bounded beam width makes this predictable enough for CI scheduling while preserving significantly more search quality than greedy ranking.
+The ND term comes from comparing a candidate's dependency set with repositories already selected in each beam state; the log B term comes from bounded state ordering. In ordinary runs the selected sets are much smaller than N, so observed cost is substantially lower. The bounded beam width keeps runtime predictable enough for CI scheduling while preserving significantly more search quality than greedy ranking.
 
 ## What this teaches
 
