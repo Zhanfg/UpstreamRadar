@@ -1,0 +1,159 @@
+name: Upstream Radar
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: upstream-radar-main
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.UPSTREAMRADAR_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Configure Git identity
+        shell: bash
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
+
+      - name: Synchronize main
+        shell: bash
+        run: |
+          git pull --ff-only origin main
+
+      - name: Run HARMONY collector
+        shell: bash
+        env:
+          UPSTREAMRADAR_TOKEN: ${{ secrets.UPSTREAMRADAR_PAT }}
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]]; then
+            python -m upstreamradar.collector --force
+          else
+            python -m upstreamradar.collector
+          fi
+
+      - name: Commit changed upstream snapshots atomically
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ ! -f .radar/manifest.json ]]; then
+            echo "No manifest produced."
+            exit 1
+          fi
+
+          if [[ "$(jq -r '.ran' .radar/manifest.json)" != "true" ]]; then
+            echo "This slot was skipped by the adaptive gate."
+            exit 0
+          fi
+
+          while IFS= read -r file; do
+            [[ -z "$file" ]] && continue
+            [[ ! -f "$file" ]] && continue
+
+            git add -- "$file"
+
+            if git diff --cached --quiet; then
+              continue
+            fi
+
+            base="$(basename "$file" .json)"
+            repo_name="${base/__//}"
+
+            git commit               -m "[data] refresh ${repo_name}"               -m "Automated snapshot from live GitHub upstream metadata."
+          done < <(jq -r '.changed_files[]?' .radar/manifest.json)
+
+      - name: Commit scheduler checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "$(jq -r '.ran' .radar/manifest.json)" != "true" ]]; then
+            exit 0
+          fi
+
+          while IFS= read -r file; do
+            [[ -n "$file" && -f "$file" ]] && git add -- "$file"
+          done < <(jq -r '.checkpoint_files[]?' .radar/manifest.json)
+
+          if git diff --cached --quiet; then
+            echo "No checkpoint changes."
+            exit 0
+          fi
+
+          observed="$(jq -r '.observed_at' .radar/manifest.json)"
+          selected="$(jq '.summary.selected | length' .radar/manifest.json)"
+          changed="$(jq '.summary.changed | length' .radar/manifest.json)"
+          errors="$(jq '.summary.errors | length' .radar/manifest.json)"
+
+          git commit             -m "[radar] checkpoint ${observed}"             -m "selected=${selected} changed=${changed} errors=${errors}"
+
+      - name: Push collected data
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]]; then
+            git push origin HEAD:main
+          else
+            echo "Nothing to push."
+          fi
+
+      - name: Open issue for persistent collection failures
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.UPSTREAMRADAR_PAT }}
+        run: |
+          set -euo pipefail
+
+          [[ -f .radar/manifest.json ]] || exit 0
+
+          jq -c '.anomalies[]?' .radar/manifest.json | while IFS= read -r item; do
+            full_name="$(jq -r '.full_name' <<<"$item")"
+            streak="$(jq -r '.error_streak' <<<"$item")"
+            message="$(jq -r '.message' <<<"$item")"
+            title="[radar] Repeated collection failure: ${full_name}"
+
+            existing="$(
+              gh issue list                 --repo "${GITHUB_REPOSITORY}"                 --state open                 --search "${title} in:title"                 --json title                 --jq 'length'
+            )"
+
+            if [[ "$existing" != "0" ]]; then
+              echo "Issue already exists for ${full_name}."
+              continue
+            fi
+
+            body="$(cat <<EOF
+          UpstreamRadar failed to collect this target for **${streak} consecutive scheduled checks**.
+
+          - target: \`${full_name}\`
+          - latest error: \`${message}\`
+          - detected by: automated HARMONY collector
+
+          This issue is generated only after repeated failures to avoid transient-error noise.
+          EOF
+          )"
+
+            gh issue create               --repo "${GITHUB_REPOSITORY}"               --title "${title}"               --body "${body}"
+          done
