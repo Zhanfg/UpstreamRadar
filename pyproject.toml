@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "upstreamradar"
+version = "0.1.0"
+description = "Adaptive upstream development radar and network-aware scheduling algorithms"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "UpstreamRadar contributors" }
+]
+dependencies = []
+
+[tool.setuptools]
+packages = ["upstreamradar"]
