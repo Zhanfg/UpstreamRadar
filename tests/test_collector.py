@@ -142,6 +142,24 @@ class CollectorPureLogicTests(unittest.TestCase):
         self.assertEqual(model["successful_checks"], 8)
         self.assertEqual(model["failed_checks"], 1)
 
+    def test_partial_v2_signal_repairs_reliability_immediately(self):
+        target = Target(
+            full_name="owner/partial",
+            ecosystem="test",
+            cost=1,
+        )
+        signal = signal_for(
+            target,
+            {
+                "checks": 8,
+                "successful_checks": 1,
+                "failed_checks": 0,
+                "change_window": [0, 1, 0, 1],
+            },
+            datetime(2026, 9, 29, 12, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(signal.source_reliability, 1.0)
+
     def test_legacy_state_migrates_as_healthy_by_default(self):
         target = Target(
             full_name="owner/legacy",
