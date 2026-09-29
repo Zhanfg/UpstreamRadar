@@ -158,7 +158,7 @@ Discovery Garden combines:
 - bounded candidate registries and evidence reports;
 - a governed fork queue with deduplication, daily/weekly caps, and explicit namespace gating.
 
-Fork execution is intentionally blocked until a suitable public GitHub Organization or GitLab namespace is configured. This prevents high-scoring discovery results from turning the user account into an unstructured fork dump.
+Discovery forks are organized into GitHub `yuezhou-build` and GitLab `axymorrsen-labs`. GitHub fork writes remain gated behind a dedicated `UPSTREAMRADAR_FORK_PAT`; GitLab uses its verified public namespace. Daily/weekly caps, license checks, and deduplication remain enforced.
 
 See docs/DISCOVERY_GARDEN.md.
 
