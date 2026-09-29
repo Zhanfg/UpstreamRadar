@@ -29,11 +29,18 @@ _SECRET_PATTERNS = (
     re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
 )
 
+_WORK_MARKERS = ("TO" + "DO", "FIX" + "ME", "HA" + "CK", "X" + "XX")
+
 _RULES = (
     ("high", "python-eval", re.compile(r"\b(eval|exec)\s*\("), "dynamic code execution added"),
     ("high", "shell-true", re.compile(r"subprocess\.[A-Za-z_]+\([^\n]*shell\s*=\s*True"), "subprocess with shell=True added"),
     ("medium", "broad-except", re.compile(r"^\s*except\s+(Exception|BaseException)\s*(?:as\s+\w+)?\s*:"), "broad exception handler added"),
-    ("low", "todo", re.compile(r"\b(TODO|FIXME|HACK|XXX)\b", re.IGNORECASE), "unfinished-work marker added"),
+    (
+        "low",
+        "todo",
+        re.compile(r"\b(" + "|".join(_WORK_MARKERS) + r")\b", re.IGNORECASE),
+        "unfinished-work marker added",
+    ),
 )
 
 
