@@ -107,7 +107,11 @@ def score_repository(
 
     license_obj = repo.get("license")
     if isinstance(license_obj, Mapping):
-        license_id = license_obj.get("spdx_id")
+        license_id = (
+            license_obj.get("spdx_id")
+            or license_obj.get("key")
+            or license_obj.get("name")
+        )
     else:
         license_id = repo.get("license_id") or repo.get("license_name")
     licensed = bool(license_id and str(license_id).upper() not in {"NOASSERTION", "OTHER"})
