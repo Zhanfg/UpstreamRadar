@@ -125,7 +125,6 @@ def score_repository(
         + 0.06 * float(licensed)
     )
 
-    reasons = [f"category:{category}", f"keyword:{token}" for token in ()]
     reasons = [f"category:{category}"] + [f"keyword:{token}" for token in matches]
     if recency >= 0.75:
         reasons.append("recently-active")
