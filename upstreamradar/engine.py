@@ -76,8 +76,8 @@ class ScheduleResult:
 @dataclass(frozen=True)
 class HarmonyConfig:
     half_life_hours: float = 18.0
-    graph_damping: float = 0.84
-    graph_steps: int = 36
+    pagerank_damping: float = 0.84
+    pagerank_steps: int = 36
     ecosystem_affinity: float = 0.12
 
     local_weight: float = 0.18
@@ -110,10 +110,10 @@ class HarmonyConfig:
     def validate(self) -> None:
         if self.half_life_hours <= 0:
             raise ValueError("half_life_hours must be positive")
-        if not 0.0 < self.graph_damping < 1.0:
-            raise ValueError("graph_damping must be in (0, 1)")
-        if self.graph_steps <= 0:
-            raise ValueError("graph_steps must be positive")
+        if not 0.0 < self.pagerank_damping < 1.0:
+            raise ValueError("pagerank_damping must be in (0, 1)")
+        if self.pagerank_steps <= 0:
+            raise ValueError("pagerank_steps must be positive")
         if self.beam_width <= 0:
             raise ValueError("beam_width must be positive")
         for name in ("ewma_fast_alpha", "ewma_medium_alpha", "ewma_slow_alpha"):
@@ -377,9 +377,9 @@ class HarmonyScheduler:
             for name in names
         }
         rank = dict(teleport)
-        damping = self.config.graph_damping
+        damping = self.config.pagerank_damping
 
-        for _ in range(self.config.graph_steps):
+        for _ in range(self.config.pagerank_steps):
             next_rank = {
                 name: (1.0 - damping) * teleport[name]
                 for name in names
