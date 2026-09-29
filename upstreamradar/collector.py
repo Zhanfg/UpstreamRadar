@@ -321,7 +321,13 @@ def signal_for(
     hits = sum(int(bool(x)) for x in change_window)
     misses = len(change_window) - hits
     checks = int(model.get("checks", 0))
-    successful_checks = int(model.get("successful_checks", 0))
+    failed_checks = int(model.get("failed_checks", 0))
+    successful_checks = int(
+        model.get(
+            "successful_checks",
+            max(0, checks - failed_checks),
+        )
+    )
 
     novelty = 10.0 / ((checks + 1) ** 0.5)
     breakage = float(model.get("breakage_risk", 0.0))
@@ -606,6 +612,7 @@ def collect(
 
     targets, config = load_targets(config_path)
     state = load_json(state_path, initial_state())
+    state["version"] = 3
     scheduler_state = state.setdefault("scheduler", {})
     pressure, elapsed_hours = catch_up_multiplier(
         scheduler_state.get("last_run_at"),
