@@ -6,22 +6,24 @@ The repository is designed around a real optimization problem: when upstream sou
 
 ## HARMONY
 
-The first core algorithm is **HARMONY** — **Hierarchical Adaptive Radar Multi-objective Optimizer with Network-aware Yield**.
+The core algorithm is **HARMONY** — **Hierarchical Adaptive Radar Multi-objective Optimizer with Network-aware Yield**.
 
-It combines:
+**HARMONY v2** upgrades the original single-round ranker into a stateful, content-aware information-selection system. It combines:
 
-- ecosystem-local robust statistics using median/MAD;
-- a hierarchical activity/risk interaction model;
-- Bayesian change-probability estimation;
-- exponential time decay;
-- dependency-graph PageRank-style diffusion;
-- grouped anomaly-energy detection;
-- uncertainty-aware exploration;
-- diversity and redundancy shaping;
-- dependency-overlap penalties;
-- constrained beam search under API/CI budgets.
+- ecosystem-local robust statistics with global shrinkage for small groups;
+- Bayesian change-probability estimation with freshness decay;
+- fast / medium / slow EWMA dynamics;
+- online regime-shift detection over semantic-impact history;
+- change entropy and impact volatility;
+- evidence-based content-yield estimation;
+- reliability-aware source weighting;
+- deterministic exploration pressure inspired by upper-confidence bounds;
+- signal-seeded dependency and ecosystem graph diffusion;
+- submodular-style portfolio coverage;
+- diversity, redundancy, and dependency-overlap shaping;
+- state-specific fractional-knapsack bounds inside constrained beam search.
 
-The implementation is intentionally dependency-free Python so the mathematical structure is visible rather than hidden behind ML libraries.
+The implementation remains dependency-free Python so the mathematical structure stays visible rather than being hidden behind ML libraries.
 
 ### Minimal example
 
@@ -67,7 +69,7 @@ A fuller executable example is available in [`examples/harmony_demo.py`](example
 
 ## Learn the algorithm
 
-The complete mathematical derivation is in [`docs/HARMONY.md`](docs/HARMONY.md).
+The original derivation is in docs/HARMONY.md, and the v2 architecture is specified in docs/HARMONY_V2.md.
 
 The document explains why each layer exists and derives:
 
@@ -79,6 +81,21 @@ The document explains why each layer exists and derives:
 6. multi-objective utility fusion;
 7. diversity-aware marginal utility;
 8. constrained beam-search scheduling.
+
+HARMONY v2 adds multi-timescale dynamics, semantic impact, regime-shift detection, content yield, reliability, graph seeding, portfolio coverage, and a budget-aware upper bound.
+
+## Evidence-first content planning
+
+The scheduler now produces report-ready content opportunities in addition to scan priority.
+
+build_content_plan() converts selected candidates into:
+
+- a content priority;
+- a suggested investigation angle;
+- compact reason tags such as regime-shift or dependency-hub;
+- the strongest numeric evidence behind the recommendation.
+
+It deliberately does not invent article prose. Reports remain grounded in real upstream telemetry and can explain why an item is worth attention.
 
 ## Repository structure
 
