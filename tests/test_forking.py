@@ -33,12 +33,15 @@ class ForkPlanningTests(unittest.TestCase):
             (),
         )
 
-    def test_verified_namespace_configuration_remains_gated_on_github(self):
+    def test_verified_namespace_configuration_targets_both_platforms(self):
         import json
         from pathlib import Path
 
         config = json.loads(Path("config/discovery.json").read_text())
-        self.assertIsNone(config["destinations"]["github_organization"])
+        self.assertEqual(
+            config["destinations"]["github_organization"],
+            "yuezhou-build",
+        )
         self.assertEqual(
             config["destinations"]["gitlab_namespace_path"],
             "axymorrsen-labs",

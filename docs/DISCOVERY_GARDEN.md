@@ -98,21 +98,21 @@ asset.
 
 Fork execution requires an explicit destination namespace.
 
-Current configuration intentionally has:
+Current configured destinations are:
 
-- github_organization: null
-- gitlab_namespace_path: null
+- github_organization: yuezhou-build
+- gitlab_namespace_path: axymorrsen-labs
 - personal_fallback: false
 
-Therefore the executor currently emits SKIP even when a candidate is eligible.
+GitLab fork execution is enabled against the public axymorrsen-labs group.
 
-This is deliberate. At the time Discovery Garden was introduced, the connected
-GitHub account had no organization memberships and the only GitLab group was a
-private group. Public discovery forks should not be silently dumped into either
-a personal namespace or an unrelated private group.
+GitHub fork execution is organization-routed but remains credential-gated:
+the executor requires a dedicated UPSTREAMRADAR_FORK_PAT and does not fall back
+to the normal radar token. If that secret is absent or lacks fork permissions,
+the executor emits SKIP/ERROR without changing the organization.
 
-Once a suitable public organization/group exists, set the destination in
-config/discovery.json. No code change is required.
+This preserves organization structure while keeping discovery scans independent
+from fork write permissions.
 
 ## Logical collections
 
