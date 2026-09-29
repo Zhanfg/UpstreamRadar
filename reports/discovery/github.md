@@ -1,15 +1,22 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **4000**
-- latest census cursor: **19382**
+- total census repositories scanned: **8000**
+- latest census cursor: **36411**
 - retained candidates: **80**
-- governed fork queue: **5**
+- governed fork queue: **7**
 
 ## Top directions
 
 ### ai-agents
 
-- **danhodos/session_consistency** — score=0.344, stars=0; category:ai-agents, keyword:agent, emerging
+- **context-labs/whip** — score=0.918, stars=1068; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **mikehasa/agentacct** — score=0.911, stars=755; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
+- **manishiitg/mcpagent** — score=0.871, stars=1; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
+- **skwijeratne/agentix-toolkit** — score=0.870, stars=3; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
+- **tschk/rotary** — score=0.869, stars=3; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **momo-null/OmniAgent** — score=0.860, stars=3; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
+- **ShreyashDarade/praxis-ai-agent-platform** — score=0.856, stars=0; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
+- **BGMLAI/gate.cat** — score=0.823, stars=2; category:ai-agents, keyword:agent, keyword:mcp, keyword:llm, recently-active
 
 ### android-kernel
 
@@ -24,10 +31,7 @@
 
 ### developer-tooling
 
-- **bborn/communityengine** — score=0.375, stars=0; category:developer-tooling, keyword:cli, keyword:ci, emerging
-- **roidrage/macistrano** — score=0.360, stars=0; category:developer-tooling, keyword:cli, keyword:ci, emerging
-- **simonpk/j2me-oauth** — score=0.358, stars=0; category:developer-tooling, keyword:cli, keyword:ci, emerging
-- **weppos/www-delicious** — score=0.349, stars=0; category:developer-tooling, keyword:cli, keyword:ci, emerging
+- **openminion/openminion** — score=0.720, stars=7; category:developer-tooling, keyword:cli, keyword:runtime, recently-active, license:Apache-2.0
 
 ### networking
 
@@ -40,10 +44,23 @@
 - **crapthings/hysteria-rust** — score=0.834, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
 - **hedioum/Hedioum-Pool-Tunnel** — score=0.812, stars=139; category:networking, keyword:proxy, keyword:tun, keyword:quic, license:GPL-3.0
 
+### security-sandbox
+
+- **whiskeyjimbo/bento** — score=0.836, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **vladimiracunadev-create/sandbox-labs** — score=0.834, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **jkelly-dev1/agent-sandbox-escape** — score=0.833, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **m62624/cageforge** — score=0.830, stars=1; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **RARS-oss/bulla** — score=0.816, stars=3; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **GreyhavenHQ/greywall** — score=0.799, stars=305; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **souk4711/hakoniwa** — score=0.796, stars=89; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **pranavrav09/SecureGuard** — score=0.794, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+
 ## Fork queue
 
 - **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.933, license=GPL-3.0)
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
+- **context-labs/whip** → ai-agents (score=0.918, license=Apache-2.0)
+- **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
 - **keminar/anyproxy** → networking (score=0.902, license=MIT)
 - **MiChongs/WutherCore** → networking (score=0.902, license=MIT)
 - **Spring-bulid/MakoSU** → android-kernel (score=0.900, license=GPL-3.0)
