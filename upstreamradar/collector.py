@@ -14,6 +14,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
+from .content import build_content_plan
 from .engine import HarmonyScheduler, RepositorySignal
 
 
@@ -237,7 +238,7 @@ def repo_snapshot(
 
 def initial_state() -> dict[str, Any]:
     return {
-        "version": 2,
+        "version": 3,
         "repositories": {},
         "daily": {},
         "scheduler": {},
@@ -256,6 +257,50 @@ def bounded_window(values: Iterable[int], item: int, limit: int = 48) -> list[in
     return result[-limit:]
 
 
+def bounded_float_window(
+    values: Iterable[float],
+    item: float,
+    limit: int = 48,
+) -> list[float]:
+    result = [float(value) for value in values]
+    result.append(float(item))
+    return result[-limit:]
+
+
+def semantic_impact(
+    old_snapshot: Mapping[str, Any] | None,
+    new_snapshot: Mapping[str, Any] | None,
+) -> float:
+    """Estimate how much reportable meaning changed between two snapshots."""
+    if old_snapshot is None or new_snapshot is None:
+        return 0.0
+
+    old = stable_snapshot(old_snapshot)
+    new = stable_snapshot(new_snapshot)
+    weights = {
+        "latest_release": 4.0,
+        "pushed_at": 2.4,
+        "default_branch": 4.0,
+        "archived": 5.0,
+        "disabled": 5.0,
+        "topics": 1.6,
+        "description": 1.2,
+        "language": 1.4,
+        "license": 1.4,
+        "open_issues": 1.0,
+        "forks": 0.6,
+        "stars": 0.35,
+        "watchers": 0.35,
+        "size_kb": 0.2,
+    }
+    impact = sum(
+        weight
+        for key, weight in weights.items()
+        if old.get(key) != new.get(key)
+    )
+    return min(10.0, round(impact, 4))
+
+
 def ewma(previous: float, observation: float, alpha: float = 0.25) -> float:
     return (1.0 - alpha) * float(previous) + alpha * float(observation)
 
@@ -272,12 +317,15 @@ def signal_for(
     )
 
     change_window = list(model.get("change_window", []))
+    impact_window = list(model.get("impact_window", []))
     hits = sum(int(bool(x)) for x in change_window)
     misses = len(change_window) - hits
     checks = int(model.get("checks", 0))
+    successful_checks = int(model.get("successful_checks", 0))
 
     novelty = 10.0 / ((checks + 1) ** 0.5)
     breakage = float(model.get("breakage_risk", 0.0))
+    reliability = (successful_checks + 3.0) / (checks + 3.0)
 
     return RepositorySignal(
         name=target.full_name,
@@ -296,6 +344,12 @@ def signal_for(
         prior_beta=1.0,
         recent_change_hits=hits,
         recent_change_misses=misses,
+        change_history=tuple(int(bool(value)) for value in change_window),
+        impact_history=tuple(float(value) for value in impact_window),
+        observation_count=checks,
+        content_signal=float(model.get("ewma_impact", 0.0)),
+        source_reliability=reliability,
+        failure_streak=int(model.get("error_streak", 0)),
     )
 
 
@@ -306,7 +360,7 @@ def select_targets(
     now: datetime,
     *,
     pressure: float = 1.0,
-) -> tuple[list[Target], list[dict[str, Any]]]:
+) -> tuple[list[Target], list[dict[str, Any]], dict[str, Any]]:
     scheduler = HarmonyScheduler()
     signals = [signal_for(target, repo_model(state, target.full_name), now) for target in targets]
     dependencies = {target.full_name: target.dependencies for target in targets}
@@ -345,10 +399,27 @@ def select_targets(
             "graph_influence": round(candidate.graph_influence, 8),
             "anomaly": round(candidate.anomaly, 8),
             "uncertainty": round(candidate.uncertainty, 8),
+            "momentum": round(candidate.momentum, 8),
+            "change_point": round(candidate.change_point, 8),
+            "entropy": round(candidate.entropy, 8),
+            "content_yield": round(candidate.content_yield, 8),
+            "reliability": round(candidate.reliability, 8),
+            "exploration": round(candidate.exploration, 8),
+            "security_focus": round(candidate.security_focus, 8),
+            "reasons": list(candidate.reasons),
         }
         for candidate in ordered
     ]
-    return selected, scores
+    content_plan = [
+        asdict(item)
+        for item in build_content_plan(ordered, limit=min(8, len(ordered)))
+    ]
+    selection_meta = {
+        "coverage_score": round(result.coverage_score, 8),
+        "content_score": round(result.content_score, 8),
+        "content_plan": content_plan,
+    }
+    return selected, scores, selection_meta
 
 
 def update_model(
@@ -366,16 +437,28 @@ def update_model(
 
     if error is not None:
         model["error_streak"] = int(model.get("error_streak", 0)) + 1
+        model["failed_checks"] = int(model.get("failed_checks", 0)) + 1
         model["last_error"] = error[:500]
         return model
 
     model["error_streak"] = 0
+    model["successful_checks"] = int(model.get("successful_checks", 0)) + 1
     model.pop("last_error", None)
     model["change_window"] = bounded_window(model.get("change_window", []), int(changed))
     model["ewma_change"] = round(
         ewma(float(model.get("ewma_change", 0.5)), float(changed)),
         8,
     )
+    impact = semantic_impact(old_snapshot, new_snapshot)
+    model["impact_window"] = bounded_float_window(
+        model.get("impact_window", []),
+        impact,
+    )
+    model["ewma_impact"] = round(
+        ewma(float(model.get("ewma_impact", 0.0)), impact),
+        8,
+    )
+    model["last_semantic_impact"] = impact
 
     old_release = (old_snapshot or {}).get("latest_release") or {}
     new_release = (new_snapshot or {}).get("latest_release") or {}
@@ -439,8 +522,28 @@ def render_daily_report(
         f"- errors: **{len(summary.get('errors', []))}**",
         f"- catch-up multiplier: **{float(summary.get('catch_up_multiplier', 1.0)):.2f}×**",
         f"- hours since previous successful collection: **{float(summary.get('elapsed_since_previous_run_hours', 0.0)):.2f}**",
+        f"- portfolio coverage: **{float(summary.get('coverage_score', 0.0)):.3f}**",
+        f"- mean content yield: **{float(summary.get('content_score', 0.0)):.3f}**",
         "",
-        "## Recent changes",
+        "## Content opportunities",
+        "",
+    ]
+
+    opportunities = summary.get("content_plan", [])
+    if opportunities:
+        for item in opportunities[:6]:
+            evidence = ", ".join(item.get("evidence", []))
+            lines.append(
+                f"- **{item['name']}** — {item['angle']} "
+                f"(priority={float(item['priority']):.3f}; {evidence})"
+            )
+    else:
+        lines.append("- No content opportunities in the latest run.")
+
+    lines.extend(
+        [
+            "",
+            "## Recent changes",
         "",
     ]
 
@@ -454,8 +557,9 @@ def render_daily_report(
             "",
             "## Scheduling",
             "",
-            "Repository selection is produced by HARMONY using historical change evidence, "
-            "dependency influence, uncertainty, anomaly signals, ecosystem diversity, and scan cost.",
+            "Repository selection is produced by HARMONY v2 using multi-timescale change "
+            "dynamics, online regime-shift evidence, content yield, seeded dependency "
+            "diffusion, uncertainty-aware exploration, portfolio coverage, and scan cost.",
             "",
         ]
     )
@@ -506,7 +610,7 @@ def collect(
         scheduler_state.get("last_run_at"),
         now,
     )
-    selected, scores = select_targets(
+    selected, scores, selection_meta = select_targets(
         targets,
         state,
         config,
@@ -612,6 +716,9 @@ def collect(
         "catch_up_multiplier": pressure,
         "selected": [target.full_name for target in selected],
         "scores": scores,
+        "coverage_score": selection_meta["coverage_score"],
+        "content_score": selection_meta["content_score"],
+        "content_plan": selection_meta["content_plan"],
         "changed": changed_names,
         "unchanged": unchanged_names,
         "errors": errors,
