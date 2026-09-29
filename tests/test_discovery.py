@@ -71,23 +71,18 @@ class DiscoveryTests(unittest.TestCase):
         self.assertFalse(should_auto_fork(candidate, CONFIG, now=now))
 
     def test_android_app_does_not_count_as_kernel_direction(self):
-        category, score, matches = classify(
-            {
-                "name": "android-client",
-                "description": "Android mobile application",
-            },
-            {
-                **CONFIG,
-                "categories": [
-                    {
-                        "id": "android-kernel",
-                        "keywords": ["android", "gki", "kernel", "susfs"],
-                        "required_any": ["gki", "kernel", "susfs"],
-                        "weight": 1.0,
-                    }
-                ],
-            },
-        )
+        kernel_category = {
+            "id": "android-kernel",
+            "keywords": ["android", "gki", "kernel", "susfs"],
+            "required_any": ["gki", "kernel", "susfs"],
+            "weight": 1.0,
+        }
+        config = {**CONFIG, "categories": [kernel_category]}
+        repo = {
+            "name": "android-client",
+            "description": "Android mobile application",
+        }
+        category, score, matches = classify(repo, config)
         self.assertEqual(category, "other")
         self.assertEqual(score, 0.0)
         self.assertEqual(matches, ())
