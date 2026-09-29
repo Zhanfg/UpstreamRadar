@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from math import exp, isfinite, log, log1p, sqrt
 from statistics import median
 from typing import Dict, List, Mapping, MutableMapping, Sequence, Tuple
@@ -206,10 +206,8 @@ class HarmonyScheduler:
 
                 for record, value in zip(ecosystem_records, values):
                     z = (value - center) / scale
-                    normalized[record.name][feature] = max(
-                        -self.config.robust_clip,
-                        min(self.config.robust_clip, z),
-                    )
+                    limit = self.config.robust_clip
+                    normalized[record.name][feature] = max(-limit, min(limit, z))
         return normalized
 
     def _change_probability(self, record: RepositorySignal) -> Tuple[float, float]:
@@ -355,9 +353,7 @@ class HarmonyScheduler:
             source = record.name
             for target in dependencies.get(source, ()):
                 if target in known and target != source:
-                    outgoing[source][target] = (
-                        outgoing[source].get(target, 0.0) + 1.0
-                    )
+                    outgoing[source][target] = outgoing[source].get(target, 0.0) + 1.0
 
             peers = [
                 peer
@@ -367,9 +363,7 @@ class HarmonyScheduler:
             if peers:
                 affinity = self.config.ecosystem_affinity / len(peers)
                 for peer in peers:
-                    outgoing[source][peer] = (
-                        outgoing[source].get(peer, 0.0) + affinity
-                    )
+                    outgoing[source][peer] = outgoing[source].get(peer, 0.0) + affinity
 
         seed_total = sum(max(seeds.get(name, 0.0), _EPS) for name in names)
         teleport = {
@@ -392,15 +386,11 @@ class HarmonyScheduler:
                     dangling += rank[source]
                     continue
                 for target, weight in edges.items():
-                    next_rank[target] += (
-                        damping * rank[source] * weight / weight_sum
-                    )
+                    next_rank[target] += damping * rank[source] * weight / weight_sum
 
             if dangling:
                 for name in names:
-                    next_rank[name] += (
-                        damping * dangling * teleport[name]
-                    )
+                    next_rank[name] += damping * dangling * teleport[name]
             rank = next_rank
 
         total = sum(rank.values()) or 1.0
@@ -561,11 +551,9 @@ class HarmonyScheduler:
                 base_utility=utility,
             )
             scored.append(
-                CandidateScore(
-                    **{
-                        **provisional.__dict__,
-                        "reasons": self._reasons(provisional),
-                    }
+                replace(
+                    provisional,
+                    reasons=self._reasons(provisional),
                 )
             )
 
@@ -750,6 +738,67 @@ class HarmonyScheduler:
             )
         return total / len(scores_by_name)
 
+    @staticmethod
+    def _ordering_priority(score: CandidateScore) -> float:
+        return (
+            0.60 * score.base_utility
+            + 0.22 * (score.base_utility / score.cost)
+            + 0.10 * score.content_yield
+            + 0.08 * score.change_point
+        )
+
+    def _extend_state(
+        self,
+        *,
+        index: int,
+        candidate: CandidateScore,
+        state: _BeamState,
+        budget: int,
+        maximums: Mapping[str, int],
+        dependency_sets: Mapping[str, frozenset[str]],
+        scores_by_name: Mapping[str, CandidateScore],
+        similarity: Mapping[Tuple[str, str], float],
+    ) -> _BeamState | None:
+        new_cost = state.cost + candidate.cost
+        if new_cost > budget:
+            return None
+
+        current_count = state.ecosystem_counts.get(candidate.ecosystem, 0)
+        maximum = maximums.get(candidate.ecosystem)
+        if maximum is not None and current_count >= maximum:
+            return None
+
+        counts = dict(state.ecosystem_counts)
+        counts[candidate.ecosystem] = current_count + 1
+        gain = self._marginal_utility(
+            candidate,
+            state,
+            dependency_sets,
+            scores_by_name,
+            similarity,
+        )
+        return _BeamState(
+            chosen=state.chosen + (index,),
+            cost=new_cost,
+            utility=state.utility + gain,
+            ecosystem_counts=counts,
+            selected_names=state.selected_names | {candidate.name},
+        )
+
+    def _beam_rank(
+        self,
+        state: _BeamState,
+        remaining: Sequence[CandidateScore],
+        budget: int,
+    ) -> tuple[float, float, int, tuple[str, ...]]:
+        upper_bound = self._fractional_upper_bound(state, remaining, budget)
+        return (
+            -upper_bound,
+            -state.utility,
+            state.cost,
+            tuple(sorted(state.selected_names)),
+        )
+
     def schedule(
         self,
         records: Sequence[RepositorySignal],
@@ -816,13 +865,7 @@ class HarmonyScheduler:
             sorted(
                 scores,
                 key=lambda score: (
-                    -(
-                        0.60 * score.base_utility
-                        + 0.22
-                        * (score.base_utility / score.cost)
-                        + 0.10 * score.content_yield
-                        + 0.08 * score.change_point
-                    ),
+                    -self._ordering_priority(score),
                     score.name,
                 ),
             )
@@ -836,52 +879,22 @@ class HarmonyScheduler:
 
             for state in beam:
                 next_states.append(state)
-                new_cost = state.cost + candidate.cost
-                if new_cost > budget:
+                extended = self._extend_state(
+                    index=index,
+                    candidate=candidate,
+                    state=state,
+                    budget=budget,
+                    maximums=maximums,
+                    dependency_sets=dependency_sets,
+                    scores_by_name=scores_by_name,
+                    similarity=similarity,
+                )
+                if extended is None:
                     continue
-
-                current_count = state.ecosystem_counts.get(
-                    candidate.ecosystem,
-                    0,
-                )
-                maximum = maximums.get(candidate.ecosystem)
-                if (
-                    maximum is not None
-                    and current_count >= maximum
-                ):
-                    continue
-
-                counts = dict(state.ecosystem_counts)
-                counts[candidate.ecosystem] = current_count + 1
-                gain = self._marginal_utility(
-                    candidate,
-                    state,
-                    dependency_sets,
-                    scores_by_name,
-                    similarity,
-                )
-                next_states.append(
-                    _BeamState(
-                        chosen=state.chosen + (index,),
-                        cost=new_cost,
-                        utility=state.utility + gain,
-                        ecosystem_counts=counts,
-                        selected_names=(
-                            state.selected_names
-                            | {candidate.name}
-                        ),
-                    )
-                )
+                next_states.append(extended)
                 explored += 1
 
-            dedup: MutableMapping[
-                Tuple[
-                    int,
-                    Tuple[Tuple[str, int], ...],
-                    frozenset[str],
-                ],
-                _BeamState,
-            ] = {}
+            dedup: MutableMapping[tuple, _BeamState] = {}
             for state in next_states:
                 signature = state.signature()
                 previous = dedup.get(signature)
@@ -894,16 +907,7 @@ class HarmonyScheduler:
             remaining = ordered[index + 1 :]
             beam = sorted(
                 dedup.values(),
-                key=lambda state: (
-                    -self._fractional_upper_bound(
-                        state,
-                        remaining,
-                        budget,
-                    ),
-                    -state.utility,
-                    state.cost,
-                    tuple(sorted(state.selected_names)),
-                ),
+                key=lambda state: self._beam_rank(state, remaining, budget),
             )[: self.config.beam_width]
 
         feasible = [
