@@ -24,9 +24,9 @@ class ReviewerTests(unittest.TestCase):
             DiffFile(
                 "upstreamradar/a.py",
                 (
-                    "value = eval(user_input)",
-                    "subprocess.run(cmd, shell=True)",
-                    "except Exception:",
+                    "value = " + "ev" + "al(user_input)",
+                    "subprocess.run(cmd, shell=" + "True)",
+                    "except " + "Exception:",
                 ),
                 (),
             ),
@@ -39,10 +39,17 @@ class ReviewerTests(unittest.TestCase):
         self.assertIn("source-without-tests", rules)
 
     def test_secret_detection(self):
+        secret_line = 'API_KEY = "' + "sk-" + 'abcdefghijklmnopqrstuvwxyz12345"'
         files = (
-            DiffFile("config.py", ('API_KEY = "sk-abcdefghijklmnopqrstuvwxyz12345"',), ()),
+            DiffFile("config.py", (secret_line,), ()),
         )
         self.assertIn("possible-secret", {f.rule for f in analyze(files)})
+
+    def test_documentation_examples_do_not_trigger_code_rules(self):
+        files = (
+            DiffFile("docs/example.md", ("Use eval(x) only in a sandbox.",), ()),
+        )
+        self.assertNotIn("python-eval", {f.rule for f in analyze(files)})
 
     def test_tests_suppress_missing_test_finding(self):
         files = (
