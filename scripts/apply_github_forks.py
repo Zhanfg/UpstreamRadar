@@ -63,12 +63,13 @@ def main() -> int:
     config = load(CONFIG_PATH, {})
     queue = load(QUEUE_PATH, [])
     history = load(HISTORY_PATH, [])
+    login = current_login()
     plans = select_fork_batch(
         queue,
         history,
         config,
         platform="github",
-        personal_namespace=current_login(),
+        personal_namespace=login,
     )
     if not plans:
         print("FORK=SKIP no configured namespace, capacity, or eligible candidate")
@@ -76,10 +77,9 @@ def main() -> int:
 
     for plan in plans:
         owner, repo = plan.full_name.split("/", 1)
-        payload = {
-            "organization": plan.destination,
-            "default_branch_only": True,
-        }
+        payload = {"default_branch_only": True}
+        if plan.destination != login:
+            payload["organization"] = plan.destination
         try:
             created = request(
                 f"/repos/{quote(owner)}/{quote(repo)}/forks",
