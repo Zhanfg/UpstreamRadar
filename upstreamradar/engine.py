@@ -1,10 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from math import exp, isfinite, log1p, sqrt
+from math import exp, isfinite, log, log1p, sqrt
 from statistics import median
 from typing import Dict, List, Mapping, MutableMapping, Sequence, Tuple
-
 
 _EPS = 1e-12
 
@@ -13,8 +12,9 @@ _EPS = 1e-12
 class RepositorySignal:
     """Raw observation for one upstream repository.
 
-    Most numeric fields are intentionally unit-agnostic. HARMONY performs
-    robust, ecosystem-local normalization before combining them.
+    HARMONY v2 keeps the original scalar telemetry but can additionally consume
+    short observation histories. New fields are optional so v1 callers remain
+    source-compatible.
     """
 
     name: str
@@ -33,6 +33,12 @@ class RepositorySignal:
     prior_beta: float = 1.0
     recent_change_hits: int = 0
     recent_change_misses: int = 0
+    change_history: Tuple[int, ...] = ()
+    impact_history: Tuple[float, ...] = ()
+    observation_count: int = 0
+    content_signal: float = 0.0
+    source_reliability: float = 1.0
+    failure_streak: int = 0
 
 
 @dataclass(frozen=True)
@@ -45,7 +51,15 @@ class CandidateScore:
     graph_influence: float
     anomaly: float
     uncertainty: float
+    momentum: float
+    change_point: float
+    entropy: float
+    content_yield: float
+    reliability: float
+    exploration: float
+    security_focus: float
     base_utility: float
+    reasons: Tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -55,37 +69,59 @@ class ScheduleResult:
     total_utility: float
     ecosystem_counts: Mapping[str, int]
     explored_states: int
+    coverage_score: float = 0.0
+    content_score: float = 0.0
 
 
 @dataclass(frozen=True)
 class HarmonyConfig:
     half_life_hours: float = 18.0
-    pagerank_damping: float = 0.85
-    pagerank_steps: int = 40
+    graph_damping: float = 0.84
+    graph_steps: int = 36
+    ecosystem_affinity: float = 0.12
 
-    local_weight: float = 0.28
-    probability_weight: float = 0.18
-    graph_weight: float = 0.20
-    anomaly_weight: float = 0.14
-    uncertainty_weight: float = 0.10
-    security_weight: float = 0.10
+    local_weight: float = 0.18
+    probability_weight: float = 0.12
+    graph_weight: float = 0.15
+    anomaly_weight: float = 0.08
+    uncertainty_weight: float = 0.07
+    security_weight: float = 0.08
+    momentum_weight: float = 0.09
+    change_point_weight: float = 0.10
+    content_weight: float = 0.09
+    reliability_weight: float = 0.04
 
-    diversity_bonus: float = 0.14
-    redundancy_penalty: float = 0.08
-    dependency_overlap_penalty: float = 0.06
-    beam_width: int = 96
+    diversity_bonus: float = 0.10
+    redundancy_penalty: float = 0.07
+    dependency_overlap_penalty: float = 0.05
+    coverage_bonus_weight: float = 0.18
+    exploration_bonus_weight: float = 0.10
 
+    beam_width: int = 128
     robust_clip: float = 4.0
+    min_reliability: float = 0.15
+
+    ewma_fast_alpha: float = 0.58
+    ewma_medium_alpha: float = 0.26
+    ewma_slow_alpha: float = 0.09
+    change_point_delta: float = 0.04
+    change_point_scale: float = 1.25
 
     def validate(self) -> None:
         if self.half_life_hours <= 0:
             raise ValueError("half_life_hours must be positive")
-        if not 0.0 < self.pagerank_damping < 1.0:
-            raise ValueError("pagerank_damping must be in (0, 1)")
-        if self.pagerank_steps <= 0:
-            raise ValueError("pagerank_steps must be positive")
+        if not 0.0 < self.graph_damping < 1.0:
+            raise ValueError("graph_damping must be in (0, 1)")
+        if self.graph_steps <= 0:
+            raise ValueError("graph_steps must be positive")
         if self.beam_width <= 0:
             raise ValueError("beam_width must be positive")
+        for name in ("ewma_fast_alpha", "ewma_medium_alpha", "ewma_slow_alpha"):
+            alpha = getattr(self, name)
+            if not 0.0 < alpha <= 1.0:
+                raise ValueError(f"{name} must be in (0, 1]")
+        if not 0.0 < self.min_reliability <= 1.0:
+            raise ValueError("min_reliability must be in (0, 1]")
 
 
 @dataclass
@@ -97,24 +133,11 @@ class _BeamState:
     selected_names: frozenset[str] = frozenset()
 
     def signature(self) -> Tuple[int, Tuple[Tuple[str, int], ...], frozenset[str]]:
-        return (
-            self.cost,
-            tuple(sorted(self.ecosystem_counts.items())),
-            self.selected_names,
-        )
+        return self.cost, tuple(sorted(self.ecosystem_counts.items())), self.selected_names
 
 
 class HarmonyScheduler:
-    """Hierarchical Adaptive Radar Multi-objective Optimizer.
-
-    Pipeline:
-      1. robust normalization inside each ecosystem,
-      2. Bayesian change-probability estimation,
-      3. dependency-graph influence diffusion,
-      4. robust anomaly scoring,
-      5. multi-objective utility fusion,
-      6. diversity-aware budgeted beam search.
-    """
+    """HARMONY v2: content-aware, multi-timescale upstream scheduling."""
 
     _LOCAL_FEATURES = (
         "commit_velocity",
@@ -125,6 +148,7 @@ class HarmonyScheduler:
         "dependency_importance",
         "maintainer_activity",
         "novelty",
+        "content_signal",
     )
 
     def __init__(self, config: HarmonyConfig | None = None) -> None:
@@ -133,9 +157,11 @@ class HarmonyScheduler:
 
     @staticmethod
     def _safe(value: float) -> float:
-        if not isfinite(value):
-            return 0.0
-        return float(value)
+        return 0.0 if not isfinite(value) else float(value)
+
+    @staticmethod
+    def _clamp(value: float, low: float = 0.0, high: float = 1.0) -> float:
+        return max(low, min(high, value))
 
     @staticmethod
     def _sigmoid(x: float) -> float:
@@ -160,114 +186,253 @@ class HarmonyScheduler:
         for record in records:
             by_ecosystem.setdefault(record.ecosystem, []).append(record)
 
-        normalized: Dict[str, Dict[str, float]] = {r.name: {} for r in records}
+        global_stats: Dict[str, Tuple[float, float]] = {}
+        for feature in self._LOCAL_FEATURES:
+            values = [self._safe(getattr(record, feature)) for record in records]
+            center = median(values)
+            global_stats[feature] = (center, self._mad(values, center))
 
+        normalized: Dict[str, Dict[str, float]] = {record.name: {} for record in records}
         for ecosystem_records in by_ecosystem.values():
+            shrink = min(1.0, len(ecosystem_records) / 4.0)
             for feature in self._LOCAL_FEATURES:
-                values = [self._safe(getattr(r, feature)) for r in ecosystem_records]
-                center = median(values)
-                scale = self._mad(values, center)
+                values = [self._safe(getattr(record, feature)) for record in ecosystem_records]
+                local_center = median(values)
+                local_scale = self._mad(values, local_center)
+                global_center, global_scale = global_stats[feature]
+                center = shrink * local_center + (1.0 - shrink) * global_center
+                scale = shrink * local_scale + (1.0 - shrink) * global_scale
+                scale = max(scale, 1e-6)
+
                 for record, value in zip(ecosystem_records, values):
                     z = (value - center) / scale
-                    z = max(-self.config.robust_clip, min(self.config.robust_clip, z))
-                    normalized[record.name][feature] = z
-
+                    normalized[record.name][feature] = max(
+                        -self.config.robust_clip,
+                        min(self.config.robust_clip, z),
+                    )
         return normalized
 
     def _change_probability(self, record: RepositorySignal) -> Tuple[float, float]:
         alpha = max(record.prior_alpha, _EPS) + max(record.recent_change_hits, 0)
         beta = max(record.prior_beta, _EPS) + max(record.recent_change_misses, 0)
         total = alpha + beta
-
         posterior_mean = alpha / total
         posterior_variance = (alpha * beta) / (total * total * (total + 1.0))
 
         freshness = max(self._safe(record.freshness_hours), 0.0)
-        decay = exp(-log1p(1.0) * freshness / self.config.half_life_hours)
-
-        probability = posterior_mean * (0.20 + 0.80 * decay)
+        decay = exp(-log(2.0) * freshness / self.config.half_life_hours)
+        probability = posterior_mean * (0.18 + 0.82 * decay)
         uncertainty = sqrt(max(posterior_variance, 0.0))
         return probability, uncertainty
 
-    def _pagerank(
-        self,
-        records: Sequence[RepositorySignal],
-        dependencies: Mapping[str, Sequence[str]],
-    ) -> Dict[str, float]:
-        names = tuple(r.name for r in records)
-        if not names:
-            return {}
-        known = set(names)
-        n = len(names)
-        base = 1.0 / n
-        rank = {name: base for name in names}
+    @staticmethod
+    def _ewma(values: Sequence[float], alpha: float) -> float:
+        if not values:
+            return 0.0
+        value = float(values[0])
+        for item in values[1:]:
+            value = (1.0 - alpha) * value + alpha * float(item)
+        return value
 
-        reverse: Dict[str, List[str]] = {name: [] for name in names}
-        out_degree: Dict[str, int] = {name: 0 for name in names}
+    def _dynamics(self, record: RepositorySignal) -> Tuple[float, float, float, float]:
+        if record.impact_history:
+            history = tuple(
+                self._clamp(self._safe(value) / 10.0)
+                for value in record.impact_history
+            )
+        elif record.change_history:
+            history = tuple(float(bool(value)) for value in record.change_history)
+        else:
+            posterior = record.recent_change_hits / max(
+                record.recent_change_hits + record.recent_change_misses,
+                1,
+            )
+            history = (posterior,)
 
-        for src in names:
-            deps = [dst for dst in dependencies.get(src, ()) if dst in known and dst != src]
-            out_degree[src] = len(deps)
-            for dst in deps:
-                reverse[dst].append(src)
+        fast = self._ewma(history, self.config.ewma_fast_alpha)
+        medium = self._ewma(history, self.config.ewma_medium_alpha)
+        slow = self._ewma(history, self.config.ewma_slow_alpha)
+        acceleration = (fast - medium) + 0.6 * (medium - slow)
+        momentum = self._sigmoid(4.0 * acceleration)
 
-        d = self.config.pagerank_damping
-        for _ in range(self.config.pagerank_steps):
-            dangling = sum(rank[name] for name in names if out_degree[name] == 0)
-            next_rank: Dict[str, float] = {}
-            for node in names:
-                incoming = sum(
-                    rank[src] / out_degree[src]
-                    for src in reverse[node]
-                    if out_degree[src] > 0
-                )
-                next_rank[node] = (1.0 - d) * base + d * (incoming + dangling * base)
-            rank = next_rank
+        mean = 0.0
+        cumulative = 0.0
+        minimum = 0.0
+        peak = 0.0
+        for index, value in enumerate(history, start=1):
+            mean += (value - mean) / index
+            cumulative += value - mean - self.config.change_point_delta
+            minimum = min(minimum, cumulative)
+            peak = max(peak, cumulative - minimum)
+        change_point = 1.0 - exp(
+            -max(peak, 0.0) / self.config.change_point_scale
+        )
 
-        total = sum(rank.values()) or 1.0
-        return {name: value / total for name, value in rank.items()}
+        center = sum(history) / len(history)
+        volatility = sqrt(
+            sum((value - center) ** 2 for value in history) / len(history)
+        )
+
+        if record.change_history:
+            hits = sum(int(bool(value)) for value in record.change_history)
+            probability = hits / len(record.change_history)
+        else:
+            probability = center
+
+        if probability <= _EPS or probability >= 1.0 - _EPS:
+            entropy = 0.0
+        else:
+            entropy = -(
+                probability * log(probability)
+                + (1.0 - probability) * log(1.0 - probability)
+            ) / log(2.0)
+
+        return (
+            momentum,
+            change_point,
+            self._clamp(volatility * 2.0),
+            self._clamp(entropy),
+        )
 
     def _local_and_anomaly(
         self,
-        record: RepositorySignal,
         z: Mapping[str, float],
     ) -> Tuple[float, float]:
         activity = (
-            0.34 * z["commit_velocity"]
-            + 0.22 * z["release_velocity"]
-            + 0.16 * z["issue_velocity"]
-            + 0.18 * z["maintainer_activity"]
-            + 0.10 * z["novelty"]
+            0.30 * z["commit_velocity"]
+            + 0.20 * z["release_velocity"]
+            + 0.14 * z["issue_velocity"]
+            + 0.16 * z["maintainer_activity"]
+            + 0.08 * z["novelty"]
+            + 0.12 * z["content_signal"]
         )
         risk = (
             0.42 * z["security_signal"]
-            + 0.36 * z["breakage_risk"]
-            + 0.22 * z["dependency_importance"]
+            + 0.34 * z["breakage_risk"]
+            + 0.24 * z["dependency_importance"]
         )
-
         interaction = self._sigmoid(activity) * self._sigmoid(risk)
         local_signal = self._sigmoid(
-            0.54 * activity
-            + 0.46 * risk
-            + 0.55 * interaction
+            0.50 * activity + 0.42 * risk + 0.62 * interaction
         )
 
         groups = (
             (z["commit_velocity"], z["release_velocity"], z["issue_velocity"]),
             (z["security_signal"], z["breakage_risk"]),
             (z["dependency_importance"], z["maintainer_activity"], z["novelty"]),
+            (z["content_signal"],),
         )
-        group_energy = [
-            sqrt(sum(v * v for v in group) / max(len(group), 1))
+        energy = [
+            sqrt(sum(value * value for value in group) / max(len(group), 1))
             for group in groups
         ]
         anomaly = self._sigmoid(
-            0.50 * group_energy[0]
-            + 0.30 * group_energy[1]
-            + 0.20 * group_energy[2]
-            - 0.75
+            0.38 * energy[0]
+            + 0.24 * energy[1]
+            + 0.20 * energy[2]
+            + 0.18 * energy[3]
+            - 0.72
         )
         return local_signal, anomaly
+
+    def _seeded_graph_diffusion(
+        self,
+        records: Sequence[RepositorySignal],
+        dependencies: Mapping[str, Sequence[str]],
+        seeds: Mapping[str, float],
+    ) -> Dict[str, float]:
+        names = tuple(record.name for record in records)
+        if not names:
+            return {}
+
+        known = set(names)
+        by_ecosystem: Dict[str, List[str]] = {}
+        for record in records:
+            by_ecosystem.setdefault(record.ecosystem, []).append(record.name)
+
+        outgoing: Dict[str, Dict[str, float]] = {name: {} for name in names}
+        for record in records:
+            source = record.name
+            for target in dependencies.get(source, ()):
+                if target in known and target != source:
+                    outgoing[source][target] = (
+                        outgoing[source].get(target, 0.0) + 1.0
+                    )
+
+            peers = [
+                peer
+                for peer in by_ecosystem[record.ecosystem]
+                if peer != source
+            ]
+            if peers:
+                affinity = self.config.ecosystem_affinity / len(peers)
+                for peer in peers:
+                    outgoing[source][peer] = (
+                        outgoing[source].get(peer, 0.0) + affinity
+                    )
+
+        seed_total = sum(max(seeds.get(name, 0.0), _EPS) for name in names)
+        teleport = {
+            name: max(seeds.get(name, 0.0), _EPS) / seed_total
+            for name in names
+        }
+        rank = dict(teleport)
+        damping = self.config.graph_damping
+
+        for _ in range(self.config.graph_steps):
+            next_rank = {
+                name: (1.0 - damping) * teleport[name]
+                for name in names
+            }
+            dangling = 0.0
+            for source in names:
+                edges = outgoing[source]
+                weight_sum = sum(edges.values())
+                if weight_sum <= _EPS:
+                    dangling += rank[source]
+                    continue
+                for target, weight in edges.items():
+                    next_rank[target] += (
+                        damping * rank[source] * weight / weight_sum
+                    )
+
+            if dangling:
+                for name in names:
+                    next_rank[name] += (
+                        damping * dangling * teleport[name]
+                    )
+            rank = next_rank
+
+        total = sum(rank.values()) or 1.0
+        return {
+            name: value / total
+            for name, value in rank.items()
+        }
+
+    def _reliability(self, record: RepositorySignal) -> float:
+        base = self._clamp(self._safe(record.source_reliability))
+        decay = exp(-0.22 * max(record.failure_streak, 0))
+        return max(self.config.min_reliability, base * decay)
+
+    def _reasons(self, score: CandidateScore) -> Tuple[str, ...]:
+        reasons: List[str] = []
+        if score.change_point >= 0.45:
+            reasons.append("regime-shift")
+        if score.momentum >= 0.62:
+            reasons.append("accelerating")
+        if score.content_yield >= 0.62:
+            reasons.append("high-content-yield")
+        if score.graph_influence >= 0.65:
+            reasons.append("dependency-hub")
+        if score.security_focus >= 0.62:
+            reasons.append("security-focus")
+        if score.exploration >= 0.10:
+            reasons.append("uncertainty-exploration")
+        if score.change_probability >= 0.62:
+            reasons.append("likely-change")
+        if score.anomaly >= 0.65:
+            reasons.append("anomalous")
+        return tuple(reasons[:5])
 
     def score(
         self,
@@ -278,78 +443,312 @@ class HarmonyScheduler:
         if not records:
             return ()
 
-        names = [r.name for r in records]
+        names = [record.name for record in records]
         if len(names) != len(set(names)):
             raise ValueError("repository names must be unique")
-        if any(r.cost <= 0 for r in records):
+        if any(record.cost <= 0 for record in records):
             raise ValueError("cost must be a positive integer")
 
-        z = self._robust_normalize(records)
-        graph = self._pagerank(records, dependencies)
+        normalized = self._robust_normalize(records)
+        prepared: Dict[str, Dict[str, float]] = {}
+        total_observations = 1 + sum(
+            max(record.observation_count, 0)
+            for record in records
+        )
+
+        for record in records:
+            local, anomaly = self._local_and_anomaly(
+                normalized[record.name]
+            )
+            probability, uncertainty = self._change_probability(record)
+            momentum, change_point, volatility, entropy = self._dynamics(record)
+            reliability = self._reliability(record)
+            content_yield = self._sigmoid(
+                0.68 * normalized[record.name]["content_signal"]
+                + 1.10 * change_point
+                + 0.78 * entropy
+                + 0.62 * volatility
+                + 0.42 * momentum
+            )
+            exploration = uncertainty * sqrt(
+                log1p(total_observations)
+                / (1.0 + max(record.observation_count, 0))
+            )
+            security = self._sigmoid(
+                normalized[record.name]["security_signal"]
+            )
+            seed = (
+                0.28 * local
+                + 0.24 * change_point
+                + 0.22 * content_yield
+                + 0.14 * security
+                + 0.12 * probability
+            )
+            prepared[record.name] = {
+                "local": local,
+                "anomaly": anomaly,
+                "probability": probability,
+                "uncertainty": uncertainty,
+                "momentum": momentum,
+                "change_point": change_point,
+                "entropy": entropy,
+                "content_yield": content_yield,
+                "reliability": reliability,
+                "exploration": exploration,
+                "security": security,
+                "seed": seed,
+            }
+
+        graph = self._seeded_graph_diffusion(
+            records,
+            dependencies,
+            {
+                name: values["seed"]
+                for name, values in prepared.items()
+            },
+        )
         max_graph = max(graph.values(), default=1.0) or 1.0
+        config = self.config
+        weight_sum = (
+            config.local_weight
+            + config.probability_weight
+            + config.graph_weight
+            + config.anomaly_weight
+            + config.uncertainty_weight
+            + config.security_weight
+            + config.momentum_weight
+            + config.change_point_weight
+            + config.content_weight
+            + config.reliability_weight
+        )
 
         scored: List[CandidateScore] = []
         for record in records:
-            local, anomaly = self._local_and_anomaly(record, z[record.name])
-            probability, uncertainty = self._change_probability(record)
+            values = prepared[record.name]
             influence = graph.get(record.name, 0.0) / max_graph
-            security = self._sigmoid(z[record.name]["security_signal"])
-
-            c = self.config
             utility = (
-                c.local_weight * local
-                + c.probability_weight * probability
-                + c.graph_weight * influence
-                + c.anomaly_weight * anomaly
-                + c.uncertainty_weight * uncertainty
-                + c.security_weight * security
+                config.local_weight * values["local"]
+                + config.probability_weight * values["probability"]
+                + config.graph_weight * influence
+                + config.anomaly_weight * values["anomaly"]
+                + config.uncertainty_weight * values["uncertainty"]
+                + config.security_weight * values["security"]
+                + config.momentum_weight * values["momentum"]
+                + config.change_point_weight * values["change_point"]
+                + config.content_weight * values["content_yield"]
+                + config.reliability_weight * values["reliability"]
+            ) / weight_sum
+
+            utility *= 0.82 + 0.18 * values["reliability"]
+            utility *= 1.0 + 0.07 * log1p(1.0 / record.cost)
+
+            provisional = CandidateScore(
+                name=record.name,
+                ecosystem=record.ecosystem,
+                cost=record.cost,
+                local_signal=values["local"],
+                change_probability=values["probability"],
+                graph_influence=influence,
+                anomaly=values["anomaly"],
+                uncertainty=values["uncertainty"],
+                momentum=values["momentum"],
+                change_point=values["change_point"],
+                entropy=values["entropy"],
+                content_yield=values["content_yield"],
+                reliability=values["reliability"],
+                exploration=values["exploration"],
+                security_focus=values["security"],
+                base_utility=utility,
             )
-
-            density_adjustment = 1.0 + 0.08 * log1p(1.0 / record.cost)
-            utility *= density_adjustment
-
             scored.append(
                 CandidateScore(
-                    name=record.name,
-                    ecosystem=record.ecosystem,
-                    cost=record.cost,
-                    local_signal=local,
-                    change_probability=probability,
-                    graph_influence=influence,
-                    anomaly=anomaly,
-                    uncertainty=uncertainty,
-                    base_utility=utility,
+                    **{
+                        **provisional.__dict__,
+                        "reasons": self._reasons(provisional),
+                    }
                 )
             )
 
-        return tuple(sorted(scored, key=lambda x: (-x.base_utility, x.name)))
+        return tuple(
+            sorted(
+                scored,
+                key=lambda item: (-item.base_utility, item.name),
+            )
+        )
+
+    @staticmethod
+    def _jaccard(
+        left: frozenset[str],
+        right: frozenset[str],
+    ) -> float:
+        union = left | right
+        return 0.0 if not union else len(left & right) / len(union)
+
+    def _similarity(
+        self,
+        left: CandidateScore,
+        right: CandidateScore,
+        dependency_sets: Mapping[str, frozenset[str]],
+    ) -> float:
+        if left.name == right.name:
+            return 1.0
+
+        ecosystem = 1.0 if left.ecosystem == right.ecosystem else 0.0
+        dependency = self._jaccard(
+            dependency_sets.get(left.name, frozenset()),
+            dependency_sets.get(right.name, frozenset()),
+        )
+        profile_distance = (
+            abs(left.content_yield - right.content_yield)
+            + abs(left.change_point - right.change_point)
+            + abs(left.security_focus - right.security_focus)
+        ) / 3.0
+        profile = exp(-2.4 * profile_distance)
+        return self._clamp(
+            0.42 * ecosystem
+            + 0.34 * dependency
+            + 0.24 * profile
+        )
+
+    def _coverage_gain(
+        self,
+        candidate: CandidateScore,
+        selected_names: frozenset[str],
+        scores_by_name: Mapping[str, CandidateScore],
+        similarity: Mapping[Tuple[str, str], float],
+    ) -> float:
+        if not scores_by_name:
+            return 0.0
+
+        gain = 0.0
+        for target_name in scores_by_name:
+            current = max(
+                (
+                    similarity[(target_name, selected)]
+                    for selected in selected_names
+                ),
+                default=0.0,
+            )
+            proposed = max(
+                current,
+                similarity[(target_name, candidate.name)],
+            )
+            gain += proposed - current
+        return gain / len(scores_by_name)
 
     def _marginal_utility(
         self,
         candidate: CandidateScore,
         state: _BeamState,
         dependency_sets: Mapping[str, frozenset[str]],
+        scores_by_name: Mapping[str, CandidateScore],
+        similarity: Mapping[Tuple[str, str], float],
     ) -> float:
-        same_ecosystem = state.ecosystem_counts.get(candidate.ecosystem, 0)
+        same_ecosystem = state.ecosystem_counts.get(
+            candidate.ecosystem,
+            0,
+        )
+        diversity = self.config.diversity_bonus / (
+            1.0 + same_ecosystem
+        )
+        redundancy = (
+            self.config.redundancy_penalty * same_ecosystem
+        )
 
-        diversity = self.config.diversity_bonus / (1.0 + same_ecosystem)
-        redundancy = self.config.redundancy_penalty * same_ecosystem
+        max_overlap = 0.0
+        candidate_dependencies = dependency_sets.get(
+            candidate.name,
+            frozenset(),
+        )
+        for selected in state.selected_names:
+            max_overlap = max(
+                max_overlap,
+                self._jaccard(
+                    candidate_dependencies,
+                    dependency_sets.get(selected, frozenset()),
+                ),
+            )
 
-        overlap_penalty = 0.0
-        deps = dependency_sets.get(candidate.name, frozenset())
-        if deps and state.selected_names:
-            max_overlap = 0.0
-            for selected in state.selected_names:
-                other = dependency_sets.get(selected, frozenset())
-                if not other:
-                    continue
-                union = deps | other
-                if union:
-                    max_overlap = max(max_overlap, len(deps & other) / len(union))
-            overlap_penalty = self.config.dependency_overlap_penalty * max_overlap
+        coverage = self._coverage_gain(
+            candidate,
+            state.selected_names,
+            scores_by_name,
+            similarity,
+        )
+        exploration = (
+            self.config.exploration_bonus_weight
+            * candidate.exploration
+        )
+        content_bonus = (
+            0.04
+            * candidate.content_yield
+            * (1.0 + candidate.change_point)
+        )
 
-        exploration = self.config.uncertainty_weight * candidate.uncertainty
-        return candidate.base_utility + diversity + exploration - redundancy - overlap_penalty
+        return (
+            candidate.base_utility
+            + diversity
+            + self.config.coverage_bonus_weight * coverage
+            + exploration
+            + content_bonus
+            - redundancy
+            - self.config.dependency_overlap_penalty * max_overlap
+        )
+
+    def _fractional_upper_bound(
+        self,
+        state: _BeamState,
+        remaining: Sequence[CandidateScore],
+        budget: int,
+    ) -> float:
+        capacity = budget - state.cost
+        if capacity <= 0:
+            return state.utility
+
+        optimistic = []
+        for candidate in remaining:
+            gain = (
+                candidate.base_utility
+                + self.config.diversity_bonus
+                + self.config.coverage_bonus_weight
+                + self.config.exploration_bonus_weight
+                * candidate.exploration
+                + 0.08 * candidate.content_yield
+            )
+            optimistic.append(
+                (gain / candidate.cost, gain, candidate.cost)
+            )
+        optimistic.sort(reverse=True)
+
+        bound = state.utility
+        remaining_capacity = float(capacity)
+        for _, gain, cost in optimistic:
+            if remaining_capacity <= 0:
+                break
+            if cost <= remaining_capacity:
+                bound += gain
+                remaining_capacity -= cost
+            else:
+                bound += gain * (remaining_capacity / cost)
+                break
+        return bound
+
+    def _portfolio_coverage(
+        self,
+        selected_names: frozenset[str],
+        scores_by_name: Mapping[str, CandidateScore],
+        similarity: Mapping[Tuple[str, str], float],
+    ) -> float:
+        if not scores_by_name or not selected_names:
+            return 0.0
+
+        total = 0.0
+        for target_name in scores_by_name:
+            total += max(
+                similarity[(target_name, selected)]
+                for selected in selected_names
+            )
+        return total / len(scores_by_name)
 
     def schedule(
         self,
@@ -361,34 +760,70 @@ class HarmonyScheduler:
     ) -> ScheduleResult:
         if budget < 0:
             raise ValueError("budget must be non-negative")
+
         dependencies = dependencies or {}
-        min_per_ecosystem = dict(min_per_ecosystem or {})
-        max_per_ecosystem = dict(max_per_ecosystem or {})
-
+        minimums = dict(min_per_ecosystem or {})
+        maximums = dict(max_per_ecosystem or {})
         scores = self.score(records, dependencies)
-        if not scores or budget == 0:
-            return ScheduleResult((), 0, 0.0, {}, 1)
 
-        for eco, minimum in min_per_ecosystem.items():
+        if not scores or budget == 0:
+            return ScheduleResult(
+                (),
+                0,
+                0.0,
+                {},
+                1,
+                0.0,
+                0.0,
+            )
+
+        for ecosystem, minimum in minimums.items():
             if minimum < 0:
-                raise ValueError(f"negative minimum for ecosystem {eco}")
-        for eco, maximum in max_per_ecosystem.items():
+                raise ValueError(
+                    f"negative minimum for ecosystem {ecosystem}"
+                )
+        for ecosystem, maximum in maximums.items():
             if maximum < 0:
-                raise ValueError(f"negative maximum for ecosystem {eco}")
-            if maximum < min_per_ecosystem.get(eco, 0):
-                raise ValueError(f"maximum below minimum for ecosystem {eco}")
+                raise ValueError(
+                    f"negative maximum for ecosystem {ecosystem}"
+                )
+            if maximum < minimums.get(ecosystem, 0):
+                raise ValueError(
+                    f"maximum below minimum for ecosystem {ecosystem}"
+                )
 
         dependency_sets = {
-            name: frozenset(dependencies.get(name, ()))
-            for name in (s.name for s in scores)
+            score.name: frozenset(
+                dependencies.get(score.name, ())
+            )
+            for score in scores
+        }
+        scores_by_name = {
+            score.name: score
+            for score in scores
+        }
+        similarity = {
+            (left.name, right.name): self._similarity(
+                left,
+                right,
+                dependency_sets,
+            )
+            for left in scores
+            for right in scores
         }
 
         ordered = tuple(
             sorted(
                 scores,
-                key=lambda s: (
-                    -(0.72 * s.base_utility + 0.28 * (s.base_utility / s.cost)),
-                    s.name,
+                key=lambda score: (
+                    -(
+                        0.60 * score.base_utility
+                        + 0.22
+                        * (score.base_utility / score.cost)
+                        + 0.10 * score.content_yield
+                        + 0.08 * score.change_point
+                    ),
+                    score.name,
                 ),
             )
         )
@@ -396,88 +831,131 @@ class HarmonyScheduler:
         beam: List[_BeamState] = [_BeamState()]
         explored = 1
 
-        for idx, candidate in enumerate(ordered):
+        for index, candidate in enumerate(ordered):
             next_states: List[_BeamState] = []
 
             for state in beam:
                 next_states.append(state)
-
                 new_cost = state.cost + candidate.cost
                 if new_cost > budget:
                     continue
 
-                current_count = state.ecosystem_counts.get(candidate.ecosystem, 0)
-                max_allowed = max_per_ecosystem.get(candidate.ecosystem)
-                if max_allowed is not None and current_count >= max_allowed:
+                current_count = state.ecosystem_counts.get(
+                    candidate.ecosystem,
+                    0,
+                )
+                maximum = maximums.get(candidate.ecosystem)
+                if (
+                    maximum is not None
+                    and current_count >= maximum
+                ):
                     continue
 
-                gain = self._marginal_utility(candidate, state, dependency_sets)
                 counts = dict(state.ecosystem_counts)
                 counts[candidate.ecosystem] = current_count + 1
-
+                gain = self._marginal_utility(
+                    candidate,
+                    state,
+                    dependency_sets,
+                    scores_by_name,
+                    similarity,
+                )
                 next_states.append(
                     _BeamState(
-                        chosen=state.chosen + (idx,),
+                        chosen=state.chosen + (index,),
                         cost=new_cost,
                         utility=state.utility + gain,
                         ecosystem_counts=counts,
-                        selected_names=state.selected_names | {candidate.name},
+                        selected_names=(
+                            state.selected_names
+                            | {candidate.name}
+                        ),
                     )
                 )
                 explored += 1
 
             dedup: MutableMapping[
-                Tuple[int, Tuple[Tuple[str, int], ...], frozenset[str]],
+                Tuple[
+                    int,
+                    Tuple[Tuple[str, int], ...],
+                    frozenset[str],
+                ],
                 _BeamState,
             ] = {}
             for state in next_states:
-                sig = state.signature()
-                old = dedup.get(sig)
-                if old is None or state.utility > old.utility:
-                    dedup[sig] = state
+                signature = state.signature()
+                previous = dedup.get(signature)
+                if (
+                    previous is None
+                    or state.utility > previous.utility
+                ):
+                    dedup[signature] = state
 
-            remaining = ordered[idx + 1 :]
-            optimistic_tail = sum(
-                s.base_utility
-                for s in remaining[: max(0, self.config.beam_width // 8)]
-            )
-
+            remaining = ordered[index + 1 :]
             beam = sorted(
                 dedup.values(),
-                key=lambda s: (
-                    -(s.utility + optimistic_tail),
-                    -s.utility,
-                    s.cost,
-                    tuple(sorted(s.selected_names)),
+                key=lambda state: (
+                    -self._fractional_upper_bound(
+                        state,
+                        remaining,
+                        budget,
+                    ),
+                    -state.utility,
+                    state.cost,
+                    tuple(sorted(state.selected_names)),
                 ),
             )[: self.config.beam_width]
 
-        def satisfies_minimums(state: _BeamState) -> bool:
-            return all(
-                state.ecosystem_counts.get(eco, 0) >= minimum
-                for eco, minimum in min_per_ecosystem.items()
+        feasible = [
+            state
+            for state in beam
+            if all(
+                state.ecosystem_counts.get(ecosystem, 0)
+                >= minimum
+                for ecosystem, minimum in minimums.items()
             )
-
-        feasible = [state for state in beam if satisfies_minimums(state)]
+        ]
         if not feasible:
             raise ValueError(
-                "no schedule satisfies budget and ecosystem minimum constraints"
+                "no schedule satisfies budget and "
+                "ecosystem minimum constraints"
             )
 
         best = max(
             feasible,
-            key=lambda s: (
-                s.utility,
-                -s.cost,
-                tuple(sorted(s.selected_names)),
+            key=lambda state: (
+                state.utility,
+                -state.cost,
+                tuple(sorted(state.selected_names)),
             ),
         )
+        selected = tuple(
+            ordered[index]
+            for index in best.chosen
+        )
+        coverage = self._portfolio_coverage(
+            best.selected_names,
+            scores_by_name,
+            similarity,
+        )
+        content_score = (
+            sum(
+                score.content_yield
+                for score in selected
+            )
+            / len(selected)
+            if selected
+            else 0.0
+        )
 
-        selected = tuple(ordered[i] for i in best.chosen)
         return ScheduleResult(
             selected=selected,
             total_cost=best.cost,
             total_utility=best.utility,
-            ecosystem_counts=dict(sorted(best.ecosystem_counts.items())),
+            ecosystem_counts=dict(
+                sorted(best.ecosystem_counts.items())
+            ),
             explored_states=explored,
+            coverage_score=coverage,
+            content_score=content_score,
         )
