@@ -1,0 +1,61 @@
+name: Validate GitHub Discovery Organization
+
+on:
+  push:
+    branches:
+      - "config/github-discovery-org"
+    paths:
+      - "config/discovery.json"
+      - "tests/test_forking.py"
+      - ".github/workflows/validate-github-discovery-org.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate configuration
+        run: python -m unittest tests.test_forking -v
+
+      - name: Validate organization and fork credential readiness
+        shell: bash
+        env:
+          RADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+          FORK_PAT: ${{ secrets.UPSTREAMRADAR_FORK_PAT }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+
+          org = json.load(open("config/discovery.json"))["destinations"]["github_organization"]
+          assert org == "yuezhou-build"
+
+          def get(url, token):
+              req = urllib.request.Request(
+                  url,
+                  headers={
+                      "Authorization": f"Bearer {token}",
+                      "Accept": "application/vnd.github+json",
+                      "User-Agent": "UpstreamRadar-Org-Validator",
+                  },
+              )
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  return json.loads(response.read().decode())
+
+          org_data = get(f"https://api.github.com/orgs/{org}", os.environ["RADAR_PAT"])
+          assert org_data["login"].lower() == org.lower()
+          print(f"GITHUB_ORG=PASS login={org_data['login']}")
+
+          fork_pat = os.environ.get("FORK_PAT", "")
+          if not fork_pat:
+              print("FORK_PAT=MISSING")
+          else:
+              user = get("https://api.github.com/user", fork_pat)
+              print(f"FORK_PAT=READY login={user.get('login')}")
+          PY
