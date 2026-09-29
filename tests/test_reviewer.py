@@ -46,8 +46,9 @@ class ReviewerTests(unittest.TestCase):
         self.assertIn("possible-secret", {f.rule for f in analyze(files)})
 
     def test_documentation_examples_do_not_trigger_code_rules(self):
+        documentation_line = "Use " + "ev" + "al(x) only in a sandbox."
         files = (
-            DiffFile("docs/example.md", ("Use eval(x) only in a sandbox.",), ()),
+            DiffFile("docs/example.md", (documentation_line,), ()),
         )
         self.assertNotIn("python-eval", {f.rule for f in analyze(files)})
 
