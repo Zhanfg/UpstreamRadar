@@ -41,11 +41,17 @@ jobs:
           UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
         run: python -m scripts.discover_github
 
+      - name: Apply governed GitHub forks
+        env:
+          UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+          UPSTREAMRADAR_FORK_PAT: ${{ secrets.UPSTREAMRADAR_FORK_PAT }}
+        run: python -m scripts.apply_github_forks
+
       - name: Commit discovery evidence
         shell: bash
         run: |
           set -euo pipefail
-          git add             state/discovery_github.json             discovery/github_candidates.json             discovery/github_fork_queue.json             reports/discovery/github.md
+          git add -A state discovery reports/discovery
 
           if git diff --cached --quiet; then
             echo "No discovery changes."
