@@ -37,6 +37,7 @@ jobs:
           fi
 
       - name: Clone public GitLab UpstreamRadar
+        id: clone
         if: steps.bridge_secret.outputs.available == 'true'
         shell: bash
         run: |
@@ -49,6 +50,7 @@ jobs:
           python-version: "3.13"
 
       - name: Validate GitLab automation code
+        id: validate
         if: steps.bridge_secret.outputs.available == 'true'
         working-directory: gitlab-upstreamradar
         run: |
@@ -56,6 +58,7 @@ jobs:
           python -m unittest discover -s tests -v
 
       - name: Run GitLab radar
+        id: radar
         if: steps.bridge_secret.outputs.available == 'true'
         working-directory: gitlab-upstreamradar
         env:
@@ -66,7 +69,8 @@ jobs:
         run: python -m scripts.run_gitlab_radar
 
       - name: Review open GitLab merge requests
-        if: steps.bridge_secret.outputs.available == 'true'
+        id: review
+        if: always() && steps.bridge_secret.outputs.available == 'true' && steps.clone.outcome == 'success' && steps.validate.outcome == 'success'
         working-directory: gitlab-upstreamradar
         env:
           CI_API_V4_URL: https://gitlab.com/api/v4
@@ -74,3 +78,111 @@ jobs:
           CI_DEFAULT_BRANCH: main
           UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
         run: python -m scripts.review_gitlab_mrs
+
+      - name: Report GitLab bridge health
+        id: health
+        if: always() && steps.bridge_secret.outputs.available == 'true'
+        shell: bash
+        env:
+          GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+          GITLAB_PROJECT_ID: "87037475"
+          CLONE_OUTCOME: ${{ steps.clone.outcome }}
+          VALIDATE_OUTCOME: ${{ steps.validate.outcome }}
+          RADAR_OUTCOME: ${{ steps.radar.outcome }}
+          REVIEW_OUTCOME: ${{ steps.review.outcome }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          BRIDGE_HEALTH_SELFTEST: "degraded"
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.parse
+          import urllib.request
+
+          api = "https://gitlab.com/api/v4"
+          project_id = os.environ["GITLAB_PROJECT_ID"]
+          token = os.environ["GITLAB_PAT"]
+          title = "[bridge] GitLab automation degraded"
+          run_url = os.environ["RUN_URL"]
+
+          outcomes = {
+              "clone": os.environ.get("CLONE_OUTCOME", ""),
+              "validate": os.environ.get("VALIDATE_OUTCOME", ""),
+              "radar": os.environ.get("RADAR_OUTCOME", ""),
+              "review": os.environ.get("REVIEW_OUTCOME", ""),
+          }
+          selftest = os.environ.get("BRIDGE_HEALTH_SELFTEST") == "degraded"
+          degraded = selftest or any(value != "success" for value in outcomes.values())
+
+          headers = {
+              "PRIVATE-TOKEN": token,
+              "User-Agent": "UpstreamRadar-Bridge-Health",
+          }
+
+          def request(endpoint, method="GET", payload=None):
+              data = None
+              local_headers = dict(headers)
+              if payload is not None:
+                  data = urllib.parse.urlencode(payload).encode("utf-8")
+                  local_headers["Content-Type"] = "application/x-www-form-urlencoded"
+              req = urllib.request.Request(
+                  f"{api}{endpoint}",
+                  method=method,
+                  headers=local_headers,
+                  data=data,
+              )
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  raw = response.read().decode("utf-8")
+                  return json.loads(raw) if raw else None
+
+          issues = request(
+              f"/projects/{project_id}/issues?state=opened&per_page=100"
+          )
+          issue = next((item for item in issues if item.get("title") == title), None)
+
+          details = " ".join(f"{key}={value}" for key, value in outcomes.items())
+
+          if degraded:
+              body = (
+                  "UpstreamRadar detected a degraded GitLab bridge run.\n\n"
+                  f"- {details}\n"
+                  f"- selftest={str(selftest).lower()}\n"
+                  f"- control-plane run: {run_url}\n\n"
+                  "This issue is deduplicated and will be closed automatically "
+                  "after a fully successful bridge run."
+              )
+              if issue is None:
+                  issue = request(
+                      f"/projects/{project_id}/issues",
+                      method="POST",
+                      payload={"title": title, "description": body},
+                  )
+                  print(f"BRIDGE_HEALTH=ISSUE_OPENED iid={issue['iid']}")
+              else:
+                  request(
+                      f"/projects/{project_id}/issues/{issue['iid']}/notes",
+                      method="POST",
+                      payload={"body": body},
+                  )
+                  print(f"BRIDGE_HEALTH=ISSUE_UPDATED iid={issue['iid']}")
+          else:
+              if issue is not None:
+                  request(
+                      f"/projects/{project_id}/issues/{issue['iid']}/notes",
+                      method="POST",
+                      payload={
+                          "body": (
+                              "Bridge recovered. All monitored stages completed "
+                              f"successfully.\n\n- {details}\n- run: {run_url}"
+                          )
+                      },
+                  )
+                  request(
+                      f"/projects/{project_id}/issues/{issue['iid']}",
+                      method="PUT",
+                      payload={"state_event": "close"},
+                  )
+                  print(f"BRIDGE_HEALTH=RECOVERED iid={issue['iid']}")
+              else:
+                  print("BRIDGE_HEALTH=PASS no open incident")
+          PY
