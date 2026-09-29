@@ -4,10 +4,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from upstreamradar.collector import (
+    Target,
+    bounded_float_window,
     bounded_window,
     catch_up_multiplier,
     run_probability,
+    semantic_impact,
     should_run,
+    signal_for,
     stable_snapshot,
 )
 
@@ -57,6 +61,60 @@ class CollectorPureLogicTests(unittest.TestCase):
     def test_bounded_window(self):
         values = bounded_window([0, 1, 1], 0, limit=3)
         self.assertEqual(values, [1, 1, 0])
+
+    def test_bounded_float_window(self):
+        values = bounded_float_window([1.0, 2.0], 3.5, limit=2)
+        self.assertEqual(values, [2.0, 3.5])
+
+    def test_semantic_impact_prioritizes_release_over_popularity_noise(self):
+        base = {
+            "latest_release": {"tag_name": "v1"},
+            "pushed_at": "one",
+            "stars": 100,
+            "observed_at": "old",
+        }
+        star_only = dict(base, stars=101, observed_at="new")
+        release = dict(
+            base,
+            latest_release={"tag_name": "v2"},
+            observed_at="new",
+        )
+        self.assertGreater(
+            semantic_impact(base, release),
+            semantic_impact(base, star_only),
+        )
+
+    def test_first_snapshot_has_zero_semantic_impact(self):
+        self.assertEqual(
+            semantic_impact(None, {"pushed_at": "now"}),
+            0.0,
+        )
+
+    def test_signal_carries_history_content_and_reliability(self):
+        target = Target(
+            full_name="owner/repo",
+            ecosystem="test",
+            cost=2,
+        )
+        model = {
+            "checks": 10,
+            "successful_checks": 8,
+            "error_streak": 2,
+            "change_window": [0, 1, 1, 0],
+            "impact_window": [0.0, 4.0, 7.0, 0.0],
+            "ewma_impact": 3.25,
+        }
+        signal = signal_for(
+            target,
+            model,
+            datetime(2026, 9, 29, 12, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(signal.change_history, (0, 1, 1, 0))
+        self.assertEqual(signal.impact_history, (0.0, 4.0, 7.0, 0.0))
+        self.assertEqual(signal.content_signal, 3.25)
+        self.assertEqual(signal.failure_streak, 2)
+        self.assertGreater(signal.source_reliability, 0.0)
+        self.assertLessEqual(signal.source_reliability, 1.0)
 
 
 if __name__ == "__main__":
