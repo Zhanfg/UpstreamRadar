@@ -10,6 +10,7 @@ from urllib.request import Request, urlopen
 
 from upstreamradar.discovery import (
     DiscoveryCandidate,
+    candidate_from_mapping,
     merge_candidates,
     score_repository,
     should_auto_fork,
@@ -119,15 +120,8 @@ def scan() -> tuple[dict, list[dict], list[dict]]:
     existing = load_json(REGISTRY_PATH, [])
     for item in existing:
         try:
-            candidates.append(
-                DiscoveryCandidate(
-                    **{
-                        **item,
-                        "reasons": tuple(item.get("reasons", [])),
-                    }
-                )
-            )
-        except TypeError:
+            candidates.append(candidate_from_mapping(item))
+        except (TypeError, ValueError):
             continue
 
     limit = int(config.get("scan", {}).get("candidate_limit", 80))
