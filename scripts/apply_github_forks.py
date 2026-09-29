@@ -13,7 +13,7 @@ from upstreamradar.forking import select_fork_batch
 
 
 API = "https://api.github.com"
-TOKEN = os.environ.get("UPSTREAMRADAR_FORK_PAT") or os.environ.get("UPSTREAMRADAR_PAT", "")
+TOKEN = os.environ.get("UPSTREAMRADAR_FORK_PAT", "")
 CONFIG_PATH = Path("config/discovery.json")
 QUEUE_PATH = Path("discovery/github_fork_queue.json")
 HISTORY_PATH = Path("state/forks_github.json")
@@ -61,6 +61,10 @@ def current_login() -> str | None:
 
 
 def main() -> int:
+    if not TOKEN:
+        print("FORK=SKIP dedicated UPSTREAMRADAR_FORK_PAT is not configured")
+        return 0
+
     config = load(CONFIG_PATH, {})
     queue = load(QUEUE_PATH, [])
     history = load(HISTORY_PATH, [])
