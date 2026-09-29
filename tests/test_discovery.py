@@ -70,6 +70,28 @@ class DiscoveryTests(unittest.TestCase):
         self.assertIsNotNone(candidate)
         self.assertFalse(should_auto_fork(candidate, CONFIG, now=now))
 
+    def test_android_app_does_not_count_as_kernel_direction(self):
+        category, score, matches = classify(
+            {
+                "name": "android-client",
+                "description": "Android mobile application",
+            },
+            {
+                **CONFIG,
+                "categories": [
+                    {
+                        "id": "android-kernel",
+                        "keywords": ["android", "gki", "kernel", "susfs"],
+                        "required_any": ["gki", "kernel", "susfs"],
+                        "weight": 1.0,
+                    }
+                ],
+            },
+        )
+        self.assertEqual(category, "other")
+        self.assertEqual(score, 0.0)
+        self.assertEqual(matches, ())
+
     def test_short_keyword_requires_token_boundary(self):
         category, score, matches = classify(
             {
