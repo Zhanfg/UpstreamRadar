@@ -7,6 +7,7 @@ import os
 import time
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
+from math import ceil
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping, Sequence
 from urllib.error import HTTPError, URLError
@@ -158,6 +159,29 @@ def should_run(now: datetime, *, force: bool = False) -> tuple[bool, float, floa
     return sample < probability, probability, sample
 
 
+def catch_up_multiplier(
+    last_run_at: str | None,
+    now: datetime,
+    *,
+    grace_hours: float = 0.5,
+    ramp_hours: float = 2.5,
+    maximum: float = 2.5,
+) -> tuple[float, float]:
+    """Increase scan breadth after GitHub schedule delays.
+
+    The multiplier changes *current* scan breadth only. It never fabricates
+    historical observations or backdates commits.
+    """
+    previous = parse_time(last_run_at)
+    if previous is None:
+        return 1.0, 0.0
+
+    elapsed = max(0.0, (now - previous).total_seconds() / 3600.0)
+    overdue = max(0.0, elapsed - grace_hours)
+    multiplier = 1.0 + min(maximum - 1.0, overdue / max(ramp_hours, 1e-9))
+    return round(multiplier, 4), round(elapsed, 4)
+
+
 def slug(full_name: str) -> str:
     return full_name.replace("/", "__")
 
@@ -213,9 +237,10 @@ def repo_snapshot(
 
 def initial_state() -> dict[str, Any]:
     return {
-        "version": 1,
+        "version": 2,
         "repositories": {},
         "daily": {},
+        "scheduler": {},
     }
 
 
@@ -279,14 +304,22 @@ def select_targets(
     state: Mapping[str, Any],
     config: Mapping[str, Any],
     now: datetime,
+    *,
+    pressure: float = 1.0,
 ) -> tuple[list[Target], list[dict[str, Any]]]:
     scheduler = HarmonyScheduler()
     signals = [signal_for(target, repo_model(state, target.full_name), now) for target in targets]
     dependencies = {target.full_name: target.dependencies for target in targets}
 
     scheduling = config.get("scheduling", {})
-    budget = int(scheduling.get("budget", 28))
-    max_repositories = int(scheduling.get("max_repositories_per_run", 16))
+    base_budget = int(scheduling.get("budget", 28))
+    base_max_repositories = int(scheduling.get("max_repositories_per_run", 16))
+    pressure = max(1.0, min(float(pressure), 2.5))
+    budget = max(base_budget, int(ceil(base_budget * pressure)))
+    max_repositories = min(
+        len(targets),
+        max(base_max_repositories, int(ceil(base_max_repositories * pressure))),
+    )
     per_ecosystem_cap = int(scheduling.get("max_per_ecosystem", 6))
     ecosystems = sorted({target.ecosystem for target in targets})
 
@@ -404,6 +437,8 @@ def render_daily_report(
         f"- selected repositories: **{len(summary.get('selected', []))}**",
         f"- changed repositories: **{len(summary.get('changed', []))}**",
         f"- errors: **{len(summary.get('errors', []))}**",
+        f"- catch-up multiplier: **{float(summary.get('catch_up_multiplier', 1.0)):.2f}×**",
+        f"- hours since previous successful collection: **{float(summary.get('elapsed_since_previous_run_hours', 0.0)):.2f}**",
         "",
         "## Recent changes",
         "",
@@ -466,7 +501,18 @@ def collect(
 
     targets, config = load_targets(config_path)
     state = load_json(state_path, initial_state())
-    selected, scores = select_targets(targets, state, config, now)
+    scheduler_state = state.setdefault("scheduler", {})
+    pressure, elapsed_hours = catch_up_multiplier(
+        scheduler_state.get("last_run_at"),
+        now,
+    )
+    selected, scores = select_targets(
+        targets,
+        state,
+        config,
+        now,
+        pressure=pressure,
+    )
     client = GitHubClient(token)
 
     changed_names: list[str] = []
@@ -553,11 +599,17 @@ def collect(
     )[-100:]
     prune_daily(state)
 
+    scheduler_state["last_run_at"] = iso(now)
+    scheduler_state["last_elapsed_hours"] = elapsed_hours
+    scheduler_state["last_catch_up_multiplier"] = pressure
+
     summary = {
         "observed_at": iso(now),
         "local_time": local.replace(microsecond=0).isoformat(),
         "gate_probability": probability,
         "gate_sample": sample,
+        "elapsed_since_previous_run_hours": elapsed_hours,
+        "catch_up_multiplier": pressure,
         "selected": [target.full_name for target in selected],
         "scores": scores,
         "changed": changed_names,
