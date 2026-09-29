@@ -159,6 +159,23 @@ def score_repository(
     )
 
 
+def candidate_from_mapping(item: Mapping[str, Any]) -> DiscoveryCandidate:
+    return DiscoveryCandidate(
+        platform=str(item.get("platform") or ""),
+        source_id=str(item.get("source_id") or ""),
+        full_name=str(item.get("full_name") or ""),
+        url=str(item.get("url") or ""),
+        category=str(item.get("category") or "other"),
+        score=float(item.get("score") or 0.0),
+        stars=int(item.get("stars") or 0),
+        forks=int(item.get("forks") or 0),
+        pushed_at=item.get("pushed_at"),
+        license_id=item.get("license_id"),
+        reasons=tuple(str(value) for value in item.get("reasons", [])),
+        description=str(item.get("description") or ""),
+    )
+
+
 def should_auto_fork(candidate: DiscoveryCandidate, config: Mapping[str, Any], *, now: datetime | None = None) -> bool:
     policy = config.get("fork_policy", {})
     if candidate.score < float(policy.get("auto_fork_threshold", 0.86)):
