@@ -68,6 +68,28 @@ jobs:
           UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
         run: python -m scripts.run_gitlab_radar
 
+      - name: Advance GitLab discovery census
+        id: discovery
+        if: steps.bridge_secret.outputs.available == 'true'
+        working-directory: gitlab-upstreamradar
+        env:
+          CI_API_V4_URL: https://gitlab.com/api/v4
+          CI_PROJECT_ID: "87037475"
+          CI_DEFAULT_BRANCH: main
+          UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+        run: python -m scripts.discover_gitlab
+
+      - name: Apply governed GitLab forks
+        id: fork
+        if: steps.bridge_secret.outputs.available == 'true' && steps.discovery.outcome == 'success'
+        working-directory: gitlab-upstreamradar
+        env:
+          CI_API_V4_URL: https://gitlab.com/api/v4
+          CI_PROJECT_ID: "87037475"
+          CI_DEFAULT_BRANCH: main
+          UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+        run: python -m scripts.apply_gitlab_forks
+
       - name: Review open GitLab merge requests
         id: review
         if: always() && steps.bridge_secret.outputs.available == 'true' && steps.clone.outcome == 'success' && steps.validate.outcome == 'success'
@@ -89,6 +111,8 @@ jobs:
           CLONE_OUTCOME: ${{ steps.clone.outcome }}
           VALIDATE_OUTCOME: ${{ steps.validate.outcome }}
           RADAR_OUTCOME: ${{ steps.radar.outcome }}
+          DISCOVERY_OUTCOME: ${{ steps.discovery.outcome }}
+          FORK_OUTCOME: ${{ steps.fork.outcome }}
           REVIEW_OUTCOME: ${{ steps.review.outcome }}
           RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
@@ -108,6 +132,8 @@ jobs:
               "clone": os.environ.get("CLONE_OUTCOME", ""),
               "validate": os.environ.get("VALIDATE_OUTCOME", ""),
               "radar": os.environ.get("RADAR_OUTCOME", ""),
+              "discovery": os.environ.get("DISCOVERY_OUTCOME", ""),
+              "fork": os.environ.get("FORK_OUTCOME", ""),
               "review": os.environ.get("REVIEW_OUTCOME", ""),
           }
           selftest = os.environ.get("BRIDGE_HEALTH_SELFTEST") == "degraded"

@@ -1,0 +1,85 @@
+name: Discovery Garden
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: upstreamradar-discovery-garden
+  cancel-in-progress: false
+
+jobs:
+  github-discovery:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.UPSTREAMRADAR_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run discovery tests
+        run: python -m unittest tests.test_discovery -v
+
+      - name: Scan GitHub public repositories
+        env:
+          UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+        run: python -m scripts.discover_github
+
+      - name: Apply governed GitHub forks
+        env:
+          UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+          UPSTREAMRADAR_FORK_PAT: ${{ secrets.UPSTREAMRADAR_FORK_PAT }}
+        run: python -m scripts.apply_github_forks
+
+      - name: Commit discovery evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -A state discovery reports/discovery
+
+          if git diff --cached --quiet; then
+            echo "No discovery changes."
+            exit 0
+          fi
+
+          scanned="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path("state/discovery_github.json").read_text())
+          print(state.get("last_scanned",0))
+          PY
+          )"
+          candidates="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path("state/discovery_github.json").read_text())
+          print(state.get("candidate_count",0))
+          PY
+          )"
+          queue="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path("state/discovery_github.json").read_text())
+          print(state.get("fork_queue_count",0))
+          PY
+          )"
+
+          git commit             -m "[discovery] advance GitHub repository census"             -m "scanned=${scanned} retained=${candidates} fork_queue=${queue}"
+          git pull --rebase origin main
+          git push origin HEAD:main
