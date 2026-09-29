@@ -84,72 +84,89 @@ def _max_python_indent_depth(lines: Sequence[str]) -> int:
     return depth
 
 
+def _secret_findings(path: str, line: str) -> list[ReviewFinding]:
+    for pattern in _SECRET_PATTERNS:
+        if pattern.search(line):
+            return [
+                ReviewFinding(
+                    "critical",
+                    "possible-secret",
+                    path,
+                    "possible credential or secret literal added; verify and redact before merge",
+                    line.strip()[:160],
+                )
+            ]
+    return []
+
+
+def _code_rule_findings(path: str, line: str) -> list[ReviewFinding]:
+    if not path.endswith(".py"):
+        return []
+
+    findings: list[ReviewFinding] = []
+    for severity, rule, pattern, message in _RULES:
+        if pattern.search(line):
+            findings.append(
+                ReviewFinding(
+                    severity,
+                    rule,
+                    path,
+                    message,
+                    line.strip()[:160],
+                )
+            )
+    return findings
+
+
+def _file_level_findings(file: DiffFile) -> list[ReviewFinding]:
+    findings: list[ReviewFinding] = []
+
+    if file.path.endswith(".py"):
+        depth = _max_python_indent_depth(file.added)
+        if depth >= 6:
+            findings.append(
+                ReviewFinding(
+                    "medium",
+                    "deep-nesting",
+                    file.path,
+                    f"new Python code reaches indentation depth {depth}; consider extracting decision layers",
+                )
+            )
+
+    if file.path.endswith((".yml", ".yaml")) and file.path.startswith(".github/workflows/"):
+        joined = "\n".join(file.added)
+        if "pull_request_target:" in joined and "actions/checkout@" in joined:
+            findings.append(
+                ReviewFinding(
+                    "high",
+                    "pr-target-checkout",
+                    file.path,
+                    "pull_request_target combined with checkout can expose repository secrets to untrusted PR code",
+                )
+            )
+
+    return findings
+
+
 def analyze(files: Sequence[DiffFile]) -> tuple[ReviewFinding, ...]:
     findings: list[ReviewFinding] = []
     changed_paths = {file.path for file in files}
-    source_changed = False
+    source_changed = any(
+        path.endswith(".py")
+        and not path.startswith("tests/")
+        and not path.startswith("examples/")
+        for path in changed_paths
+    )
     test_changed = any(
         path.startswith("tests/") or "/tests/" in path or path.endswith("_test.py")
         for path in changed_paths
     )
 
     for file in files:
-        if (
-            file.path.endswith(".py")
-            and not file.path.startswith("tests/")
-            and not file.path.startswith("examples/")
-        ):
-            source_changed = True
-
         for line in file.added:
-            for pattern in _SECRET_PATTERNS:
-                if pattern.search(line):
-                    findings.append(
-                        ReviewFinding(
-                            "critical",
-                            "possible-secret",
-                            file.path,
-                            "possible credential or secret literal added; verify and redact before merge",
-                            line.strip()[:160],
-                        )
-                    )
-                    break
-
-            for severity, rule, pattern, message in _RULES:
-                if pattern.search(line):
-                    findings.append(
-                        ReviewFinding(
-                            severity,
-                            rule,
-                            file.path,
-                            message,
-                            line.strip()[:160],
-                        )
-                    )
-
-        if file.path.endswith(".py"):
-            depth = _max_python_indent_depth(file.added)
-            if depth >= 6:
-                findings.append(
-                    ReviewFinding(
-                        "medium",
-                        "deep-nesting",
-                        file.path,
-                        f"new Python code reaches indentation depth {depth}; consider extracting decision layers",
-                    )
-                )
-
-        if file.path.endswith((".yml", ".yaml")) and file.path.startswith(".github/workflows/"):
-            joined = "\n".join(file.added)
-            if "pull_request_target:" in joined and "actions/checkout@" in joined:
-                findings.append(
-                    ReviewFinding(
-                        "high",
-                        "pr-target-checkout",
-                        file.path,
-                        "pull_request_target combined with checkout can expose repository secrets to untrusted PR code",
-                    )
-                )
+            findings.extend(_secret_findings(file.path, line))
+            findings.extend(_code_rule_findings(file.path, line))
+        findings.extend(_file_level_findings(file))
 
     if source_changed and not test_changed:
         findings.append(
