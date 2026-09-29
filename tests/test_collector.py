@@ -90,6 +90,22 @@ class CollectorPureLogicTests(unittest.TestCase):
             0.0,
         )
 
+    def test_legacy_state_migrates_as_healthy_by_default(self):
+        target = Target(
+            full_name="owner/legacy",
+            ecosystem="test",
+            cost=1,
+        )
+        signal = signal_for(
+            target,
+            {
+                "checks": 40,
+                "change_window": [0, 1, 0, 1],
+            },
+            datetime(2026, 9, 29, 12, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(signal.source_reliability, 1.0)
+
     def test_signal_carries_history_content_and_reliability(self):
         target = Target(
             full_name="owner/repo",
