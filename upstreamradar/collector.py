@@ -519,6 +519,37 @@ def update_model(
     return model
 
 
+def semantic_detail(
+    full_name: str,
+    model: Mapping[str, Any],
+) -> dict[str, Any]:
+    return {
+        "full_name": full_name,
+        "semantic_impact": float(model.get("last_semantic_impact", 0.0)),
+        "fields": list(model.get("last_semantic_delta", [])),
+    }
+
+
+def collection_failure_anomaly(
+    full_name: str,
+    model: Mapping[str, Any],
+    message: str,
+) -> dict[str, Any]:
+    return {
+        "kind": "collection_failure",
+        "full_name": full_name,
+        "error_streak": int(model.get("error_streak", 0)),
+        "message": message,
+    }
+
+
+def detail_sort_key(item: Mapping[str, Any]) -> tuple[float, str]:
+    return (
+        -float(item.get("semantic_impact", 0.0)),
+        str(item.get("full_name", "")),
+    )
+
+
 def render_daily_report(
     date_key: str,
     summary: Mapping[str, Any],
@@ -707,15 +738,7 @@ def collect(
             repositories_state[target.full_name] = updated_model
             if changed:
                 changed_details.append(
-                    {
-                        "full_name": target.full_name,
-                        "semantic_impact": float(
-                            updated_model.get("last_semantic_impact", 0.0)
-                        ),
-                        "fields": list(
-                            updated_model.get("last_semantic_delta", [])
-                        ),
-                    }
+                    semantic_detail(target.full_name, updated_model)
                 )
         except Exception as exc:
             message = f"{type(exc).__name__}: {exc}"
@@ -732,12 +755,11 @@ def collect(
 
             if int(model.get("error_streak", 0)) >= 3:
                 anomalies.append(
-                    {
-                        "kind": "collection_failure",
-                        "full_name": target.full_name,
-                        "error_streak": int(model.get("error_streak", 0)),
-                        "message": message,
-                    }
+                    collection_failure_anomaly(
+                        target.full_name,
+                        model,
+                        message,
+                    )
                 )
 
     local = now.astimezone(LOCAL_TZ)
@@ -782,10 +804,7 @@ def collect(
         "changed": changed_names,
         "changed_details": sorted(
             changed_details,
-            key=lambda item: (
-                -float(item.get("semantic_impact", 0.0)),
-                item.get("full_name", ""),
-            ),
+            key=detail_sort_key,
         ),
         "unchanged": unchanged_names,
         "errors": errors,
