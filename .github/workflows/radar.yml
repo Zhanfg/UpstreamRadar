@@ -2,7 +2,8 @@ name: Upstream Radar
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    # Off-boundary minutes reduce contention on GitHub's scheduler.
+    - cron: "7,22,37,52 * * * *"
   push:
     branches:
       - main
@@ -114,8 +115,12 @@ jobs:
           selected="$(jq '.summary.selected | length' .radar/manifest.json)"
           changed="$(jq '.summary.changed | length' .radar/manifest.json)"
           errors="$(jq '.summary.errors | length' .radar/manifest.json)"
+          pressure="$(jq -r '.summary.catch_up_multiplier' .radar/manifest.json)"
+          elapsed="$(jq -r '.summary.elapsed_since_previous_run_hours' .radar/manifest.json)"
 
-          git commit             -m "[radar] checkpoint ${observed}"             -m "selected=${selected} changed=${changed} errors=${errors}"
+          git commit \
+            -m "[radar] checkpoint ${observed}" \
+            -m "selected=${selected} changed=${changed} errors=${errors} catch_up=${pressure}x elapsed=${elapsed}h"
 
       - name: Push collected data
         shell: bash
