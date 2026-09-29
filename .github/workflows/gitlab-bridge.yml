@@ -1,5 +1,7 @@
 name: GitLab Bridge
 
+# Health lifecycle self-test: open a controlled incident, then verify recovery.
+
 on:
   schedule:
     - cron: "11,26,41,56 * * * *"
