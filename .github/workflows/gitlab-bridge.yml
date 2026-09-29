@@ -63,7 +63,7 @@ jobs:
           CI_PROJECT_ID: "87037475"
           CI_DEFAULT_BRANCH: main
           UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
-        run: python scripts/run_gitlab_radar.py
+        run: python -m scripts.run_gitlab_radar
 
       - name: Review open GitLab merge requests
         if: steps.bridge_secret.outputs.available == 'true'
@@ -73,4 +73,4 @@ jobs:
           CI_PROJECT_ID: "87037475"
           CI_DEFAULT_BRANCH: main
           UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
-        run: python scripts/review_gitlab_mrs.py
+        run: python -m scripts.review_gitlab_mrs
