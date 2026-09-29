@@ -70,6 +70,23 @@ class DiscoveryTests(unittest.TestCase):
         self.assertIsNotNone(candidate)
         self.assertFalse(should_auto_fork(candidate, CONFIG, now=now))
 
+    def test_short_keyword_requires_token_boundary(self):
+        category, score, matches = classify(
+            {
+                "name": "communityengine",
+                "description": "social application framework",
+            },
+            {
+                **CONFIG,
+                "categories": [
+                    {"id": "developer-tooling", "keywords": ["ci"], "weight": 1.0}
+                ],
+            },
+        )
+        self.assertEqual(category, "other")
+        self.assertEqual(score, 0.0)
+        self.assertEqual(matches, ())
+
     def test_excludes_awesome_lists(self):
         self.assertIsNone(
             score_repository(
