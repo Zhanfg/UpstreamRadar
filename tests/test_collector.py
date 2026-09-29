@@ -5,6 +5,7 @@ from pathlib import Path
 
 from upstreamradar.collector import (
     bounded_window,
+    catch_up_multiplier,
     run_probability,
     should_run,
     stable_snapshot,
@@ -31,6 +32,22 @@ class CollectorPureLogicTests(unittest.TestCase):
         self.assertTrue(permitted)
         self.assertEqual(probability, 1.0)
         self.assertEqual(sample, 0.0)
+
+    def test_catch_up_multiplier_ramps_after_delay(self):
+        now = datetime(2026, 9, 29, 12, 0, tzinfo=timezone.utc)
+        multiplier, elapsed = catch_up_multiplier("2026-09-29T06:00:00Z", now)
+        self.assertEqual(elapsed, 6.0)
+        self.assertEqual(multiplier, 2.5)
+
+    def test_catch_up_multiplier_does_not_backfill_fresh_state(self):
+        now = datetime(2026, 9, 29, 12, 0, tzinfo=timezone.utc)
+        multiplier, elapsed = catch_up_multiplier("2026-09-29T11:45:00Z", now)
+        self.assertEqual(elapsed, 0.25)
+        self.assertEqual(multiplier, 1.0)
+
+    def test_first_run_has_no_artificial_pressure(self):
+        now = datetime(2026, 9, 29, 12, 0, tzinfo=timezone.utc)
+        self.assertEqual(catch_up_multiplier(None, now), (1.0, 0.0))
 
     def test_snapshot_comparison_ignores_observation_timestamp(self):
         left = {"full_name": "a/b", "stars": 10, "observed_at": "one"}
