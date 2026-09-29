@@ -544,8 +544,9 @@ def render_daily_report(
         [
             "",
             "## Recent changes",
-        "",
-    ]
+            "",
+        ]
+    )
 
     if recent:
         lines.extend(f"- `{name}`" for name in recent)
