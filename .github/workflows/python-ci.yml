@@ -54,8 +54,11 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
 
-      - name: Run example
+      - name: Run v1 example
         run: python -m examples.harmony_demo
+
+      - name: Run v2 content-aware example
+        run: python -m examples.harmony_v2_demo
 
       - name: Validate collector configuration
         if: matrix.python-version == '3.13'
