@@ -37,7 +37,7 @@ _RULES = (
     ("medium", "broad-except", re.compile(r"^\s*except\s+(Exception|BaseException)\s*(?:as\s+\w+)?\s*:"), "broad exception handler added"),
     (
         "low",
-        "todo",
+        "work-marker",
         re.compile(r"\b(" + "|".join(_WORK_MARKERS) + r")\b", re.IGNORECASE),
         "unfinished-work marker added",
     ),
