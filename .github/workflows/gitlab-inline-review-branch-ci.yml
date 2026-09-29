@@ -1,0 +1,29 @@
+name: GitLab Inline Review Branch CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/gitlab-inline-review-branch-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone GitLab feature branch
+        run: |
+          git clone --depth=1 --branch feat/inline-review-health \
+            https://gitlab.com/axymorrsen/upstreamradar.git repo
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Compile and test
+        working-directory: repo
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest discover -s tests -v
