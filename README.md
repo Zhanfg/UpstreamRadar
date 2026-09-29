@@ -146,6 +146,22 @@ The review is explicitly marked as automated and never auto-approves a PR.
 
 See [docs/CODE_REVIEW.md](docs/CODE_REVIEW.md).
 
+## Discovery Garden
+
+UpstreamRadar now includes a global repository-discovery layer in addition to monitoring known upstreams.
+
+Discovery Garden combines:
+
+- cursor-based census of the public GitHub and GitLab repository universes;
+- rotating high-relevance searches for Android/kernel, networking, AI agents, security/sandboxing, and developer tooling;
+- activity, quality, license, novelty, and direction-fit scoring;
+- bounded candidate registries and evidence reports;
+- a governed fork queue with deduplication, daily/weekly caps, and explicit namespace gating.
+
+Fork execution is intentionally blocked until a suitable public GitHub Organization or GitLab namespace is configured. This prevents high-scoring discovery results from turning the user account into an unstructured fork dump.
+
+See docs/DISCOVERY_GARDEN.md.
+
 ## Validation
 
 CI currently validates the algorithm on Python 3.10, 3.11, 3.12, and 3.13.
