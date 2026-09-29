@@ -1,7 +1,5 @@
 name: GitLab Bridge
 
-# Health lifecycle self-test: open a controlled incident, then verify recovery.
-
 on:
   schedule:
     - cron: "11,26,41,56 * * * *"
@@ -93,7 +91,6 @@ jobs:
           RADAR_OUTCOME: ${{ steps.radar.outcome }}
           REVIEW_OUTCOME: ${{ steps.review.outcome }}
           RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          BRIDGE_HEALTH_SELFTEST: "degraded"
         run: |
           python - <<'PY'
           import json
