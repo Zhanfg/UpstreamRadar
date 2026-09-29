@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from math import exp, log1p
+import re
 from typing import Any, Mapping, Sequence
 
 
@@ -44,10 +45,25 @@ def classify(repo: Mapping[str, Any], config: Mapping[str, Any]) -> tuple[str, f
         local = []
         for keyword in category.get("keywords", []):
             token = str(keyword).lower()
-            if token in haystack:
+            pattern = re.compile(
+                r"(?<![a-z0-9])" + re.escape(token) + r"(?![a-z0-9])"
+            )
+            if pattern.search(haystack):
                 local.append(token)
         if not local:
             continue
+
+        required_any = {
+            str(value).lower()
+            for value in category.get("required_any", [])
+        }
+        if required_any and not required_any.intersection(local):
+            continue
+
+        min_matches = int(category.get("min_matches", 1))
+        if len(local) < min_matches:
+            continue
+
         density = min(1.0, 0.35 + 0.18 * len(local))
         score = density * float(category.get("weight", 1.0))
         if score > best:

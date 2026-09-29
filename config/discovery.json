@@ -30,7 +30,17 @@
         "scheduler",
         "binder"
       ],
-      "weight": 1
+      "weight": 1,
+      "required_any": [
+        "gki",
+        "kernel",
+        "kernelsu",
+        "ksu",
+        "susfs",
+        "ebpf",
+        "scheduler",
+        "binder"
+      ]
     },
     {
       "id": "networking",
@@ -46,7 +56,18 @@
         "network",
         "xdp"
       ],
-      "weight": 0.95
+      "weight": 0.95,
+      "required_any": [
+        "proxy",
+        "tun",
+        "quic",
+        "tcp",
+        "bbr",
+        "wireguard",
+        "sing-box",
+        "mihomo",
+        "xdp"
+      ]
     },
     {
       "id": "ai-agents",
@@ -60,7 +81,15 @@
         "llm",
         "model-context-protocol"
       ],
-      "weight": 0.95
+      "weight": 0.95,
+      "required_any": [
+        "agent",
+        "mcp",
+        "tool-use",
+        "coding-agent",
+        "orchestration",
+        "model-context-protocol"
+      ]
     },
     {
       "id": "security-sandbox",
@@ -74,7 +103,14 @@
         "namespace",
         "lsm"
       ],
-      "weight": 0.9
+      "weight": 0.9,
+      "required_any": [
+        "sandbox",
+        "seccomp",
+        "isolation",
+        "rootless",
+        "lsm"
+      ]
     },
     {
       "id": "developer-tooling",
@@ -88,7 +124,15 @@
         "ci",
         "runtime"
       ],
-      "weight": 0.8
+      "weight": 0.8,
+      "required_any": [
+        "compiler",
+        "lsp",
+        "build-system",
+        "devtools",
+        "automation",
+        "runtime"
+      ]
     }
   ],
   "exclusions": {
