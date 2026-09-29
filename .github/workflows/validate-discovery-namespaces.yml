@@ -1,0 +1,61 @@
+name: Validate Discovery Namespaces
+
+on:
+  push:
+    branches:
+      - "config/discovery-namespaces"
+    paths:
+      - "config/discovery.json"
+      - "scripts/apply_github_forks.py"
+      - ".github/workflows/validate-discovery-namespaces.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate configured namespaces
+        env:
+          GITHUB_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+          GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+
+          cfg=json.load(open("config/discovery.json"))
+          gh=cfg["destinations"]["github_organization"]
+          gl=cfg["destinations"]["gitlab_namespace_path"]
+          assert gh == "Axymorrsen-Labs"
+          assert gl == "axymorrsen-labs"
+
+          def get(url, token=None, header="Authorization"):
+              headers={"User-Agent":"UpstreamRadar-Namespace-Validator"}
+              if token:
+                  headers[header]=token
+              req=urllib.request.Request(url,headers=headers)
+              with urllib.request.urlopen(req,timeout=30) as r:
+                  return json.loads(r.read().decode())
+
+          gh_data=get(
+              f"https://api.github.com/orgs/{gh}",
+              f"Bearer {os.environ['GITHUB_PAT']}",
+          )
+          gl_data=get(
+              f"https://gitlab.com/api/v4/groups/{gl}",
+              os.environ["GITLAB_PAT"],
+              "PRIVATE-TOKEN",
+          )
+
+          assert gh_data["login"].lower() == gh.lower()
+          assert gl_data["full_path"] == gl
+          assert gl_data["visibility"] == "public"
+
+          print(f"GITHUB_ORG=PASS login={gh_data['login']}")
+          print(f"GITLAB_GROUP=PASS path={gl_data['full_path']} visibility={gl_data['visibility']}")
+          PY
