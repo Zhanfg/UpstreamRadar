@@ -2,6 +2,7 @@ import unittest
 from datetime import datetime, timezone
 
 from upstreamradar.discovery import (
+    candidate_from_mapping,
     classify,
     merge_candidates,
     score_repository,
@@ -81,6 +82,27 @@ class DiscoveryTests(unittest.TestCase):
                 platform="github",
             )
         )
+
+    def test_persisted_candidate_ignores_runtime_only_fields(self):
+        candidate = candidate_from_mapping(
+            {
+                "platform": "github",
+                "source_id": "1",
+                "full_name": "example/repo",
+                "url": "https://example.invalid",
+                "category": "networking",
+                "score": 0.9,
+                "stars": 10,
+                "forks": 2,
+                "pushed_at": "2026-09-28T00:00:00Z",
+                "license_id": "MIT",
+                "reasons": ["category:networking"],
+                "description": "proxy runtime",
+                "auto_fork_eligible": True,
+            }
+        )
+        self.assertEqual(candidate.full_name, "example/repo")
+        self.assertEqual(candidate.reasons, ("category:networking",))
 
     def test_merge_deduplicates(self):
         now = datetime(2026, 9, 29, tzinfo=timezone.utc)
