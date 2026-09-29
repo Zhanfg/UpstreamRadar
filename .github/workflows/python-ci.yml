@@ -12,6 +12,8 @@ on:
       - "config/**"
       - "pyproject.toml"
       - ".github/workflows/python-ci.yml"
+      - ".github/workflows/code-review.yml"
+      - ".github/workflows/radar.yml"
   pull_request:
     branches:
       - main
