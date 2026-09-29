@@ -754,13 +754,8 @@ def collect(
             repositories_state[target.full_name] = model
 
             if int(model.get("error_streak", 0)) >= 3:
-                anomalies.append(
-                    collection_failure_anomaly(
-                        target.full_name,
-                        model,
-                        message,
-                    )
-                )
+                anomaly = collection_failure_anomaly(target.full_name, model, message)
+                anomalies.append(anomaly)
 
     local = now.astimezone(LOCAL_TZ)
     date_key = local.date().isoformat()
