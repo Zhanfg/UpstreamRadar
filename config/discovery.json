@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "scan": {
+    "census_pages_per_run": 40,
+    "per_page": 100,
+    "priority_queries_per_run": 2,
+    "candidate_limit": 80
+  },
+  "fork_policy": {
+    "auto_fork_threshold": 0.86,
+    "min_stars": 8,
+    "max_age_days_since_push": 180,
+    "max_forks_per_day_per_platform": 1,
+    "max_forks_per_week_per_platform": 5,
+    "require_non_fork": true,
+    "require_not_archived": true,
+    "prefer_known_license": true
+  },
+  "categories": [
+    {
+      "id": "android-kernel",
+      "keywords": [
+        "android",
+        "gki",
+        "kernel",
+        "kernelsu",
+        "ksu",
+        "susfs",
+        "ebpf",
+        "scheduler",
+        "binder"
+      ],
+      "weight": 1
+    },
+    {
+      "id": "networking",
+      "keywords": [
+        "proxy",
+        "tun",
+        "quic",
+        "tcp",
+        "bbr",
+        "wireguard",
+        "sing-box",
+        "mihomo",
+        "network",
+        "xdp"
+      ],
+      "weight": 0.95
+    },
+    {
+      "id": "ai-agents",
+      "keywords": [
+        "agent",
+        "mcp",
+        "tool-use",
+        "coding-agent",
+        "orchestration",
+        "inference",
+        "llm",
+        "model-context-protocol"
+      ],
+      "weight": 0.95
+    },
+    {
+      "id": "security-sandbox",
+      "keywords": [
+        "sandbox",
+        "seccomp",
+        "isolation",
+        "security",
+        "rootless",
+        "container",
+        "namespace",
+        "lsm"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "developer-tooling",
+      "keywords": [
+        "compiler",
+        "lsp",
+        "build-system",
+        "devtools",
+        "cli",
+        "automation",
+        "ci",
+        "runtime"
+      ],
+      "weight": 0.8
+    }
+  ],
+  "exclusions": {
+    "keywords": [
+      "awesome-list",
+      "curated-list",
+      "interview-questions",
+      "tutorial-only",
+      "course-notes",
+      "cheatsheet"
+    ],
+    "name_prefixes": [
+      "awesome-"
+    ]
+  }
+}
