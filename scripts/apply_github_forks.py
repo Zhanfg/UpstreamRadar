@@ -6,6 +6,7 @@ from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 from upstreamradar.forking import select_fork_batch
@@ -55,7 +56,7 @@ def current_login() -> str | None:
         return None
     try:
         return request("/user").get("login")
-    except Exception:
+    except (HTTPError, URLError, TimeoutError, OSError, json.JSONDecodeError):
         return None
 
 
@@ -96,7 +97,7 @@ def main() -> int:
                 }
             )
             print(f"FORK=PASS source={plan.full_name} destination={plan.destination}")
-        except Exception as exc:
+        except (HTTPError, URLError, TimeoutError, OSError, json.JSONDecodeError) as exc:
             history.append(
                 {
                     **asdict(plan),
