@@ -57,6 +57,12 @@ jobs:
         run: |
           set -euo pipefail
 
+          current_head="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}" --jq '.head.sha')"
+          if [[ "$current_head" != "$HEAD_SHA" ]]; then
+            echo "PR head moved from ${HEAD_SHA} to ${current_head}; skip stale review."
+            exit 0
+          fi
+
           marker="upstreamradar-review:${HEAD_SHA}"
           existing="$(
             gh api               --paginate               "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/reviews"               --jq "[.[] | select((.body // \"\") | contains(\"${marker}\"))] | length"               | awk '{s+=$1} END {print s+0}'
@@ -67,4 +73,4 @@ jobs:
             exit 0
           fi
 
-          gh api             --method POST             "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/reviews"             -f event=COMMENT             -F body=@/tmp/review.md
+          gh api             --method POST             "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/reviews"             -f event=COMMENT             -f commit_id="$HEAD_SHA"             -F body=@/tmp/review.md
