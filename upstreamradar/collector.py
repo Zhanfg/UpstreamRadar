@@ -267,37 +267,52 @@ def bounded_float_window(
     return result[-limit:]
 
 
+_SEMANTIC_WEIGHTS = {
+    "latest_release": 4.0,
+    "pushed_at": 2.4,
+    "default_branch": 4.0,
+    "archived": 5.0,
+    "disabled": 5.0,
+    "topics": 1.6,
+    "description": 1.2,
+    "language": 1.4,
+    "license": 1.4,
+    "open_issues": 1.0,
+    "forks": 0.6,
+    "stars": 0.35,
+    "watchers": 0.35,
+    "size_kb": 0.2,
+}
+
+
+def semantic_delta(
+    old_snapshot: Mapping[str, Any] | None,
+    new_snapshot: Mapping[str, Any] | None,
+) -> list[str]:
+    """Return changed fields ordered by reportability weight."""
+    if old_snapshot is None or new_snapshot is None:
+        return []
+
+    old = stable_snapshot(old_snapshot)
+    new = stable_snapshot(new_snapshot)
+    changed = [
+        key
+        for key in _SEMANTIC_WEIGHTS
+        if old.get(key) != new.get(key)
+    ]
+    return sorted(
+        changed,
+        key=lambda key: (-_SEMANTIC_WEIGHTS[key], key),
+    )
+
+
 def semantic_impact(
     old_snapshot: Mapping[str, Any] | None,
     new_snapshot: Mapping[str, Any] | None,
 ) -> float:
     """Estimate how much reportable meaning changed between two snapshots."""
-    if old_snapshot is None or new_snapshot is None:
-        return 0.0
-
-    old = stable_snapshot(old_snapshot)
-    new = stable_snapshot(new_snapshot)
-    weights = {
-        "latest_release": 4.0,
-        "pushed_at": 2.4,
-        "default_branch": 4.0,
-        "archived": 5.0,
-        "disabled": 5.0,
-        "topics": 1.6,
-        "description": 1.2,
-        "language": 1.4,
-        "license": 1.4,
-        "open_issues": 1.0,
-        "forks": 0.6,
-        "stars": 0.35,
-        "watchers": 0.35,
-        "size_kb": 0.2,
-    }
-    impact = sum(
-        weight
-        for key, weight in weights.items()
-        if old.get(key) != new.get(key)
-    )
+    delta = semantic_delta(old_snapshot, new_snapshot)
+    impact = sum(_SEMANTIC_WEIGHTS[key] for key in delta)
     return min(10.0, round(impact, 4))
 
 
@@ -465,6 +480,10 @@ def update_model(
         8,
     )
     model["last_semantic_impact"] = impact
+    model["last_semantic_delta"] = semantic_delta(
+        old_snapshot,
+        new_snapshot,
+    )
 
     old_release = (old_snapshot or {}).get("latest_release") or {}
     new_release = (new_snapshot or {}).get("latest_release") or {}
@@ -549,6 +568,25 @@ def render_daily_report(
     lines.extend(
         [
             "",
+            "## Observed semantic deltas",
+            "",
+        ]
+    )
+    details = summary.get("changed_details", [])
+    if details:
+        for item in details[:10]:
+            fields = ", ".join(item.get("fields", [])) or "snapshot"
+            lines.append(
+                f"- **{item['full_name']}** — impact="
+                f"{float(item.get('semantic_impact', 0.0)):.2f}; "
+                f"changed: {fields}"
+            )
+    else:
+        lines.append("- No reportable semantic delta observed in this cycle.")
+
+    lines.extend(
+        [
+            "",
             "## Recent changes",
             "",
         ]
@@ -628,6 +666,7 @@ def collect(
     client = GitHubClient(token)
 
     changed_names: list[str] = []
+    changed_details: list[dict[str, Any]] = []
     unchanged_names: list[str] = []
     errors: list[dict[str, str]] = []
     changed_files: list[str] = []
@@ -657,7 +696,7 @@ def collect(
             else:
                 unchanged_names.append(target.full_name)
 
-            repositories_state[target.full_name] = update_model(
+            updated_model = update_model(
                 previous_model,
                 old_snapshot=old_snapshot,
                 new_snapshot=new_snapshot,
@@ -665,6 +704,19 @@ def collect(
                 error=None,
                 now=now,
             )
+            repositories_state[target.full_name] = updated_model
+            if changed:
+                changed_details.append(
+                    {
+                        "full_name": target.full_name,
+                        "semantic_impact": float(
+                            updated_model.get("last_semantic_impact", 0.0)
+                        ),
+                        "fields": list(
+                            updated_model.get("last_semantic_delta", [])
+                        ),
+                    }
+                )
         except Exception as exc:
             message = f"{type(exc).__name__}: {exc}"
             errors.append({"full_name": target.full_name, "error": message})
@@ -728,6 +780,13 @@ def collect(
         "content_score": selection_meta["content_score"],
         "content_plan": selection_meta["content_plan"],
         "changed": changed_names,
+        "changed_details": sorted(
+            changed_details,
+            key=lambda item: (
+                -float(item.get("semantic_impact", 0.0)),
+                item.get("full_name", ""),
+            ),
+        ),
         "unchanged": unchanged_names,
         "errors": errors,
     }
