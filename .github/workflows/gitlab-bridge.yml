@@ -1,0 +1,68 @@
+name: GitLab Bridge
+
+on:
+  schedule:
+    - cron: "11,26,41,56 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upstreamradar-gitlab-bridge
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check GitLab bridge secret
+        shell: bash
+        env:
+          GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+        run: |
+          if [[ -z "${GITLAB_PAT}" ]]; then
+            echo "GITLAB_BRIDGE=SKIP secret GITLAB_UPSTREAMRADAR_PAT is not configured"
+            exit 0
+          fi
+          echo "GITLAB_BRIDGE=READY"
+
+      - name: Clone public GitLab UpstreamRadar
+        if: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT != '' }}
+        shell: bash
+        run: |
+          git clone --depth=1 https://gitlab.com/axymorrsen/upstreamradar.git gitlab-upstreamradar
+
+      - name: Set up Python
+        if: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT != '' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Validate GitLab automation code
+        if: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT != '' }}
+        working-directory: gitlab-upstreamradar
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest discover -s tests -v
+
+      - name: Run GitLab radar
+        if: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT != '' }}
+        working-directory: gitlab-upstreamradar
+        env:
+          CI_API_V4_URL: https://gitlab.com/api/v4
+          CI_PROJECT_ID: "87037475"
+          CI_DEFAULT_BRANCH: main
+          UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+        run: python scripts/run_gitlab_radar.py
+
+      - name: Review open GitLab merge requests
+        if: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT != '' }}
+        working-directory: gitlab-upstreamradar
+        env:
+          CI_API_V4_URL: https://gitlab.com/api/v4
+          CI_PROJECT_ID: "87037475"
+          CI_DEFAULT_BRANCH: main
+          UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+        run: python scripts/review_gitlab_mrs.py
