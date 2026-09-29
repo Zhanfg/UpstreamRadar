@@ -1,0 +1,70 @@
+name: Validate Discovery Garden
+
+on:
+  push:
+    branches:
+      - "feat/discovery-garden"
+    paths:
+      - "upstreamradar/discovery.py"
+      - "scripts/discover_github.py"
+      - "config/discovery.json"
+      - "tests/test_discovery.py"
+      - ".github/workflows/validate-discovery-garden.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-github:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m unittest tests.test_discovery -v
+      - name: Run GitHub census probe
+        env:
+          UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path("config/discovery.json")
+          data=json.loads(path.read_text())
+          data["scan"]["census_pages_per_run"]=2
+          data["scan"]["priority_queries_per_run"]=1
+          path.write_text(json.dumps(data))
+          PY
+          python -m scripts.discover_github
+
+  validate-gitlab:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone GitLab discovery feature branch
+        run: |
+          git clone --depth=1 --branch feat/discovery-garden \
+            https://gitlab.com/axymorrsen/upstreamradar.git repo
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Run GitLab census probe
+        working-directory: repo
+        env:
+          UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+          CI_API_V4_URL: https://gitlab.com/api/v4
+          CI_PROJECT_ID: "87037475"
+          CI_DEFAULT_BRANCH: main
+          DISCOVERY_DRY_RUN: "1"
+        run: |
+          python -m unittest tests.test_discovery -v
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path("config/discovery.json")
+          data=json.loads(path.read_text())
+          data["scan"]["census_pages_per_run"]=2
+          data["scan"]["priority_queries_per_run"]=1
+          path.write_text(json.dumps(data))
+          PY
+          python -m scripts.discover_gitlab
