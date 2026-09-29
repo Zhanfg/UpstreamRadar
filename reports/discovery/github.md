@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **24000**
-- latest census cursor: **89870**
+- total census repositories scanned: **28000**
+- latest census cursor: **101782**
 - retained candidates: **80**
 - governed fork queue: **7**
 
@@ -28,10 +28,6 @@
 - **Dere3046/KallRecon** — score=0.847, stars=11; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, recently-active
 - **LeeSiWal/y700-linux** — score=0.821, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, recently-active
 - **okhsunrog/vpnhide** — score=0.814, stars=570; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
-
-### developer-tooling
-
-- **openminion/openminion** — score=0.720, stars=7; category:developer-tooling, keyword:cli, keyword:runtime, recently-active, license:Apache-2.0
 
 ### networking
 
