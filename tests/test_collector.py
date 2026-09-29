@@ -8,10 +8,12 @@ from upstreamradar.collector import (
     bounded_float_window,
     bounded_window,
     catch_up_multiplier,
+    normalize_reliability_counters,
     run_probability,
     semantic_impact,
     should_run,
     signal_for,
+    update_model,
     stable_snapshot,
 )
 
@@ -89,6 +91,74 @@ class CollectorPureLogicTests(unittest.TestCase):
             semantic_impact(None, {"pushed_at": "now"}),
             0.0,
         )
+
+    def test_partial_v2_reliability_state_is_repaired_in_place(self):
+        state = {
+            "repositories": {
+                "owner/repo": {
+                    "checks": 8,
+                    "successful_checks": 1,
+                    "failed_checks": 0,
+                }
+            }
+        }
+        normalize_reliability_counters(state)
+        self.assertEqual(
+            state["repositories"]["owner/repo"]["successful_checks"],
+            8,
+        )
+
+    def test_success_update_preserves_inferred_legacy_history(self):
+        model = update_model(
+            {
+                "checks": 8,
+                "successful_checks": 1,
+                "failed_checks": 0,
+            },
+            old_snapshot={"stars": 10},
+            new_snapshot={"stars": 10},
+            changed=False,
+            error=None,
+            now=datetime(2026, 9, 29, 12, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(model["checks"], 9)
+        self.assertEqual(model["successful_checks"], 9)
+        self.assertEqual(model.get("failed_checks", 0), 0)
+
+    def test_failure_update_preserves_inferred_legacy_history(self):
+        model = update_model(
+            {
+                "checks": 8,
+                "successful_checks": 1,
+                "failed_checks": 0,
+            },
+            old_snapshot=None,
+            new_snapshot=None,
+            changed=False,
+            error="probe failure",
+            now=datetime(2026, 9, 29, 12, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(model["checks"], 9)
+        self.assertEqual(model["successful_checks"], 8)
+        self.assertEqual(model["failed_checks"], 1)
+
+    def test_partial_v2_signal_repairs_reliability_immediately(self):
+        target = Target(
+            full_name="owner/partial",
+            ecosystem="test",
+            cost=1,
+        )
+        signal = signal_for(
+            target,
+            {
+                "checks": 8,
+                "successful_checks": 1,
+                "failed_checks": 0,
+                "change_window": [0, 1, 0, 1],
+            },
+            datetime(2026, 9, 29, 12, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(signal.source_reliability, 1.0)
 
     def test_legacy_state_migrates_as_healthy_by_default(self):
         target = Target(

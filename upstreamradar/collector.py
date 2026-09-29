@@ -245,6 +245,18 @@ def initial_state() -> dict[str, Any]:
     }
 
 
+def normalize_reliability_counters(state: dict[str, Any]) -> None:
+    """Repair partially migrated v2 counters without inventing failures."""
+    repositories = state.setdefault("repositories", {})
+    for model in repositories.values():
+        checks = int(model.get("checks", 0))
+        failed = int(model.get("failed_checks", 0))
+        stored_success = int(model.get("successful_checks", 0))
+        inferred_success = max(0, checks - failed)
+        if stored_success < inferred_success:
+            model["successful_checks"] = inferred_success
+
+
 def repo_model(state: Mapping[str, Any], full_name: str) -> dict[str, Any]:
     repositories = state.get("repositories", {})
     current = repositories.get(full_name, {})
@@ -337,11 +349,9 @@ def signal_for(
     misses = len(change_window) - hits
     checks = int(model.get("checks", 0))
     failed_checks = int(model.get("failed_checks", 0))
-    successful_checks = int(
-        model.get(
-            "successful_checks",
-            max(0, checks - failed_checks),
-        )
+    successful_checks = max(
+        int(model.get("successful_checks", 0)),
+        max(0, checks - failed_checks),
     )
 
     novelty = 10.0 / ((checks + 1) ** 0.5)
@@ -453,17 +463,24 @@ def update_model(
     now: datetime,
 ) -> dict[str, Any]:
     model = dict(previous)
-    model["checks"] = int(model.get("checks", 0)) + 1
+    previous_checks = int(model.get("checks", 0))
+    failed_checks = int(model.get("failed_checks", 0))
+    successful_checks = max(
+        int(model.get("successful_checks", 0)),
+        max(0, previous_checks - failed_checks),
+    )
+    model["checks"] = previous_checks + 1
     model["last_checked_at"] = iso(now)
 
     if error is not None:
         model["error_streak"] = int(model.get("error_streak", 0)) + 1
-        model["failed_checks"] = int(model.get("failed_checks", 0)) + 1
+        model["failed_checks"] = failed_checks + 1
+        model["successful_checks"] = successful_checks
         model["last_error"] = error[:500]
         return model
 
     model["error_streak"] = 0
-    model["successful_checks"] = int(model.get("successful_checks", 0)) + 1
+    model["successful_checks"] = successful_checks + 1
     model.pop("last_error", None)
     model["change_window"] = bounded_window(model.get("change_window", []), int(changed))
     model["ewma_change"] = round(
@@ -682,6 +699,7 @@ def collect(
     targets, config = load_targets(config_path)
     state = load_json(state_path, initial_state())
     state["version"] = 3
+    normalize_reliability_counters(state)
     scheduler_state = state.setdefault("scheduler", {})
     pressure, elapsed_hours = catch_up_multiplier(
         scheduler_state.get("last_run_at"),
