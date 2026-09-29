@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from math import exp, log1p
+import re
 from typing import Any, Mapping, Sequence
 
 
@@ -44,7 +45,10 @@ def classify(repo: Mapping[str, Any], config: Mapping[str, Any]) -> tuple[str, f
         local = []
         for keyword in category.get("keywords", []):
             token = str(keyword).lower()
-            if token in haystack:
+            pattern = re.compile(
+                r"(?<![a-z0-9])" + re.escape(token) + r"(?![a-z0-9])"
+            )
+            if pattern.search(haystack):
                 local.append(token)
         if not local:
             continue
