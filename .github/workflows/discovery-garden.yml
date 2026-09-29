@@ -3,6 +3,16 @@ name: Discovery Garden
 on:
   schedule:
     - cron: "17 */2 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/discovery-garden.yml"
+      - "upstreamradar/discovery.py"
+      - "upstreamradar/forking.py"
+      - "scripts/discover_github.py"
+      - "scripts/apply_github_forks.py"
+      - "config/discovery.json"
   workflow_dispatch:
 
 permissions:
