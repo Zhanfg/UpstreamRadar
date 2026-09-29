@@ -6,6 +6,7 @@ from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote_plus
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 from upstreamradar.discovery import (
@@ -59,7 +60,7 @@ def enrich(repo: dict) -> dict:
         return repo
     try:
         return request(f"/repos/{full_name}")
-    except Exception:
+    except (HTTPError, URLError, TimeoutError, OSError, json.JSONDecodeError):
         return repo
 
 
