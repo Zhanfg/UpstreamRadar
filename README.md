@@ -86,24 +86,55 @@ The document explains why each layer exists and derives:
 UpstreamRadar/
 ├── upstreamradar/
 │   ├── __init__.py
-│   └── engine.py
+│   ├── engine.py
+│   ├── collector.py
+│   └── reviewer.py
 ├── tests/
-│   └── test_engine.py
+│   ├── test_engine.py
+│   ├── test_collector.py
+│   └── test_reviewer.py
 ├── examples/
 │   └── harmony_demo.py
 ├── docs/
-│   └── HARMONY.md
+│   ├── HARMONY.md
+│   ├── AUTOMATION.md
+│   └── CODE_REVIEW.md
 ├── .github/workflows/
 │   ├── python-ci.yml
+│   ├── radar.yml
+│   ├── code-review.yml
 │   └── verify-upstreamradar-pat.yml
 └── pyproject.toml
 ```
+
+## Automation
+
+The live radar runs automatically from GitHub Actions. Scheduled wake-ups use
+off-boundary minutes (`:07/:22/:37/:52`) to reduce scheduler contention.
+
+If GitHub delays scheduled execution, the next successful collection increases
+its **current** scan breadth according to elapsed time, up to 2.5×. It never
+backdates commits or fabricates historical observations.
+
+See [docs/AUTOMATION.md](docs/AUTOMATION.md).
+
+## Automated Code Review
+
+Pull requests targeting `main` receive a repository-local automated COMMENT
+review. The reviewer analyzes the unified diff for security and maintainability
+risks, including possible secrets, dangerous dynamic execution, shell injection
+risk, broad exception handling, deep nesting, and source changes without tests.
+
+The review is explicitly marked as automated and never auto-approves a PR.
+
+See [docs/CODE_REVIEW.md](docs/CODE_REVIEW.md).
 
 ## Validation
 
 CI currently validates the algorithm on Python 3.10, 3.11, 3.12, and 3.13.
 
-The test suite checks deterministic scoring, dependency-hub influence, budget constraints, ecosystem quotas, impossible schedules, duplicate-input rejection, and zero-budget behavior.
+The test suite covers HARMONY scoring and constraints, resilient scheduling,
+collector semantics, and automated code-review rules.
 
 ## Direction
 

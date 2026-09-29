@@ -1,0 +1,70 @@
+name: Automated Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: code-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout review implementation
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Fetch PR diff
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.UPSTREAMRADAR_PAT }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          gh pr diff "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" > /tmp/pr.diff
+
+      - name: Analyze diff
+        shell: bash
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          python -m upstreamradar.reviewer             --diff /tmp/pr.diff             --output /tmp/review.md             --head-sha "$HEAD_SHA"
+
+      - name: Submit review once per head SHA
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.UPSTREAMRADAR_PAT }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          marker="upstreamradar-review:${HEAD_SHA}"
+          existing="$(
+            gh api               --paginate               "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/reviews"               --jq "[.[] | select((.body // \"\") | contains(\"${marker}\"))] | length"               | awk '{s+=$1} END {print s+0}'
+          )"
+
+          if [[ "$existing" -gt 0 ]]; then
+            echo "Review already exists for head ${HEAD_SHA}."
+            exit 0
+          fi
+
+          gh api             --method POST             "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/reviews"             -f event=COMMENT             -F body=@/tmp/review.md
