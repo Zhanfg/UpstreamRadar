@@ -1111,6 +1111,29 @@
   {
     "auto_fork_eligible": false,
     "category": "security-sandbox",
+    "description": "A deliberately small Linux process sandbox launcher for agent workloads: namespaces, read-only rootfs, Landlock/seccomp policy, host-side CONNECT proxy allowlist, JSONL records and verify.",
+    "forks": 0,
+    "full_name": "yushui2022/EasySandbox",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-09-30T04:53:23Z",
+    "reasons": [
+      "category:security-sandbox",
+      "keyword:sandbox",
+      "keyword:seccomp",
+      "keyword:isolation",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.79306138,
+    "source_id": "1395021059",
+    "stars": 0,
+    "url": "https://github.com/yushui2022/EasySandbox"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "security-sandbox",
     "description": "Per-capability process isolation: applies the limits carried in a capability token to a child process before it execs. Standalone crate extracted from NOESAR EVOLUTION.",
     "forks": 0,
     "full_name": "komandante78/noesar-sandbox",
@@ -1828,27 +1851,5 @@
     "source_id": "1388783968",
     "stars": 0,
     "url": "https://github.com/FatOrange-Liang/deep-research-agent"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Build an AI agent platform with Spring Boot, Spring AI, and Vue for chat, RAG search, tool use, and document processing",
-    "forks": 0,
-    "full_name": "Preservative-bowels37/Super-ai-agent",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-09-29T18:29:00Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.73752296,
-    "source_id": "1213724160",
-    "stars": 1,
-    "url": "https://github.com/Preservative-bowels37/Super-ai-agent"
   }
 ]
