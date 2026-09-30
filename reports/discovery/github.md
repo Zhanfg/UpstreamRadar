@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **40000**
-- latest census cursor: **138149**
+- total census repositories scanned: **44000**
+- latest census cursor: **149960**
 - retained candidates: **80**
 - governed fork queue: **11**
 
@@ -20,9 +20,9 @@
 
 ### android-kernel
 
-- **ahmed-alnassif/GKID-Kernels** — score=0.933, stars=74; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
-- **Spring-bulid/MakoSU** — score=0.900, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
-- **sysretq0/android-kernel-builder** — score=0.895, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **ahmed-alnassif/GKID-Kernels** — score=0.941, stars=74; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **Spring-bulid/MakoSU** — score=0.907, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **sysretq0/android-kernel-builder** — score=0.899, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Alfnnnnyy/GKI_KernelSU_SUSFS** — score=0.866, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **WildKernels/GKI_KernelSU_SUSFS** — score=0.850, stars=1627; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Dere3046/KallRecon** — score=0.847, stars=11; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, recently-active
@@ -53,16 +53,16 @@
 
 ## Fork queue
 
-- **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.933, license=GPL-3.0)
+- **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.941, license=GPL-3.0)
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
 - **context-labs/whip** → ai-agents (score=0.918, license=Apache-2.0)
 - **saigontechnology/AgentCrew** → ai-agents (score=0.916, license=Apache-2.0)
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
 - **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.908, license=Apache-2.0)
+- **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
 - **keminar/anyproxy** → networking (score=0.902, license=MIT)
 - **MiChongs/WutherCore** → networking (score=0.902, license=MIT)
-- **Spring-bulid/MakoSU** → android-kernel (score=0.900, license=GPL-3.0)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.

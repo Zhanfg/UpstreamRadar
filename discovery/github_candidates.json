@@ -3,11 +3,11 @@
     "auto_fork_eligible": true,
     "category": "android-kernel",
     "description": "Blazing-fast GKI kernels with KernelSU / ReSukiSU + SUSFS, Baseband Guard, 300Hz, BBRv3, MGLRU & battery/performance optimizations. Works on all matching GKI devices.",
-    "forks": 42,
+    "forks": 45,
     "full_name": "ahmed-alnassif/GKID-Kernels",
     "license_id": "GPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-09-25T15:59:47Z",
+    "pushed_at": "2026-09-30T17:11:40Z",
     "reasons": [
       "category:android-kernel",
       "keyword:android",
@@ -18,7 +18,7 @@
       "recently-active",
       "license:GPL-3.0"
     ],
-    "score": 0.93302528,
+    "score": 0.9410945,
     "source_id": "1165093751",
     "stars": 74,
     "url": "https://github.com/ahmed-alnassif/GKID-Kernels"
@@ -168,6 +168,30 @@
   },
   {
     "auto_fork_eligible": true,
+    "category": "android-kernel",
+    "description": "MakoSU Android kernel-root manager with KMI-aware LKM, SuSFS, KPM, and recovery-focused maintenance tools.",
+    "forks": 2,
+    "full_name": "Spring-bulid/MakoSU",
+    "license_id": "GPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-09-30T08:37:34Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-3.0"
+    ],
+    "score": 0.90718679,
+    "source_id": "1301102438",
+    "stars": 18,
+    "url": "https://github.com/Spring-bulid/MakoSU"
+  },
+  {
+    "auto_fork_eligible": true,
     "category": "networking",
     "description": "Intelligent proxy & traffic-forwarding engine for Linux/macOS/Windows: domain routing, TUN global proxy, transparent proxy, and websocket intranet penetration.",
     "forks": 7,
@@ -215,28 +239,28 @@
     "url": "https://github.com/MiChongs/WutherCore"
   },
   {
-    "auto_fork_eligible": true,
+    "auto_fork_eligible": false,
     "category": "android-kernel",
-    "description": "MakoSU Android kernel-root manager with KMI-aware LKM, SuSFS, KPM, and recovery-focused maintenance tools.",
-    "forks": 2,
-    "full_name": "Spring-bulid/MakoSU",
+    "description": "Build GKI kernels (5.10-6.18) with KernelSU-Next, NoMount, Partition Guard + portable Kconfig fragments. Flashable AnyKernel3 zips on Releases. Assisted by muse-spark-1.3.",
+    "forks": 4,
+    "full_name": "sysretq0/android-kernel-builder",
     "license_id": "GPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-09-25T09:35:05Z",
+    "pushed_at": "2026-09-30T06:01:37Z",
     "reasons": [
       "category:android-kernel",
       "keyword:android",
       "keyword:gki",
       "keyword:kernel",
       "keyword:kernelsu",
-      "keyword:susfs",
       "recently-active",
-      "license:GPL-3.0"
+      "license:GPL-3.0",
+      "emerging"
     ],
-    "score": 0.89977188,
-    "source_id": "1301102438",
-    "stars": 18,
-    "url": "https://github.com/Spring-bulid/MakoSU"
+    "score": 0.89895217,
+    "source_id": "1357857090",
+    "stars": 3,
+    "url": "https://github.com/sysretq0/android-kernel-builder"
   },
   {
     "auto_fork_eligible": true,
@@ -261,30 +285,6 @@
     "source_id": "1221587347",
     "stars": 14,
     "url": "https://github.com/ai-pivot/xbot"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Build GKI kernels (5.10-6.18) with KernelSU-Next, NoMount, Partition Guard + portable Kconfig fragments. Flashable AnyKernel3 zips on Releases. Assisted by muse-spark-1.3.",
-    "forks": 4,
-    "full_name": "sysretq0/android-kernel-builder",
-    "license_id": "GPL-3.0",
-    "platform": "github",
-    "pushed_at": "2026-09-27T06:00:52Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "recently-active",
-      "license:GPL-3.0",
-      "emerging"
-    ],
-    "score": 0.89535103,
-    "source_id": "1357857090",
-    "stars": 3,
-    "url": "https://github.com/sysretq0/android-kernel-builder"
   },
   {
     "auto_fork_eligible": false,
@@ -1411,6 +1411,28 @@
   {
     "auto_fork_eligible": false,
     "category": "android-kernel",
+    "description": "ESK Kernel for xaga(in)/xagapro(in)",
+    "forks": 11,
+    "full_name": "ESK-Project/android_kernel_xiaomi_mt6895",
+    "license_id": "NOASSERTION",
+    "platform": "github",
+    "pushed_at": "2026-09-30T16:11:07Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.76436268,
+    "source_id": "1030428357",
+    "stars": 14,
+    "url": "https://github.com/ESK-Project/android_kernel_xiaomi_mt6895"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
     "description": "GKI-kernel for Redmi K50 Ultra/Xiaomi 12T Pro  MIUI/HyperOS  a12-17",
     "forks": 9,
     "full_name": "Winkmoon/android_kernel_xiaomi_diting",
@@ -1429,28 +1451,6 @@
     "source_id": "1166209700",
     "stars": 19,
     "url": "https://github.com/Winkmoon/android_kernel_xiaomi_diting"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "ESK Kernel for xaga(in)/xagapro(in)",
-    "forks": 11,
-    "full_name": "ESK-Project/android_kernel_xiaomi_mt6895",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-09-27T14:22:00Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.75993022,
-    "source_id": "1030428357",
-    "stars": 13,
-    "url": "https://github.com/ESK-Project/android_kernel_xiaomi_mt6895"
   },
   {
     "auto_fork_eligible": false,
@@ -1545,6 +1545,28 @@
   {
     "auto_fork_eligible": false,
     "category": "android-kernel",
+    "description": "Experimental LineageOS 22.2 device tree for Lenovo Tab One TB305FU (clove_row_wifi); prebuilt GKI kernel + stock vendor, boots with Wi-Fi.",
+    "forks": 0,
+    "full_name": "9cb14c1ec0/android_device_lenovo_clove_row_wifi-lineage",
+    "license_id": "NOASSERTION",
+    "platform": "github",
+    "pushed_at": "2026-09-30T12:47:32Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.74901182,
+    "source_id": "1385947634",
+    "stars": 0,
+    "url": "https://github.com/9cb14c1ec0/android_device_lenovo_clove_row_wifi-lineage"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
     "description": "Android GKI 6.12 LTS kernel common - fork of CodeLinaro clo/la/kernel/common (aosp-new/android16-6.12-lts), ASB 2026-08",
     "forks": 0,
     "full_name": "EdMory/android_kernel_common_sm8850",
@@ -1563,28 +1585,6 @@
     "source_id": "1394779258",
     "stars": 0,
     "url": "https://github.com/EdMory/android_kernel_common_sm8850"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Experimental LineageOS 22.2 device tree for Lenovo Tab One TB305FU (clove_row_wifi); prebuilt GKI kernel + stock vendor, boots with Wi-Fi.",
-    "forks": 0,
-    "full_name": "9cb14c1ec0/android_device_lenovo_clove_row_wifi-lineage",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-09-28T19:45:14Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.74794973,
-    "source_id": "1385947634",
-    "stars": 0,
-    "url": "https://github.com/9cb14c1ec0/android_device_lenovo_clove_row_wifi-lineage"
   },
   {
     "auto_fork_eligible": false,
@@ -1696,6 +1696,28 @@
     "source_id": "1372535099",
     "stars": 0,
     "url": "https://github.com/iasnezhkov/android_kernel_ikko_mindone"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Kernel device modules and device tree for SHARP AQUOS wish4 (sx4), built against the android15-6.6 GKI",
+    "forks": 0,
+    "full_name": "ray38080289/android_kernel_sharp_sx4-modules",
+    "license_id": null,
+    "platform": "github",
+    "pushed_at": "2026-09-30T17:47:47Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.74402785,
+    "source_id": "1398548735",
+    "stars": 0,
+    "url": "https://github.com/ray38080289/android_kernel_sharp_sx4-modules"
   },
   {
     "auto_fork_eligible": false,
@@ -1829,27 +1851,5 @@
     "source_id": "1395194925",
     "stars": 0,
     "url": "https://github.com/Simplyaksh18/TradeLens-AI"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "DeepResearch-Agent：Building a long-horizon research agent with planning, tool use, reflection, memory, browser automation, MCP, and evaluation.",
-    "forks": 0,
-    "full_name": "FatOrange-Liang/deep-research-agent",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-30T06:10:26Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.74069043,
-    "source_id": "1388783968",
-    "stars": 0,
-    "url": "https://github.com/FatOrange-Liang/deep-research-agent"
   }
 ]
