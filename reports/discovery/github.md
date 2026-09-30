@@ -1,22 +1,22 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **32000**
-- latest census cursor: **113805**
+- total census repositories scanned: **36000**
+- latest census cursor: **126308**
 - retained candidates: **80**
-- governed fork queue: **7**
+- governed fork queue: **11**
 
 ## Top directions
 
 ### ai-agents
 
-- **context-labs/whip** — score=0.918, stars=1068; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **DemonDamon/AgenticX** — score=0.933, stars=237; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
+- **context-labs/whip** — score=0.918, stars=1069; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **saigontechnology/AgentCrew** — score=0.916, stars=217; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **mikehasa/agentacct** — score=0.911, stars=755; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
+- **ThreeMoonsLab/agents-shipgate** — score=0.908, stars=89; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
+- **ai-pivot/xbot** — score=0.895, stars=14; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
+- **zlogic-labs/zlogic** — score=0.874, stars=3; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **manishiitg/mcpagent** — score=0.871, stars=1; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
-- **skwijeratne/agentix-toolkit** — score=0.870, stars=3; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
-- **tschk/rotary** — score=0.869, stars=3; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
-- **momo-null/OmniAgent** — score=0.860, stars=3; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
-- **ShreyashDarade/praxis-ai-agent-platform** — score=0.856, stars=0; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
-- **BGMLAI/gate.cat** — score=0.823, stars=2; category:ai-agents, keyword:agent, keyword:mcp, keyword:llm, recently-active
 
 ### android-kernel
 
@@ -55,10 +55,14 @@
 
 - **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.933, license=GPL-3.0)
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
+- **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
 - **context-labs/whip** → ai-agents (score=0.918, license=Apache-2.0)
+- **saigontechnology/AgentCrew** → ai-agents (score=0.916, license=Apache-2.0)
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
+- **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.908, license=Apache-2.0)
 - **keminar/anyproxy** → networking (score=0.902, license=MIT)
 - **MiChongs/WutherCore** → networking (score=0.902, license=MIT)
 - **Spring-bulid/MakoSU** → android-kernel (score=0.900, license=GPL-3.0)
+- **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.
