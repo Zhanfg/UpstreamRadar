@@ -16,6 +16,7 @@ class ActivityEvidence:
     top_name: str | None = None
     top_impact: float = 0.0
     top_fields: tuple[str, ...] = ()
+    top_reasons: tuple[str, ...] = ()
     content_opportunities: int = 0
     fork_queue_count: int = 0
 
@@ -79,7 +80,9 @@ def plan_actions(evidence: ActivityEvidence, history: Sequence[Mapping[str, Any]
     cooldowns = config.get('cooldown_hours', {})
     actions: list[ActivityAction] = []
 
-    if _surface_enabled(config, evidence.platform, 'issues') and evidence.top_name and evidence.top_impact >= float(thresholds.get('impact_issue', 4.0)):
+    strong_signal = bool({'regime-shift', 'security-focus'}.intersection(evidence.top_reasons))
+
+    if _surface_enabled(config, evidence.platform, 'issues') and evidence.top_name and (evidence.top_impact >= float(thresholds.get('impact_issue', 4.0)) or strong_signal):
         key = f'impact:{evidence.top_name}'
         if _budget_available(history, config, kind='impact_issue', now=now) and not key_on_cooldown(history, kind='impact_issue', key=key, now=now, cooldown_hours=float(cooldowns.get('impact_issue', 72))):
             fields = ', '.join(evidence.top_fields) or 'snapshot'
@@ -94,6 +97,7 @@ def plan_actions(evidence: ActivityEvidence, history: Sequence[Mapping[str, Any]
                     f'- upstream: {evidence.top_name}\n'
                     f'- semantic impact: {evidence.top_impact:.2f}\n'
                     f'- changed fields: {fields}\n'
+                    f'- HARMONY reasons: {", ".join(evidence.top_reasons) or "none"}\n'
                     f'- content score: {evidence.content_score:.3f}\n'
                     f'- portfolio coverage: {evidence.coverage_score:.3f}\n\n'
                     'This issue is generated from observed upstream state, not synthetic activity.'
@@ -142,7 +146,7 @@ def plan_actions(evidence: ActivityEvidence, history: Sequence[Mapping[str, Any]
                 ),
             ))
 
-    if _surface_enabled(config, evidence.platform, 'release') and evidence.changed_count >= int(thresholds.get('release_changed', 10)) and evidence.top_impact >= float(thresholds.get('release_impact', 4.0)):
+    if _surface_enabled(config, evidence.platform, 'release') and evidence.changed_count >= int(thresholds.get('release_changed', 10)) and (evidence.top_impact >= float(thresholds.get('release_impact', 4.0)) or strong_signal):
         key = 'release:intelligence'
         if _budget_available(history, config, kind='release', now=now) and not key_on_cooldown(history, kind='release', key=key, now=now, cooldown_hours=float(cooldowns.get('release', 168))):
             tag = f'radar-{now.strftime("%Y.%m.%d")}'
@@ -156,10 +160,23 @@ def plan_actions(evidence: ActivityEvidence, history: Sequence[Mapping[str, Any]
                     f'Automated evidence-backed intelligence release {tag}.\n\n'
                     f'- changed upstreams: {evidence.changed_count}\n'
                     f'- top change: {evidence.top_name} (impact={evidence.top_impact:.2f})\n'
+                    f'- HARMONY reasons: {", ".join(evidence.top_reasons) or "none"}\n'
                     f'- coverage: {evidence.coverage_score:.3f}\n'
                     f'- content score: {evidence.content_score:.3f}\n'
                     f'- fork queue: {evidence.fork_queue_count}\n'
                 ),
+            ))
+
+    if _surface_enabled(config, evidence.platform, 'milestone') and any(item.kind == 'impact_issue' for item in actions):
+        key = f'milestone:{now.strftime("%Y-%m")}'
+        if _budget_available(history, config, kind='milestone', now=now) and not any(item.get('kind') == 'milestone' and item.get('key') == key for item in history):
+            actions.append(ActivityAction(
+                kind='milestone',
+                key=key,
+                priority=0.55,
+                reason='monthly intelligence work has actionable impact investigations',
+                title=f'Intelligence Cycle {now.strftime("%Y-%m")}',
+                body='Automated monthly milestone for evidence-backed impact investigations and follow-up work.',
             ))
 
     actions.sort(key=lambda item: (-item.priority, item.kind, item.key))
