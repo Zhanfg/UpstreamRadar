@@ -162,6 +162,27 @@ Discovery forks are organized into GitHub `yuezhou-build` and GitLab `axymorrsen
 
 See docs/DISCOVERY_GARDEN.md.
 
+## Activity Matrix
+
+UpstreamRadar can now turn one real upstream event into multiple useful engineering surfaces instead of relying mainly on commits and pull requests.
+
+Evidence-backed actions include:
+
+- impact Issues and follow-up comments;
+- benchmark snapshots;
+- durable Wiki intelligence pages;
+- weekly Releases and Tags;
+- monthly Milestones;
+- existing PR/MR review and inline review;
+- Discovery Garden forks;
+- CI and health incident lifecycle.
+
+Every surface has its own budget and cooldown. Issues and Releases require a high semantic-impact transition or strong HARMONY reasons such as regime-shift/security-focus, so normal stars/forks/watchers churn does not create fake work.
+
+Automated writes are explicitly identified as automation and are not intended to impersonate manual human activity.
+
+See docs/ACTIVITY_MATRIX.md.
+
 ## Validation
 
 CI currently validates the algorithm on Python 3.10, 3.11, 3.12, and 3.13.
