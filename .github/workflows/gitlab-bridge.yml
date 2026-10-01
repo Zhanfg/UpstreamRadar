@@ -101,6 +101,17 @@ jobs:
           UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
         run: python -m scripts.maintenance_gitlab
 
+      - name: Run GitLab Governance Audit
+        id: governance
+        if: steps.bridge_secret.outputs.available == 'true' && steps.clone.outcome == 'success' && steps.validate.outcome == 'success'
+        working-directory: gitlab-upstreamradar
+        env:
+          CI_API_V4_URL: https://gitlab.com/api/v4
+          CI_PROJECT_ID: "87037475"
+          CI_DEFAULT_BRANCH: main
+          UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+        run: python -m scripts.governance_gitlab
+
       - name: Advance GitLab discovery census
         id: discovery
         if: steps.bridge_secret.outputs.available == 'true'
@@ -149,6 +160,7 @@ jobs:
           ACTIVITY_OUTCOME: ${{ steps.activity.outcome }}
           ENGINEERING_HEALTH_OUTCOME: ${{ steps.engineering_health.outcome }}
           MAINTENANCE_OUTCOME: ${{ steps.maintenance.outcome }}
+          GOVERNANCE_OUTCOME: ${{ steps.governance.outcome }}
           REVIEW_OUTCOME: ${{ steps.review.outcome }}
           RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
@@ -173,6 +185,7 @@ jobs:
               "activity": os.environ.get("ACTIVITY_OUTCOME", ""),
               "engineering_health": os.environ.get("ENGINEERING_HEALTH_OUTCOME", ""),
               "maintenance": os.environ.get("MAINTENANCE_OUTCOME", ""),
+              "governance": os.environ.get("GOVERNANCE_OUTCOME", ""),
               "review": os.environ.get("REVIEW_OUTCOME", ""),
           }
           selftest = os.environ.get("BRIDGE_HEALTH_SELFTEST") == "degraded"

@@ -13,8 +13,11 @@ on:
       - "scripts/security_posture.py"
       - "scripts/engineering_health_github.py"
       - "scripts/maintenance_github.py"
+      - "scripts/governance_github.py"
       - "upstreamradar/health.py"
       - "upstreamradar/maintenance.py"
+      - "upstreamradar/governance.py"
+      - "tests/test_governance.py"
       - "config/activity_matrix.json"
       - ".github/workflows/activity-matrix.yml"
   workflow_dispatch:
@@ -46,7 +49,11 @@ jobs:
       - name: Validate Activity Matrix
         run: |
           python -m compileall -q upstreamradar scripts
-          python -m unittest tests.test_activity -v
+          python -m unittest \
+            tests.test_activity \
+            tests.test_engineering_health \
+            tests.test_maintenance \
+            tests.test_governance -v
 
       - name: Run evidence-driven GitHub activity
         env:
@@ -62,6 +69,11 @@ jobs:
         env:
           UPSTREAMRADAR_PAT: ${{ github.token }}
         run: python -m scripts.maintenance_github
+
+      - name: Run Activity Matrix governance audit
+        env:
+          UPSTREAMRADAR_PAT: ${{ github.token }}
+        run: python -m scripts.governance_github
 
       - name: Publish GitHub Wiki intelligence page
         if: ${{ hashFiles('.activity/github_wiki.md') != '' }}
@@ -103,11 +115,13 @@ jobs:
             state/benchmark_github.json \
             state/engineering_health_github.json \
             state/maintenance_github.json \
+            state/governance_github.json \
             reports/activity \
             reports/benchmarks \
             reports/security \
             reports/health \
-            reports/maintenance 2>/dev/null || true
+            reports/maintenance \
+            reports/governance 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No new Activity Matrix evidence."
             exit 0
