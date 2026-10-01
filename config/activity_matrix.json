@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "cadence_hours": 6,
+  "daily_budget": {
+    "impact_issue": 2,
+    "issue_note": 4,
+    "benchmark": 2,
+    "wiki": 1,
+    "release": 1,
+    "milestone": 1
+  },
+  "cooldown_hours": {
+    "impact_issue": 72,
+    "issue_note": 8,
+    "benchmark": 12,
+    "wiki": 24,
+    "release": 168
+  },
+  "thresholds": {
+    "impact_issue": 4.0,
+    "benchmark_changed": 1,
+    "wiki_changed": 3,
+    "wiki_content_score": 0.65,
+    "release_changed": 10,
+    "release_impact": 4.0
+  },
+  "surfaces": {
+    "github": {
+      "issues": true,
+      "issue_notes": true,
+      "benchmark": true,
+      "wiki": true,
+      "release": true,
+      "milestone": true,
+      "discussion": false
+    },
+    "gitlab": {
+      "issues": true,
+      "issue_notes": true,
+      "benchmark": true,
+      "wiki": true,
+      "release": true,
+      "milestone": true
+    }
+  }
+}

@@ -9,11 +9,14 @@ on:
       - "upstreamradar/**"
       - "tests/**"
       - "examples/**"
+      - "scripts/**"
       - "config/**"
       - "pyproject.toml"
       - ".github/workflows/python-ci.yml"
       - ".github/workflows/code-review.yml"
       - ".github/workflows/radar.yml"
+      - ".github/workflows/activity-matrix.yml"
+      - ".github/workflows/gitlab-bridge.yml"
   pull_request:
     branches:
       - main
@@ -21,11 +24,14 @@ on:
       - "upstreamradar/**"
       - "tests/**"
       - "examples/**"
+      - "scripts/**"
       - "config/**"
       - "pyproject.toml"
       - ".github/workflows/python-ci.yml"
       - ".github/workflows/code-review.yml"
       - ".github/workflows/radar.yml"
+      - ".github/workflows/activity-matrix.yml"
+      - ".github/workflows/gitlab-bridge.yml"
 
 permissions:
   contents: read
@@ -48,8 +54,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Compile package
-        run: python -m compileall -q upstreamradar
+      - name: Compile package and automation entrypoints
+        run: python -m compileall -q upstreamradar scripts examples
 
       - name: Run unit tests
         run: python -m unittest discover -s tests -v

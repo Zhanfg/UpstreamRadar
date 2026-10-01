@@ -1,0 +1,91 @@
+name: Activity Matrix
+
+on:
+  schedule:
+    - cron: "43 */6 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "upstreamradar/activity.py"
+      - "scripts/run_github_activity.py"
+      - "config/activity_matrix.json"
+      - ".github/workflows/activity-matrix.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: upstreamradar-activity-matrix
+  cancel-in-progress: false
+
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.UPSTREAMRADAR_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Validate Activity Matrix
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest tests.test_activity -v
+
+      - name: Run evidence-driven GitHub activity
+        env:
+          UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+        run: python -m scripts.run_github_activity
+
+      - name: Publish GitHub Wiki intelligence page
+        if: ${{ hashFiles('.activity/github_wiki.md') != '' }}
+        shell: bash
+        env:
+          UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+        run: |
+          set -euo pipefail
+          slug="$(cat .activity/github_wiki_slug.txt)"
+          rm -rf /tmp/upstreamradar-wiki
+          auth="$(printf 'x-access-token:%s' "$UPSTREAMRADAR_PAT" | base64 -w0)"
+          if ! git -c http.extraheader="AUTHORIZATION: basic ${auth}" clone "https://github.com/${GITHUB_REPOSITORY}.wiki.git" /tmp/upstreamradar-wiki; then
+            mkdir -p /tmp/upstreamradar-wiki
+            git -C /tmp/upstreamradar-wiki init
+            git -C /tmp/upstreamradar-wiki remote add origin "https://github.com/${GITHUB_REPOSITORY}.wiki.git"
+          fi
+          cp .activity/github_wiki.md "/tmp/upstreamradar-wiki/${slug}.md"
+          git -C /tmp/upstreamradar-wiki add "${slug}.md"
+          if git -C /tmp/upstreamradar-wiki diff --cached --quiet; then
+            echo "Wiki page unchanged."
+            exit 0
+          fi
+          git -C /tmp/upstreamradar-wiki config user.name "github-actions[bot]"
+          git -C /tmp/upstreamradar-wiki config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C /tmp/upstreamradar-wiki commit -m "[activity] update ${slug}"
+          branch="$(git -C /tmp/upstreamradar-wiki branch --show-current)"
+          [[ -n "$branch" ]] || branch=master
+          git -C /tmp/upstreamradar-wiki -c http.extraheader="AUTHORIZATION: basic ${auth}" push origin "HEAD:${branch}"
+
+      - name: Commit Activity Matrix evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A state/activity_github.json reports/activity
+          if git diff --cached --quiet; then
+            echo "No new Activity Matrix evidence."
+            exit 0
+          fi
+          git commit -m "[activity] record GitHub multi-surface evidence"
+          git pull --rebase origin main
+          git push origin HEAD:main
