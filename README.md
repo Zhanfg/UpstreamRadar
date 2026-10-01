@@ -191,6 +191,14 @@ cross-platform repository security-posture audit. Daily evidence is persisted
 once per platform, while benchmark/security incidents are fingerprinted,
 cooldown-limited, and automatically closed after recovery.
 
+### Maintenance Intelligence
+
+Activity Matrix v3 adds CI reliability, governed-fork synchronization, stale
+Issue/MR detection, workflow-reference posture, branch hygiene, and Release
+inventory. Real regressions enter the same deduplicated incident/recovery
+lifecycle; branch and Release context remain report-only unless intervention is
+actually warranted.
+
 ## Validation
 
 CI currently validates the algorithm on Python 3.10, 3.11, 3.12, and 3.13.
