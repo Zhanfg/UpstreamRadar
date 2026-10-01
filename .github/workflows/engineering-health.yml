@@ -1,0 +1,156 @@
+name: Engineering Health
+
+on:
+  schedule:
+    - cron: "13 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: upstreamradar-engineering-health
+  cancel-in-progress: false
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.UPSTREAMRADAR_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run HARMONY benchmark
+        id: benchmark
+        continue-on-error: true
+        run: python -m scripts.benchmark_harmony
+
+      - name: Run repository security posture audit
+        id: security
+        continue-on-error: true
+        run: python -m scripts.security_posture
+
+      - name: Reconcile benchmark and security incidents
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.UPSTREAMRADAR_PAT }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from datetime import date
+          from pathlib import Path
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          today = date.today().isoformat()
+          bench = json.loads(Path(f"reports/benchmarks/{today}.json").read_text())
+          security = json.loads(Path(f"reports/security/{today}.json").read_text())
+
+          def open_issue(title):
+              raw = subprocess.check_output(
+                  [
+                      "gh", "issue", "list",
+                      "--repo", repo,
+                      "--state", "open",
+                      "--search", f"{title} in:title",
+                      "--json", "number,title",
+                  ],
+                  text=True,
+              )
+              items = json.loads(raw)
+              return items[0]["number"] if items else None
+
+          def reconcile(title, active, body):
+              number = open_issue(title)
+              if active and number is None:
+                  subprocess.check_call(
+                      ["gh", "issue", "create", "--repo", repo, "--title", title, "--body", body]
+                  )
+              elif active and number is not None:
+                  subprocess.check_call(
+                      ["gh", "issue", "comment", str(number), "--repo", repo, "--body", body]
+                  )
+              elif not active and number is not None:
+                  subprocess.check_call(
+                      [
+                          "gh", "issue", "comment", str(number), "--repo", repo,
+                          "--body", "Engineering Health recovered. Closing this incident automatically.",
+                      ]
+                  )
+                  subprocess.check_call(
+                      ["gh", "issue", "close", str(number), "--repo", repo]
+                  )
+
+          benchmark_active = bool(
+              bench.get("regressed") or bench.get("determinism_regressed")
+          )
+          benchmark_body = (
+              "Daily HARMONY benchmark detected an engineering regression.\n\n"
+              f"- median_ms: {bench.get('median_ms')}\n"
+              f"- previous_median_ms: {bench.get('previous_median_ms')}\n"
+              f"- regressed: {bench.get('regressed')}\n"
+              f"- determinism_regressed: {bench.get('determinism_regressed')}\n"
+              f"- selection_hash: {bench.get('selection_hash')}\n"
+          )
+          reconcile(
+              "[benchmark] HARMONY engineering health regression",
+              benchmark_active,
+              benchmark_body,
+          )
+
+          counts = security.get("counts", {})
+          security_active = int(counts.get("critical", 0)) + int(counts.get("high", 0)) > 0
+          top = security.get("findings", [])[:10]
+          security_body = (
+              "Repository posture audit detected high-severity findings.\n\n"
+              f"- critical: {counts.get('critical', 0)}\n"
+              f"- high: {counts.get('high', 0)}\n"
+              f"- medium: {counts.get('medium', 0)}\n\n"
+              + "\n".join(
+                  f"- {item['severity']} {item['kind']}: {item['path']} — {item['message']}"
+                  for item in top
+              )
+          )
+          reconcile(
+              "[security] Repository posture regression",
+              security_active,
+              security_body,
+          )
+          PY
+
+      - name: Commit daily engineering health evidence
+        run: |
+          set -euo pipefail
+          git add state/benchmark.json reports/benchmarks reports/security
+          if git diff --cached --quiet; then
+            echo "No engineering-health evidence changed."
+            exit 0
+          fi
+          day="$(date -u +%F)"
+          git commit -m "[health] engineering evidence ${day}"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Fail on deterministic benchmark breakage
+        if: steps.benchmark.outcome == 'failure'
+        run: exit 1
+
+      - name: Fail on critical security findings
+        if: steps.security.outcome == 'failure'
+        run: exit 1
