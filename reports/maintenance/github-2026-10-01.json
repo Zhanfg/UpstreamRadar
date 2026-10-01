@@ -1,0 +1,73 @@
+{
+  "active_count": 0,
+  "fork_comparisons": [
+    {
+      "ahead_by": 0,
+      "behind_by": 3,
+      "branch": "dev",
+      "fork": "yuezhou-build/GKID-Kernels",
+      "status": "behind",
+      "upstream": "ahmed-alnassif/GKID-Kernels"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 2,
+      "branch": "master",
+      "fork": "yuezhou-build/hysteria",
+      "status": "behind",
+      "upstream": "HyNetworks/hysteria"
+    }
+  ],
+  "observed_at": "2026-10-01T11:57:02+00:00",
+  "platform": "github",
+  "platform_actions": 0,
+  "signals": [
+    {
+      "active": false,
+      "evidence": {
+        "completed_runs": 27,
+        "consecutive_failures": 0,
+        "failure_count": 1,
+        "failure_rate": 0.037037,
+        "failure_run_ids": [
+          36855180572
+        ]
+      },
+      "key": "ci-reliability",
+      "severity": "medium",
+      "title": "[ci] Workflow reliability regression"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "affected_count": 0,
+        "forks": [],
+        "threshold": 20
+      },
+      "key": "fork-sync",
+      "severity": "medium",
+      "title": "[fork] Discovery forks behind upstream"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "items": [],
+        "stale_count": 0,
+        "threshold": 3
+      },
+      "key": "stale-work",
+      "severity": "low",
+      "title": "[maintenance] Stale engineering work items"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "finding_count": 0,
+        "findings": []
+      },
+      "key": "workflow-refs",
+      "severity": "high",
+      "title": "[maintenance] Floating workflow action references"
+    }
+  ]
+}
