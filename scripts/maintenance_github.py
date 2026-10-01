@@ -302,16 +302,19 @@ def main() -> int:
     )
 
     signals = [ci_signal, fork_signal, stale_signal, ref_signal]
+    dry_run = os.environ.get("MAINTENANCE_DRY_RUN") == "1"
     cooldown = float(policy.get("incident_cooldown_hours", 12))
-    actions = sum(
-        reconcile(
-            state,
-            signal,
-            now=now,
-            cooldown_hours=cooldown,
+    actions = 0
+    if not dry_run:
+        actions = sum(
+            reconcile(
+                state,
+                signal,
+                now=now,
+                cooldown_hours=cooldown,
+            )
+            for signal in signals
         )
-        for signal in signals
-    )
 
     report = {
         "observed_at": now.isoformat(),
@@ -326,12 +329,14 @@ def main() -> int:
         ),
     }
 
-    state["last_run_at"] = now.isoformat()
-    write(STATE_PATH, state)
-    write(report_path, report)
+    if not dry_run:
+        state["last_run_at"] = now.isoformat()
+        write(STATE_PATH, state)
+        write(report_path, report)
 
     print(
-        f"MAINTENANCE=PASS active={report['active_count']} "
+        f"MAINTENANCE={'DRY_RUN' if dry_run else 'PASS'} "
+        f"active={report['active_count']} "
         f"actions={actions} forks={len(comparisons)}"
     )
     return 0
