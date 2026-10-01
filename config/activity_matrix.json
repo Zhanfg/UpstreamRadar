@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "cadence_hours": 6,
   "daily_budget": {
     "impact_issue": 2,
@@ -93,6 +93,44 @@
       "stale_days": 30,
       "report_only": true,
       "max_reported_items": 20
+    }
+  },
+  "governance": {
+    "cadence_hours": 24,
+    "incident_cooldown_hours": 12,
+    "data_quality": {
+      "stale_hours": 36,
+      "min_records_for_stale_ratio": 10,
+      "stale_fraction_threshold": 0.2,
+      "error_streak_threshold": 3,
+      "max_error_streak_records": 1,
+      "max_invalid_records": 0,
+      "max_window_items": 48,
+      "max_reported_items": 20
+    },
+    "state_growth": {
+      "per_file_bytes": 2097152,
+      "total_bytes": 12582912,
+      "max_reported_items": 20
+    },
+    "parity": {
+      "enabled": true,
+      "max_mismatches": 0,
+      "shared_paths": [
+        "upstreamradar/engine.py",
+        "upstreamradar/activity.py",
+        "upstreamradar/health.py",
+        "upstreamradar/maintenance.py",
+        "upstreamradar/governance.py",
+        "scripts/benchmark_harmony.py",
+        "scripts/security_posture.py",
+        "config/activity_matrix.json",
+        "docs/ACTIVITY_MATRIX.md",
+        "tests/test_activity.py",
+        "tests/test_engineering_health.py",
+        "tests/test_maintenance.py",
+        "tests/test_governance.py"
+      ]
     }
   }
 }
