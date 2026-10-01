@@ -183,6 +183,14 @@ Automated writes are explicitly identified as automation and are not intended to
 
 See docs/ACTIVITY_MATRIX.md.
 
+
+### Engineering Health
+
+Activity Matrix v2 adds a deterministic HARMONY performance benchmark and a
+cross-platform repository security-posture audit. Daily evidence is persisted
+once per platform, while benchmark/security incidents are fingerprinted,
+cooldown-limited, and automatically closed after recovery.
+
 ## Validation
 
 CI currently validates the algorithm on Python 3.10, 3.11, 3.12, and 3.13.
