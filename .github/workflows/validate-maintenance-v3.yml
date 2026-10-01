@@ -1,0 +1,55 @@
+name: Validate Activity Matrix v3 Maintenance
+
+on:
+  push:
+    branches:
+      - "feat/activity-matrix-v3-maintenance"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  issues: read
+
+jobs:
+  github-maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Compile and test
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest tests.test_maintenance -v
+      - name: Live GitHub maintenance dry-run
+        env:
+          UPSTREAMRADAR_PAT: ${{ github.token }}
+          MAINTENANCE_DRY_RUN: "1"
+        run: python -m scripts.maintenance_github
+
+  gitlab-maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone GitLab v3 branch
+        run: |
+          git clone --depth=1 --branch feat/activity-matrix-v3-maintenance \
+            https://gitlab.com/axymorrsen/upstreamradar.git gitlab-v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Compile and test GitLab branch
+        working-directory: gitlab-v3
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest tests.test_maintenance -v
+      - name: Live GitLab maintenance dry-run
+        working-directory: gitlab-v3
+        env:
+          CI_API_V4_URL: https://gitlab.com/api/v4
+          CI_PROJECT_ID: "87037475"
+          CI_DEFAULT_BRANCH: main
+          UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+          MAINTENANCE_DRY_RUN: "1"
+        run: python -m scripts.maintenance_gitlab
