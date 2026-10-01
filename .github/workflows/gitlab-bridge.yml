@@ -101,6 +101,17 @@ jobs:
           UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
         run: python -m scripts.review_gitlab_mrs
 
+      - name: Reconcile GitLab Activity Fabric
+        id: activity
+        if: always() && steps.bridge_secret.outputs.available == 'true' && steps.clone.outcome == 'success' && steps.validate.outcome == 'success'
+        working-directory: gitlab-upstreamradar
+        env:
+          CI_API_V4_URL: https://gitlab.com/api/v4
+          CI_PROJECT_ID: "87037475"
+          CI_DEFAULT_BRANCH: main
+          UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+        run: python -m scripts.activity_gitlab
+
       - name: Report GitLab bridge health
         id: health
         if: always() && steps.bridge_secret.outputs.available == 'true'
@@ -114,6 +125,7 @@ jobs:
           DISCOVERY_OUTCOME: ${{ steps.discovery.outcome }}
           FORK_OUTCOME: ${{ steps.fork.outcome }}
           REVIEW_OUTCOME: ${{ steps.review.outcome }}
+          ACTIVITY_OUTCOME: ${{ steps.activity.outcome }}
           RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python - <<'PY'
@@ -135,6 +147,7 @@ jobs:
               "discovery": os.environ.get("DISCOVERY_OUTCOME", ""),
               "fork": os.environ.get("FORK_OUTCOME", ""),
               "review": os.environ.get("REVIEW_OUTCOME", ""),
+              "activity": os.environ.get("ACTIVITY_OUTCOME", ""),
           }
           selftest = os.environ.get("BRIDGE_HEALTH_SELFTEST") == "degraded"
           degraded = selftest or any(value != "success" for value in outcomes.values())
