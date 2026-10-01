@@ -254,19 +254,12 @@ def main() -> int:
             "version": 1,
             "items": {},
             "history": [],
-            "scheduler_delay_streak": 0,
         },
     )
     items = state.setdefault("items", {})
     history = state.setdefault("history", [])
     planned = plan_all(model, config, platform="github", now=now)
     active_keys = {item.key for item in planned}
-
-    scheduler_active = any(item.kind == "scheduler_issue" for item in planned)
-    if scheduler_active:
-        state["scheduler_delay_streak"] = int(state.get("scheduler_delay_streak", 0)) + 1
-    else:
-        state["scheduler_delay_streak"] = 0
 
     caps = config.get("activity_caps", {})
     new_cap = int(caps.get("new_issues_per_day", 3))
@@ -279,20 +272,13 @@ def main() -> int:
     resolve_after = timedelta(
         hours=float(config.get("signals", {}).get("resolve_after_hours", 24))
     )
-    required_delays = int(
-        config.get("scheduler", {}).get("issue_after_consecutive_delays", 2)
-    )
-
     milestone = None
     milestone_number = None
+    actions_taken = 0
 
     for candidate in planned:
-        record = items.setdefault(candidate.key, {})
-        record["last_seen_at"] = iso(now)
-        issue_number = record.get("issue_number")
-
-        if candidate.kind == "scheduler_issue" and state["scheduler_delay_streak"] < required_delays:
-            continue
+        record = items.get(candidate.key)
+        issue_number = record.get("issue_number") if record else None
 
         if issue_number is None:
             if new_used >= new_cap:
@@ -301,15 +287,14 @@ def main() -> int:
                 milestone = ensure_milestone(cycle_title(now, config))
                 milestone_number = milestone.get("number")
             issue = create_issue(candidate, milestone_number)
-            record.update(
-                {
+            record = {
                     "issue_number": issue["number"],
                     "issue_url": issue.get("html_url"),
                     "evidence_hash": candidate.evidence_hash,
                     "last_action_at": iso(now),
                     "status": "open",
                 }
-            )
+            items[candidate.key] = record
             history.append(
                 {
                     "kind": "issue_created",
@@ -319,6 +304,7 @@ def main() -> int:
                 }
             )
             new_used += 1
+            actions_taken += 1
             continue
 
         issue = fetch_issue(int(issue_number))
@@ -349,6 +335,7 @@ def main() -> int:
                 }
             )
             update_used += 1
+            actions_taken += 1
         elif issue.get("state") == "open" and changed and cooled and update_used < update_cap:
             comment_issue(
                 int(issue_number),
@@ -366,13 +353,14 @@ def main() -> int:
                 }
             )
             update_used += 1
+            actions_taken += 1
 
     for key, record in list(items.items()):
         if key in active_keys:
             continue
         issue_number = record.get("issue_number")
-        last_seen = parse_time(record.get("last_seen_at"))
-        if issue_number is None or last_seen is None or now - last_seen < resolve_after:
+        last_action = parse_time(record.get("last_action_at"))
+        if issue_number is None or last_action is None or now - last_action < resolve_after:
             continue
         issue = fetch_issue(int(issue_number))
         if issue and issue.get("state") == "open" and update_used < update_cap:
@@ -394,6 +382,7 @@ def main() -> int:
                 }
             )
             update_used += 1
+            actions_taken += 1
 
     release_info = ensure_release(model, config, now)
     if release_info:
@@ -405,17 +394,19 @@ def main() -> int:
                 "url": release_info["url"],
             }
         )
+        actions_taken += 1
 
-    state["last_reconciled_at"] = iso(now)
-    state["history"] = history[-300:]
-    save(STATE_PATH, state)
-    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    REPORT_PATH.write_text(
-        render_report(state, planned, release_info, now),
-        encoding="utf-8",
-    )
+    if actions_taken > 0:
+        state["last_reconciled_at"] = iso(now)
+        state["history"] = history[-300:]
+        save(STATE_PATH, state)
+        REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+        REPORT_PATH.write_text(
+            render_report(state, planned, release_info, now),
+            encoding="utf-8",
+        )
     print(
-        f"ACTIVITY=PASS planned={len(planned)} "
+        f"ACTIVITY=PASS planned={len(planned)} actions={actions_taken} "
         f"tracked={len(items)} release={bool(release_info)}"
     )
     return 0
