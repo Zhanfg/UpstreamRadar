@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "cadence_hours": 6,
   "daily_budget": {
     "impact_issue": 2,
@@ -129,7 +129,10 @@
         "tests/test_activity.py",
         "tests/test_engineering_health.py",
         "tests/test_maintenance.py",
-        "tests/test_governance.py"
+        "tests/test_governance.py",
+        "upstreamradar/downstream.py",
+        "config/downstream_projects.json",
+        "tests/test_downstream.py"
       ]
     }
   }
