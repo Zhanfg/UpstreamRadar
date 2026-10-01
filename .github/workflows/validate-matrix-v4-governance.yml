@@ -1,0 +1,76 @@
+name: Validate Matrix v4 Governance
+
+on:
+  push:
+    branches:
+      - "feat/activity-matrix-v4-governance"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: feat/activity-matrix-v4-governance
+
+      - name: Clone GitLab feature branch
+        run: |
+          git clone --depth=1 --branch feat/activity-matrix-v4-governance \
+            https://gitlab.com/axymorrsen/upstreamradar.git /tmp/gitlab-v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Validate GitHub branch
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest \
+            tests.test_activity \
+            tests.test_engineering_health \
+            tests.test_maintenance \
+            tests.test_governance -v
+          python -m scripts.benchmark_harmony \
+            --baseline /tmp/github-benchmark.json \
+            --output /tmp/github-benchmark-report.json
+
+      - name: Validate GitLab branch
+        working-directory: /tmp/gitlab-v4
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest \
+            tests.test_activity \
+            tests.test_engineering_health \
+            tests.test_maintenance \
+            tests.test_governance -v
+          python -m scripts.benchmark_harmony \
+            --baseline /tmp/gitlab-benchmark.json \
+            --output /tmp/gitlab-benchmark-report.json
+
+      - name: Verify shared-core parity
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          config=json.loads(Path("config/activity_matrix.json").read_text())
+          paths=config["governance"]["parity"]["shared_paths"]
+          mismatches=[]
+          for name in paths:
+              left=Path(name)
+              right=Path("/tmp/gitlab-v4") / name
+              if not left.exists() or not right.exists():
+                  mismatches.append((name, "missing"))
+                  continue
+              if left.read_bytes() != right.read_bytes():
+                  mismatches.append((name, "content"))
+          if mismatches:
+              raise SystemExit(f"shared-core parity failed: {mismatches}")
+          print(f"PARITY=PASS checked={len(paths)}")
+          PY
