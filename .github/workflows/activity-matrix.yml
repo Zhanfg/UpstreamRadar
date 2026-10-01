@@ -44,7 +44,7 @@ jobs:
 
       - name: Run evidence-driven GitHub activity
         env:
-          UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+          UPSTREAMRADAR_PAT: ${{ github.token }}
         run: python -m scripts.run_github_activity
 
       - name: Publish GitHub Wiki intelligence page
@@ -57,11 +57,12 @@ jobs:
           slug="$(cat .activity/github_wiki_slug.txt)"
           rm -rf /tmp/upstreamradar-wiki
           auth="$(printf 'x-access-token:%s' "$UPSTREAMRADAR_PAT" | base64 -w0)"
+
           if ! git -c http.extraheader="AUTHORIZATION: basic ${auth}" clone "https://github.com/${GITHUB_REPOSITORY}.wiki.git" /tmp/upstreamradar-wiki; then
-            mkdir -p /tmp/upstreamradar-wiki
-            git -C /tmp/upstreamradar-wiki init
-            git -C /tmp/upstreamradar-wiki remote add origin "https://github.com/${GITHUB_REPOSITORY}.wiki.git"
+            echo "GitHub Wiki repository is not initialized; keeping durable fallback under reports/activity/wiki/github/."
+            exit 0
           fi
+
           cp .activity/github_wiki.md "/tmp/upstreamradar-wiki/${slug}.md"
           git -C /tmp/upstreamradar-wiki add "${slug}.md"
           if git -C /tmp/upstreamradar-wiki diff --cached --quiet; then
