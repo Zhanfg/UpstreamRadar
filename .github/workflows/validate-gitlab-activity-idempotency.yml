@@ -1,0 +1,28 @@
+name: Validate GitLab Activity Idempotency
+
+on:
+  push:
+    branches:
+      - "fix/activity-wiki-fallback"
+    paths:
+      - ".github/workflows/validate-gitlab-activity-idempotency.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone GitLab fix branch
+        run: |
+          git clone --depth=1 --branch fix/activity-matrix-idempotency             https://gitlab.com/axymorrsen/upstreamradar.git repo
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Compile and test
+        working-directory: repo
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest tests.test_activity tests.test_gitlab_activity_executor -v
+          ACTIVITY_DRY_RUN=1 UPSTREAMRADAR_GITLAB_PAT=dry-run python -m scripts.run_gitlab_activity
