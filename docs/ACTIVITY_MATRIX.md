@@ -168,3 +168,57 @@ GitLab Activity Matrix runs inside the existing GitHub-hosted GitLab Bridge and
 is part of bridge health monitoring.
 
 The planner and all automation entrypoints are validated on Python 3.10–3.13.
+
+## Activity Matrix v3 — Maintenance Intelligence
+
+Activity Matrix v3 adds repository-maintenance surfaces that are independent
+from upstream-content activity and Engineering Health.
+
+### GitHub maintenance evidence
+
+The daily GitHub maintenance pass measures:
+
+- recent Actions reliability across a bounded completed-run window;
+- failure ratio and consecutive failed runs;
+- Discovery Garden fork synchronization against the upstream repository;
+- open Issue and Pull Request staleness with separate age windows;
+- floating GitHub Action references such as @main, @master, or @HEAD.
+
+Maintenance incidents use the same fingerprint/cooldown/recovery state machine
+as Engineering Health. Unchanged evidence creates no new comment.
+
+### GitLab maintenance evidence
+
+GitLab maintenance runs through the GitHub-hosted Bridge and measures:
+
+- stale project Issues and Merge Requests;
+- stale non-default branches;
+- current Release inventory;
+- workflow reference posture from the mirrored repository content.
+
+GitLab Hosted Runner history is deliberately excluded from CI reliability
+scoring because hosted jobs are unavailable for this account; Bridge Health is
+the authoritative execution-health signal instead.
+
+### Incident vs report-only surfaces
+
+The following can create a lifecycle Issue when the configured threshold is
+crossed:
+
+- CI reliability regression;
+- a governed fork falling materially behind its upstream;
+- enough stale open engineering work;
+- floating third-party workflow action references.
+
+Branch age and Release inventory are report-only by default. They provide real
+maintenance context without manufacturing tasks when no intervention is
+necessary.
+
+### Daily evidence paths
+
+- reports/maintenance/github-YYYY-MM-DD.json
+- reports/maintenance/gitlab-YYYY-MM-DD.json
+- state/maintenance_github.json
+- state/maintenance_gitlab.json
+
+Both platforms produce at most one maintenance evidence report per UTC day.
