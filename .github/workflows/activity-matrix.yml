@@ -8,7 +8,9 @@ on:
       - main
     paths:
       - "upstreamradar/activity.py"
+      - "upstreamradar/downstream.py"
       - "scripts/run_github_activity.py"
+      - "scripts/downstream_github.py"
       - "scripts/benchmark_harmony.py"
       - "scripts/security_posture.py"
       - "scripts/engineering_health_github.py"
@@ -18,7 +20,9 @@ on:
       - "upstreamradar/maintenance.py"
       - "upstreamradar/governance.py"
       - "tests/test_governance.py"
+      - "tests/test_downstream.py"
       - "config/activity_matrix.json"
+      - "config/downstream_projects.json"
       - ".github/workflows/activity-matrix.yml"
   workflow_dispatch:
 
@@ -53,7 +57,8 @@ jobs:
             tests.test_activity \
             tests.test_engineering_health \
             tests.test_maintenance \
-            tests.test_governance -v
+            tests.test_governance \
+            tests.test_downstream -v
 
       - name: Run evidence-driven GitHub activity
         env:
@@ -74,6 +79,11 @@ jobs:
         env:
           UPSTREAMRADAR_PAT: ${{ github.token }}
         run: python -m scripts.governance_github
+
+      - name: Run downstream impact routing
+        env:
+          UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+        run: python -m scripts.downstream_github
 
       - name: Publish GitHub Wiki intelligence page
         if: ${{ hashFiles('.activity/github_wiki.md') != '' }}
@@ -116,12 +126,14 @@ jobs:
             state/engineering_health_github.json \
             state/maintenance_github.json \
             state/governance_github.json \
+            state/downstream_github.json \
             reports/activity \
             reports/benchmarks \
             reports/security \
             reports/health \
             reports/maintenance \
-            reports/governance 2>/dev/null || true
+            reports/governance \
+            reports/downstream 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No new Activity Matrix evidence."
             exit 0
