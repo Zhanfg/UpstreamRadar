@@ -225,6 +225,10 @@ def main() -> int:
     actions = list(plan_actions(evidence, history, config, now=now))
     write_json(PLAN_PATH, {'evidence': asdict(evidence), 'actions': [asdict(item) for item in actions]})
 
+    if os.environ.get('ACTIVITY_DRY_RUN') == '1':
+        print(f'ACTIVITY_DRY_RUN=PASS planned={len(actions)} kinds={[item.kind for item in actions]}')
+        return 0
+
     records = []
     for action in actions:
         try:
