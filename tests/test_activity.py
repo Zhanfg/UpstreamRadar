@@ -48,6 +48,7 @@ class ActivityMatrixTests(unittest.TestCase):
             top_name='example/kernel',
             top_impact=6.2,
             top_fields=('latest_release', 'pushed_at'),
+            top_reasons=('regime-shift', 'security-focus'),
             content_opportunities=6,
             fork_queue_count=5,
         )
@@ -63,12 +64,12 @@ class ActivityMatrixTests(unittest.TestCase):
         )
         self.assertEqual(
             {item.kind for item in actions},
-            {'impact_issue', 'benchmark', 'wiki', 'release'},
+            {'impact_issue', 'benchmark', 'wiki', 'release', 'milestone'},
         )
 
     def test_low_information_cycle_only_benchmarks(self):
         actions = plan_actions(
-            self.evidence(changed_count=1, content_score=0.2, top_impact=0.5),
+            self.evidence(changed_count=1, content_score=0.2, top_impact=0.5, top_reasons=()),
             [],
             CONFIG,
             now=datetime(2026, 10, 1, 8, tzinfo=timezone.utc),
