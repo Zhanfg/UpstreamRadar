@@ -1,0 +1,174 @@
+{
+  "active_count": 0,
+  "observed_at": "2026-10-01T12:51:16+00:00",
+  "parity_entries": [
+    {
+      "local_length": 32170,
+      "path": "upstreamradar/engine.py",
+      "remote_length": 32170,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 9453,
+      "path": "upstreamradar/activity.py",
+      "remote_length": 9453,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 3525,
+      "path": "upstreamradar/health.py",
+      "remote_length": 3525,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 7829,
+      "path": "upstreamradar/maintenance.py",
+      "remote_length": 7829,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 6745,
+      "path": "upstreamradar/governance.py",
+      "remote_length": 6745,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 6391,
+      "path": "scripts/benchmark_harmony.py",
+      "remote_length": 6391,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 4431,
+      "path": "scripts/security_posture.py",
+      "remote_length": 4431,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 3107,
+      "path": "config/activity_matrix.json",
+      "remote_length": 3107,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 9777,
+      "path": "docs/ACTIVITY_MATRIX.md",
+      "remote_length": 9777,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 3536,
+      "path": "tests/test_activity.py",
+      "remote_length": 3536,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 5590,
+      "path": "tests/test_engineering_health.py",
+      "remote_length": 5590,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 4943,
+      "path": "tests/test_maintenance.py",
+      "remote_length": 4943,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 5772,
+      "path": "tests/test_governance.py",
+      "remote_length": 5772,
+      "same": true,
+      "status": "match"
+    }
+  ],
+  "platform": "github",
+  "platform_actions": 0,
+  "signals": [
+    {
+      "active": false,
+      "evidence": {
+        "error_streak_count": 0,
+        "error_streaks": [],
+        "invalid": [],
+        "invalid_count": 0,
+        "record_count": 45,
+        "stale": [],
+        "stale_count": 0,
+        "stale_fraction": 0.0,
+        "stale_threshold_hours": 36.0
+      },
+      "key": "data-quality",
+      "severity": "medium",
+      "title": "[governance] Radar state data-quality regression"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "file_count": 7,
+        "largest": [
+          {
+            "bytes": 50111,
+            "path": "state/model.json"
+          },
+          {
+            "bytes": 1879,
+            "path": "state/activity_github.json"
+          },
+          {
+            "bytes": 842,
+            "path": "state/forks_github.json"
+          },
+          {
+            "bytes": 387,
+            "path": "state/benchmark_github.json"
+          },
+          {
+            "bytes": 219,
+            "path": "state/discovery_github.json"
+          },
+          {
+            "bytes": 84,
+            "path": "state/engineering_health_github.json"
+          },
+          {
+            "bytes": 84,
+            "path": "state/maintenance_github.json"
+          }
+        ],
+        "oversized": [],
+        "oversized_count": 0,
+        "per_file_limit_bytes": 2097152,
+        "total_bytes": 53606,
+        "total_limit_bytes": 12582912
+      },
+      "key": "state-growth",
+      "severity": "medium",
+      "title": "[governance] Radar state storage growth"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "checked_count": 13,
+        "max_mismatches": 0,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "key": "cross-platform-parity",
+      "severity": "high",
+      "title": "[governance] GitHub/GitLab shared-core drift"
+    }
+  ]
+}
