@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "cadence_hours": 6,
   "daily_budget": {
     "impact_issue": 2,
@@ -17,12 +17,12 @@
     "release": 168
   },
   "thresholds": {
-    "impact_issue": 4.0,
+    "impact_issue": 4,
     "benchmark_changed": 1,
     "wiki_changed": 3,
     "wiki_content_score": 0.65,
     "release_changed": 10,
-    "release_impact": 4.0
+    "release_impact": 4
   },
   "surfaces": {
     "github": {
@@ -42,5 +42,23 @@
       "release": true,
       "milestone": true
     }
+  },
+  "engineering_health": {
+    "cadence_hours": 24,
+    "benchmark": {
+      "candidates": 120,
+      "budget": 80,
+      "iterations": 5,
+      "regression_ratio": 1.75,
+      "history": 14
+    },
+    "security": {
+      "incident_severities": [
+        "critical",
+        "high"
+      ],
+      "max_findings_in_incident": 10
+    },
+    "incident_cooldown_hours": 12
   }
 }

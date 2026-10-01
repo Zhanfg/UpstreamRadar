@@ -9,6 +9,10 @@ on:
     paths:
       - "upstreamradar/activity.py"
       - "scripts/run_github_activity.py"
+      - "scripts/benchmark_harmony.py"
+      - "scripts/security_posture.py"
+      - "scripts/engineering_health_github.py"
+      - "upstreamradar/health.py"
       - "config/activity_matrix.json"
       - ".github/workflows/activity-matrix.yml"
   workflow_dispatch:
@@ -47,6 +51,11 @@ jobs:
           UPSTREAMRADAR_PAT: ${{ github.token }}
         run: python -m scripts.run_github_activity
 
+      - name: Run Activity Matrix engineering health
+        env:
+          UPSTREAMRADAR_PAT: ${{ github.token }}
+        run: python -m scripts.engineering_health_github
+
       - name: Publish GitHub Wiki intelligence page
         if: ${{ hashFiles('.activity/github_wiki.md') != '' }}
         shell: bash
@@ -82,7 +91,14 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A state/activity_github.json reports/activity
+          git add -A \
+            state/activity_github.json \
+            state/benchmark_github.json \
+            state/engineering_health_github.json \
+            reports/activity \
+            reports/benchmarks \
+            reports/security \
+            reports/health 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No new Activity Matrix evidence."
             exit 0

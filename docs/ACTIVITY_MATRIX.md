@@ -95,6 +95,71 @@ This creates diversity because the engineering event genuinely has multiple
 useful representations, not because one event is artificially split into
 meaningless commits.
 
+
+## Activity Matrix v2 — Engineering Health
+
+Activity Matrix v2 adds measured engineering-health surfaces without duplicating
+the existing impact Issue, Wiki, Release, Milestone, review, fork, or CI flows.
+
+### Deterministic HARMONY benchmark
+
+The daily health pass builds a deterministic synthetic portfolio and records:
+
+- median / minimum / maximum scheduler runtime;
+- selected candidate count and total budget cost;
+- total utility, portfolio coverage, and content score;
+- a SHA-256 hash of the selected portfolio;
+- whether repeated runs produced the exact same selection.
+
+A rolling baseline is maintained separately for GitHub and GitLab. Runtime
+regression is triggered only when the measured median exceeds the configured
+baseline ratio. A selection-hash mismatch across repeated identical runs is
+treated as a determinism regression.
+
+### Repository security posture
+
+The cross-platform posture audit checks real repository automation for:
+
+- GitHub pull_request_target trust-boundary usage;
+- write-all GitHub workflow permissions;
+- missing explicit GitHub workflow permissions;
+- download-and-pipe-to-shell patterns in GitHub Actions or .gitlab-ci.yml;
+- credential-like values in production source/configuration.
+
+Tests, documentation, telemetry data, and generated reports are excluded from
+the production secret-pattern sweep.
+
+### Incident lifecycle
+
+Benchmark and security regressions use a fingerprinted state machine:
+
+1. first active evidence creates one incident Issue;
+2. unchanged evidence creates no new comment;
+3. changed evidence can update the Issue after the cooldown;
+4. recovery adds a recovery note and closes the Issue automatically;
+5. a later regression can create a new lifecycle.
+
+This keeps engineering activity proportional to real state transitions rather
+than to scheduler frequency.
+
+### Daily evidence
+
+GitHub Engineering Health runs inside the existing Activity Matrix workflow.
+The first Matrix run of a UTC day creates the daily benchmark/security/health
+evidence; later runs that day exit without producing another health report.
+
+GitLab Engineering Health runs through the GitHub-hosted GitLab Bridge. It
+checks the current day's files in GitLab first and exits immediately when the
+daily evidence already exists.
+
+The daily evidence paths are:
+
+- reports/benchmarks/
+- reports/security/
+- reports/health/
+- state/benchmark_github.json / state/benchmark_gitlab.json
+- state/engineering_health_github.json / state/engineering_health_gitlab.json
+
 ## Runtime
 
 GitHub Activity Matrix runs every six hours on off-boundary minute 43.
