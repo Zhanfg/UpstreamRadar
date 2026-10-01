@@ -110,11 +110,37 @@ def open_issues() -> list[dict]:
 
 
 def execute_issue(action: ActivityAction, now_iso: str) -> dict:
+    milestone_number = None
+    milestone_title = f'Intelligence Cycle {now_iso[:7]}'
+    milestones = request(f'/repos/{REPOSITORY}/milestones?state=all&per_page=100') or []
+    for milestone in milestones:
+        if milestone.get('title') == milestone_title:
+            milestone_number = milestone.get('number')
+            break
+
     existing = next(
         (item for item in open_issues() if 'pull_request' not in item and item.get('title') == action.title),
         None,
     )
     if existing is not None:
+        if milestone_number and not existing.get('milestone'):
+            request(
+                f'/repos/{REPOSITORY}/issues/{existing["number"]}',
+                method='PATCH',
+                payload={'milestone': milestone_number},
+            )
+
+        created_at = existing.get('created_at')
+        if created_at:
+            created = datetime.fromisoformat(created_at.replace('Z', '+00:00')).astimezone(timezone.utc)
+            if (datetime.now(timezone.utc) - created).total_seconds() < 8 * 3600:
+                return history_record(
+                    action,
+                    status='exists',
+                    created_at=now_iso,
+                    external_id=str(existing.get('number')),
+                )
+
         note = request(
             f'/repos/{REPOSITORY}/issues/{existing["number"]}/comments',
             method='POST',
@@ -130,13 +156,15 @@ def execute_issue(action: ActivityAction, now_iso: str) -> dict:
             external_id=str(note.get('id')),
         )
 
+    payload = {'title': action.title, 'body': action.body}
+    if milestone_number:
+        payload['milestone'] = milestone_number
     created = request(
         f'/repos/{REPOSITORY}/issues',
         method='POST',
-        payload={'title': action.title, 'body': action.body},
+        payload=payload,
     )
     return history_record(action, status='created', created_at=now_iso, external_id=str(created.get('number')))
-
 
 def execute_release(action: ActivityAction, now: datetime, now_iso: str) -> dict:
     tag = f'radar-{now.strftime("%Y.%m.%d")}'
@@ -183,7 +211,17 @@ def execute_wiki(action: ActivityAction, now: datetime, now_iso: str) -> dict:
     WIKI_BODY_PATH.write_text(action.body + '\n', encoding='utf-8')
     slug = f'Radar-Intelligence-{now.strftime("%Y-%m-%d")}'
     WIKI_SLUG_PATH.write_text(slug + '\n', encoding='utf-8')
-    return history_record(action, status='prepared', created_at=now_iso, external_id=slug)
+
+    fallback = Path('reports/activity/wiki/github') / f'{now.date().isoformat()}.md'
+    fallback.parent.mkdir(parents=True, exist_ok=True)
+    fallback.write_text(action.body + '\n', encoding='utf-8')
+
+    return history_record(
+        action,
+        status='prepared',
+        created_at=now_iso,
+        external_id=slug,
+    )
 
 
 def render_report(evidence: ActivityEvidence, actions: list[ActivityAction], records: list[dict], now: datetime) -> str:
