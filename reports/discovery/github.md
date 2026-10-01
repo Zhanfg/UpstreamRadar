@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **48000**
-- latest census cursor: **162502**
+- total census repositories scanned: **52000**
+- latest census cursor: **174668**
 - retained candidates: **80**
 - governed fork queue: **12**
 
@@ -20,12 +20,12 @@
 
 ### android-kernel
 
-- **ahmed-alnassif/GKID-Kernels** — score=0.941, stars=74; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **ahmed-alnassif/GKID-Kernels** — score=0.942, stars=74; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Spring-bulid/MakoSU** — score=0.907, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
-- **sysretq0/android-kernel-builder** — score=0.899, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **sysretq0/android-kernel-builder** — score=0.900, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Alfnnnnyy/GKI_KernelSU_SUSFS** — score=0.866, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **Dere3046/KallRecon** — score=0.852, stars=12; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, recently-active
 - **WildKernels/GKI_KernelSU_SUSFS** — score=0.850, stars=1627; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
-- **Dere3046/KallRecon** — score=0.847, stars=11; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, recently-active
 - **LeeSiWal/y700-linux** — score=0.821, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, recently-active
 - **okhsunrog/vpnhide** — score=0.814, stars=570; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 
@@ -53,7 +53,7 @@
 
 ## Fork queue
 
-- **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.941, license=GPL-3.0)
+- **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.942, license=GPL-3.0)
 - **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **context-labs/whip** → ai-agents (score=0.918, license=Apache-2.0)
