@@ -112,6 +112,17 @@ jobs:
           UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
         run: python -m scripts.activity_gitlab
 
+      - name: Run GitLab Engineering Health
+        id: engineering_health
+        if: always() && steps.bridge_secret.outputs.available == 'true' && steps.clone.outcome == 'success' && steps.validate.outcome == 'success'
+        working-directory: gitlab-upstreamradar
+        env:
+          CI_API_V4_URL: https://gitlab.com/api/v4
+          CI_PROJECT_ID: "87037475"
+          CI_DEFAULT_BRANCH: main
+          UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
+        run: python -m scripts.engineering_health_gitlab
+
       - name: Report GitLab bridge health
         id: health
         if: always() && steps.bridge_secret.outputs.available == 'true'
@@ -126,6 +137,7 @@ jobs:
           FORK_OUTCOME: ${{ steps.fork.outcome }}
           REVIEW_OUTCOME: ${{ steps.review.outcome }}
           ACTIVITY_OUTCOME: ${{ steps.activity.outcome }}
+          ENGINEERING_HEALTH_OUTCOME: ${{ steps.engineering_health.outcome }}
           RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python - <<'PY'
@@ -148,6 +160,7 @@ jobs:
               "fork": os.environ.get("FORK_OUTCOME", ""),
               "review": os.environ.get("REVIEW_OUTCOME", ""),
               "activity": os.environ.get("ACTIVITY_OUTCOME", ""),
+              "engineering_health": os.environ.get("ENGINEERING_HEALTH_OUTCOME", ""),
           }
           selftest = os.environ.get("BRIDGE_HEALTH_SELFTEST") == "degraded"
           degraded = selftest or any(value != "success" for value in outcomes.values())
