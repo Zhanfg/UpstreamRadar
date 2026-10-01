@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "policy": {
+    "min_semantic_impact": 6.0,
+    "critical_impact": 8.0,
+    "important_fields": [
+      "latest_release",
+      "latest_commit",
+      "default_branch",
+      "archived",
+      "disabled",
+      "license"
+    ],
+    "max_plans_per_run": 2,
+    "max_actions_per_day": 3,
+    "update_cooldown_hours": 24,
+    "create_cooldown_hours": 168
+  },
+  "targets": [
+    {
+      "repo": "Zhanfg/TCP_Optimiser_RS",
+      "sources": [
+        "torvalds/linux",
+        "cilium/cilium",
+        "WireGuard/wireguard-go"
+      ],
+      "checklist": [
+        "re-run congestion-control registration checks",
+        "re-run KMI / exported-symbol compatibility checks",
+        "re-run weak-network and multi-flow regression tests"
+      ]
+    },
+    {
+      "repo": "Zhanfg/susfs4ksu",
+      "sources": [
+        "torvalds/linux"
+      ],
+      "checklist": [
+        "review VFS / mount / namespace compatibility",
+        "review KernelSU/SUSFS patch context drift",
+        "re-run hide/mount behavior tests"
+      ]
+    },
+    {
+      "repo": "Zhanfg/OnePlus13-kernel",
+      "sources": [
+        "torvalds/linux",
+        "llvm/llvm-project"
+      ],
+      "checklist": [
+        "re-run kernel build and ABI/KMI checks",
+        "review compiler or kernel interface changes",
+        "re-run boot-image smoke validation"
+      ]
+    },
+    {
+      "repo": "Zhanfg/mihomo",
+      "sources": [
+        "MetaCubeX/mihomo",
+        "SagerNet/sing-box",
+        "tailscale/tailscale",
+        "WireGuard/wireguard-go",
+        "cloudflare/cloudflared"
+      ],
+      "checklist": [
+        "review protocol / TUN / transport compatibility",
+        "re-run multi-node switching stress tests",
+        "re-run weak-network and memory/CPU regression tests"
+      ]
+    },
+    {
+      "repo": "Zhanfg/Bettbox",
+      "sources": [
+        "MetaCubeX/mihomo",
+        "SagerNet/sing-box",
+        "tailscale/tailscale",
+        "WireGuard/wireguard-go"
+      ],
+      "checklist": [
+        "review rootless VPN datapath compatibility",
+        "re-run long-duration stability tests",
+        "re-run multi-node switch and reconnect tests"
+      ]
+    },
+    {
+      "repo": "Zhanfg/axymorrsen-infra-mcp",
+      "sources": [
+        "modelcontextprotocol/python-sdk",
+        "openai/openai-agents-python",
+        "anthropics/anthropic-sdk-python",
+        "microsoft/autogen",
+        "langchain-ai/langchain"
+      ],
+      "checklist": [
+        "review MCP/tool protocol compatibility",
+        "re-run connector capability discovery tests",
+        "re-run multi-client portability checks"
+      ]
+    },
+    {
+      "repo": "Zhanfg/TEESimulator",
+      "sources": [
+        "qemu-project/qemu"
+      ],
+      "checklist": [
+        "review virtualization interface changes",
+        "re-run secure-world / emulation compatibility tests",
+        "re-run TEE / StrongBox behavior validation"
+      ]
+    }
+  ]
+}
