@@ -10,6 +10,7 @@ CONFIG = {
         'benchmark': 2,
         'wiki': 1,
         'release': 1,
+        'milestone': 1,
     },
     'cooldown_hours': {
         'impact_issue': 72,
@@ -31,6 +32,7 @@ CONFIG = {
             'benchmark': True,
             'wiki': True,
             'release': True,
+            'milestone': True,
         }
     },
 }
