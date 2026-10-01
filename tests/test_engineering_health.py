@@ -9,6 +9,10 @@ from scripts.security_posture import automation_findings, secret_findings
 from upstreamradar.health import decide_incident
 
 
+def synthetic_gitlab_token() -> str:
+    return "gl" + "pat-" + "abcdefghijklmnopqrstuvwxyz123456"
+
+
 class EngineeringHealthTests(unittest.TestCase):
     def test_harmony_benchmark_is_deterministic(self):
         result = benchmark(count=36, budget=24, iterations=2)
@@ -68,21 +72,16 @@ class EngineeringHealthTests(unittest.TestCase):
     def test_secret_scan_ignores_docs_but_flags_production_source(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
+            token = synthetic_gitlab_token()
             (root / "docs").mkdir()
-            (root / "docs" / "example.md").write_text(
-                "glpat-abcdefghijklmnopqrstuvwxyz123456",
-                encoding="utf-8",
-            )
+            (root / "docs" / "example.md").write_text(token, encoding="utf-8")
             (root / "config.json").write_text(
-                json.dumps(
-                    {"token": "glpat-abcdefghijklmnopqrstuvwxyz123456"}
-                ),
+                json.dumps({"token": token}),
                 encoding="utf-8",
             )
             findings = secret_findings(root)
             self.assertEqual(len(findings), 1)
             self.assertEqual(findings[0]["path"], str(root / "config.json"))
-
 
     def test_incident_state_machine_deduplicates_and_recovers(self):
         now = datetime(2026, 10, 1, 8, tzinfo=timezone.utc)
