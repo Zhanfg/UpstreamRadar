@@ -1,22 +1,22 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **44000**
-- latest census cursor: **149960**
+- total census repositories scanned: **48000**
+- latest census cursor: **162502**
 - retained candidates: **80**
-- governed fork queue: **11**
+- governed fork queue: **12**
 
 ## Top directions
 
 ### ai-agents
 
-- **DemonDamon/AgenticX** — score=0.933, stars=237; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
+- **DemonDamon/AgenticX** — score=0.933, stars=238; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
 - **context-labs/whip** — score=0.918, stars=1069; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **saigontechnology/AgentCrew** — score=0.916, stars=217; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
-- **mikehasa/agentacct** — score=0.911, stars=755; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
+- **mikehasa/agentacct** — score=0.911, stars=757; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
 - **ThreeMoonsLab/agents-shipgate** — score=0.908, stars=89; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
+- **nibor1896/Crow** — score=0.897, stars=34; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **ai-pivot/xbot** — score=0.895, stars=14; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 - **zlogic-labs/zlogic** — score=0.874, stars=3; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
-- **manishiitg/mcpagent** — score=0.871, stars=1; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
 
 ### android-kernel
 
@@ -54,8 +54,8 @@
 ## Fork queue
 
 - **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.941, license=GPL-3.0)
-- **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
+- **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **context-labs/whip** → ai-agents (score=0.918, license=Apache-2.0)
 - **saigontechnology/AgentCrew** → ai-agents (score=0.916, license=Apache-2.0)
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
@@ -63,6 +63,7 @@
 - **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
 - **keminar/anyproxy** → networking (score=0.902, license=MIT)
 - **MiChongs/WutherCore** → networking (score=0.902, license=MIT)
+- **nibor1896/Crow** → ai-agents (score=0.897, license=MIT)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.
