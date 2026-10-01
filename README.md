@@ -162,6 +162,28 @@ Discovery forks are organized into GitHub `yuezhou-build` and GitLab `axymorrsen
 
 See docs/DISCOVERY_GARDEN.md.
 
+## Activity Fabric
+
+UpstreamRadar now turns real telemetry into a broader engineering lifecycle instead of treating commit count as the goal.
+
+Activity Fabric can produce, when evidence warrants it:
+
+- material-signal Issues / work items;
+- evidence update comments and recovery closes;
+- automated PR/MR reviews;
+- weekly engineering milestones;
+- weekly telemetry Releases and Tags;
+- deterministic HARMONY benchmark evidence;
+- repository security-posture evidence;
+- performance/security incident lifecycles;
+- governed Discovery/Fork activity;
+- automation incident/recovery notes;
+- documentation and knowledge artifacts.
+
+Every activity type is thresholded, deduplicated, cooldown-limited, and capped. Unchanged evidence produces no platform action, and empty periods do not create releases or arbitrary tags.
+
+See [docs/ACTIVITY_FABRIC.md](docs/ACTIVITY_FABRIC.md).
+
 ## Validation
 
 CI currently validates the algorithm on Python 3.10, 3.11, 3.12, and 3.13.
