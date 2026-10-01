@@ -1,0 +1,58 @@
+name: Validate Activity Matrix v2 Health
+
+on:
+  push:
+    branches:
+      - "feat/activity-matrix-v2-health"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  github-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Compile and test
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest discover -s tests -v
+      - name: Benchmark smoke
+        run: |
+          python -m scripts.benchmark_harmony \
+            --baseline /tmp/github-baseline.json \
+            --output /tmp/github-benchmark.json
+      - name: Security smoke
+        run: |
+          python -m scripts.security_posture --output /tmp/github-security.json || rc=$?
+          rc=${rc:-0}
+          test "${rc}" -ne 2
+
+  gitlab-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone GitLab feature branch
+        run: |
+          git clone --depth=1 --branch feat/activity-matrix-v2-health \
+            https://gitlab.com/axymorrsen/upstreamradar.git repo
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Compile and test
+        working-directory: repo
+        run: |
+          python -m compileall -q upstreamradar scripts
+          python -m unittest discover -s tests -v
+      - name: Benchmark and security smoke
+        working-directory: repo
+        run: |
+          python -m scripts.benchmark_harmony \
+            --baseline /tmp/gitlab-baseline.json \
+            --output /tmp/gitlab-benchmark.json
+          python -m scripts.security_posture --output /tmp/gitlab-security.json || rc=$?
+          rc=${rc:-0}
+          test "${rc}" -ne 2
