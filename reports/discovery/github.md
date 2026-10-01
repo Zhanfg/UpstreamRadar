@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **56000**
-- latest census cursor: **186661**
+- total census repositories scanned: **60000**
+- latest census cursor: **198330**
 - retained candidates: **80**
 - governed fork queue: **12**
 
@@ -47,8 +47,8 @@
 - **jkelly-dev1/agent-sandbox-escape** — score=0.833, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **m62624/cageforge** — score=0.830, stars=1; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **RARS-oss/bulla** — score=0.816, stars=3; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **souk4711/hakoniwa** — score=0.804, stars=89; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **GreyhavenHQ/greywall** — score=0.799, stars=305; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **souk4711/hakoniwa** — score=0.796, stars=89; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **pranavrav09/SecureGuard** — score=0.794, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
