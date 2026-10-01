@@ -132,6 +132,24 @@ jobs:
             echo "Nothing to push."
           fi
 
+      - name: Reconcile Activity Fabric
+        shell: bash
+        env:
+          UPSTREAMRADAR_TOKEN: ${{ secrets.UPSTREAMRADAR_PAT }}
+        run: |
+          set -euo pipefail
+          python -m compileall -q upstreamradar scripts
+          python -m scripts.activity_github
+
+          git add state/activity_github.json reports/activity/github.md 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No lifecycle state changes."
+          else
+            git commit -m "[activity] reconcile engineering lifecycle"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
       - name: Open issue for persistent collection failures
         if: always()
         shell: bash
