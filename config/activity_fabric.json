@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "signals": {
+    "major_impact": 6.5,
+    "critical_impact": 8.0,
+    "recent_hours": 18,
+    "max_new_issues_per_run": 2,
+    "update_cooldown_hours": 12,
+    "resolve_after_hours": 24,
+    "important_fields": [
+      "latest_release",
+      "latest_commit",
+      "default_branch",
+      "archived",
+      "disabled",
+      "license"
+    ]
+  },
+  "scheduler": {
+    "delay_multiplier": 2.5,
+    "delay_hours": 4.0,
+    "issue_after_consecutive_delays": 2
+  },
+  "releases": {
+    "enabled": true,
+    "cadence": "weekly",
+    "min_changed_observations": 50,
+    "min_runs": 3,
+    "tag_prefix": "radar"
+  },
+  "milestones": {
+    "enabled": true,
+    "cadence": "weekly",
+    "title_prefix": "Radar Cycle"
+  },
+  "benchmark": {
+    "candidates": 120,
+    "budget": 80,
+    "iterations": 5,
+    "regression_ratio": 1.75,
+    "history": 14
+  },
+  "security": {
+    "workflow_permissions_required": true,
+    "forbid_pull_request_target": true,
+    "require_sha_for_third_party_actions": false,
+    "max_open_findings": 10
+  },
+  "activity_caps": {
+    "new_issues_per_day": 3,
+    "issue_updates_per_day": 6,
+    "releases_per_week": 1,
+    "milestones_per_week": 1
+  }
+}
