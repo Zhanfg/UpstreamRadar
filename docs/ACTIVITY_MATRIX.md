@@ -296,3 +296,76 @@ Radar observation
 
 This keeps activity broad while still requiring every action to be supported by
 measured engineering evidence.
+
+
+## Activity Matrix v5 — Downstream Impact
+
+Matrix v5 connects upstream intelligence to concrete downstream engineering
+work. The objective is not to broadcast every upstream change into every
+repository. Every downstream task requires an explicit source-to-target map and
+a measured material change.
+
+### Explicit impact map
+
+The mapping lives in config/downstream_projects.json.
+
+Examples include:
+
+- Linux / Cilium / WireGuard → TCP_Optimiser_RS;
+- Linux → susfs4ksu;
+- Linux / LLVM → OnePlus13-kernel;
+- mihomo / sing-box / Tailscale / WireGuard → mihomo and Bettbox;
+- MCP / OpenAI Agents / Anthropic / AutoGen / LangChain → axymorrsen-infra-mcp;
+- QEMU → TEESimulator.
+
+Repositories without an explicit mapping receive no downstream task.
+
+### Material-change gate
+
+By default an observation must:
+
+- have semantic impact >= 6.0; and
+- touch a material field such as release, commit identity, default branch,
+  archive/disable state, or license;
+
+or exceed the critical impact threshold >= 8.0.
+
+Popularity-only churn below the critical threshold is ignored.
+
+### Downstream lifecycle
+
+A new mapped material change can create one Issue in the target repository.
+The task contains:
+
+- source platform and upstream URL;
+- semantic-impact score;
+- changed fields;
+- HARMONY reasons;
+- stable evidence hash;
+- repository-specific validation checklist.
+
+If the same evidence appears again, no action is taken. New evidence may add a
+comment to an open task after the update cooldown. A closed task may create a
+new lifecycle only after the longer create cooldown.
+
+### Action limits
+
+The planner may evaluate multiple mapped projects, but platform writes remain
+bounded:
+
+- at most 2 downstream actions per run;
+- at most 3 downstream actions per rolling 24 hours;
+- 24-hour update cooldown;
+- 7-day new-lifecycle cooldown after a closed task.
+
+### Cross-platform sources
+
+GitHub radar observations create tasks directly in mapped GitHub repositories.
+
+GitLab radar observations use the GitHub-hosted Bridge as the control plane.
+The source evidence remains explicitly marked as GitLab, while the actionable
+task is created in the mapped GitHub downstream repository. GitLab stores its
+own downstream state/report evidence for auditability.
+
+This extends Activity Matrix from repository-local activity into a real
+upstream-to-downstream engineering workflow.
