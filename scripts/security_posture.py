@@ -87,24 +87,32 @@ def candidate_paths(root: Path):
         yield path
 
 
+def scan_secret_path(path: Path) -> list[dict]:
+    try:
+        text = path.read_text(encoding="utf-8")
+    except UnicodeDecodeError:
+        return []
+
+    results = []
+    for pattern in SECRET_PATTERNS:
+        match = pattern.search(text)
+        if match is None:
+            continue
+        results.append(
+            finding(
+                "critical",
+                "possible_secret",
+                path,
+                f"possible credential pattern at offset {match.start()}",
+            )
+        )
+    return results
+
+
 def secret_findings(root: Path) -> list[dict]:
     findings: list[dict] = []
     for path in candidate_paths(root):
-        try:
-            text = path.read_text(encoding="utf-8")
-        except UnicodeDecodeError:
-            continue
-        for pattern in SECRET_PATTERNS:
-            match = pattern.search(text)
-            if match is not None:
-                findings.append(
-                    finding(
-                        "critical",
-                        "possible_secret",
-                        path,
-                        f"possible credential pattern at offset {match.start()}",
-                    )
-                )
+        findings.extend(scan_secret_path(path))
     return findings
 
 
@@ -127,10 +135,7 @@ def main() -> int:
         "finding_count": len(findings),
         "findings": findings,
     }
-    output = Path(
-        args.output
-        or f"reports/security/{now.date().isoformat()}.json"
-    )
+    output = Path(args.output or f"reports/security/{now.date().isoformat()}.json")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
         json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
