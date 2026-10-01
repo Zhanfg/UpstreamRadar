@@ -1,10 +1,12 @@
 import json
 import tempfile
 import unittest
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from scripts.benchmark_harmony import benchmark
 from scripts.security_posture import automation_findings, secret_findings
+from upstreamradar.health import decide_incident
 
 
 class EngineeringHealthTests(unittest.TestCase):
@@ -80,6 +82,63 @@ class EngineeringHealthTests(unittest.TestCase):
             findings = secret_findings(root)
             self.assertEqual(len(findings), 1)
             self.assertEqual(findings[0]["path"], str(root / "config.json"))
+
+
+    def test_incident_state_machine_deduplicates_and_recovers(self):
+        now = datetime(2026, 10, 1, 8, tzinfo=timezone.utc)
+        evidence = {"critical": 1, "high": 0}
+
+        first = decide_incident(
+            None,
+            active=True,
+            evidence=evidence,
+            now=now,
+            cooldown_hours=12,
+        )
+        self.assertEqual(first.action, "create")
+
+        record = {
+            "external_id": 3,
+            "status": "open",
+            "fingerprint": first.fingerprint,
+            "last_action_at": now.isoformat(),
+        }
+        unchanged = decide_incident(
+            record,
+            active=True,
+            evidence=evidence,
+            now=now + timedelta(hours=1),
+            cooldown_hours=12,
+        )
+        self.assertEqual(unchanged.action, "none")
+
+        changed_evidence = {"critical": 1, "high": 1}
+        cooling = decide_incident(
+            record,
+            active=True,
+            evidence=changed_evidence,
+            now=now + timedelta(hours=2),
+            cooldown_hours=12,
+        )
+        self.assertEqual(cooling.action, "none")
+
+        updated = decide_incident(
+            record,
+            active=True,
+            evidence=changed_evidence,
+            now=now + timedelta(hours=13),
+            cooldown_hours=12,
+        )
+        self.assertEqual(updated.action, "update")
+
+        recovered = decide_incident(
+            record,
+            active=False,
+            evidence={"critical": 0, "high": 0},
+            now=now + timedelta(hours=14),
+            cooldown_hours=12,
+        )
+        self.assertEqual(recovered.action, "close")
 
     def test_gitlab_ci_is_scanned_for_pipe_to_shell(self):
         with tempfile.TemporaryDirectory() as directory:
