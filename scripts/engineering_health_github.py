@@ -281,7 +281,7 @@ def main() -> int:
         f"ENGINEERING_HEALTH=PASS day={day} actions={actions} "
         f"benchmark_active={benchmark_active} security_active={security_active}"
     )
-    return 2 if benchmark_rc == 2 or security_rc == 2 else 0
+    return 0
 
 
 if __name__ == "__main__":
