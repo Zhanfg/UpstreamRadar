@@ -1,8 +1,8 @@
 {
   "version": 1,
   "policy": {
-    "min_semantic_impact": 6.0,
-    "critical_impact": 8.0,
+    "min_semantic_impact": 6,
+    "critical_impact": 8,
     "important_fields": [
       "latest_release",
       "latest_commit",
@@ -11,10 +11,11 @@
       "disabled",
       "license"
     ],
-    "max_plans_per_run": 2,
+    "max_plans_per_run": 10,
     "max_actions_per_day": 3,
     "update_cooldown_hours": 24,
-    "create_cooldown_hours": 168
+    "create_cooldown_hours": 168,
+    "max_actions_per_run": 2
   },
   "targets": [
     {
