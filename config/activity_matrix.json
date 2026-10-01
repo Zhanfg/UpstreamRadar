@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "cadence_hours": 6,
   "daily_budget": {
     "impact_issue": 2,
@@ -60,5 +60,39 @@
       "max_findings_in_incident": 10
     },
     "incident_cooldown_hours": 12
+  },
+  "maintenance_intelligence": {
+    "cadence_hours": 24,
+    "incident_cooldown_hours": 12,
+    "ci": {
+      "window_runs": 30,
+      "min_completed_runs": 10,
+      "failure_rate_threshold": 0.25,
+      "consecutive_failure_threshold": 3
+    },
+    "fork_sync": {
+      "enabled": true,
+      "behind_commit_threshold": 20,
+      "max_reported_forks": 10
+    },
+    "stale_work": {
+      "issue_days": 14,
+      "pull_request_days": 7,
+      "incident_count_threshold": 3,
+      "max_reported_items": 10
+    },
+    "workflow_refs": {
+      "forbid_floating": [
+        "main",
+        "master",
+        "HEAD"
+      ],
+      "max_reported_items": 20
+    },
+    "branches": {
+      "stale_days": 30,
+      "report_only": true,
+      "max_reported_items": 20
+    }
   }
 }
