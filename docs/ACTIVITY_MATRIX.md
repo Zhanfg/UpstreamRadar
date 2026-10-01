@@ -222,3 +222,77 @@ necessary.
 - state/maintenance_gitlab.json
 
 Both platforms produce at most one maintenance evidence report per UTC day.
+
+
+## Activity Matrix v4 — Governance
+
+Matrix v4 adds a governance layer that audits the radar itself rather than
+creating another user-facing activity surface.
+
+### Data quality
+
+The daily governance pass validates the repository/project model state for:
+
+- stale observations beyond the configured freshness window;
+- repeated collector error streaks;
+- impossible success/failure counters;
+- unbounded change or semantic-impact history windows.
+
+The signal is ratio-aware so one temporarily stale upstream does not create an
+incident in a healthy large universe.
+
+### State growth
+
+Every JSON state file is measured daily.
+
+Governance records:
+
+- total state bytes;
+- largest state files;
+- files that exceed the per-file budget;
+- whether the aggregate state budget has been exceeded.
+
+A growth incident is therefore backed by actual on-disk evidence instead of a
+guess about repository size.
+
+### Cross-platform parity
+
+A small, explicit allowlist of files is required to stay byte-identical across
+GitHub and GitLab. It includes shared engine, Activity Matrix, health,
+maintenance, governance, configuration, documentation, and shared tests.
+
+Platform-specific executors are intentionally excluded.
+
+A missing or mismatched shared file activates a high-severity parity incident.
+The incident is fingerprint-deduplicated, updated only when evidence changes,
+and automatically closed when parity is restored.
+
+### Daily governance evidence
+
+GitHub writes:
+
+- state/governance_github.json
+- reports/governance/github-YYYY-MM-DD.json
+
+GitLab writes:
+
+- state/governance_gitlab.json
+- reports/governance/gitlab-YYYY-MM-DD.json
+
+A normal audit creates no Issue or comment. Platform actions happen only when a
+governance signal changes state.
+
+### Matrix v4 lifecycle
+
+The resulting engineering surface now spans:
+
+Radar observation
+→ HARMONY scoring
+→ impact task / knowledge / release surfaces
+→ benchmark and security health
+→ CI, fork, stale-work, and workflow maintenance
+→ data-quality / storage / cross-platform governance
+→ incident update and automatic recovery close
+
+This keeps activity broad while still requiring every action to be supported by
+measured engineering evidence.
