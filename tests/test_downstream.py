@@ -34,7 +34,7 @@ CONFIG = {
 
 
 class DownstreamImpactTests(unittest.TestCase):
-    def run(self, *, impact=7.0, fields=None):
+    def sample_run(self, *, impact=7.0, fields=None):
         return {
             "observed_at": "2026-10-01T11:00:00Z",
             "changed_details": [
@@ -54,7 +54,7 @@ class DownstreamImpactTests(unittest.TestCase):
 
     def test_explicit_mapping_generates_only_mapped_targets(self):
         plans = plan_downstream_impacts(
-            self.run(),
+            self.sample_run(),
             CONFIG,
             platform="github",
         )
@@ -66,7 +66,7 @@ class DownstreamImpactTests(unittest.TestCase):
 
     def test_low_impact_is_ignored(self):
         plans = plan_downstream_impacts(
-            self.run(impact=4.0),
+            self.sample_run(impact=4.0),
             CONFIG,
             platform="github",
         )
@@ -74,14 +74,14 @@ class DownstreamImpactTests(unittest.TestCase):
 
     def test_non_important_fields_require_critical_impact(self):
         plans = plan_downstream_impacts(
-            self.run(impact=7.0, fields=["stars", "forks"]),
+            self.sample_run(impact=7.0, fields=["stars", "forks"]),
             CONFIG,
             platform="github",
         )
         self.assertEqual(plans, ())
 
         critical = plan_downstream_impacts(
-            self.run(impact=8.2, fields=["stars", "forks"]),
+            self.sample_run(impact=8.2, fields=["stars", "forks"]),
             CONFIG,
             platform="github",
         )
@@ -89,7 +89,7 @@ class DownstreamImpactTests(unittest.TestCase):
 
     def test_same_evidence_is_deduplicated(self):
         plan = plan_downstream_impacts(
-            self.run(),
+            self.sample_run(),
             CONFIG,
             platform="github",
         )[0]
@@ -103,7 +103,7 @@ class DownstreamImpactTests(unittest.TestCase):
 
     def test_changed_open_issue_updates_after_cooldown(self):
         plan = plan_downstream_impacts(
-            self.run(),
+            self.sample_run(),
             CONFIG,
             platform="github",
         )[0]
@@ -117,7 +117,7 @@ class DownstreamImpactTests(unittest.TestCase):
 
     def test_closed_issue_requires_longer_create_cooldown(self):
         plan = plan_downstream_impacts(
-            self.run(),
+            self.sample_run(),
             CONFIG,
             platform="github",
         )[0]
