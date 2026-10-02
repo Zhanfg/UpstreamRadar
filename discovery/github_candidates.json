@@ -27,11 +27,11 @@
     "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "AgenticX is a unified, production-ready multi-agent platform — Python SDK + CLI (agx) + Studio server + Machi desktop app. Features Meta-Agent orchestration, 15+ LLM providers, MCP Hub, hierarchical memory, avatar & group chat, skill ecosystem, safety sandbox, and IM gateway (Feishu/WeChat).",
-    "forks": 55,
+    "forks": 57,
     "full_name": "DemonDamon/AgenticX",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-10-01T01:16:06Z",
+    "pushed_at": "2026-10-02T10:47:21Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -42,7 +42,7 @@
       "recently-active",
       "license:Apache-2.0"
     ],
-    "score": 0.93290613,
+    "score": 0.93296276,
     "source_id": "772408997",
     "stars": 238,
     "url": "https://github.com/DemonDamon/AgenticX"
@@ -576,6 +576,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Runnable labs for a 17-lesson agent-building course: API calls, webhooks, tool use, MCP, RAG, memory, human approval and evals. Synthetic fixtures, no API key needed.",
+    "forks": 0,
+    "full_name": "zarif3624/agent-course-labs",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-02T12:12:41Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85656916,
+    "source_id": "1401650284",
+    "stars": 0,
+    "url": "https://github.com/zarif3624/agent-course-labs"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Autonomous AI agent platform for enterprise data and operations. Turns natural-language intents into verified plans and runs them across SQL, REST, GraphQL, Prometheus and MCP connectors, with human approval gates, self-correcting re-planning, RAG, dashboards and a full audit trail. LangGraph + FastAPI, works with Claude and GPT-5.",
     "forks": 0,
     "full_name": "ShreyashDarade/praxis-ai-agent-platform",
@@ -596,6 +620,54 @@
     "source_id": "1376658646",
     "stars": 0,
     "url": "https://github.com/ShreyashDarade/praxis-ai-agent-platform"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Open-source agent runtime where an AI agent's authority comes from the user's intent and is enforced outside the model: scoped capabilities, capability discovery, audited transitions, revocation, and an Attack World benchmark.",
+    "forks": 0,
+    "full_name": "ranjan-del/intentward",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-02T09:43:29Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.85636197,
+    "source_id": "1401439733",
+    "stars": 0,
+    "url": "https://github.com/ranjan-del/intentward"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "The agent loop, embodied. Tool-using runtime + fail-closed safety pipeline + sim-first execution + statistically-rigorous bench harness + post-hoc analysis (counterfactual replay, causal attribution, LLM judge, property mining) for embodied AI. Sister project to GhostLM.",
+    "forks": 0,
+    "full_name": "joemunene-by/ghostloop",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-01T18:55:34Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:inference",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.85513304,
+    "source_id": "1234625936",
+    "stars": 0,
+    "url": "https://github.com/joemunene-by/ghostloop"
   },
   {
     "auto_fork_eligible": false,
@@ -717,6 +789,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Peridot v1.6.0 [STABLE] | Sovereign AI Kernel. Offline, GPU accelerated Qwen framework: a 27B model fully on an 8GB GPU at 23.6 tok/s. Sandboxed skills & plugins, model tool use, opt in web search, MCP bridge for private data jobs from cloud agents, ZAT-SCS preemption, RAG. Zero data exfiltration. Engineered by uncoalesced.",
+    "forks": 1,
+    "full_name": "uncoalesced/Peridot",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-02T10:06:06Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:mcp",
+      "keyword:inference",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.83669122,
+    "source_id": "1151386809",
+    "stars": 7,
+    "url": "https://github.com/uncoalesced/Peridot"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "security-sandbox",
     "description": "Safe-by-default script sandbox in Go. Runs programs under default-deny OS isolation on Linux (bubblewrap + Landlock + seccomp): credential shielding, per-host network allowlisting via a host-side CONNECT proxy, resource limits, and a profile-then-grant consent flow. macOS support is planned.",
     "forks": 0,
@@ -786,6 +881,30 @@
     "source_id": "1324527220",
     "stars": 0,
     "url": "https://github.com/vladimiracunadev-create/sandbox-labs"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "The hands of an AI agent.",
+    "forks": 0,
+    "full_name": "Ryanleoncoder/tato-runtime",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-01T17:00:07Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.83321199,
+    "source_id": "1400414811",
+    "stars": 1,
+    "url": "https://github.com/Ryanleoncoder/tato-runtime"
   },
   {
     "auto_fork_eligible": false,
@@ -889,7 +1008,7 @@
     "full_name": "BGMLAI/gate.cat",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-10-01T11:40:21Z",
+    "pushed_at": "2026-10-02T11:09:59Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -899,7 +1018,7 @@
       "license:Apache-2.0",
       "emerging"
     ],
-    "score": 0.82294293,
+    "score": 0.82327196,
     "source_id": "1289130385",
     "stars": 2,
     "url": "https://github.com/BGMLAI/gate.cat"
@@ -1087,6 +1206,29 @@
     "source_id": "1261349883",
     "stars": 139,
     "url": "https://github.com/hedioum/Hedioum-Pool-Tunnel"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "AI operations platform for a restaurant: MCP server over Gmail/POS/COGS, Claude vision invoice parsing with a regression harness, tool-using chat agent, Gemini Live voice receptionist, Next.js dashboard. 760+ tests",
+    "forks": 0,
+    "full_name": "brenndaude/bras-droit-platform",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-01T20:34:11Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.81137923,
+    "source_id": "1400690507",
+    "stars": 0,
+    "url": "https://github.com/brenndaude/bras-droit-platform"
   },
   {
     "auto_fork_eligible": false,
@@ -1732,139 +1874,5 @@
     "source_id": "1166209700",
     "stars": 19,
     "url": "https://github.com/Winkmoon/android_kernel_xiaomi_diting"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Ultimate Multi-Agent OS for Autonomous AI NPCs 2026",
-    "forks": 1,
-    "full_name": "israriqbal/agent-ecologies",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-10-01T10:41:24Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "recently-active",
-      "community-signal"
-    ],
-    "score": 0.76055555,
-    "source_id": "1283015427",
-    "stars": 121,
-    "url": "https://github.com/israriqbal/agent-ecologies"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Open-source reliability engineering platform for tool-using AI agents. Run stateful evaluations, deterministic fault injection, security checks, statistical scoring, trace inspection and tamper-evident reports through CLI, API, dashboard and MCP.",
-    "forks": 0,
-    "full_name": "karthikrshet/agent-reliability",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-29T20:55:59Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.75425657,
-    "source_id": "1057046175",
-    "stars": 3,
-    "url": "https://github.com/karthikrshet/agent-reliability"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Unprivileged, self-applied Landlock + seccomp confinement wrapper — no root, no daemon, one static binary. It restricts itself, then execve()s your command; the child inherits every restriction irrevocably.",
-    "forks": 1,
-    "full_name": "hexproofdev/oring",
-    "license_id": "BSD-3-Clause",
-    "platform": "github",
-    "pushed_at": "2026-07-24T15:15:40Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "keyword:rootless",
-      "license:BSD-3-Clause",
-      "emerging"
-    ],
-    "score": 0.75239953,
-    "source_id": "1311161589",
-    "stars": 4,
-    "url": "https://github.com/hexproofdev/oring"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Baton SDK — structured signal capture for agent-mediated tool use. MCP middleware, library API, and (coming) customer-side plugins emit the same event envelope to any sink.",
-    "forks": 0,
-    "full_name": "good-timing/baton",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-01T16:55:09Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.75155983,
-    "source_id": "1243836079",
-    "stars": 2,
-    "url": "https://github.com/good-timing/baton"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Experimental LineageOS 22.2 device tree for Lenovo Tab One TB305FU (clove_row_wifi); prebuilt GKI kernel + stock vendor, boots with Wi-Fi.",
-    "forks": 0,
-    "full_name": "9cb14c1ec0/android_device_lenovo_clove_row_wifi-lineage",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-09-30T12:47:32Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.74901182,
-    "source_id": "1385947634",
-    "stars": 0,
-    "url": "https://github.com/9cb14c1ec0/android_device_lenovo_clove_row_wifi-lineage"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Android GKI 6.12 LTS kernel common - fork of CodeLinaro clo/la/kernel/common (aosp-new/android16-6.12-lts), ASB 2026-08",
-    "forks": 0,
-    "full_name": "EdMory/android_kernel_common_sm8850",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-09-29T10:45:29Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.74889373,
-    "source_id": "1394779258",
-    "stars": 0,
-    "url": "https://github.com/EdMory/android_kernel_common_sm8850"
   }
 ]
