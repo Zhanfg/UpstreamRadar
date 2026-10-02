@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **72000**
-- latest census cursor: **233682**
+- total census repositories scanned: **76000**
+- latest census cursor: **245932**
 - retained candidates: **80**
-- governed fork queue: **12**
+- governed fork queue: **13**
 
 ## Top directions
 
@@ -16,7 +16,7 @@
 - **ThreeMoonsLab/agents-shipgate** — score=0.908, stars=89; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **nibor1896/Crow** — score=0.897, stars=34; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **ai-pivot/xbot** — score=0.895, stars=14; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
-- **zlogic-labs/zlogic** — score=0.874, stars=3; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **MSKazemi/aobench** — score=0.895, stars=9; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 
 ### android-kernel
 
@@ -65,5 +65,6 @@
 - **MiChongs/WutherCore** → networking (score=0.902, license=MIT)
 - **nibor1896/Crow** → ai-agents (score=0.897, license=MIT)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
+- **MSKazemi/aobench** → ai-agents (score=0.895, license=Apache-2.0)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.

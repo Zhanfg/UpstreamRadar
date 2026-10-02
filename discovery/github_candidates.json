@@ -151,7 +151,7 @@
     "full_name": "ThreeMoonsLab/agents-shipgate",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-09-30T03:55:44Z",
+    "pushed_at": "2026-10-02T22:17:47Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -161,7 +161,7 @@
       "recently-active",
       "license:Apache-2.0"
     ],
-    "score": 0.90790352,
+    "score": 0.90816594,
     "source_id": "1220594946",
     "stars": 89,
     "url": "https://github.com/ThreeMoonsLab/agents-shipgate"
@@ -309,6 +309,30 @@
     "source_id": "1221587347",
     "stars": 14,
     "url": "https://github.com/ai-pivot/xbot"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
+    "description": "Role-aware, permission-enforced benchmark for LLM agents that operate HPC systems — SLURM, telemetry, RBAC, docs, facility. A policy violation hard-fails the task. 88 tasks (10 categories x 5 roles), 29 reproducible environments with 6 rebuilt from real Marconi100 ExaData, scored on 7 weighted dimensions.",
+    "forks": 15,
+    "full_name": "MSKazemi/aobench",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-02T21:32:42Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.89468958,
+    "source_id": "1306965130",
+    "stars": 9,
+    "url": "https://github.com/MSKazemi/aobench"
   },
   {
     "auto_fork_eligible": false,
@@ -558,7 +582,7 @@
     "full_name": "Yacine-ai-tech/AgentKit",
     "license_id": "AGPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-10-01T11:28:45Z",
+    "pushed_at": "2026-10-02T18:34:44Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -569,7 +593,7 @@
       "recently-active",
       "license:AGPL-3.0"
     ],
-    "score": 0.86010995,
+    "score": 0.86013954,
     "source_id": "1348852330",
     "stars": 0,
     "url": "https://github.com/Yacine-ai-tech/AgentKit"
@@ -1581,6 +1605,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Agentic security control plane for MCP and AI agent tool calls. MCP-native policy gateway with topology discovery and audit.",
+    "forks": 0,
+    "full_name": "paolovella/vellaveto",
+    "license_id": "NOASSERTION",
+    "platform": "github",
+    "pushed_at": "2026-10-02T21:16:09Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.79370718,
+    "source_id": "1148198632",
+    "stars": 6,
+    "url": "https://github.com/paolovella/vellaveto"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "security-sandbox",
     "description": "A deliberately small Linux process sandbox launcher for agent workloads: namespaces, read-only rootfs, Landlock/seccomp policy, host-side CONNECT proxy allowlist, JSONL records and verify.",
     "forks": 0,
@@ -1833,50 +1881,5 @@
     "source_id": "1219202227",
     "stars": 0,
     "url": "https://github.com/evehypoglycaemic255/mcp-server"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Script for building android pre-GKI Kernel on Github Actions (aarch64 runner)",
-    "forks": 22,
-    "full_name": "Moon-Playground/kernel_build",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-09-27T12:46:11Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.77285754,
-    "source_id": "213926014",
-    "stars": 9,
-    "url": "https://github.com/Moon-Playground/kernel_build"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Multi-tenant sandboxed execution for untrusted code: layered OS isolation, probed resource ceilings, durable job lifecycle with a crash reaper, and an adversarial escape-attempt suite.",
-    "forks": 0,
-    "full_name": "vinzabe/agent-sandbox",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-08-24T05:18:33Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.77260482,
-    "source_id": "1235298810",
-    "stars": 0,
-    "url": "https://github.com/vinzabe/agent-sandbox"
   }
 ]
