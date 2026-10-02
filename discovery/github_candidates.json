@@ -336,6 +336,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "CVE-2025-21479 (Qualcomm Adreno GPU) local privilege escalation on vivo iQOO Neo7 竞速版 / PD2232 (SM8475, Adreno 730, GKI 5.10). No bootloader unlock, no flashing. Includes adapted exploit source, prebuilt binaries, compatibility precheck, and KernelSU/ReSukiSU late-load persistence. Verified on kernel 5.10.233-gki, vendor patch 2025-03-05.",
+    "forks": 0,
+    "full_name": "longg66/cve-2025-21479_iqooneo7speed",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-02T15:43:18Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.87730144,
+    "source_id": "1401988509",
+    "stars": 0,
+    "url": "https://github.com/longg66/cve-2025-21479_iqooneo7speed"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "AI coding agent and LLM harness built in Rust, optimized for DeepSeek, with MCP, Skills, multi-provider AI, remote agents, observability, and policy controls.",
     "forks": 1,
@@ -453,6 +477,30 @@
     "source_id": "1190394151",
     "stars": 3,
     "url": "https://github.com/MarisaMagic/Kura-AI"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "XinovaSU — a kernel-based root solution for Android (based on KernelSU)",
+    "forks": 0,
+    "full_name": "kusesad-1122/XinovaSU",
+    "license_id": "GPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-10-02T19:10:17Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "recently-active",
+      "license:GPL-3.0",
+      "emerging"
+    ],
+    "score": 0.86962703,
+    "source_id": "1302213188",
+    "stars": 1,
+    "url": "https://github.com/kusesad-1122/XinovaSU"
   },
   {
     "auto_fork_eligible": false,
@@ -981,7 +1029,7 @@
     "auto_fork_eligible": false,
     "category": "android-kernel",
     "description": "Sanitized public CI mirror for Lenovo TB322FC Android 15 GKI 6.6.111 ReSukiSU build",
-    "forks": 2,
+    "forks": 3,
     "full_name": "qianmingzi7-coder/tb322fc-r2-kernel-public-build",
     "license_id": "GPL-2.0",
     "platform": "github",
@@ -995,7 +1043,7 @@
       "license:GPL-2.0",
       "emerging"
     ],
-    "score": 0.82538066,
+    "score": 0.82589734,
     "source_id": "1305918805",
     "stars": 0,
     "url": "https://github.com/qianmingzi7-coder/tb322fc-r2-kernel-public-build"
@@ -1324,6 +1372,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "GKI kernels for Android 12-16 built with ReSukiSU and SUSFS, one per KMI. Rebuilt when upstream moves.",
+    "forks": 6,
+    "full_name": "evoker0/evokerr-resukisu",
+    "license_id": null,
+    "platform": "github",
+    "pushed_at": "2026-10-02T10:51:29Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:susfs",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.80778892,
+    "source_id": "1336611125",
+    "stars": 1,
+    "url": "https://github.com/evoker0/evokerr-resukisu"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "How AI models work and how they become agents: a layer-by-layer explainer in plain English, with diagrams",
     "forks": 0,
@@ -1440,25 +1511,26 @@
   {
     "auto_fork_eligible": false,
     "category": "android-kernel",
-    "description": "GKI kernels for Android 12-16 built with ReSukiSU and SUSFS, one per KMI. Rebuilt when upstream moves.",
-    "forks": 6,
-    "full_name": "evoker0/evokerr-resukisu",
+    "description": "GKI kernels for Android 12-16 built with KernelSU-Next and SUSFS, one per KMI. Rebuilt when upstream moves.",
+    "forks": 0,
+    "full_name": "evoker0/evokerr-ksunext",
     "license_id": null,
     "platform": "github",
-    "pushed_at": "2026-09-23T10:25:36Z",
+    "pushed_at": "2026-10-02T10:54:57Z",
     "reasons": [
       "category:android-kernel",
       "keyword:android",
       "keyword:gki",
       "keyword:kernel",
+      "keyword:kernelsu",
       "keyword:susfs",
       "recently-active",
       "emerging"
     ],
-    "score": 0.79618401,
-    "source_id": "1336611125",
+    "score": 0.79814006,
+    "source_id": "1336611503",
     "stars": 1,
-    "url": "https://github.com/evoker0/evokerr-resukisu"
+    "url": "https://github.com/evoker0/evokerr-ksunext"
   },
   {
     "auto_fork_eligible": false,
@@ -1532,6 +1604,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "GKI kernels for Android 12-16 built with SukiSU-Ultra, SUSFS and KPM, one per KMI. Rebuilt when upstream moves.",
+    "forks": 0,
+    "full_name": "evoker0/evokerr-sukisu",
+    "license_id": null,
+    "platform": "github",
+    "pushed_at": "2026-10-02T10:53:36Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:susfs",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.7925999,
+    "source_id": "1336611433",
+    "stars": 0,
+    "url": "https://github.com/evoker0/evokerr-sukisu"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "security-sandbox",
     "description": "AI-Native Secure Sandbox & Micro-Runtime — kernel-level isolation for AI agents with seccomp-BPF, memory forensics, Ed25519 signing.",
     "forks": 0,
@@ -1577,30 +1672,6 @@
     "source_id": "1334367760",
     "stars": 0,
     "url": "https://github.com/komandante78/noesar-sandbox"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "GKI kernels for Android 12-16 built with KernelSU-Next and SUSFS, one per KMI. Rebuilt when upstream moves.",
-    "forks": 0,
-    "full_name": "evoker0/evokerr-ksunext",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-09-22T10:06:20Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:ksu",
-      "keyword:susfs",
-      "recently-active"
-    ],
-    "score": 0.78461559,
-    "source_id": "1336611503",
-    "stars": 1,
-    "url": "https://github.com/evoker0/evokerr-ksunext"
   },
   {
     "auto_fork_eligible": false,
@@ -1807,72 +1878,5 @@
     "source_id": "1235298810",
     "stars": 0,
     "url": "https://github.com/vinzabe/agent-sandbox"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Build automated workflows, run local AI agents, and manage tasks from a unified command center.",
-    "forks": 0,
-    "full_name": "monoplegiaunappetisingness288/disp8ch",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-09-29T18:36:20Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.76748488,
-    "source_id": "1279990616",
-    "stars": 0,
-    "url": "https://github.com/monoplegiaunappetisingness288/disp8ch"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "ESK Kernel for xaga(in)/xagapro(in)",
-    "forks": 11,
-    "full_name": "ESK-Project/android_kernel_xiaomi_mt6895",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-09-30T16:11:07Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.76436268,
-    "source_id": "1030428357",
-    "stars": 14,
-    "url": "https://github.com/ESK-Project/android_kernel_xiaomi_mt6895"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "GKI-kernel for Redmi K50 Ultra/Xiaomi 12T Pro  MIUI/HyperOS  a12-17",
-    "forks": 9,
-    "full_name": "Winkmoon/android_kernel_xiaomi_diting",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-09-23T15:28:34Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.76431207,
-    "source_id": "1166209700",
-    "stars": 19,
-    "url": "https://github.com/Winkmoon/android_kernel_xiaomi_diting"
   }
 ]
