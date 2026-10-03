@@ -397,7 +397,7 @@
       "scanned": 106
     },
     "2026-10-03": {
-      "changed": 36,
+      "changed": 63,
       "errors": 0,
       "recent_changed": [
         "openai/openai-python",
@@ -435,10 +435,37 @@
         "microsoft/semantic-kernel",
         "microsoft/autogen",
         "ollama/ollama",
+        "cloudflare/cloudflared",
+        "openai/openai-python",
+        "modelcontextprotocol/python-sdk",
+        "openai/openai-agents-python",
+        "huggingface/transformers",
+        "curl/curl",
+        "astral-sh/ruff",
+        "jax-ml/jax",
+        "anthropics/anthropic-sdk-python",
+        "nodejs/node",
+        "ggml-org/llama.cpp",
+        "astral-sh/uv",
+        "git/git",
+        "vllm-project/vllm",
+        "torvalds/linux",
+        "pnpm/pnpm",
+        "envoyproxy/envoy",
+        "python/cpython",
+        "systemd/systemd",
+        "golang/go",
+        "denoland/deno",
+        "SagerNet/sing-box",
+        "microsoft/semantic-kernel",
+        "neovim/neovim",
+        "microsoft/autogen",
+        "WireGuard/wireguard-go",
+        "nginx/nginx",
         "cloudflare/cloudflared"
       ],
-      "runs": 1,
-      "scanned": 36
+      "runs": 2,
+      "scanned": 66
     }
   },
   "repositories": {
@@ -504,14 +531,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 12,
+      "checks": 13,
       "error_streak": 0,
-      "ewma_change": 0.98416182,
-      "ewma_impact": 2.25312508,
-      "ewma_issue_delta": 0.62424755,
-      "ewma_release": 0.00633527,
+      "ewma_change": 0.98812137,
+      "ewma_impact": 2.17734381,
+      "ewma_issue_delta": 0.71818566,
+      "ewma_release": 0.00475145,
       "impact_window": [
         0.0,
         1.15,
@@ -524,16 +552,19 @@
         1.95,
         3.95,
         3.55,
-        1.6
+        1.6,
+        1.95
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
         "open_issues",
-        "forks"
+        "forks",
+        "stars"
       ],
-      "last_semantic_impact": 1.6,
+      "last_semantic_impact": 1.95,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -547,7 +578,7 @@
         0,
         0
       ],
-      "successful_checks": 12
+      "successful_checks": 13
     },
     "WireGuard/wireguard-go": {
       "breakage_risk": 0.0,
@@ -565,14 +596,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 14,
+      "checks": 15,
       "error_streak": 0,
-      "ewma_change": 0.84576894,
-      "ewma_impact": 0.57494564,
+      "ewma_change": 0.8843267,
+      "ewma_impact": 0.51870923,
       "ewma_issue_delta": 0.0,
-      "ewma_release": 0.00356359,
+      "ewma_release": 0.00267269,
       "impact_window": [
         0.95,
         0.0,
@@ -582,16 +614,17 @@
         0.6,
         0.95,
         0.35,
-        0.95
+        0.95,
+        0.35
       ],
-      "last_change_at": "2026-10-02T14:04:38Z",
-      "last_checked_at": "2026-10-02T14:04:38Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
-        "forks",
         "stars"
       ],
-      "last_semantic_impact": 0.95,
+      "last_semantic_impact": 0.35,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -607,7 +640,7 @@
         0,
         0
       ],
-      "successful_checks": 14
+      "successful_checks": 15
     },
     "anthropics/anthropic-sdk-python": {
       "breakage_risk": 0.0,
@@ -630,14 +663,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 19,
+      "checks": 20,
       "error_streak": 0,
-      "ewma_change": 0.97244785,
-      "ewma_impact": 1.33195481,
-      "ewma_issue_delta": 0.16896811,
-      "ewma_release": 0.07871126,
+      "ewma_change": 0.97933589,
+      "ewma_impact": 1.48646611,
+      "ewma_issue_delta": 0.37672608,
+      "ewma_release": 0.05903345,
       "impact_window": [
         1.35,
         0.0,
@@ -652,16 +686,18 @@
         1.95,
         0.35,
         0.95,
-        0.95
+        0.95,
+        1.95
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_release_change_at": "2026-09-30T23:55:32Z",
       "last_semantic_delta": [
+        "open_issues",
         "forks",
         "stars"
       ],
-      "last_semantic_impact": 0.95,
+      "last_semantic_impact": 1.95,
       "release_window": [
         0,
         0,
@@ -681,9 +717,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "successful_checks": 19
+      "successful_checks": 20
     },
     "aquasecurity/trivy": {
       "breakage_risk": 0.0,
@@ -758,14 +795,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 17,
+      "checks": 18,
       "error_streak": 0,
-      "ewma_change": 0.98832245,
-      "ewma_impact": 4.65608107,
-      "ewma_issue_delta": 3.36546853,
-      "ewma_release": 0.10697214,
+      "ewma_change": 0.99124184,
+      "ewma_impact": 4.3795608,
+      "ewma_issue_delta": 2.5241014,
+      "ewma_release": 0.0802291,
       "impact_window": [
         3.95,
         3.2,
@@ -778,19 +816,19 @@
         8.9,
         4.55,
         3.95,
-        4.55
+        4.55,
+        3.55
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_release_change_at": "2026-10-02T01:33:30Z",
       "last_semantic_delta": [
         "pushed_at",
-        "open_issues",
         "forks",
         "stars",
         "size_kb"
       ],
-      "last_semantic_impact": 4.55,
+      "last_semantic_impact": 3.55,
       "release_window": [
         0,
         0,
@@ -808,9 +846,10 @@
         1,
         0,
         0,
+        0,
         0
       ],
-      "successful_checks": 17
+      "successful_checks": 18
     },
     "astral-sh/uv": {
       "breakage_risk": 0.0,
@@ -834,14 +873,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 20,
+      "checks": 21,
       "error_streak": 0,
-      "ewma_change": 0.98913421,
-      "ewma_impact": 4.15010227,
-      "ewma_issue_delta": 2.02715218,
-      "ewma_release": 0.11807121,
+      "ewma_change": 0.99185066,
+      "ewma_impact": 4.1000767,
+      "ewma_issue_delta": 2.77036413,
+      "ewma_release": 0.08855341,
       "impact_window": [
         4.9,
         0.0,
@@ -857,19 +897,19 @@
         6.95,
         0.55,
         4.9,
-        4.55
+        4.55,
+        3.95
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_release_change_at": "2026-10-02T01:33:30Z",
       "last_semantic_delta": [
         "pushed_at",
         "open_issues",
-        "forks",
         "stars",
         "size_kb"
       ],
-      "last_semantic_impact": 4.55,
+      "last_semantic_impact": 3.95,
       "release_window": [
         0,
         1,
@@ -890,9 +930,10 @@
         1,
         0,
         0,
+        0,
         0
       ],
-      "successful_checks": 20
+      "successful_checks": 21
     },
     "cilium/cilium": {
       "breakage_risk": 0.0,
@@ -952,14 +993,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 12,
+      "checks": 13,
       "error_streak": 0,
-      "ewma_change": 0.95079086,
-      "ewma_impact": 1.06784363,
-      "ewma_issue_delta": 0.25,
-      "ewma_release": 0.00633527,
+      "ewma_change": 0.96309314,
+      "ewma_impact": 0.80088272,
+      "ewma_issue_delta": 0.1875,
+      "ewma_release": 0.00475145,
       "impact_window": [
         2.95,
         0.95,
@@ -967,10 +1009,353 @@
         0.95,
         0.95,
         0.7,
+        1.95,
+        0.0
+      ],
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
+      "last_semantic_delta": [],
+      "last_semantic_impact": 0,
+      "release_window": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "successful_checks": 13
+    },
+    "curl/curl": {
+      "breakage_risk": 0.0,
+      "change_window": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "checks": 10,
+      "error_streak": 0,
+      "ewma_change": 0.97184324,
+      "ewma_impact": 3.57002621,
+      "ewma_issue_delta": 2.35883331,
+      "ewma_release": 0.0112627,
+      "impact_window": [
+        0.0,
+        3.95,
+        1.95,
+        3.6,
+        3.55,
+        3.95,
+        4.55,
+        4.55,
+        4.55,
+        3.0
+      ],
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
+      "last_semantic_delta": [
+        "pushed_at",
+        "forks"
+      ],
+      "last_semantic_impact": 3.0,
+      "release_window": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "successful_checks": 10
+    },
+    "denoland/deno": {
+      "breakage_risk": 0.0,
+      "change_window": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "checks": 14,
+      "error_streak": 0,
+      "ewma_change": 0.94716127,
+      "ewma_impact": 1.64168906,
+      "ewma_issue_delta": 1.59304288,
+      "ewma_release": 0.00356359,
+      "impact_window": [
+        0.0,
+        1.95,
+        0.0,
+        0.6,
+        3.95,
+        1.95,
+        0.0,
+        1.0,
+        4.55,
+        4.55,
+        1.95,
+        1.95,
+        1.35,
+        0.35
+      ],
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
+      "last_semantic_delta": [
+        "stars"
+      ],
+      "last_semantic_impact": 0.35,
+      "release_window": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "successful_checks": 14
+    },
+    "envoyproxy/envoy": {
+      "breakage_risk": 0.0,
+      "change_window": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "checks": 7,
+      "error_streak": 0,
+      "ewma_change": 0.93325806,
+      "ewma_impact": 3.36772461,
+      "ewma_issue_delta": 4.60546875,
+      "ewma_release": 0.02669677,
+      "impact_window": [
+        0.0,
+        3.2,
+        3.55,
+        3.95,
+        4.55,
+        4.55,
+        3.95
+      ],
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
+      "last_semantic_delta": [
+        "pushed_at",
+        "open_issues",
+        "stars",
+        "size_kb"
+      ],
+      "last_semantic_impact": 3.95,
+      "release_window": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "successful_checks": 7
+    },
+    "ggml-org/llama.cpp": {
+      "breakage_risk": 0.0,
+      "change_window": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "checks": 14,
+      "error_streak": 0,
+      "ewma_change": 0.98317193,
+      "ewma_impact": 4.54799635,
+      "ewma_issue_delta": 9.87564969,
+      "ewma_release": 0.00356359,
+      "impact_window": [
+        0.0,
+        0.0,
+        0.35,
+        4.9,
+        4.9,
+        4.55,
+        4.9,
+        4.55,
+        4.9,
+        4.9,
+        4.55,
+        4.9,
+        4.9,
+        4.55
+      ],
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
+      "last_semantic_delta": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "last_semantic_impact": 4.55,
+      "release_window": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "successful_checks": 14
+    },
+    "git/git": {
+      "breakage_risk": 0.0,
+      "change_window": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "checks": 9,
+      "error_streak": 0,
+      "ewma_change": 0.96245766,
+      "ewma_impact": 2.65798492,
+      "ewma_issue_delta": 1.35554504,
+      "ewma_release": 0.01501694,
+      "impact_window": [
+        4.9,
+        3.95,
+        3.55,
+        4.9,
+        1.95,
+        1.95,
+        4.55,
+        1.55
+      ],
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
+      "last_semantic_delta": [
+        "open_issues",
+        "stars",
+        "size_kb"
+      ],
+      "last_semantic_impact": 1.55,
+      "release_window": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "successful_checks": 9
+    },
+    "golang/go": {
+      "breakage_risk": 0.0,
+      "change_window": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "checks": 14,
+      "error_streak": 0,
+      "ewma_change": 0.98317193,
+      "ewma_impact": 2.98359796,
+      "ewma_issue_delta": 5.58576727,
+      "ewma_release": 0.00356359,
+      "impact_window": [
+        0.0,
+        0.0,
+        4.9,
+        3.95,
+        4.55,
+        4.55,
+        3.95,
+        4.3,
+        1.35,
+        4.9,
+        1.95,
+        1.95,
+        4.9,
         1.95
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
         "open_issues",
         "forks",
@@ -989,349 +1374,11 @@
         0,
         0,
         0,
-        0
-      ],
-      "successful_checks": 12
-    },
-    "curl/curl": {
-      "breakage_risk": 0.0,
-      "change_window": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "checks": 9,
-      "error_streak": 0,
-      "ewma_change": 0.96245766,
-      "ewma_impact": 3.76003494,
-      "ewma_issue_delta": 3.14511108,
-      "ewma_release": 0.01501694,
-      "impact_window": [
-        0.0,
-        3.95,
-        1.95,
-        3.6,
-        3.55,
-        3.95,
-        4.55,
-        4.55,
-        4.55
-      ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
-      "last_semantic_delta": [
-        "pushed_at",
-        "open_issues",
-        "forks",
-        "stars",
-        "size_kb"
-      ],
-      "last_semantic_impact": 4.55,
-      "release_window": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         0,
         0
       ],
-      "successful_checks": 9
-    },
-    "denoland/deno": {
-      "breakage_risk": 0.0,
-      "change_window": [
-        1,
-        1,
-        0,
-        1,
-        1,
-        1,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "checks": 13,
-      "error_streak": 0,
-      "ewma_change": 0.92954836,
-      "ewma_impact": 2.07225208,
-      "ewma_issue_delta": 2.12405717,
-      "ewma_release": 0.00475145,
-      "impact_window": [
-        0.0,
-        1.95,
-        0.0,
-        0.6,
-        3.95,
-        1.95,
-        0.0,
-        1.0,
-        4.55,
-        4.55,
-        1.95,
-        1.95,
-        1.35
-      ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
-      "last_semantic_delta": [
-        "open_issues",
-        "stars"
-      ],
-      "last_semantic_impact": 1.35,
-      "release_window": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "successful_checks": 13
-    },
-    "envoyproxy/envoy": {
-      "breakage_risk": 0.0,
-      "change_window": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "checks": 6,
-      "error_streak": 0,
-      "ewma_change": 0.91101075,
-      "ewma_impact": 3.17363281,
-      "ewma_issue_delta": 4.140625,
-      "ewma_release": 0.0355957,
-      "impact_window": [
-        0.0,
-        3.2,
-        3.55,
-        3.95,
-        4.55,
-        4.55
-      ],
-      "last_change_at": "2026-10-02T07:28:39Z",
-      "last_checked_at": "2026-10-02T07:28:39Z",
-      "last_semantic_delta": [
-        "pushed_at",
-        "open_issues",
-        "forks",
-        "stars",
-        "size_kb"
-      ],
-      "last_semantic_impact": 4.55,
-      "release_window": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "successful_checks": 6
-    },
-    "ggml-org/llama.cpp": {
-      "breakage_risk": 0.0,
-      "change_window": [
-        1,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "checks": 13,
-      "error_streak": 0,
-      "ewma_change": 0.97756258,
-      "ewma_impact": 4.54732846,
-      "ewma_issue_delta": 9.16753292,
-      "ewma_release": 0.00475145,
-      "impact_window": [
-        0.0,
-        0.0,
-        0.35,
-        4.9,
-        4.9,
-        4.55,
-        4.9,
-        4.55,
-        4.9,
-        4.9,
-        4.55,
-        4.9,
-        4.9
-      ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
-      "last_semantic_delta": [
-        "pushed_at",
-        "open_issues",
-        "forks",
-        "stars",
-        "watchers",
-        "size_kb"
-      ],
-      "last_semantic_impact": 4.9,
-      "release_window": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "successful_checks": 13
-    },
-    "git/git": {
-      "breakage_risk": 0.0,
-      "change_window": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "checks": 8,
-      "error_streak": 0,
-      "ewma_change": 0.94994355,
-      "ewma_impact": 3.02731323,
-      "ewma_issue_delta": 1.47406006,
-      "ewma_release": 0.02002258,
-      "impact_window": [
-        4.9,
-        3.95,
-        3.55,
-        4.9,
-        1.95,
-        1.95,
-        4.55
-      ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
-      "last_semantic_delta": [
-        "pushed_at",
-        "open_issues",
-        "forks",
-        "stars",
-        "size_kb"
-      ],
-      "last_semantic_impact": 4.55,
-      "release_window": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "successful_checks": 8
-    },
-    "golang/go": {
-      "breakage_risk": 0.0,
-      "change_window": [
-        1,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "checks": 13,
-      "error_streak": 0,
-      "ewma_change": 0.97756258,
-      "ewma_impact": 3.32813061,
-      "ewma_issue_delta": 6.78102302,
-      "ewma_release": 0.00475145,
-      "impact_window": [
-        0.0,
-        0.0,
-        4.9,
-        3.95,
-        4.55,
-        4.55,
-        3.95,
-        4.3,
-        1.35,
-        4.9,
-        1.95,
-        1.95,
-        4.9
-      ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
-      "last_semantic_delta": [
-        "pushed_at",
-        "open_issues",
-        "forks",
-        "stars",
-        "watchers",
-        "size_kb"
-      ],
-      "last_semantic_impact": 4.9,
-      "release_window": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "successful_checks": 13
+      "successful_checks": 14
     },
     "google/osv-scanner": {
       "breakage_risk": 0.0,
@@ -1355,14 +1402,15 @@
         1,
         1,
         1,
-        1
+        1,
+        0
       ],
-      "checks": 20,
+      "checks": 21,
       "error_streak": 0,
-      "ewma_change": 0.98121513,
-      "ewma_impact": 2.40025008,
-      "ewma_issue_delta": 1.65881842,
-      "ewma_release": 0.00063425,
+      "ewma_change": 0.73591135,
+      "ewma_impact": 1.80018756,
+      "ewma_issue_delta": 1.24411381,
+      "ewma_release": 0.00047569,
       "impact_window": [
         0.35,
         0.0,
@@ -1378,16 +1426,15 @@
         3.55,
         4.2,
         0.95,
-        2.6
+        2.6,
+        0.0
       ],
       "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
-      "last_semantic_delta": [
-        "pushed_at",
-        "size_kb"
-      ],
-      "last_semantic_impact": 2.6,
+      "last_checked_at": "2026-10-03T01:51:44Z",
+      "last_semantic_delta": [],
+      "last_semantic_impact": 0,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -1409,7 +1456,7 @@
         0,
         0
       ],
-      "successful_checks": 20
+      "successful_checks": 21
     },
     "haproxy/haproxy": {
       "breakage_risk": 0.0,
@@ -1503,14 +1550,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 11,
+      "checks": 12,
       "error_streak": 0,
-      "ewma_change": 0.97888243,
-      "ewma_impact": 4.3914763,
-      "ewma_issue_delta": 4.56752205,
-      "ewma_release": 0.041818,
+      "ewma_change": 0.98416182,
+      "ewma_impact": 4.19360723,
+      "ewma_issue_delta": 3.67564154,
+      "ewma_release": 0.0313635,
       "impact_window": [
         0.0,
         4.55,
@@ -1522,19 +1570,18 @@
         4.9,
         3.95,
         4.55,
-        4.55
+        4.55,
+        3.6
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_release_change_at": "2026-09-30T20:16:16Z",
       "last_semantic_delta": [
         "pushed_at",
         "open_issues",
-        "forks",
-        "stars",
         "size_kb"
       ],
-      "last_semantic_impact": 4.55,
+      "last_semantic_impact": 3.6,
       "release_window": [
         0,
         0,
@@ -1546,9 +1593,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "successful_checks": 11
+      "successful_checks": 12
     },
     "jax-ml/jax": {
       "breakage_risk": 0.0,
@@ -1565,14 +1613,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 13,
+      "checks": 14,
       "error_streak": 0,
-      "ewma_change": 0.98812137,
-      "ewma_impact": 4.2157018,
-      "ewma_issue_delta": 6.10545665,
-      "ewma_release": 0.00475145,
+      "ewma_change": 0.99109103,
+      "ewma_impact": 4.29927635,
+      "ewma_issue_delta": 4.82909249,
+      "ewma_release": 0.00356359,
       "impact_window": [
         0.0,
         4.2,
@@ -1586,10 +1635,11 @@
         4.55,
         4.2,
         4.55,
+        4.55,
         4.55
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
         "pushed_at",
         "open_issues",
@@ -1611,9 +1661,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "successful_checks": 13
+      "successful_checks": 14
     },
     "kubernetes/kubernetes": {
       "breakage_risk": 0.0,
@@ -1781,14 +1832,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 11,
+      "checks": 12,
       "error_streak": 0,
-      "ewma_change": 0.97888243,
-      "ewma_impact": 1.45692544,
-      "ewma_issue_delta": 3.50059891,
-      "ewma_release": 0.00844703,
+      "ewma_change": 0.98416182,
+      "ewma_impact": 1.33019408,
+      "ewma_issue_delta": 2.62544918,
+      "ewma_release": 0.00633527,
       "impact_window": [
         0.0,
         0.95,
@@ -1800,16 +1852,72 @@
         0.35,
         1.95,
         1.35,
-        1.95
+        1.95,
+        0.95
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
-        "open_issues",
         "forks",
         "stars"
       ],
-      "last_semantic_impact": 1.95,
+      "last_semantic_impact": 0.95,
+      "release_window": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "successful_checks": 12
+    },
+    "microsoft/semantic-kernel": {
+      "breakage_risk": 0.0,
+      "change_window": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "checks": 11,
+      "error_streak": 0,
+      "ewma_change": 0.97888243,
+      "ewma_impact": 1.62992296,
+      "ewma_issue_delta": 1.22284698,
+      "ewma_release": 0.00844703,
+      "impact_window": [
+        0.0,
+        1.3,
+        3.95,
+        4.2,
+        0.95,
+        4.35,
+        4.55,
+        0.6,
+        1.35,
+        1.95,
+        0.35
+      ],
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
+      "last_semantic_delta": [
+        "stars"
+      ],
+      "last_semantic_impact": 0.35,
       "release_window": [
         0,
         0,
@@ -1824,60 +1932,6 @@
         0
       ],
       "successful_checks": 11
-    },
-    "microsoft/semantic-kernel": {
-      "breakage_risk": 0.0,
-      "change_window": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "checks": 10,
-      "error_streak": 0,
-      "ewma_change": 0.97184324,
-      "ewma_impact": 2.05656395,
-      "ewma_issue_delta": 1.63046264,
-      "ewma_release": 0.0112627,
-      "impact_window": [
-        0.0,
-        1.3,
-        3.95,
-        4.2,
-        0.95,
-        4.35,
-        4.55,
-        0.6,
-        1.35,
-        1.95
-      ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
-      "last_semantic_delta": [
-        "open_issues",
-        "forks",
-        "stars"
-      ],
-      "last_semantic_impact": 1.95,
-      "release_window": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "successful_checks": 10
     },
     "microsoft/vscode": {
       "breakage_risk": 0.0,
@@ -1940,14 +1994,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 19,
+      "checks": 20,
       "error_streak": 0,
-      "ewma_change": 0.98551228,
-      "ewma_impact": 4.53049769,
-      "ewma_issue_delta": 6.57071574,
-      "ewma_release": 0.25084566,
+      "ewma_change": 0.98913421,
+      "ewma_impact": 3.48537327,
+      "ewma_issue_delta": 4.9280368,
+      "ewma_release": 0.18813425,
       "impact_window": [
         0.35,
         0.0,
@@ -1962,20 +2017,16 @@
         4.55,
         1.6,
         4.55,
-        8.55
+        8.55,
+        0.35
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_release_change_at": "2026-10-02T23:01:20Z",
       "last_semantic_delta": [
-        "latest_release",
-        "pushed_at",
-        "open_issues",
-        "forks",
-        "stars",
-        "size_kb"
+        "stars"
       ],
-      "last_semantic_impact": 8.55,
+      "last_semantic_impact": 0.35,
       "release_window": [
         0,
         0,
@@ -1995,9 +2046,10 @@
         0,
         0,
         0,
-        1
+        1,
+        0
       ],
-      "successful_checks": 19
+      "successful_checks": 20
     },
     "neovim/neovim": {
       "breakage_risk": 0.0,
@@ -2011,14 +2063,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 10,
+      "checks": 11,
       "error_streak": 0,
-      "ewma_change": 0.97184324,
-      "ewma_impact": 4.00001736,
-      "ewma_issue_delta": 2.07882309,
-      "ewma_release": 0.0112627,
+      "ewma_change": 0.97888243,
+      "ewma_impact": 3.90001302,
+      "ewma_issue_delta": 2.30911732,
+      "ewma_release": 0.00844703,
       "impact_window": [
         0.0,
         4.35,
@@ -2029,18 +2082,19 @@
         4.55,
         3.95,
         4.55,
-        4.35
+        4.35,
+        3.6
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
         "pushed_at",
         "open_issues",
-        "forks",
-        "stars"
+        "size_kb"
       ],
-      "last_semantic_impact": 4.35,
+      "last_semantic_impact": 3.6,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -2052,7 +2106,7 @@
         0,
         0
       ],
-      "successful_checks": 10
+      "successful_checks": 11
     },
     "nginx/nginx": {
       "breakage_risk": 0.0,
@@ -2064,14 +2118,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 8,
+      "checks": 9,
       "error_streak": 0,
-      "ewma_change": 0.94994355,
-      "ewma_impact": 1.62702331,
-      "ewma_issue_delta": 1.01275635,
-      "ewma_release": 0.02002258,
+      "ewma_change": 0.96245766,
+      "ewma_impact": 1.30776748,
+      "ewma_issue_delta": 0.75956726,
+      "ewma_release": 0.01501694,
       "impact_window": [
         0.0,
         4.55,
@@ -2080,16 +2135,17 @@
         1.35,
         0.35,
         1.95,
-        0.95
+        0.95,
+        0.35
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
-        "forks",
         "stars"
       ],
-      "last_semantic_impact": 0.95,
+      "last_semantic_impact": 0.35,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -2099,7 +2155,7 @@
         0,
         0
       ],
-      "successful_checks": 8
+      "successful_checks": 9
     },
     "nodejs/node": {
       "breakage_risk": 0.0,
@@ -2122,14 +2178,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 19,
+      "checks": 20,
       "error_streak": 0,
-      "ewma_change": 0.99343138,
-      "ewma_impact": 4.09812463,
-      "ewma_issue_delta": 4.00110626,
-      "ewma_release": 0.00084566,
+      "ewma_change": 0.99507353,
+      "ewma_impact": 3.61109347,
+      "ewma_issue_delta": 3.2508297,
+      "ewma_release": 0.00063425,
       "impact_window": [
         4.55,
         0.6,
@@ -2144,19 +2201,20 @@
         4.55,
         4.55,
         3.55,
-        4.55
+        4.55,
+        2.15
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
-        "pushed_at",
         "open_issues",
         "forks",
         "stars",
         "size_kb"
       ],
-      "last_semantic_impact": 4.55,
+      "last_semantic_impact": 2.15,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -2177,7 +2235,7 @@
         0,
         0
       ],
-      "successful_checks": 19
+      "successful_checks": 20
     },
     "ollama/ollama": {
       "breakage_risk": 0.0,
@@ -2262,14 +2320,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 20,
+      "checks": 21,
       "error_streak": 0,
-      "ewma_change": 0.98121513,
-      "ewma_impact": 4.86159077,
-      "ewma_issue_delta": 2.05535379,
-      "ewma_release": 0.35610299,
+      "ewma_change": 0.98591135,
+      "ewma_impact": 3.73369308,
+      "ewma_issue_delta": 1.54151534,
+      "ewma_release": 0.26707724,
       "impact_window": [
         3.1,
         0.0,
@@ -2285,20 +2344,16 @@
         8.55,
         3.95,
         1.6,
-        8.55
+        8.55,
+        0.35
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_release_change_at": "2026-10-02T23:01:20Z",
       "last_semantic_delta": [
-        "latest_release",
-        "pushed_at",
-        "open_issues",
-        "forks",
-        "stars",
-        "size_kb"
+        "stars"
       ],
-      "last_semantic_impact": 8.55,
+      "last_semantic_impact": 0.35,
       "release_window": [
         0,
         0,
@@ -2319,9 +2374,10 @@
         1,
         0,
         0,
-        1
+        1,
+        0
       ],
-      "successful_checks": 20
+      "successful_checks": 21
     },
     "openai/openai-python": {
       "breakage_risk": 0.0,
@@ -2345,14 +2401,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 20,
+      "checks": 21,
       "error_streak": 0,
-      "ewma_change": 0.98913421,
-      "ewma_impact": 4.84314462,
-      "ewma_issue_delta": 2.30229613,
-      "ewma_release": 0.38074016,
+      "ewma_change": 0.99185066,
+      "ewma_impact": 4.03235847,
+      "ewma_issue_delta": 1.9767221,
+      "ewma_release": 0.28555512,
       "impact_window": [
         0.6,
         0.0,
@@ -2368,20 +2425,17 @@
         8.55,
         4.55,
         0.95,
-        8.55
+        8.55,
+        1.6
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_release_change_at": "2026-10-02T23:01:20Z",
       "last_semantic_delta": [
-        "latest_release",
-        "pushed_at",
         "open_issues",
-        "forks",
-        "stars",
-        "size_kb"
+        "forks"
       ],
-      "last_semantic_impact": 8.55,
+      "last_semantic_impact": 1.6,
       "release_window": [
         0,
         0,
@@ -2402,9 +2456,10 @@
         1,
         0,
         0,
-        1
+        1,
+        0
       ],
-      "successful_checks": 20
+      "successful_checks": 21
     },
     "openssl/openssl": {
       "breakage_risk": 0.0,
@@ -2468,14 +2523,15 @@
         1,
         1,
         1,
-        1
+        1,
+        0
       ],
-      "checks": 15,
+      "checks": 16,
       "error_streak": 0,
-      "ewma_change": 0.94608889,
-      "ewma_impact": 3.0060639,
-      "ewma_issue_delta": 1.32917839,
-      "ewma_release": 0.00267269,
+      "ewma_change": 0.70956667,
+      "ewma_impact": 2.25454792,
+      "ewma_issue_delta": 0.99688379,
+      "ewma_release": 0.00200452,
       "impact_window": [
         0.0,
         0.0,
@@ -2491,18 +2547,15 @@
         2.3,
         1.6,
         4.2,
-        3.95
+        3.95,
+        0.0
       ],
       "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
-      "last_semantic_delta": [
-        "pushed_at",
-        "open_issues",
-        "stars",
-        "size_kb"
-      ],
-      "last_semantic_impact": 3.95,
+      "last_checked_at": "2026-10-03T01:51:44Z",
+      "last_semantic_delta": [],
+      "last_semantic_impact": 0,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -2519,7 +2572,7 @@
         0,
         0
       ],
-      "successful_checks": 15
+      "successful_checks": 16
     },
     "pnpm/pnpm": {
       "breakage_risk": 0.0,
@@ -2542,14 +2595,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 19,
+      "checks": 20,
       "error_streak": 0,
-      "ewma_change": 0.99194654,
-      "ewma_impact": 4.34198509,
-      "ewma_issue_delta": 4.2056512,
-      "ewma_release": 0.00530015,
+      "ewma_change": 0.99395991,
+      "ewma_impact": 4.30648882,
+      "ewma_issue_delta": 4.1542384,
+      "ewma_release": 0.00397511,
       "impact_window": [
         8.55,
         0.0,
@@ -2565,19 +2619,19 @@
         4.55,
         4.55,
         4.55,
-        4.55
+        4.55,
+        4.2
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_release_change_at": "2026-09-29T16:37:17Z",
       "last_semantic_delta": [
         "pushed_at",
         "open_issues",
         "forks",
-        "stars",
         "size_kb"
       ],
-      "last_semantic_impact": 4.55,
+      "last_semantic_impact": 4.2,
       "release_window": [
         0,
         0,
@@ -2597,9 +2651,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "successful_checks": 19
+      "successful_checks": 20
     },
     "python/cpython": {
       "breakage_risk": 0.0,
@@ -2616,14 +2671,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 13,
+      "checks": 14,
       "error_streak": 0,
-      "ewma_change": 0.98812137,
-      "ewma_impact": 4.45962005,
-      "ewma_issue_delta": 3.08832359,
-      "ewma_release": 0.00475145,
+      "ewma_change": 0.99109103,
+      "ewma_impact": 3.88221504,
+      "ewma_issue_delta": 2.56624269,
+      "ewma_release": 0.00356359,
       "impact_window": [
         0.0,
         4.9,
@@ -2637,19 +2693,20 @@
         4.55,
         4.55,
         4.9,
-        4.55
+        4.55,
+        2.15
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
-        "pushed_at",
         "open_issues",
         "forks",
         "stars",
         "size_kb"
       ],
-      "last_semantic_impact": 4.55,
+      "last_semantic_impact": 2.15,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -2664,7 +2721,7 @@
         0,
         0
       ],
-      "successful_checks": 13
+      "successful_checks": 14
     },
     "pytorch/pytorch": {
       "breakage_risk": 0.0,
@@ -2777,14 +2834,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 13,
+      "checks": 14,
       "error_streak": 0,
-      "ewma_change": 0.98812137,
-      "ewma_impact": 3.85364839,
-      "ewma_issue_delta": 2.26928031,
-      "ewma_release": 0.00475145,
+      "ewma_change": 0.99109103,
+      "ewma_impact": 3.79023629,
+      "ewma_issue_delta": 1.95196023,
+      "ewma_release": 0.00356359,
       "impact_window": [
         0.0,
         4.55,
@@ -2798,18 +2856,19 @@
         4.55,
         4.55,
         3.6,
-        3.95
+        3.95,
+        3.6
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
         "pushed_at",
         "open_issues",
-        "stars",
         "size_kb"
       ],
-      "last_semantic_impact": 3.95,
+      "last_semantic_impact": 3.6,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -2824,7 +2883,7 @@
         0,
         0
       ],
-      "successful_checks": 13
+      "successful_checks": 14
     },
     "tailscale/tailscale": {
       "breakage_risk": 0.0,
@@ -2970,14 +3029,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 16,
+      "checks": 17,
       "error_streak": 0,
-      "ewma_change": 0.9949887,
-      "ewma_impact": 2.19069907,
+      "ewma_change": 0.99624152,
+      "ewma_impact": 1.8805243,
       "ewma_issue_delta": 0.0,
-      "ewma_release": 0.00200452,
+      "ewma_release": 0.00150339,
       "impact_window": [
         3.9,
         3.9,
@@ -2989,19 +3049,18 @@
         3.9,
         1.3,
         1.3,
-        3.9
+        3.9,
+        0.95
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
-        "pushed_at",
         "forks",
-        "stars",
-        "watchers",
-        "size_kb"
+        "stars"
       ],
-      "last_semantic_impact": 3.9,
+      "last_semantic_impact": 0.95,
       "release_window": [
+        0,
         0,
         0,
         0,
@@ -3019,7 +3078,7 @@
         0,
         0
       ],
-      "successful_checks": 16
+      "successful_checks": 17
     },
     "vitejs/vite": {
       "breakage_risk": 0.0,
@@ -3042,14 +3101,15 @@
         1,
         1,
         1,
-        1
+        1,
+        0
       ],
-      "checks": 19,
+      "checks": 20,
       "error_streak": 0,
-      "ewma_change": 0.9749535,
-      "ewma_impact": 3.35238982,
-      "ewma_issue_delta": 2.07916232,
-      "ewma_release": 0.07994722,
+      "ewma_change": 0.73121513,
+      "ewma_impact": 2.51429237,
+      "ewma_issue_delta": 1.55937174,
+      "ewma_release": 0.05996042,
       "impact_window": [
         0.35,
         0.0,
@@ -3064,19 +3124,14 @@
         4.9,
         0.95,
         1.95,
-        4.55
+        4.55,
+        0.0
       ],
       "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_release_change_at": "2026-10-01T11:47:23Z",
-      "last_semantic_delta": [
-        "pushed_at",
-        "open_issues",
-        "forks",
-        "stars",
-        "size_kb"
-      ],
-      "last_semantic_impact": 4.55,
+      "last_semantic_delta": [],
+      "last_semantic_impact": 0,
       "release_window": [
         0,
         0,
@@ -3096,9 +3151,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "successful_checks": 19
+      "successful_checks": 20
     },
     "vllm-project/vllm": {
       "breakage_risk": 0.0,
@@ -3120,14 +3176,15 @@
         1,
         1,
         1,
+        1,
         1
       ],
-      "checks": 18,
+      "checks": 19,
       "error_streak": 0,
-      "ewma_change": 0.99124184,
-      "ewma_impact": 4.49378612,
-      "ewma_issue_delta": 12.80212605,
-      "ewma_release": 0.00112754,
+      "ewma_change": 0.99343138,
+      "ewma_impact": 4.50783959,
+      "ewma_issue_delta": 10.35159454,
+      "ewma_release": 0.00084566,
       "impact_window": [
         4.55,
         4.9,
@@ -3141,10 +3198,11 @@
         4.55,
         4.55,
         4.55,
+        4.55,
         4.55
       ],
-      "last_change_at": "2026-10-02T23:01:20Z",
-      "last_checked_at": "2026-10-02T23:01:20Z",
+      "last_change_at": "2026-10-03T01:51:44Z",
+      "last_checked_at": "2026-10-03T01:51:44Z",
       "last_semantic_delta": [
         "pushed_at",
         "open_issues",
@@ -3171,15 +3229,16 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "successful_checks": 18
+      "successful_checks": 19
     }
   },
   "scheduler": {
-    "last_catch_up_multiplier": 2.5,
-    "last_elapsed_hours": 8.9451,
-    "last_run_at": "2026-10-02T23:01:20Z"
+    "last_catch_up_multiplier": 1.936,
+    "last_elapsed_hours": 2.8401,
+    "last_run_at": "2026-10-03T01:51:44Z"
   },
   "version": 3
 }
