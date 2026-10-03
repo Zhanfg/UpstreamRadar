@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **84000**
-- latest census cursor: **269683**
+- total census repositories scanned: **88000**
+- latest census cursor: **282023**
 - retained candidates: **80**
-- governed fork queue: **13**
+- governed fork queue: **14**
 
 ## Top directions
 
@@ -12,9 +12,9 @@
 - **DemonDamon/AgenticX** — score=0.933, stars=238; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
 - **context-labs/whip** — score=0.918, stars=1069; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **saigontechnology/AgentCrew** — score=0.916, stars=217; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
-- **mikehasa/agentacct** — score=0.911, stars=757; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
+- **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
 - **ThreeMoonsLab/agents-shipgate** — score=0.908, stars=89; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
-- **nibor1896/Crow** — score=0.897, stars=34; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **nibor1896/Crow** — score=0.898, stars=35; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **ai-pivot/xbot** — score=0.895, stars=14; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 - **MSKazemi/aobench** — score=0.895, stars=9; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 
@@ -63,8 +63,9 @@
 - **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
 - **keminar/anyproxy** → networking (score=0.902, license=MIT)
 - **MiChongs/WutherCore** → networking (score=0.902, license=MIT)
-- **nibor1896/Crow** → ai-agents (score=0.897, license=MIT)
+- **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 - **MSKazemi/aobench** → ai-agents (score=0.895, license=Apache-2.0)
+- **taihei-05/siglume-api-sdk** → ai-agents (score=0.889, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.
