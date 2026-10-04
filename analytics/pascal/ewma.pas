@@ -4,6 +4,9 @@ unit Ewma;
 
 interface
 
+uses
+  SysUtils;
+
 type
   TDoubleArray = array of Double;
 
