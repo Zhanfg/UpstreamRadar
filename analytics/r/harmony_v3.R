@@ -13,7 +13,8 @@ bayesian_surprise <- function(empirical, predicted) {
 cvar <- function(x, quantile = 0.75) {
   if (length(x) == 0) return(0)
   values <- sort(clamp01(x))
-  start <- floor((length(values) - 1) * max(0.5, min(0.999999, quantile))) + 1
+  q <- max(0.5, min(0.999999, quantile))
+  start <- min(length(values), floor(length(values) * q) + 1)
   mean(values[start:length(values)])
 }
 
