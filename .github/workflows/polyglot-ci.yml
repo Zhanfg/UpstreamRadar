@@ -51,6 +51,7 @@ jobs:
         run: |
           npm install
           npm run build
+          npm run build:release
 
   native:
     runs-on: ubuntu-latest
@@ -60,11 +61,15 @@ jobs:
         run: |
           cc -std=c11 -Wall -Wextra -Werror core/probe-c/radar_probe.c -lm -o /tmp/radar-probe
           /tmp/radar-probe
+          strip --strip-unneeded /tmp/radar-probe
+          test -x /tmp/radar-probe
       - name: C++ scanner
         run: |
           cmake -S core/scanner-cpp -B build/scanner-cpp
           cmake --build build/scanner-cpp --parallel 2
           ./build/scanner-cpp/upstreamradar-change-score 4 120 35 0
+          strip --strip-unneeded build/scanner-cpp/upstreamradar-change-score
+          test -x build/scanner-cpp/upstreamradar-change-score
       - name: x86-64 assembly primitive
         run: |
           cc -c core/asm-x86_64/fnv1a64.S -o /tmp/fnv1a64.o
