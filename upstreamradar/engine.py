@@ -486,7 +486,10 @@ class HarmonyScheduler:
             for value in record.impact_history
         )
         if history:
-            start = int((len(history) - 1) * self.config.cvar_quantile)
+            start = min(
+                len(history) - 1,
+                int(len(history) * self.config.cvar_quantile),
+            )
             tail = history[start:]
             cvar = sum(tail) / len(tail)
         else:
