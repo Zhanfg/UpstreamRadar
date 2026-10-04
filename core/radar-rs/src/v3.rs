@@ -20,7 +20,7 @@ pub fn cvar(values: &[f64], quantile: f64) -> f64 {
     let mut xs: Vec<f64> = values.iter().copied().map(clamp01).collect();
     xs.sort_by(|a, b| a.total_cmp(b));
     let q = quantile.clamp(0.5, 0.999_999);
-    let start = (((xs.len() - 1) as f64) * q).floor() as usize;
+    let start = ((xs.len() as f64 * q).floor() as usize).min(xs.len() - 1);
     xs[start..].iter().sum::<f64>() / (xs.len() - start) as f64
 }
 
