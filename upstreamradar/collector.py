@@ -437,6 +437,10 @@ def select_targets(
             "reliability": round(candidate.reliability, 8),
             "exploration": round(candidate.exploration, 8),
             "security_focus": round(candidate.security_focus, 8),
+            "bayesian_surprise": round(candidate.bayesian_surprise, 8),
+            "structural_novelty": round(candidate.structural_novelty, 8),
+            "tail_risk": round(candidate.tail_risk, 8),
+            "risk_adjusted_utility": round(candidate.risk_adjusted_utility, 8),
             "reasons": list(candidate.reasons),
         }
         for candidate in ordered
