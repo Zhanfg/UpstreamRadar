@@ -649,6 +649,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Limetry is open-source agent action governance: check tool intents against policy before irreversible runs. Returns allow, deny, or approval_required with signed receipts and privacy-safe audit. TypeScript SDK, CLI, and MCP for IDE like Cursor, VS Code, GitHub Copilot, Claude. Optional CI, SQL, and Shopify adapters. MIT — self-host your own node.",
+    "forks": 1,
+    "full_name": "limetry/limetry",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-04T17:02:46Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.86709663,
+    "source_id": "1400464105",
+    "stars": 1,
+    "url": "https://github.com/limetry/limetry"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "🤖 Build AI agents with Go featuring multi-agent orchestration, planning, tool use, and support for Gemini, OpenAI, Anthropic, and Ollama.",
     "forks": 0,
     "full_name": "Luiz184/gokin-sdk",
@@ -697,6 +721,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Adaptive tiny-model layer between LLMs and their tools — observes MCP traffic, trains per-tool LoRA compressors, synthesizes new tools from patterns.",
+    "forks": 0,
+    "full_name": "opcastil11/planckbot",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-04T13:51:13Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.86285791,
+    "source_id": "1218510860",
+    "stars": 1,
+    "url": "https://github.com/opcastil11/planckbot"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Governed MCP runtime & dynamic tool execution platform — dynamic tool packs, typed effects (read/write/destructive), cryptographic approval tokens, and strict audit logging. FastMCP.",
     "forks": 1,
     "full_name": "Yacine-ai-tech/AgentKit",
@@ -741,6 +789,30 @@
     "source_id": "1383307304",
     "stars": 3,
     "url": "https://github.com/momo-null/OmniAgent"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "security-sandbox",
+    "description": "Lightweight embeddable sandbox for running untrusted code, built on OS-native isolation (namespaces, cgroups, seccomp, Landlock, Seatbelt). No containers, no VMs.",
+    "forks": 2,
+    "full_name": "Erio-Harrison/nanosandbox",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-04T11:09:01Z",
+    "reasons": [
+      "category:security-sandbox",
+      "keyword:sandbox",
+      "keyword:seccomp",
+      "keyword:isolation",
+      "keyword:security",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85861014,
+    "source_id": "1237517003",
+    "stars": 5,
+    "url": "https://github.com/Erio-Harrison/nanosandbox"
   },
   {
     "auto_fork_eligible": false,
@@ -1243,6 +1315,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Jev Decisions Plugin for Hermes (and other AI Agents): tool risk reviews, human approval recommendations, evidence checks, a local decision journal, local decision supervision, and learned corrections.",
+    "forks": 0,
+    "full_name": "bojansandhaus/jev-decisions-hermes",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-04T17:00:42Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.82596902,
+    "source_id": "1376944953",
+    "stars": 3,
+    "url": "https://github.com/bojansandhaus/jev-decisions-hermes"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "android-kernel",
     "description": "Sanitized public CI mirror for Lenovo TB322FC Android 15 GKI 6.6.111 ReSukiSU build",
     "forks": 3,
@@ -1611,6 +1706,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Can local models drive a tool-using agent? A free LangGraph + MCP + Ollama agent and a 5-model benchmark.",
+    "forks": 0,
+    "full_name": "iamsorenl/local-agent-bench",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-04T17:49:01Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.80805953,
+    "source_id": "1398762552",
+    "stars": 0,
+    "url": "https://github.com/iamsorenl/local-agent-bench"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "networking",
     "description": "HTTP(S), QUIC Tunnel and TCP Proxy",
     "forks": 37,
@@ -1631,29 +1749,6 @@
     "source_id": "295007218",
     "stars": 172,
     "url": "https://github.com/xnuter/http-tunnel"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Can local models drive a tool-using agent? A free LangGraph + MCP + Ollama agent and a 5-model benchmark.",
-    "forks": 0,
-    "full_name": "iamsorenl/local-agent-bench",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-30T21:36:17Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.80789999,
-    "source_id": "1398762552",
-    "stars": 0,
-    "url": "https://github.com/iamsorenl/local-agent-bench"
   },
   {
     "auto_fork_eligible": false,
@@ -1749,6 +1844,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Prompt injection in a RAG + tool-using agent: attack, detect, alert, harden (local lab)",
+    "forks": 0,
+    "full_name": "yousha-hash/ai-security-lab-rag-mcp",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-04T16:28:41Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.80254803,
+    "source_id": "1404576621",
+    "stars": 0,
+    "url": "https://github.com/yousha-hash/ai-security-lab-rag-mcp"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "security-sandbox",
     "description": "Container-free, deny-by-default sandbox for AI coding agents. Kernel-enforced filesystem, network, and syscall isolation for Linux and macOS",
     "forks": 36,
@@ -1770,122 +1888,5 @@
     "source_id": "1172933443",
     "stars": 305,
     "url": "https://github.com/GreyhavenHQ/greywall"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Toolathlon-Gym for testing AI agents real-world tool-use capabilities across diverse MCP servers.",
-    "forks": 15,
-    "full_name": "eigent-ai/toolathlon_gym",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-01T10:44:03Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "recently-active",
-      "license:Apache-2.0",
-      "community-signal"
-    ],
-    "score": 0.79819561,
-    "source_id": "1175612051",
-    "stars": 151,
-    "url": "https://github.com/eigent-ai/toolathlon_gym"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "GKI kernels for Android 12-16 built with KernelSU-Next and SUSFS, one per KMI. Rebuilt when upstream moves.",
-    "forks": 0,
-    "full_name": "evoker0/evokerr-ksunext",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-10-02T10:54:57Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.79814006,
-    "source_id": "1336611503",
-    "stars": 1,
-    "url": "https://github.com/evoker0/evokerr-ksunext"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "networking",
-    "description": "Rosemary: Transparent network pivoting and tunneling over QUIC. Cross-platform, no TUN/TAP, no proxychains, no proxy settings.",
-    "forks": 1,
-    "full_name": "blue0x1/rosemary",
-    "license_id": "GPL-3.0",
-    "platform": "github",
-    "pushed_at": "2026-08-03T09:03:04Z",
-    "reasons": [
-      "category:networking",
-      "keyword:proxy",
-      "keyword:tun",
-      "keyword:quic",
-      "keyword:network",
-      "license:GPL-3.0",
-      "emerging"
-    ],
-    "score": 0.79568577,
-    "source_id": "1222969891",
-    "stars": 14,
-    "url": "https://github.com/blue0x1/rosemary"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "A C sandbox for untrusted Linux programs with process, namespace container, and QEMU/KVM isolation.",
-    "forks": 0,
-    "full_name": "pranavrav09/SecureGuard",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-10T21:07:05Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "keyword:container",
-      "keyword:namespace",
-      "recently-active"
-    ],
-    "score": 0.79436622,
-    "source_id": "1364872282",
-    "stars": 0,
-    "url": "https://github.com/pranavrav09/SecureGuard"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Agentic security control plane for MCP and AI agent tool calls. MCP-native policy gateway with topology discovery and audit.",
-    "forks": 0,
-    "full_name": "paolovella/vellaveto",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-10-02T21:16:09Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.79370718,
-    "source_id": "1148198632",
-    "stars": 6,
-    "url": "https://github.com/paolovella/vellaveto"
   }
 ]
