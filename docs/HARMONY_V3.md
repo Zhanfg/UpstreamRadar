@@ -11,7 +11,9 @@ raw upstream telemetry
     ↓
 hierarchical robust normalization
     ↓
-empirical-Bayes change probability
+ecosystem empirical-Bayes hyperprior
+    ↓
+posterior change probability
     ↓
 multi-timescale dynamics
     ↓
@@ -34,6 +36,12 @@ submodular coverage + diversity search
     ↓
 budgeted beam selection
 ```
+
+## Ecosystem empirical Bayes
+
+HARMONY v3 estimates an ecosystem-level Beta hyperprior from recent hit/miss evidence, then shrinks sparse ecosystems toward the global change-rate baseline. The prior strength and global shrinkage are configurable.
+
+This prevents a repository with only one or two observations from looking artificially certain while still allowing mature ecosystems to retain their own behavior.
 
 ## Bayesian surprise
 
