@@ -82,7 +82,7 @@ contains
       end do
     end do
     q = max(0.5d0, min(0.999999d0, quantile))
-    start_idx = int(floor(dble(n - 1) * q)) + 1
+    start_idx = min(n, int(floor(dble(n) * q)) + 1)
     value = sum(sorted(start_idx:n)) / dble(n - start_idx + 1)
     deallocate(sorted)
   end function cvar
