@@ -1,0 +1,35 @@
+scalar DateTime
+scalar JSON
+
+type Repository {
+  id: ID!
+  source: String!
+  fullName: String!
+  ecosystem: String
+  latestEvent: RadarEvent
+  events(limit: Int = 50): [RadarEvent!]!
+}
+
+type RadarEvent {
+  id: ID!
+  repository: Repository!
+  observedAt: DateTime!
+  eventType: String!
+  semanticImpact: Float!
+  fingerprint: String!
+  payload: JSON!
+}
+
+type RadarSummary {
+  repositories: Int!
+  events: Int!
+  criticalEvents: Int!
+  generatedAt: DateTime!
+}
+
+type Query {
+  repository(source: String!, fullName: String!): Repository
+  repositories(ecosystem: String, limit: Int = 100): [Repository!]!
+  events(minImpact: Float = 0, limit: Int = 100): [RadarEvent!]!
+  summary: RadarSummary!
+}
