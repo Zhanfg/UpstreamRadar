@@ -1,5 +1,6 @@
 #define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
@@ -16,7 +17,13 @@ int main(void) {
     int loads = getloadavg(load, 3);
     if (cpus < 1) cpus = 1;
     printf("{\"monotonic_ms\":%lld,\"online_cpus\":%ld", monotonic_ms(), cpus);
-    if (loads > 0) printf(",\"load1\":%.3f", load[0]);
+    if (loads > 0) {
+        double pressure = load[0] / (double)cpus;
+        if (pressure < 0.0) pressure = 0.0;
+        if (pressure > 4.0) pressure = 4.0;
+        pressure = 1.0 - exp(-pressure);
+        printf(",\"load1\":%.3f,\"pressure\":%.6f", load[0], pressure);
+    }
     if (loads > 1) printf(",\"load5\":%.3f", load[1]);
     if (loads > 2) printf(",\"load15\":%.3f", load[2]);
     puts("}");
