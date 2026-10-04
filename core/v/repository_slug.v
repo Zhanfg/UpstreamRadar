@@ -1,5 +1,7 @@
 module repository_slug
 
+import math
+
 pub fn normalize(raw string) !string {
 	mut value := raw.trim_space().to_lower()
 	if value.starts_with('https://github.com/') {
@@ -34,13 +36,14 @@ pub fn structural_entropy(parts []string) f64 {
 	total := f64(parts.len)
 	for _, count in freq {
 		p := f64(count) / total
-		entropy -= p * log2(p)
+		entropy -= p * math.log2(p)
 	}
-	max_entropy := log2(total)
+	max_entropy := math.log2(total)
 	if max_entropy <= 0.0 {
 		return 0.0
 	}
-	return (entropy / max_entropy).clamp(0.0, 1.0)
+	ratio := entropy / max_entropy
+	return math.max(0.0, math.min(1.0, ratio))
 }
 
 pub fn slug_novelty(raw string) !f64 {
