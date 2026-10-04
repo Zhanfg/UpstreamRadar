@@ -4,9 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "build:release": "tsc -p tsconfig.json && esbuild src/v3.ts --bundle --minify --legal-comments=none --outfile=dist/harmony-v3.min.js"
   },
   "devDependencies": {
-    "typescript": "^5.9.0"
+    "typescript": "^5.9.0",
+    "esbuild": "^0.25.0"
   }
 }
