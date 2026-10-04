@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-      - run: cargo check --manifest-path core/radar-rs/Cargo.toml
+      - run: cargo test --manifest-path core/radar-rs/Cargo.toml
 
   go:
     runs-on: ubuntu-latest
