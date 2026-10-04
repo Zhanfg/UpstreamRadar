@@ -1,0 +1,1377 @@
+{
+  "catch_up_multiplier": 2.5,
+  "changed": [
+    "openssl/openssl",
+    "openai/openai-python",
+    "modelcontextprotocol/python-sdk",
+    "openai/openai-agents-python",
+    "aquasecurity/trivy",
+    "huggingface/transformers",
+    "nodejs/node",
+    "torvalds/linux",
+    "tensorflow/tensorflow",
+    "kubernetes/kubernetes",
+    "ggml-org/llama.cpp",
+    "jax-ml/jax",
+    "MetaCubeX/mihomo",
+    "vllm-project/vllm",
+    "pnpm/pnpm",
+    "git/git",
+    "llvm/llvm-project",
+    "tailscale/tailscale",
+    "astral-sh/ruff",
+    "vitejs/vite",
+    "anthropics/anthropic-sdk-python",
+    "astral-sh/uv",
+    "systemd/systemd",
+    "google/osv-scanner",
+    "ossf/scorecard",
+    "python/cpython",
+    "denoland/deno",
+    "WireGuard/wireguard-go",
+    "ollama/ollama",
+    "SagerNet/sing-box",
+    "golang/go",
+    "neovim/neovim",
+    "huggingface/diffusers",
+    "microsoft/autogen",
+    "cloudflare/cloudflared",
+    "nginx/nginx",
+    "crewAIInc/crewAI"
+  ],
+  "changed_details": [
+    {
+      "fields": [
+        "latest_release",
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "astral-sh/uv",
+      "semantic_impact": 8.55
+    },
+    {
+      "fields": [
+        "latest_release",
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "size_kb"
+      ],
+      "full_name": "pnpm/pnpm",
+      "semantic_impact": 8.2
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "astral-sh/ruff",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "python/cpython",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "tensorflow/tensorflow",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "ggml-org/llama.cpp",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "kubernetes/kubernetes",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "llvm/llvm-project",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "neovim/neovim",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "nodejs/node",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "ollama/ollama",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "vitejs/vite",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "vllm-project/vllm",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "size_kb"
+      ],
+      "full_name": "jax-ml/jax",
+      "semantic_impact": 4.2
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "huggingface/transformers",
+      "semantic_impact": 3.95
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "systemd/systemd",
+      "semantic_impact": 3.95
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "torvalds/linux",
+      "semantic_impact": 3.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "google/osv-scanner",
+      "semantic_impact": 3.55
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers"
+      ],
+      "full_name": "nginx/nginx",
+      "semantic_impact": 2.3
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars"
+      ],
+      "full_name": "MetaCubeX/mihomo",
+      "semantic_impact": 1.95
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars"
+      ],
+      "full_name": "SagerNet/sing-box",
+      "semantic_impact": 1.95
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars"
+      ],
+      "full_name": "anthropics/anthropic-sdk-python",
+      "semantic_impact": 1.95
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars"
+      ],
+      "full_name": "golang/go",
+      "semantic_impact": 1.95
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars"
+      ],
+      "full_name": "modelcontextprotocol/python-sdk",
+      "semantic_impact": 1.95
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars"
+      ],
+      "full_name": "openai/openai-agents-python",
+      "semantic_impact": 1.95
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars"
+      ],
+      "full_name": "ossf/scorecard",
+      "semantic_impact": 1.95
+    },
+    {
+      "fields": [
+        "open_issues",
+        "stars",
+        "watchers"
+      ],
+      "full_name": "denoland/deno",
+      "semantic_impact": 1.7
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks"
+      ],
+      "full_name": "microsoft/autogen",
+      "semantic_impact": 1.6
+    },
+    {
+      "fields": [
+        "open_issues",
+        "stars"
+      ],
+      "full_name": "aquasecurity/trivy",
+      "semantic_impact": 1.35
+    },
+    {
+      "fields": [
+        "open_issues",
+        "stars"
+      ],
+      "full_name": "huggingface/diffusers",
+      "semantic_impact": 1.35
+    },
+    {
+      "fields": [
+        "forks",
+        "stars"
+      ],
+      "full_name": "cloudflare/cloudflared",
+      "semantic_impact": 0.95
+    },
+    {
+      "fields": [
+        "forks",
+        "stars"
+      ],
+      "full_name": "git/git",
+      "semantic_impact": 0.95
+    },
+    {
+      "fields": [
+        "forks",
+        "stars"
+      ],
+      "full_name": "openai/openai-python",
+      "semantic_impact": 0.95
+    },
+    {
+      "fields": [
+        "forks",
+        "stars"
+      ],
+      "full_name": "openssl/openssl",
+      "semantic_impact": 0.95
+    },
+    {
+      "fields": [
+        "forks",
+        "stars"
+      ],
+      "full_name": "tailscale/tailscale",
+      "semantic_impact": 0.95
+    },
+    {
+      "fields": [
+        "forks"
+      ],
+      "full_name": "WireGuard/wireguard-go",
+      "semantic_impact": 0.6
+    },
+    {
+      "fields": [],
+      "full_name": "crewAIInc/crewAI",
+      "semantic_impact": 0.0
+    }
+  ],
+  "content_plan": [
+    {
+      "angle": "Security-relevant upstream movement with elevated change probability",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.875",
+        "change-probability=0.667",
+        "graph-influence=0.642"
+      ],
+      "name": "openai/openai-python",
+      "priority": 0.6724369802902821,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ]
+    },
+    {
+      "angle": "Security-relevant upstream movement with elevated change probability",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.872",
+        "change-probability=0.664",
+        "change-point=0.627"
+      ],
+      "name": "modelcontextprotocol/python-sdk",
+      "priority": 0.6368841008911603,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ]
+    },
+    {
+      "angle": "Security-relevant upstream movement with elevated change probability",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.853",
+        "change-probability=0.638",
+        "change-point=0.607"
+      ],
+      "name": "openai/openai-agents-python",
+      "priority": 0.6295522489141411,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ]
+    },
+    {
+      "angle": "Accelerating upstream activity with high reportable information yield",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.925",
+        "anomaly=0.695",
+        "momentum=0.680"
+      ],
+      "name": "openssl/openssl",
+      "priority": 0.6289271612068169,
+      "reasons": [
+        "accelerating",
+        "high-content-yield",
+        "likely-change",
+        "anomalous"
+      ]
+    },
+    {
+      "angle": "General upstream update selected by multi-objective scheduling",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.907",
+        "change-point=0.731",
+        "change-probability=0.675"
+      ],
+      "name": "ggml-org/llama.cpp",
+      "priority": 0.6134978507952539,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "likely-change"
+      ]
+    },
+    {
+      "angle": "General upstream update selected by multi-objective scheduling",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.843",
+        "anomaly=0.590",
+        "change-probability=0.575"
+      ],
+      "name": "aquasecurity/trivy",
+      "priority": 0.5897928490152755,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield"
+      ]
+    },
+    {
+      "angle": "General upstream update selected by multi-objective scheduling",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.714",
+        "change-probability=0.710",
+        "graph-influence=0.612"
+      ],
+      "name": "huggingface/transformers",
+      "priority": 0.5716140239241323,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ]
+    },
+    {
+      "angle": "Anomalous upstream behavior worth contextual investigation",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.727",
+        "anomaly=0.717",
+        "change-probability=0.573"
+      ],
+      "name": "anthropics/anthropic-sdk-python",
+      "priority": 0.5529407159002232,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "security-focus",
+        "anomalous"
+      ]
+    }
+  ],
+  "content_score": 0.68255508,
+  "coverage_score": 0.92395484,
+  "elapsed_since_previous_run_hours": 9.2606,
+  "errors": [],
+  "gate_probability": 0.95,
+  "gate_sample": 0.43066490108708544,
+  "local_time": "2026-10-04T09:56:52+08:00",
+  "observed_at": "2026-10-04T01:56:52Z",
+  "scores": [
+    {
+      "anomaly": 0.69487326,
+      "change_point": 0.43760052,
+      "change_probability": 0.67863511,
+      "content_yield": 0.92460058,
+      "cost": 2,
+      "ecosystem": "security",
+      "entropy": 0.0,
+      "exploration": 0.07708727,
+      "full_name": "openssl/openssl",
+      "graph_influence": 0.45116694,
+      "momentum": 0.68018959,
+      "reasons": [
+        "accelerating",
+        "high-content-yield",
+        "likely-change",
+        "anomalous"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.0904534,
+      "utility": 0.63222283
+    },
+    {
+      "anomaly": 0.46939128,
+      "change_point": 0.58695374,
+      "change_probability": 0.66703451,
+      "content_yield": 0.87495376,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "entropy": 0.41381685,
+      "exploration": 0.03143969,
+      "full_name": "openai/openai-python",
+      "graph_influence": 0.64198374,
+      "momentum": 0.34510217,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.66250798,
+      "uncertainty": 0.06148502,
+      "utility": 0.62513088
+    },
+    {
+      "anomaly": 0.52073408,
+      "change_point": 0.62695758,
+      "change_probability": 0.66355433,
+      "content_yield": 0.87157961,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "entropy": 0.42622866,
+      "exploration": 0.03325973,
+      "full_name": "modelcontextprotocol/python-sdk",
+      "graph_influence": 0.37091308,
+      "momentum": 0.40128057,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.66250798,
+      "uncertainty": 0.0637302,
+      "utility": 0.59846374
+    },
+    {
+      "anomaly": 0.42975538,
+      "change_point": 0.60689296,
+      "change_probability": 0.63803301,
+      "content_yield": 0.85299258,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "entropy": 0.54356444,
+      "exploration": 0.03550546,
+      "full_name": "openai/openai-agents-python",
+      "graph_influence": 0.40682483,
+      "momentum": 0.32213808,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.66250798,
+      "uncertainty": 0.06943623,
+      "utility": 0.57170376
+    },
+    {
+      "anomaly": 0.59028432,
+      "change_point": 0.46427958,
+      "change_probability": 0.5748395,
+      "content_yield": 0.84281201,
+      "cost": 2,
+      "ecosystem": "security",
+      "entropy": 0.41381685,
+      "exploration": 0.06406772,
+      "full_name": "aquasecurity/trivy",
+      "graph_influence": 0.44758029,
+      "momentum": 0.40689274,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.09035079,
+      "utility": 0.57098431
+    },
+    {
+      "anomaly": 0.38464643,
+      "change_point": 0.42841,
+      "change_probability": 0.70968378,
+      "content_yield": 0.71439901,
+      "cost": 2,
+      "ecosystem": "ai",
+      "entropy": 0.0,
+      "exploration": 0.03544817,
+      "full_name": "huggingface/transformers",
+      "graph_influence": 0.61226682,
+      "momentum": 0.5556987,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.05545936,
+      "utility": 0.56524193
+    },
+    {
+      "anomaly": 0.48585894,
+      "change_point": 0.17519209,
+      "change_probability": 0.6937159,
+      "content_yield": 0.78370309,
+      "cost": 2,
+      "ecosystem": "runtime",
+      "entropy": 0.25801867,
+      "exploration": 0.02776679,
+      "full_name": "nodejs/node",
+      "graph_influence": 0.40249772,
+      "momentum": 0.52753892,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.66250798,
+      "uncertainty": 0.05320497,
+      "utility": 0.54147159
+    },
+    {
+      "anomaly": 0.52671728,
+      "change_point": 0.10282111,
+      "change_probability": 0.71976452,
+      "content_yield": 0.60709417,
+      "cost": 3,
+      "ecosystem": "kernel",
+      "entropy": 0.0,
+      "exploration": 0.02423218,
+      "full_name": "torvalds/linux",
+      "graph_influence": 0.33378452,
+      "momentum": 0.53915318,
+      "reasons": [
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.88323953,
+      "uncertainty": 0.04343332,
+      "utility": 0.53876073
+    },
+    {
+      "anomaly": 0.50174079,
+      "change_point": 0.35156921,
+      "change_probability": 0.51966417,
+      "content_yield": 0.78354209,
+      "cost": 3,
+      "ecosystem": "ai",
+      "entropy": 0.0,
+      "exploration": 0.07708727,
+      "full_name": "tensorflow/tensorflow",
+      "graph_influence": 0.37671745,
+      "momentum": 0.67167457,
+      "reasons": [
+        "accelerating",
+        "high-content-yield",
+        "security-focus"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.66250798,
+      "uncertainty": 0.0904534,
+      "utility": 0.53494353
+    },
+    {
+      "anomaly": 0.50072153,
+      "change_point": 0.36561547,
+      "change_probability": 0.69603602,
+      "content_yield": 0.79594947,
+      "cost": 3,
+      "ecosystem": "cloud",
+      "entropy": 0.0,
+      "exploration": 0.05256197,
+      "full_name": "kubernetes/kubernetes",
+      "graph_influence": 0.07800508,
+      "momentum": 0.57795468,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.79396302,
+      "uncertainty": 0.07121693,
+      "utility": 0.53412909
+    },
+    {
+      "anomaly": 0.46501567,
+      "change_point": 0.73132212,
+      "change_probability": 0.67466649,
+      "content_yield": 0.90742622,
+      "cost": 2,
+      "ecosystem": "ai-runtime",
+      "entropy": 0.32275696,
+      "exploration": 0.04135363,
+      "full_name": "ggml-org/llama.cpp",
+      "graph_influence": 0.14305964,
+      "momentum": 0.58079247,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.33749232,
+      "uncertainty": 0.06862318,
+      "utility": 0.53380174
+    },
+    {
+      "anomaly": 0.47952992,
+      "change_point": 0.34160785,
+      "change_probability": 0.71435275,
+      "content_yield": 0.81063446,
+      "cost": 2,
+      "ecosystem": "ai",
+      "entropy": 0.0,
+      "exploration": 0.03008918,
+      "full_name": "jax-ml/jax",
+      "graph_influence": 0.37663057,
+      "momentum": 0.55675301,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.0499307,
+      "utility": 0.53267439
+    },
+    {
+      "anomaly": 0.59180867,
+      "change_point": 0.41627969,
+      "change_probability": 0.67863511,
+      "content_yield": 0.74670982,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.0,
+      "exploration": 0.07708727,
+      "full_name": "MetaCubeX/mihomo",
+      "graph_influence": 0.25039838,
+      "momentum": 0.56625342,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.33749202,
+      "uncertainty": 0.0904534,
+      "utility": 0.52739265
+    },
+    {
+      "anomaly": 0.57346809,
+      "change_point": 0.0,
+      "change_probability": 0.69120243,
+      "content_yield": 0.7423049,
+      "cost": 2,
+      "ecosystem": "ai-runtime",
+      "entropy": 0.26676499,
+      "exploration": 0.02946865,
+      "full_name": "vllm-project/vllm",
+      "graph_influence": 0.18388887,
+      "momentum": 0.49683449,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.88323915,
+      "uncertainty": 0.05527708,
+      "utility": 0.52507466
+    },
+    {
+      "anomaly": 0.56521423,
+      "change_point": 0.02462042,
+      "change_probability": 0.6937159,
+      "content_yield": 0.84336679,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "entropy": 0.25801867,
+      "exploration": 0.02776679,
+      "full_name": "pnpm/pnpm",
+      "graph_influence": 0.38342371,
+      "momentum": 0.47188113,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.05320497,
+      "utility": 0.52395404
+    },
+    {
+      "anomaly": 0.7157578,
+      "change_point": 0.03701196,
+      "change_probability": 0.70017909,
+      "content_yield": 0.31702177,
+      "cost": 2,
+      "ecosystem": "developer-tools",
+      "entropy": 0.0,
+      "exploration": 0.04715257,
+      "full_name": "git/git",
+      "graph_influence": 0.38065564,
+      "momentum": 0.36664211,
+      "reasons": [
+        "security-focus",
+        "likely-change",
+        "anomalous"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.98201379,
+      "uncertainty": 0.06649638,
+      "utility": 0.52232794
+    },
+    {
+      "anomaly": 0.5356176,
+      "change_point": 0.3477539,
+      "change_probability": 0.70376975,
+      "content_yield": 0.79033759,
+      "cost": 3,
+      "ecosystem": "toolchain",
+      "entropy": 0.0,
+      "exploration": 0.04261159,
+      "full_name": "llvm/llvm-project",
+      "graph_influence": 0.20276004,
+      "momentum": 0.53353761,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.06236096,
+      "utility": 0.52084165
+    },
+    {
+      "anomaly": 0.54741998,
+      "change_point": 0.1910353,
+      "change_probability": 0.69120243,
+      "content_yield": 0.69335866,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.26676499,
+      "exploration": 0.02946865,
+      "full_name": "tailscale/tailscale",
+      "graph_influence": 0.25143692,
+      "momentum": 0.30044005,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.66250798,
+      "uncertainty": 0.05527708,
+      "utility": 0.5155674
+    },
+    {
+      "anomaly": 0.3737369,
+      "change_point": 0.28486513,
+      "change_probability": 0.68847041,
+      "content_yield": 0.7134369,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "entropy": 0.27619543,
+      "exploration": 0.03135154,
+      "full_name": "astral-sh/ruff",
+      "graph_influence": 0.38621653,
+      "momentum": 0.43327802,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.05751633,
+      "utility": 0.51466837
+    },
+    {
+      "anomaly": 0.71400787,
+      "change_point": 0.64015206,
+      "change_probability": 0.60323121,
+      "content_yield": 0.64435557,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "entropy": 0.66657836,
+      "exploration": 0.04093989,
+      "full_name": "vitejs/vite",
+      "graph_influence": 0.38326344,
+      "momentum": 0.47070744,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "anomalous"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.07844645,
+      "utility": 0.50876521
+    },
+    {
+      "anomaly": 0.71709054,
+      "change_point": 0.51616182,
+      "change_probability": 0.57306965,
+      "content_yield": 0.72747108,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "entropy": 0.75537541,
+      "exploration": 0.04371184,
+      "full_name": "anthropics/anthropic-sdk-python",
+      "graph_influence": 0.351801,
+      "momentum": 0.42932542,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "security-focus",
+        "anomalous"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.66250798,
+      "uncertainty": 0.08375789,
+      "utility": 0.50701879
+    },
+    {
+      "anomaly": 0.42012196,
+      "change_point": 0.29201568,
+      "change_probability": 0.66703451,
+      "content_yield": 0.64806379,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "entropy": 0.41381685,
+      "exploration": 0.03143969,
+      "full_name": "astral-sh/uv",
+      "graph_influence": 0.38405116,
+      "momentum": 0.39647826,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.06148502,
+      "utility": 0.50346461
+    },
+    {
+      "anomaly": 0.46673416,
+      "change_point": 0.24823638,
+      "change_probability": 0.71435275,
+      "content_yield": 0.77046409,
+      "cost": 2,
+      "ecosystem": "linux",
+      "entropy": 0.0,
+      "exploration": 0.03008918,
+      "full_name": "systemd/systemd",
+      "graph_influence": 0.07052911,
+      "momentum": 0.55985959,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.66250795,
+      "uncertainty": 0.0499307,
+      "utility": 0.50057345
+    },
+    {
+      "anomaly": 0.44305088,
+      "change_point": 0.41065585,
+      "change_probability": 0.55102851,
+      "content_yield": 0.71375181,
+      "cost": 1,
+      "ecosystem": "security",
+      "entropy": 0.81127812,
+      "exploration": 0.04364953,
+      "full_name": "google/osv-scanner",
+      "graph_influence": 0.43656101,
+      "momentum": 0.40967224,
+      "reasons": [
+        "high-content-yield"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.08536318,
+      "utility": 0.49848289
+    },
+    {
+      "anomaly": 0.47698036,
+      "change_point": 0.45867138,
+      "change_probability": 0.50269268,
+      "content_yield": 0.7698718,
+      "cost": 1,
+      "ecosystem": "security",
+      "entropy": 0.89974376,
+      "exploration": 0.05745746,
+      "full_name": "ossf/scorecard",
+      "graph_influence": 0.43682402,
+      "momentum": 0.39772023,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.10050378,
+      "utility": 0.49529461
+    },
+    {
+      "anomaly": 0.40318447,
+      "change_point": 0.32876458,
+      "change_probability": 0.71435275,
+      "content_yield": 0.69887255,
+      "cost": 2,
+      "ecosystem": "language",
+      "entropy": 0.0,
+      "exploration": 0.03008918,
+      "full_name": "python/cpython",
+      "graph_influence": 0.12837197,
+      "momentum": 0.55396424,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.0499307,
+      "utility": 0.48413519
+    },
+    {
+      "anomaly": 0.41954577,
+      "change_point": 0.33463363,
+      "change_probability": 0.63498022,
+      "content_yield": 0.65261217,
+      "cost": 2,
+      "ecosystem": "runtime",
+      "entropy": 0.52255937,
+      "exploration": 0.04913543,
+      "full_name": "denoland/deno",
+      "graph_influence": 0.39765063,
+      "momentum": 0.48203353,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.44402801,
+      "uncertainty": 0.08153649,
+      "utility": 0.48289874
+    },
+    {
+      "anomaly": 0.70430586,
+      "change_point": 0.004561,
+      "change_probability": 0.52782731,
+      "content_yield": 0.46284726,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.85240518,
+      "exploration": 0.05865462,
+      "full_name": "WireGuard/wireguard-go",
+      "graph_influence": 0.23670627,
+      "momentum": 0.48525356,
+      "reasons": [
+        "security-focus",
+        "anomalous"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.88323957,
+      "uncertainty": 0.1,
+      "utility": 0.47181443
+    },
+    {
+      "anomaly": 0.70421405,
+      "change_point": 0.5455241,
+      "change_probability": 0.65978414,
+      "content_yield": 0.57217926,
+      "cost": 2,
+      "ecosystem": "ai-runtime",
+      "entropy": 0.37123233,
+      "exploration": 0.05295024,
+      "full_name": "ollama/ollama",
+      "graph_influence": 0.13049995,
+      "momentum": 0.453061,
+      "reasons": [
+        "regime-shift",
+        "likely-change",
+        "anomalous"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.33749232,
+      "uncertainty": 0.08021112,
+      "utility": 0.47072715
+    },
+    {
+      "anomaly": 0.41769118,
+      "change_point": 0.25711695,
+      "change_probability": 0.6287307,
+      "content_yield": 0.69662534,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.0,
+      "exploration": 0.03875561,
+      "full_name": "SagerNet/sing-box",
+      "graph_influence": 0.2412609,
+      "momentum": 0.63191607,
+      "reasons": [
+        "accelerating",
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.33749202,
+      "uncertainty": 0.05870853,
+      "utility": 0.47029571
+    },
+    {
+      "anomaly": 0.44868605,
+      "change_point": 0.46757556,
+      "change_probability": 0.67466649,
+      "content_yield": 0.68068557,
+      "cost": 2,
+      "ecosystem": "language",
+      "entropy": 0.32275696,
+      "exploration": 0.04135363,
+      "full_name": "golang/go",
+      "graph_influence": 0.12794123,
+      "momentum": 0.45159937,
+      "reasons": [
+        "regime-shift",
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.5,
+      "uncertainty": 0.06862318,
+      "utility": 0.46781078
+    },
+    {
+      "anomaly": 0.63553581,
+      "change_point": 0.3361169,
+      "change_probability": 0.70691158,
+      "content_yield": 0.71359185,
+      "cost": 2,
+      "ecosystem": "developer-tools",
+      "entropy": 0.0,
+      "exploration": 0.03875561,
+      "full_name": "neovim/neovim",
+      "graph_influence": 0.37363402,
+      "momentum": 0.53265138,
+      "reasons": [
+        "high-content-yield",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.01798621,
+      "uncertainty": 0.05870853,
+      "utility": 0.45832853
+    },
+    {
+      "anomaly": 0.61093567,
+      "change_point": 0.47436468,
+      "change_probability": 0.69603602,
+      "content_yield": 0.14383919,
+      "cost": 2,
+      "ecosystem": "ai",
+      "entropy": 0.0,
+      "exploration": 0.05256197,
+      "full_name": "huggingface/diffusers",
+      "graph_influence": 0.42815178,
+      "momentum": 0.4432588,
+      "reasons": [
+        "regime-shift",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.33749202,
+      "uncertainty": 0.07121693,
+      "utility": 0.44855879
+    },
+    {
+      "anomaly": 0.43390517,
+      "change_point": 0.10440472,
+      "change_probability": 0.70968378,
+      "content_yield": 0.50801006,
+      "cost": 2,
+      "ecosystem": "ai-agents",
+      "entropy": 0.0,
+      "exploration": 0.03544817,
+      "full_name": "microsoft/autogen",
+      "graph_influence": 0.33946761,
+      "momentum": 0.49323644,
+      "reasons": [
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.33749202,
+      "uncertainty": 0.05545936,
+      "utility": 0.44457429
+    },
+    {
+      "anomaly": 0.48821768,
+      "change_point": 0.02804371,
+      "change_probability": 0.6702569,
+      "content_yield": 0.42167618,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.33729007,
+      "exploration": 0.04470748,
+      "full_name": "cloudflare/cloudflared",
+      "graph_influence": 0.23458279,
+      "momentum": 0.41980905,
+      "reasons": [
+        "security-focus",
+        "likely-change"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.66250798,
+      "uncertainty": 0.07209841,
+      "utility": 0.44239425
+    },
+    {
+      "anomaly": 0.57057192,
+      "change_point": 0.25794605,
+      "change_probability": 0.56746976,
+      "content_yield": 0.54410174,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.43949699,
+      "exploration": 0.07116924,
+      "full_name": "nginx/nginx",
+      "graph_influence": 0.23141513,
+      "momentum": 0.44674043,
+      "reasons": [],
+      "reliability": 1.0,
+      "security_focus": 0.33749202,
+      "uncertainty": 0.09642818,
+      "utility": 0.41353795
+    },
+    {
+      "anomaly": 0.81931209,
+      "change_point": 0.0,
+      "change_probability": 0.115625,
+      "content_yield": 0.26929505,
+      "cost": 2,
+      "ecosystem": "ai-agents",
+      "entropy": 0.0,
+      "exploration": 0.7380544,
+      "full_name": "crewAIInc/crewAI",
+      "graph_influence": 0.31481361,
+      "momentum": 0.5,
+      "reasons": [
+        "uncertainty-exploration",
+        "anomalous"
+      ],
+      "reliability": 1.0,
+      "security_focus": 0.33749202,
+      "uncertainty": 0.28867513,
+      "utility": 0.33155925
+    }
+  ],
+  "selected": [
+    "openssl/openssl",
+    "openai/openai-python",
+    "modelcontextprotocol/python-sdk",
+    "openai/openai-agents-python",
+    "aquasecurity/trivy",
+    "huggingface/transformers",
+    "nodejs/node",
+    "torvalds/linux",
+    "tensorflow/tensorflow",
+    "kubernetes/kubernetes",
+    "ggml-org/llama.cpp",
+    "jax-ml/jax",
+    "MetaCubeX/mihomo",
+    "vllm-project/vllm",
+    "pnpm/pnpm",
+    "git/git",
+    "llvm/llvm-project",
+    "tailscale/tailscale",
+    "astral-sh/ruff",
+    "vitejs/vite",
+    "anthropics/anthropic-sdk-python",
+    "astral-sh/uv",
+    "systemd/systemd",
+    "google/osv-scanner",
+    "ossf/scorecard",
+    "python/cpython",
+    "denoland/deno",
+    "WireGuard/wireguard-go",
+    "ollama/ollama",
+    "SagerNet/sing-box",
+    "golang/go",
+    "neovim/neovim",
+    "huggingface/diffusers",
+    "microsoft/autogen",
+    "cloudflare/cloudflared",
+    "nginx/nginx",
+    "crewAIInc/crewAI"
+  ],
+  "unchanged": []
+}
