@@ -28,7 +28,7 @@ defmodule UpstreamRadar.RadarWindow do
       [] -> 0.0
       xs ->
         q = min(0.999999, max(0.5, quantile))
-        start = trunc(Float.floor((length(xs) - 1) * q))
+        start = min(length(xs) - 1, trunc(Float.floor(length(xs) * q)))
         tail = Enum.drop(xs, start)
         Enum.sum(tail) / length(tail)
     end
