@@ -34,7 +34,7 @@ tailRisk :: [Double] -> Double
 tailRisk [] = 0
 tailRisk values =
   let xs = quicksort (map clamp values)
-      start = floor (fromIntegral (length xs - 1) * 0.75)
+      start = min (length xs - 1) (floor (fromIntegral (length xs) * 0.75))
       tailValues = drop start xs
   in sum tailValues / fromIntegral (length tailValues)
   where
