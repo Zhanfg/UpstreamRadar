@@ -116,6 +116,8 @@ class HarmonyConfig:
     change_ensemble_jump_scale: float = 1.35
     change_ensemble_slope_scale: float = 4.0
     cvar_quantile: float = 0.75
+    empirical_bayes_strength: float = 4.0
+    empirical_bayes_shrinkage: float = 0.35
 
     def validate(self) -> None:
         if self.half_life_hours <= 0:
@@ -136,6 +138,10 @@ class HarmonyConfig:
             raise ValueError("cvar_quantile must be in [0.5, 1)")
         if self.tail_risk_penalty < 0.0:
             raise ValueError("tail_risk_penalty must be non-negative")
+        if self.empirical_bayes_strength <= 0.0:
+            raise ValueError("empirical_bayes_strength must be positive")
+        if not 0.0 <= self.empirical_bayes_shrinkage <= 1.0:
+            raise ValueError("empirical_bayes_shrinkage must be in [0, 1]")
 
 
 @dataclass
@@ -224,9 +230,47 @@ class HarmonyScheduler:
                     normalized[record.name][feature] = max(-limit, min(limit, z))
         return normalized
 
-    def _change_probability(self, record: RepositorySignal) -> Tuple[float, float]:
-        alpha = max(record.prior_alpha, _EPS) + max(record.recent_change_hits, 0)
-        beta = max(record.prior_beta, _EPS) + max(record.recent_change_misses, 0)
+    def _empirical_bayes_priors(
+        self,
+        records: Sequence[RepositorySignal],
+    ) -> Dict[str, Tuple[float, float]]:
+        global_hits = sum(max(record.recent_change_hits, 0) for record in records)
+        global_misses = sum(max(record.recent_change_misses, 0) for record in records)
+        global_rate = (global_hits + 1.0) / (global_hits + global_misses + 2.0)
+
+        by_ecosystem: Dict[str, Tuple[int, int]] = {}
+        for record in records:
+            hits, misses = by_ecosystem.get(record.ecosystem, (0, 0))
+            by_ecosystem[record.ecosystem] = (
+                hits + max(record.recent_change_hits, 0),
+                misses + max(record.recent_change_misses, 0),
+            )
+
+        priors: Dict[str, Tuple[float, float]] = {}
+        strength = self.config.empirical_bayes_strength
+        shrinkage = self.config.empirical_bayes_shrinkage
+        for ecosystem, (hits, misses) in by_ecosystem.items():
+            local_rate = (hits + 1.0) / (hits + misses + 2.0)
+            sample_weight = (hits + misses) / (hits + misses + strength)
+            blended_local = sample_weight * local_rate + (1.0 - sample_weight) * global_rate
+            rate = (1.0 - shrinkage) * blended_local + shrinkage * global_rate
+            priors[ecosystem] = (
+                max(_EPS, 1.0 + strength * rate),
+                max(_EPS, 1.0 + strength * (1.0 - rate)),
+            )
+        return priors
+
+    def _change_probability(
+        self,
+        record: RepositorySignal,
+        ecosystem_prior: Tuple[float, float] | None = None,
+    ) -> Tuple[float, float]:
+        prior_alpha, prior_beta = ecosystem_prior or (
+            max(record.prior_alpha, _EPS),
+            max(record.prior_beta, _EPS),
+        )
+        alpha = prior_alpha + max(record.recent_change_hits, 0)
+        beta = prior_beta + max(record.recent_change_misses, 0)
         total = alpha + beta
         posterior_mean = alpha / total
         posterior_variance = (alpha * beta) / (total * total * (total + 1.0))
@@ -569,6 +613,7 @@ class HarmonyScheduler:
             raise ValueError("cost must be a positive integer")
 
         normalized = self._robust_normalize(records)
+        empirical_priors = self._empirical_bayes_priors(records)
         prepared: Dict[str, Dict[str, float]] = {}
         dependency_frequency: Dict[str, int] = {}
         for source in records:
@@ -583,7 +628,10 @@ class HarmonyScheduler:
             local, anomaly = self._local_and_anomaly(
                 normalized[record.name]
             )
-            probability, uncertainty = self._change_probability(record)
+            probability, uncertainty = self._change_probability(
+                record,
+                empirical_priors.get(record.ecosystem),
+            )
             momentum, change_point, volatility, entropy = self._dynamics(record)
             change_point = self._change_ensemble(record, change_point)
             reliability = self._reliability(record)
