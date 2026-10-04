@@ -19,3 +19,17 @@ upstreamradar_fnv1a64:
     ret
 
 .size upstreamradar_fnv1a64, .-upstreamradar_fnv1a64
+
+
+.globl upstreamradar_hamming64
+.type upstreamradar_hamming64,@function
+
+# uint64_t upstreamradar_hamming64(uint64_t left, uint64_t right)
+# Used as a compact fingerprint-distance primitive for novelty heuristics.
+upstreamradar_hamming64:
+    mov %rdi, %rax
+    xor %rsi, %rax
+    popcnt %rax, %rax
+    ret
+
+.size upstreamradar_hamming64, .-upstreamradar_hamming64
