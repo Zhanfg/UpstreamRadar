@@ -10,6 +10,26 @@ type Repository {
   events(limit: Int = 50): [RadarEvent!]!
 }
 
+type HarmonyV3Score {
+  changeProbability: Float!
+  graphInfluence: Float!
+  anomaly: Float!
+  uncertainty: Float!
+  momentum: Float!
+  changePoint: Float!
+  entropy: Float!
+  contentYield: Float!
+  reliability: Float!
+  exploration: Float!
+  securityFocus: Float!
+  bayesianSurprise: Float!
+  structuralNovelty: Float!
+  tailRisk: Float!
+  riskAdjustedUtility: Float!
+  baseUtility: Float!
+  reasons: [String!]!
+}
+
 type RadarEvent {
   id: ID!
   repository: Repository!
@@ -18,6 +38,7 @@ type RadarEvent {
   semanticImpact: Float!
   fingerprint: String!
   payload: JSON!
+  harmony: HarmonyV3Score
 }
 
 type RadarSummary {
@@ -30,6 +51,7 @@ type RadarSummary {
 type Query {
   repository(source: String!, fullName: String!): Repository
   repositories(ecosystem: String, limit: Int = 100): [Repository!]!
-  events(minImpact: Float = 0, limit: Int = 100): [RadarEvent!]!
+  events(minImpact: Float = 0, maxTailRisk: Float = 1, minSurprise: Float = 0, limit: Int = 100): [RadarEvent!]!
+  paretoFrontier(limit: Int = 100): [RadarEvent!]!
   summary: RadarSummary!
 }
