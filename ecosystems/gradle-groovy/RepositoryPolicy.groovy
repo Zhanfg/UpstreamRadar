@@ -17,13 +17,31 @@ final class RepositoryPolicy {
         if (hasFlatDir) risk += 1
         if (!hasMavenCentral && !hasGoogle) risk += 1
 
+        def repositoryUrls = (text =~ /url\s*[=( ]+["']([^"']+)["']/).collect { it[1] as String }
+        int httpRepositories = repositoryUrls.count { it.startsWith("http://") }
+        int customRepositories = repositoryUrls.count {
+            !(it.contains("maven.google.com") || it.contains("repo.maven.apache.org"))
+        }
+        def dynamicVersions = (text =~ /["'][^"']*[:@](?:latest[^"']*|[^"']*\+|[^"']*SNAPSHOT)["']/).size()
+
+        double structuralRisk = Math.min(
+            1.0d,
+            0.10d * risk +
+            0.18d * httpRepositories +
+            0.08d * customRepositories +
+            0.10d * dynamicVersions
+        )
+
         return [
             mavenCentral: hasMavenCentral,
             google: hasGoogle,
             deprecatedJCenter: hasJcenter,
             insecureProtocol: hasInsecureProtocol,
             flatDir: hasFlatDir,
-            riskScore: risk
+            repositoryUrls: repositoryUrls,
+            dynamicVersions: dynamicVersions,
+            riskScore: risk,
+            structuralRisk: structuralRisk
         ]
     }
 }
