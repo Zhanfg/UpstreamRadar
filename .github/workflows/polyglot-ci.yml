@@ -1,0 +1,95 @@
+name: Polyglot CI
+
+on:
+  pull_request:
+    paths:
+      - "core/**"
+      - "services/**"
+      - "apps/**"
+      - "ecosystems/**"
+      - "analytics/**"
+      - "schemas/**"
+      - ".github/workflows/polyglot-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo check --manifest-path core/radar-rs/Cargo.toml
+
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.23.x"
+      - working-directory: services/collector-go
+        run: go test ./...
+
+  typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - working-directory: apps/web
+        run: |
+          npm install
+          npm run build
+
+  cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          cmake -S core/scanner-cpp -B build/scanner-cpp
+          cmake --build build/scanner-cpp --parallel 2
+          ./build/scanner-cpp/upstreamradar-change-score 4 120 35 0
+
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - run: mvn -q -f ecosystems/maven-java/pom.xml test
+
+  kotlin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.14.3"
+      - run: gradle -p ecosystems/gradle-kotlin build
+
+  r:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+      - run: Rscript analytics/r/activity_trend.R 1 2 3 5 8
+
+  julia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: "1"
+      - run: |
+          julia --project=analytics/julia -e 'include("analytics/julia/src/UpstreamAnalytics.jl"); using .UpstreamAnalytics; @assert length(ewma([1,2,3])) == 3'
