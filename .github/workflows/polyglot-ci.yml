@@ -10,6 +10,12 @@ on:
       - "analytics/**"
       - "rules/**"
       - "schemas/**"
+      - "scripts/**"
+      - "storage/**"
+      - "infra/**"
+      - "config/**"
+      - "api/**"
+      - "flake.nix"
       - ".github/workflows/polyglot-ci.yml"
   workflow_dispatch:
 
@@ -106,3 +112,24 @@ jobs:
           version: "1"
       - run: |
           julia --project=analytics/julia -e 'include("analytics/julia/src/UpstreamAnalytics.jl"); using .UpstreamAnalytics; @assert length(ewma([1,2,3])) == 3'
+
+  engineering:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+      - name: Shell preflight
+        run: |
+          sh -n scripts/bootstrap.sh
+          sh scripts/bootstrap.sh
+      - name: SQL schema
+        run: |
+          sqlite3 /tmp/upstreamradar.db < storage/schema.sql
+          sqlite3 /tmp/upstreamradar.db '.schema radar_events'
+      - name: Terraform contract
+        run: |
+          terraform fmt -check -recursive infra/terraform
+          terraform -chdir=infra/terraform init -backend=false
+          terraform -chdir=infra/terraform validate
