@@ -43,7 +43,7 @@ object Trend {
     if (values.isEmpty) return 0.0
     val sorted = values.map(clamp01).sorted
     val q = math.max(0.5, math.min(0.999999, quantile))
-    val start = math.floor((sorted.length - 1).toDouble * q).toInt
+    val start = math.min(sorted.length - 1, math.floor(sorted.length.toDouble * q).toInt)
     sorted.drop(start).sum / (sorted.length - start)
   }
 
