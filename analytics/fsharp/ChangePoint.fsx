@@ -32,7 +32,7 @@ let cvar (quantile: float) (values: float array) =
     else
         let sorted = values |> Array.map clamp01 |> Array.sort
         let q = max 0.5 (min 0.999999 quantile)
-        let start = int (floor (float (sorted.Length - 1) * q))
+        let start = min (sorted.Length - 1) (int (floor (float sorted.Length * q)))
         sorted[start..] |> Array.average
 
 let ensembleScore (history: float array) (recent: float array) =
