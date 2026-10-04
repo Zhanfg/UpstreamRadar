@@ -480,6 +480,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Automated Android GKI build pipeline with ReSukiSU, SUSFS v2.3.0, ZeroMount, and Ring-0 Thermal Perf Engine",
+    "forks": 0,
+    "full_name": "Alfnnnnyy/GKI_KernelSU_SUSFS",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-04T13:39:23Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.87355717,
+    "source_id": "1351404407",
+    "stars": 0,
+    "url": "https://github.com/Alfnnnnyy/GKI_KernelSU_SUSFS"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Zero-dependency LLM agent runtime — tool use, MCP, sandboxed self-written tools, checkpoint/resume, approval gates, bi-temporal fact memory, code-level guards (context bounds, loop guard, egress control, shadow mode), declarative tool policy, OpenTelemetry. Not a framework. 885 tests, CI Linux/Windows, 31 runnable demos, online visual builder.",
     "forks": 2,
@@ -501,30 +525,6 @@
     "source_id": "1291448726",
     "stars": 2,
     "url": "https://github.com/laazizi/autoagent"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Automated Android GKI build pipeline with ReSukiSU, SUSFS v2.3.0, ZeroMount, and Ring-0 Thermal Perf Engine",
-    "forks": 0,
-    "full_name": "Alfnnnnyy/GKI_KernelSU_SUSFS",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-01T15:03:28Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "license:GPL-2.0",
-      "emerging"
-    ],
-    "score": 0.87248968,
-    "source_id": "1351404407",
-    "stars": 0,
-    "url": "https://github.com/Alfnnnnyy/GKI_KernelSU_SUSFS"
   },
   {
     "auto_fork_eligible": false,
@@ -1312,6 +1312,52 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Reusable GitHub Actions Workflow Template for Android GKI Kernel Compilation",
+    "forks": 0,
+    "full_name": "beduldul/android-gki-kernel-build-action",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-04T15:22:03Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.81819973,
+    "source_id": "1333661236",
+    "stars": 0,
+    "url": "https://github.com/beduldul/android-gki-kernel-build-action"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Android GKI ABI Compatibility Verification Utility for Linux Kernels",
+    "forks": 0,
+    "full_name": "beduldul/gki-abi-checker",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-04T15:22:16Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.8157999,
+    "source_id": "1333666357",
+    "stars": 0,
+    "url": "https://github.com/beduldul/gki-abi-checker"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "security-sandbox",
     "description": "A hermetic, no-root sandbox that emits a signed, independently-verifiable receipt that the isolation seal held — verifiable governance for AI agents (Rust).",
     "forks": 0,
@@ -1841,51 +1887,5 @@
     "source_id": "1148198632",
     "stars": 6,
     "url": "https://github.com/paolovella/vellaveto"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "A deliberately small Linux process sandbox launcher for agent workloads: namespaces, read-only rootfs, Landlock/seccomp policy, host-side CONNECT proxy allowlist, JSONL records and verify.",
-    "forks": 0,
-    "full_name": "yushui2022/EasySandbox",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-30T04:53:23Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.79306138,
-    "source_id": "1395021059",
-    "stars": 0,
-    "url": "https://github.com/yushui2022/EasySandbox"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "GKI kernels for Android 12-16 built with SukiSU-Ultra, SUSFS and KPM, one per KMI. Rebuilt when upstream moves.",
-    "forks": 0,
-    "full_name": "evoker0/evokerr-sukisu",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-10-02T10:53:36Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:susfs",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.7925999,
-    "source_id": "1336611433",
-    "stars": 0,
-    "url": "https://github.com/evoker0/evokerr-sukisu"
   }
 ]
