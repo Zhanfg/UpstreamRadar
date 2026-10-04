@@ -69,7 +69,7 @@ begin
         Sorted[J] := Temp;
       end;
   Q := EnsureRange(Quantile, 0.5, 0.999999);
-  StartIndex := Floor(High(Sorted) * Q);
+  StartIndex := Min(High(Sorted), Floor(Length(Sorted) * Q));
   Sum := 0.0;
   for I := StartIndex to High(Sorted) do Sum := Sum + Sorted[I];
   Result := Sum / (Length(Sorted) - StartIndex);
