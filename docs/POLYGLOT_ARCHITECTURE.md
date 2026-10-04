@@ -80,9 +80,24 @@ infra/         deployment contracts
 scripts/       portable operational tooling
 ```
 
+## HARMONY v3 stage ownership
+
+The repository is no longer organized as a collection of unrelated language demos. Major language families own stages of one normalized evidence pipeline:
+
+1. **Observation and runtime state** — Python, Go, C, PowerShell and Shell collect or validate raw operational evidence.
+2. **Native transforms** — Rust, C++, Zig and x86-64 Assembly provide fingerprinting, nonlinear scoring, distance and low-level hot-path primitives.
+3. **Ecosystem semantics** — Java, Kotlin, Groovy, C#, Swift, Objective-C, Dart, Ruby, PHP, Perl, Crystal and Nim classify package/release stability and compatibility risk.
+4. **Graph structure** — Python, Clojure and D implement dependency diffusion, reachability, cycle and structural-novelty reasoning.
+5. **Statistical dynamics** — Python, R, Julia, Scala, F#, Fortran and Pascal implement EWMA, change ensembles, Bayesian surprise and CVaR-style tail risk.
+6. **Typed policy** — Haskell, OCaml, Lua, Rego, Ada and Common Lisp implement impact fusion, risk adjustment, policy thresholds and Pareto selection.
+7. **Persistence and contracts** — JSON Schema, SQL, GraphQL, CUE and Terraform keep the v3 evidence model consistent across storage, API and deployment.
+8. **Release hardening** — TypeScript/esbuild and native strip tooling harden generated release artifacts while leaving source code auditable.
+
+Cross-language semantics are anchored by `tests/fixtures/harmony_v3_vectors.json`, `schemas/harmony-v3-score.schema.json`, and the Python reference scheduler.
+
 ## Validation
 
-`Polyglot CI` directly validates the main implementation set, including Rust, Go, TypeScript, C, C++, x86-64 Assembly, Fortran, Java, Kotlin, R, Julia, Shell, SQL and Terraform/HCL.
+`Polyglot CI` validates the main implementation set and now runs semantic tests for Rust/Go/Python plus numerical consistency checks in R and Julia. Native release artifacts are stripped and the web v3 bundle is minified in CI.
 
 Additional language jobs are added when their toolchain cost is justified by module maturity and change frequency. A language being present does not automatically justify a heavyweight CI runtime.
 
