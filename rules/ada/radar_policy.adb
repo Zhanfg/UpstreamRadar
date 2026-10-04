@@ -1,4 +1,5 @@
 with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
 
 procedure Radar_Policy is
    function Clamp (Value : Float) return Float is
@@ -11,6 +12,23 @@ procedure Radar_Policy is
          return Value;
       end if;
    end Clamp;
+
+   function Bayesian_Surprise (Empirical, Predicted : Float) return Float is
+      Eps : constant Float := 1.0E-6;
+      Q : constant Float := Float'Max (Eps, Float'Min (1.0 - Eps, Empirical));
+      P : constant Float := Float'Max (Eps, Float'Min (1.0 - Eps, Predicted));
+      KL : constant Float :=
+        Q * Log (Q / P) + (1.0 - Q) * Log ((1.0 - Q) / (1.0 - P));
+   begin
+      return Clamp (1.0 - Exp (-3.4 * KL));
+   end Bayesian_Surprise;
+
+   function Risk_Adjusted (Utility, Tail_Risk, Reliability : Float) return Float is
+   begin
+      return Float'Max (0.0, Utility)
+        * (1.0 - 0.11 * Clamp (Tail_Risk))
+        * (0.82 + 0.18 * Clamp (Reliability));
+   end Risk_Adjusted;
 
    function Classify (Impact, Security : Float) return String is
       I : constant Float := Clamp (Impact);
