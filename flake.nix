@@ -20,6 +20,11 @@
           R
           julia
           sqlite
+          binutils
+          terraform
+          cue
+          opa
+          esbuild
         ];
 
         shellHook = ''
