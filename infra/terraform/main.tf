@@ -32,6 +32,8 @@ variable "harmony_v3" {
     tail_risk_penalty         = number
     cvar_quantile             = number
     beam_width                = number
+    empirical_bayes_strength   = number
+    empirical_bayes_shrinkage  = number
   })
 
   default = {
@@ -40,6 +42,8 @@ variable "harmony_v3" {
     tail_risk_penalty         = 0.11
     cvar_quantile             = 0.75
     beam_width                = 128
+    empirical_bayes_strength   = 4.0
+    empirical_bayes_shrinkage  = 0.35
   }
 
   validation {
@@ -49,7 +53,10 @@ variable "harmony_v3" {
       var.harmony_v3.tail_risk_penalty >= 0 &&
       var.harmony_v3.cvar_quantile >= 0.5 &&
       var.harmony_v3.cvar_quantile < 1 &&
-      var.harmony_v3.beam_width >= 8
+      var.harmony_v3.beam_width >= 8 &&
+      var.harmony_v3.empirical_bayes_strength > 0 &&
+      var.harmony_v3.empirical_bayes_shrinkage >= 0 &&
+      var.harmony_v3.empirical_bayes_shrinkage <= 1
     )
     error_message = "Invalid HARMONY v3 algorithm configuration."
   }
