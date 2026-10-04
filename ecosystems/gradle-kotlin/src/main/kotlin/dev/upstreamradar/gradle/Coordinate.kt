@@ -19,4 +19,22 @@ data class Coordinate(val group: String, val name: String, val version: String) 
             return Coordinate(parts[0], parts[1], parts[2])
         }
     }
+
+    val riskScore: Double
+        get() {
+            val v = version.lowercase()
+            var score = 0.0
+            if (isDynamic) score += 0.45
+            if (listOf("snapshot", "alpha", "beta", "rc").any(v::contains)) score += 0.25
+            if ("[" in v || "(" in v) score += 0.15
+            if (v.startsWith("latest.")) score += 0.15
+            return score.coerceIn(0.0, 1.0)
+        }
+
+    val compatibilityConfidence: Double
+        get() {
+            val specificity = if (version.count { it == '.' } >= 2) 1.0 else 0.75
+            return (specificity * (1.0 - 0.65 * riskScore)).coerceIn(0.0, 1.0)
+        }
+
 }
