@@ -8,7 +8,7 @@ The repository is designed around a real optimization problem: when upstream sou
 
 The core algorithm is **HARMONY** — **Hierarchical Adaptive Radar Multi-objective Optimizer with Network-aware Yield**.
 
-**HARMONY v2** upgrades the original single-round ranker into a stateful, content-aware information-selection system. It combines:
+**HARMONY v3** upgrades the scheduler into a risk-aware, polyglot information-selection system. It retains the v2 stateful/content-aware pipeline and adds:
 
 - ecosystem-local robust statistics with global shrinkage for small groups;
 - Bayesian change-probability estimation with freshness decay;
@@ -18,6 +18,9 @@ The core algorithm is **HARMONY** — **Hierarchical Adaptive Radar Multi-object
 - evidence-based content-yield estimation;
 - reliability-aware source weighting;
 - deterministic exploration pressure inspired by upper-confidence bounds;
+- Bayesian surprise from predictive-vs-observed Bernoulli KL divergence;
+- structural novelty from dependency rarity and breadth;
+- CVaR-style tail-risk estimation and risk-adjusted utility;
 - signal-seeded dependency and ecosystem graph diffusion;
 - submodular-style portfolio coverage;
 - diversity, redundancy, and dependency-overlap shaping;
@@ -69,7 +72,7 @@ A fuller executable example is available in [`examples/harmony_demo.py`](example
 
 ## Learn the algorithm
 
-The original derivation is in docs/HARMONY.md, and the v2 architecture is specified in docs/HARMONY_V2.md.
+The original derivation is in docs/HARMONY.md, v2 is preserved in docs/HARMONY_V2.md, and the current architecture is specified in docs/HARMONY_V3.md.
 
 The document explains why each layer exists and derives:
 
@@ -82,7 +85,7 @@ The document explains why each layer exists and derives:
 7. diversity-aware marginal utility;
 8. constrained beam-search scheduling.
 
-HARMONY v2 adds multi-timescale dynamics, semantic impact, regime-shift detection, content yield, reliability, graph seeding, portfolio coverage, and a budget-aware upper bound.
+HARMONY v3 adds Bayesian surprise, change-point ensembling, structural novelty, tail-risk adjustment, Pareto-aware projections, and a cross-language score contract on top of the v2 dynamics, semantic impact, graph seeding, portfolio coverage, and budget-aware search.
 
 ## Evidence-first content planning
 
