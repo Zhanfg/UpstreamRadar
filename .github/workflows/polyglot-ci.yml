@@ -8,6 +8,7 @@ on:
       - "apps/**"
       - "ecosystems/**"
       - "analytics/**"
+      - "rules/**"
       - "schemas/**"
       - ".github/workflows/polyglot-ci.yml"
   workflow_dispatch:
@@ -45,14 +46,26 @@ jobs:
           npm install
           npm run build
 
-  cpp:
+  native:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
+      - name: C probe
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror core/probe-c/radar_probe.c -o /tmp/radar-probe
+          /tmp/radar-probe
+      - name: C++ scanner
+        run: |
           cmake -S core/scanner-cpp -B build/scanner-cpp
           cmake --build build/scanner-cpp --parallel 2
           ./build/scanner-cpp/upstreamradar-change-score 4 120 35 0
+      - name: x86-64 assembly primitive
+        run: |
+          cc -c core/asm-x86_64/fnv1a64.S -o /tmp/fnv1a64.o
+          nm /tmp/fnv1a64.o | grep upstreamradar_fnv1a64
+      - name: Fortran analytics kernel
+        run: |
+          gfortran -Wall -Wextra -Werror -c analytics/fortran/trend_stats.f90 -o /tmp/trend_stats.o
 
   java:
     runs-on: ubuntu-latest
