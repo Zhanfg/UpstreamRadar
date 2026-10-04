@@ -36,8 +36,11 @@ inline double cvar(std::vector<double> values, double quantile = 0.75) {
     for (double& value : values) value = clamp01(value);
     std::sort(values.begin(), values.end());
     quantile = std::clamp(quantile, 0.5, 0.999999);
-    const auto start = static_cast<std::size_t>(
-        std::floor(static_cast<double>(values.size() - 1) * quantile)
+    const auto start = std::min(
+        values.size() - 1,
+        static_cast<std::size_t>(
+            std::floor(static_cast<double>(values.size()) * quantile)
+        )
     );
     const double total = std::accumulate(values.begin() + start, values.end(), 0.0);
     return total / static_cast<double>(values.size() - start);
