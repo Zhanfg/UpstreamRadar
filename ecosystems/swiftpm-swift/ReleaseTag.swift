@@ -21,6 +21,23 @@ struct ReleaseTag: Comparable, CustomStringConvertible {
 
     var isStable: Bool { prerelease == nil }
 
+    var releaseRisk: Double {
+        guard let prerelease else { return 0.0 }
+        let value = prerelease.lowercased()
+        var risk = 0.35
+        if value.contains("alpha") || value.contains("dev") || value.contains("nightly") { risk += 0.35 }
+        if value.contains("beta") { risk += 0.20 }
+        if value.contains("rc") { risk += 0.10 }
+        return min(1.0, risk)
+    }
+
+    func compatibilityConfidence(comparedTo previous: ReleaseTag) -> Double {
+        let majorJump = major != previous.major ? 1.0 : 0.0
+        let minorJump = major == previous.major && minor != previous.minor ? 1.0 : 0.0
+        let distance = 0.65 * majorJump + 0.25 * minorJump + 0.10 * releaseRisk
+        return max(0.0, min(1.0, 1.0 - distance))
+    }
+
     var description: String {
         let core = "\(major).\(minor).\(patch)"
         return prerelease.map { core + "-" + $0 } ?? core
