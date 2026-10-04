@@ -1,3 +1,5 @@
+mod v3;
+
 use serde::Deserialize;
 use std::io::{self, BufRead};
 
@@ -34,7 +36,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             event.event_type,
             event.semantic_impact
         );
-        println!("{:016x}\t{}", fnv1a64(canonical.as_bytes()), event.repository);
+        let empirical = if event.semantic_impact > 0.0 { 1.0 } else { 0.0 };
+        let predicted = (event.semantic_impact / 10.0).clamp(0.01, 0.99);
+        let surprise = v3::bayesian_surprise(empirical, predicted);
+        println!(
+            "{:016x}\t{}\t{:.6}",
+            fnv1a64(canonical.as_bytes()),
+            event.repository,
+            surprise
+        );
     }
     Ok(())
 }
