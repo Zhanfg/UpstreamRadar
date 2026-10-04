@@ -43,7 +43,10 @@ func cvar(values []float64, quantile float64) float64 {
 	xs := append([]float64(nil), values...)
 	sort.Float64s(xs)
 	q := math.Max(0.5, math.Min(0.999999, quantile))
-	start := int(math.Floor(float64(len(xs)-1) * q))
+	start := int(math.Floor(float64(len(xs)) * q))
+	if start >= len(xs) {
+		start = len(xs) - 1
+	}
 	total := 0.0
 	for _, value := range xs[start:] {
 		total += math.Max(0, math.Min(1, value))
