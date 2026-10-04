@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://upstreamradar.dev/schema/harmony-v3-score.json",
+  "title": "HARMONY v3 Candidate Score",
+  "type": "object",
+  "required": [
+    "name",
+    "ecosystem",
+    "cost",
+    "base_utility",
+    "bayesian_surprise",
+    "structural_novelty",
+    "tail_risk",
+    "risk_adjusted_utility"
+  ],
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "ecosystem": {"type": "string", "minLength": 1},
+    "cost": {"type": "integer", "minimum": 1},
+    "local_signal": {"type": "number", "minimum": 0, "maximum": 1},
+    "change_probability": {"type": "number", "minimum": 0, "maximum": 1},
+    "graph_influence": {"type": "number", "minimum": 0, "maximum": 1},
+    "anomaly": {"type": "number", "minimum": 0, "maximum": 1},
+    "uncertainty": {"type": "number", "minimum": 0},
+    "momentum": {"type": "number", "minimum": 0, "maximum": 1},
+    "change_point": {"type": "number", "minimum": 0, "maximum": 1},
+    "entropy": {"type": "number", "minimum": 0, "maximum": 1},
+    "content_yield": {"type": "number", "minimum": 0, "maximum": 1},
+    "reliability": {"type": "number", "minimum": 0, "maximum": 1},
+    "exploration": {"type": "number", "minimum": 0},
+    "security_focus": {"type": "number", "minimum": 0, "maximum": 1},
+    "bayesian_surprise": {"type": "number", "minimum": 0, "maximum": 1},
+    "structural_novelty": {"type": "number", "minimum": 0, "maximum": 1},
+    "tail_risk": {"type": "number", "minimum": 0, "maximum": 1},
+    "risk_adjusted_utility": {"type": "number", "minimum": 0},
+    "base_utility": {"type": "number", "minimum": 0},
+    "reasons": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "additionalProperties": true
+}
