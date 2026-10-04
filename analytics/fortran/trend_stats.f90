@@ -40,4 +40,51 @@ contains
     end if
   end function linear_slope
 
+  pure real(8) function clamp01(value) result(out)
+    real(8), intent(in) :: value
+    out = max(0.0d0, min(1.0d0, value))
+  end function clamp01
+
+  pure real(8) function bernoulli_kl(q0, p0) result(divergence)
+    real(8), intent(in) :: q0, p0
+    real(8), parameter :: eps = 1.0d-12
+    real(8) :: q, p
+    q = max(eps, min(1.0d0 - eps, q0))
+    p = max(eps, min(1.0d0 - eps, p0))
+    divergence = q * log(q / p) + (1.0d0 - q) * log((1.0d0 - q) / (1.0d0 - p))
+  end function bernoulli_kl
+
+  pure real(8) function bayesian_surprise(empirical, predicted) result(value)
+    real(8), intent(in) :: empirical, predicted
+    value = clamp01(1.0d0 - exp(-3.4d0 * bernoulli_kl(empirical, predicted)))
+  end function bayesian_surprise
+
+  real(8) function cvar(values, quantile) result(value)
+    real(8), intent(in) :: values(:)
+    real(8), intent(in) :: quantile
+    real(8), allocatable :: sorted(:)
+    real(8) :: q, tmp
+    integer :: i, j, start_idx, n
+    n = size(values)
+    if (n == 0) then
+      value = 0.0d0
+      return
+    end if
+    allocate(sorted(n))
+    sorted = max(0.0d0, min(1.0d0, values))
+    do i = 1, n - 1
+      do j = i + 1, n
+        if (sorted(j) < sorted(i)) then
+          tmp = sorted(i)
+          sorted(i) = sorted(j)
+          sorted(j) = tmp
+        end if
+      end do
+    end do
+    q = max(0.5d0, min(0.999999d0, quantile))
+    start_idx = int(floor(dble(n - 1) * q)) + 1
+    value = sum(sorted(start_idx:n)) / dble(n - start_idx + 1)
+    deallocate(sorted)
+  end function cvar
+
 end module trend_stats
