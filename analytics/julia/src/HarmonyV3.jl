@@ -20,7 +20,7 @@ function cvar(values::AbstractVector{<:Real}, quantile::Real = 0.75)
     isempty(values) && return 0.0
     xs = sort(clamp01.(values))
     q = clamp(Float64(quantile), 0.5, 0.999999)
-    start = floor(Int, (length(xs) - 1) * q) + 1
+    start = min(length(xs), floor(Int, length(xs) * q) + 1)
     mean(@view xs[start:end])
 end
 
