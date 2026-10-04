@@ -2,9 +2,11 @@
 
 UpstreamRadar is evolving from a Python-only automation project into a polyglot upstream-intelligence platform.
 
-The rule is simple: a language is added only when it owns a concrete responsibility. Language count is not a goal by itself; each implementation must contribute a parser, analyzer, runtime primitive, policy engine, ecosystem adapter, statistical kernel, or user-facing component.
+The rule is simple: a language is added only when it owns a concrete responsibility. Language count is not a goal by itself; each implementation must contribute a parser, analyzer, runtime primitive, policy engine, ecosystem adapter, statistical kernel, infrastructure contract, or user-facing component.
 
-## Current language map
+## Current implementation map
+
+### Programming languages
 
 | Area | Language | Responsibility |
 | --- | --- | --- |
@@ -45,23 +47,44 @@ The rule is simple: a language is added only when it owns a concrete responsibil
 | Policy | Ada | deterministic severity classification |
 | Functional analytics | Haskell | typed semantic impact model |
 
+### Engineering languages and DSLs
+
+| Area | Language / DSL | Responsibility |
+| --- | --- | --- |
+| Portable automation | Shell | repository/bootstrap preflight |
+| Windows automation | PowerShell | Windows collector diagnostics |
+| Storage | SQL | normalized radar event persistence |
+| Reproducibility | Nix | polyglot development shell |
+| Infrastructure | Terraform / HCL | collector deployment contract |
+| Policy | Rego | evidence-based escalation policy |
+| Configuration | CUE | radar configuration validation contract |
+| API | GraphQL | typed repository/event query surface |
+
+This gives the branch **36 programming languages plus 8 engineering languages/DSLs**, for **44 distinct implementation-language surfaces**.
+
 All implementations converge conceptually on `schemas/radar-event.schema.json`.
 
 ## Layout
 
 ```text
 apps/          user-facing surfaces
+api/           query contracts
 core/          low-level and performance-sensitive primitives
 services/      streaming, aggregation and event-processing services
 ecosystems/    package-manager and platform-specific analyzers
 analytics/     statistical, graph and numerical analysis
 rules/         policy and classification engines
 schemas/       cross-language normalized contracts
+storage/       persistence schema
+infra/         deployment contracts
+scripts/       portable operational tooling
 ```
 
 ## Validation
 
-`Polyglot CI` currently performs direct build or runtime validation for the main implementation set, including Rust, Go, TypeScript, C, C++, x86-64 Assembly, Fortran, Java, Kotlin, R and Julia. Additional language jobs are added when their toolchain cost is justified by the module's maturity and frequency of change.
+`Polyglot CI` directly validates the main implementation set, including Rust, Go, TypeScript, C, C++, x86-64 Assembly, Fortran, Java, Kotlin, R, Julia, Shell, SQL and Terraform/HCL.
+
+Additional language jobs are added when their toolchain cost is justified by module maturity and change frequency. A language being present does not automatically justify a heavyweight CI runtime.
 
 ## Commit policy
 
@@ -75,4 +98,4 @@ Scheduled collection may poll frequently, but repository history must describe r
 - automation is explicitly identified as automation;
 - no empty commits, timestamp churn, artificial rewrites, or fabricated activity.
 
-The result should be a large repository because the system has many real responsibilities, not because history is padded.
+The repository should become large because the system has many real responsibilities, not because history is padded.
