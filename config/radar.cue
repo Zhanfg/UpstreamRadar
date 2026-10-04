@@ -14,6 +14,8 @@ package config
 	cvar_quantile: number & >=0.5 & <1
 	pagerank_damping: number & >0 & <1
 	beam_width: int & >=8 & <=4096
+	empirical_bayes_strength: number & >0
+	empirical_bayes_shrinkage: number & >=0 & <=1
 }
 
 #RadarConfig: {
@@ -36,5 +38,7 @@ config: #RadarConfig & {
 		cvar_quantile: 0.75
 		pagerank_damping: 0.84
 		beam_width: 128
+		empirical_bayes_strength: 4.0
+		empirical_bayes_shrinkage: 0.35
 	}
 }
