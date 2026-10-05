@@ -3,6 +3,7 @@
 #include "model.hpp"
 
 #include <algorithm>
+#include <bit>
 #include <array>
 #include <cmath>
 #include <cstdint>
