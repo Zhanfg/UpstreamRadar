@@ -7,7 +7,7 @@ package config
 	enabled: bool | *true
 }
 
-#HarmonyV4: {
+#SkopraedV1: {
 	surprise_weight: number & >=0 & <=1
 	structural_novelty_weight: number & >=0 & <=1
 	museum_weight: number & >=0 & <=1
@@ -25,7 +25,7 @@ package config
 	repositories: [...#Repository]
 	poll_interval_seconds: int & >=60
 	max_catch_up_multiplier: number & >=1 & <=5
-	harmony_v4: #HarmonyV4
+	skopraed_v1: #SkopraedV1
 }
 
 config: #RadarConfig & {
@@ -33,7 +33,7 @@ config: #RadarConfig & {
 	poll_interval_seconds: 900
 	max_catch_up_multiplier: 2.5
 	repositories: []
-	harmony_v4: {
+	skopraed_v1: {
 		surprise_weight: 0.08
 		structural_novelty_weight: 0.06
 		museum_weight: 0.12
