@@ -1,0 +1,28 @@
+{
+  "name": "skopraed-v1-conformance",
+  "schema": "../schemas/skopraed-v1-score.schema.json",
+  "numeric_tolerances": {
+    "bounded_score_absolute": 0.000001,
+    "probability_absolute": 0.000001,
+    "cross_runtime_score_absolute": 0.08,
+    "cross_runtime_rank_inversions": 0
+  },
+  "invariants": [
+    "deterministic",
+    "spent_lte_budget",
+    "all_bounded_scores_in_0_1",
+    "selected_names_are_input_names",
+    "no_duplicate_selection",
+    "audit_frontier_nonempty_when_candidates_nonempty",
+    "same_top_candidate_across_production_runtimes"
+  ],
+  "required_runtimes": [
+    "python",
+    "rust",
+    "go"
+  ],
+  "advisory_runtimes": [
+    "cpp",
+    "typescript"
+  ]
+}
