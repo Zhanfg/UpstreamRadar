@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://upstreamradar.dev/schema/skopraed-v1-score.json",
+  "title": "SKOPRÆD v1 Candidate Score",
+  "type": "object",
+  "required": [
+    "name",
+    "ecosystem",
+    "cost",
+    "base_utility",
+    "bayesian_surprise",
+    "structural_novelty",
+    "tail_risk",
+    "risk_adjusted_utility",
+    "museum"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ecosystem": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cost": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "local_signal": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "change_probability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "graph_influence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "anomaly": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "uncertainty": {
+      "type": "number",
+      "minimum": 0
+    },
+    "momentum": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "change_point": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "entropy": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "content_yield": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "reliability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "exploration": {
+      "type": "number",
+      "minimum": 0
+    },
+    "security_focus": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "bayesian_surprise": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "structural_novelty": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "tail_risk": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "risk_adjusted_utility": {
+      "type": "number",
+      "minimum": 0
+    },
+    "base_utility": {
+      "type": "number",
+      "minimum": 0
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "museum": {
+      "type": "object",
+      "required": [
+        "robust_activity",
+        "change_consensus",
+        "information_gain",
+        "graph_consensus",
+        "bandit_index",
+        "dependency_novelty",
+        "disagreement",
+        "consensus",
+        "trace"
+      ],
+      "properties": {
+        "robust_activity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "change_consensus": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "information_gain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "graph_consensus": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "bandit_index": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "dependency_novelty": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "disagreement": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "consensus": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "trace": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}
