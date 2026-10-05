@@ -28,7 +28,7 @@ CREATE INDEX IF NOT EXISTS idx_radar_events_impact
 ON radar_events(semantic_impact DESC);
 
 
-CREATE TABLE IF NOT EXISTS harmony_scores (
+CREATE TABLE IF NOT EXISTS skopraed_scores (
     event_id INTEGER PRIMARY KEY,
     change_probability REAL NOT NULL CHECK (change_probability BETWEEN 0 AND 1),
     graph_influence REAL NOT NULL CHECK (graph_influence BETWEEN 0 AND 1),
@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS harmony_scores (
     FOREIGN KEY(event_id) REFERENCES radar_events(id) ON DELETE CASCADE
 );
 
-CREATE INDEX IF NOT EXISTS idx_harmony_scores_utility
-ON harmony_scores(base_utility DESC, tail_risk ASC);
+CREATE INDEX IF NOT EXISTS idx_skopraed_scores_utility
+ON skopraed_scores(base_utility DESC, tail_risk ASC);
 
 CREATE VIEW IF NOT EXISTS v_priority_events AS
 SELECT
@@ -58,5 +58,5 @@ SELECT
     s.base_utility
 FROM radar_events e
 JOIN repositories r ON r.id = e.repository_id
-JOIN harmony_scores s ON s.event_id = e.id
+JOIN skopraed_scores s ON s.event_id = e.id
 ORDER BY s.base_utility DESC, s.tail_risk ASC, e.observed_at DESC;
