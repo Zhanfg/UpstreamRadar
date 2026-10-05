@@ -1,11 +1,11 @@
 import unittest
 
-from upstreamradar.engine import HarmonyConfig, HarmonyScheduler, RepositorySignal
+from upstreamradar.engine import SkopraedConfig, SkopraedScheduler, RepositorySignal
 
 
-class HarmonySchedulerTests(unittest.TestCase):
+class SkopraedSchedulerTests(unittest.TestCase):
     def setUp(self):
-        self.scheduler = HarmonyScheduler(HarmonyConfig(beam_width=128))
+        self.scheduler = SkopraedScheduler(SkopraedConfig(beam_width=128))
         self.records = [
             RepositorySignal(
                 name="android-kernel",
