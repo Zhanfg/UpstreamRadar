@@ -25,46 +25,46 @@ variable "sources" {
   default     = ["github", "gitlab"]
 }
 
-variable "harmony_v3" {
+variable "harmony_v4" {
   type = object({
-    surprise_weight           = number
-    structural_novelty_weight = number
-    museum_weight              = number
-    museum_disagreement_penalty = number
-    tail_risk_penalty         = number
-    cvar_quantile             = number
-    beam_width                = number
-    empirical_bayes_strength   = number
-    empirical_bayes_shrinkage  = number
+    surprise_weight              = number
+    structural_novelty_weight    = number
+    museum_weight                = number
+    museum_disagreement_penalty  = number
+    tail_risk_penalty            = number
+    cvar_quantile                = number
+    beam_width                   = number
+    empirical_bayes_strength     = number
+    empirical_bayes_shrinkage    = number
   })
 
   default = {
-    surprise_weight           = 0.08
-    structural_novelty_weight = 0.06
-    museum_weight              = 0.12
+    surprise_weight             = 0.08
+    structural_novelty_weight   = 0.06
+    museum_weight               = 0.12
     museum_disagreement_penalty = 0.08
-    tail_risk_penalty         = 0.11
-    cvar_quantile             = 0.75
-    beam_width                = 128
-    empirical_bayes_strength   = 4.0
-    empirical_bayes_shrinkage  = 0.35
+    tail_risk_penalty           = 0.11
+    cvar_quantile               = 0.75
+    beam_width                  = 128
+    empirical_bayes_strength    = 4.0
+    empirical_bayes_shrinkage   = 0.35
   }
 
   validation {
     condition = (
-      var.harmony_v3.surprise_weight >= 0 &&
-      var.harmony_v3.structural_novelty_weight >= 0 &&
-      var.harmony_v3.tail_risk_penalty >= 0 &&
-      var.harmony_v3.museum_weight >= 0 &&
-      var.harmony_v3.museum_disagreement_penalty >= 0 &&
-      var.harmony_v3.cvar_quantile >= 0.5 &&
-      var.harmony_v3.cvar_quantile < 1 &&
-      var.harmony_v3.beam_width >= 8 &&
-      var.harmony_v3.empirical_bayes_strength > 0 &&
-      var.harmony_v3.empirical_bayes_shrinkage >= 0 &&
-      var.harmony_v3.empirical_bayes_shrinkage <= 1
+      var.harmony_v4.surprise_weight >= 0 &&
+      var.harmony_v4.structural_novelty_weight >= 0 &&
+      var.harmony_v4.tail_risk_penalty >= 0 &&
+      var.harmony_v4.museum_weight >= 0 &&
+      var.harmony_v4.museum_disagreement_penalty >= 0 &&
+      var.harmony_v4.cvar_quantile >= 0.5 &&
+      var.harmony_v4.cvar_quantile < 1 &&
+      var.harmony_v4.beam_width >= 8 &&
+      var.harmony_v4.empirical_bayes_strength > 0 &&
+      var.harmony_v4.empirical_bayes_shrinkage >= 0 &&
+      var.harmony_v4.empirical_bayes_shrinkage <= 1
     )
-    error_message = "Invalid HARMONY v3 algorithm configuration."
+    error_message = "Invalid HARMONY v4 algorithm configuration."
   }
 }
 
@@ -73,7 +73,7 @@ locals {
     name          = var.collector_name
     poll_interval = var.poll_interval_seconds
     sources       = sort(tolist(var.sources))
-    harmony_v3    = var.harmony_v3
+    harmony_v4    = var.harmony_v4
   }
 }
 
