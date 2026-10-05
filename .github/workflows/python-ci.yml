@@ -60,6 +60,9 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
 
+      - name: Verify Algorithm Museum catalog
+        run: python scripts/export_museum_catalog.py --check
+
       - name: Run v1 example
         run: python -m examples.harmony_demo
 
