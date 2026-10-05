@@ -467,6 +467,7 @@ def select_targets(
         "coverage_score": round(result.coverage_score, 8),
         "content_score": round(result.content_score, 8),
         "content_plan": content_plan,
+        "museum_audit": asdict(result.audit) if result.audit is not None else None,
     }
     return selected, scores, selection_meta
 
