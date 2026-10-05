@@ -150,3 +150,21 @@ jobs:
           terraform fmt -check -recursive infra/terraform
           terraform -chdir=infra/terraform init -backend=false
           terraform -chdir=infra/terraform validate
+
+  conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.23.x"
+      - name: Cross-runtime SKOPRÆD v1 conformance
+        run: |
+          python scripts/check_skopraed_conformance.py \
+            --runtime python \
+            --runtime rust \
+            --runtime go
