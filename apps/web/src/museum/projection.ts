@@ -60,12 +60,13 @@ export function projectCandidates(
 
 export function galleryRadar(
   museum: MuseumEvidence,
-): { axis: string; value: number; disagreement: number }[] =>
-  galleryEntries(museum).map(([axis, gallery]) => ({
+): { axis: string; value: number; disagreement: number }[] {
+  return galleryEntries(museum).map(([axis, gallery]) => ({
     axis,
     value: gallery.consensus,
     disagreement: gallery.disagreement,
   }));
+}
 
 export function exhibitHeatmap(
   candidates: readonly Candidate[],
@@ -99,8 +100,8 @@ export function exhibitHeatmap(
 export function disagreementQueue(
   candidates: readonly Candidate[],
   threshold = 0.4,
-): DashboardProjection[] =>
-  projectCandidates(candidates)
+): DashboardProjection[] {
+  return projectCandidates(candidates)
     .filter((candidate) => candidate.disagreement >= threshold)
     .sort(
       (a, b) =>
@@ -108,6 +109,7 @@ export function disagreementQueue(
         b.utility - a.utility ||
         a.repository.localeCompare(b.repository),
     );
+}
 
 export function ecosystemMatrix(
   candidates: readonly Candidate[],
