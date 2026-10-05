@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 15,
+  "count": 22,
   "families": [
     "bayesian-change-detection",
     "change-detection",
@@ -15,6 +15,26 @@
     "submodular-optimization"
   ],
   "exhibits": [
+    {
+      "slug": "wasserstein-1",
+      "name": "1-Wasserstein distance",
+      "family": "information-theory",
+      "introduced": 1942,
+      "complexity": "O(n log n)",
+      "role": "earth-mover distribution shift",
+      "production": true,
+      "notes": ""
+    },
+    {
+      "slug": "theil-sen",
+      "name": "Theil–Sen estimator",
+      "family": "robust-statistics",
+      "introduced": 1950,
+      "complexity": "O(n²)",
+      "role": "outlier-resistant trend slope",
+      "production": true,
+      "notes": ""
+    },
     {
       "slug": "katz",
       "name": "Katz centrality",
@@ -76,6 +96,26 @@
       "notes": ""
     },
     {
+      "slug": "hampel",
+      "name": "Hampel identifier",
+      "family": "robust-statistics",
+      "introduced": 1974,
+      "complexity": "O(n)",
+      "role": "median/MAD outlier evidence",
+      "production": true,
+      "notes": ""
+    },
+    {
+      "slug": "k-core",
+      "name": "k-core decomposition",
+      "family": "graph-structure",
+      "introduced": 1983,
+      "complexity": "O((V+E) log V)",
+      "role": "structural core membership",
+      "production": true,
+      "notes": ""
+    },
+    {
       "slug": "epsilon-pareto",
       "name": "ε-Pareto archive",
       "family": "multiobjective-optimization",
@@ -126,6 +166,26 @@
       "notes": ""
     },
     {
+      "slug": "brandes",
+      "name": "Brandes betweenness",
+      "family": "graph-centrality",
+      "introduced": 2001,
+      "complexity": "O(VE)",
+      "role": "bridge and shortest-path mediation",
+      "production": true,
+      "notes": ""
+    },
+    {
+      "slug": "adwin",
+      "name": "ADWIN",
+      "family": "change-detection",
+      "introduced": 2007,
+      "complexity": "O(n²)",
+      "role": "adaptive-window distribution shift evidence",
+      "production": true,
+      "notes": ""
+    },
+    {
       "slug": "bocpd-beta",
       "name": "Beta-Bernoulli BOCPD",
       "family": "bayesian-change-detection",
@@ -162,6 +222,16 @@
       "introduced": 2011,
       "complexity": "O(log(1/ε))",
       "role": "Bernoulli information-bound exploration",
+      "production": true,
+      "notes": ""
+    },
+    {
+      "slug": "bayes-ucb",
+      "name": "Bayes-UCB",
+      "family": "online-learning",
+      "introduced": 2012,
+      "complexity": "O(log(1/ε)·Iβ)",
+      "role": "posterior-quantile exploration",
       "production": true,
       "notes": ""
     }
