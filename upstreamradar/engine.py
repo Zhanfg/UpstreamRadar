@@ -5,6 +5,9 @@ from math import exp, isfinite, log, log1p, sqrt
 from statistics import median
 from typing import Dict, List, Mapping, MutableMapping, Sequence, Tuple
 
+from .museum import MuseumEvidence, build_museum_evidence
+from .museum.graph import centrality_consensus
+
 _EPS = 1e-12
 
 
@@ -62,6 +65,7 @@ class CandidateScore:
     structural_novelty: float
     tail_risk: float
     risk_adjusted_utility: float
+    museum: MuseumEvidence
     base_utility: float
     reasons: Tuple[str, ...] = ()
 
@@ -96,7 +100,9 @@ class HarmonyConfig:
     reliability_weight: float = 0.04
     surprise_weight: float = 0.08
     structural_novelty_weight: float = 0.06
+    museum_weight: float = 0.12
     tail_risk_penalty: float = 0.11
+    museum_disagreement_penalty: float = 0.08
 
     diversity_bonus: float = 0.10
     redundancy_penalty: float = 0.07
@@ -138,6 +144,10 @@ class HarmonyConfig:
             raise ValueError("cvar_quantile must be in [0.5, 1)")
         if self.tail_risk_penalty < 0.0:
             raise ValueError("tail_risk_penalty must be non-negative")
+        if self.museum_weight < 0.0:
+            raise ValueError("museum_weight must be non-negative")
+        if self.museum_disagreement_penalty < 0.0:
+            raise ValueError("museum_disagreement_penalty must be non-negative")
         if self.empirical_bayes_strength <= 0.0:
             raise ValueError("empirical_bayes_strength must be positive")
         if not 0.0 <= self.empirical_bayes_shrinkage <= 1.0:
@@ -157,7 +167,7 @@ class _BeamState:
 
 
 class HarmonyScheduler:
-    """HARMONY v2: content-aware, multi-timescale upstream scheduling."""
+    """HARMONY v4: curated algorithm-museum information scheduling."""
 
     _LOCAL_FEATURES = (
         "commit_velocity",
@@ -595,7 +605,11 @@ class HarmonyScheduler:
             reasons.append("structural-novelty")
         if score.tail_risk >= 0.72:
             reasons.append("tail-risk")
-        return tuple(reasons[:7])
+        if score.museum.consensus >= 0.64:
+            reasons.append("museum-consensus")
+        if score.museum.disagreement >= 0.46:
+            reasons.append("algorithm-disagreement")
+        return tuple(reasons[:8])
 
     def score(
         self,
@@ -684,15 +698,14 @@ class HarmonyScheduler:
                 - 0.05 * tail_risk,
             }
 
-        graph = self._seeded_graph_diffusion(
-            records,
+        graph_seeds = {
+            name: values["seed"]
+            for name, values in prepared.items()
+        }
+        museum_graph, museum_graph_trace = centrality_consensus(
             dependencies,
-            {
-                name: values["seed"]
-                for name, values in prepared.items()
-            },
+            seeds=graph_seeds,
         )
-        max_graph = max(graph.values(), default=1.0) or 1.0
         config = self.config
         weight_sum = (
             config.local_weight
@@ -707,12 +720,49 @@ class HarmonyScheduler:
             + config.reliability_weight
             + config.surprise_weight
             + config.structural_novelty_weight
+            + config.museum_weight
         )
 
         scored: List[CandidateScore] = []
+        dependency_sets = {
+            record.name: tuple(dict.fromkeys(dependencies.get(record.name, ())))
+            for record in records
+        }
         for record in records:
             values = prepared[record.name]
-            influence = graph.get(record.name, 0.0) / max_graph
+            influence = self._clamp(museum_graph.get(record.name, 0.0))
+            peers = [
+                dependency_sets[other.name]
+                for other in records
+                if other.name != record.name
+            ]
+            museum = build_museum_evidence(
+                local_features=tuple(normalized[record.name].values()),
+                impact_history=record.impact_history,
+                change_history=record.change_history,
+                hits=record.recent_change_hits,
+                misses=record.recent_change_misses,
+                observation_count=record.observation_count,
+                total_observations=total_observations,
+                dependencies=dependency_sets[record.name],
+                peer_dependencies=peers,
+                graph_consensus=influence,
+                graph_trace=museum_graph_trace.get(record.name, ()),
+            )
+
+            change_point = self._clamp(
+                0.58 * values["change_point"]
+                + 0.42 * museum.change_consensus
+            )
+            exploration = self._clamp(
+                0.44 * min(values["exploration"] * 4.0, 1.0)
+                + 0.56 * museum.bandit_index
+            )
+            structural_novelty = self._clamp(
+                0.60 * values["structural_novelty"]
+                + 0.40 * museum.dependency_novelty
+            )
+
             utility = (
                 config.local_weight * values["local"]
                 + config.probability_weight * values["probability"]
@@ -721,13 +771,15 @@ class HarmonyScheduler:
                 + config.uncertainty_weight * values["uncertainty"]
                 + config.security_weight * values["security"]
                 + config.momentum_weight * values["momentum"]
-                + config.change_point_weight * values["change_point"]
+                + config.change_point_weight * change_point
                 + config.content_weight * values["content_yield"]
                 + config.reliability_weight * values["reliability"]
                 + config.surprise_weight * values["surprise"]
-                + config.structural_novelty_weight * values["structural_novelty"]
+                + config.structural_novelty_weight * structural_novelty
+                + config.museum_weight * museum.consensus
             ) / weight_sum
 
+            utility *= 1.0 - config.museum_disagreement_penalty * museum.disagreement
             risk_adjusted = utility * (
                 1.0 - config.tail_risk_penalty * values["tail_risk"]
             )
@@ -746,16 +798,17 @@ class HarmonyScheduler:
                 anomaly=values["anomaly"],
                 uncertainty=values["uncertainty"],
                 momentum=values["momentum"],
-                change_point=values["change_point"],
+                change_point=change_point,
                 entropy=values["entropy"],
                 content_yield=values["content_yield"],
                 reliability=values["reliability"],
-                exploration=values["exploration"],
+                exploration=exploration,
                 security_focus=values["security"],
                 bayesian_surprise=values["surprise"],
-                structural_novelty=values["structural_novelty"],
+                structural_novelty=structural_novelty,
                 tail_risk=values["tail_risk"],
                 risk_adjusted_utility=risk_adjusted,
+                museum=museum,
                 base_utility=utility,
             )
             scored.append(
@@ -800,7 +853,9 @@ class HarmonyScheduler:
             + abs(left.security_focus - right.security_focus)
             + abs(left.bayesian_surprise - right.bayesian_surprise)
             + abs(left.tail_risk - right.tail_risk)
-        ) / 5.0
+            + abs(left.museum.consensus - right.museum.consensus)
+            + abs(left.museum.information_gain - right.museum.information_gain)
+        ) / 7.0
         profile = exp(-2.4 * profile_distance)
         return self._clamp(
             0.42 * ecosystem
@@ -885,7 +940,10 @@ class HarmonyScheduler:
         novelty_bonus = (
             0.035 * candidate.structural_novelty
             + 0.025 * candidate.bayesian_surprise
+            + 0.030 * candidate.museum.information_gain
         )
+        museum_bonus = 0.045 * candidate.museum.consensus
+        disagreement_penalty = 0.025 * candidate.museum.disagreement
         tail_penalty = 0.025 * candidate.tail_risk
 
         return (
@@ -895,6 +953,8 @@ class HarmonyScheduler:
             + exploration
             + content_bonus
             + novelty_bonus
+            + museum_bonus
+            - disagreement_penalty
             - tail_penalty
             - redundancy
             - self.config.dependency_overlap_penalty * max_overlap
@@ -964,7 +1024,10 @@ class HarmonyScheduler:
             + 0.08 * score.change_point
             + 0.05 * score.bayesian_surprise
             + 0.04 * score.structural_novelty
+            + 0.05 * score.museum.consensus
+            + 0.03 * score.museum.information_gain
             - 0.03 * score.tail_risk
+            - 0.02 * score.museum.disagreement
         )
 
     def _extend_state(
