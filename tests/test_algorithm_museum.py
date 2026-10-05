@@ -1,18 +1,31 @@
 import unittest
 
-from upstreamradar.museum.bandit import kl_ucb, ucb_v
+from upstreamradar.museum.bandit import (
+    bayes_ucb,
+    beta_quantile,
+    kl_ucb,
+    regularized_beta,
+    ucb_v,
+)
 from upstreamradar.museum.change import (
     bernoulli_bocpd,
     change_consensus,
+    adwin_score,
     cusum_score,
 )
 from upstreamradar.museum.graph import (
+    brandes_betweenness,
     centrality_consensus,
+    k_core_numbers,
     tarjan_scc,
 )
-from upstreamradar.museum.information import jensen_shannon
+from upstreamradar.museum.information import (
+    jensen_shannon,
+    wasserstein_1d,
+)
 from upstreamradar.museum.optimization import (
     Item,
+    celf_select,
     exact_knapsack,
     epsilon_pareto,
 )
@@ -55,8 +68,12 @@ class AlgorithmMuseumTests(unittest.TestCase):
             (0,) * 8 + (1,) * 4,
         )
         self.assertGreater(consensus, 0)
-        self.assertEqual({name for name, _ in trace},
-                         {"page-hinkley", "cusum", "bocpd-beta"})
+        names = {name for name, _ in trace}
+        self.assertTrue(
+            {"page-hinkley", "cusum", "bocpd-beta", "adwin", "theil-sen"}
+            <= names
+        )
+        self.assertGreater(adwin_score(shifted), adwin_score(stable))
 
     def test_information_divergence_is_symmetric(self):
         left = [9, 1, 0, 0]
@@ -66,6 +83,10 @@ class AlgorithmMuseumTests(unittest.TestCase):
             jensen_shannon(right, left),
         )
         self.assertGreater(jensen_shannon(left, right), 0.5)
+        self.assertGreater(
+            wasserstein_1d([0.0, 0.1, 0.2], [0.8, 0.9, 1.0]),
+            0.6,
+        )
 
     def test_graph_gallery_detects_cycles_and_centrality(self):
         graph = {
@@ -82,11 +103,20 @@ class AlgorithmMuseumTests(unittest.TestCase):
         self.assertGreater(scores["hub"], 0)
         self.assertIn("hub", traces)
         self.assertTrue(all(0 <= value <= 1 for value in scores.values()))
+        between = brandes_betweenness(graph)
+        cores = k_core_numbers(graph)
+        self.assertTrue(all(0 <= value <= 1 for value in between.values()))
+        self.assertTrue(all(0 <= value <= 1 for value in cores.values()))
 
     def test_bandit_indexes_are_bounded(self):
         self.assertTrue(0 <= ucb_v(0.2, 0.05, 10, 100) <= 1)
         self.assertTrue(0 <= kl_ucb(0.2, 10, 100) <= 1)
         self.assertGreaterEqual(kl_ucb(0.2, 2, 100), kl_ucb(0.2, 50, 100))
+
+    def test_beta_distribution_and_bayes_ucb(self):
+        self.assertAlmostEqual(regularized_beta(0.5, 1.0, 1.0), 0.5, places=6)
+        self.assertAlmostEqual(beta_quantile(0.9, 1.0, 1.0), 0.9, places=5)
+        self.assertTrue(0 <= bayes_ucb(3.0, 7.0, 100) <= 1)
 
     def test_minhash_is_deterministic_and_similarity_sensitive(self):
         a = minhash_signature(["x", "y", "z"])
@@ -118,6 +148,20 @@ class AlgorithmMuseumTests(unittest.TestCase):
         self.assertNotIn("b", names)
         self.assertIn("a", names)
         self.assertIn("c", names)
+
+        gains = {
+            "a": {"x", "y"},
+            "b": {"y", "z"},
+            "c": {"q"},
+        }
+        def marginal(name, selected):
+            covered = set()
+            for chosen in selected:
+                covered |= gains[chosen]
+            return float(len(gains[name] - covered))
+        celf = celf_select(items, 4, marginal)
+        self.assertTrue(set(celf) <= {"a", "b", "c"})
+        self.assertGreaterEqual(len(celf), 1)
 
 
 if __name__ == "__main__":
