@@ -21,6 +21,7 @@ from upstreamradar.museum.graph import (
 )
 from upstreamradar.museum.information import (
     jensen_shannon,
+    maximum_mean_discrepancy,
     wasserstein_1d,
 )
 from upstreamradar.museum.optimization import (
@@ -31,6 +32,12 @@ from upstreamradar.museum.optimization import (
 )
 from upstreamradar.museum.registry import EXHIBITS
 from upstreamradar.museum.robust import huber_location
+from upstreamradar.museum.streaming import (
+    BloomFilter,
+    CountMinSketch,
+    HyperLogLog,
+    SpaceSaving,
+)
 from upstreamradar.museum.sketches import (
     minhash_signature,
     minhash_similarity,
@@ -87,6 +94,10 @@ class AlgorithmMuseumTests(unittest.TestCase):
             wasserstein_1d([0.0, 0.1, 0.2], [0.8, 0.9, 1.0]),
             0.6,
         )
+        self.assertGreater(
+            maximum_mean_discrepancy([0.0, 0.1, 0.2], [0.8, 0.9, 1.0]),
+            0.5,
+        )
 
     def test_graph_gallery_detects_cycles_and_centrality(self):
         graph = {
@@ -125,6 +136,33 @@ class AlgorithmMuseumTests(unittest.TestCase):
         self.assertEqual(a, b)
         self.assertEqual(minhash_similarity(a, b), 1.0)
         self.assertLess(minhash_similarity(a, c), 0.5)
+
+    def test_streaming_sketch_gallery(self):
+        bloom = BloomFilter(bits=2048, hashes=4)
+        for value in ("a", "b", "c"):
+            bloom.add(value)
+        self.assertIn("a", bloom)
+        self.assertIn("b", bloom)
+        self.assertIn("c", bloom)
+
+        cms = CountMinSketch(width=128, depth=4)
+        for _ in range(20):
+            cms.add("hot")
+        for _ in range(3):
+            cms.add("cold")
+        self.assertGreaterEqual(cms.estimate("hot"), 20)
+        self.assertGreater(cms.estimate("hot"), cms.estimate("cold"))
+
+        hll = HyperLogLog(precision=10)
+        for index in range(1000):
+            hll.add(f"repo-{index}")
+        estimate = hll.estimate()
+        self.assertLess(abs(estimate - 1000) / 1000, 0.20)
+
+        heavy = SpaceSaving(capacity=4)
+        for value in ["hot"] * 20 + ["warm"] * 8 + ["x", "y", "z", "q"]:
+            heavy.add(value)
+        self.assertEqual(heavy.heavy_hitters()[0].key, "hot")
 
     def test_exact_knapsack_and_pareto_archive(self):
         items = [
