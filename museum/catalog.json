@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 22,
+  "count": 27,
   "families": [
     "bayesian-change-detection",
     "change-detection",
@@ -83,6 +83,16 @@
       "complexity": "O(n·k)",
       "role": "robust activity location under outliers",
       "production": true,
+      "notes": ""
+    },
+    {
+      "slug": "bloom",
+      "name": "Bloom filter",
+      "family": "streaming-sketch",
+      "introduced": 1970,
+      "complexity": "O(k)",
+      "role": "probabilistic membership prefilter",
+      "production": false,
       "notes": ""
     },
     {
@@ -176,6 +186,36 @@
       "notes": ""
     },
     {
+      "slug": "count-min",
+      "name": "Count-Min Sketch",
+      "family": "streaming-sketch",
+      "introduced": 2003,
+      "complexity": "O(d)",
+      "role": "approximate frequency estimation",
+      "production": false,
+      "notes": ""
+    },
+    {
+      "slug": "space-saving",
+      "name": "Space-Saving",
+      "family": "streaming-sketch",
+      "introduced": 2005,
+      "complexity": "O(k)",
+      "role": "bounded-memory heavy hitters",
+      "production": false,
+      "notes": ""
+    },
+    {
+      "slug": "mmd-rbf",
+      "name": "Maximum Mean Discrepancy",
+      "family": "information-theory",
+      "introduced": 2006,
+      "complexity": "O(n²)",
+      "role": "kernel two-sample distribution shift",
+      "production": true,
+      "notes": ""
+    },
+    {
       "slug": "adwin",
       "name": "ADWIN",
       "family": "change-detection",
@@ -204,6 +244,16 @@
       "role": "coverage-aware portfolio construction",
       "production": false,
       "notes": "benchmark/alternative selector; beam search remains default"
+    },
+    {
+      "slug": "hyperloglog",
+      "name": "HyperLogLog",
+      "family": "streaming-sketch",
+      "introduced": 2007,
+      "complexity": "O(1)",
+      "role": "approximate unique-cardinality estimation",
+      "production": false,
+      "notes": ""
     },
     {
       "slug": "ucb-v",
