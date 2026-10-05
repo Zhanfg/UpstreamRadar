@@ -5,9 +5,9 @@ from typing import Mapping, Sequence
 
 from .bandit import exploration_consensus
 from .change import change_consensus
-from .information import history_information_gain
+from .information import history_distribution_shift
 from .model import MuseumEvidence
-from .robust import huber_location, winsorized_variance
+from .robust import hampel_outlier_fraction, huber_location, winsorized_variance
 from .sketches import dependency_novelty as minhash_novelty
 
 
@@ -38,7 +38,10 @@ def build_museum_evidence(
     graph_trace: Sequence[tuple[str, float]] = (),
 ) -> MuseumEvidence:
     robust_location = huber_location(local_features)
-    robust_activity = _clamp01(_sigmoid(robust_location))
+    hampel_fraction = hampel_outlier_fraction(local_features)
+    robust_activity = _clamp01(
+        _sigmoid(robust_location) * (1.0 - 0.10 * hampel_fraction)
+    )
 
     normalized_history = [
         _clamp01(float(value) / 10.0)
@@ -48,7 +51,9 @@ def build_museum_evidence(
         impact_history,
         change_history,
     )
-    information_gain = history_information_gain(normalized_history)
+    information_gain, information_trace = history_distribution_shift(
+        normalized_history
+    )
 
     variance = winsorized_variance(
         normalized_history or [float(bool(value)) for value in change_history]
@@ -84,11 +89,12 @@ def build_museum_evidence(
 
     trace = tuple(
         list(change_trace)
+        + list(information_trace)
         + list(graph_trace)
         + list(bandit_trace)
         + [
             ("huber", robust_activity),
-            ("jsd", information_gain),
+            ("hampel", _clamp01(1.0 - hampel_fraction)),
             ("minhash", dependency_novelty),
         ]
     )
