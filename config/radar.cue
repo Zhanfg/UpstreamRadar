@@ -10,6 +10,8 @@ package config
 #HarmonyV3: {
 	surprise_weight: number & >=0 & <=1
 	structural_novelty_weight: number & >=0 & <=1
+	museum_weight: number & >=0 & <=1
+	museum_disagreement_penalty: number & >=0 & <=1
 	tail_risk_penalty: number & >=0 & <=1
 	cvar_quantile: number & >=0.5 & <1
 	pagerank_damping: number & >0 & <1
@@ -34,6 +36,8 @@ config: #RadarConfig & {
 	harmony_v3: {
 		surprise_weight: 0.08
 		structural_novelty_weight: 0.06
+		museum_weight: 0.12
+		museum_disagreement_penalty: 0.08
 		tail_risk_penalty: 0.11
 		cvar_quantile: 0.75
 		pagerank_damping: 0.84
