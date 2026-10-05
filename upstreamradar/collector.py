@@ -15,7 +15,7 @@ from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 from .content import build_content_plan
-from .engine import HarmonyScheduler, RepositorySignal
+from .engine import SkopraedScheduler, RepositorySignal
 
 
 UTC = timezone.utc
@@ -392,7 +392,7 @@ def select_targets(
     *,
     pressure: float = 1.0,
 ) -> tuple[list[Target], list[dict[str, Any]], dict[str, Any]]:
-    scheduler = HarmonyScheduler()
+    scheduler = SkopraedScheduler()
     signals = [signal_for(target, repo_model(state, target.full_name), now) for target in targets]
     dependencies = {target.full_name: target.dependencies for target in targets}
 
@@ -669,7 +669,7 @@ def render_daily_report(
             "",
             "## Scheduling",
             "",
-            "Repository selection is produced by HARMONY v2 using multi-timescale change "
+            "Repository selection is produced by SKOPRÆD v2 using multi-timescale change "
             "dynamics, online regime-shift evidence, content yield, seeded dependency "
             "diffusion, uncertainty-aware exploration, portfolio coverage, and scan cost.",
             "",
