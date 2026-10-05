@@ -176,8 +176,7 @@ pub fn exploration_votes(
     total_observations: u32,
 ) -> Vec<(&'static str, f64)> {
     let pulls = observation_count.max(hits + misses);
-    let mean = (hits as f64 + 0.5) / (hits + misses) as f64
-        .mul_add(1.0, 1.0);
+    let mean = (hits as f64 + 0.5) / ((hits + misses) as f64 + 1.0);
     let ucbv = ucb_v(mean, variance, pulls, total_observations);
     let kl = kl_ucb(mean, pulls, total_observations, 1e-7);
     let bayes = bayes_ucb(hits as f64 + 1.0, misses as f64 + 1.0, total_observations);
