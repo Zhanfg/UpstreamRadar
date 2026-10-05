@@ -1,0 +1,21 @@
+[package]
+name = "harmony-museum"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Typed HARMONY Algorithm Museum runtime for UpstreamRadar"
+
+[lib]
+name = "harmony_museum"
+path = "src/lib.rs"
+
+[[bin]]
+name = "harmony-museum"
+path = "src/bin/harmony-museum.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+serde_json = "1"
