@@ -74,7 +74,7 @@ GitHub produces:
 
 GitLab produces equivalent GitLab-specific files.
 
-These records make discovery decisions auditable and allow later HARMONY
+These records make discovery decisions auditable and allow later SKOPRÆD
 versions to learn whether a candidate actually became useful.
 
 ## Governed fork queue
