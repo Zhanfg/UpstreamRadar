@@ -2,7 +2,6 @@ name: Upstream Radar
 
 on:
   schedule:
-    # Off-boundary minutes reduce contention on GitHub's scheduler.
     - cron: "7,22,37,52 * * * *"
   push:
     branches:
@@ -47,8 +46,7 @@ jobs:
 
       - name: Synchronize main
         shell: bash
-        run: |
-          git pull --ff-only origin main
+        run: git pull --ff-only origin main
 
       - name: Run HARMONY collector
         shell: bash
@@ -62,65 +60,45 @@ jobs:
             python -m upstreamradar.collector
           fi
 
-      - name: Commit changed upstream snapshots atomically
+      - name: Commit semantic radar transition atomically
         shell: bash
         run: |
           set -euo pipefail
 
-          if [[ ! -f .radar/manifest.json ]]; then
-            echo "No manifest produced."
-            exit 1
-          fi
+          [[ -f .radar/manifest.json ]] || { echo "No manifest produced."; exit 1; }
 
           if [[ "$(jq -r '.ran' .radar/manifest.json)" != "true" ]]; then
             echo "This slot was skipped by the adaptive gate."
             exit 0
           fi
 
-          while IFS= read -r file; do
-            [[ -z "$file" ]] && continue
-            [[ ! -f "$file" ]] && continue
+          changed="$(jq '.summary.changed | length' .radar/manifest.json)"
+          errors="$(jq '.summary.errors | length' .radar/manifest.json)"
 
-            git add -- "$file"
-
-            if git diff --cached --quiet; then
-              continue
-            fi
-
-            base="$(basename "$file" .json)"
-            repo_name="${base/__//}"
-
-            git commit               -m "[data] refresh ${repo_name}"               -m "Automated snapshot from live GitHub upstream metadata."
-          done < <(jq -r '.changed_files[]?' .radar/manifest.json)
-
-      - name: Commit scheduler checkpoint
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          if [[ "$(jq -r '.ran' .radar/manifest.json)" != "true" ]]; then
+          if [[ "$changed" -eq 0 && "$errors" -eq 0 ]]; then
+            echo "No semantic upstream transition; polling leaves no commit."
             exit 0
           fi
+
+          while IFS= read -r file; do
+            [[ -n "$file" && -f "$file" ]] && git add -- "$file"
+          done < <(jq -r '.changed_files[]?' .radar/manifest.json)
 
           while IFS= read -r file; do
             [[ -n "$file" && -f "$file" ]] && git add -- "$file"
           done < <(jq -r '.checkpoint_files[]?' .radar/manifest.json)
 
           if git diff --cached --quiet; then
-            echo "No checkpoint changes."
+            echo "Manifest reported a transition but no tracked payload changed."
             exit 0
           fi
 
           observed="$(jq -r '.observed_at' .radar/manifest.json)"
           selected="$(jq '.summary.selected | length' .radar/manifest.json)"
-          changed="$(jq '.summary.changed | length' .radar/manifest.json)"
-          errors="$(jq '.summary.errors | length' .radar/manifest.json)"
           pressure="$(jq -r '.summary.catch_up_multiplier' .radar/manifest.json)"
           elapsed="$(jq -r '.summary.elapsed_since_previous_run_hours' .radar/manifest.json)"
 
-          git commit \
-            -m "[radar] checkpoint ${observed}" \
-            -m "selected=${selected} changed=${changed} errors=${errors} catch_up=${pressure}x elapsed=${elapsed}h"
+          git commit             -m "[radar] record ${changed} upstream transition(s)"             -m "observed=${observed} selected=${selected} changed=${changed} errors=${errors} catch_up=${pressure}x elapsed=${elapsed}h"
 
       - name: Push collected data
         shell: bash
@@ -139,7 +117,6 @@ jobs:
           GH_TOKEN: ${{ secrets.UPSTREAMRADAR_PAT }}
         run: |
           set -euo pipefail
-
           [[ -f .radar/manifest.json ]] || exit 0
 
           jq -c '.anomalies[]?' .radar/manifest.json | while IFS= read -r item; do
@@ -149,7 +126,7 @@ jobs:
             title="[radar] Repeated collection failure: ${full_name}"
 
             existing="$(
-              gh issue list                 --repo "${GITHUB_REPOSITORY}"                 --state open                 --search "${title} in:title"                 --json title                 --jq 'length'
+              gh issue list --repo "${GITHUB_REPOSITORY}" --state open                 --search "${title} in:title" --json title --jq 'length'
             )"
 
             if [[ "$existing" != "0" ]]; then
@@ -158,15 +135,14 @@ jobs:
             fi
 
             body="$(cat <<EOF
-          UpstreamRadar failed to collect this target for **${streak} consecutive scheduled checks**.
+UpstreamRadar failed to collect this target for **${streak} consecutive scheduled checks**.
 
-          - target: \`${full_name}\`
-          - latest error: \`${message}\`
-          - detected by: automated HARMONY collector
+- target: `${full_name}`
+- latest error: `${message}`
+- detected by: automated HARMONY collector
 
-          This issue is generated only after repeated failures to avoid transient-error noise.
-          EOF
-          )"
-
-            gh issue create               --repo "${GITHUB_REPOSITORY}"               --title "${title}"               --body "${body}"
+This issue is generated only after repeated failures to avoid transient-error noise.
+EOF
+)"
+            gh issue create --repo "${GITHUB_REPOSITORY}" --title "${title}" --body "${body}"
           done

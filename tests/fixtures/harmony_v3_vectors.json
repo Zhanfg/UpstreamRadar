@@ -1,0 +1,17 @@
+{
+  "version": "harmony-v3",
+  "vectors": {
+    "surprise": [
+      {"empirical": 0.9, "predicted": 0.2, "relation": "high"},
+      {"empirical": 0.21, "predicted": 0.2, "relation": "low"}
+    ],
+    "cvar": [
+      {"values": [0.1, 0.2, 0.3, 0.9], "quantile": 0.75, "expected": 0.9},
+      {"values": [0.1, 0.2, 0.3, 0.4], "quantile": 0.5, "expected": 0.35}
+    ],
+    "risk_adjusted": [
+      {"utility": 0.8, "tail_risk": 0.0, "reliability": 1.0, "expected": 0.8},
+      {"utility": 0.8, "tail_risk": 1.0, "reliability": 1.0, "expected": 0.712}
+    ]
+  }
+}

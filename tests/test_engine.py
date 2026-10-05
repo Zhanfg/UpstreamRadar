@@ -128,6 +128,51 @@ class HarmonySchedulerTests(unittest.TestCase):
             scores["agent-runtime"].graph_influence,
         )
 
+    def test_v3_evidence_dimensions_are_bounded(self):
+        scores = self.scheduler.score(self.records, self.dependencies)
+        for score in scores:
+            self.assertGreaterEqual(score.bayesian_surprise, 0.0)
+            self.assertLessEqual(score.bayesian_surprise, 1.0)
+            self.assertGreaterEqual(score.structural_novelty, 0.0)
+            self.assertLessEqual(score.structural_novelty, 1.0)
+            self.assertGreaterEqual(score.tail_risk, 0.0)
+            self.assertLessEqual(score.tail_risk, 1.0)
+            self.assertGreater(score.risk_adjusted_utility, 0.0)
+
+    def test_high_failure_streak_increases_tail_risk(self):
+        stable = RepositorySignal(
+            name="stable",
+            ecosystem="test",
+            cost=1,
+            freshness_hours=1,
+            security_signal=2,
+            breakage_risk=2,
+            impact_history=(1, 1, 2, 1),
+            failure_streak=0,
+        )
+        unstable = RepositorySignal(
+            name="unstable",
+            ecosystem="test",
+            cost=1,
+            freshness_hours=1,
+            security_signal=2,
+            breakage_risk=2,
+            impact_history=(1, 1, 2, 1),
+            failure_streak=7,
+        )
+        scores = {item.name: item for item in self.scheduler.score([stable, unstable])}
+        self.assertGreater(scores["unstable"].tail_risk, scores["stable"].tail_risk)
+
+    def test_structural_novelty_rewards_rare_dependency_shape(self):
+        records = [
+            RepositorySignal(name="a", ecosystem="x", cost=1, freshness_hours=1, novelty=5),
+            RepositorySignal(name="b", ecosystem="x", cost=1, freshness_hours=1, novelty=5),
+            RepositorySignal(name="c", ecosystem="x", cost=1, freshness_hours=1, novelty=5),
+        ]
+        deps = {"a": ["shared"], "b": ["shared"], "c": ["rare", "unique"]}
+        scores = {item.name: item for item in self.scheduler.score(records, deps)}
+        self.assertGreater(scores["c"].structural_novelty, scores["a"].structural_novelty)
+
     def test_budget_and_ecosystem_constraints(self):
         result = self.scheduler.schedule(
             self.records,

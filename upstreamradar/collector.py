@@ -238,7 +238,7 @@ def repo_snapshot(
 
 def initial_state() -> dict[str, Any]:
     return {
-        "version": 3,
+        "version": 4,
         "repositories": {},
         "daily": {},
         "scheduler": {},
@@ -437,6 +437,24 @@ def select_targets(
             "reliability": round(candidate.reliability, 8),
             "exploration": round(candidate.exploration, 8),
             "security_focus": round(candidate.security_focus, 8),
+            "bayesian_surprise": round(candidate.bayesian_surprise, 8),
+            "structural_novelty": round(candidate.structural_novelty, 8),
+            "tail_risk": round(candidate.tail_risk, 8),
+            "risk_adjusted_utility": round(candidate.risk_adjusted_utility, 8),
+            "museum": {
+                "robust_activity": round(candidate.museum.robust_activity, 8),
+                "change_consensus": round(candidate.museum.change_consensus, 8),
+                "information_gain": round(candidate.museum.information_gain, 8),
+                "graph_consensus": round(candidate.museum.graph_consensus, 8),
+                "bandit_index": round(candidate.museum.bandit_index, 8),
+                "dependency_novelty": round(candidate.museum.dependency_novelty, 8),
+                "disagreement": round(candidate.museum.disagreement, 8),
+                "consensus": round(candidate.museum.consensus, 8),
+                "trace": [
+                    [name, round(value, 8)]
+                    for name, value in candidate.museum.trace
+                ],
+            },
             "reasons": list(candidate.reasons),
         }
         for candidate in ordered
@@ -449,6 +467,7 @@ def select_targets(
         "coverage_score": round(result.coverage_score, 8),
         "content_score": round(result.content_score, 8),
         "content_plan": content_plan,
+        "museum_audit": asdict(result.audit) if result.audit is not None else None,
     }
     return selected, scores, selection_meta
 

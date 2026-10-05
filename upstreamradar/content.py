@@ -29,6 +29,14 @@ def _angle(score: CandidateScore) -> str:
         return "Anomalous upstream behavior worth contextual investigation"
     if "dependency-hub" in reasons:
         return "Dependency hub whose changes can propagate across the tracked graph"
+    if "high-surprise" in reasons and "structural-novelty" in reasons:
+        return "Unexpected structural change with low redundancy against the tracked portfolio"
+    if "museum-consensus" in reasons and "high-surprise" in reasons:
+        return "Multi-algorithm consensus around an information-rich unexpected upstream transition"
+    if "algorithm-disagreement" in reasons:
+        return "Algorithm disagreement case worth manual inspection before stronger conclusions"
+    if "tail-risk" in reasons:
+        return "High-tail-risk upstream transition requiring evidence-first review"
     return "General upstream update selected by multi-objective scheduling"
 
 
@@ -41,6 +49,13 @@ def _evidence(score: CandidateScore) -> tuple[str, ...]:
         ("momentum", score.momentum),
         ("anomaly", score.anomaly),
         ("exploration", score.exploration),
+        ("bayesian-surprise", score.bayesian_surprise),
+        ("structural-novelty", score.structural_novelty),
+        ("tail-risk", score.tail_risk),
+        ("museum-consensus", score.museum.consensus),
+        ("algorithm-disagreement", score.museum.disagreement),
+        ("information-gain", score.museum.information_gain),
+        ("bandit-index", score.museum.bandit_index),
         ("reliability", score.reliability),
     )
     ranked = sorted(metrics, key=lambda item: (-item[1], item[0]))
@@ -73,6 +88,12 @@ def build_content_plan(
             + 0.12 * score.change_probability
             + 0.08 * score.security_focus
             + 0.08 * min(score.exploration * 4.0, 1.0)
+            + 0.10 * score.bayesian_surprise
+            + 0.07 * score.structural_novelty
+            + 0.10 * score.museum.consensus
+            + 0.06 * score.museum.information_gain
+            - 0.05 * score.museum.disagreement
+            - 0.06 * score.tail_risk
         ) * score.reliability
 
         opportunities.append(

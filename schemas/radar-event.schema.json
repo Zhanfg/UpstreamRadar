@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://upstreamradar.dev/schema/radar-event.json",
+  "title": "UpstreamRadar Event",
+  "type": "object",
+  "required": [
+    "source",
+    "repository",
+    "observed_at",
+    "event_type",
+    "semantic_impact"
+  ],
+  "properties": {
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repository": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "semantic_impact": {
+      "type": "number",
+      "minimum": 0
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "payload": {
+      "type": "object"
+    },
+    "harmony_v3": {
+      "$ref": "harmony-v3-score.schema.json"
+    },
+    "harmony_v4": {
+      "$ref": "harmony-v4-score.schema.json"
+    }
+  },
+  "additionalProperties": false
+}

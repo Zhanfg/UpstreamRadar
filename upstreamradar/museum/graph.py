@@ -1,0 +1,306 @@
+from __future__ import annotations
+
+from collections import deque
+from heapq import heappop, heappush
+from math import sqrt
+from typing import Mapping, Sequence
+
+_EPS = 1e-12
+
+
+def _nodes(graph: Mapping[str, Sequence[str]]) -> tuple[str, ...]:
+    found = set(graph)
+    for targets in graph.values():
+        found.update(targets)
+    return tuple(sorted(found))
+
+
+def pagerank(
+    graph: Mapping[str, Sequence[str]],
+    *,
+    damping: float = 0.85,
+    steps: int = 48,
+    seeds: Mapping[str, float] | None = None,
+) -> dict[str, float]:
+    nodes = _nodes(graph)
+    if not nodes:
+        return {}
+    known = set(nodes)
+    raw = {
+        node: max(float((seeds or {}).get(node, 1.0)), _EPS)
+        for node in nodes
+    }
+    total = sum(raw.values())
+    teleport = {node: raw[node] / total for node in nodes}
+    rank = dict(teleport)
+
+    for _ in range(max(1, steps)):
+        nxt = {node: (1.0 - damping) * teleport[node] for node in nodes}
+        dangling = 0.0
+        for source in nodes:
+            targets = tuple(
+                target for target in graph.get(source, ())
+                if target in known and target != source
+            )
+            if not targets:
+                dangling += rank[source]
+                continue
+            share = damping * rank[source] / len(targets)
+            for target in targets:
+                nxt[target] += share
+        if dangling:
+            for node in nodes:
+                nxt[node] += damping * dangling * teleport[node]
+        rank = nxt
+
+    scale = sum(rank.values()) or 1.0
+    return {node: rank[node] / scale for node in nodes}
+
+
+def hits(
+    graph: Mapping[str, Sequence[str]],
+    *,
+    steps: int = 32,
+) -> tuple[dict[str, float], dict[str, float]]:
+    nodes = _nodes(graph)
+    if not nodes:
+        return {}, {}
+    known = set(nodes)
+    hubs = {node: 1.0 for node in nodes}
+    authorities = {node: 1.0 for node in nodes}
+
+    incoming: dict[str, list[str]] = {node: [] for node in nodes}
+    outgoing: dict[str, tuple[str, ...]] = {}
+    for source in nodes:
+        targets = tuple(
+            target for target in graph.get(source, ())
+            if target in known and target != source
+        )
+        outgoing[source] = targets
+        for target in targets:
+            incoming[target].append(source)
+
+    for _ in range(max(1, steps)):
+        new_authorities = {
+            node: sum(hubs[source] for source in incoming[node])
+            for node in nodes
+        }
+        norm = sqrt(sum(value * value for value in new_authorities.values())) or 1.0
+        new_authorities = {
+            node: value / norm for node, value in new_authorities.items()
+        }
+
+        new_hubs = {
+            node: sum(new_authorities[target] for target in outgoing[node])
+            for node in nodes
+        }
+        norm = sqrt(sum(value * value for value in new_hubs.values())) or 1.0
+        hubs = {node: value / norm for node, value in new_hubs.items()}
+        authorities = new_authorities
+
+    return hubs, authorities
+
+
+def katz(
+    graph: Mapping[str, Sequence[str]],
+    *,
+    alpha: float | None = None,
+    beta: float = 1.0,
+    steps: int = 40,
+) -> dict[str, float]:
+    nodes = _nodes(graph)
+    if not nodes:
+        return {}
+    known = set(nodes)
+    incoming: dict[str, list[str]] = {node: [] for node in nodes}
+    maximum_degree = 1
+    for source in nodes:
+        targets = tuple(
+            target for target in graph.get(source, ())
+            if target in known and target != source
+        )
+        maximum_degree = max(maximum_degree, len(targets))
+        for target in targets:
+            incoming[target].append(source)
+
+    attenuation = alpha if alpha is not None else 0.85 / maximum_degree
+    scores = {node: 1.0 for node in nodes}
+    for _ in range(max(1, steps)):
+        nxt = {
+            node: beta + attenuation * sum(scores[source] for source in incoming[node])
+            for node in nodes
+        }
+        scale = max(nxt.values(), default=1.0) or 1.0
+        scores = {node: value / scale for node, value in nxt.items()}
+    return scores
+
+
+def tarjan_scc(graph: Mapping[str, Sequence[str]]) -> tuple[tuple[str, ...], ...]:
+    nodes = _nodes(graph)
+    known = set(nodes)
+    index = 0
+    stack: list[str] = []
+    on_stack: set[str] = set()
+    indices: dict[str, int] = {}
+    lowlink: dict[str, int] = {}
+    components: list[tuple[str, ...]] = []
+
+    def visit(node: str) -> None:
+        nonlocal index
+        indices[node] = index
+        lowlink[node] = index
+        index += 1
+        stack.append(node)
+        on_stack.add(node)
+
+        for target in graph.get(node, ()):
+            if target not in known or target == node:
+                continue
+            if target not in indices:
+                visit(target)
+                lowlink[node] = min(lowlink[node], lowlink[target])
+            elif target in on_stack:
+                lowlink[node] = min(lowlink[node], indices[target])
+
+        if lowlink[node] == indices[node]:
+            component: list[str] = []
+            while stack:
+                member = stack.pop()
+                on_stack.remove(member)
+                component.append(member)
+                if member == node:
+                    break
+            components.append(tuple(sorted(component)))
+
+    for node in nodes:
+        if node not in indices:
+            visit(node)
+    return tuple(sorted(components, key=lambda group: (group[0], len(group))))
+
+
+def brandes_betweenness(
+    graph: Mapping[str, Sequence[str]],
+) -> dict[str, float]:
+    """Brandes exact betweenness for an unweighted directed graph."""
+    nodes = _nodes(graph)
+    known = set(nodes)
+    score = {node: 0.0 for node in nodes}
+
+    for source in nodes:
+        stack: list[str] = []
+        predecessors: dict[str, list[str]] = {node: [] for node in nodes}
+        sigma = {node: 0.0 for node in nodes}
+        sigma[source] = 1.0
+        distance = {node: -1 for node in nodes}
+        distance[source] = 0
+        queue = deque([source])
+
+        while queue:
+            vertex = queue.popleft()
+            stack.append(vertex)
+            for target in graph.get(vertex, ()):
+                if target not in known or target == vertex:
+                    continue
+                if distance[target] < 0:
+                    queue.append(target)
+                    distance[target] = distance[vertex] + 1
+                if distance[target] == distance[vertex] + 1:
+                    sigma[target] += sigma[vertex]
+                    predecessors[target].append(vertex)
+
+        dependency = {node: 0.0 for node in nodes}
+        while stack:
+            target = stack.pop()
+            if sigma[target] > 0.0:
+                coefficient = (1.0 + dependency[target]) / sigma[target]
+                for predecessor in predecessors[target]:
+                    dependency[predecessor] += sigma[predecessor] * coefficient
+            if target != source:
+                score[target] += dependency[target]
+
+    maximum = max(score.values(), default=1.0) or 1.0
+    return {node: value / maximum for node, value in score.items()}
+
+
+def k_core_numbers(
+    graph: Mapping[str, Sequence[str]],
+) -> dict[str, float]:
+    """Core numbers on the undirected projection using a degree heap."""
+    nodes = _nodes(graph)
+    adjacency: dict[str, set[str]] = {node: set() for node in nodes}
+    for source in nodes:
+        for target in graph.get(source, ()):
+            if target not in adjacency or target == source:
+                continue
+            adjacency[source].add(target)
+            adjacency[target].add(source)
+
+    degree = {node: len(neighbors) for node, neighbors in adjacency.items()}
+    heap: list[tuple[int, str]] = []
+    for node, value in degree.items():
+        heappush(heap, (value, node))
+
+    removed: set[str] = set()
+    core: dict[str, int] = {}
+    degeneracy = 0
+    while heap:
+        current_degree, node = heappop(heap)
+        if node in removed or current_degree != degree[node]:
+            continue
+        removed.add(node)
+        degeneracy = max(degeneracy, current_degree)
+        core[node] = degeneracy
+        for neighbor in adjacency[node]:
+            if neighbor in removed:
+                continue
+            degree[neighbor] -= 1
+            heappush(heap, (degree[neighbor], neighbor))
+
+    maximum = max(core.values(), default=1) or 1
+    return {node: core.get(node, 0) / maximum for node in nodes}
+
+
+def centrality_consensus(
+    graph: Mapping[str, Sequence[str]],
+    *,
+    seeds: Mapping[str, float] | None = None,
+) -> tuple[dict[str, float], dict[str, tuple[tuple[str, float], ...]]]:
+    pr = pagerank(graph, seeds=seeds)
+    hubs, authorities = hits(graph)
+    kz = katz(graph)
+    between = brandes_betweenness(graph)
+    core = k_core_numbers(graph)
+    sccs = tarjan_scc(graph)
+
+    max_pr = max(pr.values(), default=1.0) or 1.0
+    max_hub = max(hubs.values(), default=1.0) or 1.0
+    max_auth = max(authorities.values(), default=1.0) or 1.0
+    cyclic = {
+        node
+        for component in sccs
+        if len(component) > 1
+        for node in component
+    }
+
+    result: dict[str, float] = {}
+    trace: dict[str, tuple[tuple[str, float], ...]] = {}
+    for node in _nodes(graph):
+        prn = pr.get(node, 0.0) / max_pr
+        hub = hubs.get(node, 0.0) / max_hub
+        auth = authorities.get(node, 0.0) / max_auth
+        katz_score = kz.get(node, 0.0)
+        cycle = 1.0 if node in cyclic else 0.0
+        votes = (
+            ("pagerank", prn),
+            ("hits-hub", hub),
+            ("hits-authority", auth),
+            ("katz", katz_score),
+            ("brandes", between.get(node, 0.0)),
+            ("k-core", core.get(node, 0.0)),
+            ("tarjan-cycle", cycle),
+        )
+        mean = sum(value for _, value in votes) / len(votes)
+        spread = max(value for _, value in votes) - min(value for _, value in votes)
+        result[node] = max(0.0, min(1.0, mean * (1.0 - 0.16 * spread)))
+        trace[node] = votes
+    return result, trace

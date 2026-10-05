@@ -1,0 +1,22 @@
+{
+  "mode": "release-only",
+  "source_obfuscation": false,
+  "web": {
+    "minify": true,
+    "bundle": true,
+    "source_maps": false,
+    "legal_comments": "none"
+  },
+  "native": {
+    "strip_symbols": true,
+    "strip_mode": "unneeded"
+  },
+  "jvm": {
+    "shrink_when_packaged": true,
+    "keep_public_schema_types": true
+  },
+  "dotnet": {
+    "trim_when_published": true,
+    "keep_reflection_contracts": true
+  }
+}
