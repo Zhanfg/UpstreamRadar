@@ -158,7 +158,7 @@ def plan_downstream_impacts(
                 f"- observed at: {observed_at}\n"
                 f"- semantic impact: {impact:.2f}\n"
                 f"- changed fields: {', '.join(fields) or 'snapshot'}\n"
-                f"- HARMONY reasons: {', '.join(reasons) or 'none'}\n"
+                f"- SKOPRÆD reasons: {', '.join(reasons) or 'none'}\n"
                 f"- evidence hash: {evidence_hash}\n\n"
                 "Suggested validation:\n\n"
                 f"{checklist_text}\n\n"
