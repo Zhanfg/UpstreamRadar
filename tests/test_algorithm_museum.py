@@ -80,7 +80,12 @@ class AlgorithmMuseumTests(unittest.TestCase):
             {"page-hinkley", "cusum", "bocpd-beta", "adwin", "theil-sen"}
             <= names
         )
-        self.assertGreater(adwin_score(shifted), adwin_score(stable))
+        adwin_stable = [0.1] * 48
+        adwin_shifted = [0.1] * 24 + [0.9] * 24
+        self.assertGreater(
+            adwin_score(adwin_shifted),
+            adwin_score(adwin_stable),
+        )
 
     def test_information_divergence_is_symmetric(self):
         left = [9, 1, 0, 0]
