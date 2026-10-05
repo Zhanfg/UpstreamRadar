@@ -95,7 +95,7 @@ def set_state(number: int, state: str) -> None:
 def incident_body(kind: str, evidence: dict) -> str:
     if kind == "benchmark":
         return (
-            "Activity Matrix v2 detected a measured HARMONY engineering-health "
+            "Activity Matrix v2 detected a measured SKOPRÆD engineering-health "
             "regression.\n\n"
             f"- median_ms: {evidence.get('median_ms')}\n"
             f"- previous_median_ms: {evidence.get('previous_median_ms')}\n"
@@ -208,7 +208,7 @@ def main() -> int:
         [
             sys.executable,
             "-m",
-            "scripts.benchmark_harmony",
+            "scripts.benchmark_skopraed",
             "--baseline",
             str(baseline_path),
             "--output",
@@ -246,7 +246,7 @@ def main() -> int:
     actions += reconcile(
         state,
         key="benchmark",
-        title="[benchmark] HARMONY engineering health regression",
+        title="[benchmark] SKOPRÆD engineering health regression",
         active=benchmark_active,
         evidence=benchmark_evidence,
         now=now,
