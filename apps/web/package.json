@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "build:release": "tsc -p tsconfig.json && esbuild src/v3.ts --bundle --minify --legal-comments=none --outfile=dist/skopraed-legacy-v3.min.js && esbuild src/museum/index.ts --bundle --minify --legal-comments=none --outfile=dist/skopraed-museum.min.js"
+    "build:release": "tsc -p tsconfig.json && esbuild src/skopraedLegacyV3.ts --bundle --minify --legal-comments=none --outfile=dist/skopraed-legacy-v3.min.js && esbuild src/museum/index.ts --bundle --minify --legal-comments=none --outfile=dist/skopraed-museum.min.js"
   },
   "devDependencies": {
     "typescript": "^5.9.0",
