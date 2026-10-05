@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections import deque
+from heapq import heappop, heappush
 from math import sqrt
 from typing import Mapping, Sequence
 
@@ -176,6 +178,88 @@ def tarjan_scc(graph: Mapping[str, Sequence[str]]) -> tuple[tuple[str, ...], ...
     return tuple(sorted(components, key=lambda group: (group[0], len(group))))
 
 
+def brandes_betweenness(
+    graph: Mapping[str, Sequence[str]],
+) -> dict[str, float]:
+    """Brandes exact betweenness for an unweighted directed graph."""
+    nodes = _nodes(graph)
+    known = set(nodes)
+    score = {node: 0.0 for node in nodes}
+
+    for source in nodes:
+        stack: list[str] = []
+        predecessors: dict[str, list[str]] = {node: [] for node in nodes}
+        sigma = {node: 0.0 for node in nodes}
+        sigma[source] = 1.0
+        distance = {node: -1 for node in nodes}
+        distance[source] = 0
+        queue = deque([source])
+
+        while queue:
+            vertex = queue.popleft()
+            stack.append(vertex)
+            for target in graph.get(vertex, ()):
+                if target not in known or target == vertex:
+                    continue
+                if distance[target] < 0:
+                    queue.append(target)
+                    distance[target] = distance[vertex] + 1
+                if distance[target] == distance[vertex] + 1:
+                    sigma[target] += sigma[vertex]
+                    predecessors[target].append(vertex)
+
+        dependency = {node: 0.0 for node in nodes}
+        while stack:
+            target = stack.pop()
+            if sigma[target] > 0.0:
+                coefficient = (1.0 + dependency[target]) / sigma[target]
+                for predecessor in predecessors[target]:
+                    dependency[predecessor] += sigma[predecessor] * coefficient
+            if target != source:
+                score[target] += dependency[target]
+
+    maximum = max(score.values(), default=1.0) or 1.0
+    return {node: value / maximum for node, value in score.items()}
+
+
+def k_core_numbers(
+    graph: Mapping[str, Sequence[str]],
+) -> dict[str, float]:
+    """Core numbers on the undirected projection using a degree heap."""
+    nodes = _nodes(graph)
+    adjacency: dict[str, set[str]] = {node: set() for node in nodes}
+    for source in nodes:
+        for target in graph.get(source, ()):
+            if target not in adjacency or target == source:
+                continue
+            adjacency[source].add(target)
+            adjacency[target].add(source)
+
+    degree = {node: len(neighbors) for node, neighbors in adjacency.items()}
+    heap: list[tuple[int, str]] = []
+    for node, value in degree.items():
+        heappush(heap, (value, node))
+
+    removed: set[str] = set()
+    core: dict[str, int] = {}
+    degeneracy = 0
+    while heap:
+        current_degree, node = heappop(heap)
+        if node in removed or current_degree != degree[node]:
+            continue
+        removed.add(node)
+        degeneracy = max(degeneracy, current_degree)
+        core[node] = degeneracy
+        for neighbor in adjacency[node]:
+            if neighbor in removed:
+                continue
+            degree[neighbor] -= 1
+            heappush(heap, (degree[neighbor], neighbor))
+
+    maximum = max(core.values(), default=1) or 1
+    return {node: core.get(node, 0) / maximum for node in nodes}
+
+
 def centrality_consensus(
     graph: Mapping[str, Sequence[str]],
     *,
@@ -184,6 +268,8 @@ def centrality_consensus(
     pr = pagerank(graph, seeds=seeds)
     hubs, authorities = hits(graph)
     kz = katz(graph)
+    between = brandes_betweenness(graph)
+    core = k_core_numbers(graph)
     sccs = tarjan_scc(graph)
 
     max_pr = max(pr.values(), default=1.0) or 1.0
@@ -209,6 +295,8 @@ def centrality_consensus(
             ("hits-hub", hub),
             ("hits-authority", auth),
             ("katz", katz_score),
+            ("brandes", between.get(node, 0.0)),
+            ("k-core", core.get(node, 0.0)),
             ("tarjan-cycle", cycle),
         )
         mean = sum(value for _, value in votes) / len(votes)
