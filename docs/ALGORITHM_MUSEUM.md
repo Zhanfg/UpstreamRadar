@@ -22,7 +22,7 @@ The executable source of truth is `upstreamradar/museum/registry.py`; `museum/ca
 │   CUSUM · Page–Hinkley · ADWIN · Beta-Bernoulli BOCPD      │
 ├──────────────────────────────────────────────────────────────┤
 │ Gallery III Information theory                              │
-│   entropy · Jensen–Shannon · Wasserstein-1                 │
+│   entropy · Jensen–Shannon · Wasserstein-1 · RBF MMD       │
 ├──────────────────────────────────────────────────────────────┤
 │ Gallery IV  Graph structure                                 │
 │   Katz · Tarjan SCC · k-core · PageRank · HITS · Brandes   │
@@ -31,7 +31,7 @@ The executable source of truth is `upstreamradar/museum/registry.py`; `museum/ca
 │   UCB-V · KL-UCB · Bayes-UCB                               │
 ├──────────────────────────────────────────────────────────────┤
 │ Gallery VI  Streaming / approximation                       │
-│   MinHash dependency similarity                            │
+│   Bloom · MinHash · Count-Min · Space-Saving · HyperLogLog │
 ├──────────────────────────────────────────────────────────────┤
 │ Gallery VII Combinatorial & submodular optimization         │
 │   0/1 knapsack · CELF lazy greedy                          │
@@ -57,7 +57,12 @@ The executable source of truth is `upstreamradar/museum/registry.py`; `museum/ca
 | 1983 | k-core decomposition | Graph | structural core membership |
 | 1985 | ε-Pareto archive | Multi-objective | diagnostic non-dominated frontier |
 | 1991 | Jensen–Shannon divergence | Information theory | history distribution shift |
+| 2006 | Maximum Mean Discrepancy | Information theory | kernel two-sample distribution shift |
+| 1970 | Bloom filter | Sketches | probabilistic membership |
 | 1997 | MinHash | Sketches | dependency-set novelty at scale |
+| 2003 | Count-Min Sketch | Sketches | approximate frequencies |
+| 2005 | Space-Saving | Sketches | bounded-memory heavy hitters |
+| 2007 | HyperLogLog | Sketches | approximate cardinality |
 | 1998 | PageRank | Graph | stationary dependency influence |
 | 1999 | HITS | Graph | hub/authority decomposition |
 | 2001 | Brandes betweenness | Graph | shortest-path mediation |
@@ -148,3 +153,22 @@ The museum rejects three forms of fake complexity:
 - source obfuscation presented as algorithmic sophistication.
 
 Release minification/symbol stripping remains separate from the museum and does not affect source auditability.
+
+
+## Streaming gallery
+
+The streaming gallery is intentionally separated into **production** and **reference/infrastructure** exhibits.
+
+- MinHash currently contributes dependency-set novelty to HARMONY.
+- Bloom Filter, Count-Min Sketch, Space-Saving and HyperLogLog are executable infrastructure exhibits for future high-volume collectors and are tested for their core invariants.
+- They do not receive scheduler weight merely because they exist.
+
+## Information-distance gallery
+
+Distribution shift is now triangulated by three geometrically different views:
+
+- Jensen–Shannon divergence: probability-mass shape;
+- Wasserstein-1: how far mass must move;
+- RBF Maximum Mean Discrepancy: kernel-space two-sample discrepancy.
+
+Their disagreement is preserved, so a binning artifact in JSD cannot silently dominate the result.
