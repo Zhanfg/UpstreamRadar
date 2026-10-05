@@ -10,7 +10,7 @@ type Repository {
   events(limit: Int = 50): [RadarEvent!]!
 }
 
-type HarmonyV3Score {
+type SkopraedScore {
   changeProbability: Float!
   graphInfluence: Float!
   anomaly: Float!
@@ -38,7 +38,7 @@ type RadarEvent {
   semanticImpact: Float!
   fingerprint: String!
   payload: JSON!
-  harmony: HarmonyV3Score
+  skopraed: SkopraedScore
 }
 
 type RadarSummary {
