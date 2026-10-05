@@ -75,6 +75,37 @@ class HarmonyV4Tests(unittest.TestCase):
             scores["a"].museum.graph_consensus,
         )
 
+    def test_schedule_exposes_reference_selector_audit(self):
+        records = [
+            RepositorySignal(
+                name="a", ecosystem="one", cost=2, freshness_hours=1,
+                novelty=8, recent_change_hits=6, recent_change_misses=2,
+            ),
+            RepositorySignal(
+                name="b", ecosystem="one", cost=1, freshness_hours=2,
+                novelty=4, recent_change_hits=2, recent_change_misses=6,
+            ),
+            RepositorySignal(
+                name="c", ecosystem="two", cost=2, freshness_hours=1,
+                novelty=9, recent_change_hits=5, recent_change_misses=3,
+            ),
+        ]
+        result = self.scheduler.schedule(
+            records,
+            budget=3,
+            dependencies={"a": ("c",), "b": (), "c": ()},
+        )
+        self.assertIsNotNone(result.audit)
+        audit = result.audit
+        assert audit is not None
+        self.assertEqual(
+            set(audit.production_selected),
+            {score.name for score in result.selected},
+        )
+        self.assertTrue(0.0 <= audit.base_utility_ratio <= 1.0)
+        self.assertGreaterEqual(len(audit.pareto_frontier), 1)
+        self.assertGreaterEqual(len(audit.celf_selected), 1)
+
     def test_algorithm_disagreement_is_penalized_not_hidden(self):
         record = RepositorySignal(
             name="mixed",
