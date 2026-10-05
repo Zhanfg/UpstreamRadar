@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import exp, log
+from math import exp, log, sqrt
 from typing import Sequence
+
+from .robust import theil_sen_slope
 
 _EPS = 1e-12
 
@@ -121,6 +123,36 @@ def bernoulli_bocpd(
     )
 
 
+def adwin_score(
+    values: Sequence[float],
+    *,
+    delta: float = 0.01,
+    min_window: int = 3,
+) -> float:
+    """Deterministic ADWIN-style adaptive-window cut scan."""
+    xs = [_clamp01(v) for v in values]
+    if len(xs) < 2 * min_window:
+        return 0.0
+    strongest = 0.0
+    confidence = max(1e-12, min(0.5, delta))
+    log_term = log(4.0 / confidence)
+
+    prefix = [0.0]
+    for value in xs:
+        prefix.append(prefix[-1] + value)
+
+    for cut in range(min_window, len(xs) - min_window + 1):
+        n0 = cut
+        n1 = len(xs) - cut
+        mean0 = prefix[cut] / n0
+        mean1 = (prefix[-1] - prefix[cut]) / n1
+        epsilon = sqrt(0.5 * log_term * (1.0 / n0 + 1.0 / n1))
+        excess = abs(mean1 - mean0) - epsilon
+        if excess > 0.0:
+            strongest = max(strongest, excess / (1.0 + epsilon))
+    return _clamp01(strongest * 2.5)
+
+
 def change_consensus(
     impact_history: Sequence[float],
     change_history: Sequence[int],
@@ -131,10 +163,17 @@ def change_consensus(
     ph = page_hinkley_score(normalized)
     cu = cusum_score(normalized)
     bo = bernoulli_bocpd(change_history).reset_probability if change_history else 0.0
+    ad = adwin_score(normalized)
+    slope = _clamp01(abs(theil_sen_slope(normalized)) * 4.0)
 
-    votes = (("page-hinkley", ph), ("cusum", cu), ("bocpd-beta", bo))
-    # No single detector may dominate the ensemble. Geometric-ish agreement
-    # bonus rewards detectors that independently point in the same direction.
+    votes = (
+        ("page-hinkley", ph),
+        ("cusum", cu),
+        ("bocpd-beta", bo),
+        ("adwin", ad),
+        ("theil-sen", slope),
+    )
+    # No single detector may dominate the ensemble.
     mean = sum(value for _, value in votes) / len(votes)
     spread = max(value for _, value in votes) - min(value for _, value in votes)
     consensus = _clamp01(mean * (1.0 - 0.22 * spread))
