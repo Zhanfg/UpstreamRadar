@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from math import log2
+from math import exp, log2, sqrt
 from typing import Sequence
 
 _EPS = 1e-12
@@ -90,6 +90,43 @@ def wasserstein_1d(left: Sequence[float], right: Sequence[float]) -> float:
     return max(0.0, min(1.0, sum(distances) / len(distances)))
 
 
+def maximum_mean_discrepancy(
+    left: Sequence[float],
+    right: Sequence[float],
+    *,
+    bandwidth: float | None = None,
+) -> float:
+    """Biased RBF-kernel MMD, normalized to [0,1] for [0,1] samples."""
+    a = [max(0.0, min(1.0, float(v))) for v in left]
+    b = [max(0.0, min(1.0, float(v))) for v in right]
+    if not a and not b:
+        return 0.0
+    if not a or not b:
+        return 1.0
+
+    if bandwidth is None:
+        distances = sorted(
+            abs(x - y)
+            for index, x in enumerate(a + b)
+            for y in (a + b)[index + 1:]
+            if abs(x - y) > _EPS
+        )
+        sigma = distances[len(distances) // 2] if distances else 0.1
+    else:
+        sigma = max(float(bandwidth), 1e-6)
+    sigma = max(sigma, 1e-6)
+
+    def kernel(x: float, y: float) -> float:
+        distance = x - y
+        return exp(-(distance * distance) / (2.0 * sigma * sigma))
+
+    aa = sum(kernel(x, y) for x in a for y in a) / (len(a) * len(a))
+    bb = sum(kernel(x, y) for x in b for y in b) / (len(b) * len(b))
+    ab = sum(kernel(x, y) for x in a for y in b) / (len(a) * len(b))
+    mmd2 = max(0.0, aa + bb - 2.0 * ab)
+    return max(0.0, min(1.0, sqrt(mmd2 / 2.0)))
+
+
 def history_distribution_shift(
     values: Sequence[float],
 ) -> tuple[float, tuple[tuple[str, float], ...]]:
@@ -107,6 +144,9 @@ def history_distribution_shift(
 
     js = jensen_shannon(histogram(older), histogram(recent))
     w1 = wasserstein_1d(older, recent)
-    disagreement = abs(js - w1)
-    consensus = max(0.0, min(1.0, (0.60 * js + 0.40 * w1) * (1.0 - 0.12 * disagreement)))
-    return consensus, (("jsd", js), ("wasserstein-1", w1))
+    mmd = maximum_mean_discrepancy(older, recent)
+    votes = (("jsd", js), ("wasserstein-1", w1), ("mmd-rbf", mmd))
+    mean = 0.42 * js + 0.30 * w1 + 0.28 * mmd
+    disagreement = max(value for _, value in votes) - min(value for _, value in votes)
+    consensus = max(0.0, min(1.0, mean * (1.0 - 0.12 * disagreement)))
+    return consensus, votes
