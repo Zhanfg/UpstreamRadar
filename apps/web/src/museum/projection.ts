@@ -73,7 +73,7 @@ export function exhibitHeatmap(
   exhibits: string[];
   repositories: string[];
   values: number[][];
-} {
+} => {
   const exhibits = [
     ...new Set(
       candidates.flatMap((candidate) =>
@@ -115,7 +115,7 @@ export function ecosystemMatrix(
   ecosystems: string[];
   metrics: string[];
   values: number[][];
-} {
+} => {
   const ecosystems = [...new Set(candidates.map((candidate) => candidate.ecosystem))].sort();
   const metrics = ["utility", "risk", "novelty", "consensus", "disagreement"];
   const values = ecosystems.map((ecosystem) => {
