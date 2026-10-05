@@ -9,11 +9,6 @@ from .engine import (
     SkopraedScheduler,
 )
 
-# Compatibility aliases remain importable for older callers but are excluded
-# from __all__ so the active public identity is Skopraed.
-HarmonyConfig = SkopraedConfig
-HarmonyScheduler = SkopraedScheduler
-
 __all__ = [
     "CandidateScore",
     "ContentOpportunity",
