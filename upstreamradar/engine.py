@@ -6,6 +6,7 @@ from statistics import median
 from typing import Dict, List, Mapping, MutableMapping, Sequence, Tuple
 
 from .museum import MuseumEvidence, build_museum_evidence
+from .museum.audit import AuditPoint, MuseumAuditReport, audit_portfolio
 from .museum.graph import centrality_consensus
 
 _EPS = 1e-12
@@ -79,6 +80,7 @@ class ScheduleResult:
     explored_states: int
     coverage_score: float = 0.0
     content_score: float = 0.0
+    audit: MuseumAuditReport | None = None
 
 
 @dataclass(frozen=True)
@@ -1235,6 +1237,25 @@ class HarmonyScheduler:
             else 0.0
         )
 
+        audit = audit_portfolio(
+            (
+                AuditPoint(
+                    name=score.name,
+                    cost=score.cost,
+                    utility=score.base_utility,
+                    novelty=score.structural_novelty,
+                    risk=score.tail_risk,
+                    tags=frozenset(
+                        {score.ecosystem, *score.reasons}
+                        | set(dependencies.get(score.name, ()))
+                    ),
+                )
+                for score in scores
+            ),
+            budget=budget,
+            production_selected=best.selected_names,
+        )
+
         return ScheduleResult(
             selected=selected,
             total_cost=best.cost,
@@ -1245,4 +1266,5 @@ class HarmonyScheduler:
             explored_states=explored,
             coverage_score=coverage,
             content_score=content_score,
+            audit=audit,
         )
