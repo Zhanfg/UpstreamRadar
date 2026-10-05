@@ -42,8 +42,7 @@ impl HarmonyScheduler {
         let global_hits: u32 = records.iter().map(|record| record.recent_change_hits).sum();
         let global_misses: u32 = records.iter().map(|record| record.recent_change_misses).sum();
         let global_rate =
-            (global_hits as f64 + 1.0) / (global_hits + global_misses) as f64
-                .mul_add(1.0, 2.0);
+            (global_hits as f64 + 1.0) / ((global_hits + global_misses) as f64 + 2.0);
 
         let mut by_ecosystem: BTreeMap<String, (u32, u32)> = BTreeMap::new();
         for record in records {
