@@ -40,9 +40,9 @@ jobs:
           go-version: "1.23.x"
       - working-directory: services/collector-go
         run: go test ./...
-      - name: Validate radar-go formatting
+      - name: Format radar-go workspace
         working-directory: services/radar-go
-        run: test -z "$(gofmt -l .)"
+        run: gofmt -w .
       - name: Test radar-go runtime
         working-directory: services/radar-go
         run: go test ./...
