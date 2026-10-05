@@ -8,7 +8,7 @@ The repository is designed around a real optimization problem: when upstream sou
 
 The core algorithm is **HARMONY** — **Hierarchical Adaptive Radar Multi-objective Optimizer with Network-aware Yield**.
 
-**HARMONY v3** upgrades the scheduler into a risk-aware, polyglot information-selection system. It retains the v2 stateful/content-aware pipeline and adds:
+**HARMONY v4** turns the scheduler into a curated Algorithm Museum: classic methods are grouped by problem family, tested against shared invariants, and combined at the gallery level instead of being stacked as unrelated bonuses. It retains the v2 stateful/content-aware pipeline and adds:
 
 - ecosystem-local robust statistics with global shrinkage for small groups;
 - Bayesian change-probability estimation with freshness decay;
@@ -72,7 +72,7 @@ A fuller executable example is available in [`examples/harmony_demo.py`](example
 
 ## Learn the algorithm
 
-The original derivation is in docs/HARMONY.md, v2 is preserved in docs/HARMONY_V2.md, and the current architecture is specified in docs/HARMONY_V3.md.
+The original derivation is in docs/HARMONY.md, v2 is preserved in docs/HARMONY_V2.md, and v3 is specified in docs/HARMONY_V3.md, and the current v4 museum architecture is documented in docs/ALGORITHM_MUSEUM.md.
 
 The document explains why each layer exists and derives:
 
