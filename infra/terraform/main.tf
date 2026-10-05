@@ -27,15 +27,15 @@ variable "sources" {
 
 variable "harmony_v4" {
   type = object({
-    surprise_weight              = number
-    structural_novelty_weight    = number
-    museum_weight                = number
-    museum_disagreement_penalty  = number
-    tail_risk_penalty            = number
-    cvar_quantile                = number
-    beam_width                   = number
-    empirical_bayes_strength     = number
-    empirical_bayes_shrinkage    = number
+    surprise_weight             = number
+    structural_novelty_weight   = number
+    museum_weight               = number
+    museum_disagreement_penalty = number
+    tail_risk_penalty           = number
+    cvar_quantile               = number
+    beam_width                  = number
+    empirical_bayes_strength    = number
+    empirical_bayes_shrinkage   = number
   })
 
   default = {
