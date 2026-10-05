@@ -29,6 +29,8 @@ variable "harmony_v3" {
   type = object({
     surprise_weight           = number
     structural_novelty_weight = number
+    museum_weight              = number
+    museum_disagreement_penalty = number
     tail_risk_penalty         = number
     cvar_quantile             = number
     beam_width                = number
@@ -39,6 +41,8 @@ variable "harmony_v3" {
   default = {
     surprise_weight           = 0.08
     structural_novelty_weight = 0.06
+    museum_weight              = 0.12
+    museum_disagreement_penalty = 0.08
     tail_risk_penalty         = 0.11
     cvar_quantile             = 0.75
     beam_width                = 128
@@ -51,6 +55,8 @@ variable "harmony_v3" {
       var.harmony_v3.surprise_weight >= 0 &&
       var.harmony_v3.structural_novelty_weight >= 0 &&
       var.harmony_v3.tail_risk_penalty >= 0 &&
+      var.harmony_v3.museum_weight >= 0 &&
+      var.harmony_v3.museum_disagreement_penalty >= 0 &&
       var.harmony_v3.cvar_quantile >= 0.5 &&
       var.harmony_v3.cvar_quantile < 1 &&
       var.harmony_v3.beam_width >= 8 &&
