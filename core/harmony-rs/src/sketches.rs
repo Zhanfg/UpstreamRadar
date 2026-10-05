@@ -1,5 +1,4 @@
 use std::collections::{BTreeMap, BTreeSet};
-use std::hash::{Hash, Hasher};
 
 fn hash64(seed: u64, value: &str) -> u64 {
     // Deterministic FNV-1a with seed diffusion. It is not cryptographic; these
@@ -83,7 +82,7 @@ impl BloomFilter {
         }
     }
 
-    fn positions(&self, value: &str) -> impl Iterator<Item = usize> + '_ {
+    fn positions<'a>(&'a self, value: &'a str) -> impl Iterator<Item = usize> + 'a {
         let hashes = self.hashes;
         (0..hashes).map(move |seed| (hash64(seed as u64, value) as usize) % self.bits)
     }
