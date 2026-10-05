@@ -9,7 +9,7 @@ $info = [ordered]@{
     Git = $null
     Python = $null
     MemoryPressure = $null
-    HarmonyV3Schema = Test-Path "schemas/harmony-v3-score.schema.json"
+    SkopraedV1Schema = Test-Path "schemas/skopraed-v1-score.schema.json"
     ReleaseHardening = Test-Path "config/release-hardening.json"
 }
 
