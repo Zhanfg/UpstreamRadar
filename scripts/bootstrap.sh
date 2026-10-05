@@ -23,6 +23,8 @@ from pathlib import Path
 
 for path in (
     Path("schemas/harmony-v3-score.schema.json"),
+    Path("schemas/harmony-v4-score.schema.json"),
+    Path("museum/catalog.json"),
     Path("config/release-hardening.json"),
 ):
     data = json.loads(path.read_text(encoding="utf-8"))
