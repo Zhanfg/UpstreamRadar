@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://upstreamradar.dev/schema/harmony-v4-score.json",
+  "title": "HARMONY v4 Algorithm Museum Candidate Score",
+  "allOf": [
+    {"$ref": "harmony-v3-score.schema.json"},
+    {
+      "type": "object",
+      "required": ["museum"],
+      "properties": {
+        "museum": {
+          "type": "object",
+          "required": [
+            "robust_activity",
+            "change_consensus",
+            "information_gain",
+            "graph_consensus",
+            "bandit_index",
+            "dependency_novelty",
+            "disagreement",
+            "consensus",
+            "trace"
+          ],
+          "properties": {
+            "robust_activity": {"type": "number", "minimum": 0, "maximum": 1},
+            "change_consensus": {"type": "number", "minimum": 0, "maximum": 1},
+            "information_gain": {"type": "number", "minimum": 0, "maximum": 1},
+            "graph_consensus": {"type": "number", "minimum": 0, "maximum": 1},
+            "bandit_index": {"type": "number", "minimum": 0, "maximum": 1},
+            "dependency_novelty": {"type": "number", "minimum": 0, "maximum": 1},
+            "disagreement": {"type": "number", "minimum": 0, "maximum": 1},
+            "consensus": {"type": "number", "minimum": 0, "maximum": 1},
+            "trace": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "prefixItems": [
+                  {"type": "string"},
+                  {"type": "number", "minimum": 0, "maximum": 1}
+                ],
+                "minItems": 2,
+                "maxItems": 2
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}
