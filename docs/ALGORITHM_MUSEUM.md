@@ -16,19 +16,19 @@ The executable source of truth is `upstreamradar/museum/registry.py`; `museum/ca
 ```text
 ┌──────────────────────────────────────────────────────────────┐
 │ Gallery I   Robust statistics                              │
-│   Huber M-estimator                                        │
+│   Theil–Sen · Huber M-estimator · Hampel                   │
 ├──────────────────────────────────────────────────────────────┤
 │ Gallery II  Sequential / Bayesian change detection          │
-│   CUSUM · Page–Hinkley · Beta-Bernoulli BOCPD              │
+│   CUSUM · Page–Hinkley · ADWIN · Beta-Bernoulli BOCPD      │
 ├──────────────────────────────────────────────────────────────┤
 │ Gallery III Information theory                              │
-│   entropy · Jensen–Shannon divergence                      │
+│   entropy · Jensen–Shannon · Wasserstein-1                 │
 ├──────────────────────────────────────────────────────────────┤
 │ Gallery IV  Graph structure                                 │
-│   Katz · Tarjan SCC · PageRank · HITS                      │
+│   Katz · Tarjan SCC · k-core · PageRank · HITS · Brandes   │
 ├──────────────────────────────────────────────────────────────┤
 │ Gallery V   Online learning                                 │
-│   UCB-V · KL-UCB                                           │
+│   UCB-V · KL-UCB · Bayes-UCB                               │
 ├──────────────────────────────────────────────────────────────┤
 │ Gallery VI  Streaming / approximation                       │
 │   MinHash dependency similarity                            │
@@ -45,21 +45,28 @@ The executable source of truth is `upstreamradar/museum/registry.py`; `museum/ca
 
 | Year | Exhibit | Gallery | Production role |
 | ---: | --- | --- | --- |
+| 1942 | 1-Wasserstein distance | Information theory | empirical distribution transport distance |
+| 1950 | Theil–Sen estimator | Robust statistics | robust trend slope |
 | 1953 | Katz centrality | Graph | attenuated dependency-walk influence |
 | 1954 | CUSUM | Change detection | persistent shift evidence |
 | 1954 | Page–Hinkley | Change detection | online regime-shift evidence |
 | 1957 | 0/1 knapsack DP | Optimization | small-instance audit oracle |
 | 1964 | Huber M-estimator | Robust statistics | outlier-resistant activity location |
 | 1972 | Tarjan SCC | Graph | cyclic dependency structure |
+| 1974 | Hampel identifier | Robust statistics | median/MAD outlier evidence |
+| 1983 | k-core decomposition | Graph | structural core membership |
 | 1985 | ε-Pareto archive | Multi-objective | diagnostic non-dominated frontier |
 | 1991 | Jensen–Shannon divergence | Information theory | history distribution shift |
 | 1997 | MinHash | Sketches | dependency-set novelty at scale |
 | 1998 | PageRank | Graph | stationary dependency influence |
 | 1999 | HITS | Graph | hub/authority decomposition |
+| 2001 | Brandes betweenness | Graph | shortest-path mediation |
 | 2007 | CELF | Submodular optimization | challenger/reference selector |
 | 2007 | Bayesian online changepoint detection | Bayesian inference | run-length reset evidence |
+| 2007 | ADWIN | Change detection | adaptive-window distribution shift |
 | 2009 | UCB-V | Online learning | variance-aware exploration |
 | 2011 | KL-UCB | Online learning | information-bound exploration |
+| 2012 | Bayes-UCB | Online learning | posterior-quantile exploration |
 
 Years identify the canonical publication/era represented by the exhibit; the repository implementation is clean-room and intentionally compact.
 
@@ -92,6 +99,8 @@ Graph influence is deliberately plural:
 - **PageRank**: stationary influence under directed propagation.
 - **HITS**: separates hubs from authorities.
 - **Katz**: counts attenuated walks, preserving multi-hop structure.
+- **Brandes betweenness**: measures shortest-path mediation / bridge structure.
+- **k-core**: distinguishes dense structural core from peripheral nodes.
 - **Tarjan SCC**: exposes cyclic components that centrality alone cannot describe.
 
 The scheduler consumes their consensus rather than declaring one centrality metric universally correct.
@@ -103,6 +112,8 @@ The detectors cover different failure modes:
 - **CUSUM** reacts to persistent shifts.
 - **Page–Hinkley** is lightweight and streaming-friendly.
 - **Beta-Bernoulli BOCPD** maintains run-length posterior evidence and can react to model resets.
+- **ADWIN** scans adaptive window cuts with a Hoeffding-style confidence bound.
+- **Theil–Sen** contributes a robust trend vote that is resistant to isolated spikes.
 
 BOCPD's changepoint branch uses the prior predictive; the growth branch uses each run-length state's posterior predictive. A regression test protects this distinction.
 
