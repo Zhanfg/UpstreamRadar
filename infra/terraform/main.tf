@@ -73,7 +73,7 @@ locals {
     name          = var.collector_name
     poll_interval = var.poll_interval_seconds
     sources       = sort(tolist(var.sources))
-    skopraed_v1  = var.skopraed_v1
+    skopraed_v1   = var.skopraed_v1
   }
 }
 
