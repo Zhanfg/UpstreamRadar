@@ -4,7 +4,7 @@ import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from scripts.benchmark_harmony import benchmark
+from scripts.benchmark_skopraed import benchmark
 from scripts.security_posture import automation_findings, secret_findings
 from upstreamradar.health import decide_incident
 
@@ -14,7 +14,7 @@ def synthetic_gitlab_token() -> str:
 
 
 class EngineeringHealthTests(unittest.TestCase):
-    def test_harmony_benchmark_is_deterministic(self):
+    def test_skopraed_benchmark_is_deterministic(self):
         result = benchmark(count=36, budget=24, iterations=2)
         self.assertTrue(result["deterministic"])
         self.assertEqual(len(result["selection_hash"]), 64)
