@@ -441,6 +441,20 @@ def select_targets(
             "structural_novelty": round(candidate.structural_novelty, 8),
             "tail_risk": round(candidate.tail_risk, 8),
             "risk_adjusted_utility": round(candidate.risk_adjusted_utility, 8),
+            "museum": {
+                "robust_activity": round(candidate.museum.robust_activity, 8),
+                "change_consensus": round(candidate.museum.change_consensus, 8),
+                "information_gain": round(candidate.museum.information_gain, 8),
+                "graph_consensus": round(candidate.museum.graph_consensus, 8),
+                "bandit_index": round(candidate.museum.bandit_index, 8),
+                "dependency_novelty": round(candidate.museum.dependency_novelty, 8),
+                "disagreement": round(candidate.museum.disagreement, 8),
+                "consensus": round(candidate.museum.consensus, 8),
+                "trace": [
+                    [name, round(value, 8)]
+                    for name, value in candidate.museum.trace
+                ],
+            },
             "reasons": list(candidate.reasons),
         }
         for candidate in ordered
