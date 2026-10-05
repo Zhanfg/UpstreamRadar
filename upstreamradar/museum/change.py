@@ -53,10 +53,11 @@ def bernoulli_bocpd(
     prior_beta: float = 1.0,
     max_run_length: int = 64,
 ) -> BOCPDResult:
-    """Exact finite Beta-Bernoulli Bayesian online changepoint recursion.
+    """Finite Beta-Bernoulli Bayesian online changepoint recursion.
 
-    Each run-length state carries its own conjugate Beta sufficient statistics.
-    Complexity is O(n * min(n, max_run_length)).
+    Changepoint mass uses the *prior predictive* for the new regime, while
+    growth mass uses each run-length state's posterior predictive. This is the
+    distinction that lets evidence move reset probability away from the hazard.
     """
     xs = [1 if int(value) else 0 for value in observations]
     if not xs:
@@ -69,14 +70,24 @@ def bernoulli_bocpd(
 
     for observation in xs:
         length = min(len(probabilities), max_run_length + 1)
-        next_prob = [0.0] * min(length + 1, max_run_length + 1)
-        next_alpha = [float(prior_alpha)] * len(next_prob)
-        next_beta = [float(prior_beta)] * len(next_prob)
+        next_size = min(length + 1, max_run_length + 1)
+        next_prob = [0.0] * next_size
+        next_alpha = [float(prior_alpha)] * next_size
+        next_beta = [float(prior_beta)] * next_size
 
-        reset_mass = 0.0
-        growth_stats: list[tuple[int, float, float, float]] = []
+        prior_predictive = (
+            prior_alpha / (prior_alpha + prior_beta)
+            if observation
+            else prior_beta / (prior_alpha + prior_beta)
+        )
+        next_prob[0] = hazard * prior_predictive * sum(probabilities[:length])
+        next_alpha[0] = prior_alpha + observation
+        next_beta[0] = prior_beta + (1 - observation)
+
         for run_length in range(length):
-            p = probabilities[run_length]
+            target = run_length + 1
+            if target >= next_size:
+                continue
             alpha = alphas[run_length]
             beta = betas[run_length]
             predictive = (
@@ -84,38 +95,25 @@ def bernoulli_bocpd(
                 if observation
                 else beta / (alpha + beta)
             )
-            joint = p * predictive
-            reset_mass += joint * hazard
-            target = run_length + 1
-            if target < len(next_prob):
-                growth = joint * (1.0 - hazard)
-                next_prob[target] += growth
-                growth_stats.append((
-                    target,
-                    growth,
-                    alpha + observation,
-                    beta + (1 - observation),
-                ))
-
-        next_prob[0] = reset_mass
-        for target, mass, alpha, beta in growth_stats:
-            if mass <= 0.0:
-                continue
-            existing = next_prob[target]
-            if existing <= _EPS:
-                continue
-            weight = mass / existing
-            next_alpha[target] += weight * (alpha - prior_alpha)
-            next_beta[target] += weight * (beta - prior_beta)
+            next_prob[target] = (
+                probabilities[run_length]
+                * predictive
+                * (1.0 - hazard)
+            )
+            next_alpha[target] = alpha + observation
+            next_beta[target] = beta + (1 - observation)
 
         total = sum(next_prob)
         if total <= _EPS:
-            next_prob = [1.0] + [0.0] * (len(next_prob) - 1)
+            next_prob = [1.0] + [0.0] * (next_size - 1)
         else:
             next_prob = [value / total for value in next_prob]
         probabilities, alphas, betas = next_prob, next_alpha, next_beta
 
-    expected = sum(index * probability for index, probability in enumerate(probabilities))
+    expected = sum(
+        index * probability
+        for index, probability in enumerate(probabilities)
+    )
     return BOCPDResult(
         reset_probability=_clamp01(probabilities[0]),
         expected_run_length=expected,
