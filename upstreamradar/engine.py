@@ -1268,10 +1268,3 @@ class SkopraedScheduler:
             content_score=content_score,
             audit=audit,
         )
-
-
-# Backward-compatible aliases for pre-Skopraed callers. New code should use
-# SkopraedConfig / SkopraedScheduler; the legacy names are intentionally not
-# part of the package's public __all__ surface.
-HarmonyConfig = SkopraedConfig
-HarmonyScheduler = SkopraedScheduler
