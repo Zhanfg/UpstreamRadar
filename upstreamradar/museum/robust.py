@@ -66,3 +66,35 @@ def winsorized_variance(values: Sequence[float], *, clip_z: float = 3.5) -> floa
     clipped = [min(high, max(low, value)) for value in xs]
     mean = sum(clipped) / len(clipped)
     return sum((value - mean) ** 2 for value in clipped) / (len(clipped) - 1)
+
+
+def hampel_outlier_fraction(
+    values: Sequence[float],
+    *,
+    threshold: float = 3.0,
+) -> float:
+    xs = _finite(values)
+    if not xs:
+        return 0.0
+    center = median(xs)
+    scale = mad(xs, center)
+    if scale <= _EPS:
+        return 0.0
+    outliers = sum(
+        1
+        for value in xs
+        if abs(value - center) > threshold * scale
+    )
+    return outliers / len(xs)
+
+
+def theil_sen_slope(values: Sequence[float]) -> float:
+    """Median pairwise slope; robust against isolated spikes."""
+    xs = _finite(values)
+    if len(xs) < 2:
+        return 0.0
+    slopes = []
+    for left in range(len(xs) - 1):
+        for right in range(left + 1, len(xs)):
+            slopes.append((xs[right] - xs[left]) / (right - left))
+    return float(median(slopes)) if slopes else 0.0
