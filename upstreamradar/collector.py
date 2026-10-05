@@ -238,7 +238,7 @@ def repo_snapshot(
 
 def initial_state() -> dict[str, Any]:
     return {
-        "version": 3,
+        "version": 4,
         "repositories": {},
         "daily": {},
         "scheduler": {},
