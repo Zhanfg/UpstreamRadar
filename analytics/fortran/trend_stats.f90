@@ -33,7 +33,7 @@ contains
       denominator = denominator + dx * dx
     end do
 
-    if (denominator == 0.0d0) then
+    if (abs(denominator) <= epsilon(denominator)) then
       slope = 0.0d0
     else
       slope = numerator / denominator
