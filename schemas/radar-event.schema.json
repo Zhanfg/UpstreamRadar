@@ -41,11 +41,12 @@
     "payload": {
       "type": "object"
     },
-    "harmony_v3": {
-      "$ref": "harmony-v3-score.schema.json"
+    "scheduler_version": {
+      "type": "string",
+      "const": "skopraed-v1"
     },
-    "harmony_v4": {
-      "$ref": "harmony-v4-score.schema.json"
+    "skopraed": {
+      "$ref": "skopraed-v1-score.schema.json"
     }
   },
   "additionalProperties": false
