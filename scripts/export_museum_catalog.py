@@ -21,7 +21,7 @@ def render() -> str:
             for item in sorted(EXHIBITS, key=lambda item: (item.introduced, item.slug))
         ],
     }
-    return json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+    return json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
 
 
 def main() -> int:
