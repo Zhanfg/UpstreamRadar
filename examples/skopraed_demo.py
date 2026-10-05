@@ -1,4 +1,4 @@
-from upstreamradar import HarmonyScheduler, RepositorySignal
+from upstreamradar import SkopraedScheduler, RepositorySignal
 
 
 records = [
@@ -69,7 +69,7 @@ dependencies = {
     "android-kernel": ["linux"],
 }
 
-result = HarmonyScheduler().schedule(
+result = SkopraedScheduler().schedule(
     records,
     budget=12,
     dependencies=dependencies,

@@ -1,6 +1,6 @@
-# HARMONY algorithm
+# SKOPRÆD legacy-v1 algorithm
 
-**HARMONY** stands for **Hierarchical Adaptive Radar Multi-objective Optimizer with Network-aware Yield**.
+**SKOPRÆD legacy-v1** stands for **Hierarchical Adaptive Radar Multi-objective Optimizer with Network-aware Yield**.
 
 Its job is not simply to rank repositories by "activity". It decides which upstreams should be scanned first when API calls, CI time, network requests, or analyst attention are limited.
 
@@ -8,7 +8,7 @@ Its job is not simply to rank repositories by "activity". It decides which upstr
 
 A busy repository is not always important. A quiet repository may be critical because dozens of projects depend on it. A repository with little recent activity may still deserve a scan when the model is uncertain about it. A security signal should also be able to outrank ordinary development velocity.
 
-HARMONY therefore evaluates every candidate through six nested layers.
+SKOPRÆD legacy-v1 therefore evaluates every candidate through six nested layers.
 
 ## Layer 1 — robust ecosystem-local normalization
 
@@ -29,7 +29,7 @@ Median/MAD is used instead of mean/standard deviation so one extremely active re
 
 The normalized vector is not flattened immediately.
 
-First, HARMONY constructs two latent subspaces:
+First, SKOPRÆD legacy-v1 constructs two latent subspaces:
 
 $$
 A =
@@ -95,7 +95,7 @@ $$
 
 where (h) is the configured half-life.
 
-HARMONY keeps a 20% long-tail prior rather than erasing old evidence completely:
+SKOPRÆD legacy-v1 keeps a 20% long-tail prior rather than erasing old evidence completely:
 
 $$
 P_{change}=E[p](0.2+0.8d(t))
@@ -115,7 +115,7 @@ $$
 A ightarrow B
 $$
 
-then A depends on B. HARMONY reverses contribution flow during PageRank-style diffusion so B receives influence from its dependents.
+then A depends on B. SKOPRÆD legacy-v1 reverses contribution flow during PageRank-style diffusion so B receives influence from its dependents.
 
 For node (i):
 
@@ -138,7 +138,7 @@ This means a quiet kernel, protocol library, compiler component, or framework ca
 
 ## Layer 5 — robust anomaly energy
 
-HARMONY computes separate feature-group energies:
+SKOPRÆD legacy-v1 computes separate feature-group energies:
 
 1. development activity,
 2. security/breakage risk,
@@ -235,7 +235,7 @@ This prevents a single noisy ecosystem from consuming the entire budget.
 
 ### Dependency-overlap penalty
 
-For dependency sets (D_a) and (D_b), HARMONY computes Jaccard overlap:
+For dependency sets (D_a) and (D_b), SKOPRÆD legacy-v1 computes Jaccard overlap:
 
 $$
 J(a,b)=rac{|D_acap D_b|}{|D_acup D_b|}
@@ -249,7 +249,7 @@ This discourages spending multiple expensive scans on repositories likely to rev
 
 The final optimization resembles a constrained knapsack problem with state-dependent utility.
 
-Exact exhaustive search grows exponentially, so HARMONY uses a bounded **beam search**:
+Exact exhaustive search grows exponentially, so SKOPRÆD legacy-v1 uses a bounded **beam search**:
 
 1. order candidates by a mixture of absolute utility and utility density;
 2. branch each state into "skip" and "include";
@@ -269,7 +269,7 @@ The ND term comes from comparing a candidate's dependency set with repositories 
 
 ## What this teaches
 
-HARMONY intentionally combines ideas normally studied separately:
+SKOPRÆD legacy-v1 intentionally combines ideas normally studied separately:
 
 - robust statistics,
 - Bayesian inference,

@@ -10,7 +10,7 @@ The rule is simple: a language is added only when it owns a concrete responsibil
 
 | Area | Language | Responsibility |
 | --- | --- | --- |
-| Orchestration | Python | HARMONY scheduling, collection, policy and reports |
+| Orchestration | Python | SKOPRÆD scheduling, collection, policy and reports |
 | Native core | Rust | stable event fingerprinting and native transforms |
 | Native core | C | low-overhead host/runtime probes |
 | Native core | C++ | source-change scoring primitives |
@@ -80,7 +80,7 @@ infra/         deployment contracts
 scripts/       portable operational tooling
 ```
 
-## HARMONY v3 stage ownership
+## SKOPRÆD legacy-v3 stage ownership
 
 The repository is no longer organized as a collection of unrelated language demos. Major language families own stages of one normalized evidence pipeline:
 
@@ -93,7 +93,7 @@ The repository is no longer organized as a collection of unrelated language demo
 7. **Persistence and contracts** — JSON Schema, SQL, GraphQL, CUE and Terraform keep the v3 evidence model consistent across storage, API and deployment.
 8. **Release hardening** — TypeScript/esbuild and native strip tooling harden generated release artifacts while leaving source code auditable.
 
-Cross-language semantics are anchored by `tests/fixtures/harmony_v3_vectors.json`, `schemas/harmony-v3-score.schema.json`, and the Python reference scheduler.
+Cross-language semantics are anchored by `tests/fixtures/harmony_v3_vectors.json`, `schemas/archive/legacy-score-v3.schema.json`, and the Python reference scheduler.
 
 ## Validation
 

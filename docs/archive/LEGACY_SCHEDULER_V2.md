@@ -1,6 +1,6 @@
-# HARMONY v2 — Content-Aware Multi-Timescale Scheduling
+# SKOPRÆD legacy-v2 — Content-Aware Multi-Timescale Scheduling
 
-HARMONY v2 extends the original scheduler from a single-observation ranking
+SKOPRÆD legacy-v2 extends the original scheduler from a single-observation ranking
 system into a stateful information-selection engine.
 
 The design goal is not complexity for its own sake. Every new layer must answer
@@ -53,7 +53,7 @@ extreme z-scores.
 
 ## 3. Multi-timescale dynamics
 
-For impact history x_t, HARMONY maintains three EWMAs: fast, medium and slow.
+For impact history x_t, SKOPRÆD legacy-v1 maintains three EWMAs: fast, medium and slow.
 
 Acceleration is:
 
@@ -162,7 +162,7 @@ because active high-signal dependents are currently pointing toward it.
 
 Selection is no longer only a sum of independent candidate values.
 
-HARMONY constructs pairwise similarity from ecosystem identity, dependency-set
+SKOPRÆD legacy-v1 constructs pairwise similarity from ecosystem identity, dependency-set
 Jaccard similarity, and similarity of content / change-point / security
 profiles.
 
@@ -221,7 +221,7 @@ budget, but whether the selected portfolio is broad and information-rich.
 
 ## 16. Design invariants
 
-HARMONY v2 keeps these constraints:
+SKOPRÆD legacy-v2 keeps these constraints:
 
 - no runtime third-party dependencies;
 - deterministic results for deterministic inputs;

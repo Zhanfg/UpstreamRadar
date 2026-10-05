@@ -1,9 +1,9 @@
 import unittest
 
-from upstreamradar.engine import HarmonyScheduler, RepositorySignal
+from upstreamradar.engine import SkopraedScheduler, RepositorySignal
 
 
-class HarmonyV4Tests(unittest.TestCase):
+class SkopraedV1Tests(unittest.TestCase):
     def test_museum_evidence_is_bounded_and_traced(self):
         records = [
             RepositorySignal(
@@ -49,7 +49,7 @@ class HarmonyV4Tests(unittest.TestCase):
             self.assertLessEqual(score.museum.consensus, 1.0)
 
     def setUp(self):
-        self.scheduler = HarmonyScheduler()
+        self.scheduler = SkopraedScheduler()
 
     def test_graph_consensus_rewards_dependency_target(self):
         records = [

@@ -4,14 +4,14 @@ import unittest
 from dataclasses import asdict
 from pathlib import Path
 
-from upstreamradar.engine import HarmonyScheduler, RepositorySignal
+from upstreamradar.engine import SkopraedScheduler, RepositorySignal
 
 
-class HarmonyV3ContractTests(unittest.TestCase):
+class SkopraedLegacyV3ContractTests(unittest.TestCase):
     def setUp(self):
-        self.scheduler = HarmonyScheduler()
+        self.scheduler = SkopraedScheduler()
         self.vectors = json.loads(
-            Path("tests/fixtures/harmony_v3_vectors.json").read_text(encoding="utf-8")
+            Path("tests/fixtures/skopraed_legacy_v3_vectors.json").read_text(encoding="utf-8")
         )["vectors"]
 
     def test_surprise_vector_ordering(self):

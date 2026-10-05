@@ -3,18 +3,18 @@
 from .content import ContentOpportunity, build_content_plan
 from .engine import (
     CandidateScore,
-    HarmonyConfig,
-    HarmonyScheduler,
     RepositorySignal,
     ScheduleResult,
+    SkopraedConfig,
+    SkopraedScheduler,
 )
 
 __all__ = [
     "CandidateScore",
     "ContentOpportunity",
-    "HarmonyConfig",
-    "HarmonyScheduler",
     "RepositorySignal",
     "ScheduleResult",
+    "SkopraedConfig",
+    "SkopraedScheduler",
     "build_content_plan",
 ]

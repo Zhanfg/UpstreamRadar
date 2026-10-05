@@ -23,13 +23,13 @@ Because the gate is derived from the 15-minute time slot hash, re-running the sa
 ## One collection cycle
 
 1. Load historical Bayesian/change state.
-2. Convert repository history into HARMONY signals.
+2. Convert repository history into SKOPRÆD signals.
 3. Apply dependency-aware scoring and budgeted scheduling.
 4. Select at most 16 repositories within the configured scan budget.
 5. Query live GitHub repository metadata and latest release metadata.
 6. Compare the observation with the last committed snapshot.
 7. Create one atomic commit per repository whose real upstream snapshot changed.
-8. Update the HARMONY learning state.
+8. Update the SKOPRÆD learning state.
 9. Store one immutable run journal.
 10. Regenerate the daily report.
 11. Commit those operational records as one checkpoint.

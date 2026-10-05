@@ -1,12 +1,12 @@
 import unittest
 
 from upstreamradar.content import build_content_plan
-from upstreamradar.engine import HarmonyConfig, HarmonyScheduler, RepositorySignal
+from upstreamradar.engine import SkopraedConfig, SkopraedScheduler, RepositorySignal
 
 
-class HarmonyV2Tests(unittest.TestCase):
+class SkopraedLegacyV2Tests(unittest.TestCase):
     def setUp(self):
-        self.scheduler = HarmonyScheduler(HarmonyConfig(beam_width=96))
+        self.scheduler = SkopraedScheduler(SkopraedConfig(beam_width=96))
 
     def record(self, name, *, history, impact, observations=12, failures=0, content=5.0):
         hits = sum(int(bool(value)) for value in history)
@@ -141,12 +141,12 @@ class HarmonyV2Tests(unittest.TestCase):
         self.assertTrue(plan[0].angle)
 
     def test_v1_config_names_remain_supported(self):
-        config = HarmonyConfig(
+        config = SkopraedConfig(
             pagerank_damping=0.83,
             pagerank_steps=20,
             beam_width=32,
         )
-        scheduler = HarmonyScheduler(config)
+        scheduler = SkopraedScheduler(config)
         result = scheduler.schedule(
             (self.record("one", history=(0, 1), impact=(0, 4)),),
             budget=2,

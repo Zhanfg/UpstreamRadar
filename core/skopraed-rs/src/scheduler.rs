@@ -15,17 +15,17 @@ use serde_json::json;
 use std::collections::{BTreeMap, BTreeSet};
 
 #[derive(Debug, Clone)]
-pub struct HarmonyScheduler {
+pub struct SkopraedScheduler {
     config: SchedulerConfig,
 }
 
-impl Default for HarmonyScheduler {
+impl Default for SkopraedScheduler {
     fn default() -> Self {
         Self::new(SchedulerConfig::default()).expect("default configuration is valid")
     }
 }
 
-impl HarmonyScheduler {
+impl SkopraedScheduler {
     pub fn new(config: SchedulerConfig) -> Result<Self, String> {
         config.validate()?;
         Ok(Self { config })
@@ -634,7 +634,7 @@ mod tests {
         b.recent_change_misses = 9;
         let hub = signal("hub", "kernel", 2);
 
-        let scheduler = HarmonyScheduler::default();
+        let scheduler = SkopraedScheduler::default();
         let scores = scheduler.score(&[a.clone(), b.clone(), hub.clone()]);
         assert_eq!(scores.len(), 3);
         assert!(scores.iter().all(|candidate| {

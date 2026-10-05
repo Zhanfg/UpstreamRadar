@@ -1,0 +1,21 @@
+[package]
+name = "skopraed-museum"
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+description = "Typed SKOPRÆD Algorithm Museum runtime for UpstreamRadar"
+
+[lib]
+name = "skopraed_museum"
+path = "src/lib.rs"
+
+[[bin]]
+name = "skopraed-museum"
+path = "src/bin/skopraed-museum.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+serde_json = "1"

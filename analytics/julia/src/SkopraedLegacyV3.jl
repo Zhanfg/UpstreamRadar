@@ -1,4 +1,4 @@
-module HarmonyV3
+module SkopraedLegacyV3
 
 using Statistics
 

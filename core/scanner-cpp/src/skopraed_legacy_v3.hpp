@@ -5,7 +5,7 @@
 #include <numeric>
 #include <vector>
 
-namespace upstreamradar::v3 {
+namespace upstreamradar::skopraed_legacy_v3 {
 
 inline double clamp01(double value) {
     return std::clamp(value, 0.0, 1.0);
@@ -62,4 +62,4 @@ inline double nonlinear_change_score(
     return clamp01(0.38 * activity + 0.36 * risk + 0.26 * interaction);
 }
 
-} // namespace upstreamradar::v3
+} // namespace upstreamradar::skopraed_legacy_v3

@@ -4,11 +4,14 @@ Automatically maintained upstream development radar for Android, Linux, networki
 
 The repository is designed around a real optimization problem: when upstream sources outnumber available API calls, CI minutes, or analyst attention, **which repositories should be checked first?**
 
-## HARMONY
+## SKOPRÆD
 
-The core algorithm is **HARMONY** — **Hierarchical Adaptive Radar Multi-objective Optimizer with Network-aware Yield**.
+The scheduling core is **SKOPRÆD** (ASCII namespace: `Skopraed` / `skopraed`).
 
-**HARMONY v4** turns the scheduler into a curated Algorithm Museum: classic methods are grouped by problem family, tested against shared invariants, and combined at the gallery level instead of being stacked as unrelated bonuses. It retains the v2 stateful/content-aware pipeline and adds:
+The name is intentionally coined from Greek **skopos / skopein** (to observe, inspect) and Old English **ræd** (judgment, counsel, strategy): observe evidence first, then make a bounded decision. The public name was chosen specifically to avoid reusing an established software-system name.
+
+
+**SKOPRÆD v1** turns the scheduler into a curated Algorithm Museum: classic methods are grouped by problem family, tested against shared invariants, and combined at the gallery level instead of being stacked as unrelated bonuses. It retains the v2 stateful/content-aware pipeline and adds:
 
 - ecosystem-local robust statistics with global shrinkage for small groups;
 - Bayesian change-probability estimation with freshness decay;
@@ -31,7 +34,7 @@ The implementation remains dependency-free Python so the mathematical structure 
 ### Minimal example
 
 ```python
-from upstreamradar import HarmonyScheduler, RepositorySignal
+from upstreamradar import SkopraedScheduler, RepositorySignal
 
 records = [
     RepositorySignal(
@@ -58,7 +61,7 @@ records = [
     ),
 ]
 
-result = HarmonyScheduler().schedule(
+result = SkopraedScheduler().schedule(
     records,
     budget=6,
     dependencies={"android-kernel": ["linux"]},
@@ -68,11 +71,11 @@ for candidate in result.selected:
     print(candidate.name, candidate.base_utility)
 ```
 
-A fuller executable example is available in [`examples/harmony_demo.py`](examples/harmony_demo.py).
+A fuller executable example is available in [`examples/skopraed_demo.py`](examples/skopraed_demo.py).
 
 ## Learn the algorithm
 
-The original derivation is in docs/HARMONY.md, v2 is preserved in docs/HARMONY_V2.md, and v3 is specified in docs/HARMONY_V3.md, and the current v4 museum architecture is documented in docs/ALGORITHM_MUSEUM.md.
+The original derivation is in docs/SKOPRÆD.md, v2 is preserved in docs/SKOPRÆD_V2.md, and v3 is specified in docs/SKOPRÆD_V3.md, and the current v4 museum architecture is documented in docs/ALGORITHM_MUSEUM.md.
 
 The document explains why each layer exists and derives:
 
@@ -85,7 +88,7 @@ The document explains why each layer exists and derives:
 7. diversity-aware marginal utility;
 8. constrained beam-search scheduling.
 
-HARMONY v3 adds Bayesian surprise, change-point ensembling, structural novelty, tail-risk adjustment, Pareto-aware projections, and a cross-language score contract on top of the v2 dynamics, semantic impact, graph seeding, portfolio coverage, and budget-aware search.
+SKOPRÆD legacy-v3 adds Bayesian surprise, change-point ensembling, structural novelty, tail-risk adjustment, Pareto-aware projections, and a cross-language score contract on top of the v2 dynamics, semantic impact, graph seeding, portfolio coverage, and budget-aware search.
 
 ## Evidence-first content planning
 
@@ -116,7 +119,7 @@ UpstreamRadar/
 ├── examples/
 │   └── harmony_demo.py
 ├── docs/
-│   ├── HARMONY.md
+│   ├── SKOPRÆD.md
 │   ├── AUTOMATION.md
 │   └── CODE_REVIEW.md
 ├── .github/workflows/
@@ -180,7 +183,7 @@ Evidence-backed actions include:
 - Discovery Garden forks;
 - CI and health incident lifecycle.
 
-Every surface has its own budget and cooldown. Issues and Releases require a high semantic-impact transition or strong HARMONY reasons such as regime-shift/security-focus, so normal stars/forks/watchers churn does not create fake work.
+Every surface has its own budget and cooldown. Issues and Releases require a high semantic-impact transition or strong SKOPRÆD reasons such as regime-shift/security-focus, so normal stars/forks/watchers churn does not create fake work.
 
 Automated writes are explicitly identified as automation and are not intended to impersonate manual human activity.
 
@@ -189,7 +192,7 @@ See docs/ACTIVITY_MATRIX.md.
 
 ### Engineering Health
 
-Activity Matrix v2 adds a deterministic HARMONY performance benchmark and a
+Activity Matrix v2 adds a deterministic SKOPRÆD performance benchmark and a
 cross-platform repository security-posture audit. Daily evidence is persisted
 once per platform, while benchmark/security incidents are fingerprinted,
 cooldown-limited, and automatically closed after recovery.
@@ -206,12 +209,12 @@ actually warranted.
 
 CI currently validates the algorithm on Python 3.10, 3.11, 3.12, and 3.13.
 
-The test suite covers HARMONY scoring and constraints, resilient scheduling,
+The test suite covers SKOPRÆD scoring and constraints, resilient scheduling,
 collector semantics, and automated code-review rules.
 
 ## Direction
 
-HARMONY is only the scheduling core. The next layers will connect it to real upstream telemetry:
+SKOPRÆD is only the scheduling core. The next layers will connect it to real upstream telemetry:
 
 - GitHub repository activity;
 - releases and tags;

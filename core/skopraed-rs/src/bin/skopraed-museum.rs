@@ -1,4 +1,4 @@
-use harmony_museum::{HarmonyScheduler, RepositorySignal, SchedulerConfig};
+use skopraed_museum::{SkopraedScheduler, RepositorySignal, SchedulerConfig};
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 use std::io::{self, Read};
@@ -32,14 +32,14 @@ fn read_input() -> Result<Input, String> {
 }
 
 fn run(input: Input) -> Result<Value, String> {
-    let scheduler = HarmonyScheduler::new(input.config.unwrap_or_default())?;
+    let scheduler = SkopraedScheduler::new(input.config.unwrap_or_default())?;
     let command = input.command.as_deref().unwrap_or("score");
 
     match command {
         "score" => {
             let candidates = scheduler.score(&input.repositories);
             Ok(json!({
-                "version": "harmony-rs/0.1",
+                "version": "skopraed-rs/1.0",
                 "command": "score",
                 "count": candidates.len(),
                 "candidates": candidates,
@@ -49,13 +49,13 @@ fn run(input: Input) -> Result<Value, String> {
             let budget = input.budget.unwrap_or(100);
             let schedule = scheduler.schedule(&input.repositories, budget);
             Ok(json!({
-                "version": "harmony-rs/0.1",
+                "version": "skopraed-rs/1.0",
                 "command": "schedule",
                 "schedule": schedule,
             }))
         }
         "validate" => Ok(json!({
-            "version": "harmony-rs/0.1",
+            "version": "skopraed-rs/1.0",
             "command": "validate",
             "repositories": input.repositories.len(),
             "status": "ok",

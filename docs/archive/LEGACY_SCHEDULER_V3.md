@@ -1,6 +1,6 @@
-# HARMONY v3 — Risk-Aware Polyglot Information Scheduling
+# SKOPRÆD legacy-v3 — Risk-Aware Polyglot Information Scheduling
 
-HARMONY v3 turns the scheduler from a Python-centric ranking engine into a cross-language information-selection pipeline.
+SKOPRÆD legacy-v3 turns the scheduler from a Python-centric ranking engine into a cross-language information-selection pipeline.
 
 The design remains deterministic and evidence-first. Complexity is introduced only where it changes selection quality, robustness, or explainability.
 
@@ -39,7 +39,7 @@ budgeted beam selection
 
 ## Ecosystem empirical Bayes
 
-HARMONY v3 estimates an ecosystem-level Beta hyperprior from recent hit/miss evidence, then shrinks sparse ecosystems toward the global change-rate baseline. The prior strength and global shrinkage are configurable.
+SKOPRÆD legacy-v3 estimates an ecosystem-level Beta hyperprior from recent hit/miss evidence, then shrinks sparse ecosystems toward the global change-rate baseline. The prior strength and global shrinkage are configurable.
 
 This prevents a repository with only one or two observations from looking artificially certain while still allowing mature ecosystems to retain their own behavior.
 
@@ -87,7 +87,7 @@ The scheduler exposes both `risk_adjusted_utility` and final `base_utility` so r
 
 ## Polyglot decomposition
 
-The v3 contract lives at `schemas/harmony-v3-score.schema.json`.
+The v3 contract lives at `schemas/archive/legacy-score-v3.schema.json`.
 
 Different languages may implement independent stages:
 
@@ -109,7 +109,7 @@ Obfuscation is restricted to generated release artifacts:
 - native symbol stripping for release binaries;
 - optional JVM/.NET release symbol reduction where supported.
 
-Source code stays readable and reviewable. HARMONY does not use source obfuscation to manufacture apparent complexity.
+Source code stays readable and reviewable. SKOPRÆD legacy-v1 does not use source obfuscation to manufacture apparent complexity.
 
 ## Invariants
 

@@ -1,10 +1,10 @@
 import math
 import unittest
 
-from upstreamradar.engine import HarmonyConfig, HarmonyScheduler, RepositorySignal
+from upstreamradar.engine import SkopraedConfig, SkopraedScheduler, RepositorySignal
 
 
-class HarmonyV2StressTests(unittest.TestCase):
+class SkopraedLegacyV2StressTests(unittest.TestCase):
     @staticmethod
     def records(count=60):
         ecosystems = ("kernel", "android", "ai", "network", "security", "tooling")
@@ -60,8 +60,8 @@ class HarmonyV2StressTests(unittest.TestCase):
     def test_large_schedule_is_permutation_invariant(self):
         records = self.records()
         dependencies = self.dependencies(records)
-        scheduler = HarmonyScheduler(
-            HarmonyConfig(
+        scheduler = SkopraedScheduler(
+            SkopraedConfig(
                 beam_width=64,
                 pagerank_steps=24,
             )
@@ -103,7 +103,7 @@ class HarmonyV2StressTests(unittest.TestCase):
 
     def test_large_schedule_metrics_remain_bounded_and_finite(self):
         records = self.records()
-        scheduler = HarmonyScheduler(HarmonyConfig(beam_width=48, pagerank_steps=18))
+        scheduler = SkopraedScheduler(SkopraedConfig(beam_width=48, pagerank_steps=18))
         result = scheduler.schedule(
             records,
             budget=28,
@@ -136,7 +136,7 @@ class HarmonyV2StressTests(unittest.TestCase):
             )
             for index in range(8)
         )
-        scores = HarmonyScheduler().score(records)
+        scores = SkopraedScheduler().score(records)
         self.assertEqual(len(scores), len(records))
         for score in scores:
             self.assertTrue(math.isfinite(score.base_utility))

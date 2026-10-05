@@ -1,12 +1,12 @@
 # UpstreamRadar Algorithm Museum
 
-HARMONY v4 treats algorithms as a curated collection rather than a pile of scoring tricks.
+SKOPRÆD v1 treats algorithms as a curated collection rather than a pile of scoring tricks.
 
 Every exhibit must answer four questions:
 
 1. **What historical problem was it designed to solve?**
 2. **What invariant does our implementation preserve?**
-3. **Where does it sit in the HARMONY pipeline?**
+3. **Where does it sit in the SKOPRÆD pipeline?**
 4. **Is it production evidence or an audit/reference exhibit?**
 
 The executable source of truth is `upstreamradar/museum/registry.py`; `museum/catalog.json` is generated from that registry and checked in CI.
@@ -79,7 +79,7 @@ Years identify the canonical publication/era represented by the exhibit; the rep
 
 A production candidate does **not** receive fifteen independent bonuses.
 
-Algorithms first vote inside a gallery. The gallery outputs a bounded consensus and a disagreement measure. HARMONY then combines gallery-level evidence.
+Algorithms first vote inside a gallery. The gallery outputs a bounded consensus and a disagreement measure. SKOPRÆD then combines gallery-level evidence.
 
 For example, the change-detection gallery is:
 
@@ -159,7 +159,7 @@ Release minification/symbol stripping remains separate from the museum and does 
 
 The streaming gallery is intentionally separated into **production** and **reference/infrastructure** exhibits.
 
-- MinHash currently contributes dependency-set novelty to HARMONY.
+- MinHash currently contributes dependency-set novelty to SKOPRÆD.
 - Bloom Filter, Count-Min Sketch, Space-Saving and HyperLogLog are executable infrastructure exhibits for future high-volume collectors and are tested for their core invariants.
 - They do not receive scheduler weight merely because they exist.
 

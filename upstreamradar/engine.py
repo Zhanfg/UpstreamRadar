@@ -16,7 +16,7 @@ _EPS = 1e-12
 class RepositorySignal:
     """Raw observation for one upstream repository.
 
-    HARMONY v2 keeps the original scalar telemetry but can additionally consume
+    SKOPRÆD v2 keeps the original scalar telemetry but can additionally consume
     short observation histories. New fields are optional so v1 callers remain
     source-compatible.
     """
@@ -84,7 +84,7 @@ class ScheduleResult:
 
 
 @dataclass(frozen=True)
-class HarmonyConfig:
+class SkopraedConfig:
     half_life_hours: float = 18.0
     pagerank_damping: float = 0.84
     pagerank_steps: int = 36
@@ -168,8 +168,8 @@ class _BeamState:
         return self.cost, tuple(sorted(self.ecosystem_counts.items())), self.selected_names
 
 
-class HarmonyScheduler:
-    """HARMONY v4: curated algorithm-museum information scheduling."""
+class SkopraedScheduler:
+    """SKOPRÆD v4: curated algorithm-museum information scheduling."""
 
     _LOCAL_FEATURES = (
         "commit_velocity",
@@ -183,8 +183,8 @@ class HarmonyScheduler:
         "content_signal",
     )
 
-    def __init__(self, config: HarmonyConfig | None = None) -> None:
-        self.config = config or HarmonyConfig()
+    def __init__(self, config: SkopraedConfig | None = None) -> None:
+        self.config = config or SkopraedConfig()
         self.config.validate()
 
     @staticmethod

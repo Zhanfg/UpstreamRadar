@@ -1,9 +1,9 @@
-use harmony_museum::{
+use skopraed_museum::{
     graph::{self, Graph},
     information,
     optimization::{self, Item},
     sketches,
-    HarmonyScheduler, RepositorySignal,
+    SkopraedScheduler, RepositorySignal,
 };
 use std::collections::{BTreeMap, BTreeSet};
 
@@ -54,7 +54,7 @@ fn end_to_end_schedule_is_deterministic() {
     let app = repository("app", "android", 1);
     let records = vec![kernel, toolchain, runtime, app];
 
-    let scheduler = HarmonyScheduler::default();
+    let scheduler = SkopraedScheduler::default();
     let first = scheduler.schedule(&records, 5);
     let second = scheduler.schedule(&records, 5);
 

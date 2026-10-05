@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <iostream>
 
-#include "harmony_v3.hpp"
+#include "skopraed_legacy_v3.hpp"
 
 int main(int argc, char** argv) {
     if (argc != 5) {
@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
     const double churn = additions + deletions;
     const double dependency = std::min(files / 20.0, 1.0);
     const double novelty = std::min(std::log1p(churn) / std::log(2501.0), 1.0);
-    const double score = upstreamradar::v3::nonlinear_change_score(
+    const double score = upstreamradar::skopraed_legacy_v3::nonlinear_change_score(
         files,
         churn,
         security,

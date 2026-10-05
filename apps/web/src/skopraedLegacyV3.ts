@@ -1,6 +1,6 @@
 import type { RadarEvent } from "./index.js";
 
-export interface HarmonyV3Projection {
+export interface SkopraedLegacyV3Projection {
   repository: string;
   impact: number;
   surprise: number;
@@ -22,7 +22,7 @@ export function bayesianSurprise(empirical: number, predicted: number): number {
   return clamp01(1 - Math.exp(-3.4 * bernoulliKL(empirical, predicted)));
 }
 
-export function paretoFrontier(items: readonly HarmonyV3Projection[]): HarmonyV3Projection[] {
+export function paretoFrontier(items: readonly SkopraedLegacyV3Projection[]): SkopraedLegacyV3Projection[] {
   return items.filter((candidate, index) =>
     !items.some((other, otherIndex) =>
       otherIndex !== index &&

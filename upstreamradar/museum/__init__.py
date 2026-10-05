@@ -1,4 +1,4 @@
-"""Curated algorithm collection used by HARMONY v4.
+"""Curated algorithm collection used by SKOPRÆD v1.
 
 The museum is not a grab bag. Every exhibit has metadata, tests, and a
 production role or an explicit benchmark/reference role.

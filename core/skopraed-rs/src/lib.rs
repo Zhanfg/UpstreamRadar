@@ -1,4 +1,4 @@
-//! HARMONY Algorithm Museum reference runtime.
+//! SKOPRÆD Algorithm Museum reference runtime.
 //!
 //! The Rust implementation is intentionally self-contained and deterministic.
 //! It is not a code-size mirror of the Python scheduler: the library exposes
@@ -19,7 +19,7 @@ pub use model::{
     Candidate, GalleryEvidence, MuseumEvidence, RepositorySignal, Schedule,
     SchedulerConfig,
 };
-pub use scheduler::HarmonyScheduler;
+pub use scheduler::SkopraedScheduler;
 
 #[inline]
 pub(crate) fn clamp01(value: f64) -> f64 {

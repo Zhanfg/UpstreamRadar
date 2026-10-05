@@ -37,10 +37,10 @@ metric system.
 Inputs include:
 - changed upstream count;
 - collection errors;
-- HARMONY portfolio coverage;
+- SKOPRÆD portfolio coverage;
 - content score;
 - top semantic-impact transition;
-- HARMONY reason tags such as regime-shift and security-focus;
+- SKOPRÆD reason tags such as regime-shift and security-focus;
 - current Discovery Garden fork queue size.
 
 ## Strong-signal rule
@@ -49,7 +49,7 @@ Issues and Releases require more than normal popularity churn.
 
 They are eligible when either:
 - semantic impact exceeds the configured threshold; or
-- HARMONY identifies a strong regime-shift/security signal.
+- SKOPRÆD identifies a strong regime-shift/security signal.
 
 This prevents stars/forks/watchers noise from turning into fake engineering
 work.
@@ -82,7 +82,7 @@ Automation must not impersonate manual human activity.
 A high-value upstream event can now produce a real engineering lifecycle:
 
 Radar observation
-→ semantic-impact / HARMONY evidence
+→ semantic-impact / SKOPRÆD evidence
 → impact Issue
 → monthly Milestone
 → benchmark snapshot
@@ -101,7 +101,7 @@ meaningless commits.
 Activity Matrix v2 adds measured engineering-health surfaces without duplicating
 the existing impact Issue, Wiki, Release, Milestone, review, fork, or CI flows.
 
-### Deterministic HARMONY benchmark
+### Deterministic SKOPRÆD benchmark
 
 The daily health pass builds a deterministic synthetic portfolio and records:
 
@@ -287,7 +287,7 @@ governance signal changes state.
 The resulting engineering surface now spans:
 
 Radar observation
-→ HARMONY scoring
+→ SKOPRÆD scoring
 → impact task / knowledge / release surfaces
 → benchmark and security health
 → CI, fork, stale-work, and workflow maintenance
@@ -340,7 +340,7 @@ The task contains:
 - source platform and upstream URL;
 - semantic-impact score;
 - changed fields;
-- HARMONY reasons;
+- SKOPRÆD reasons;
 - stable evidence hash;
 - repository-specific validation checklist.
 

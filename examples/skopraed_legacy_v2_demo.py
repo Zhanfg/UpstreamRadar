@@ -1,5 +1,5 @@
 from upstreamradar import (
-    HarmonyScheduler,
+    SkopraedScheduler,
     RepositorySignal,
     build_content_plan,
 )
@@ -53,7 +53,7 @@ def main() -> None:
         ),
     )
 
-    scheduler = HarmonyScheduler()
+    scheduler = SkopraedScheduler()
     result = scheduler.schedule(
         records,
         budget=6,

@@ -48,7 +48,7 @@ jobs:
         shell: bash
         run: git pull --ff-only origin main
 
-      - name: Run HARMONY collector
+      - name: Run SKOPRÆD collector
         shell: bash
         env:
           UPSTREAMRADAR_TOKEN: ${{ secrets.UPSTREAMRADAR_PAT }}
@@ -139,7 +139,7 @@ UpstreamRadar failed to collect this target for **${streak} consecutive schedule
 
 - target: `${full_name}`
 - latest error: `${message}`
-- detected by: automated HARMONY collector
+- detected by: automated SKOPRÆD collector
 
 This issue is generated only after repeated failures to avoid transient-error noise.
 EOF

@@ -25,7 +25,7 @@ variable "sources" {
   default     = ["github", "gitlab"]
 }
 
-variable "harmony_v4" {
+variable "skopraed_v1" {
   type = object({
     surprise_weight             = number
     structural_novelty_weight   = number
@@ -52,19 +52,19 @@ variable "harmony_v4" {
 
   validation {
     condition = (
-      var.harmony_v4.surprise_weight >= 0 &&
-      var.harmony_v4.structural_novelty_weight >= 0 &&
-      var.harmony_v4.tail_risk_penalty >= 0 &&
-      var.harmony_v4.museum_weight >= 0 &&
-      var.harmony_v4.museum_disagreement_penalty >= 0 &&
-      var.harmony_v4.cvar_quantile >= 0.5 &&
-      var.harmony_v4.cvar_quantile < 1 &&
-      var.harmony_v4.beam_width >= 8 &&
-      var.harmony_v4.empirical_bayes_strength > 0 &&
-      var.harmony_v4.empirical_bayes_shrinkage >= 0 &&
-      var.harmony_v4.empirical_bayes_shrinkage <= 1
+      var.skopraed_v1.surprise_weight >= 0 &&
+      var.skopraed_v1.structural_novelty_weight >= 0 &&
+      var.skopraed_v1.tail_risk_penalty >= 0 &&
+      var.skopraed_v1.museum_weight >= 0 &&
+      var.skopraed_v1.museum_disagreement_penalty >= 0 &&
+      var.skopraed_v1.cvar_quantile >= 0.5 &&
+      var.skopraed_v1.cvar_quantile < 1 &&
+      var.skopraed_v1.beam_width >= 8 &&
+      var.skopraed_v1.empirical_bayes_strength > 0 &&
+      var.skopraed_v1.empirical_bayes_shrinkage >= 0 &&
+      var.skopraed_v1.empirical_bayes_shrinkage <= 1
     )
-    error_message = "Invalid HARMONY v4 algorithm configuration."
+    error_message = "Invalid SKOPRÆD v1 algorithm configuration."
   }
 }
 
@@ -73,7 +73,7 @@ locals {
     name          = var.collector_name
     poll_interval = var.poll_interval_seconds
     sources       = sort(tolist(var.sources))
-    harmony_v4    = var.harmony_v4
+    skopraed_v1   = var.skopraed_v1
   }
 }
 
