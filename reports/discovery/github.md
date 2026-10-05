@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **112000**
-- latest census cursor: **353584**
+- total census repositories scanned: **116000**
+- latest census cursor: **365982**
 - retained candidates: **80**
 - governed fork queue: **14**
 
@@ -32,9 +32,9 @@
 ### networking
 
 - **HyNetworks/hysteria** — score=0.933, stars=22594; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
+- **MiChongs/WutherCore** — score=0.905, stars=56; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:wireguard
 - **keminar/anyproxy** — score=0.902, stars=33; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
-- **MiChongs/WutherCore** — score=0.902, stars=56; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:wireguard
-- **tokyoxpa3/5G-Proxy-Client** — score=0.879, stars=7; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
+- **tokyoxpa3/5G-Proxy-Client** — score=0.883, stars=7; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **yuhaiin/yuhaiin** — score=0.857, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 - **bigunmd/leshiy** — score=0.842, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
 - **crapthings/hysteria-rust** — score=0.834, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
@@ -49,7 +49,6 @@
 - **m62624/cageforge** — score=0.830, stars=1; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **RARS-oss/bulla** — score=0.816, stars=3; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **souk4711/hakoniwa** — score=0.804, stars=89; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **GreyhavenHQ/greywall** — score=0.799, stars=305; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 
@@ -61,8 +60,8 @@
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
 - **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.908, license=Apache-2.0)
 - **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
+- **MiChongs/WutherCore** → networking (score=0.905, license=MIT)
 - **keminar/anyproxy** → networking (score=0.902, license=MIT)
-- **MiChongs/WutherCore** → networking (score=0.902, license=MIT)
 - **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 - **MSKazemi/aobench** → ai-agents (score=0.895, license=Apache-2.0)
