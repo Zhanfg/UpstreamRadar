@@ -8,7 +8,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from upstreamradar.engine import HarmonyConfig, HarmonyScheduler, RepositorySignal
+from upstreamradar.engine import SkopraedConfig, SkopraedScheduler, RepositorySignal
 
 
 UTC = timezone.utc
@@ -74,8 +74,8 @@ def selection_hash(result) -> str:
 def benchmark(count: int, budget: int, iterations: int) -> dict:
     items = records(count)
     graph = dependency_graph(items)
-    scheduler = HarmonyScheduler(
-        HarmonyConfig(beam_width=64, pagerank_steps=24)
+    scheduler = SkopraedScheduler(
+        SkopraedConfig(beam_width=64, pagerank_steps=24)
     )
     durations = []
     hashes = []
