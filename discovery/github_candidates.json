@@ -1575,6 +1575,29 @@
   {
     "auto_fork_eligible": false,
     "category": "android-kernel",
+    "description": "Android GKI arm64 kernel builds (release + KASAN/UBSAN) for local QEMU/gdbstub debugging",
+    "forks": 0,
+    "full_name": "x86byte/gki-qemu-build",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-08T17:25:07Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.82158863,
+    "source_id": "1402239808",
+    "stars": 0,
+    "url": "https://github.com/x86byte/gki-qemu-build"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
     "description": "Ubuntu on Lenovo Legion Y700 (TB323FU, Snapdragon 8 Elite) with the stock Android GKI kernel: user-space display, Phosh desktop, turnip Vulkan, FEX x86, Steam without user namespaces/SysV IPC",
     "forks": 0,
     "full_name": "LeeSiWal/y700-linux",
@@ -1871,28 +1894,5 @@
     "source_id": "1365231203",
     "stars": 0,
     "url": "https://github.com/luozhonglzw/cybersec-agent"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Switchboard AI: RAG, a tool-using chat agent with human approval, MCP server, LLM cost tracing and evals. NestJS + Next.js + pgvector.",
-    "forks": 0,
-    "full_name": "aphelin/switchboard-ai",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-29T11:57:50Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.81219437,
-    "source_id": "1179864151",
-    "stars": 0,
-    "url": "https://github.com/aphelin/switchboard-ai"
   }
 ]
