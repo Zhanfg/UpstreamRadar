@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **168000**
-- latest census cursor: **548317**
+- total census repositories scanned: **172000**
+- latest census cursor: **559699**
 - retained candidates: **80**
 - governed fork queue: **16**
 
@@ -24,10 +24,10 @@
 - **Spring-bulid/MakoSU** — score=0.907, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **sysretq0/android-kernel-builder** — score=0.900, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **longg66/cve-2025-21479_iqooneo7speed** — score=0.877, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **Aaron-2012/KERNEL-SAMSUNG-A035M---ANDROID-13** — score=0.877, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:ksu
 - **Alfnnnnyy/GKI_KernelSU_SUSFS** — score=0.874, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernelsu, keyword:susfs
 - **kusesad-1122/XinovaSU** — score=0.870, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **BailinT/GKI_BakaSU_SUSFS** — score=0.861, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:susfs
-- **Dere3046/KallRecon** — score=0.853, stars=13; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, recently-active
 
 ### networking
 
