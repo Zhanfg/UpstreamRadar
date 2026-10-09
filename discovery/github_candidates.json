@@ -527,6 +527,30 @@
     "url": "https://github.com/laazizi/autoagent"
   },
   {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
+    "description": "The agent that evolves with you 𖤍",
+    "forks": 6,
+    "full_name": "wundercorp/loki",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-09T00:09:36Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:orchestration",
+      "keyword:inference",
+      "keyword:llm",
+      "recently-active"
+    ],
+    "score": 0.87330825,
+    "source_id": "1366501036",
+    "stars": 25,
+    "url": "https://github.com/wundercorp/loki"
+  },
+  {
     "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Go agent runtime for tool-using, code-executing, multi-provider agents with MCP support, coding-agent CLI integrations, structured output, summarization, and parallel tool execution.",
@@ -1008,6 +1032,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Audit agent for Claude Code that catches missed tool calls — separates spotting from doing. Your Claude answers, Spotter watches.",
+    "forks": 0,
+    "full_name": "kitepon/Spotter",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-08T22:10:55Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85641687,
+    "source_id": "1214754257",
+    "stars": 0,
+    "url": "https://github.com/kitepon/Spotter"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Open-source agent runtime where an AI agent's authority comes from the user's intent and is enforced outside the model: scoped capabilities, capability discovery, audited transitions, revocation, and an Attack World benchmark.",
     "forks": 0,
     "full_name": "ranjan-del/intentward",
@@ -1032,12 +1080,12 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Audit agent for Claude Code that catches missed tool calls — separates spotting from doing. Your Claude answers, Spotter watches.",
+    "description": "LLM agent that helps production planners handle job-shop disruptions by calling a CP-SAT scheduler as tools. Hand-written tool-use loop, MCP server, evals, web UI. Synthetic data only.",
     "forks": 0,
-    "full_name": "kitepon/Spotter",
+    "full_name": "roopchandrika/jobshop-agent",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-03T10:52:42Z",
+    "pushed_at": "2026-10-08T20:15:31Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1048,10 +1096,34 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.85614897,
-    "source_id": "1214754257",
+    "score": 0.85625674,
+    "source_id": "1409578446",
     "stars": 0,
-    "url": "https://github.com/kitepon/Spotter"
+    "url": "https://github.com/roopchandrika/jobshop-agent"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Static analysis and drift detection for MCP servers: enumerate the surface a server exposes to an agent, classify every tool's blast radius (R0-R5), hash it, and fail CI when it escalates. Never invokes a tool.",
+    "forks": 0,
+    "full_name": "Lanier-Developments/mcp-placard",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-08T14:28:50Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.85577635,
+    "source_id": "1373169672",
+    "stars": 0,
+    "url": "https://github.com/Lanier-Developments/mcp-placard"
   },
   {
     "auto_fork_eligible": false,
@@ -1825,74 +1897,5 @@
     "source_id": "1275698114",
     "stars": 0,
     "url": "https://github.com/sanlee-ys/kb-agent"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "AI agent intelligence layer in MongoDB Atlas: prompts, model config, semantic cache, guardrails and short/long-term memory stored as documents and changed live, plus an MCP tool-use loop.",
-    "forks": 0,
-    "full_name": "adrianofratelli-glitch/atlas-agent-intelligence-layer",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-06T18:35:38Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.81251064,
-    "source_id": "1398630862",
-    "stars": 0,
-    "url": "https://github.com/adrianofratelli-glitch/atlas-agent-intelligence-layer"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "A tool-using, memory-enabled, MCP-integrated multi-agent system with RAG, human-in-the-loop workflows, observability, and evaluation.",
-    "forks": 0,
-    "full_name": "Karthik2509-git/multi-agent-orchestration-platform",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-07T13:04:18Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:orchestration",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.81234673,
-    "source_id": "1370982493",
-    "stars": 0,
-    "url": "https://github.com/Karthik2509-git/multi-agent-orchestration-platform"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Security operations AI agent built with LangGraph, deterministic policy enforcement, human approval, auditable tool use, and MCP.",
-    "forks": 0,
-    "full_name": "luozhonglzw/cybersec-agent",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-06T16:26:03Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.81233084,
-    "source_id": "1365231203",
-    "stars": 0,
-    "url": "https://github.com/luozhonglzw/cybersec-agent"
   }
 ]
