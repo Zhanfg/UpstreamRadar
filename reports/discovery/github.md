@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **172000**
-- latest census cursor: **559699**
+- total census repositories scanned: **176000**
+- latest census cursor: **571012**
 - retained candidates: **80**
-- governed fork queue: **16**
+- governed fork queue: **17**
 
 ## Top directions
 
@@ -34,7 +34,7 @@
 - **HyNetworks/hysteria** — score=0.933, stars=22594; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
 - **MiChongs/WutherCore** — score=0.905, stars=56; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:wireguard
 - **keminar/anyproxy** — score=0.902, stars=33; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
-- **tokyoxpa3/5G-Proxy-Client** — score=0.883, stars=7; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
+- **tokyoxpa3/5G-Proxy-Client** — score=0.884, stars=8; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **yuhaiin/yuhaiin** — score=0.857, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 - **bigunmd/leshiy** — score=0.842, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
 - **crapthings/hysteria-rust** — score=0.834, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
@@ -64,6 +64,7 @@
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 - **MSKazemi/aobench** → ai-agents (score=0.895, license=Apache-2.0)
 - **taihei-05/siglume-api-sdk** → ai-agents (score=0.889, license=MIT)
+- **tokyoxpa3/5G-Proxy-Client** → networking (score=0.884, license=MIT)
 - **nedonatelli/sidecar** → ai-agents (score=0.878, license=MIT)
 - **wundercorp/loki** → ai-agents (score=0.873, license=MIT)
 

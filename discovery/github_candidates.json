@@ -359,14 +359,14 @@
     "url": "https://github.com/taihei-05/siglume-api-sdk"
   },
   {
-    "auto_fork_eligible": false,
+    "auto_fork_eligible": true,
     "category": "networking",
     "description": "Android SOCKS5 TUN tunnel client — routes the device's entire traffic through a remote SOCKS5 server. Native C (epoll) engine + JNI + Kotlin UI, TCP/UDP/DNS/QUIC support, no root required.",
     "forks": 2,
     "full_name": "tokyoxpa3/5G-Proxy-Client",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-05T19:26:02Z",
+    "pushed_at": "2026-10-09T14:08:48Z",
     "reasons": [
       "category:networking",
       "keyword:proxy",
@@ -377,9 +377,9 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.88284616,
+    "score": 0.88401947,
     "source_id": "1335137963",
-    "stars": 7,
+    "stars": 8,
     "url": "https://github.com/tokyoxpa3/5G-Proxy-Client"
   },
   {
@@ -769,6 +769,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Minimal agent runtime for Smeldr. Anthropic tool-use loop, MCP client, and cron scheduler. Embeds directly in a Smeldr app.",
+    "forks": 0,
+    "full_name": "Smeldr/agent",
+    "license_id": "AGPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-10-09T13:58:26Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:AGPL-3.0",
+      "emerging"
+    ],
+    "score": 0.86308619,
+    "source_id": "1239090381",
+    "stars": 1,
+    "url": "https://github.com/Smeldr/agent"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Adaptive tiny-model layer between LLMs and their tools — observes MCP traffic, trains per-tool LoRA compressors, synthesizes new tools from patterns.",
     "forks": 0,
     "full_name": "opcastil11/planckbot",
@@ -822,7 +846,7 @@
     "full_name": "Yacine-ai-tech/AgentKit",
     "license_id": "AGPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-10-08T01:05:32Z",
+    "pushed_at": "2026-10-09T14:45:18Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -833,7 +857,7 @@
       "recently-active",
       "license:AGPL-3.0"
     ],
-    "score": 0.86015891,
+    "score": 0.86038603,
     "source_id": "1348852330",
     "stars": 0,
     "url": "https://github.com/Yacine-ai-tech/AgentKit"
@@ -1032,6 +1056,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "LLM agent that helps production planners handle job-shop disruptions by calling a CP-SAT scheduler as tools. Hand-written tool-use loop, MCP server, evals, web UI. Synthetic data only.",
+    "forks": 0,
+    "full_name": "roopchandrika/jobshop-agent",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-09T16:17:43Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85654133,
+    "source_id": "1409578446",
+    "stars": 0,
+    "url": "https://github.com/roopchandrika/jobshop-agent"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Agentic motorcycle ride planner: one sentence in, a ride you can follow out. Claude tool-use loop with scouts, deterministic road/weather/stop tools, ride library, MCP server for Claude Code and Codex.",
     "forks": 0,
     "full_name": "bhoudebert/agent-motoride",
@@ -1104,30 +1152,6 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "LLM agent that helps production planners handle job-shop disruptions by calling a CP-SAT scheduler as tools. Hand-written tool-use loop, MCP server, evals, web UI. Synthetic data only.",
-    "forks": 0,
-    "full_name": "roopchandrika/jobshop-agent",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-08T20:15:31Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85625674,
-    "source_id": "1409578446",
-    "stars": 0,
-    "url": "https://github.com/roopchandrika/jobshop-agent"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
     "description": "Static analysis and drift detection for MCP servers: enumerate the surface a server exposes to an agent, classify every tool's blast radius (R0-R5), hash it, and fail CI when it escalates. Never invokes a tool.",
     "forks": 0,
     "full_name": "Lanier-Developments/mcp-placard",
@@ -1172,6 +1196,30 @@
     "source_id": "1311787094",
     "stars": 0,
     "url": "https://github.com/rarebit-one/harness-kernel"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "元认知协议引擎 + 分级自主护栏 —— 平台无关的自主运维 Agent 核心。Metacognition protocol + tiered-autonomy guardrails for autonomous ops agents.",
+    "forks": 0,
+    "full_name": "codecloud-dev/agent-core",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-09T11:31:05Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85524358,
+    "source_id": "1403222976",
+    "stars": 0,
+    "url": "https://github.com/codecloud-dev/agent-core"
   },
   {
     "auto_fork_eligible": false,
@@ -1852,51 +1900,5 @@
     "source_id": "1358377683",
     "stars": 1,
     "url": "https://github.com/karthik-ak-Git/SOVARA"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "RV dealer portal with an embedded Claude assistant: Next.js and ASP.NET Core portal, Python RAG and tool-using agent with an eval suite gating CI, MCP servers for the portal and Microsoft 365, Fabric reporting, Azure via Bicep",
-    "forks": 0,
-    "full_name": "methos237/dealer-portal-ai-assistant",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-29T17:56:55Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.81269265,
-    "source_id": "1392431489",
-    "stars": 0,
-    "url": "https://github.com/methos237/dealer-portal-ai-assistant"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "WhatsApp AI agent for healthcare clinics: LLM tool use (Gemini/Claude/OpenAI), hybrid RAG (pgvector), Stripe payments, FHIR EHR/LIS, CRM and n8n automations, with guardrails, PII redaction and evals.",
-    "forks": 0,
-    "full_name": "GustavoPFARIA/clinicflow-ai",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-29T16:30:40Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.81257287,
-    "source_id": "1382949249",
-    "stars": 0,
-    "url": "https://github.com/GustavoPFARIA/clinicflow-ai"
   }
 ]
