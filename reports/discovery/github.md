@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **192000**
-- latest census cursor: **617112**
+- total census repositories scanned: **196000**
+- latest census cursor: **628618**
 - retained candidates: **80**
 - governed fork queue: **17**
 
@@ -12,7 +12,7 @@
 - **DemonDamon/AgenticX** — score=0.933, stars=238; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
 - **context-labs/whip** — score=0.918, stars=1069; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **saigontechnology/AgentCrew** — score=0.916, stars=217; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
-- **ThreeMoonsLab/agents-shipgate** — score=0.911, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
+- **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
 - **nibor1896/Crow** — score=0.898, stars=35; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **ai-pivot/xbot** — score=0.895, stars=14; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
@@ -54,7 +54,7 @@
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **context-labs/whip** → ai-agents (score=0.918, license=Apache-2.0)
 - **saigontechnology/AgentCrew** → ai-agents (score=0.916, license=Apache-2.0)
-- **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.911, license=Apache-2.0)
+- **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.912, license=Apache-2.0)
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
 - **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
 - **MiChongs/WutherCore** → networking (score=0.905, license=MIT)

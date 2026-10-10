@@ -127,7 +127,7 @@
     "full_name": "ThreeMoonsLab/agents-shipgate",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-10-10T07:38:13Z",
+    "pushed_at": "2026-10-10T23:23:09Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -137,7 +137,7 @@
       "recently-active",
       "license:Apache-2.0"
     ],
-    "score": 0.91119726,
+    "score": 0.9115898,
     "source_id": "1220594946",
     "stars": 90,
     "url": "https://github.com/ThreeMoonsLab/agents-shipgate"
@@ -841,12 +841,12 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Governed MCP runtime & dynamic tool execution platform — dynamic tool packs, typed effects (read/write/destructive), cryptographic approval tokens, and strict audit logging. FastMCP.",
+    "description": "Governed Model Context Protocol (MCP) server & AI agent runtime with cryptographic action approval, typed tool effects, and audit logs. FastMCP, Claude Desktop & Cursor ready.",
     "forks": 1,
     "full_name": "Yacine-ai-tech/AgentKit",
     "license_id": "AGPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-10-09T14:45:18Z",
+    "pushed_at": "2026-10-10T21:28:54Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -857,7 +857,7 @@
       "recently-active",
       "license:AGPL-3.0"
     ],
-    "score": 0.86038603,
+    "score": 0.86039912,
     "source_id": "1348852330",
     "stars": 0,
     "url": "https://github.com/Yacine-ai-tech/AgentKit"
@@ -1172,6 +1172,54 @@
     "source_id": "1401439733",
     "stars": 0,
     "url": "https://github.com/ranjan-del/intentward"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "A hackable agent runtime: tool-use loop, human-in-the-loop approval gates (approve/deny/edit), OpenTelemetry JSONL tracing, stdio MCP client, SKILL.md loading",
+    "forks": 0,
+    "full_name": "abhishekash/agent-harness",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-10T17:00:14Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.85605345,
+    "source_id": "1409965168",
+    "stars": 0,
+    "url": "https://github.com/abhishekash/agent-harness"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Minimal tool-using AI agent in Python: MCP tools, markdown memory, and swappable OpenAI-compatible models (Ollama, OpenAI, Claude). Typed, tested, CI-checked.",
+    "forks": 0,
+    "full_name": "corradoisidoro/agent-harness",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-10T15:17:15Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85591075,
+    "source_id": "1405807012",
+    "stars": 0,
+    "url": "https://github.com/corradoisidoro/agent-harness"
   },
   {
     "auto_fork_eligible": false,
@@ -1743,6 +1791,29 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Ardur — open-source personal AI agent. Lives in your terminal and across your messaging channels. Multi-provider LLM access, tool use, memory, plugins, with cap-token security, receipt-chain transparency, and cost-tuple awareness built in.",
+    "forks": 0,
+    "full_name": "ArdurAI/ardur-agent",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-10T23:20:58Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.82337161,
+    "source_id": "1252744620",
+    "stars": 2,
+    "url": "https://github.com/ArdurAI/ardur-agent"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Block irreversible AI-agent actions before they run — deterministic, fail-closed action veto for Claude Code, Codex, Cursor, and other tool-using agents.",
     "forks": 0,
     "full_name": "BGMLAI/gate.cat",
@@ -1762,29 +1833,6 @@
     "source_id": "1289130385",
     "stars": 2,
     "url": "https://github.com/BGMLAI/gate.cat"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Ardur — open-source personal AI agent. Lives in your terminal and across your messaging channels. Multi-provider LLM access, tool use, memory, plugins, with cap-token security, receipt-chain transparency, and cost-tuple awareness built in.",
-    "forks": 0,
-    "full_name": "ArdurAI/ardur-agent",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-10T04:58:56Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.82276145,
-    "source_id": "1252744620",
-    "stars": 2,
-    "url": "https://github.com/ArdurAI/ardur-agent"
   },
   {
     "auto_fork_eligible": false,
@@ -1835,70 +1883,24 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Experimental risk preflight for AI Agent actions: evidence-backed allow, review, or block decisions before third-party tool use.",
+    "description": "Look up building permit status for King County, WA — searches across city + county jurisdictions. Agent-friendly: --pipe, --schema, tool.json.",
     "forks": 0,
-    "full_name": "MM-sheng/404-directory",
+    "full_name": "chaoz23/king-county-permit-status",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-05T03:27:39Z",
+    "pushed_at": "2026-10-10T22:14:36Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
       "keyword:mcp",
-      "keyword:model-context-protocol",
+      "keyword:tool-use",
       "recently-active",
       "license:MIT",
       "emerging"
     ],
-    "score": 0.8192652,
-    "source_id": "1337215483",
+    "score": 0.81933785,
+    "source_id": "1278549136",
     "stars": 1,
-    "url": "https://github.com/MM-sheng/404-directory"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Multi-agent system on one FastAPI surface: LangGraph orchestrator with native Anthropic tool_use, Redis-backed executor, LlamaIndex RAG, and an MCP server. Full test suite runs with no API keys.",
-    "forks": 0,
-    "full_name": "SolomonSmith-dev/arda",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-06T03:27:33Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.8192083,
-    "source_id": "1227006395",
-    "stars": 1,
-    "url": "https://github.com/SolomonSmith-dev/arda"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Reusable GitHub Actions Workflow Template for Android GKI Kernel Compilation",
-    "forks": 0,
-    "full_name": "beduldul/android-gki-kernel-build-action",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-04T15:22:03Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.81819973,
-    "source_id": "1333661236",
-    "stars": 0,
-    "url": "https://github.com/beduldul/android-gki-kernel-build-action"
+    "url": "https://github.com/chaoz23/king-county-permit-status"
   }
 ]
