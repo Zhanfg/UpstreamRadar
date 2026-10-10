@@ -122,6 +122,29 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
+    "description": "The deterministic merge gate for AI-generated agent capability changes — a local-first, static Tool-Use Readiness review for MCP, OpenAPI, and SDK tool surfaces. Open-source CLI + GitHub Action.",
+    "forks": 6,
+    "full_name": "ThreeMoonsLab/agents-shipgate",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-10T07:38:13Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.91119726,
+    "source_id": "1220594946",
+    "stars": 90,
+    "url": "https://github.com/ThreeMoonsLab/agents-shipgate"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
     "description": "See what your coding agents did and what it cost. Breaks each task down into work steps — tools used, files changed, tests run, time and tokens spent. Local-first dashboard for Claude Code, Codex, OpenCode, and more. No login, no telemetry.",
     "forks": 82,
     "full_name": "mikehasa/agentacct",
@@ -142,29 +165,6 @@
     "source_id": "1311225763",
     "stars": 762,
     "url": "https://github.com/mikehasa/agentacct"
-  },
-  {
-    "auto_fork_eligible": true,
-    "category": "ai-agents",
-    "description": "The deterministic merge gate for AI-generated agent capability changes — a local-first, static Tool-Use Readiness review for MCP, OpenAPI, and SDK tool surfaces. Open-source CLI + GitHub Action.",
-    "forks": 5,
-    "full_name": "ThreeMoonsLab/agents-shipgate",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-08T05:48:15Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.91069974,
-    "source_id": "1220594946",
-    "stars": 90,
-    "url": "https://github.com/ThreeMoonsLab/agents-shipgate"
   },
   {
     "auto_fork_eligible": true,
@@ -936,6 +936,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "The agent loop, embodied. Tool-using runtime + fail-closed safety pipeline + sim-first execution + statistically-rigorous bench harness + post-hoc analysis (counterfactual replay, causal attribution, LLM judge, property mining) for embodied AI. Sister project to GhostLM.",
+    "forks": 0,
+    "full_name": "joemunene-by/ghostloop",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-10T12:27:41Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:inference",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.85659413,
+    "source_id": "1234625936",
+    "stars": 0,
+    "url": "https://github.com/joemunene-by/ghostloop"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Production-grade AI Agent reference for any coding agent (Claude Code / Cursor / Copilot / Codex). 24 reference nodes: ReAct Loop, MCP, RAG, Multi-Agent, Memory, Guardrails. Includes build-vs-buy decision tree + integration patterns. No deprecated stack, all TypeScript production code. https://morningstar202604.github.io/agent-builder",
     "forks": 0,
     "full_name": "Morningstar202604/agent-builder",
@@ -1109,7 +1133,7 @@
     "full_name": "kitepon/Spotter",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-08T22:10:55Z",
+    "pushed_at": "2026-10-10T11:06:52Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1120,7 +1144,7 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.85641687,
+    "score": 0.85648187,
     "source_id": "1214754257",
     "stars": 0,
     "url": "https://github.com/kitepon/Spotter"
@@ -1176,6 +1200,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Stateless MCP 2026-07-28 server + evaluation of LLM tool selection at scale (N=5..100, embedding retrieval) and agent loop guards on a local LLM",
+    "forks": 0,
+    "full_name": "Warlordg9/mcp-agent-tooling-lab",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-09T23:38:41Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.85552827,
+    "source_id": "1412487735",
+    "stars": 0,
+    "url": "https://github.com/Warlordg9/mcp-agent-tooling-lab"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Provider-neutral TypeScript AI-harness kernel — LLM adapters, tool-use loop, MCP connectors, pluggable agent engines.",
     "forks": 0,
     "full_name": "rarebit-one/harness-kernel",
@@ -1220,30 +1268,6 @@
     "source_id": "1403222976",
     "stars": 0,
     "url": "https://github.com/codecloud-dev/agent-core"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "The agent loop, embodied. Tool-using runtime + fail-closed safety pipeline + sim-first execution + statistically-rigorous bench harness + post-hoc analysis (counterfactual replay, causal attribution, LLM judge, property mining) for embodied AI. Sister project to GhostLM.",
-    "forks": 0,
-    "full_name": "joemunene-by/ghostloop",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-01T18:55:34Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:inference",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT"
-    ],
-    "score": 0.85513304,
-    "source_id": "1234625936",
-    "stars": 0,
-    "url": "https://github.com/joemunene-by/ghostloop"
   },
   {
     "auto_fork_eligible": false,
@@ -1368,11 +1392,11 @@
     "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Open-source agent platform for Global × China enterprises — wire every system through one agent core. Self-hosted, any LLM.",
-    "forks": 176,
+    "forks": 178,
     "full_name": "fim-ai/fim-one",
     "license_id": "NOASSERTION",
     "platform": "github",
-    "pushed_at": "2026-10-01T12:18:01Z",
+    "pushed_at": "2026-10-10T10:36:06Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1382,9 +1406,9 @@
       "recently-active",
       "community-signal"
     ],
-    "score": 0.84071191,
+    "score": 0.84115919,
     "source_id": "1164059777",
-    "stars": 1553,
+    "stars": 1577,
     "url": "https://github.com/fim-ai/fim-one"
   },
   {
@@ -1626,6 +1650,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "saige - Super Artificial Intelligence Graph Environment. A unified Go SDK, CLI, and MCP server for streaming AI agents, knowledge graphs, and RAG pipelines, with Ollama, OpenAI, Anthropic, and Google providers behind one interface.",
+    "forks": 0,
+    "full_name": "urmzd/saige",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-10T12:30:45Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.83012645,
+    "source_id": "1185960398",
+    "stars": 5,
+    "url": "https://github.com/urmzd/saige"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "android-kernel",
     "description": "Hide active VPN from selected Android apps (kernel module + LSPosed + Zygisk)",
     "forks": 33,
@@ -1701,7 +1748,7 @@
     "full_name": "BGMLAI/gate.cat",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-10-02T11:09:59Z",
+    "pushed_at": "2026-10-10T11:14:09Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1711,10 +1758,33 @@
       "license:Apache-2.0",
       "emerging"
     ],
-    "score": 0.82327196,
+    "score": 0.82328192,
     "source_id": "1289130385",
     "stars": 2,
     "url": "https://github.com/BGMLAI/gate.cat"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Ardur — open-source personal AI agent. Lives in your terminal and across your messaging channels. Multi-provider LLM access, tool use, memory, plugins, with cap-token security, receipt-chain transparency, and cost-tuple awareness built in.",
+    "forks": 0,
+    "full_name": "ArdurAI/ardur-agent",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-10T04:58:56Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.82276145,
+    "source_id": "1252744620",
+    "stars": 2,
+    "url": "https://github.com/ArdurAI/ardur-agent"
   },
   {
     "auto_fork_eligible": false,
@@ -1830,75 +1900,5 @@
     "source_id": "1333661236",
     "stars": 0,
     "url": "https://github.com/beduldul/android-gki-kernel-build-action"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Android GKI ABI Compatibility Verification Utility for Linux Kernels",
-    "forks": 0,
-    "full_name": "beduldul/gki-abi-checker",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-04T15:22:16Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.8157999,
-    "source_id": "1333666357",
-    "stars": 0,
-    "url": "https://github.com/beduldul/gki-abi-checker"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "A hermetic, no-root sandbox that emits a signed, independently-verifiable receipt that the isolation seal held — verifiable governance for AI agents (Rust).",
-    "forks": 0,
-    "full_name": "RARS-oss/bulla",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-11T17:12:48Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.81557864,
-    "source_id": "1344073434",
-    "stars": 3,
-    "url": "https://github.com/RARS-oss/bulla"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Sovara is a local-first AI agent workspace for coding, execution, and knowledge work with real tool use.",
-    "forks": 0,
-    "full_name": "karthik-ak-Git/SOVARA",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-09-29T16:47:49Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.81453497,
-    "source_id": "1358377683",
-    "stars": 1,
-    "url": "https://github.com/karthik-ak-Git/SOVARA"
   }
 ]
