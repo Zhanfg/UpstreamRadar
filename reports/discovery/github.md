@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **180000**
-- latest census cursor: **582326**
+- total census repositories scanned: **184000**
+- latest census cursor: **593567**
 - retained candidates: **80**
 - governed fork queue: **17**
 
@@ -27,7 +27,7 @@
 - **Aaron-2012/KERNEL-SAMSUNG-A035M---ANDROID-13** — score=0.877, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:ksu
 - **Alfnnnnyy/GKI_KernelSU_SUSFS** — score=0.874, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernelsu, keyword:susfs
 - **kusesad-1122/XinovaSU** — score=0.870, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
-- **BailinT/GKI_BakaSU_SUSFS** — score=0.861, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:susfs
+- **BailinT/GKI_BakaSU_SUSFS** — score=0.867, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:susfs
 
 ### networking
 
