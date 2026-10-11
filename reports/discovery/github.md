@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **204000**
-- latest census cursor: **659394**
+- total census repositories scanned: **208000**
+- latest census cursor: **671844**
 - retained candidates: **80**
-- governed fork queue: **17**
+- governed fork queue: **18**
 
 ## Top directions
 
@@ -14,9 +14,9 @@
 - **saigontechnology/AgentCrew** — score=0.916, stars=217; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
-- **nibor1896/Crow** — score=0.898, stars=35; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **MerkyorLynn/Lynn** — score=0.904, stars=53; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **nibor1896/Crow** — score=0.898, stars=36; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **ai-pivot/xbot** — score=0.895, stars=14; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
-- **MSKazemi/aobench** — score=0.895, stars=9; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 
 ### android-kernel
 
@@ -43,6 +43,7 @@
 
 - **Erio-Harrison/nanosandbox** — score=0.859, stars=5; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **whiskeyjimbo/bento** — score=0.836, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **ravishkarathnayaka/agentic-sandbox-secure-runtime** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:container
 - **vladimiracunadev-create/sandbox-labs** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **jkelly-dev1/agent-sandbox-escape** — score=0.833, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **m62624/cageforge** — score=0.830, stars=1; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
@@ -58,6 +59,7 @@
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
 - **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
 - **MiChongs/WutherCore** → networking (score=0.905, license=MIT)
+- **MerkyorLynn/Lynn** → ai-agents (score=0.904, license=Apache-2.0)
 - **keminar/anyproxy** → networking (score=0.902, license=MIT)
 - **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
