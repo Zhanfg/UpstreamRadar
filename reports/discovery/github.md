@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **224000**
-- latest census cursor: **719240**
+- total census repositories scanned: **228000**
+- latest census cursor: **731099**
 - retained candidates: **80**
-- governed fork queue: **18**
+- governed fork queue: **19**
 
 ## Top directions
 
@@ -65,6 +65,7 @@
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 - **MSKazemi/aobench** → ai-agents (score=0.895, license=Apache-2.0)
 - **taihei-05/siglume-api-sdk** → ai-agents (score=0.889, license=MIT)
+- **substructureai/subs** → ai-agents (score=0.888, license=MIT)
 - **tokyoxpa3/5G-Proxy-Client** → networking (score=0.884, license=MIT)
 - **nedonatelli/sidecar** → ai-agents (score=0.878, license=MIT)
 - **wundercorp/loki** → ai-agents (score=0.873, license=MIT)

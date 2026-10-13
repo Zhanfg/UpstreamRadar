@@ -384,6 +384,30 @@
   },
   {
     "auto_fork_eligible": true,
+    "category": "ai-agents",
+    "description": "subs is an agent harness for the cloud. It runs an unprivileged agent loop and uses MCP servers for executing tools. Use it locally, remotely and with your team. You can customize everything.",
+    "forks": 2,
+    "full_name": "substructureai/subs",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-13T04:45:27Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:orchestration",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.8876629,
+    "source_id": "1164572621",
+    "stars": 12,
+    "url": "https://github.com/substructureai/subs"
+  },
+  {
+    "auto_fork_eligible": true,
     "category": "networking",
     "description": "Android SOCKS5 TUN tunnel client — routes the device's entire traffic through a remote SOCKS5 server. Native C (epoll) engine + JNI + Kotlin UI, TCP/UDP/DNS/QUIC support, no root required.",
     "forks": 2,
@@ -913,12 +937,36 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Governed Model Context Protocol (MCP) server & AI agent runtime with cryptographic action approval, typed tool effects, and audit logs. FastMCP, Claude Desktop & Cursor ready.",
+    "description": "Production-grade AI Agent reference for any coding agent (Claude Code / Cursor / Copilot / Codex). 24 reference nodes: ReAct Loop, MCP, RAG, Multi-Agent, Memory, Guardrails. Includes build-vs-buy decision tree + integration patterns. No deprecated stack, all TypeScript production code. https://morningstar202604.github.io/agent-builder",
+    "forks": 0,
+    "full_name": "Morningstar202604/agent-builder",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-12T17:40:18Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.86224802,
+    "source_id": "1407464050",
+    "stars": 1,
+    "url": "https://github.com/Morningstar202604/agent-builder"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Governed MCP server and agent runtime: signed action approvals, typed tool effects and audit logs for Claude Desktop, Cursor and custom agents.",
     "forks": 1,
     "full_name": "Yacine-ai-tech/AgentKit",
     "license_id": "AGPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-10-11T18:02:21Z",
+    "pushed_at": "2026-10-13T06:42:51Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -929,7 +977,7 @@
       "recently-active",
       "license:AGPL-3.0"
     ],
-    "score": 0.86050032,
+    "score": 0.86056726,
     "source_id": "1348852330",
     "stars": 0,
     "url": "https://github.com/Yacine-ai-tech/AgentKit"
@@ -1028,30 +1076,6 @@
     "source_id": "1234625936",
     "stars": 0,
     "url": "https://github.com/joemunene-by/ghostloop"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Production-grade AI Agent reference for any coding agent (Claude Code / Cursor / Copilot / Codex). 24 reference nodes: ReAct Loop, MCP, RAG, Multi-Agent, Memory, Guardrails. Includes build-vs-buy decision tree + integration patterns. No deprecated stack, all TypeScript production code. https://morningstar202604.github.io/agent-builder",
-    "forks": 0,
-    "full_name": "Morningstar202604/agent-builder",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-06T20:40:12Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85657361,
-    "source_id": "1407464050",
-    "stars": 0,
-    "url": "https://github.com/Morningstar202604/agent-builder"
   },
   {
     "auto_fork_eligible": false,
@@ -1884,28 +1908,5 @@
     "source_id": "1305918805",
     "stars": 0,
     "url": "https://github.com/qianmingzi7-coder/tb322fc-r2-kernel-public-build"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Jev Decisions Plugin for Hermes (and other AI Agents): tool risk reviews, human approval recommendations, evidence checks, a local decision journal, local decision supervision, and learned corrections.",
-    "forks": 0,
-    "full_name": "bojansandhaus/jev-decisions-hermes",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-05T05:21:14Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.82616119,
-    "source_id": "1376944953",
-    "stars": 3,
-    "url": "https://github.com/bojansandhaus/jev-decisions-hermes"
   }
 ]
