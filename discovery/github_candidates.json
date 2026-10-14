@@ -1038,7 +1038,7 @@
     "full_name": "Erio-Harrison/nanosandbox",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-11T05:44:43Z",
+    "pushed_at": "2026-10-13T14:34:44Z",
     "reasons": [
       "category:security-sandbox",
       "keyword:sandbox",
@@ -1049,9 +1049,9 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.8593131,
+    "score": 0.85992828,
     "source_id": "1237517003",
-    "stars": 5,
+    "stars": 6,
     "url": "https://github.com/Erio-Harrison/nanosandbox"
   },
   {
@@ -1605,6 +1605,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "security-sandbox",
+    "description": "Rust sandbox for AI agents and untrusted code, inspired by OpenAI Codex. OS-enforced isolation on Linux, Windows, and macOS.",
+    "forks": 0,
+    "full_name": "m62624/cageforge",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-13T09:12:24Z",
+    "reasons": [
+      "category:security-sandbox",
+      "keyword:sandbox",
+      "keyword:seccomp",
+      "keyword:isolation",
+      "keyword:security",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.84100706,
+    "source_id": "1336924327",
+    "stars": 1,
+    "url": "https://github.com/m62624/cageforge"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Peridot v1.6.0 [STABLE] | Sovereign AI Kernel. Offline, GPU accelerated Qwen framework: a 27B model fully on an 8GB GPU at 23.6 tok/s. Sandboxed skills & plugins, model tool use, opt in web search, MCP bridge for private data jobs from cloud agents, ZAT-SCS preemption, RAG. Zero data exfiltration. Engineered by uncoalesced.",
     "forks": 1,
@@ -1673,6 +1697,30 @@
     "source_id": "1414495338",
     "stars": 0,
     "url": "https://github.com/ravishkarathnayaka/agentic-sandbox-secure-runtime"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "security-sandbox",
+    "description": "Cross-platform process and code sandboxing: unified fail-closed API over seccomp, Landlock, namespaces, pledge/unveil, and job objects.",
+    "forks": 0,
+    "full_name": "jamesgober/sandbox-sec",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-13T19:25:08Z",
+    "reasons": [
+      "category:security-sandbox",
+      "keyword:sandbox",
+      "keyword:seccomp",
+      "keyword:isolation",
+      "keyword:security",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.83511648,
+    "source_id": "1285927974",
+    "stars": 0,
+    "url": "https://github.com/jamesgober/sandbox-sec"
   },
   {
     "auto_fork_eligible": false,
@@ -1862,52 +1910,5 @@
     "source_id": "1206392342",
     "stars": 592,
     "url": "https://github.com/okhsunrog/vpnhide"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Rust sandbox for AI agents and untrusted code, inspired by OpenAI Codex. OS-enforced isolation on Linux, Windows, and macOS.",
-    "forks": 0,
-    "full_name": "m62624/cageforge",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-09-23T11:58:24Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.83014353,
-    "source_id": "1336924327",
-    "stars": 1,
-    "url": "https://github.com/m62624/cageforge"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "saige - Super Artificial Intelligence Graph Environment. A unified Go SDK, CLI, and MCP server for streaming AI agents, knowledge graphs, and RAG pipelines, with Ollama, OpenAI, Anthropic, and Google providers behind one interface.",
-    "forks": 0,
-    "full_name": "urmzd/saige",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-10T12:30:45Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.83012645,
-    "source_id": "1185960398",
-    "stars": 5,
-    "url": "https://github.com/urmzd/saige"
   }
 ]

@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **236000**
-- latest census cursor: **756175**
+- total census repositories scanned: **240000**
+- latest census cursor: **768296**
 - retained candidates: **80**
 - governed fork queue: **19**
 
@@ -41,12 +41,13 @@
 
 ### security-sandbox
 
-- **Erio-Harrison/nanosandbox** — score=0.859, stars=5; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **Erio-Harrison/nanosandbox** — score=0.860, stars=6; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **m62624/cageforge** — score=0.841, stars=1; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **whiskeyjimbo/bento** — score=0.836, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **ravishkarathnayaka/agentic-sandbox-secure-runtime** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:container
+- **jamesgober/sandbox-sec** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **vladimiracunadev-create/sandbox-labs** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **jkelly-dev1/agent-sandbox-escape** — score=0.833, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **m62624/cageforge** — score=0.830, stars=1; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 
