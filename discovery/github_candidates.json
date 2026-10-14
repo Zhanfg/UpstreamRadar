@@ -510,7 +510,7 @@
     "full_name": "New1Direction/webmcp-anything",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-13T16:27:39Z",
+    "pushed_at": "2026-10-14T23:00:21Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -521,7 +521,7 @@
       "recently-active",
       "license:MIT"
     ],
-    "score": 0.87601544,
+    "score": 0.87639397,
     "source_id": "1250482335",
     "stars": 6,
     "url": "https://github.com/New1Direction/webmcp-anything"
@@ -913,6 +913,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Agent-native, governed AI runtime for Rust, Python, and TypeScript — native providers, MCP, tools, routing, memory, budgets, audit, and containment.",
+    "forks": 0,
+    "full_name": "matakartal/aikit-runtime",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-14T19:46:52Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.86304979,
+    "source_id": "1302646058",
+    "stars": 1,
+    "url": "https://github.com/matakartal/aikit-runtime"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Adaptive tiny-model layer between LLMs and their tools — observes MCP traffic, trains per-tool LoRA compressors, synthesizes new tools from patterns.",
     "forks": 0,
     "full_name": "opcastil11/planckbot",
@@ -1104,6 +1128,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Static analysis and drift detection for MCP servers: enumerate the surface a server exposes to an agent, classify every tool's blast radius (R0-R5), hash it, and fail CI when it escalates. Never invokes a tool.",
+    "forks": 0,
+    "full_name": "Lanier-Developments/mcp-placard",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-14T23:01:11Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.8565813,
+    "source_id": "1373169672",
+    "stars": 0,
+    "url": "https://github.com/Lanier-Developments/mcp-placard"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Production-grade AI Agent reference for any coding agent (Claude Code / Cursor / Copilot / Codex). 24 reference nodes: ReAct Loop, MCP, RAG, Multi-Agent, Memory, Guardrails. Includes build-vs-buy decision tree + integration patterns. No deprecated stack, all TypeScript production code. https://morningstar202604.github.io/agent-builder",
     "forks": 0,
     "full_name": "X33834/agent-builder",
@@ -1248,6 +1296,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Local document search with an agentic retrieval loop (SQLite FTS5, no embeddings), an MCP server and a Tauri desktop app",
+    "forks": 0,
+    "full_name": "cgaeking/rootmind",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-14T22:03:11Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85650074,
+    "source_id": "1414266133",
+    "stars": 0,
+    "url": "https://github.com/cgaeking/rootmind"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Audit agent for Claude Code that catches missed tool calls — separates spotting from doing. Your Claude answers, Spotter watches.",
     "forks": 0,
     "full_name": "kitepon/Spotter",
@@ -1272,30 +1344,6 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Local document search with an agentic retrieval loop (SQLite FTS5, no embeddings), an MCP server and a Tauri desktop app",
-    "forks": 0,
-    "full_name": "cgaeking/rootmind",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-13T19:23:16Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85644531,
-    "source_id": "1414266133",
-    "stars": 0,
-    "url": "https://github.com/cgaeking/rootmind"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
     "description": "Open-source agent runtime where an AI agent's authority comes from the user's intent and is enforced outside the model: scoped capabilities, capability discovery, audited transitions, revocation, and an Attack World benchmark.",
     "forks": 0,
     "full_name": "ranjan-del/intentward",
@@ -1316,30 +1364,6 @@
     "source_id": "1401439733",
     "stars": 0,
     "url": "https://github.com/ranjan-del/intentward"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Static analysis and drift detection for MCP servers: enumerate the surface a server exposes to an agent, classify every tool's blast radius (R0-R5), hash it, and fail CI when it escalates. Never invokes a tool.",
-    "forks": 0,
-    "full_name": "Lanier-Developments/mcp-placard",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-13T18:15:34Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:MIT"
-    ],
-    "score": 0.85635133,
-    "source_id": "1373169672",
-    "stars": 0,
-    "url": "https://github.com/Lanier-Developments/mcp-placard"
   },
   {
     "auto_fork_eligible": false,
@@ -1436,6 +1460,30 @@
     "source_id": "1311787094",
     "stars": 0,
     "url": "https://github.com/rarebit-one/harness-kernel"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Record an AI agent's tool calls, replay the session against a new model or prompt, and diff the actions, not the text",
+    "forks": 0,
+    "full_name": "ahmed-hashim-pro/agent-replay",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-14T18:48:22Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85533035,
+    "source_id": "1419681039",
+    "stars": 0,
+    "url": "https://github.com/ahmed-hashim-pro/agent-replay"
   },
   {
     "auto_fork_eligible": false,
@@ -1864,51 +1912,5 @@
     "source_id": "1275128525",
     "stars": 4,
     "url": "https://github.com/YashvantHange/AgentArmor"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "ABK external module that integrates Hybrid Mount's VFS path-redirection subsystem (hybridmount) into an ABK-built GKI kernel as a built-in.",
-    "forks": 0,
-    "full_name": "yiteei/ABK_HYBRIDMOUNT_MODULE",
-    "license_id": "GPL-3.0",
-    "platform": "github",
-    "pushed_at": "2026-10-07T05:09:14Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "license:GPL-3.0",
-      "emerging"
-    ],
-    "score": 0.83110887,
-    "source_id": "1406594846",
-    "stars": 0,
-    "url": "https://github.com/yiteei/ABK_HYBRIDMOUNT_MODULE"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "saige - Super Artificial Intelligence Graph Environment. A unified Go SDK, CLI, and MCP server for streaming AI agents, knowledge graphs, and RAG pipelines, with Ollama, OpenAI, Anthropic, and Google providers behind one interface.",
-    "forks": 0,
-    "full_name": "urmzd/saige",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-14T03:32:29Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.83077893,
-    "source_id": "1185960398",
-    "stars": 6,
-    "url": "https://github.com/urmzd/saige"
   }
 ]
