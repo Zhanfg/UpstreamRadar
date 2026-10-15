@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **264000**
-- latest census cursor: **841991**
+- total census repositories scanned: **268000**
+- latest census cursor: **853932**
 - retained candidates: **80**
 - governed fork queue: **19**
 
@@ -11,7 +11,7 @@
 
 - **DemonDamon/AgenticX** — score=0.933, stars=238; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
 - **context-labs/whip** — score=0.918, stars=1069; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
-- **saigontechnology/AgentCrew** — score=0.916, stars=217; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
+- **saigontechnology/AgentCrew** — score=0.916, stars=218; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
 - **MerkyorLynn/Lynn** — score=0.905, stars=54; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
@@ -37,7 +37,6 @@
 - **tokyoxpa3/5G-Proxy-Client** — score=0.884, stars=8; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **yuhaiin/yuhaiin** — score=0.857, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 - **bigunmd/leshiy** — score=0.842, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
-- **crapthings/hysteria-rust** — score=0.834, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
 
 ### security-sandbox
 
@@ -47,7 +46,6 @@
 - **ravishkarathnayaka/agentic-sandbox-secure-runtime** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:container
 - **jamesgober/sandbox-sec** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **vladimiracunadev-create/sandbox-labs** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **jkelly-dev1/agent-sandbox-escape** — score=0.833, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 
