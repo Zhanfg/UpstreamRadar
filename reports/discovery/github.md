@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **280000**
-- latest census cursor: **893329**
+- total census repositories scanned: **284000**
+- latest census cursor: **905378**
 - retained candidates: **80**
 - governed fork queue: **19**
 
@@ -20,7 +20,7 @@
 
 ### android-kernel
 
-- **ahmed-alnassif/GKID-Kernels** — score=0.943, stars=80; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **ahmed-alnassif/GKID-Kernels** — score=0.944, stars=83; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Spring-bulid/MakoSU** — score=0.907, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **sysretq0/android-kernel-builder** — score=0.900, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **longg66/cve-2025-21479_iqooneo7speed** — score=0.877, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
@@ -49,7 +49,7 @@
 
 ## Fork queue
 
-- **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.943, license=GPL-3.0)
+- **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.944, license=GPL-3.0)
 - **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **context-labs/whip** → ai-agents (score=0.918, license=Apache-2.0)
