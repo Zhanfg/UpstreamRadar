@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **284000**
-- latest census cursor: **905378**
+- total census repositories scanned: **288000**
+- latest census cursor: **916936**
 - retained candidates: **80**
 - governed fork queue: **19**
 
@@ -45,7 +45,6 @@
 - **whiskeyjimbo/bento** — score=0.836, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **ravishkarathnayaka/agentic-sandbox-secure-runtime** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:container
 - **jamesgober/sandbox-sec** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **vladimiracunadev-create/sandbox-labs** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 

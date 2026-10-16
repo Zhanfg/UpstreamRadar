@@ -1464,6 +1464,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Run garak against your own MCP servers: a garak generator that drives an agent with tools from your MCP servers, plus detectors that fire when a probe makes the agent call a denied tool, leak a planted canary or exceed its step budget. Reuses garak's probe catalogue, adds no attack content, runs offline in dry-run mode. 111 tests.",
+    "forks": 0,
+    "full_name": "basitalisandhu/garak-mcp-probes",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-16T06:03:47Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.85560244,
+    "source_id": "1405566570",
+    "stars": 0,
+    "url": "https://github.com/basitalisandhu/garak-mcp-probes"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Stateless MCP 2026-07-28 server + evaluation of LLM tool selection at scale (N=5..100, embedding retrieval) and agent loop guards on a local LLM",
     "forks": 0,
     "full_name": "Warlordg9/mcp-agent-tooling-lab",
@@ -1679,12 +1703,12 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Tool Errors: Do agents survive real API failures without duplicating side effects?",
+    "description": "R-TRACE: Stateful agent evaluation and release reliability with reproducible Windows GPU evidence.",
     "forks": 0,
-    "full_name": "pooriaarab/benchmark-tool-errors",
+    "full_name": "ReviveCoding/rtrace-agent-reliability",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-15T08:36:48Z",
+    "pushed_at": "2026-10-16T01:17:33Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1695,7 +1719,31 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.84450111,
+    "score": 0.84860685,
+    "source_id": "1292763455",
+    "stars": 0,
+    "url": "https://github.com/ReviveCoding/rtrace-agent-reliability"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Tool Errors: Do agents survive real API failures without duplicating side effects?",
+    "forks": 0,
+    "full_name": "pooriaarab/benchmark-tool-errors",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-16T17:43:01Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.84517162,
     "source_id": "1420374570",
     "stars": 0,
     "url": "https://github.com/pooriaarab/benchmark-tool-errors"
@@ -1865,53 +1913,5 @@
     "source_id": "1285927974",
     "stars": 0,
     "url": "https://github.com/jamesgober/sandbox-sec"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Open runtime for AI agents to use real software.",
-    "forks": 0,
-    "full_name": "seradotcom/semwright",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-04T00:32:45Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.83499291,
-    "source_id": "1380267750",
-    "stars": 0,
-    "url": "https://github.com/seradotcom/semwright"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "🛡️ Laboratorio de aislamiento en Linux: ejecuta código, archivos y modelos de negocio ajenos bajo políticas declaradas, y emite evidencia firmada de qué controles se aplicaron de verdad en tu equipo. 36 casos en dos familias — sandboxes técnicos y mercado de capitales con dinero simulado. Experimental y educativo, no un producto de seguridad.",
-    "forks": 0,
-    "full_name": "vladimiracunadev-create/sandbox-labs",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-14T05:10:25Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "keyword:container",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.83488762,
-    "source_id": "1324527220",
-    "stars": 0,
-    "url": "https://github.com/vladimiracunadev-create/sandbox-labs"
   }
 ]
