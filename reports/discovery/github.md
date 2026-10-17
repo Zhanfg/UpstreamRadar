@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **296000**
-- latest census cursor: **940790**
+- total census repositories scanned: **300000**
+- latest census cursor: **951888**
 - retained candidates: **80**
-- governed fork queue: **19**
+- governed fork queue: **21**
 
 ## Top directions
 
@@ -40,11 +40,11 @@
 
 ### security-sandbox
 
-- **Erio-Harrison/nanosandbox** — score=0.860, stars=6; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **GreyhavenHQ/greywall** — score=0.877, stars=310; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **Erio-Harrison/nanosandbox** — score=0.861, stars=8; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **m62624/cageforge** — score=0.841, stars=1; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **whiskeyjimbo/bento** — score=0.836, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **ravishkarathnayaka/agentic-sandbox-secure-runtime** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:container
-- **jamesgober/sandbox-sec** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 
@@ -66,6 +66,7 @@
 - **substructureai/subs** → ai-agents (score=0.888, license=MIT)
 - **tokyoxpa3/5G-Proxy-Client** → networking (score=0.884, license=MIT)
 - **nedonatelli/sidecar** → ai-agents (score=0.878, license=MIT)
+- **GreyhavenHQ/greywall** → security-sandbox (score=0.877, license=Apache-2.0)
 - **wundercorp/loki** → ai-agents (score=0.873, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.

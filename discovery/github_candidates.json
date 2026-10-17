@@ -503,6 +503,30 @@
     "url": "https://github.com/Aaron-2012/KERNEL-SAMSUNG-A035M---ANDROID-13"
   },
   {
+    "auto_fork_eligible": true,
+    "category": "security-sandbox",
+    "description": "Container-free, deny-by-default sandbox for AI coding agents. Kernel-enforced filesystem, network, and syscall isolation for Linux and macOS",
+    "forks": 37,
+    "full_name": "GreyhavenHQ/greywall",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-17T01:18:15Z",
+    "reasons": [
+      "category:security-sandbox",
+      "keyword:sandbox",
+      "keyword:seccomp",
+      "keyword:isolation",
+      "keyword:security",
+      "keyword:container",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.87677749,
+    "source_id": "1172933443",
+    "stars": 310,
+    "url": "https://github.com/GreyhavenHQ/greywall"
+  },
+  {
     "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Turn any URL into agent-callable MCP tools. One spec-compliant MCP server endpoint, no per-site build.",
@@ -1031,6 +1055,30 @@
     "url": "https://github.com/Morningstar202604/agent-builder"
   },
   {
+    "auto_fork_eligible": true,
+    "category": "security-sandbox",
+    "description": "Lightweight embeddable sandbox for running untrusted code, built on OS-native isolation (namespaces, cgroups, seccomp, Landlock, Seatbelt). No containers, no VMs.",
+    "forks": 2,
+    "full_name": "Erio-Harrison/nanosandbox",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-16T00:20:21Z",
+    "reasons": [
+      "category:security-sandbox",
+      "keyword:sandbox",
+      "keyword:seccomp",
+      "keyword:isolation",
+      "keyword:security",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.86071885,
+    "source_id": "1237517003",
+    "stars": 8,
+    "url": "https://github.com/Erio-Harrison/nanosandbox"
+  },
+  {
     "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Governed MCP server and agent runtime: signed action approvals, typed tool effects and audit logs for Claude Desktop, Cursor and custom agents.",
@@ -1053,30 +1101,6 @@
     "source_id": "1348852330",
     "stars": 0,
     "url": "https://github.com/Yacine-ai-tech/AgentKit"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Lightweight embeddable sandbox for running untrusted code, built on OS-native isolation (namespaces, cgroups, seccomp, Landlock, Seatbelt). No containers, no VMs.",
-    "forks": 2,
-    "full_name": "Erio-Harrison/nanosandbox",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-15T12:34:02Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.86044359,
-    "source_id": "1237517003",
-    "stars": 6,
-    "url": "https://github.com/Erio-Harrison/nanosandbox"
   },
   {
     "auto_fork_eligible": false,
@@ -1889,29 +1913,5 @@
     "source_id": "1414495338",
     "stars": 0,
     "url": "https://github.com/ravishkarathnayaka/agentic-sandbox-secure-runtime"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Cross-platform process and code sandboxing: unified fail-closed API over seccomp, Landlock, namespaces, pledge/unveil, and job objects.",
-    "forks": 0,
-    "full_name": "jamesgober/sandbox-sec",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-13T19:25:08Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.83511648,
-    "source_id": "1285927974",
-    "stars": 0,
-    "url": "https://github.com/jamesgober/sandbox-sec"
   }
 ]
