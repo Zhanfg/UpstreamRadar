@@ -313,6 +313,30 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
+    "description": "Role-aware, permission-enforced benchmark for LLM agents that operate HPC systems — SLURM, telemetry, RBAC, docs, facility. A policy violation hard-fails the task. 88 tasks (10 categories x 5 roles), 29 reproducible environments with 6 rebuilt from real Marconi100 ExaData, scored on 7 weighted dimensions.",
+    "forks": 14,
+    "full_name": "MSKazemi/aobench",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-17T15:26:43Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.89626741,
+    "source_id": "1306965130",
+    "stars": 11,
+    "url": "https://github.com/MSKazemi/aobench"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
     "description": "Extensible AI agent framework in Go — multi-channel (Feishu/Slack/CLI), sandboxed tool execution, MCP integration, multi-tenant sessions",
     "forks": 8,
     "full_name": "ai-pivot/xbot",
@@ -333,30 +357,6 @@
     "source_id": "1221587347",
     "stars": 14,
     "url": "https://github.com/ai-pivot/xbot"
-  },
-  {
-    "auto_fork_eligible": true,
-    "category": "ai-agents",
-    "description": "Role-aware, permission-enforced benchmark for LLM agents that operate HPC systems — SLURM, telemetry, RBAC, docs, facility. A policy violation hard-fails the task. 88 tasks (10 categories x 5 roles), 29 reproducible environments with 6 rebuilt from real Marconi100 ExaData, scored on 7 weighted dimensions.",
-    "forks": 15,
-    "full_name": "MSKazemi/aobench",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-02T21:32:42Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.89468958,
-    "source_id": "1306965130",
-    "stars": 9,
-    "url": "https://github.com/MSKazemi/aobench"
   },
   {
     "auto_fork_eligible": false,
@@ -458,11 +458,11 @@
     "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "Free, self-hosted AI coding assistant for VS Code — local Ollama models, Anthropic Claude, or any OpenAI-compatible server. Full agent loop with tool use, inline completions, and MCP support.",
-    "forks": 0,
+    "forks": 1,
     "full_name": "nedonatelli/sidecar",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-17T00:17:22Z",
+    "pushed_at": "2026-10-17T15:15:40Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -473,7 +473,7 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.87794363,
+    "score": 0.8819063,
     "source_id": "1200767773",
     "stars": 8,
     "url": "https://github.com/nedonatelli/sidecar"
@@ -885,6 +885,29 @@
     "source_id": "1205052765",
     "stars": 2,
     "url": "https://github.com/CocoRoF/geny-executor"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
+    "description": "A systematic AI Agent development tutorial covering LLM agents, RAG, tool use, memory systems, multi-agent systems, LangChain, LangGraph, MCP, and agentic RL.｜从零开始学 AI Agent 开发 | 系统、全面、实战导向的 Agent 开发教程 | 每日自动追踪 arXiv 最新论文 | Learn AI Agent Development from Scratch",
+    "forks": 93,
+    "full_name": "Haozhe-Xing/agent_learning",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-17T01:13:02Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "community-signal"
+    ],
+    "score": 0.86476,
+    "source_id": "1180445240",
+    "stars": 600,
+    "url": "https://github.com/Haozhe-Xing/agent_learning"
   },
   {
     "auto_fork_eligible": false,
@@ -1889,29 +1912,5 @@
     "source_id": "1151386809",
     "stars": 8,
     "url": "https://github.com/uncoalesced/Peridot"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Safe-by-default script sandbox in Go. Runs programs under default-deny OS isolation on Linux (bubblewrap + Landlock + seccomp): credential shielding, per-host network allowlisting via a host-side CONNECT proxy, resource limits, and a profile-then-grant consent flow. macOS support is planned.",
-    "forks": 0,
-    "full_name": "whiskeyjimbo/bento",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-09-29T17:57:59Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.83558395,
-    "source_id": "1249905175",
-    "stars": 0,
-    "url": "https://github.com/whiskeyjimbo/bento"
   }
 ]
