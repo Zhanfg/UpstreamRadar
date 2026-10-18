@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **332000**
-- latest census cursor: **1040762**
+- total census repositories scanned: **336000**
+- latest census cursor: **1052498**
 - retained candidates: **80**
 - governed fork queue: **22**
 
@@ -15,7 +15,7 @@
 - **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
 - **MerkyorLynn/Lynn** — score=0.907, stars=61; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
-- **nibor1896/Crow** — score=0.898, stars=36; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **nibor1896/Crow** — score=0.898, stars=37; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **MSKazemi/aobench** — score=0.896, stars=11; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 
 ### android-kernel
