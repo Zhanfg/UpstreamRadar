@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **324000**
-- latest census cursor: **1018257**
+- total census repositories scanned: **328000**
+- latest census cursor: **1029708**
 - retained candidates: **80**
 - governed fork queue: **22**
 
@@ -14,7 +14,7 @@
 - **saigontechnology/AgentCrew** — score=0.916, stars=218; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
-- **MerkyorLynn/Lynn** — score=0.905, stars=54; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **MerkyorLynn/Lynn** — score=0.907, stars=61; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **nibor1896/Crow** — score=0.898, stars=36; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **MSKazemi/aobench** — score=0.896, stars=11; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 
@@ -42,7 +42,6 @@
 
 - **GreyhavenHQ/greywall** — score=0.877, stars=310; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **Erio-Harrison/nanosandbox** — score=0.863, stars=8; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **m62624/cageforge** — score=0.841, stars=1; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 
@@ -54,14 +53,14 @@
 - **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.912, license=Apache-2.0)
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
 - **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
+- **MerkyorLynn/Lynn** → ai-agents (score=0.907, license=Apache-2.0)
 - **MiChongs/WutherCore** → networking (score=0.905, license=MIT)
-- **MerkyorLynn/Lynn** → ai-agents (score=0.905, license=Apache-2.0)
 - **keminar/anyproxy** → networking (score=0.903, license=MIT)
 - **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
 - **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
+- **substructureai/subs** → ai-agents (score=0.889, license=MIT)
 - **taihei-05/siglume-api-sdk** → ai-agents (score=0.889, license=MIT)
-- **substructureai/subs** → ai-agents (score=0.888, license=MIT)
 - **tokyoxpa3/5G-Proxy-Client** → networking (score=0.884, license=MIT)
 - **nedonatelli/sidecar** → ai-agents (score=0.882, license=MIT)
 - **GreyhavenHQ/greywall** → security-sandbox (score=0.877, license=Apache-2.0)

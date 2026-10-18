@@ -192,6 +192,30 @@
   },
   {
     "auto_fork_eligible": true,
+    "category": "ai-agents",
+    "description": "开源桌面 AI Agent 与 CLI：长期记忆、多 Agent、实时语音；Qwen3.8-27B Coder390 EfficientThink 本地 GGUF（llama.cpp Q2/Q3，内置 Q4 MTP）· Open-source desktop AI agent & CLI with Coder390 local models",
+    "forks": 5,
+    "full_name": "MerkyorLynn/Lynn",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-18T11:47:46Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:coding-agent",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.90665174,
+    "source_id": "1196918212",
+    "stars": 61,
+    "url": "https://github.com/MerkyorLynn/Lynn"
+  },
+  {
+    "auto_fork_eligible": true,
     "category": "networking",
     "description": "Modular cross-platform proxy core in Rust with YAML configuration, HTTP/SOCKS5, TUN/TPROXY capture, policy routing, DNS, subscriptions, and a management API.",
     "forks": 4,
@@ -213,30 +237,6 @@
     "source_id": "1221455398",
     "stars": 55,
     "url": "https://github.com/MiChongs/WutherCore"
-  },
-  {
-    "auto_fork_eligible": true,
-    "category": "ai-agents",
-    "description": "开源桌面 AI Agent 与 CLI：长期记忆、多 Agent、实时语音；Qwen3.8-27B Coder390 EfficientThink 本地 GGUF（llama.cpp Q2/Q3，内置 Q4 MTP）· Open-source desktop AI agent & CLI with Coder390 local models",
-    "forks": 4,
-    "full_name": "MerkyorLynn/Lynn",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-14T12:44:09Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:coding-agent",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.90469859,
-    "source_id": "1196918212",
-    "stars": 54,
-    "url": "https://github.com/MerkyorLynn/Lynn"
   },
   {
     "auto_fork_eligible": true,
@@ -338,11 +338,11 @@
     "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "Extensible AI agent framework in Go — multi-channel (Feishu/Slack/CLI), sandboxed tool execution, MCP integration, multi-tenant sessions",
-    "forks": 8,
+    "forks": 7,
     "full_name": "ai-pivot/xbot",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-09-30T07:38:59Z",
+    "pushed_at": "2026-10-18T15:52:09Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -353,9 +353,9 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.8954433,
+    "score": 0.89547201,
     "source_id": "1221587347",
-    "stars": 14,
+    "stars": 15,
     "url": "https://github.com/ai-pivot/xbot"
   },
   {
@@ -385,6 +385,30 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
+    "description": "subs is an agent harness for the cloud. It runs an unprivileged agent loop and uses MCP servers for executing tools. Use it locally, remotely and with your team. You can customize everything.",
+    "forks": 3,
+    "full_name": "substructureai/subs",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-18T04:29:35Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:orchestration",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.88925465,
+    "source_id": "1164572621",
+    "stars": 13,
+    "url": "https://github.com/substructureai/subs"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
     "description": "SDK for publishing APIs that AI agents subscribe to on the Siglume API Store. Python + TypeScript. Earn 93.4% of subscription revenue.",
     "forks": 6,
     "full_name": "taihei-05/siglume-api-sdk",
@@ -405,30 +429,6 @@
     "source_id": "1209106278",
     "stars": 8,
     "url": "https://github.com/taihei-05/siglume-api-sdk"
-  },
-  {
-    "auto_fork_eligible": true,
-    "category": "ai-agents",
-    "description": "subs is an agent harness for the cloud. It runs an unprivileged agent loop and uses MCP servers for executing tools. Use it locally, remotely and with your team. You can customize everything.",
-    "forks": 2,
-    "full_name": "substructureai/subs",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-13T04:45:27Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:orchestration",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.8876629,
-    "source_id": "1164572621",
-    "stars": 12,
-    "url": "https://github.com/substructureai/subs"
   },
   {
     "auto_fork_eligible": true,
@@ -1080,6 +1080,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "An agent that compiles open-source libraries into verified MCP tools on demand, and keeps only the ones that pass a locked-down sandbox. Open-weight models only.",
+    "forks": 0,
+    "full_name": "VirajSawad1021/Zyven",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-18T10:22:25Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.86288051,
+    "source_id": "1410773203",
+    "stars": 1,
+    "url": "https://github.com/VirajSawad1021/Zyven"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Adaptive tiny-model layer between LLMs and their tools — observes MCP traffic, trains per-tool LoRA compressors, synthesizes new tools from patterns.",
     "forks": 0,
     "full_name": "opcastil11/planckbot",
@@ -1678,6 +1702,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Statistical regression harness for MCP tool descriptions: did a change help agents? Bootstrap CIs, replay demo.",
+    "forks": 0,
+    "full_name": "gaurav-gandhi-2411/agentgauge",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-18T15:36:37Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.85387828,
+    "source_id": "1253706855",
+    "stars": 0,
+    "url": "https://github.com/gaurav-gandhi-2411/agentgauge"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Run local GGUF models as a headless agent with sandboxed tools and MCP, streaming JSON lines from one Bun binary.",
     "forks": 0,
     "full_name": "dieharders/obrew-cli",
@@ -1865,52 +1913,5 @@
     "source_id": "1164059777",
     "stars": 1577,
     "url": "https://github.com/fim-ai/fim-one"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Rust sandbox for AI agents and untrusted code, inspired by OpenAI Codex. OS-enforced isolation on Linux, Windows, and macOS.",
-    "forks": 0,
-    "full_name": "m62624/cageforge",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-13T09:12:24Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.84100706,
-    "source_id": "1336924327",
-    "stars": 1,
-    "url": "https://github.com/m62624/cageforge"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Kernel-level ADB hiding for Android (GKI android15-6.6). Hides adb properties and adbd sockets from selected apps without injecting code into them.",
-    "forks": 0,
-    "full_name": "SampleBlazkness/AdbHide-Kernel",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-18T10:41:25Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.83810648,
-    "source_id": "1423417892",
-    "stars": 1,
-    "url": "https://github.com/SampleBlazkness/AdbHide-Kernel"
   }
 ]
