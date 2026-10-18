@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **316000**
-- latest census cursor: **997685**
+- total census repositories scanned: **320000**
+- latest census cursor: **1006379**
 - retained candidates: **80**
 - governed fork queue: **22**
 
@@ -41,7 +41,7 @@
 ### security-sandbox
 
 - **GreyhavenHQ/greywall** — score=0.877, stars=310; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **Erio-Harrison/nanosandbox** — score=0.861, stars=8; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **Erio-Harrison/nanosandbox** — score=0.863, stars=8; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **m62624/cageforge** — score=0.841, stars=1; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
