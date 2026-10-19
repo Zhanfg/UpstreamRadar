@@ -74,6 +74,30 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
+    "description": "Build an AI agent harness in Rust, from a minimal loop to tools, subagents, memory, teams, worktrees,   MCP, and typed tool routing.",
+    "forks": 32,
+    "full_name": "wulawulu/learn-claude-code-rs",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-19T03:12:34Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:coding-agent",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.92363079,
+    "source_id": "1204895898",
+    "stars": 144,
+    "url": "https://github.com/wulawulu/learn-claude-code-rs"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
     "description": "A fast coding-agent harness in Go. Tool-use loop, bubbletea TUI, provider-routable models with live catalog discovery, MCP support, background subagents. One binary, no runtime, built for open-source models.",
     "forks": 153,
     "full_name": "context-labs/whip",
@@ -865,6 +889,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "An open-source AI agent that builds the tools it's missing, mid-task — under your governance. Pull capabilities at runtime instead of pre-wiring them. Local-first, MIT.",
+    "forks": 0,
+    "full_name": "rameswaran-mohan/project-systemu",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-19T09:27:19Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.86640705,
+    "source_id": "1234069012",
+    "stars": 2,
+    "url": "https://github.com/rameswaran-mohan/project-systemu"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Manifest-driven 21-stage agent pipeline for Python — 5 LLM backends (Anthropic / OpenAI / Google / vLLM / Claude Code CLI), tools, skills, memory, sandboxed CLI runs, MCP. The engine behind Geny. Apache-2.0.",
     "forks": 0,
     "full_name": "CocoRoF/geny-executor",
@@ -980,6 +1028,30 @@
     "source_id": "1237517003",
     "stars": 8,
     "url": "https://github.com/Erio-Harrison/nanosandbox"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Autonomous software delivery from product brief to verified implementation. Loop plans, builds, tests, and repairs in a task workspace, then hands back reviewable artifacts or Git changes with a replayable Receipt.",
+    "forks": 0,
+    "full_name": "chriswu727/loop-agent",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-19T17:09:24Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.86310579,
+    "source_id": "1282628685",
+    "stars": 1,
+    "url": "https://github.com/chriswu727/loop-agent"
   },
   {
     "auto_fork_eligible": false,
@@ -1247,6 +1319,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Agentic motorcycle ride planner: one sentence in, a ride you can follow out. Claude tool-use loop with scouts, deterministic road/weather/stop tools, ride library, MCP server for Claude Code and Codex.",
+    "forks": 0,
+    "full_name": "bhoudebert/agent-motoride",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-19T19:46:24Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85658553,
+    "source_id": "1401729830",
+    "stars": 0,
+    "url": "https://github.com/bhoudebert/agent-motoride"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Static analysis and drift detection for MCP servers: enumerate the surface a server exposes to an agent, classify every tool's blast radius (R0-R5), hash it, and fail CI when it escalates. Never invokes a tool.",
     "forks": 0,
     "full_name": "Lanier-Developments/mcp-placard",
@@ -1391,30 +1487,6 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Agentic motorcycle ride planner: one sentence in, a ride you can follow out. Claude tool-use loop with scouts, deterministic road/weather/stop tools, ride library, MCP server for Claude Code and Codex.",
-    "forks": 0,
-    "full_name": "bhoudebert/agent-motoride",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-06T20:16:56Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85654128,
-    "source_id": "1401729830",
-    "stars": 0,
-    "url": "https://github.com/bhoudebert/agent-motoride"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
     "description": "Local document search with an agentic retrieval loop (SQLite FTS5, no embeddings), an MCP server and a Tauri desktop app",
     "forks": 0,
     "full_name": "cgaeking/rootmind",
@@ -1555,6 +1627,30 @@
     "source_id": "1405807012",
     "stars": 0,
     "url": "https://github.com/corradoisidoro/agent-harness"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Hands-on AI engineering lab on financial-market data: evals, RAG, tool-using agents, multi-agent orchestration and fine-tuning (Python, Gemini, FastAPI, React)",
+    "forks": 0,
+    "full_name": "devTomaszStoklosa/fin-ai-lab",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-19T09:01:34Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:orchestration",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85569149,
+    "source_id": "1425214269",
+    "stars": 0,
+    "url": "https://github.com/devTomaszStoklosa/fin-ai-lab"
   },
   {
     "auto_fork_eligible": false,
@@ -1818,100 +1914,5 @@
     "source_id": "908746124",
     "stars": 1711,
     "url": "https://github.com/WildKernels/GKI_KernelSU_SUSFS"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "R-TRACE: Stateful agent evaluation and release reliability with reproducible Windows GPU evidence.",
-    "forks": 0,
-    "full_name": "ReviveCoding/rtrace-agent-reliability",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-16T01:17:33Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.84860685,
-    "source_id": "1292763455",
-    "stars": 0,
-    "url": "https://github.com/ReviveCoding/rtrace-agent-reliability"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Root an Android Studio AVD with KernelSU Next via GKI LKM. Fork of HChenX/KernelSU-AVD.",
-    "forks": 1,
-    "full_name": "ymuuuu/KernelSU-Next-AVD",
-    "license_id": "GPL-3.0",
-    "platform": "github",
-    "pushed_at": "2026-10-19T07:51:15Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernelsu",
-      "recently-active",
-      "license:GPL-3.0",
-      "emerging"
-    ],
-    "score": 0.84740877,
-    "source_id": "1419663418",
-    "stars": 9,
-    "url": "https://github.com/ymuuuu/KernelSU-Next-AVD"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Tool Errors: Do agents survive real API failures without duplicating side effects?",
-    "forks": 0,
-    "full_name": "pooriaarab/benchmark-tool-errors",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-16T17:43:01Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.84517162,
-    "source_id": "1420374570",
-    "stars": 0,
-    "url": "https://github.com/pooriaarab/benchmark-tool-errors"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "networking",
-    "description": "Secure, fast, and highly stealthy tunnel for censored networks.",
-    "forks": 0,
-    "full_name": "bigunmd/leshiy",
-    "license_id": "AGPL-3.0",
-    "platform": "github",
-    "pushed_at": "2026-09-25T14:53:28Z",
-    "reasons": [
-      "category:networking",
-      "keyword:proxy",
-      "keyword:tun",
-      "keyword:quic",
-      "keyword:network",
-      "recently-active",
-      "license:AGPL-3.0",
-      "emerging"
-    ],
-    "score": 0.84205772,
-    "source_id": "1263266393",
-    "stars": 2,
-    "url": "https://github.com/bigunmd/leshiy"
   }
 ]
