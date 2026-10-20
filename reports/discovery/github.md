@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **360000**
-- latest census cursor: **1121606**
+- total census repositories scanned: **364000**
+- latest census cursor: **1133403**
 - retained candidates: **80**
 - governed fork queue: **24**
 
@@ -20,7 +20,7 @@
 
 ### android-kernel
 
-- **ahmed-alnassif/GKID-Kernels** — score=0.944, stars=83; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **ahmed-alnassif/GKID-Kernels** — score=0.945, stars=90; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Spring-bulid/MakoSU** — score=0.907, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **sysretq0/android-kernel-builder** — score=0.900, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **ZxAlif-ID/Flavenz-Kernel-Peridot** — score=0.893, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
@@ -44,7 +44,7 @@
 
 ## Fork queue
 
-- **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.944, license=GPL-3.0)
+- **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.945, license=GPL-3.0)
 - **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **wulawulu/learn-claude-code-rs** → ai-agents (score=0.924, license=MIT)
