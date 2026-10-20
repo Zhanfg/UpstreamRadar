@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **352000**
-- latest census cursor: **1098750**
+- total census repositories scanned: **356000**
+- latest census cursor: **1110140**
 - retained candidates: **80**
-- governed fork queue: **23**
+- governed fork queue: **24**
 
 ## Top directions
 
@@ -32,7 +32,7 @@
 ### networking
 
 - **HyNetworks/hysteria** — score=0.933, stars=22594; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
-- **MiChongs/WutherCore** — score=0.905, stars=55; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:wireguard
+- **MiChongs/WutherCore** — score=0.905, stars=56; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:wireguard
 - **keminar/anyproxy** — score=0.903, stars=33; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **tokyoxpa3/5G-Proxy-Client** — score=0.884, stars=8; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **yuhaiin/yuhaiin** — score=0.857, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
@@ -60,9 +60,9 @@
 - **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 - **substructureai/subs** → ai-agents (score=0.889, license=MIT)
+- **cofin/litestar-mcp** → ai-agents (score=0.889, license=MIT)
 - **taihei-05/siglume-api-sdk** → ai-agents (score=0.889, license=MIT)
 - **tokyoxpa3/5G-Proxy-Client** → networking (score=0.884, license=MIT)
 - **nedonatelli/sidecar** → ai-agents (score=0.882, license=MIT)
-- **GreyhavenHQ/greywall** → security-sandbox (score=0.877, license=Apache-2.0)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.
