@@ -146,6 +146,30 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
+    "description": "Nosis is a lightweight personal agent runtime: per-session execution boundaries with OS-level sandboxing, computer use, a full built-in toolset, Skill / Plugin / MCP extensions, one runtime shared by GUI and TUI, and file-persisted sessions, plans, and memory.",
+    "forks": 5,
+    "full_name": "EvannZhongg/Nosis",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-20T03:44:05Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.91409398,
+    "source_id": "1362454834",
+    "stars": 149,
+    "url": "https://github.com/EvannZhongg/Nosis"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
     "description": "The deterministic merge gate for AI-generated agent capability changes — a local-first, static Tool-Use Readiness review for MCP, OpenAPI, and SDK tool surfaces. Open-source CLI + GitHub Action.",
     "forks": 6,
     "full_name": "ThreeMoonsLab/agents-shipgate",
@@ -1683,7 +1707,7 @@
     "full_name": "devTomaszStoklosa/fin-ai-lab",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-19T09:01:34Z",
+    "pushed_at": "2026-10-20T11:09:43Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1694,7 +1718,7 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.85569149,
+    "score": 0.85572998,
     "source_id": "1425214269",
     "stars": 0,
     "url": "https://github.com/devTomaszStoklosa/fin-ai-lab"
@@ -1702,12 +1726,12 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Run garak against your own MCP servers: a garak generator that drives an agent with tools from your MCP servers, plus detectors that fire when a probe makes the agent call a denied tool, leak a planted canary or exceed its step budget. Reuses garak's probe catalogue, adds no attack content, runs offline in dry-run mode. 111 tests.",
+    "description": "Run garak against your own MCP servers: a garak generator that drives an agent with your MCP tools, plus detectors that fire when a probe makes the agent call a denied tool, leak a planted canary or exceed its step budget, optionally beside each probe's text detectors. Reuses garak's probes, adds no attack content, runs offline in dry-run mode.",
     "forks": 0,
     "full_name": "basitalisandhu/garak-mcp-probes",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-16T06:03:47Z",
+    "pushed_at": "2026-10-20T09:51:11Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1718,7 +1742,7 @@
       "recently-active",
       "license:MIT"
     ],
-    "score": 0.85560244,
+    "score": 0.85562132,
     "source_id": "1405566570",
     "stars": 0,
     "url": "https://github.com/basitalisandhu/garak-mcp-probes"
@@ -1889,29 +1913,5 @@
     "source_id": "1367721650",
     "stars": 0,
     "url": "https://github.com/dieharders/obrew-cli"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Can local models drive a tool-using agent? A free LangGraph + MCP + Ollama agent and a 5-model benchmark.",
-    "forks": 0,
-    "full_name": "iamsorenl/local-agent-bench",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-15T23:16:59Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85200612,
-    "source_id": "1398762552",
-    "stars": 0,
-    "url": "https://github.com/iamsorenl/local-agent-bench"
   }
 ]
