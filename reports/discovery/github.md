@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **384000**
-- latest census cursor: **1192090**
+- total census repositories scanned: **388000**
+- latest census cursor: **1203879**
 - retained candidates: **80**
-- governed fork queue: **25**
+- governed fork queue: **26**
 
 ## Top directions
 
@@ -12,8 +12,8 @@
 - **DemonDamon/AgenticX** — score=0.933, stars=238; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
 - **wulawulu/learn-claude-code-rs** — score=0.924, stars=144; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **context-labs/whip** — score=0.918, stars=1069; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **EvannZhongg/Nosis** — score=0.918, stars=206; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 - **saigontechnology/AgentCrew** — score=0.917, stars=225; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
-- **EvannZhongg/Nosis** — score=0.915, stars=149; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 - **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
 - **MerkyorLynn/Lynn** — score=0.907, stars=61; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
@@ -49,8 +49,8 @@
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **wulawulu/learn-claude-code-rs** → ai-agents (score=0.924, license=MIT)
 - **context-labs/whip** → ai-agents (score=0.918, license=Apache-2.0)
+- **EvannZhongg/Nosis** → ai-agents (score=0.918, license=MIT)
 - **saigontechnology/AgentCrew** → ai-agents (score=0.917, license=Apache-2.0)
-- **EvannZhongg/Nosis** → ai-agents (score=0.915, license=MIT)
 - **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.912, license=Apache-2.0)
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
 - **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
