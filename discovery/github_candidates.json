@@ -534,7 +534,7 @@
     "full_name": "nedonatelli/sidecar",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-17T15:15:40Z",
+    "pushed_at": "2026-10-23T13:19:24Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -545,10 +545,33 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.8819063,
+    "score": 0.88192215,
     "source_id": "1200767773",
     "stars": 8,
     "url": "https://github.com/nedonatelli/sidecar"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "networking",
+    "description": "Yuhaiin is an open-source, cross-platform networking toolkit that brings enterprise VPN connectivity, encrypted overlay networks, policy-based routing, traffic control, and HTTP application gateways into one extensible engine.",
+    "forks": 24,
+    "full_name": "yuhaiin/yuhaiin",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-23T11:13:49Z",
+    "reasons": [
+      "category:networking",
+      "keyword:proxy",
+      "keyword:tun",
+      "keyword:quic",
+      "recently-active",
+      "license:MIT",
+      "community-signal"
+    ],
+    "score": 0.88095888,
+    "source_id": "154452483",
+    "stars": 170,
+    "url": "https://github.com/yuhaiin/yuhaiin"
   },
   {
     "auto_fork_eligible": false,
@@ -1031,6 +1054,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "A modern, plugin-driven TypeScript AI Agent framework. 44 core files, strict TS, zero boilerplate.",
+    "forks": 1,
+    "full_name": "narrastory/mochikit",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-23T03:38:21Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.86383646,
+    "source_id": "1299230346",
+    "stars": 2,
+    "url": "https://github.com/narrastory/mochikit"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Local document search with an agentic LLM loop (SQLite FTS5, no embeddings). Answers cite the page. MCP server, Windows & Linux desktop app.",
     "forks": 0,
     "full_name": "cgaeking/rootmind",
@@ -1437,29 +1484,6 @@
   },
   {
     "auto_fork_eligible": false,
-    "category": "networking",
-    "description": "proxy kit for Linux/Windows/MacOS/Android",
-    "forks": 24,
-    "full_name": "yuhaiin/yuhaiin",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-19T13:13:28Z",
-    "reasons": [
-      "category:networking",
-      "keyword:proxy",
-      "keyword:tun",
-      "keyword:quic",
-      "recently-active",
-      "license:MIT",
-      "community-signal"
-    ],
-    "score": 0.85744231,
-    "source_id": "154452483",
-    "stars": 170,
-    "url": "https://github.com/yuhaiin/yuhaiin"
-  },
-  {
-    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "The agent loop, embodied. Tool-using runtime + fail-closed safety pipeline + sim-first execution + statistically-rigorous bench harness + post-hoc analysis (counterfactual replay, causal attribution, LLM judge, property mining) for embodied AI. Sister project to GhostLM.",
     "forks": 0,
@@ -1653,6 +1677,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Hands-on AI engineering lab on financial-market data: evals, RAG, tool-using agents, multi-agent orchestration and fine-tuning (Python, Gemini, FastAPI, React)",
+    "forks": 0,
+    "full_name": "devTomaszStoklosa/fin-ai-lab",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-23T12:31:07Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:orchestration",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85652222,
+    "source_id": "1425214269",
+    "stars": 0,
+    "url": "https://github.com/devTomaszStoklosa/fin-ai-lab"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Audit agent for Claude Code that catches missed tool calls — separates spotting from doing. Your Claude answers, Spotter watches.",
     "forks": 0,
     "full_name": "kitepon/Spotter",
@@ -1797,30 +1845,6 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Hands-on AI engineering lab on financial-market data: evals, RAG, tool-using agents, multi-agent orchestration and fine-tuning (Python, Gemini, FastAPI, React)",
-    "forks": 0,
-    "full_name": "devTomaszStoklosa/fin-ai-lab",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-20T11:09:43Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:orchestration",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85572998,
-    "source_id": "1425214269",
-    "stars": 0,
-    "url": "https://github.com/devTomaszStoklosa/fin-ai-lab"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
     "description": "Run garak against your own MCP servers: a garak generator that drives an agent with your MCP tools, plus detectors that fire when a probe makes the agent call a denied tool, leak a planted canary or exceed its step budget, optionally beside each probe's text detectors. Reuses garak's probes, adds no attack content, runs offline in dry-run mode.",
     "forks": 0,
     "full_name": "basitalisandhu/garak-mcp-probes",
@@ -1889,29 +1913,5 @@
     "source_id": "1311787094",
     "stars": 0,
     "url": "https://github.com/rarebit-one/harness-kernel"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Record an AI agent's tool calls, replay the session against a new model or prompt, and diff the actions, not the text",
-    "forks": 0,
-    "full_name": "ahmed-hashim-pro/agent-replay",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-14T18:48:22Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85533035,
-    "source_id": "1419681039",
-    "stars": 0,
-    "url": "https://github.com/ahmed-hashim-pro/agent-replay"
   }
 ]
