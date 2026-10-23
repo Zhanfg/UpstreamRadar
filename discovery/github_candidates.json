@@ -1390,6 +1390,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Find where your agent breaks before your users do. Seeded tool-use tasks checked by code, on your own tools.",
+    "forks": 0,
+    "full_name": "poisson-labs/tasks",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-22T21:10:13Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85944704,
+    "source_id": "1430015443",
+    "stars": 1,
+    "url": "https://github.com/poisson-labs/tasks"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "android-kernel",
     "description": "no patch kernel Support DroidSpaces.",
     "forks": 16,
@@ -1701,6 +1725,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Trajectory-level eval harness for tool-using agents — drives agents against a real MCP server and scores every step: tool selection, arguments, grounding, efficiency. CI regression gates, no API key needed.",
+    "forks": 0,
+    "full_name": "Lkhanaajav/mcp-trajectory-evals",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-22T20:39:39Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85626634,
+    "source_id": "1297094788",
+    "stars": 0,
+    "url": "https://github.com/Lkhanaajav/mcp-trajectory-evals"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Clean-room PoC of HySet (arXiv:2607.25718): set-level tool retrieval for LLM agents via query-conditioned hyperedge prediction. PyTorch model + training, CLI, HTTP & MCP server, LangChain execution feedback (Claude/Ollama).",
     "forks": 0,
     "full_name": "cicorias/hyset-poc",
@@ -1865,52 +1913,5 @@
     "source_id": "1419681039",
     "stars": 0,
     "url": "https://github.com/ahmed-hashim-pro/agent-replay"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "元认知协议引擎 + 分级自主护栏 —— 平台无关的自主运维 Agent 核心。Metacognition protocol + tiered-autonomy guardrails for autonomous ops agents.",
-    "forks": 0,
-    "full_name": "codecloud-dev/agent-core",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-09T11:31:05Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85524358,
-    "source_id": "1403222976",
-    "stars": 0,
-    "url": "https://github.com/codecloud-dev/agent-core"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "reconstruct kallsyms on ARM64 GKI, depends only on sprint_symbol.",
-    "forks": 8,
-    "full_name": "Dere3046/KallRecon",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-16T20:32:11Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "license:GPL-2.0",
-      "emerging"
-    ],
-    "score": 0.85498727,
-    "source_id": "1273660119",
-    "stars": 16,
-    "url": "https://github.com/Dere3046/KallRecon"
   }
 ]
