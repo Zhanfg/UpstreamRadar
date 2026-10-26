@@ -3,11 +3,11 @@
     "auto_fork_eligible": true,
     "category": "android-kernel",
     "description": "Blazing-fast GKI kernels with KernelSU / ReSukiSU + SUSFS, Baseband Guard, 300Hz, BBRv3, MGLRU & battery/performance optimizations. Works on all matching GKI devices.",
-    "forks": 61,
+    "forks": 63,
     "full_name": "ahmed-alnassif/GKID-Kernels",
     "license_id": "GPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-10-20T16:36:21Z",
+    "pushed_at": "2026-10-25T20:22:17Z",
     "reasons": [
       "category:android-kernel",
       "keyword:android",
@@ -18,9 +18,9 @@
       "recently-active",
       "license:GPL-3.0"
     ],
-    "score": 0.94506957,
+    "score": 0.94537301,
     "source_id": "1165093751",
-    "stars": 90,
+    "stars": 94,
     "url": "https://github.com/ahmed-alnassif/GKID-Kernels"
   },
   {
@@ -815,6 +815,54 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Lenovo TB128FU（grass / SM6225）上 KernelSU-Next legacy manual hook + SUSFS v2.3.0 的参考补丁与实测记录（4.19 非 GKI）",
+    "forks": 0,
+    "full_name": "6078HITHEDAY/tb128fu-kernelsu-next-reference",
+    "license_id": "GPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-10-25T17:54:57Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-3.0"
+    ],
+    "score": 0.87166108,
+    "source_id": "1433469630",
+    "stars": 0,
+    "url": "https://github.com/6078HITHEDAY/tb128fu-kernelsu-next-reference"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "ReSukiSU + SUSFS GKI Kernel (Android 12-17) - GitHub Actions build",
+    "forks": 0,
+    "full_name": "BailinT/GKI_BakaSU_SUSFS",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-25T18:44:20Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.87160946,
+    "source_id": "1405316076",
+    "stars": 2,
+    "url": "https://github.com/BailinT/GKI_BakaSU_SUSFS"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Go agent runtime for tool-using, code-executing, multi-provider agents with MCP support, coding-agent CLI integrations, structured output, summarization, and parallel tool execution.",
     "forks": 3,
@@ -932,30 +980,6 @@
     "source_id": "1302155974",
     "stars": 3,
     "url": "https://github.com/tschk/rotary"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "ReSukiSU + SUSFS GKI Kernel (Android 12-17) - GitHub Actions build",
-    "forks": 0,
-    "full_name": "BailinT/GKI_BakaSU_SUSFS",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-25T11:12:11Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:susfs",
-      "recently-active",
-      "license:GPL-2.0",
-      "emerging"
-    ],
-    "score": 0.86811565,
-    "source_id": "1405316076",
-    "stars": 1,
-    "url": "https://github.com/BailinT/GKI_BakaSU_SUSFS"
   },
   {
     "auto_fork_eligible": false,
@@ -1511,11 +1535,11 @@
     "auto_fork_eligible": false,
     "category": "android-kernel",
     "description": "no patch kernel Support DroidSpaces.",
-    "forks": 18,
+    "forks": 19,
     "full_name": "Dere3046/_patchHarmony",
     "license_id": "GPL-2.0",
     "platform": "github",
-    "pushed_at": "2026-10-24T14:27:30Z",
+    "pushed_at": "2026-10-25T15:38:01Z",
     "reasons": [
       "category:android-kernel",
       "keyword:android",
@@ -1525,9 +1549,9 @@
       "license:GPL-2.0",
       "emerging"
     ],
-    "score": 0.85851048,
+    "score": 0.85920619,
     "source_id": "1375991451",
-    "stars": 40,
+    "stars": 42,
     "url": "https://github.com/Dere3046/_patchHarmony"
   },
   {
@@ -1889,29 +1913,5 @@
     "source_id": "1297094788",
     "stars": 0,
     "url": "https://github.com/Lkhanaajav/mcp-trajectory-evals"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Clean-room PoC of HySet (arXiv:2607.25718): set-level tool retrieval for LLM agents via query-conditioned hyperedge prediction. PyTorch model + training, CLI, HTTP & MCP server, LangChain execution feedback (Claude/Ollama).",
-    "forks": 0,
-    "full_name": "cicorias/hyset-poc",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-15T20:19:00Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85625911,
-    "source_id": "1421281716",
-    "stars": 0,
-    "url": "https://github.com/cicorias/hyset-poc"
   }
 ]
