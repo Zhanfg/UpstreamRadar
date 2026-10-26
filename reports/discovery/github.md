@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **464000**
-- latest census cursor: **1421864**
+- total census repositories scanned: **468000**
+- latest census cursor: **1433997**
 - retained candidates: **80**
 - governed fork queue: **27**
 
@@ -11,7 +11,7 @@
 
 - **DemonDamon/AgenticX** — score=0.933, stars=238; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
 - **wulawulu/learn-claude-code-rs** — score=0.924, stars=144; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
-- **context-labs/whip** — score=0.918, stars=1069; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **context-labs/whip** — score=0.919, stars=1096; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **EvannZhongg/Nosis** — score=0.918, stars=206; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 - **saigontechnology/AgentCrew** — score=0.917, stars=225; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
@@ -48,7 +48,7 @@
 - **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **wulawulu/learn-claude-code-rs** → ai-agents (score=0.924, license=MIT)
-- **context-labs/whip** → ai-agents (score=0.918, license=Apache-2.0)
+- **context-labs/whip** → ai-agents (score=0.919, license=Apache-2.0)
 - **EvannZhongg/Nosis** → ai-agents (score=0.918, license=MIT)
 - **saigontechnology/AgentCrew** → ai-agents (score=0.917, license=Apache-2.0)
 - **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.912, license=Apache-2.0)
@@ -60,7 +60,7 @@
 - **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
 - **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
-- **substructureai/subs** → ai-agents (score=0.889, license=MIT)
+- **substructureai/subs** → ai-agents (score=0.890, license=MIT)
 - **cofin/litestar-mcp** → ai-agents (score=0.889, license=MIT)
 - **taihei-05/siglume-api-sdk** → ai-agents (score=0.889, license=MIT)
 - **tokyoxpa3/5G-Proxy-Client** → networking (score=0.884, license=MIT)
