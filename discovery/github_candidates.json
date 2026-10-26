@@ -1150,6 +1150,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Find where your agent breaks before your users do. Seeded tool-use tasks checked by code, on your own tools.",
+    "forks": 0,
+    "full_name": "poisson-labs/tasks",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-10-26T20:58:06Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.8636751,
+    "source_id": "1430015443",
+    "stars": 2,
+    "url": "https://github.com/poisson-labs/tasks"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Local document search with an agentic LLM loop (SQLite FTS5, no embeddings). Answers cite the page. MCP server, Windows & Linux desktop app.",
     "forks": 0,
     "full_name": "cgaeking/rootmind",
@@ -1534,12 +1558,12 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Find where your agent breaks before your users do. Seeded tool-use tasks checked by code, on your own tools.",
-    "forks": 0,
-    "full_name": "poisson-labs/tasks",
+    "description": "LLM agent that re-plans a factory schedule through a CP-SAT solver but can never apply a change: human-only approval, 30-attack red team, 48-scenario eval harness, RAG, MCP. Hand-written tool loop on the Anthropic SDK.",
+    "forks": 1,
+    "full_name": "roopchandrika/jobshop-agent",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-22T21:10:13Z",
+    "pushed_at": "2026-10-26T13:03:04Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1550,10 +1574,10 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.85944704,
-    "source_id": "1430015443",
-    "stars": 1,
-    "url": "https://github.com/poisson-labs/tasks"
+    "score": 0.85990922,
+    "source_id": "1409578446",
+    "stars": 0,
+    "url": "https://github.com/roopchandrika/jobshop-agent"
   },
   {
     "auto_fork_eligible": false,
@@ -1773,30 +1797,6 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "LLM agent that helps production planners handle job-shop disruptions by calling a CP-SAT scheduler as tools. Hand-written tool-use loop, MCP server, evals, web UI. Synthetic data only.",
-    "forks": 0,
-    "full_name": "roopchandrika/jobshop-agent",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-09T16:17:43Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.85654133,
-    "source_id": "1409578446",
-    "stars": 0,
-    "url": "https://github.com/roopchandrika/jobshop-agent"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
     "description": "Hands-on AI engineering lab on financial-market data: evals, RAG, tool-using agents, multi-agent orchestration and fine-tuning (Python, Gemini, FastAPI, React)",
     "forks": 0,
     "full_name": "devTomaszStoklosa/fin-ai-lab",
@@ -1817,6 +1817,30 @@
     "source_id": "1425214269",
     "stars": 0,
     "url": "https://github.com/devTomaszStoklosa/fin-ai-lab"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "A Go SDK for building autonomous LLM agents: vendor-neutral model, token-efficient compaction, permissions, hooks, transcripts.",
+    "forks": 0,
+    "full_name": "inilvinilra/fecai",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-10-26T19:41:51Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.85648931,
+    "source_id": "1434509090",
+    "stars": 0,
+    "url": "https://github.com/inilvinilra/fecai"
   },
   {
     "auto_fork_eligible": false,
@@ -1869,49 +1893,25 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Open-source agent runtime where an AI agent's authority comes from the user's intent and is enforced outside the model: scoped capabilities, capability discovery, audited transitions, revocation, and an Attack World benchmark.",
+    "description": "Tool-using AI agent: finds AI/ML working student jobs in Berlin, scores them against a CV and drafts cover letters grounded in the CV. MCP server, hand-written agent loop, eval suite, human approval.",
     "forks": 0,
-    "full_name": "ranjan-del/intentward",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-02T09:43:29Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.85636197,
-    "source_id": "1401439733",
-    "stars": 0,
-    "url": "https://github.com/ranjan-del/intentward"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "A hackable agent runtime: tool-use loop, human-in-the-loop approval gates (approve/deny/edit), OpenTelemetry JSONL tracing, stdio MCP client, SKILL.md loading",
-    "forks": 0,
-    "full_name": "abhishekash/agent-harness",
+    "full_name": "Kirill-ark/Job-Application-Agent",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-13T17:27:57Z",
+    "pushed_at": "2026-10-26T18:18:20Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
       "keyword:mcp",
-      "keyword:tool-use",
       "keyword:llm",
       "keyword:model-context-protocol",
       "recently-active",
-      "license:MIT"
+      "license:MIT",
+      "emerging"
     ],
-    "score": 0.85628526,
-    "source_id": "1409965168",
+    "score": 0.85637337,
+    "source_id": "1434417856",
     "stars": 0,
-    "url": "https://github.com/abhishekash/agent-harness"
+    "url": "https://github.com/Kirill-ark/Job-Application-Agent"
   }
 ]
