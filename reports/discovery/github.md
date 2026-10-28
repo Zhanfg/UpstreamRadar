@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **504000**
-- latest census cursor: **1538476**
+- total census repositories scanned: **508000**
+- latest census cursor: **1550070**
 - retained candidates: **80**
 - governed fork queue: **31**
 
@@ -16,7 +16,7 @@
 - **saigontechnology/AgentCrew** — score=0.917, stars=225; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
-- **MerkyorLynn/Lynn** — score=0.907, stars=62; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **MerkyorLynn/Lynn** — score=0.907, stars=65; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 
 ### android-kernel
 
@@ -53,8 +53,8 @@
 - **saigontechnology/AgentCrew** → ai-agents (score=0.917, license=Apache-2.0)
 - **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.912, license=Apache-2.0)
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
-- **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
 - **MerkyorLynn/Lynn** → ai-agents (score=0.907, license=Apache-2.0)
+- **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
 - **MiChongs/WutherCore** → networking (score=0.905, license=MIT)
 - **keminar/anyproxy** → networking (score=0.903, license=MIT)
 - **Agent-One-Lab/AgentFly** → ai-agents (score=0.901, license=Apache-2.0)
