@@ -133,11 +133,17 @@ the production secret-pattern sweep.
 
 Benchmark and security regressions use a fingerprinted state machine:
 
-1. first active evidence creates one incident Issue;
+1. first active evidence creates one incident Issue, unless an open Issue
+   already carries the same hidden marker or the same title;
 2. unchanged evidence creates no new comment;
 3. changed evidence can update the Issue after the cooldown;
 4. recovery adds a recovery note and closes the Issue automatically;
 5. a later regression can create a new lifecycle.
+
+The hidden marker is `<!-- upstreamradar-incident:<key> -->`. A missing local
+incident record reuses that open Issue instead of filing another copy. Older
+copies of the same generated title are closed by the manual dedupe workflow,
+which keeps the newest open Issue.
 
 This keeps engineering activity proportional to real state transitions rather
 than to scheduler frequency.

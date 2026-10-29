@@ -115,34 +115,12 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.UPSTREAMRADAR_PAT }}
+          UPSTREAMRADAR_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
-          [[ -f .radar/manifest.json ]] || exit 0
-
-          jq -c '.anomalies[]?' .radar/manifest.json | while IFS= read -r item; do
-            full_name="$(jq -r '.full_name' <<<"$item")"
-            streak="$(jq -r '.error_streak' <<<"$item")"
-            message="$(jq -r '.message' <<<"$item")"
-            title="[radar] Repeated collection failure: ${full_name}"
-
-            existing="$(
-              gh issue list --repo "${GITHUB_REPOSITORY}" --state open                 --search "${title} in:title" --json title --jq 'length'
-            )"
-
-            if [[ "$existing" != "0" ]]; then
-              echo "Issue already exists for ${full_name}."
-              continue
-            fi
-
-            body="$(cat <<EOF
-UpstreamRadar failed to collect this target for **${streak} consecutive scheduled checks**.
-
-- target: `${full_name}`
-- latest error: `${message}`
-- detected by: automated SKOPRÆD collector
-
-This issue is generated only after repeated failures to avoid transient-error noise.
-EOF
-)"
-            gh issue create --repo "${GITHUB_REPOSITORY}" --title "${title}" --body "${body}"
-          done
+          if [[ ! -f .radar/manifest.json ]]; then
+            echo "RADAR_ISSUES=SKIP manifest missing"
+            exit 0
+          fi
+          python -m scripts.sync_radar_failure_issues

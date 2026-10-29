@@ -1,0 +1,42 @@
+name: Dedupe generated issues
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Close older duplicates. Leave false to print the plan only."
+        required: true
+        type: boolean
+        default: false
+      pr_url:
+        description: "https://github.com/<owner>/<repo>/pull/<number> cited in each closing comment."
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: upstreamradar-issue-dedupe
+  cancel-in-progress: false
+
+jobs:
+  dedupe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Plan or close duplicate generated issues
+        env:
+          UPSTREAMRADAR_PAT: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DEDUPE_PR_URL: ${{ inputs.pr_url }}
+          DEDUPE_APPLY: ${{ inputs.apply }}
+        run: python -m scripts.dedupe_github_issues

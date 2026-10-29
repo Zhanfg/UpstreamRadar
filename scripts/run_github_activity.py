@@ -10,6 +10,7 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 from upstreamradar.activity import ActivityAction, ActivityEvidence, history_record, plan_actions
+from upstreamradar.issue_sync import list_open_issues, newest_open_issue, with_marker
 
 
 API = 'https://api.github.com'
@@ -106,7 +107,7 @@ def evidence_from_run(run: dict) -> ActivityEvidence:
 
 
 def open_issues() -> list[dict]:
-    return request(f'/repos/{REPOSITORY}/issues?state=open&per_page=100') or []
+    return list_open_issues(request, REPOSITORY)
 
 
 def execute_issue(action: ActivityAction, now_iso: str) -> dict:
@@ -118,9 +119,10 @@ def execute_issue(action: ActivityAction, now_iso: str) -> dict:
             milestone_number = milestone.get('number')
             break
 
-    existing = next(
-        (item for item in open_issues() if 'pull_request' not in item and item.get('title') == action.title),
-        None,
+    existing = newest_open_issue(
+        open_issues(),
+        title=action.title,
+        key=action.key,
     )
     if existing is not None:
         if milestone_number and not existing.get('milestone'):
@@ -156,7 +158,7 @@ def execute_issue(action: ActivityAction, now_iso: str) -> dict:
             external_id=str(note.get('id')),
         )
 
-    payload = {'title': action.title, 'body': action.body}
+    payload = {'title': action.title, 'body': with_marker(action.body, action.key)}
     if milestone_number:
         payload['milestone'] = milestone_number
     created = request(
