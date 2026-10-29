@@ -1,0 +1,114 @@
+{
+  "active_count": 1,
+  "fork_comparisons": [
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "dev",
+      "fork": "yuezhou-build/GKID-Kernels",
+      "status": "compare-unavailable",
+      "upstream": "ahmed-alnassif/GKID-Kernels"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "master",
+      "fork": "yuezhou-build/hysteria",
+      "status": "compare-unavailable",
+      "upstream": "HyNetworks/hysteria"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/AgenticX",
+      "status": "compare-unavailable",
+      "upstream": "DemonDamon/AgenticX"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/whip",
+      "status": "compare-unavailable",
+      "upstream": "context-labs/whip"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/AgentCrew",
+      "status": "compare-unavailable",
+      "upstream": "saigontechnology/AgentCrew"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/agentacct",
+      "status": "compare-unavailable",
+      "upstream": "mikehasa/agentacct"
+    }
+  ],
+  "observed_at": "2026-10-29T14:28:51+00:00",
+  "platform": "github",
+  "platform_actions": 1,
+  "signals": [
+    {
+      "active": true,
+      "evidence": {
+        "completed_runs": 29,
+        "consecutive_failures": 0,
+        "failure_count": 10,
+        "failure_rate": 0.344828,
+        "failure_run_ids": [
+          40878000483,
+          40869882455,
+          40825439365,
+          40781119722,
+          40759297993,
+          40727921569,
+          40708764769,
+          40657351336,
+          40652171560,
+          40614607673
+        ]
+      },
+      "key": "ci-reliability",
+      "severity": "medium",
+      "title": "[ci] Workflow reliability regression"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "affected_count": 0,
+        "forks": [],
+        "threshold": 20
+      },
+      "key": "fork-sync",
+      "severity": "medium",
+      "title": "[fork] Discovery forks behind upstream"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "items": [],
+        "stale_count": 0,
+        "threshold": 3
+      },
+      "key": "stale-work",
+      "severity": "low",
+      "title": "[maintenance] Stale engineering work items"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "finding_count": 0,
+        "findings": []
+      },
+      "key": "workflow-refs",
+      "severity": "high",
+      "title": "[maintenance] Floating workflow action references"
+    }
+  ]
+}

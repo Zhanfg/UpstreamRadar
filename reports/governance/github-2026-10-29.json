@@ -1,0 +1,323 @@
+{
+  "active_count": 2,
+  "observed_at": "2026-10-29T14:29:05+00:00",
+  "parity_entries": [
+    {
+      "local_length": 44512,
+      "path": "upstreamradar/engine.py",
+      "remote_length": 32170,
+      "same": false,
+      "status": "content-mismatch"
+    },
+    {
+      "local_length": 9453,
+      "path": "upstreamradar/activity.py",
+      "remote_length": 9453,
+      "same": false,
+      "status": "content-mismatch"
+    },
+    {
+      "local_length": 3525,
+      "path": "upstreamradar/health.py",
+      "remote_length": 3525,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 7829,
+      "path": "upstreamradar/maintenance.py",
+      "remote_length": 7829,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 6745,
+      "path": "upstreamradar/governance.py",
+      "remote_length": 6745,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 6395,
+      "path": "scripts/benchmark_skopraed.py",
+      "remote_length": 0,
+      "same": false,
+      "status": "missing-remote"
+    },
+    {
+      "local_length": 4431,
+      "path": "scripts/security_posture.py",
+      "remote_length": 4431,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 3226,
+      "path": "config/activity_matrix.json",
+      "remote_length": 3225,
+      "same": false,
+      "status": "content-mismatch"
+    },
+    {
+      "local_length": 12488,
+      "path": "docs/ACTIVITY_MATRIX.md",
+      "remote_length": 12138,
+      "same": false,
+      "status": "content-mismatch"
+    },
+    {
+      "local_length": 3536,
+      "path": "tests/test_activity.py",
+      "remote_length": 3536,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 5592,
+      "path": "tests/test_engineering_health.py",
+      "remote_length": 5590,
+      "same": false,
+      "status": "content-mismatch"
+    },
+    {
+      "local_length": 4943,
+      "path": "tests/test_maintenance.py",
+      "remote_length": 4943,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 5772,
+      "path": "tests/test_governance.py",
+      "remote_length": 5772,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 7906,
+      "path": "upstreamradar/downstream.py",
+      "remote_length": 7906,
+      "same": false,
+      "status": "content-mismatch"
+    },
+    {
+      "local_length": 2962,
+      "path": "config/downstream_projects.json",
+      "remote_length": 2962,
+      "same": true,
+      "status": "match"
+    },
+    {
+      "local_length": 4747,
+      "path": "tests/test_downstream.py",
+      "remote_length": 4747,
+      "same": true,
+      "status": "match"
+    }
+  ],
+  "platform": "github",
+  "platform_actions": 2,
+  "signals": [
+    {
+      "active": true,
+      "evidence": {
+        "error_streak_count": 0,
+        "error_streaks": [],
+        "invalid": [],
+        "invalid_count": 0,
+        "record_count": 46,
+        "stale": [
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "MetaCubeX/mihomo"
+          },
+          {
+            "last_checked_at": "2026-10-04T14:08:18Z",
+            "name": "SagerNet/sing-box"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "WireGuard/wireguard-go"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "anthropics/anthropic-sdk-python"
+          },
+          {
+            "last_checked_at": "2026-10-04T08:19:04Z",
+            "name": "aquasecurity/trivy"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "astral-sh/ruff"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "astral-sh/uv"
+          },
+          {
+            "last_checked_at": "2026-10-03T07:08:16Z",
+            "name": "cilium/cilium"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "cloudflare/cloudflared"
+          },
+          {
+            "last_checked_at": "2026-10-04T01:56:52Z",
+            "name": "crewAIInc/crewAI"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "curl/curl"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "denoland/deno"
+          },
+          {
+            "last_checked_at": "2026-10-03T16:41:15Z",
+            "name": "envoyproxy/envoy"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "ggml-org/llama.cpp"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "git/git"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "golang/go"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "google/osv-scanner"
+          },
+          {
+            "last_checked_at": "2026-09-30T02:09:55Z",
+            "name": "haproxy/haproxy"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "huggingface/diffusers"
+          },
+          {
+            "last_checked_at": "2026-10-05T00:07:42Z",
+            "name": "huggingface/transformers"
+          }
+        ],
+        "stale_count": 46,
+        "stale_fraction": 1.0,
+        "stale_threshold_hours": 36.0
+      },
+      "key": "data-quality",
+      "severity": "medium",
+      "title": "[governance] Radar state data-quality regression"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "file_count": 8,
+        "largest": [
+          {
+            "bytes": 76122,
+            "path": "state/model.json"
+          },
+          {
+            "bytes": 35454,
+            "path": "state/forks_github.json"
+          },
+          {
+            "bytes": 3121,
+            "path": "state/activity_github.json"
+          },
+          {
+            "bytes": 571,
+            "path": "state/benchmark_github.json"
+          },
+          {
+            "bytes": 331,
+            "path": "state/maintenance_github.json"
+          },
+          {
+            "bytes": 326,
+            "path": "state/engineering_health_github.json"
+          },
+          {
+            "bytes": 222,
+            "path": "state/discovery_github.json"
+          },
+          {
+            "bytes": 84,
+            "path": "state/governance_github.json"
+          }
+        ],
+        "oversized": [],
+        "oversized_count": 0,
+        "per_file_limit_bytes": 2097152,
+        "total_bytes": 116231,
+        "total_limit_bytes": 12582912
+      },
+      "key": "state-growth",
+      "severity": "medium",
+      "title": "[governance] Radar state storage growth"
+    },
+    {
+      "active": true,
+      "evidence": {
+        "checked_count": 16,
+        "max_mismatches": 0,
+        "mismatch_count": 7,
+        "mismatches": [
+          {
+            "local_length": 3226,
+            "path": "config/activity_matrix.json",
+            "remote_length": 3225,
+            "status": "content-mismatch"
+          },
+          {
+            "local_length": 12488,
+            "path": "docs/ACTIVITY_MATRIX.md",
+            "remote_length": 12138,
+            "status": "content-mismatch"
+          },
+          {
+            "local_length": 6395,
+            "path": "scripts/benchmark_skopraed.py",
+            "remote_length": 0,
+            "status": "missing-remote"
+          },
+          {
+            "local_length": 5592,
+            "path": "tests/test_engineering_health.py",
+            "remote_length": 5590,
+            "status": "content-mismatch"
+          },
+          {
+            "local_length": 9453,
+            "path": "upstreamradar/activity.py",
+            "remote_length": 9453,
+            "status": "content-mismatch"
+          },
+          {
+            "local_length": 7906,
+            "path": "upstreamradar/downstream.py",
+            "remote_length": 7906,
+            "status": "content-mismatch"
+          },
+          {
+            "local_length": 44512,
+            "path": "upstreamradar/engine.py",
+            "remote_length": 32170,
+            "status": "content-mismatch"
+          }
+        ]
+      },
+      "key": "cross-platform-parity",
+      "severity": "high",
+      "title": "[governance] GitHub/GitLab shared-core drift"
+    }
+  ]
+}
