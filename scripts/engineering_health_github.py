@@ -11,9 +11,9 @@ from urllib.request import Request, urlopen
 
 from upstreamradar.health import (
     benchmark_incident_evidence,
-    decide_incident,
     security_incident_evidence,
 )
+from upstreamradar.issue_sync import list_open_issues, reconcile_github_incident
 
 
 UTC = timezone.utc
@@ -83,6 +83,15 @@ def comment(number: int, body: str) -> None:
     )
 
 
+def update_body(number: int, body: str) -> None:
+    owner, repo = REPOSITORY.split("/", 1)
+    request(
+        f"/repos/{owner}/{repo}/issues/{number}",
+        method="PATCH",
+        payload={"body": body},
+    )
+
+
 def set_state(number: int, state: str) -> None:
     owner, repo = REPOSITORY.split("/", 1)
     request(
@@ -136,56 +145,31 @@ def reconcile(
     evidence: dict,
     now: datetime,
     cooldown_hours: float,
+    open_issues: list | None = None,
 ) -> int:
-    incidents = state.setdefault("incidents", {})
-    record = incidents.get(key)
-    decision = decide_incident(
-        record,
+    if open_issues is None:
+        open_issues = list_open_issues(request, REPOSITORY)
+    return reconcile_github_incident(
+        state,
+        key=key,
+        title=title,
         active=active,
         evidence=evidence,
         now=now,
         cooldown_hours=cooldown_hours,
-    )
-    if decision.action == "none":
-        return 0
-
-    body = incident_body(key, evidence)
-    if decision.action == "create":
-        created = create_issue(title, body)
-        incidents[key] = {
-            "external_id": created["number"],
-            "url": created.get("html_url"),
-            "status": "open",
-            "fingerprint": decision.fingerprint,
-            "last_action_at": now.isoformat(),
-        }
-        return 1
-
-    assert record is not None
-    number = int(record["external_id"])
-    if decision.action == "update":
-        comment(
-            number,
-            "Engineering-health evidence changed.\n\n"
-            f"Fingerprint: {decision.fingerprint}\n\n{body}",
-        )
-        record["fingerprint"] = decision.fingerprint
-        record["last_action_at"] = now.isoformat()
-        return 1
-
-    if decision.action == "close":
-        comment(
-            number,
+        open_issues=open_issues,
+        body=incident_body(key, evidence),
+        create_issue=create_issue,
+        comment=comment,
+        close_issue=lambda number: set_state(number, "closed"),
+        update_body=update_body,
+        update_comment="Engineering-health evidence changed.",
+        adopt_comment="Open engineering-health incident reused.",
+        close_comment=(
             "Engineering Health recovered. The triggering condition is no "
-            "longer present in the daily evidence. Closing automatically.",
-        )
-        set_state(number, "closed")
-        record["status"] = "closed"
-        record["fingerprint"] = decision.fingerprint
-        record["last_action_at"] = now.isoformat()
-        return 1
-
-    return 0
+            "longer present in the daily evidence. Closing automatically."
+        ),
+    )
 
 
 def main() -> int:
@@ -243,6 +227,7 @@ def main() -> int:
     )
 
     actions = 0
+    open_issues = list_open_issues(request, REPOSITORY)
     actions += reconcile(
         state,
         key="benchmark",
@@ -251,6 +236,7 @@ def main() -> int:
         evidence=benchmark_evidence,
         now=now,
         cooldown_hours=cooldown,
+        open_issues=open_issues,
     )
     actions += reconcile(
         state,
@@ -260,6 +246,7 @@ def main() -> int:
         evidence=security_evidence,
         now=now,
         cooldown_hours=cooldown,
+        open_issues=open_issues,
     )
 
     state["last_run_at"] = now.isoformat()

@@ -8,7 +8,7 @@ from urllib.error import HTTPError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
-from upstreamradar.health import decide_incident
+from upstreamradar.issue_sync import list_open_issues, reconcile_github_incident
 from upstreamradar.maintenance import (
     ci_reliability,
     fork_sync_signal,
@@ -191,6 +191,15 @@ def comment(number: int, body: str) -> None:
     )
 
 
+def update_body(number: int, body: str) -> None:
+    owner, repo = REPOSITORY.split("/", 1)
+    request(
+        f"/repos/{owner}/{repo}/issues/{number}",
+        method="PATCH",
+        payload={"body": body},
+    )
+
+
 def set_issue_state(number: int, state: str) -> None:
     owner, repo = REPOSITORY.split("/", 1)
     request(
@@ -206,59 +215,31 @@ def reconcile(
     *,
     now: datetime,
     cooldown_hours: float,
+    open_issues: list | None = None,
 ) -> int:
-    incidents = state.setdefault("incidents", {})
-    record = incidents.get(signal.key)
-    decision = decide_incident(
-        record,
+    if open_issues is None:
+        open_issues = list_open_issues(request, REPOSITORY)
+    return reconcile_github_incident(
+        state,
+        key=signal.key,
+        title=signal.title,
         active=signal.active,
         evidence=signal.evidence,
         now=now,
         cooldown_hours=cooldown_hours,
-    )
-
-    if decision.action == "none":
-        return 0
-
-    body = issue_body(signal)
-    if decision.action == "create":
-        created = create_issue(signal.title, body)
-        incidents[signal.key] = {
-            "external_id": created["number"],
-            "url": created.get("html_url"),
-            "status": "open",
-            "fingerprint": decision.fingerprint,
-            "last_action_at": now.isoformat(),
-        }
-        return 1
-
-    if record is None:
-        return 0
-    number = int(record["external_id"])
-
-    if decision.action == "update":
-        comment(
-            number,
-            "Maintenance evidence changed.\n\n"
-            f"Fingerprint: {decision.fingerprint}\n\n{body}",
-        )
-        record["fingerprint"] = decision.fingerprint
-        record["last_action_at"] = now.isoformat()
-        return 1
-
-    if decision.action == "close":
-        comment(
-            number,
+        open_issues=open_issues,
+        body=issue_body(signal),
+        create_issue=create_issue,
+        comment=comment,
+        close_issue=lambda number: set_issue_state(number, "closed"),
+        update_body=update_body,
+        update_comment="Maintenance evidence changed.",
+        adopt_comment="Open maintenance incident reused.",
+        close_comment=(
             "Maintenance Intelligence recovered: the triggering condition is no "
-            "longer active. Closing automatically.",
-        )
-        set_issue_state(number, "closed")
-        record["status"] = "closed"
-        record["fingerprint"] = decision.fingerprint
-        record["last_action_at"] = now.isoformat()
-        return 1
-
-    return 0
+            "longer active. Closing automatically."
+        ),
+    )
 
 
 def main() -> int:
@@ -306,12 +287,14 @@ def main() -> int:
     cooldown = float(policy.get("incident_cooldown_hours", 12))
     actions = 0
     if not dry_run:
+        open_issues = list_open_issues(request, REPOSITORY)
         actions = sum(
             reconcile(
                 state,
                 signal,
                 now=now,
                 cooldown_hours=cooldown,
+                open_issues=open_issues,
             )
             for signal in signals
         )

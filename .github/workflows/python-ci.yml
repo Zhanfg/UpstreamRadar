@@ -17,6 +17,7 @@ on:
       - ".github/workflows/radar.yml"
       - ".github/workflows/activity-matrix.yml"
       - ".github/workflows/gitlab-bridge.yml"
+      - ".github/workflows/dedupe-issues.yml"
   pull_request:
     branches:
       - main
@@ -32,6 +33,7 @@ on:
       - ".github/workflows/radar.yml"
       - ".github/workflows/activity-matrix.yml"
       - ".github/workflows/gitlab-bridge.yml"
+      - ".github/workflows/dedupe-issues.yml"
 
 permissions:
   contents: read
