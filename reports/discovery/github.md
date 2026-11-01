@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **564000**
-- latest census cursor: **1710783**
+- total census repositories scanned: **568000**
+- latest census cursor: **1722176**
 - retained candidates: **80**
-- governed fork queue: **31**
+- governed fork queue: **32**
 
 ## Top directions
 
@@ -61,8 +61,8 @@
 - **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
 - **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
+- **footprintjs/agentfootprint** → ai-agents (score=0.893, license=MIT)
 - **substructureai/subs** → ai-agents (score=0.890, license=MIT)
 - **cofin/litestar-mcp** → ai-agents (score=0.889, license=MIT)
-- **taihei-05/siglume-api-sdk** → ai-agents (score=0.889, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.
