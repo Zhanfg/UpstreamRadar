@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **572000**
-- latest census cursor: **1733544**
+- total census repositories scanned: **576000**
+- latest census cursor: **1744890**
 - retained candidates: **80**
 - governed fork queue: **32**
 
@@ -11,7 +11,7 @@
 
 - **DemonDamon/AgenticX** — score=0.933, stars=238; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:orchestration
 - **wulawulu/learn-claude-code-rs** — score=0.924, stars=144; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
-- **context-labs/whip** — score=0.919, stars=1096; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **context-labs/whip** — score=0.919, stars=1104; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **EvannZhongg/Nosis** — score=0.918, stars=206; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 - **saigontechnology/AgentCrew** — score=0.917, stars=225; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=90; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
@@ -62,7 +62,7 @@
 - **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 - **footprintjs/agentfootprint** → ai-agents (score=0.893, license=MIT)
+- **cofin/litestar-mcp** → ai-agents (score=0.891, license=MIT)
 - **substructureai/subs** → ai-agents (score=0.890, license=MIT)
-- **cofin/litestar-mcp** → ai-agents (score=0.889, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.
