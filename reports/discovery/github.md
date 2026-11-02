@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **580000**
-- latest census cursor: **1756021**
+- total census repositories scanned: **584000**
+- latest census cursor: **1767695**
 - retained candidates: **80**
 - governed fork queue: **32**
 
@@ -24,10 +24,10 @@
 - **Spring-bulid/MakoSU** — score=0.907, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **sysretq0/android-kernel-builder** — score=0.903, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **ZxAlif-ID/Flavenz-Kernel-Peridot** — score=0.893, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **leemikepop/avd-kernelsu-x86_64** — score=0.885, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernelsu, keyword:susfs
+- **zacxyonly/zerobyte-kernel** — score=0.882, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **longg66/cve-2025-21479_iqooneo7speed** — score=0.877, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Aaron-2012/KERNEL-SAMSUNG-A035M---ANDROID-13** — score=0.877, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:ksu
-- **theonix-dev/marble-kernel-ksun-susfs** — score=0.877, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
-- **6078HITHEDAY/tb128fu-kernelsu-next-reference** — score=0.874, stars=0; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 
 ### networking
 
