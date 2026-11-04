@@ -1,0 +1,152 @@
+{
+  "active_count": 1,
+  "fork_comparisons": [
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "dev",
+      "fork": "yuezhou-build/GKID-Kernels",
+      "status": "compare-unavailable",
+      "upstream": "ahmed-alnassif/GKID-Kernels"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "master",
+      "fork": "yuezhou-build/hysteria",
+      "status": "compare-unavailable",
+      "upstream": "HyNetworks/hysteria"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/AgenticX",
+      "status": "compare-unavailable",
+      "upstream": "DemonDamon/AgenticX"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/whip",
+      "status": "compare-unavailable",
+      "upstream": "context-labs/whip"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/AgentCrew",
+      "status": "compare-unavailable",
+      "upstream": "saigontechnology/AgentCrew"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/agentacct",
+      "status": "compare-unavailable",
+      "upstream": "mikehasa/agentacct"
+    }
+  ],
+  "observed_at": "2026-11-04T20:02:48+00:00",
+  "platform": "github",
+  "platform_actions": 1,
+  "signals": [
+    {
+      "active": false,
+      "evidence": {
+        "completed_runs": 29,
+        "consecutive_failures": 0,
+        "failure_count": 7,
+        "failure_rate": 0.241379,
+        "failure_run_ids": [
+          41789074078,
+          41783718320,
+          41743141109,
+          41699316244,
+          41631092999,
+          41595115470,
+          41544034026
+        ]
+      },
+      "key": "ci-reliability",
+      "severity": "medium",
+      "title": "[ci] Workflow reliability regression"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "affected_count": 0,
+        "forks": [],
+        "threshold": 20
+      },
+      "key": "fork-sync",
+      "severity": "medium",
+      "title": "[fork] Discovery forks behind upstream"
+    },
+    {
+      "active": true,
+      "evidence": {
+        "items": [
+          {
+            "age_days": 14.32,
+            "id": 5960450622,
+            "kind": "issue",
+            "title": "[governance] GitHub/GitLab shared-core drift",
+            "updated_at": "2026-10-21T12:26:54+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/237"
+          },
+          {
+            "age_days": 14.32,
+            "id": 5960450498,
+            "kind": "issue",
+            "title": "[governance] Radar state data-quality regression",
+            "updated_at": "2026-10-21T12:26:54+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/236"
+          },
+          {
+            "age_days": 14.1,
+            "id": 5965527229,
+            "kind": "issue",
+            "title": "[ci] Workflow reliability regression",
+            "updated_at": "2026-10-21T17:40:50+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/238"
+          },
+          {
+            "age_days": 14.1,
+            "id": 5965528642,
+            "kind": "issue",
+            "title": "[governance] GitHub/GitLab shared-core drift",
+            "updated_at": "2026-10-21T17:40:56+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/240"
+          },
+          {
+            "age_days": 14.1,
+            "id": 5965528511,
+            "kind": "issue",
+            "title": "[governance] Radar state data-quality regression",
+            "updated_at": "2026-10-21T17:40:55+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/239"
+          }
+        ],
+        "stale_count": 5,
+        "threshold": 3
+      },
+      "key": "stale-work",
+      "severity": "low",
+      "title": "[maintenance] Stale engineering work items"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "finding_count": 0,
+        "findings": []
+      },
+      "key": "workflow-refs",
+      "severity": "high",
+      "title": "[maintenance] Floating workflow action references"
+    }
+  ]
+}
