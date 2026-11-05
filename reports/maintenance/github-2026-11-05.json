@@ -1,0 +1,167 @@
+{
+  "active_count": 1,
+  "fork_comparisons": [
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "dev",
+      "fork": "yuezhou-build/GKID-Kernels",
+      "status": "compare-unavailable",
+      "upstream": "ahmed-alnassif/GKID-Kernels"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "master",
+      "fork": "yuezhou-build/hysteria",
+      "status": "compare-unavailable",
+      "upstream": "HyNetworks/hysteria"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/AgenticX",
+      "status": "compare-unavailable",
+      "upstream": "DemonDamon/AgenticX"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/whip",
+      "status": "compare-unavailable",
+      "upstream": "context-labs/whip"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/AgentCrew",
+      "status": "compare-unavailable",
+      "upstream": "saigontechnology/AgentCrew"
+    },
+    {
+      "ahead_by": 0,
+      "behind_by": 0,
+      "branch": "main",
+      "fork": "yuezhou-build/agentacct",
+      "status": "compare-unavailable",
+      "upstream": "mikehasa/agentacct"
+    }
+  ],
+  "observed_at": "2026-11-05T01:26:03+00:00",
+  "platform": "github",
+  "platform_actions": 0,
+  "signals": [
+    {
+      "active": false,
+      "evidence": {
+        "completed_runs": 27,
+        "consecutive_failures": 0,
+        "failure_count": 6,
+        "failure_rate": 0.222222,
+        "failure_run_ids": [
+          41789074078,
+          41783718320,
+          41743141109,
+          41699316244,
+          41631092999,
+          41595115470
+        ]
+      },
+      "key": "ci-reliability",
+      "severity": "medium",
+      "title": "[ci] Workflow reliability regression"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "affected_count": 0,
+        "forks": [],
+        "threshold": 20
+      },
+      "key": "fork-sync",
+      "severity": "medium",
+      "title": "[fork] Discovery forks behind upstream"
+    },
+    {
+      "active": true,
+      "evidence": {
+        "items": [
+          {
+            "age_days": 15.15,
+            "id": 5950271469,
+            "kind": "issue",
+            "title": "[ci] Workflow reliability regression",
+            "updated_at": "2026-10-20T21:53:36+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/227"
+          },
+          {
+            "age_days": 15.15,
+            "id": 5950272506,
+            "kind": "issue",
+            "title": "[governance] GitHub/GitLab shared-core drift",
+            "updated_at": "2026-10-20T21:53:41+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/229"
+          },
+          {
+            "age_days": 15.15,
+            "id": 5950272415,
+            "kind": "issue",
+            "title": "[governance] Radar state data-quality regression",
+            "updated_at": "2026-10-20T21:53:41+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/228"
+          },
+          {
+            "age_days": 14.84,
+            "id": 5954833115,
+            "kind": "issue",
+            "title": "[benchmark] SKOPRÆD engineering health regression",
+            "updated_at": "2026-10-21T05:20:36+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/231"
+          },
+          {
+            "age_days": 14.84,
+            "id": 5954834350,
+            "kind": "issue",
+            "title": "[ci] Workflow reliability regression",
+            "updated_at": "2026-10-21T05:20:44+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/232"
+          },
+          {
+            "age_days": 14.84,
+            "id": 5954835223,
+            "kind": "issue",
+            "title": "[governance] GitHub/GitLab shared-core drift",
+            "updated_at": "2026-10-21T05:20:50+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/234"
+          },
+          {
+            "age_days": 14.84,
+            "id": 5954835077,
+            "kind": "issue",
+            "title": "[governance] Radar state data-quality regression",
+            "updated_at": "2026-10-21T05:20:49+00:00",
+            "url": "https://github.com/Zhanfg/UpstreamRadar/issues/233"
+          }
+        ],
+        "stale_count": 7,
+        "threshold": 3
+      },
+      "key": "stale-work",
+      "severity": "medium",
+      "title": "[maintenance] Stale engineering work items"
+    },
+    {
+      "active": false,
+      "evidence": {
+        "finding_count": 0,
+        "findings": []
+      },
+      "key": "workflow-refs",
+      "severity": "high",
+      "title": "[maintenance] Floating workflow action references"
+    }
+  ]
+}
