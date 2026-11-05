@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError
@@ -19,6 +20,12 @@ API = "https://api.github.com"
 TOKEN = os.environ.get("UPSTREAMRADAR_PAT", "")
 CONFIG_PATH = Path("config/downstream_projects.json")
 STATE_PATH = Path("state/downstream_github.json")
+# 401/403: the token is not allowed to create the issue.
+# 404: GitHub hides a repository the token cannot access as Not Found.
+ISSUE_CREATE_PERMISSION_STATUSES = frozenset({401, 403, 404})
+_SECRET_RE = re.compile(
+    r"(?i)\b(?:bearer\s+|github_pat_|ghp_|gho_|ghu_|ghs_|ghr_)[A-Za-z0-9_\-]+"
+)
 
 
 def now_utc() -> datetime:
@@ -73,12 +80,46 @@ def issue(repo: str, number: int):
     return request(f"/repos/{repo}/issues/{number}", allow_404=True)
 
 
+class IssueCreatePermissionError(Exception):
+    def __init__(self, status: int, repo: str, detail: str):
+        self.status = status
+        self.repo = repo
+        self.detail = detail
+        super().__init__(f"HTTP {status} creating an issue in {repo}")
+
+
+def safe_http_detail(exc: HTTPError) -> str:
+    try:
+        raw = exc.read() if exc.fp is not None else b""
+    except Exception:
+        return ""
+    text = raw.decode("utf-8", errors="replace")
+    message = ""
+    try:
+        parsed = json.loads(text)
+    except json.JSONDecodeError:
+        parsed = None
+    if isinstance(parsed, dict):
+        message = str(parsed.get("message") or "")
+    message = _SECRET_RE.sub("<REDACTED>", message)
+    return " ".join(message.split())[:180]
+
+
 def create_issue(repo: str, title: str, body: str):
-    return request(
-        f"/repos/{repo}/issues",
-        method="POST",
-        payload={"title": title, "body": body},
-    )
+    try:
+        return request(
+            f"/repos/{repo}/issues",
+            method="POST",
+            payload={"title": title, "body": body},
+        )
+    except HTTPError as exc:
+        if exc.code in ISSUE_CREATE_PERMISSION_STATUSES:
+            raise IssueCreatePermissionError(
+                exc.code,
+                repo,
+                safe_http_detail(exc),
+            ) from None
+        raise
 
 
 def comment(repo: str, number: int, body: str) -> None:
@@ -115,6 +156,7 @@ def main() -> int:
     run_limit = int(policy.get("max_actions_per_run", 2))
     daily_used = recent_action_count(history, now=now)
     actions = 0
+    skipped_permission = 0
     action_records = []
 
     for plan in plans:
@@ -139,11 +181,21 @@ def main() -> int:
             continue
 
         if decision.action == "create":
-            created = create_issue(
-                plan.downstream,
-                plan.title,
-                plan.body,
-            )
+            try:
+                created = create_issue(
+                    plan.downstream,
+                    plan.title,
+                    plan.body,
+                )
+            except IssueCreatePermissionError as exc:
+                detail = f" detail={exc.detail}" if exc.detail else ""
+                print(
+                    "DOWNSTREAM=WARN skip issue creation "
+                    f"status={exc.status} impact={plan.key} "
+                    f"repo={plan.downstream} token=<REDACTED>{detail}"
+                )
+                skipped_permission += 1
+                continue
             record = {
                 "repo": plan.downstream,
                 "issue_number": created["number"],
@@ -193,8 +245,13 @@ def main() -> int:
         actions += 1
         daily_used += 1
 
+    skipped = (
+        f" skipped_permission={skipped_permission}"
+        if skipped_permission
+        else ""
+    )
     if actions == 0:
-        print(f"DOWNSTREAM=PASS plans={len(plans)} actions=0")
+        print(f"DOWNSTREAM=PASS plans={len(plans)} actions=0{skipped}")
         return 0
 
     state["history"] = history[-300:]
@@ -212,7 +269,7 @@ def main() -> int:
             "actions": action_records,
         },
     )
-    print(f"DOWNSTREAM=PASS plans={len(plans)} actions={actions}")
+    print(f"DOWNSTREAM=PASS plans={len(plans)} actions={actions}{skipped}")
     return 0
 
 

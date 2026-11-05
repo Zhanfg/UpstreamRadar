@@ -1,0 +1,319 @@
+diff -ruN a/scripts/downstream_gitlab.py b/scripts/downstream_gitlab.py
+--- a/scripts/downstream_gitlab.py	2026-11-05 01:21:43.057066999 +0000
++++ b/scripts/downstream_gitlab.py	2026-11-05 01:21:43.061067057 +0000
+@@ -2,6 +2,7 @@
+ 
+ import json
+ import os
++import re
+ from datetime import datetime, timezone
+ from pathlib import Path
+ from urllib.error import HTTPError
+@@ -25,6 +26,12 @@
+ BRANCH = os.environ.get("CI_DEFAULT_BRANCH", "main")
+ CONFIG_PATH = Path("config/downstream_projects.json")
+ STATE_PATH = Path("state/downstream_gitlab.json")
++# 401/403: the token is not allowed to create the issue.
++# 404: GitHub hides a repository the token cannot access as Not Found.
++ISSUE_CREATE_PERMISSION_STATUSES = frozenset({401, 403, 404})
++_SECRET_RE = re.compile(
++    r"(?i)\b(?:bearer\s+|github_pat_|ghp_|gho_|ghu_|ghs_|ghr_)[A-Za-z0-9_\-]+"
++)
+ 
+ 
+ def now_utc() -> datetime:
+@@ -104,12 +111,46 @@
+     )
+ 
+ 
++class IssueCreatePermissionError(Exception):
++    def __init__(self, status: int, repo: str, detail: str):
++        self.status = status
++        self.repo = repo
++        self.detail = detail
++        super().__init__(f"HTTP {status} creating an issue in {repo}")
++
++
++def safe_http_detail(exc: HTTPError) -> str:
++    try:
++        raw = exc.read() if exc.fp is not None else b""
++    except Exception:
++        return ""
++    text = raw.decode("utf-8", errors="replace")
++    message = ""
++    try:
++        parsed = json.loads(text)
++    except json.JSONDecodeError:
++        parsed = None
++    if isinstance(parsed, dict):
++        message = str(parsed.get("message") or "")
++    message = _SECRET_RE.sub("<REDACTED>", message)
++    return " ".join(message.split())[:180]
++
++
+ def create_github_issue(repo: str, title: str, body: str):
+-    return github_request(
+-        f"/repos/{repo}/issues",
+-        method="POST",
+-        payload={"title": title, "body": body},
+-    )
++    try:
++        return github_request(
++            f"/repos/{repo}/issues",
++            method="POST",
++            payload={"title": title, "body": body},
++        )
++    except HTTPError as exc:
++        if exc.code in ISSUE_CREATE_PERMISSION_STATUSES:
++            raise IssueCreatePermissionError(
++                exc.code,
++                repo,
++                safe_http_detail(exc),
++            ) from None
++        raise
+ 
+ 
+ def comment_github_issue(repo: str, number: int, body: str) -> None:
+@@ -178,6 +219,7 @@
+     run_limit = int(policy.get("max_actions_per_run", 2))
+     daily_used = recent_action_count(history, now=now)
+     actions = 0
++    skipped_permission = 0
+     action_records = []
+ 
+     for plan in plans:
+@@ -202,11 +244,21 @@
+             continue
+ 
+         if decision.action == "create":
+-            created = create_github_issue(
+-                plan.downstream,
+-                plan.title,
+-                plan.body,
+-            )
++            try:
++                created = create_github_issue(
++                    plan.downstream,
++                    plan.title,
++                    plan.body,
++                )
++            except IssueCreatePermissionError as exc:
++                detail = f" detail={exc.detail}" if exc.detail else ""
++                print(
++                    "DOWNSTREAM=WARN skip issue creation "
++                    f"status={exc.status} impact={plan.key} "
++                    f"repo={plan.downstream} token=<REDACTED>{detail}"
++                )
++                skipped_permission += 1
++                continue
+             record = {
+                 "repo": plan.downstream,
+                 "issue_number": created["number"],
+@@ -256,8 +308,13 @@
+         actions += 1
+         daily_used += 1
+ 
++    skipped = (
++        f" skipped_permission={skipped_permission}"
++        if skipped_permission
++        else ""
++    )
+     if actions == 0:
+-        print(f"DOWNSTREAM=PASS plans={len(plans)} actions=0")
++        print(f"DOWNSTREAM=PASS plans={len(plans)} actions=0{skipped}")
+         return 0
+ 
+     state["history"] = history[-300:]
+@@ -289,7 +346,7 @@
+         },
+         "[downstream] record GitLab-sourced downstream impact",
+     )
+-    print(f"DOWNSTREAM=PASS plans={len(plans)} actions={actions}")
++    print(f"DOWNSTREAM=PASS plans={len(plans)} actions={actions}{skipped}")
+     return 0
+ 
+ 
+diff -ruN a/tests/test_downstream_gitlab_executor.py b/tests/test_downstream_gitlab_executor.py
+--- a/tests/test_downstream_gitlab_executor.py	1970-01-01 00:00:00.000000000 +0000
++++ b/tests/test_downstream_gitlab_executor.py	2026-11-05 01:21:43.061067057 +0000
+@@ -0,0 +1,180 @@
++import io
++import json
++import os
++import tempfile
++import unittest
++from pathlib import Path
++from unittest.mock import patch
++from urllib.error import HTTPError
++
++from scripts import downstream_gitlab
++
++
++def _http_error(status: int, reason: str, body: bytes) -> HTTPError:
++    return HTTPError(
++        url="https://api.github.com/repos/example/issues",
++        code=status,
++        msg=reason,
++        hdrs=None,
++        fp=io.BytesIO(body),
++    )
++
++
++class _Response:
++    def __init__(self, payload):
++        self._raw = json.dumps(payload).encode("utf-8")
++
++    def read(self):
++        return self._raw
++
++    def __enter__(self):
++        return self
++
++    def __exit__(self, exc_type, exc, tb):
++        return False
++
++
++class DownstreamGitLabExecutorTests(unittest.TestCase):
++    def setUp(self):
++        self.directory = tempfile.TemporaryDirectory()
++        self.addCleanup(self.directory.cleanup)
++        self.root = Path(self.directory.name)
++        self.addCleanup(os.chdir, os.getcwd())
++        os.chdir(self.root)
++        self._write_inputs()
++
++    def _write_inputs(self):
++        run = {
++            "observed_at": "2026-11-04T06:10:08Z",
++            "changed_details": [
++                {
++                    "full_name": "qemu-project/qemu",
++                    "semantic_impact": 7.2,
++                    "fields": ["latest_commit"],
++                }
++            ],
++            "content_plan": [],
++        }
++        config = {
++            "policy": {
++                "min_semantic_impact": 6,
++                "critical_impact": 8,
++                "important_fields": ["latest_commit"],
++                "max_plans_per_run": 10,
++                "max_actions_per_day": 3,
++                "max_actions_per_run": 2,
++                "update_cooldown_hours": 24,
++                "create_cooldown_hours": 168,
++            },
++            "targets": [
++                {
++                    "repo": "Zhanfg/TEESimulator",
++                    "sources": ["qemu-project/qemu"],
++                    "checklist": ["re-run emulation tests"],
++                },
++                {
++                    "repo": "Zhanfg/susfs4ksu",
++                    "sources": ["qemu-project/qemu"],
++                    "checklist": ["review compatibility"],
++                },
++            ],
++        }
++        run_path = self.root / "data" / "gitlab" / "runs" / "2026-11-04" / "1410.json"
++        run_path.parent.mkdir(parents=True, exist_ok=True)
++        run_path.write_text(json.dumps(run), encoding="utf-8")
++        config_path = self.root / "config" / "downstream_projects.json"
++        config_path.parent.mkdir(parents=True, exist_ok=True)
++        config_path.write_text(json.dumps(config), encoding="utf-8")
++
++    def _run(self, urlopen):
++        buffer = io.StringIO()
++        with patch.object(downstream_gitlab, "GITLAB_TOKEN", "gitlab-test-token"), patch.object(
++            downstream_gitlab, "GITHUB_TOKEN", "github-test-token"
++        ), patch.object(downstream_gitlab, "urlopen", side_effect=urlopen), patch.object(
++            downstream_gitlab, "publish"
++        ) as publish, patch("sys.stdout", buffer):
++            result = downstream_gitlab.main()
++        return result, buffer.getvalue(), publish
++
++    def test_403_skips_that_impact_and_continues(self):
++        def urlopen(req, timeout=30):
++            target = req.full_url
++            if target.endswith("/repos/Zhanfg/TEESimulator/issues"):
++                body = json.dumps(
++                    {
++                        "message": (
++                            "Resource not accessible by personal access token "
++                            "github_pat_should_not_appear"
++                        )
++                    }
++                ).encode("utf-8")
++                raise _http_error(403, "Forbidden", body)
++            if target.endswith("/repos/Zhanfg/susfs4ksu/issues"):
++                return _Response(
++                    {
++                        "number": 7,
++                        "html_url": "https://github.com/Zhanfg/susfs4ksu/issues/7",
++                    }
++                )
++            raise AssertionError(target)
++
++        code, output, publish = self._run(urlopen)
++
++        self.assertEqual(code, 0)
++        self.assertIn(
++            "DOWNSTREAM=WARN skip issue creation status=403 "
++            "impact=gitlab:qemu-project/qemu->Zhanfg/TEESimulator "
++            "repo=Zhanfg/TEESimulator token=<REDACTED>",
++            output,
++        )
++        self.assertIn(
++            "detail=Resource not accessible by personal access token <REDACTED>",
++            output,
++        )
++        self.assertNotIn("github_pat_should_not_appear", output)
++        self.assertNotIn("github-test-token", output)
++        self.assertNotIn("gitlab-test-token", output)
++        self.assertIn(
++            "DOWNSTREAM=PASS plans=2 actions=1 skipped_permission=1",
++            output,
++        )
++        publish.assert_called_once()
++        files = publish.call_args.args[0]
++        state = json.loads(files["state/downstream_gitlab.json"])
++        self.assertEqual(
++            set(state["items"]),
++            {"gitlab:qemu-project/qemu->Zhanfg/susfs4ksu"},
++        )
++
++    def test_401_and_404_also_skip_without_failing_the_run(self):
++        for status, reason in ((401, "Unauthorized"), (404, "Not Found")):
++            with self.subTest(status=status):
++                self._write_inputs()
++
++                def urlopen(req, timeout=30, status=status, reason=reason):
++                    raise _http_error(status, reason, b'{"message":"Not Found"}')
++
++                code, output, publish = self._run(urlopen)
++                self.assertEqual(code, 0)
++                self.assertIn(f"status={status}", output)
++                self.assertIn("repo=Zhanfg/TEESimulator", output)
++                self.assertIn("skipped_permission=2", output)
++                publish.assert_not_called()
++
++    def test_500_still_fails(self):
++        def urlopen(req, timeout=30):
++            raise _http_error(500, "Internal Server Error", b'{"message":"boom"}')
++
++        buffer = io.StringIO()
++        with patch.object(downstream_gitlab, "GITLAB_TOKEN", "gitlab-test-token"), patch.object(
++            downstream_gitlab, "GITHUB_TOKEN", "github-test-token"
++        ), patch.object(downstream_gitlab, "urlopen", side_effect=urlopen), patch.object(
++            downstream_gitlab, "publish"
++        ) as publish, patch("sys.stdout", buffer):
++            with self.assertRaises(HTTPError) as caught:
++                downstream_gitlab.main()
++        self.assertEqual(caught.exception.code, 500)
++        output = buffer.getvalue()
++        self.assertNotIn("DOWNSTREAM=WARN", output)
++        self.assertNotIn("DOWNSTREAM=PASS", output)
++        publish.assert_not_called()
