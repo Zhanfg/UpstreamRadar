@@ -36,6 +36,13 @@ jobs:
             echo "GITLAB_BRIDGE=READY"
           fi
 
+      - name: Checkout downstream permission patch
+        if: steps.bridge_secret.outputs.available == 'true'
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: patches
+          sparse-checkout-cone-mode: true
+
       - name: Clone public GitLab UpstreamRadar
         id: clone
         if: steps.bridge_secret.outputs.available == 'true'
@@ -122,7 +129,18 @@ jobs:
           CI_DEFAULT_BRANCH: main
           UPSTREAMRADAR_GITLAB_PAT: ${{ secrets.GITLAB_UPSTREAMRADAR_PAT }}
           DOWNSTREAM_GITHUB_PAT: ${{ secrets.UPSTREAMRADAR_PAT }}
-        run: python -m scripts.downstream_gitlab
+        run: |
+          set -euo pipefail
+          # scripts/downstream_gitlab.py lives only in the GitLab clone. Until that
+          # repo contains this soft-fail, apply the reviewed patch from this
+          # repository. A later GitLab copy that already skips permission errors
+          # is left untouched.
+          if grep -q "skipped_permission" scripts/downstream_gitlab.py; then
+            echo "GitLab downstream_gitlab.py already soft-fails permission errors when creating an issue"
+          else
+            patch --forward --batch -p1 -i "$GITHUB_WORKSPACE/patches/downstream_gitlab_permission_soft_fail.patch"
+          fi
+          python -m scripts.downstream_gitlab
 
       - name: Advance GitLab discovery census
         id: discovery

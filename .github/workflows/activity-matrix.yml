@@ -21,6 +21,7 @@ on:
       - "upstreamradar/governance.py"
       - "tests/test_governance.py"
       - "tests/test_downstream.py"
+      - "tests/test_downstream_executor.py"
       - "config/activity_matrix.json"
       - "config/downstream_projects.json"
       - ".github/workflows/activity-matrix.yml"
@@ -59,6 +60,7 @@ jobs:
             tests.test_maintenance \
             tests.test_governance \
             tests.test_downstream \
+            tests.test_downstream_executor \
             tests.test_issue_sync \
             tests.test_github_activity_executor -v
 
