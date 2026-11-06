@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **632000**
-- latest census cursor: **1901384**
+- total census repositories scanned: **636000**
+- latest census cursor: **1913046**
 - retained candidates: **80**
 - governed fork queue: **33**
 
@@ -34,7 +34,7 @@
 - **HyNetworks/hysteria** — score=0.933, stars=22594; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
 - **MiChongs/WutherCore** — score=0.905, stars=56; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:wireguard
 - **keminar/anyproxy** — score=0.903, stars=33; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
-- **tokyoxpa3/5G-Proxy-Client** — score=0.884, stars=8; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
+- **tokyoxpa3/5G-Proxy-Client** — score=0.889, stars=14; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **hedioum/Hedioum-Pool-Tunnel** — score=0.882, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 - **yuhaiin/yuhaiin** — score=0.881, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 
