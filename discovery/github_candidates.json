@@ -171,11 +171,11 @@
     "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "The deterministic merge gate for AI-generated agent capability changes — a local-first, static Tool-Use Readiness review for MCP, OpenAPI, and SDK tool surfaces. Open-source CLI + GitHub Action.",
-    "forks": 6,
+    "forks": 7,
     "full_name": "ThreeMoonsLab/agents-shipgate",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-10-10T23:23:09Z",
+    "pushed_at": "2026-11-06T05:35:27Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -185,9 +185,9 @@
       "recently-active",
       "license:Apache-2.0"
     ],
-    "score": 0.9115898,
+    "score": 0.91194881,
     "source_id": "1220594946",
-    "stars": 90,
+    "stars": 87,
     "url": "https://github.com/ThreeMoonsLab/agents-shipgate"
   },
   {
@@ -787,6 +787,30 @@
     "source_id": "1250482335",
     "stars": 8,
     "url": "https://github.com/New1Direction/webmcp-anything"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "An agent that compiles open-source libraries into verified MCP tools on demand, and keeps only the ones that pass a locked-down sandbox. Open-weight models only.",
+    "forks": 1,
+    "full_name": "VirajSawad1021/Zyven",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-06T00:23:19Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.87746245,
+    "source_id": "1410773203",
+    "stars": 5,
+    "url": "https://github.com/VirajSawad1021/Zyven"
   },
   {
     "auto_fork_eligible": false,
@@ -1459,30 +1483,6 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "An agent that compiles open-source libraries into verified MCP tools on demand, and keeps only the ones that pass a locked-down sandbox. Open-weight models only.",
-    "forks": 0,
-    "full_name": "VirajSawad1021/Zyven",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-25T16:04:56Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.86331941,
-    "source_id": "1410773203",
-    "stars": 1,
-    "url": "https://github.com/VirajSawad1021/Zyven"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
     "description": "The readable ReAct agent: a ~235-line step loop you can follow, plus 31 opt-in modules (sandbox, circuit breaker, structured logs, four-role Computer Use loop). Zero heavy deps. Any OpenAI-compatible endpoint: DeepSeek, Qwen, vLLM, Ollama.",
     "forks": 0,
     "full_name": "musokean/forge",
@@ -1843,6 +1843,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Pre-dispatch firewall for LLM agent tool calls: detects and localizes indirect prompt injection before a tool runs, with conformal false-alarm budgets and real-agent evaluation.",
+    "forks": 0,
+    "full_name": "ArsalanKaleem/tracewarden",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-06T06:34:38Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85658649,
+    "source_id": "1382310331",
+    "stars": 0,
+    "url": "https://github.com/ArsalanKaleem/tracewarden"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Static analysis and drift detection for MCP servers: enumerate the surface a server exposes to an agent, classify every tool's blast radius (R0-R5), hash it, and fail CI when it escalates. Never invokes a tool.",
     "forks": 0,
     "full_name": "Lanier-Developments/mcp-placard",
@@ -1887,29 +1911,5 @@
     "source_id": "1407463900",
     "stars": 0,
     "url": "https://github.com/X33834/agent-builder"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Usability testing for MCP servers. A decision model that doesn't deliberate gets a bare user mission and walks your tools for real: every path, wrong turn and dead end, mapped and auditable. Agent experience (AX). Pre-alpha.",
-    "forks": 0,
-    "full_name": "huayaney-exe/gutfeel",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-08T05:43:29Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:MIT"
-    ],
-    "score": 0.85657168,
-    "source_id": "1409695811",
-    "stars": 0,
-    "url": "https://github.com/huayaney-exe/gutfeel"
   }
 ]
