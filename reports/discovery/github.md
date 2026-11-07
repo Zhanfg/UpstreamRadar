@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **648000**
-- latest census cursor: **1947763**
+- total census repositories scanned: **652000**
+- latest census cursor: **1959343**
 - retained candidates: **80**
 - governed fork queue: **33**
 
@@ -24,8 +24,8 @@
 - **Spring-bulid/MakoSU** — score=0.907, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **sysretq0/android-kernel-builder** — score=0.904, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **ZxAlif-ID/Flavenz-Kernel-Peridot** — score=0.893, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **SampleBlazkness/AdbHide-Kernel** — score=0.888, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **leemikepop/avd-kernelsu-x86_64** — score=0.887, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernelsu, keyword:susfs
-- **SampleBlazkness/AdbHide-Kernel** — score=0.887, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Raffxzr/DarkniusX** — score=0.883, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **zacxyonly/zerobyte-kernel** — score=0.882, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 
