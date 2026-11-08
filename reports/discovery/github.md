@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **664000**
-- latest census cursor: **1994399**
+- total census repositories scanned: **668000**
+- latest census cursor: **2005979**
 - retained candidates: **80**
 - governed fork queue: **33**
 
