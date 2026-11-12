@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **712000**
-- latest census cursor: **2133159**
+- total census repositories scanned: **716000**
+- latest census cursor: **2144881**
 - retained candidates: **80**
-- governed fork queue: **33**
+- governed fork queue: **34**
 
 ## Top directions
 
@@ -16,7 +16,7 @@
 - **saigontechnology/AgentCrew** — score=0.917, stars=225; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ThreeMoonsLab/agents-shipgate** — score=0.912, stars=87; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
-- **MerkyorLynn/Lynn** — score=0.907, stars=65; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
+- **MerkyorLynn/Lynn** — score=0.908, stars=70; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 
 ### android-kernel
 
@@ -34,7 +34,7 @@
 - **HyNetworks/hysteria** — score=0.933, stars=22594; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
 - **MiChongs/WutherCore** — score=0.905, stars=56; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:wireguard
 - **keminar/anyproxy** — score=0.903, stars=33; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
-- **tokyoxpa3/5G-Proxy-Client** — score=0.889, stars=14; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
+- **tokyoxpa3/5G-Proxy-Client** — score=0.894, stars=17; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **hedioum/Hedioum-Pool-Tunnel** — score=0.882, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 - **yuhaiin/yuhaiin** — score=0.881, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 
@@ -54,7 +54,7 @@
 - **saigontechnology/AgentCrew** → ai-agents (score=0.917, license=Apache-2.0)
 - **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.912, license=Apache-2.0)
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
-- **MerkyorLynn/Lynn** → ai-agents (score=0.907, license=Apache-2.0)
+- **MerkyorLynn/Lynn** → ai-agents (score=0.908, license=Apache-2.0)
 - **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
 - **MiChongs/WutherCore** → networking (score=0.905, license=MIT)
 - **keminar/anyproxy** → networking (score=0.903, license=MIT)
@@ -62,8 +62,8 @@
 - **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
 - **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
+- **tokyoxpa3/5G-Proxy-Client** → networking (score=0.894, license=MIT)
 - **footprintjs/agentfootprint** → ai-agents (score=0.893, license=MIT)
 - **cofin/litestar-mcp** → ai-agents (score=0.891, license=MIT)
-- **substructureai/subs** → ai-agents (score=0.890, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.
