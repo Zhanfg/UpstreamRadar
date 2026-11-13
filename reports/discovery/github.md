@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **724000**
-- latest census cursor: **2168409**
+- total census repositories scanned: **728000**
+- latest census cursor: **2179928**
 - retained candidates: **80**
-- governed fork queue: **34**
+- governed fork queue: **35**
 
 ## Top directions
 
@@ -60,10 +60,10 @@
 - **keminar/anyproxy** → networking (score=0.903, license=MIT)
 - **Agent-One-Lab/AgentFly** → ai-agents (score=0.901, license=Apache-2.0)
 - **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
+- **CodeSoul-co/Hypha** → ai-agents (score=0.897, license=Apache-2.0)
 - **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 - **tokyoxpa3/5G-Proxy-Client** → networking (score=0.894, license=MIT)
 - **footprintjs/agentfootprint** → ai-agents (score=0.893, license=MIT)
-- **cofin/litestar-mcp** → ai-agents (score=0.891, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.

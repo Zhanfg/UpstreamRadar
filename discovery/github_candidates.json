@@ -385,6 +385,30 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
+    "description": "Harness-oriented agent system framework for production-grade LLM agent applications",
+    "forks": 126,
+    "full_name": "CodeSoul-co/Hypha",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-13T06:33:27Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.89679033,
+    "source_id": "1285804566",
+    "stars": 452,
+    "url": "https://github.com/CodeSoul-co/Hypha"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
     "description": "Role-aware, permission-enforced benchmark for LLM agents that operate HPC systems — SLURM, telemetry, RBAC, docs, facility. A policy violation hard-fails the task. 88 tasks (10 categories x 5 roles), 29 reproducible environments with 6 rebuilt from real Marconi100 ExaData, scored on 7 weighted dimensions.",
     "forks": 14,
     "full_name": "MSKazemi/aobench",
@@ -772,7 +796,7 @@
     "full_name": "VirajSawad1021/Zyven",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-12T13:48:42Z",
+    "pushed_at": "2026-11-13T15:49:37Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -783,7 +807,7 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.87911321,
+    "score": 0.87933042,
     "source_id": "1410773203",
     "stars": 6,
     "url": "https://github.com/VirajSawad1021/Zyven"
@@ -1457,6 +1481,29 @@
     "url": "https://github.com/secureagentics/Adrian"
   },
   {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
+    "description": "Local-first Python runtime for tool-using AI agents, with CLI, API, memory, MCP, A2A, and inspectable execution surfaces.",
+    "forks": 26,
+    "full_name": "openminion/openminion",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-13T14:17:47Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.86404889,
+    "source_id": "1277944593",
+    "stars": 28,
+    "url": "https://github.com/openminion/openminion"
+  },
+  {
     "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "A modern, plugin-driven TypeScript AI Agent framework. 44 core files, strict TS, zero boilerplate.",
@@ -1503,29 +1550,6 @@
     "source_id": "1430015443",
     "stars": 2,
     "url": "https://github.com/poisson-labs/tasks"
-  },
-  {
-    "auto_fork_eligible": true,
-    "category": "ai-agents",
-    "description": "Local-first Python runtime for tool-using AI agents, with CLI, API, memory, MCP, A2A, and inspectable execution surfaces.",
-    "forks": 26,
-    "full_name": "openminion/openminion",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-12T07:38:03Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.86344562,
-    "source_id": "1277944593",
-    "stars": 28,
-    "url": "https://github.com/openminion/openminion"
   },
   {
     "auto_fork_eligible": false,
@@ -1624,6 +1648,30 @@
     "url": "https://github.com/musokean/forge"
   },
   {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Minimal agent runtime for Smeldr. Anthropic tool-use loop, MCP client, and cron scheduler. Embeds directly in a Smeldr app.",
+    "forks": 0,
+    "full_name": "Smeldr/agent",
+    "license_id": "AGPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-13T16:12:48Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:AGPL-3.0",
+      "emerging"
+    ],
+    "score": 0.86321112,
+    "source_id": "1239090381",
+    "stars": 1,
+    "url": "https://github.com/Smeldr/agent"
+  },
+  {
     "auto_fork_eligible": true,
     "category": "security-sandbox",
     "description": "Lightweight embeddable sandbox for running untrusted code, built on OS-native isolation (namespaces, cgroups, seccomp, Landlock, Seatbelt). No containers, no VMs.",
@@ -1674,26 +1722,26 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "Minimal agent runtime for Smeldr. Anthropic tool-use loop, MCP client, and cron scheduler. Embeds directly in a Smeldr app.",
+    "description": "Pytest security regression tests for chatbots and tool-using agents — prompt injection, MCP and application boundary checks, data leaks.",
     "forks": 0,
-    "full_name": "Smeldr/agent",
-    "license_id": "AGPL-3.0",
+    "full_name": "wardenbot-ai/pytest-wardenbot",
+    "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-10-09T13:58:26Z",
+    "pushed_at": "2026-11-13T14:54:12Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
       "keyword:mcp",
-      "keyword:tool-use",
       "keyword:llm",
+      "keyword:model-context-protocol",
       "recently-active",
-      "license:AGPL-3.0",
+      "license:Apache-2.0",
       "emerging"
     ],
-    "score": 0.86308619,
-    "source_id": "1239090381",
+    "score": 0.86310194,
+    "source_id": "1247981094",
     "stars": 1,
-    "url": "https://github.com/Smeldr/agent"
+    "url": "https://github.com/wardenbot-ai/pytest-wardenbot"
   },
   {
     "auto_fork_eligible": false,
@@ -1862,53 +1910,5 @@
     "source_id": "1383307304",
     "stars": 4,
     "url": "https://github.com/momo-null/OmniAgent"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Governed MCP server and agent runtime: signed action approvals, typed tool effects and audit logs for Claude Desktop, Cursor and custom agents.",
-    "forks": 1,
-    "full_name": "Yacine-ai-tech/AgentKit",
-    "license_id": "AGPL-3.0",
-    "platform": "github",
-    "pushed_at": "2026-11-12T18:19:41Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:AGPL-3.0"
-    ],
-    "score": 0.86057272,
-    "source_id": "1348852330",
-    "stars": 0,
-    "url": "https://github.com/Yacine-ai-tech/AgentKit"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "An open, local-first LLM agent you actually own — a teaching codebase for modern LLM systems (tools, RAG, guardrails, MCP, eval).",
-    "forks": 1,
-    "full_name": "MUSE-CODE-SPACE/musaeus",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-22T08:02:45Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.86025433,
-    "source_id": "1304482747",
-    "stars": 0,
-    "url": "https://github.com/MUSE-CODE-SPACE/musaeus"
   }
 ]
