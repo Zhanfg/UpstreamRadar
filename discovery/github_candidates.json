@@ -1030,6 +1030,30 @@
   },
   {
     "auto_fork_eligible": true,
+    "category": "security-sandbox",
+    "description": "kern: fast, rootless container runtime and sandbox with no daemon. Runs untrusted code and AI agent tool calls under kernel-enforced isolation.",
+    "forks": 12,
+    "full_name": "getkern/kern",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-17T20:36:59Z",
+    "reasons": [
+      "category:security-sandbox",
+      "keyword:sandbox",
+      "keyword:seccomp",
+      "keyword:isolation",
+      "keyword:rootless",
+      "keyword:container",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.87541096,
+    "source_id": "1304895218",
+    "stars": 491,
+    "url": "https://github.com/getkern/kern"
+  },
+  {
+    "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "The agent that evolves with you 𖤍",
     "forks": 7,
@@ -1886,29 +1910,5 @@
     "source_id": "1407464050",
     "stars": 1,
     "url": "https://github.com/Morningstar202604/agent-builder"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Adaptive tiny-model layer between LLMs and their tools — observes MCP traffic, trains per-tool LoRA compressors, synthesizes new tools from patterns.",
-    "forks": 0,
-    "full_name": "opcastil11/planckbot",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-04T13:51:13Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.86285791,
-    "source_id": "1218510860",
-    "stars": 1,
-    "url": "https://github.com/opcastil11/planckbot"
   }
 ]
