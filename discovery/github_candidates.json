@@ -294,7 +294,7 @@
     "full_name": "sysretq0/android-kernel-builder",
     "license_id": "GPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-11-06T13:17:23Z",
+    "pushed_at": "2026-11-17T14:57:09Z",
     "reasons": [
       "category:android-kernel",
       "keyword:android",
@@ -305,9 +305,9 @@
       "license:GPL-3.0",
       "emerging"
     ],
-    "score": 0.9041799,
+    "score": 0.90479893,
     "source_id": "1357857090",
-    "stars": 4,
+    "stars": 5,
     "url": "https://github.com/sysretq0/android-kernel-builder"
   },
   {
@@ -407,6 +407,30 @@
     "url": "https://github.com/CodeSoul-co/Hypha"
   },
   {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Custom GKI kernel for POCO F6 (Peridot): ACK 6.1 @ 0c3d559 + KernelSU Next 5dfc3359 + SUSFS v2.3.0 + Droidspaces. Boot-verified ack-full; AutoFDO tuning in progress.",
+    "forks": 1,
+    "full_name": "ZxAlif-ID/Flavenz-Kernel-Peridot",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-17T04:36:40Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0"
+    ],
+    "score": 0.89676291,
+    "source_id": "1360446433",
+    "stars": 5,
+    "url": "https://github.com/ZxAlif-ID/Flavenz-Kernel-Peridot"
+  },
+  {
     "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "Role-aware, permission-enforced benchmark for LLM agents that operate HPC systems — SLURM, telemetry, RBAC, docs, facility. A policy violation hard-fails the task. 88 tasks (10 categories x 5 roles), 29 reproducible environments with 6 rebuilt from real Marconi100 ExaData, scored on 7 weighted dimensions.",
@@ -477,30 +501,6 @@
     "source_id": "1335137963",
     "stars": 17,
     "url": "https://github.com/tokyoxpa3/5G-Proxy-Client"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Custom GKI kernel for POCO F6 (Peridot): ACK 6.1 @ 0c3d559 + KernelSU Next 5dfc3359 + SUSFS v2.3.0 + Droidspaces. Boot-verified ack-full; AutoFDO tuning in progress.",
-    "forks": 0,
-    "full_name": "ZxAlif-ID/Flavenz-Kernel-Peridot",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-17T12:00:24Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "license:GPL-2.0"
-    ],
-    "score": 0.89323001,
-    "source_id": "1360446433",
-    "stars": 4,
-    "url": "https://github.com/ZxAlif-ID/Flavenz-Kernel-Peridot"
   },
   {
     "auto_fork_eligible": true,
@@ -1174,6 +1174,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "NekoSU — KernelSU 临时 root（越狱模式）管理器，支持 GKI 5.x 与 4.x 内核",
+    "forks": 0,
+    "full_name": "laninenterline/NekoSU",
+    "license_id": "GPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-18T05:41:30Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-3.0"
+    ],
+    "score": 0.87329724,
+    "source_id": "1434146832",
+    "stars": 4,
+    "url": "https://github.com/laninenterline/NekoSU"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "跑在自己电脑上的常驻 AI 伙伴：跨会话记忆（L0-L3 + 向量召回）、QQ/飞书/企微里像活人一样在场、定时任务、用自己的音色回语音、云端/本地模型混用。A resident AI companion that chats, remembers and gets things done.",
     "forks": 0,
@@ -1222,6 +1246,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": " Generic Kernel with KernelSU/SukiSU/BakaSU/FinaSU + SUSFS Forked From Bernstein94/AnyKernel3_FinaSu_SUSFS",
+    "forks": 0,
+    "full_name": "DrRoot85/GKI_Android_FinaSU",
+    "license_id": "GPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-17T13:00:55Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-3.0"
+    ],
+    "score": 0.87156657,
+    "source_id": "1461248608",
+    "stars": 0,
+    "url": "https://github.com/DrRoot85/GKI_Android_FinaSU"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "The agent harness engine — loop, tools, providers, sessions, permissions, computer-use, MCP, pi protocol compat. Rust.",
     "forks": 0,
@@ -1267,30 +1315,6 @@
     "source_id": "1113180225",
     "stars": 1,
     "url": "https://github.com/manishiitg/mcpagent"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "NekoSU — KernelSU 临时 root（越狱模式）管理器，支持 GKI 5.x 与 4.x 内核",
-    "forks": 0,
-    "full_name": "laninenterline/NekoSU",
-    "license_id": "GPL-3.0",
-    "platform": "github",
-    "pushed_at": "2026-11-14T19:35:44Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "license:GPL-3.0"
-    ],
-    "score": 0.87118322,
-    "source_id": "1434146832",
-    "stars": 3,
-    "url": "https://github.com/laninenterline/NekoSU"
   },
   {
     "auto_fork_eligible": false,
@@ -1551,6 +1575,30 @@
     "source_id": "1205052765",
     "stars": 2,
     "url": "https://github.com/CocoRoF/geny-executor"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Automated Android GKI build pipeline with ReSukiSU, SUSFS v2.3.0, ZeroMount, and Ring-0 Thermal Perf Engine",
+    "forks": 0,
+    "full_name": "CptOddball/GKI_KernelSU_SUSFS-Zero",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-14T05:03:58Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.86563761,
+    "source_id": "1457773783",
+    "stars": 0,
+    "url": "https://github.com/CptOddball/GKI_KernelSU_SUSFS-Zero"
   },
   {
     "auto_fork_eligible": true,
@@ -1862,53 +1910,5 @@
     "source_id": "1302646058",
     "stars": 1,
     "url": "https://github.com/matakartal/aikit-runtime"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Encre Agent — A powerful AI Agent platform that supports 51 mainstream LLM providers, 74 built-in tools, 24 chat platform integrations, and a plugin market with 256 official packages. Whether it's coding, desktop automation, cross-platform messaging, or multi-agent collaboration, Encre Agent gets the job done.",
-    "forks": 0,
-    "full_name": "Dunimd/encre-agent",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-25T11:52:25Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.86296893,
-    "source_id": "1255074191",
-    "stars": 1,
-    "url": "https://github.com/Dunimd/encre-agent"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Production-grade AI Agent reference for any coding agent (Claude Code / Cursor / Copilot / Codex). 24 reference nodes: ReAct Loop, MCP, RAG, Multi-Agent, Memory, Guardrails. Includes build-vs-buy decision tree + integration patterns. No deprecated stack, all TypeScript production code. https://morningstar202604.github.io/agent-builder",
-    "forks": 0,
-    "full_name": "Morningstar202604/agent-builder",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-17T16:50:57Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.86288363,
-    "source_id": "1407464050",
-    "stars": 1,
-    "url": "https://github.com/Morningstar202604/agent-builder"
   }
 ]
