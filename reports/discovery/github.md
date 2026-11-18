@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **792000**
-- latest census cursor: **2365819**
+- total census repositories scanned: **800000**
+- latest census cursor: **2389914**
 - retained candidates: **200**
-- governed fork queue: **37**
+- governed fork queue: **39**
 
 ## Top directions
 
@@ -31,28 +31,36 @@
 
 ### databases-storage
 
-- **BizziBiz/BasecampCache** — score=0.360, stars=0; category:databases-storage, keyword:database, keyword:mysql, emerging
-- **digitalbutter/MODX-Mirror** — score=0.360, stars=0; category:databases-storage, keyword:database, keyword:filesystem, emerging
-- **joeljensen/sequel-pro-mysql-function-bundle** — score=0.360, stars=0; category:databases-storage, keyword:database, keyword:mysql, emerging
-- **lalithsuresh/Scaling-HDFS-NameNode** — score=0.360, stars=0; category:databases-storage, keyword:database, keyword:mysql, emerging
-- **freerink/musicserver** — score=0.357, stars=0; category:databases-storage, keyword:database, keyword:postgres, emerging
-- **nettsundere/configured** — score=0.353, stars=0; category:databases-storage, keyword:database, keyword:redis, emerging
-- **tomalex0/SenchaTouch-SqliteProxy** — score=0.337, stars=0; category:databases-storage, keyword:database, keyword:sqlite, emerging
+- **prisma/orm** — score=0.860, stars=47689; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **digoal/blog** — score=0.853, stars=8614; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **bytebase/dbhub** — score=0.843, stars=3874; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **supabase/supabase** — score=0.825, stars=115124; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
+- **supabase/supabase-js** — score=0.823, stars=4611; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
+- **haymon-ai/dbmcp** — score=0.817, stars=33; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **orioledb/orioledb** — score=0.810, stars=4320; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
+- **smyrgeorge/ktkit** — score=0.808, stars=43; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 
-### developer-tooling
+### devops-observability
 
-- **pjmh01/developer-tools** — score=0.545, stars=0; category:developer-tooling, keyword:lsp, license:Apache-2.0, emerging
-- **Bopykrnl/Hyperkit** — score=0.431, stars=2; category:developer-tooling, keyword:runtime, license:MIT, emerging
-- **InCeSsAnTMoVeR/SQL-package** — score=0.375, stars=0; category:developer-tooling, keyword:compiler, keyword:editor, emerging
+- **coroot/coroot** — score=0.855, stars=8024; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **monoscope-tech/monoscope** — score=0.838, stars=2121; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **DataDog/datadog-agent** — score=0.831, stars=3774; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **replit/datacat** — score=0.830, stars=119; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **gma1k/podtrace** — score=0.824, stars=205; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:kubernetes
+- **deployex/observer_web** — score=0.819, stars=54; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **apache/skywalking-banyandb** — score=0.814, stars=356; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **ktjn/observable** — score=0.782, stars=2; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 
-### embedded-iot
+### mobile-crossplatform
 
-- **calinyara/avisor** — score=0.507, stars=42; category:embedded-iot, keyword:embedded, keyword:iot, keyword:rtos, keyword:raspberry-pi
-
-### graphics-multimedia
-
-- **joshb/DromeEngine** — score=0.366, stars=0; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:opengl, emerging
-- **telmomenezes/artist** — score=0.330, stars=0; category:graphics-multimedia, keyword:graphics, keyword:rendering, emerging
+- **sceneview/sceneview** — score=0.819, stars=1379; category:mobile-crossplatform, keyword:flutter, keyword:swiftui, keyword:kotlin-multiplatform, keyword:ios
+- **dkhamsing/open-source-ios-apps** — score=0.818, stars=53343; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
+- **NativeScript/SimDeck** — score=0.804, stars=161; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
+- **erkamyaman/unslopovich** — score=0.787, stars=231; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, recently-active
+- **Abhiek187/calculators** — score=0.742, stars=0; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
+- **tsnAnh/ui-tune** — score=0.742, stars=1; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
+- **maximilianfeix/handfeel** — score=0.738, stars=0; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
+- **kxbuild/kxbuild-app-templates** — score=0.737, stars=0; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 
 ### networking
 
@@ -62,19 +70,12 @@
 - **tokyoxpa3/5G-Proxy-Client** — score=0.894, stars=17; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **hedioum/Hedioum-Pool-Tunnel** — score=0.882, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 - **yuhaiin/yuhaiin** — score=0.881, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
-- **joshb/prtunnel** — score=0.417, stars=0; category:networking, keyword:proxy, keyword:tcp, emerging
-- **ketkulka/TCP-Proxy-App** — score=0.410, stars=0; category:networking, keyword:proxy, keyword:tcp, emerging
+- **rust-dd/tako** — score=0.867, stars=182; category:networking, keyword:quic, keyword:tcp, keyword:http3, recently-active
 
 ### operating-systems
 
 - **kernkonzept/fiasco** — score=0.731, stars=169; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, keyword:microkernel
 - **mel0k1/Nerine** — score=0.698, stars=0; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, recently-active
-- **substratekernel-01/substratekernel** — score=0.692, stars=1; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, keyword:bootloader
-- **yik3x/MiniHV-Escopo02** — score=0.687, stars=0; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, recently-active
-- **ThatMaxwell/XKernel** — score=0.684, stars=0; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, recently-active
-- **PixlGalaxy/HyperStone** — score=0.662, stars=1; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, recently-active
-- **Soala7/Gorgon-OS** — score=0.626, stars=3; category:operating-systems, keyword:hypervisor, keyword:virtualization, license:MIT, emerging
-- **bishtharsh190-cloud/LapSphere-Resource-Manager** — score=0.598, stars=0; category:operating-systems, keyword:hypervisor, keyword:virtualization, recently-active, emerging
 
 ### security-sandbox
 
@@ -86,6 +87,12 @@
 - **Steck43/isolation-layer** — score=0.819, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **jkelly-dev1/agent-sandbox-escape** — score=0.799, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **vladimiracunadev-create/sandbox-labs** — score=0.794, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+
+### web-frameworks
+
+- **YV17labs/NestRS** — score=0.773, stars=16; category:web-frameworks, keyword:web-framework, keyword:http-server, keyword:graphql, keyword:rest-api
+- **quinnjr/knead** — score=0.739, stars=0; category:web-frameworks, keyword:web-framework, keyword:http-server, keyword:graphql, keyword:rest-api
+- **goichi-dev/goichi** — score=0.711, stars=0; category:web-frameworks, keyword:web-framework, keyword:http-server, keyword:graphql, keyword:grpc
 
 ## Fork queue
 
