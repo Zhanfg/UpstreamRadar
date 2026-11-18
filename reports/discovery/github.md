@@ -1,8 +1,8 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **784000**
-- latest census cursor: **2343203**
-- retained candidates: **80**
+- total census repositories scanned: **792000**
+- latest census cursor: **2365819**
+- retained candidates: **200**
 - governed fork queue: **37**
 
 ## Top directions
@@ -29,6 +29,31 @@
 - **Raffxzr/DarkniusX** — score=0.883, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **zacxyonly/zerobyte-kernel** — score=0.882, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 
+### databases-storage
+
+- **BizziBiz/BasecampCache** — score=0.360, stars=0; category:databases-storage, keyword:database, keyword:mysql, emerging
+- **digitalbutter/MODX-Mirror** — score=0.360, stars=0; category:databases-storage, keyword:database, keyword:filesystem, emerging
+- **joeljensen/sequel-pro-mysql-function-bundle** — score=0.360, stars=0; category:databases-storage, keyword:database, keyword:mysql, emerging
+- **lalithsuresh/Scaling-HDFS-NameNode** — score=0.360, stars=0; category:databases-storage, keyword:database, keyword:mysql, emerging
+- **freerink/musicserver** — score=0.357, stars=0; category:databases-storage, keyword:database, keyword:postgres, emerging
+- **nettsundere/configured** — score=0.353, stars=0; category:databases-storage, keyword:database, keyword:redis, emerging
+- **tomalex0/SenchaTouch-SqliteProxy** — score=0.337, stars=0; category:databases-storage, keyword:database, keyword:sqlite, emerging
+
+### developer-tooling
+
+- **pjmh01/developer-tools** — score=0.545, stars=0; category:developer-tooling, keyword:lsp, license:Apache-2.0, emerging
+- **Bopykrnl/Hyperkit** — score=0.431, stars=2; category:developer-tooling, keyword:runtime, license:MIT, emerging
+- **InCeSsAnTMoVeR/SQL-package** — score=0.375, stars=0; category:developer-tooling, keyword:compiler, keyword:editor, emerging
+
+### embedded-iot
+
+- **calinyara/avisor** — score=0.507, stars=42; category:embedded-iot, keyword:embedded, keyword:iot, keyword:rtos, keyword:raspberry-pi
+
+### graphics-multimedia
+
+- **joshb/DromeEngine** — score=0.366, stars=0; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:opengl, emerging
+- **telmomenezes/artist** — score=0.330, stars=0; category:graphics-multimedia, keyword:graphics, keyword:rendering, emerging
+
 ### networking
 
 - **HyNetworks/hysteria** — score=0.933, stars=22594; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
@@ -37,12 +62,30 @@
 - **tokyoxpa3/5G-Proxy-Client** — score=0.894, stars=17; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **hedioum/Hedioum-Pool-Tunnel** — score=0.882, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 - **yuhaiin/yuhaiin** — score=0.881, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
+- **joshb/prtunnel** — score=0.417, stars=0; category:networking, keyword:proxy, keyword:tcp, emerging
+- **ketkulka/TCP-Proxy-App** — score=0.410, stars=0; category:networking, keyword:proxy, keyword:tcp, emerging
+
+### operating-systems
+
+- **kernkonzept/fiasco** — score=0.731, stars=169; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, keyword:microkernel
+- **mel0k1/Nerine** — score=0.698, stars=0; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, recently-active
+- **substratekernel-01/substratekernel** — score=0.692, stars=1; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, keyword:bootloader
+- **yik3x/MiniHV-Escopo02** — score=0.687, stars=0; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, recently-active
+- **ThatMaxwell/XKernel** — score=0.684, stars=0; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, recently-active
+- **PixlGalaxy/HyperStone** — score=0.662, stars=1; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, recently-active
+- **Soala7/Gorgon-OS** — score=0.626, stars=3; category:operating-systems, keyword:hypervisor, keyword:virtualization, license:MIT, emerging
+- **bishtharsh190-cloud/LapSphere-Resource-Manager** — score=0.598, stars=0; category:operating-systems, keyword:hypervisor, keyword:virtualization, recently-active, emerging
 
 ### security-sandbox
 
 - **GreyhavenHQ/greywall** — score=0.877, stars=310; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **getkern/kern** — score=0.875, stars=491; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:rootless
 - **Erio-Harrison/nanosandbox** — score=0.863, stars=8; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **cokovali10-sketch/AegisRuntime** — score=0.829, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **whiskeyjimbo/bento** — score=0.820, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **Steck43/isolation-layer** — score=0.819, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **jkelly-dev1/agent-sandbox-escape** — score=0.799, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **vladimiracunadev-create/sandbox-labs** — score=0.794, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 
