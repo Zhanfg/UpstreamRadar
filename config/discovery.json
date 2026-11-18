@@ -1,21 +1,4 @@
 {
-  "version": 2,
-  "scan": {
-    "census_pages_per_run": 40,
-    "per_page": 100,
-    "priority_queries_per_run": 2,
-    "candidate_limit": 80
-  },
-  "fork_policy": {
-    "auto_fork_threshold": 0.86,
-    "min_stars": 8,
-    "max_age_days_since_push": 180,
-    "max_forks_per_day_per_platform": 1,
-    "max_forks_per_week_per_platform": 5,
-    "require_non_fork": true,
-    "require_not_archived": true,
-    "prefer_known_license": true
-  },
   "categories": [
     {
       "id": "android-kernel",
@@ -28,9 +11,12 @@
         "susfs",
         "ebpf",
         "scheduler",
-        "binder"
+        "binder",
+        "kernel-module",
+        "magisk",
+        "device-tree",
+        "mainline"
       ],
-      "weight": 1,
       "required_any": [
         "gki",
         "kernel",
@@ -40,7 +26,8 @@
         "ebpf",
         "scheduler",
         "binder"
-      ]
+      ],
+      "weight": 1
     },
     {
       "id": "networking",
@@ -54,9 +41,16 @@
         "sing-box",
         "mihomo",
         "network",
-        "xdp"
+        "xdp",
+        "http3",
+        "dns",
+        "vpn",
+        "load-balancer",
+        "nat",
+        "firewall",
+        "bgp",
+        "mesh-network"
       ],
-      "weight": 0.95,
       "required_any": [
         "proxy",
         "tun",
@@ -66,8 +60,11 @@
         "wireguard",
         "sing-box",
         "mihomo",
-        "xdp"
-      ]
+        "xdp",
+        "vpn",
+        "dns"
+      ],
+      "weight": 0.95
     },
     {
       "id": "ai-agents",
@@ -79,17 +76,24 @@
         "orchestration",
         "inference",
         "llm",
-        "model-context-protocol"
+        "model-context-protocol",
+        "rag",
+        "embeddings",
+        "fine-tuning",
+        "ai-agent",
+        "llmops"
       ],
-      "weight": 0.95,
       "required_any": [
         "agent",
         "mcp",
         "tool-use",
         "coding-agent",
         "orchestration",
-        "model-context-protocol"
-      ]
+        "model-context-protocol",
+        "rag",
+        "ai-agent"
+      ],
+      "weight": 0.95
     },
     {
       "id": "security-sandbox",
@@ -101,16 +105,25 @@
         "rootless",
         "container",
         "namespace",
-        "lsm"
+        "lsm",
+        "fuzzing",
+        "vulnerability",
+        "cryptography",
+        "zero-trust",
+        "supply-chain",
+        "sbom"
       ],
-      "weight": 0.9,
       "required_any": [
         "sandbox",
         "seccomp",
         "isolation",
         "rootless",
-        "lsm"
-      ]
+        "lsm",
+        "fuzzing",
+        "cryptography",
+        "sbom"
+      ],
+      "weight": 0.9
     },
     {
       "id": "developer-tooling",
@@ -122,19 +135,374 @@
         "cli",
         "automation",
         "ci",
-        "runtime"
+        "runtime",
+        "debugger",
+        "profiler",
+        "package-manager",
+        "code-generation",
+        "terminal",
+        "editor"
       ],
-      "weight": 0.8,
       "required_any": [
         "compiler",
         "lsp",
         "build-system",
         "devtools",
         "automation",
-        "runtime"
-      ]
+        "runtime",
+        "debugger",
+        "package-manager"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "operating-systems",
+      "keywords": [
+        "operating-system",
+        "hypervisor",
+        "virtualization",
+        "container-runtime",
+        "microkernel",
+        "distro",
+        "bootloader",
+        "init-system",
+        "unikernel"
+      ],
+      "required_any": [
+        "operating-system",
+        "hypervisor",
+        "virtualization",
+        "microkernel",
+        "unikernel"
+      ],
+      "weight": 0.75
+    },
+    {
+      "id": "databases-storage",
+      "keywords": [
+        "database",
+        "postgresql",
+        "postgres",
+        "mysql",
+        "sqlite",
+        "redis",
+        "storage-engine",
+        "vector-database",
+        "key-value",
+        "time-series",
+        "query-engine",
+        "object-storage",
+        "filesystem"
+      ],
+      "required_any": [
+        "database",
+        "postgresql",
+        "postgres",
+        "mysql",
+        "sqlite",
+        "redis",
+        "vector-database",
+        "storage-engine",
+        "query-engine"
+      ],
+      "weight": 0.75
+    },
+    {
+      "id": "devops-observability",
+      "keywords": [
+        "observability",
+        "monitoring",
+        "tracing",
+        "metrics",
+        "kubernetes",
+        "terraform",
+        "infrastructure-as-code",
+        "deployment",
+        "sre",
+        "logging",
+        "incident-management"
+      ],
+      "required_any": [
+        "observability",
+        "monitoring",
+        "tracing",
+        "kubernetes",
+        "terraform",
+        "infrastructure-as-code"
+      ],
+      "weight": 0.75
+    },
+    {
+      "id": "web-frameworks",
+      "keywords": [
+        "web-framework",
+        "http-server",
+        "graphql",
+        "grpc",
+        "rest-api",
+        "api-gateway",
+        "frontend",
+        "backend",
+        "websocket",
+        "react",
+        "vue",
+        "svelte"
+      ],
+      "required_any": [
+        "web-framework",
+        "http-server",
+        "graphql",
+        "grpc",
+        "rest-api",
+        "api-gateway"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "mobile-crossplatform",
+      "keywords": [
+        "flutter",
+        "react-native",
+        "swiftui",
+        "kotlin-multiplatform",
+        "ios",
+        "mobile-app",
+        "cross-platform",
+        "android-app"
+      ],
+      "required_any": [
+        "flutter",
+        "react-native",
+        "swiftui",
+        "kotlin-multiplatform"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "embedded-iot",
+      "keywords": [
+        "embedded",
+        "iot",
+        "firmware",
+        "rtos",
+        "microcontroller",
+        "robotics",
+        "arduino",
+        "raspberry-pi",
+        "drone",
+        "sensors"
+      ],
+      "required_any": [
+        "embedded",
+        "iot",
+        "firmware",
+        "rtos",
+        "microcontroller",
+        "robotics"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "data-engineering",
+      "keywords": [
+        "data-pipeline",
+        "etl",
+        "kafka",
+        "apache-spark",
+        "data-warehouse",
+        "analytics",
+        "streaming",
+        "olap",
+        "dataframe",
+        "data-processing"
+      ],
+      "required_any": [
+        "data-pipeline",
+        "etl",
+        "kafka",
+        "apache-spark",
+        "data-warehouse",
+        "olap"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "languages-runtimes",
+      "keywords": [
+        "programming-language",
+        "interpreter",
+        "virtual-machine",
+        "webassembly",
+        "wasm",
+        "jit",
+        "type-system",
+        "garbage-collection"
+      ],
+      "required_any": [
+        "programming-language",
+        "interpreter",
+        "virtual-machine",
+        "webassembly",
+        "wasm"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "distributed-systems",
+      "keywords": [
+        "distributed-systems",
+        "p2p",
+        "peer-to-peer",
+        "consensus",
+        "blockchain",
+        "decentralized",
+        "raft",
+        "distributed"
+      ],
+      "required_any": [
+        "distributed-systems",
+        "p2p",
+        "peer-to-peer",
+        "consensus",
+        "blockchain"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "graphics-multimedia",
+      "keywords": [
+        "graphics",
+        "rendering",
+        "game-engine",
+        "computer-vision",
+        "image-processing",
+        "video-processing",
+        "codec",
+        "opengl",
+        "vulkan",
+        "gpu-computing"
+      ],
+      "required_any": [
+        "graphics",
+        "rendering",
+        "game-engine",
+        "computer-vision",
+        "codec",
+        "vulkan"
+      ],
+      "weight": 0.65
+    },
+    {
+      "id": "hardware-eda",
+      "keywords": [
+        "fpga",
+        "risc-v",
+        "verilog",
+        "systemverilog",
+        "eda",
+        "hdl",
+        "pcb",
+        "chip-design",
+        "hardware"
+      ],
+      "required_any": [
+        "fpga",
+        "risc-v",
+        "verilog",
+        "systemverilog",
+        "eda",
+        "hdl"
+      ],
+      "weight": 0.65
+    },
+    {
+      "id": "testing-quality",
+      "keywords": [
+        "testing-framework",
+        "benchmarking",
+        "profiling",
+        "static-analysis",
+        "test-automation",
+        "load-testing",
+        "chaos-engineering"
+      ],
+      "required_any": [
+        "testing-framework",
+        "benchmarking",
+        "static-analysis",
+        "test-automation",
+        "chaos-engineering"
+      ],
+      "weight": 0.65
+    },
+    {
+      "id": "desktop-gui",
+      "keywords": [
+        "desktop-app",
+        "tauri",
+        "electron",
+        "ui-toolkit",
+        "gui",
+        "qt",
+        "gtk",
+        "cross-platform-app"
+      ],
+      "required_any": [
+        "desktop-app",
+        "tauri",
+        "electron",
+        "ui-toolkit"
+      ],
+      "weight": 0.6
+    },
+    {
+      "id": "scientific-computing",
+      "keywords": [
+        "scientific-computing",
+        "bioinformatics",
+        "simulation",
+        "numerical-computing",
+        "geospatial",
+        "gis",
+        "mathematics",
+        "computational-physics"
+      ],
+      "required_any": [
+        "scientific-computing",
+        "bioinformatics",
+        "simulation",
+        "numerical-computing",
+        "geospatial"
+      ],
+      "weight": 0.55
     }
   ],
+  "destinations": {
+    "category_collections": {
+      "ai-agents": "ai-agents",
+      "android-kernel": "android-kernel",
+      "data-engineering": "data-engineering",
+      "databases-storage": "databases-storage",
+      "desktop-gui": "desktop-gui",
+      "developer-tooling": "developer-tooling",
+      "devops-observability": "devops-observability",
+      "distributed-systems": "distributed-systems",
+      "embedded-iot": "embedded-iot",
+      "graphics-multimedia": "graphics-multimedia",
+      "hardware-eda": "hardware-eda",
+      "languages-runtimes": "languages-runtimes",
+      "mobile-crossplatform": "mobile-crossplatform",
+      "networking": "networking",
+      "operating-systems": "operating-systems",
+      "scientific-computing": "scientific-computing",
+      "security-sandbox": "security-sandbox",
+      "testing-quality": "testing-quality",
+      "web-frameworks": "web-frameworks"
+    },
+    "github_organization": "yuezhou-build",
+    "gitlab_namespace_path": "axymorrsen-labs",
+    "personal_fallback": false
+  },
   "exclusions": {
     "keywords": [
       "awesome-list",
@@ -148,16 +516,21 @@
       "awesome-"
     ]
   },
-  "destinations": {
-    "github_organization": "yuezhou-build",
-    "gitlab_namespace_path": "axymorrsen-labs",
-    "personal_fallback": false,
-    "category_collections": {
-      "android-kernel": "android-kernel",
-      "networking": "networking",
-      "ai-agents": "ai-agents",
-      "security-sandbox": "security-sandbox",
-      "developer-tooling": "developer-tooling"
-    }
-  }
+  "fork_policy": {
+    "auto_fork_threshold": 0.86,
+    "max_age_days_since_push": 180,
+    "max_forks_per_day_per_platform": 1,
+    "max_forks_per_week_per_platform": 5,
+    "min_stars": 8,
+    "prefer_known_license": true,
+    "require_non_fork": true,
+    "require_not_archived": true
+  },
+  "scan": {
+    "candidate_limit": 200,
+    "census_pages_per_run": 80,
+    "per_page": 100,
+    "priority_queries_per_run": 4
+  },
+  "version": 3
 }
