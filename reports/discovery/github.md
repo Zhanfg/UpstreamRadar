@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **808000**
-- latest census cursor: **2412750**
+- total census repositories scanned: **816000**
+- latest census cursor: **2435493**
 - retained candidates: **200**
-- governed fork queue: **39**
+- governed fork queue: **41**
 
 ## Top directions
 
@@ -67,7 +67,6 @@
 - **ai-2070/net** — score=0.770, stars=6; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:distributed
 - **peerborne/peerborne** — score=0.765, stars=24; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:decentralized
 - **Jayotis/open-social-p2p** — score=0.752, stars=0; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:decentralized
-- **visheshhembrom3/MeshWeaver-Zero-Dependency-P2P-Async-Task-Broker** — score=0.744, stars=1; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:decentralized
 
 ### embedded-iot
 
@@ -79,6 +78,20 @@
 - **francescopace/flightctl-mcu** — score=0.758, stars=1; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:rtos
 - **sensmonitor/smonitor-iot** — score=0.758, stars=1; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
 - **wassie-dev/simpleOTAClient-Arduino** — score=0.754, stars=1; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:arduino
+
+### graphics-multimedia
+
+- **Azzinoth/FocalEngine** — score=0.765, stars=13; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, keyword:opengl
+- **meshy-dev/ThreeRT** — score=0.750, stars=600; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, recently-active
+- **community-shaders/skyrim-community-shaders** — score=0.749, stars=1148; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, recently-active
+- **GraphicalPlayground/gp-engine** — score=0.747, stars=6; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, keyword:opengl
+- **apistol78/traktor** — score=0.746, stars=587; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, keyword:vulkan
+
+### hardware-eda
+
+- **stnolting/neorv32** — score=0.772, stars=2317; category:hardware-eda, keyword:fpga, keyword:risc-v, keyword:verilog, recently-active
+- **splinedrive/kianRiscV** — score=0.765, stars=1126; category:hardware-eda, keyword:fpga, keyword:risc-v, keyword:verilog, keyword:systemverilog
+- **simtenHQ/simten** — score=0.752, stars=35; category:hardware-eda, keyword:fpga, keyword:risc-v, keyword:verilog, keyword:hdl
 
 ### languages-runtimes
 
@@ -97,8 +110,6 @@
 - **dkhamsing/open-source-ios-apps** — score=0.818, stars=53343; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **NativeScript/SimDeck** — score=0.804, stars=161; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **erkamyaman/unslopovich** — score=0.787, stars=231; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, recently-active
-- **Abhiek187/calculators** — score=0.742, stars=0; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
-- **tsnAnh/ui-tune** — score=0.742, stars=1; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 
 ### networking
 
@@ -125,7 +136,6 @@
 ### web-frameworks
 
 - **YV17labs/NestRS** — score=0.773, stars=16; category:web-frameworks, keyword:web-framework, keyword:http-server, keyword:graphql, keyword:rest-api
-- **quinnjr/knead** — score=0.739, stars=0; category:web-frameworks, keyword:web-framework, keyword:http-server, keyword:graphql, keyword:rest-api
 
 ## Fork queue
 
