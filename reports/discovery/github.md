@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **800000**
-- latest census cursor: **2389914**
+- total census repositories scanned: **808000**
+- latest census cursor: **2412750**
 - retained candidates: **200**
 - governed fork queue: **39**
 
@@ -29,6 +29,17 @@
 - **Raffxzr/DarkniusX** — score=0.883, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **zacxyonly/zerobyte-kernel** — score=0.882, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 
+### data-engineering
+
+- **apache/flink-cdc** — score=0.815, stars=6497; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
+- **faucet-hq/faucet-stream** — score=0.788, stars=23; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
+- **authorjapps/zerocode** — score=0.774, stars=1018; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, recently-active
+- **ConduitIO/conduit** — score=0.760, stars=618; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, recently-active
+- **spate-etl/spate** — score=0.752, stars=1; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
+- **srimarrivada/Enterprise-Data-Platform-Evolution-Reference-Implementation** — score=0.750, stars=0; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:apache-spark
+- **jivejong/Batcave_IDS** — score=0.750, stars=0; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
+- **PipelineZ/pz-connector-kafka** — score=0.748, stars=1; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
+
 ### databases-storage
 
 - **prisma/orm** — score=0.860, stars=47689; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
@@ -38,7 +49,7 @@
 - **supabase/supabase-js** — score=0.823, stars=4611; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
 - **haymon-ai/dbmcp** — score=0.817, stars=33; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **orioledb/orioledb** — score=0.810, stars=4320; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
-- **smyrgeorge/ktkit** — score=0.808, stars=43; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **datazip-inc/olake-go** — score=0.808, stars=1965; category:databases-storage, keyword:database, keyword:postgres, keyword:mysql, recently-active
 
 ### devops-observability
 
@@ -51,6 +62,35 @@
 - **apache/skywalking-banyandb** — score=0.814, stars=356; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **ktjn/observable** — score=0.782, stars=2; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 
+### distributed-systems
+
+- **ai-2070/net** — score=0.770, stars=6; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:distributed
+- **peerborne/peerborne** — score=0.765, stars=24; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:decentralized
+- **Jayotis/open-social-p2p** — score=0.752, stars=0; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:decentralized
+- **visheshhembrom3/MeshWeaver-Zero-Dependency-P2P-Async-Task-Broker** — score=0.744, stars=1; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:decentralized
+
+### embedded-iot
+
+- **IOsonata/IOsonata** — score=0.813, stars=92; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
+- **Adolanium/hermes-gadget-sdk** — score=0.800, stars=555; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:raspberry-pi
+- **GlomarGadaffi/pocket-dial** — score=0.783, stars=19; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:microcontroller
+- **google/wasefire** — score=0.773, stars=193; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, recently-active
+- **wdcjx/easyesp** — score=0.769, stars=5; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:arduino
+- **francescopace/flightctl-mcu** — score=0.758, stars=1; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:rtos
+- **sensmonitor/smonitor-iot** — score=0.758, stars=1; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
+- **wassie-dev/simpleOTAClient-Arduino** — score=0.754, stars=1; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:arduino
+
+### languages-runtimes
+
+- **InauguralSystems/EigenScript** — score=0.782, stars=5; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, keyword:jit
+- **maximecb/plush** — score=0.776, stars=187; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, recently-active
+- **marcobambini/gravity** — score=0.765, stars=4595; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, recently-active
+- **cuevacaravacaadrian/HyperEZ** — score=0.765, stars=3; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, keyword:webassembly
+- **bad-antics/lateralus-lang** — score=0.765, stars=11; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, recently-active
+- **arturo-lang/arturo** — score=0.757, stars=894; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, recently-active
+- **AnayUpadhyay-all/FoxVC** — score=0.755, stars=1; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, keyword:webassembly
+- **samyyy2423/folio** — score=0.755, stars=2; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, keyword:webassembly
+
 ### mobile-crossplatform
 
 - **sceneview/sceneview** — score=0.819, stars=1379; category:mobile-crossplatform, keyword:flutter, keyword:swiftui, keyword:kotlin-multiplatform, keyword:ios
@@ -59,8 +99,6 @@
 - **erkamyaman/unslopovich** — score=0.787, stars=231; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, recently-active
 - **Abhiek187/calculators** — score=0.742, stars=0; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **tsnAnh/ui-tune** — score=0.742, stars=1; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
-- **maximilianfeix/handfeel** — score=0.738, stars=0; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
-- **kxbuild/kxbuild-app-templates** — score=0.737, stars=0; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 
 ### networking
 
@@ -71,11 +109,7 @@
 - **hedioum/Hedioum-Pool-Tunnel** — score=0.882, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 - **yuhaiin/yuhaiin** — score=0.881, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
 - **rust-dd/tako** — score=0.867, stars=182; category:networking, keyword:quic, keyword:tcp, keyword:http3, recently-active
-
-### operating-systems
-
-- **kernkonzept/fiasco** — score=0.731, stars=169; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, keyword:microkernel
-- **mel0k1/Nerine** — score=0.698, stars=0; category:operating-systems, keyword:operating-system, keyword:hypervisor, keyword:virtualization, recently-active
+- **Rightbracket/peeroxide** — score=0.852, stars=24; category:networking, keyword:bbr, keyword:network, keyword:nat, recently-active
 
 ### security-sandbox
 
@@ -92,7 +126,6 @@
 
 - **YV17labs/NestRS** — score=0.773, stars=16; category:web-frameworks, keyword:web-framework, keyword:http-server, keyword:graphql, keyword:rest-api
 - **quinnjr/knead** — score=0.739, stars=0; category:web-frameworks, keyword:web-framework, keyword:http-server, keyword:graphql, keyword:rest-api
-- **goichi-dev/goichi** — score=0.711, stars=0; category:web-frameworks, keyword:web-framework, keyword:http-server, keyword:graphql, keyword:grpc
 
 ## Fork queue
 
