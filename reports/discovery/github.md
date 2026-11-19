@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **816000**
-- latest census cursor: **2435493**
+- total census repositories scanned: **824000**
+- latest census cursor: **2458367**
 - retained candidates: **200**
-- governed fork queue: **41**
+- governed fork queue: **42**
 
 ## Top directions
 
@@ -22,7 +22,7 @@
 
 - **ahmed-alnassif/GKID-Kernels** — score=0.945, stars=94; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Spring-bulid/MakoSU** — score=0.907, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
-- **sysretq0/android-kernel-builder** — score=0.905, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **sysretq0/android-kernel-builder** — score=0.906, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **ZxAlif-ID/Flavenz-Kernel-Peridot** — score=0.897, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **SampleBlazkness/AdbHide-Kernel** — score=0.890, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **leemikepop/avd-kernelsu-x86_64** — score=0.888, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernelsu, keyword:susfs
@@ -34,11 +34,6 @@
 - **apache/flink-cdc** — score=0.815, stars=6497; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
 - **faucet-hq/faucet-stream** — score=0.788, stars=23; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
 - **authorjapps/zerocode** — score=0.774, stars=1018; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, recently-active
-- **ConduitIO/conduit** — score=0.760, stars=618; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, recently-active
-- **spate-etl/spate** — score=0.752, stars=1; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
-- **srimarrivada/Enterprise-Data-Platform-Evolution-Reference-Implementation** — score=0.750, stars=0; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:apache-spark
-- **jivejong/Batcave_IDS** — score=0.750, stars=0; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
-- **PipelineZ/pz-connector-kafka** — score=0.748, stars=1; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
 
 ### databases-storage
 
@@ -62,47 +57,21 @@
 - **apache/skywalking-banyandb** — score=0.814, stars=356; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **ktjn/observable** — score=0.782, stars=2; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 
-### distributed-systems
-
-- **ai-2070/net** — score=0.770, stars=6; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:distributed
-- **peerborne/peerborne** — score=0.765, stars=24; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:decentralized
-- **Jayotis/open-social-p2p** — score=0.752, stars=0; category:distributed-systems, keyword:distributed-systems, keyword:p2p, keyword:peer-to-peer, keyword:decentralized
-
 ### embedded-iot
 
 - **IOsonata/IOsonata** — score=0.813, stars=92; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
 - **Adolanium/hermes-gadget-sdk** — score=0.800, stars=555; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:raspberry-pi
 - **GlomarGadaffi/pocket-dial** — score=0.783, stars=19; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:microcontroller
 - **google/wasefire** — score=0.773, stars=193; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, recently-active
-- **wdcjx/easyesp** — score=0.769, stars=5; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:arduino
-- **francescopace/flightctl-mcu** — score=0.758, stars=1; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:rtos
-- **sensmonitor/smonitor-iot** — score=0.758, stars=1; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
-- **wassie-dev/simpleOTAClient-Arduino** — score=0.754, stars=1; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:arduino
-
-### graphics-multimedia
-
-- **Azzinoth/FocalEngine** — score=0.765, stars=13; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, keyword:opengl
-- **meshy-dev/ThreeRT** — score=0.750, stars=600; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, recently-active
-- **community-shaders/skyrim-community-shaders** — score=0.749, stars=1148; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, recently-active
-- **GraphicalPlayground/gp-engine** — score=0.747, stars=6; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, keyword:opengl
-- **apistol78/traktor** — score=0.746, stars=587; category:graphics-multimedia, keyword:graphics, keyword:rendering, keyword:game-engine, keyword:vulkan
 
 ### hardware-eda
 
 - **stnolting/neorv32** — score=0.772, stars=2317; category:hardware-eda, keyword:fpga, keyword:risc-v, keyword:verilog, recently-active
-- **splinedrive/kianRiscV** — score=0.765, stars=1126; category:hardware-eda, keyword:fpga, keyword:risc-v, keyword:verilog, keyword:systemverilog
-- **simtenHQ/simten** — score=0.752, stars=35; category:hardware-eda, keyword:fpga, keyword:risc-v, keyword:verilog, keyword:hdl
 
 ### languages-runtimes
 
 - **InauguralSystems/EigenScript** — score=0.782, stars=5; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, keyword:jit
 - **maximecb/plush** — score=0.776, stars=187; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, recently-active
-- **marcobambini/gravity** — score=0.765, stars=4595; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, recently-active
-- **cuevacaravacaadrian/HyperEZ** — score=0.765, stars=3; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, keyword:webassembly
-- **bad-antics/lateralus-lang** — score=0.765, stars=11; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, recently-active
-- **arturo-lang/arturo** — score=0.757, stars=894; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, recently-active
-- **AnayUpadhyay-all/FoxVC** — score=0.755, stars=1; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, keyword:webassembly
-- **samyyy2423/folio** — score=0.755, stars=2; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, keyword:webassembly
 
 ### mobile-crossplatform
 
@@ -113,14 +82,14 @@
 
 ### networking
 
-- **HyNetworks/hysteria** — score=0.933, stars=22594; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:network
+- **HyNetworks/hysteria** — score=0.933, stars=22960; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:vpn
+- **yuhaiin/yuhaiin** — score=0.924, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
 - **MiChongs/WutherCore** — score=0.905, stars=56; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:wireguard
 - **keminar/anyproxy** — score=0.903, stars=33; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
+- **hedioum/Hedioum-Pool-Tunnel** — score=0.897, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:vpn
 - **tokyoxpa3/5G-Proxy-Client** — score=0.894, stars=17; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
-- **hedioum/Hedioum-Pool-Tunnel** — score=0.882, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
-- **yuhaiin/yuhaiin** — score=0.881, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, recently-active
-- **rust-dd/tako** — score=0.867, stars=182; category:networking, keyword:quic, keyword:tcp, keyword:http3, recently-active
-- **Rightbracket/peeroxide** — score=0.852, stars=24; category:networking, keyword:bbr, keyword:network, keyword:nat, recently-active
+- **v2macapp/noleaker** — score=0.880, stars=23; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
+- **SnishaperTeam/Snishaper-Droid** — score=0.868, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
 
 ### security-sandbox
 
@@ -140,8 +109,9 @@
 ## Fork queue
 
 - **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.945, license=GPL-3.0)
-- **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
+- **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
+- **yuhaiin/yuhaiin** → networking (score=0.924, license=MIT)
 - **wulawulu/learn-claude-code-rs** → ai-agents (score=0.924, license=MIT)
 - **context-labs/whip** → ai-agents (score=0.919, license=Apache-2.0)
 - **EvannZhongg/Nosis** → ai-agents (score=0.918, license=MIT)
@@ -154,10 +124,9 @@
 - **keminar/anyproxy** → networking (score=0.903, license=MIT)
 - **Agent-One-Lab/AgentFly** → ai-agents (score=0.901, license=Apache-2.0)
 - **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
+- **hedioum/Hedioum-Pool-Tunnel** → networking (score=0.897, license=GPL-3.0)
 - **CodeSoul-co/Hypha** → ai-agents (score=0.897, license=Apache-2.0)
 - **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
 - **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
-- **tokyoxpa3/5G-Proxy-Client** → networking (score=0.894, license=MIT)
-- **footprintjs/agentfootprint** → ai-agents (score=0.893, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.
