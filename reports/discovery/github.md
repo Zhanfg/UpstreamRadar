@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **824000**
-- latest census cursor: **2458367**
+- total census repositories scanned: **832000**
+- latest census cursor: **2481576**
 - retained candidates: **200**
 - governed fork queue: **42**
 
@@ -33,18 +33,17 @@
 
 - **apache/flink-cdc** — score=0.815, stars=6497; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
 - **faucet-hq/faucet-stream** — score=0.788, stars=23; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
-- **authorjapps/zerocode** — score=0.774, stars=1018; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, recently-active
 
 ### databases-storage
 
-- **prisma/orm** — score=0.860, stars=47689; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
-- **digoal/blog** — score=0.853, stars=8614; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **prisma/orm** — score=0.860, stars=47693; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **digoal/blog** — score=0.853, stars=8616; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **bytebase/dbhub** — score=0.843, stars=3874; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
-- **supabase/supabase** — score=0.825, stars=115124; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
+- **xo/usql** — score=0.834, stars=10175; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **supabase/supabase** — score=0.825, stars=115178; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
 - **supabase/supabase-js** — score=0.823, stars=4611; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
 - **haymon-ai/dbmcp** — score=0.817, stars=33; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
-- **orioledb/orioledb** — score=0.810, stars=4320; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
-- **datazip-inc/olake-go** — score=0.808, stars=1965; category:databases-storage, keyword:database, keyword:postgres, keyword:mysql, recently-active
+- **rogerpadilla/uql** — score=0.813, stars=132; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 
 ### devops-observability
 
@@ -62,11 +61,6 @@
 - **IOsonata/IOsonata** — score=0.813, stars=92; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
 - **Adolanium/hermes-gadget-sdk** — score=0.800, stars=555; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:raspberry-pi
 - **GlomarGadaffi/pocket-dial** — score=0.783, stars=19; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:microcontroller
-- **google/wasefire** — score=0.773, stars=193; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, recently-active
-
-### hardware-eda
-
-- **stnolting/neorv32** — score=0.772, stars=2317; category:hardware-eda, keyword:fpga, keyword:risc-v, keyword:verilog, recently-active
 
 ### languages-runtimes
 
@@ -101,10 +95,6 @@
 - **Steck43/isolation-layer** — score=0.819, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **jkelly-dev1/agent-sandbox-escape** — score=0.799, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **vladimiracunadev-create/sandbox-labs** — score=0.794, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-
-### web-frameworks
-
-- **YV17labs/NestRS** — score=0.773, stars=16; category:web-frameworks, keyword:web-framework, keyword:http-server, keyword:graphql, keyword:rest-api
 
 ## Fork queue
 
