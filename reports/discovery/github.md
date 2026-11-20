@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **832000**
-- latest census cursor: **2481576**
+- total census repositories scanned: **840000**
+- latest census cursor: **2504629**
 - retained candidates: **200**
 - governed fork queue: **42**
 
@@ -54,24 +54,24 @@
 - **gma1k/podtrace** — score=0.824, stars=205; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:kubernetes
 - **deployex/observer_web** — score=0.819, stars=54; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **apache/skywalking-banyandb** — score=0.814, stars=356; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
-- **ktjn/observable** — score=0.782, stars=2; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **kieker-monitoring/kieker** — score=0.804, stars=113; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, recently-active
 
 ### embedded-iot
 
 - **IOsonata/IOsonata** — score=0.813, stars=92; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
-- **Adolanium/hermes-gadget-sdk** — score=0.800, stars=555; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:raspberry-pi
+- **Adolanium/hermes-gadget-sdk** — score=0.802, stars=561; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:raspberry-pi
 - **GlomarGadaffi/pocket-dial** — score=0.783, stars=19; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:microcontroller
 
 ### languages-runtimes
 
 - **InauguralSystems/EigenScript** — score=0.782, stars=5; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, keyword:jit
-- **maximecb/plush** — score=0.776, stars=187; category:languages-runtimes, keyword:programming-language, keyword:interpreter, keyword:virtual-machine, recently-active
 
 ### mobile-crossplatform
 
 - **sceneview/sceneview** — score=0.819, stars=1379; category:mobile-crossplatform, keyword:flutter, keyword:swiftui, keyword:kotlin-multiplatform, keyword:ios
 - **dkhamsing/open-source-ios-apps** — score=0.818, stars=53343; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **NativeScript/SimDeck** — score=0.804, stars=161; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
+- **Nikolai-Iakubovskii/app-paywall-pilot** — score=0.795, stars=40; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **erkamyaman/unslopovich** — score=0.787, stars=231; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, recently-active
 
 ### networking
@@ -90,11 +90,11 @@
 - **GreyhavenHQ/greywall** — score=0.877, stars=310; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **getkern/kern** — score=0.875, stars=491; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:rootless
 - **Erio-Harrison/nanosandbox** — score=0.863, stars=8; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **exein-io/analyzer-scan** — score=0.848, stars=5; category:security-sandbox, keyword:security, keyword:container, keyword:vulnerability, keyword:sbom
 - **cokovali10-sketch/AegisRuntime** — score=0.829, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **whiskeyjimbo/bento** — score=0.820, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **Steck43/isolation-layer** — score=0.819, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **jkelly-dev1/agent-sandbox-escape** — score=0.799, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **vladimiracunadev-create/sandbox-labs** — score=0.794, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 

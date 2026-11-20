@@ -2678,6 +2678,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "security-sandbox",
+    "description": "Runs Exein Analyzer as a GitHub Action to scan firmware, container images, and SBOMs for vulnerabilities.",
+    "forks": 0,
+    "full_name": "exein-io/analyzer-scan",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-20T09:58:05Z",
+    "reasons": [
+      "category:security-sandbox",
+      "keyword:security",
+      "keyword:container",
+      "keyword:vulnerability",
+      "keyword:sbom",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.84827344,
+    "source_id": "1164886473",
+    "stars": 5,
+    "url": "https://github.com/exein-io/analyzer-scan"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "The workhorse agent loop you embed. Rust: one dependency, features pick the parts.",
     "forks": 0,
@@ -2847,11 +2871,11 @@
     "auto_fork_eligible": false,
     "category": "devops-observability",
     "description": "Main repository for Datadog Agent",
-    "forks": 1535,
+    "forks": 1537,
     "full_name": "DataDog/datadog-agent",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-11-18T17:07:45Z",
+    "pushed_at": "2026-11-20T12:49:29Z",
     "reasons": [
       "category:devops-observability",
       "keyword:observability",
@@ -2862,7 +2886,7 @@
       "recently-active",
       "license:Apache-2.0"
     ],
-    "score": 0.83115452,
+    "score": 0.83115969,
     "source_id": "49970739",
     "stars": 3774,
     "url": "https://github.com/DataDog/datadog-agent"
@@ -3011,6 +3035,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Agenturm — a clear view of every agent. Local, terminal-first monitoring for coding agents, MCP calls, and traces.",
+    "forks": 0,
+    "full_name": "abhishekash/agenturm",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-20T12:23:31Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.82434416,
+    "source_id": "1419185876",
+    "stars": 3,
+    "url": "https://github.com/abhishekash/agenturm"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "databases-storage",
     "description": "An isomorphic Javascript client for Supabase. Query your Supabase database, subscribe to realtime events, upload and download files, browse typescript examples, invoke postgres functions via rpc, invoke supabase edge functions, query pgvector.",
     "forks": 806,
@@ -3031,29 +3078,6 @@
     "source_id": "264192686",
     "stars": 4611,
     "url": "https://github.com/supabase/supabase-js"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Agenturm — a clear view of every agent. Local, terminal-first monitoring for coding agents, MCP calls, and traces.",
-    "forks": 0,
-    "full_name": "abhishekash/agenturm",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-17T22:45:44Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.82284928,
-    "source_id": "1419185876",
-    "stars": 3,
-    "url": "https://github.com/abhishekash/agenturm"
   },
   {
     "auto_fork_eligible": false,
@@ -3078,6 +3102,29 @@
     "source_id": "1249905175",
     "stars": 0,
     "url": "https://github.com/whiskeyjimbo/bento"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "OpenTelemetry-native agent observability: trace every LLM call, tool call and agent step, with cost per call, alerts, and Claude Code / Codex / Cursor session tracing. TypeScript SDK.",
+    "forks": 0,
+    "full_name": "glassflow/rius-sdk-typescript",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-20T09:05:08Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.81913045,
+    "source_id": "1331873239",
+    "stars": 1,
+    "url": "https://github.com/glassflow/rius-sdk-typescript"
   },
   {
     "auto_fork_eligible": false,
@@ -3641,6 +3688,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "devops-observability",
+    "description": "Kieker is an observability framework, that consists of an monitoring and tracing agent, and compatible analysis tools",
+    "forks": 48,
+    "full_name": "kieker-monitoring/kieker",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-19T16:53:27Z",
+    "reasons": [
+      "category:devops-observability",
+      "keyword:observability",
+      "keyword:monitoring",
+      "keyword:tracing",
+      "recently-active",
+      "license:Apache-2.0",
+      "community-signal"
+    ],
+    "score": 0.8037375,
+    "source_id": "38052817",
+    "stars": 113,
+    "url": "https://github.com/kieker-monitoring/kieker"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "databases-storage",
     "description": "The most popular Kubernetes Operator for PostgreSQL.",
     "forks": 822,
@@ -3712,6 +3782,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "embedded-iot",
+    "description": "Build voice and text devices for your Hermes Agent, with ESP32 firmware, a Linux client, and a desktop simulator.",
+    "forks": 102,
+    "full_name": "Adolanium/hermes-gadget-sdk",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-20T07:00:42Z",
+    "reasons": [
+      "category:embedded-iot",
+      "keyword:embedded",
+      "keyword:iot",
+      "keyword:firmware",
+      "keyword:raspberry-pi",
+      "recently-active",
+      "license:MIT",
+      "community-signal"
+    ],
+    "score": 0.80212516,
+    "source_id": "1402986945",
+    "stars": 561,
+    "url": "https://github.com/Adolanium/hermes-gadget-sdk"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "pass^k reliability harness for tool-using agents: offline, MCP v2, CI regression gate",
     "forks": 0,
@@ -3780,30 +3874,6 @@
   },
   {
     "auto_fork_eligible": false,
-    "category": "embedded-iot",
-    "description": "Build voice and text devices for your Hermes Agent, with ESP32 firmware, a Linux client, and a desktop simulator.",
-    "forks": 100,
-    "full_name": "Adolanium/hermes-gadget-sdk",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-17T20:18:04Z",
-    "reasons": [
-      "category:embedded-iot",
-      "keyword:embedded",
-      "keyword:iot",
-      "keyword:firmware",
-      "keyword:raspberry-pi",
-      "recently-active",
-      "license:MIT",
-      "community-signal"
-    ],
-    "score": 0.80007114,
-    "source_id": "1402986945",
-    "stars": 555,
-    "url": "https://github.com/Adolanium/hermes-gadget-sdk"
-  },
-  {
-    "auto_fork_eligible": false,
     "category": "security-sandbox",
     "description": "Which agent-sandbox escapes the isolation flags people actually deploy really stop -- every escape executed for real, not modeled, on the host.",
     "forks": 0,
@@ -3852,6 +3922,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "devops-observability",
+    "description": "Elastic OpenTelemetry .NET Distribution",
+    "forks": 16,
+    "full_name": "elastic/elastic-otel-dotnet",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-19T16:15:29Z",
+    "reasons": [
+      "category:devops-observability",
+      "keyword:observability",
+      "keyword:monitoring",
+      "keyword:tracing",
+      "keyword:metrics",
+      "keyword:logging",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.79681596,
+    "source_id": "697318024",
+    "stars": 32,
+    "url": "https://github.com/elastic/elastic-otel-dotnet"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "networking",
     "description": "A cross-platform proxy client powered by Mihomo (formerly Clash.Meta), built with Qt Quick, featuring subscription management, proxy groups, custom routing rules, connection monitoring, and system proxy/TUN controls.",
     "forks": 0,
@@ -3872,6 +3966,30 @@
     "source_id": "1430891235",
     "stars": 0,
     "url": "https://github.com/junliangdg/quick-clash"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "mobile-crossplatform",
+    "description": "A framework for designing App Store-compliant subscription paywalls. 4 layers: AI skill (Claude/GPT/Cursor) + knowledge base (79 sourced benchmarks) + Python LTV tool + docs. 20-concept academic foundation (Kahneman + Layer 2). Flagship domain Paywall; expansion planned to Onboarding, Retention, Growth, Pricing, Reviews.",
+    "forks": 3,
+    "full_name": "Nikolai-Iakubovskii/app-paywall-pilot",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-20T10:18:29Z",
+    "reasons": [
+      "category:mobile-crossplatform",
+      "keyword:flutter",
+      "keyword:react-native",
+      "keyword:swiftui",
+      "keyword:ios",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.79543052,
+    "source_id": "1211816899",
+    "stars": 40,
+    "url": "https://github.com/Nikolai-Iakubovskii/app-paywall-pilot"
   },
   {
     "auto_fork_eligible": false,
@@ -4390,6 +4508,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "devops-observability",
+    "description": "Full-stack observability platform (traces, logs, metrics, alerts, dashboards) built on OpenTelemetry — Rust backend, React frontend.",
+    "forks": 0,
+    "full_name": "ktjn/observable",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-20T08:10:19Z",
+    "reasons": [
+      "category:devops-observability",
+      "keyword:observability",
+      "keyword:monitoring",
+      "keyword:tracing",
+      "keyword:metrics",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.78288617,
+    "source_id": "1211714964",
+    "stars": 2,
+    "url": "https://github.com/ktjn/observable"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "DeepSeek Harness (dsh) Windows desktop client - bundled Node.js + dsh CLI, one-click launch",
     "forks": 50,
@@ -4413,26 +4555,26 @@
   {
     "auto_fork_eligible": false,
     "category": "devops-observability",
-    "description": "Full-stack observability platform (traces, logs, metrics, alerts, dashboards) built on OpenTelemetry — Rust backend, React frontend.",
+    "description": "OpenTelemetry set up for you by your coding agent (Claude Code plugin, Codex skills): checked as it is written, proven in CI, and your first trace on your own machine today. Dashboards and alerts as code for Grafana, Datadog, New Relic and Dash0.",
     "forks": 0,
-    "full_name": "ktjn/observable",
-    "license_id": "MIT",
+    "full_name": "radra23/otel-as-code-plugin",
+    "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-11-18T06:08:25Z",
+    "pushed_at": "2026-11-19T20:04:44Z",
     "reasons": [
       "category:devops-observability",
       "keyword:observability",
       "keyword:monitoring",
       "keyword:tracing",
-      "keyword:metrics",
+      "keyword:terraform",
       "recently-active",
-      "license:MIT",
+      "license:Apache-2.0",
       "emerging"
     ],
-    "score": 0.7823543,
-    "source_id": "1211714964",
+    "score": 0.78188208,
+    "source_id": "1275574287",
     "stars": 2,
-    "url": "https://github.com/ktjn/observable"
+    "url": "https://github.com/radra23/otel-as-code-plugin"
   },
   {
     "auto_fork_eligible": false,
@@ -4596,146 +4738,5 @@
     "source_id": "326404870",
     "stars": 32675,
     "url": "https://github.com/SigNoz/signoz"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "databases-storage",
-    "description": "Open-source backend-as-a-service for Postgres — REST, typed SDK, auth, storage, realtime and row-level security over your own database, with a schema-driven admin panel when you want one.",
-    "forks": 2,
-    "full_name": "rebasepro/rebase",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-18T16:39:14Z",
-    "reasons": [
-      "category:databases-storage",
-      "keyword:database",
-      "keyword:postgresql",
-      "keyword:postgres",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.77788767,
-    "source_id": "1196298152",
-    "stars": 31,
-    "url": "https://github.com/rebasepro/rebase"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "devops-observability",
-    "description": "OpenTelemetry set up for you by your coding agent (Claude Code plugin, Codex skills): checked as it is written, proven in CI, and your first trace on your own machine today. Dashboards and alerts as code for Grafana, Datadog, New Relic and Dash0.",
-    "forks": 0,
-    "full_name": "radra23/otel-as-code-plugin",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-17T15:52:02Z",
-    "reasons": [
-      "category:devops-observability",
-      "keyword:observability",
-      "keyword:monitoring",
-      "keyword:tracing",
-      "keyword:terraform",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.77723072,
-    "source_id": "1275574287",
-    "stars": 1,
-    "url": "https://github.com/radra23/otel-as-code-plugin"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "devops-observability",
-    "description": "One framework, every signal. Logs, metrics, traces, and profiles for Go, Python, Rust, and C++, built on OpenTelemetry.",
-    "forks": 0,
-    "full_name": "the-protobuf-project/telemetry",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-17T16:08:31Z",
-    "reasons": [
-      "category:devops-observability",
-      "keyword:observability",
-      "keyword:monitoring",
-      "keyword:tracing",
-      "keyword:metrics",
-      "keyword:logging",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.77695342,
-    "source_id": "1307261465",
-    "stars": 1,
-    "url": "https://github.com/the-protobuf-project/telemetry"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "languages-runtimes",
-    "description": "Minimalistic dynamically-typed language for fun, teaching and creative programming.",
-    "forks": 18,
-    "full_name": "maximecb/plush",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-18T22:18:38Z",
-    "reasons": [
-      "category:languages-runtimes",
-      "keyword:programming-language",
-      "keyword:interpreter",
-      "keyword:virtual-machine",
-      "recently-active",
-      "license:Apache-2.0",
-      "community-signal"
-    ],
-    "score": 0.77576989,
-    "source_id": "832890903",
-    "stars": 187,
-    "url": "https://github.com/maximecb/plush"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "A4A: Anything for Agents. Turns a source of information into verified tasks and tools for LLM agents, and measures whether they help. Today the sources are Python repositories and their documentation.",
-    "forks": 0,
-    "full_name": "muhammadov-q/a4a",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-11-19T16:08:40Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.77462712,
-    "source_id": "1447564390",
-    "stars": 0,
-    "url": "https://github.com/muhammadov-q/a4a"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Personal assistant OS setup. This long-term project will teach me prompt engineering, persistent memory, tool use, agents, MCP servers, agent framework integrations, evals and cost tracking anything alongside the continuous development of AI",
-    "forks": 0,
-    "full_name": "zinebnadak/zizo",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-11-18T05:40:48Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:orchestration",
-      "keyword:llm",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.77428779,
-    "source_id": "1434144001",
-    "stars": 0,
-    "url": "https://github.com/zinebnadak/zizo"
   }
 ]
