@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **840000**
-- latest census cursor: **2504629**
+- total census repositories scanned: **848000**
+- latest census cursor: **2528365**
 - retained candidates: **200**
 - governed fork queue: **42**
 
@@ -31,7 +31,7 @@
 
 ### data-engineering
 
-- **apache/flink-cdc** — score=0.815, stars=6497; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
+- **apache/flink-cdc** — score=0.816, stars=6495; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
 - **faucet-hq/faucet-stream** — score=0.788, stars=23; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
 
 ### databases-storage
