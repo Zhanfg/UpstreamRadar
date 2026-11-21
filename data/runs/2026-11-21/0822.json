@@ -1,0 +1,5386 @@
+{
+  "catch_up_multiplier": 2.5,
+  "changed": [
+    "vllm-project/vllm",
+    "openai/openai-agents-python",
+    "rust-lang/rust",
+    "tailscale/tailscale",
+    "openai/openai-python",
+    "pytorch/pytorch",
+    "huggingface/transformers",
+    "nodejs/node",
+    "curl/curl",
+    "openssl/openssl",
+    "astral-sh/ruff",
+    "huggingface/diffusers",
+    "llvm/llvm-project",
+    "torvalds/linux",
+    "astral-sh/uv",
+    "cloudflare/cloudflared",
+    "systemd/systemd",
+    "kubernetes/kubernetes",
+    "pnpm/pnpm",
+    "tensorflow/tensorflow",
+    "WireGuard/wireguard-go",
+    "google/osv-scanner",
+    "vitejs/vite",
+    "modelcontextprotocol/python-sdk",
+    "haproxy/haproxy",
+    "jax-ml/jax",
+    "ossf/scorecard",
+    "aquasecurity/trivy",
+    "ggml-org/llama.cpp",
+    "anthropics/anthropic-sdk-python",
+    "python/cpython",
+    "golang/go",
+    "SagerNet/sing-box",
+    "denoland/deno",
+    "microsoft/autogen",
+    "neovim/neovim",
+    "ollama/ollama"
+  ],
+  "changed_details": [
+    {
+      "fields": [
+        "latest_release",
+        "pushed_at",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "anthropics/anthropic-sdk-python",
+      "semantic_impact": 6.95
+    },
+    {
+      "fields": [
+        "archived",
+        "forks",
+        "stars",
+        "watchers"
+      ],
+      "full_name": "microsoft/autogen",
+      "semantic_impact": 6.3
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "astral-sh/ruff",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "astral-sh/uv",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "golang/go",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "google/osv-scanner",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "huggingface/transformers",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "kubernetes/kubernetes",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "neovim/neovim",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "nodejs/node",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "ollama/ollama",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "pnpm/pnpm",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "python/cpython",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "pytorch/pytorch",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "rust-lang/rust",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "tailscale/tailscale",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "vitejs/vite",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "vllm-project/vllm",
+      "semantic_impact": 4.9
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "aquasecurity/trivy",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "curl/curl",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "ggml-org/llama.cpp",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "huggingface/diffusers",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "jax-ml/jax",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "llvm/llvm-project",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "openai/openai-agents-python",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "openssl/openssl",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "forks",
+        "watchers",
+        "size_kb"
+      ],
+      "full_name": "tensorflow/tensorflow",
+      "semantic_impact": 4.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "open_issues",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "haproxy/haproxy",
+      "semantic_impact": 3.95
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "systemd/systemd",
+      "semantic_impact": 3.55
+    },
+    {
+      "fields": [
+        "pushed_at",
+        "forks",
+        "stars",
+        "size_kb"
+      ],
+      "full_name": "torvalds/linux",
+      "semantic_impact": 3.55
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers"
+      ],
+      "full_name": "denoland/deno",
+      "semantic_impact": 2.3
+    },
+    {
+      "fields": [
+        "open_issues",
+        "forks",
+        "stars",
+        "watchers"
+      ],
+      "full_name": "openai/openai-python",
+      "semantic_impact": 2.3
+    },
+    {
+      "fields": [
+        "forks",
+        "stars"
+      ],
+      "full_name": "SagerNet/sing-box",
+      "semantic_impact": 0.95
+    },
+    {
+      "fields": [
+        "forks",
+        "stars"
+      ],
+      "full_name": "modelcontextprotocol/python-sdk",
+      "semantic_impact": 0.95
+    },
+    {
+      "fields": [
+        "forks",
+        "stars"
+      ],
+      "full_name": "ossf/scorecard",
+      "semantic_impact": 0.95
+    },
+    {
+      "fields": [
+        "stars"
+      ],
+      "full_name": "WireGuard/wireguard-go",
+      "semantic_impact": 0.35
+    },
+    {
+      "fields": [
+        "stars"
+      ],
+      "full_name": "cloudflare/cloudflared",
+      "semantic_impact": 0.35
+    }
+  ],
+  "content_plan": [
+    {
+      "angle": "Security-relevant upstream movement with elevated change probability",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.795",
+        "bandit-index=0.694",
+        "change-probability=0.650"
+      ],
+      "name": "nodejs/node",
+      "priority": 0.6344974539066868,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ]
+    },
+    {
+      "angle": "Exploration candidate where a new observation can reduce scheduler uncertainty",
+      "evidence": [
+        "reliability=1.000",
+        "bayesian-surprise=0.900",
+        "content-yield=0.835",
+        "bandit-index=0.705"
+      ],
+      "name": "haproxy/haproxy",
+      "priority": 0.6291412244287106,
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "anomalous",
+        "high-surprise"
+      ]
+    },
+    {
+      "angle": "Security-relevant upstream movement with elevated change probability",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.808",
+        "bandit-index=0.696",
+        "change-probability=0.649"
+      ],
+      "name": "tailscale/tailscale",
+      "priority": 0.6271570624045506,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ]
+    },
+    {
+      "angle": "Security-relevant upstream movement with elevated change probability",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.787",
+        "bandit-index=0.693",
+        "change-probability=0.649"
+      ],
+      "name": "openai/openai-python",
+      "priority": 0.6245152768556993,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ]
+    },
+    {
+      "angle": "Security-relevant upstream movement with elevated change probability",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.747",
+        "bandit-index=0.717",
+        "anomaly=0.716"
+      ],
+      "name": "pytorch/pytorch",
+      "priority": 0.6232759316254867,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "anomalous",
+        "high-surprise",
+        "algorithm-disagreement"
+      ]
+    },
+    {
+      "angle": "Exploration candidate where a new observation can reduce scheduler uncertainty",
+      "evidence": [
+        "reliability=1.000",
+        "bayesian-surprise=0.809",
+        "content-yield=0.789",
+        "bandit-index=0.701"
+      ],
+      "name": "curl/curl",
+      "priority": 0.618523287200512,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "high-surprise",
+        "algorithm-disagreement"
+      ]
+    },
+    {
+      "angle": "Exploration candidate where a new observation can reduce scheduler uncertainty",
+      "evidence": [
+        "reliability=1.000",
+        "content-yield=0.814",
+        "bandit-index=0.698",
+        "change-probability=0.649"
+      ],
+      "name": "openssl/openssl",
+      "priority": 0.6137706811398171,
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ]
+    },
+    {
+      "angle": "Security-relevant upstream movement with elevated change probability",
+      "evidence": [
+        "reliability=1.000",
+        "structural-novelty=0.755",
+        "bandit-index=0.693",
+        "algorithm-disagreement=0.660"
+      ],
+      "name": "openai/openai-agents-python",
+      "priority": 0.6085801496350172,
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "structural-novelty",
+        "algorithm-disagreement"
+      ]
+    }
+  ],
+  "content_score": 0.6262528,
+  "coverage_score": 0.92319584,
+  "elapsed_since_previous_run_hours": 13.761,
+  "errors": [],
+  "gate_probability": 0.7,
+  "gate_sample": 0.4500886930185306,
+  "local_time": "2026-11-21T08:22:41+08:00",
+  "observed_at": "2026-11-21T00:22:41Z",
+  "scores": [
+    {
+      "anomaly": 0.67855694,
+      "bayesian_surprise": 0.62908844,
+      "change_point": 0.13892825,
+      "change_probability": 0.64990148,
+      "content_yield": 0.69678788,
+      "cost": 2,
+      "ecosystem": "ai-runtime",
+      "entropy": 0.0,
+      "exploration": 0.39865011,
+      "full_name": "vllm-project/vllm",
+      "graph_influence": 0.26770532,
+      "momentum": 0.47419899,
+      "museum": {
+        "bandit_index": 0.69397562,
+        "change_consensus": 0.15622957,
+        "consensus": 0.25450853,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.55256138,
+        "graph_consensus": 0.26770532,
+        "information_gain": 0.01275424,
+        "robust_activity": 0.62985764,
+        "trace": [
+          [
+            "page-hinkley",
+            0.2527942
+          ],
+          [
+            "cusum",
+            0.60386491
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0
+          ],
+          [
+            "wasserstein-1",
+            0.00416667
+          ],
+          [
+            "mmd-rbf",
+            0.04131351
+          ],
+          [
+            "pagerank",
+            0.34264648
+          ],
+          [
+            "hits-hub",
+            0.70710678
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.5
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10846523
+          ],
+          [
+            "huber",
+            0.62985764
+          ],
+          [
+            "hampel",
+            0.88888889
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "anomalous",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.47640842,
+      "security_focus": 0.88323915,
+      "structural_novelty": 0.16344182,
+      "tail_risk": 0.37606667,
+      "uncertainty": 0.01855631,
+      "utility": 0.48993011
+    },
+    {
+      "anomaly": 0.43950798,
+      "bayesian_surprise": 0.63001982,
+      "change_point": 0.23057058,
+      "change_probability": 0.64936185,
+      "content_yield": 0.63562481,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "entropy": 0.0,
+      "exploration": 0.39834866,
+      "full_name": "openai/openai-agents-python",
+      "graph_influence": 0.1800699,
+      "momentum": 0.50079019,
+      "museum": {
+        "bandit_index": 0.69338548,
+        "change_consensus": 0.21951287,
+        "consensus": 0.37463806,
+        "dependency_novelty": 1.0,
+        "disagreement": 0.66010892,
+        "graph_consensus": 0.1800699,
+        "information_gain": 0.0500556,
+        "robust_activity": 0.52795786,
+        "trace": [
+          [
+            "page-hinkley",
+            0.47372766
+          ],
+          [
+            "cusum",
+            0.82196053
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.03690968
+          ],
+          [
+            "wasserstein-1",
+            0.03854167
+          ],
+          [
+            "mmd-rbf",
+            0.08310741
+          ],
+          [
+            "pagerank",
+            0.32209171
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.5
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10660036
+          ],
+          [
+            "huber",
+            0.52795786
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            1.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "structural-novelty",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.45489365,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.75521803,
+      "tail_risk": 0.35536667,
+      "uncertainty": 0.01893563,
+      "utility": 0.47696523
+    },
+    {
+      "anomaly": 0.57764039,
+      "bayesian_surprise": 0.62908844,
+      "change_point": 0.19529299,
+      "change_probability": 0.64990148,
+      "content_yield": 0.68224406,
+      "cost": 3,
+      "ecosystem": "language",
+      "entropy": 0.0,
+      "exploration": 0.40338048,
+      "full_name": "rust-lang/rust",
+      "graph_influence": 0.18057467,
+      "momentum": 0.47415729,
+      "museum": {
+        "bandit_index": 0.69953097,
+        "change_consensus": 0.15090425,
+        "consensus": 0.37425418,
+        "dependency_novelty": 1.0,
+        "disagreement": 0.6901469,
+        "graph_consensus": 0.18057467,
+        "information_gain": 0.04825623,
+        "robust_activity": 0.612033,
+        "trace": [
+          [
+            "page-hinkley",
+            0.23981507
+          ],
+          [
+            "cusum",
+            0.58115318
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0211531
+          ],
+          [
+            "wasserstein-1",
+            0.02729167
+          ],
+          [
+            "mmd-rbf",
+            0.11329995
+          ],
+          [
+            "pagerank",
+            0.32597508
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.5
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.12598816
+          ],
+          [
+            "huber",
+            0.612033
+          ],
+          [
+            "hampel",
+            0.77777778
+          ],
+          [
+            "minhash",
+            1.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "structural-novelty",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.46148936,
+      "security_focus": 0.5,
+      "structural_novelty": 0.75754457,
+      "tail_risk": 0.35939167,
+      "uncertainty": 0.01855631,
+      "utility": 0.47078271
+    },
+    {
+      "anomaly": 0.55622293,
+      "bayesian_surprise": 0.63083885,
+      "change_point": 0.36379727,
+      "change_probability": 0.64888665,
+      "content_yield": 0.80793869,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.0,
+      "exploration": 0.40053354,
+      "full_name": "tailscale/tailscale",
+      "graph_influence": 0.1200022,
+      "momentum": 0.53277749,
+      "museum": {
+        "bandit_index": 0.69571585,
+        "change_consensus": 0.24835806,
+        "consensus": 0.25969537,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.53168768,
+        "graph_consensus": 0.1200022,
+        "information_gain": 0.10122643,
+        "robust_activity": 0.62078323,
+        "trace": [
+          [
+            "page-hinkley",
+            0.59141817
+          ],
+          [
+            "cusum",
+            0.92232719
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.06371585
+          ],
+          [
+            "wasserstein-1",
+            0.09479167
+          ],
+          [
+            "mmd-rbf",
+            0.16901323
+          ],
+          [
+            "pagerank",
+            0.35997217
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11396058
+          ],
+          [
+            "huber",
+            0.62078323
+          ],
+          [
+            "hampel",
+            0.55555556
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.45252761,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.0150428,
+      "tail_risk": 0.45400833,
+      "uncertainty": 0.01926296,
+      "utility": 0.4653715
+    },
+    {
+      "anomaly": 0.4547514,
+      "bayesian_surprise": 0.63001982,
+      "change_point": 0.31864766,
+      "change_probability": 0.64936185,
+      "content_yield": 0.7874427,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "entropy": 0.0,
+      "exploration": 0.39834866,
+      "full_name": "openai/openai-python",
+      "graph_influence": 0.22865193,
+      "momentum": 0.53073833,
+      "museum": {
+        "bandit_index": 0.69338548,
+        "change_consensus": 0.27230244,
+        "consensus": 0.26944838,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.50101842,
+        "graph_consensus": 0.22865193,
+        "information_gain": 0.07144196,
+        "robust_activity": 0.57187668,
+        "trace": [
+          [
+            "page-hinkley",
+            0.70270909
+          ],
+          [
+            "cusum",
+            0.99735478
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.04052562
+          ],
+          [
+            "wasserstein-1",
+            0.080625
+          ],
+          [
+            "mmd-rbf",
+            0.11012649
+          ],
+          [
+            "pagerank",
+            0.6037399
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.69806981
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.5
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10660036
+          ],
+          [
+            "huber",
+            0.57187668
+          ],
+          [
+            "hampel",
+            0.77777778
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.43954746,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.01407125,
+      "tail_risk": 0.51655833,
+      "uncertainty": 0.01893563,
+      "utility": 0.46087444
+    },
+    {
+      "anomaly": 0.71578698,
+      "bayesian_surprise": 0.67338848,
+      "change_point": 0.1191177,
+      "change_probability": 0.6232717,
+      "content_yield": 0.74694633,
+      "cost": 3,
+      "ecosystem": "ai",
+      "entropy": 0.21639693,
+      "exploration": 0.43759077,
+      "full_name": "pytorch/pytorch",
+      "graph_influence": 0.48,
+      "momentum": 0.49858683,
+      "museum": {
+        "bandit_index": 0.71739878,
+        "change_consensus": 0.15545428,
+        "consensus": 0.29602244,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.50000256,
+        "graph_consensus": 0.48,
+        "information_gain": 0.15485155,
+        "robust_activity": 0.51063161,
+        "trace": [
+          [
+            "page-hinkley",
+            0.17743957
+          ],
+          [
+            "cusum",
+            0.69440666
+          ],
+          [
+            "bocpd-beta",
+            0.04557985
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.08880564
+          ],
+          [
+            "wasserstein-1",
+            0.08125
+          ],
+          [
+            "mmd-rbf",
+            0.35130142
+          ],
+          [
+            "pagerank",
+            1.0
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            1.0
+          ],
+          [
+            "katz",
+            1.0
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            1.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999895
+          ],
+          [
+            "bayes-ucb",
+            0.99911752
+          ],
+          [
+            "information-deficit",
+            0.18257419
+          ],
+          [
+            "huber",
+            0.51063161
+          ],
+          [
+            "hampel",
+            0.66666667
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "anomalous",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.44559012,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.02409979,
+      "tail_risk": 0.40673333,
+      "uncertainty": 0.03942489,
+      "utility": 0.4545633
+    },
+    {
+      "anomaly": 0.42595125,
+      "bayesian_surprise": 0.62992551,
+      "change_point": 0.15037579,
+      "change_probability": 0.64941653,
+      "content_yield": 0.67948923,
+      "cost": 2,
+      "ecosystem": "ai",
+      "entropy": 0.0,
+      "exploration": 0.40012717,
+      "full_name": "huggingface/transformers",
+      "graph_influence": 0.3858677,
+      "momentum": 0.48747586,
+      "museum": {
+        "bandit_index": 0.69548366,
+        "change_consensus": 0.17495989,
+        "consensus": 0.28135106,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.49930914,
+        "graph_consensus": 0.3858677,
+        "information_gain": 0.10172113,
+        "robust_activity": 0.55990895,
+        "trace": [
+          [
+            "page-hinkley",
+            0.26361338
+          ],
+          [
+            "cusum",
+            0.73605116
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.02116732
+          ],
+          [
+            "wasserstein-1",
+            0.04541667
+          ],
+          [
+            "mmd-rbf",
+            0.29523216
+          ],
+          [
+            "pagerank",
+            0.39617399
+          ],
+          [
+            "hits-hub",
+            0.70710678
+          ],
+          [
+            "hits-authority",
+            0.41421356
+          ],
+          [
+            "katz",
+            0.69806981
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            1.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.1132277
+          ],
+          [
+            "huber",
+            0.55990895
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.43701935,
+      "security_focus": 0.5,
+      "structural_novelty": 0.16401331,
+      "tail_risk": 0.348425,
+      "uncertainty": 0.01889757,
+      "utility": 0.44942308
+    },
+    {
+      "anomaly": 0.50718011,
+      "bayesian_surprise": 0.62927341,
+      "change_point": 0.40898261,
+      "change_probability": 0.64979437,
+      "content_yield": 0.79459555,
+      "cost": 2,
+      "ecosystem": "runtime",
+      "entropy": 0.0,
+      "exploration": 0.39835254,
+      "full_name": "nodejs/node",
+      "graph_influence": 0.11967446,
+      "momentum": 0.4415795,
+      "museum": {
+        "bandit_index": 0.69357878,
+        "change_consensus": 0.2410217,
+        "consensus": 0.25238504,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.51610293,
+        "graph_consensus": 0.11967446,
+        "information_gain": 0.09545144,
+        "robust_activity": 0.57867135,
+        "trace": [
+          [
+            "page-hinkley",
+            0.54377541
+          ],
+          [
+            "cusum",
+            0.92176201
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.00195238
+          ],
+          [
+            "jsd",
+            0.0690383
+          ],
+          [
+            "wasserstein-1",
+            0.07291667
+          ],
+          [
+            "mmd-rbf",
+            0.16310767
+          ],
+          [
+            "pagerank",
+            0.35745076
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10721125
+          ],
+          [
+            "huber",
+            0.57867135
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.43682148,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.01415189,
+      "tail_risk": 0.41405833,
+      "uncertainty": 0.01863226,
+      "utility": 0.4492196
+    },
+    {
+      "anomaly": 0.4735345,
+      "bayesian_surprise": 0.80852808,
+      "change_point": 0.3548925,
+      "change_probability": 0.5244303,
+      "content_yield": 0.78852351,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.0,
+      "exploration": 0.40467579,
+      "full_name": "curl/curl",
+      "graph_influence": 0.11833548,
+      "momentum": 0.54045458,
+      "museum": {
+        "bandit_index": 0.70051928,
+        "change_consensus": 0.20955628,
+        "consensus": 0.2424768,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.53124342,
+        "graph_consensus": 0.11833548,
+        "information_gain": 0.06077995,
+        "robust_activity": 0.57826824,
+        "trace": [
+          [
+            "page-hinkley",
+            0.40635078
+          ],
+          [
+            "cusum",
+            0.83203506
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.03189911
+          ],
+          [
+            "wasserstein-1",
+            0.05833333
+          ],
+          [
+            "mmd-rbf",
+            0.10874287
+          ],
+          [
+            "pagerank",
+            0.34714962
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.12909944
+          ],
+          [
+            "huber",
+            0.57826824
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.43678535,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.01704113,
+      "tail_risk": 0.43158333,
+      "uncertainty": 0.01926296,
+      "utility": 0.44918244
+    },
+    {
+      "anomaly": 0.62326631,
+      "bayesian_surprise": 0.63121581,
+      "change_point": 0.35843902,
+      "change_probability": 0.64866773,
+      "content_yield": 0.81374702,
+      "cost": 2,
+      "ecosystem": "security",
+      "entropy": 0.0,
+      "exploration": 0.40286919,
+      "full_name": "openssl/openssl",
+      "graph_influence": 0.11728387,
+      "momentum": 0.49745422,
+      "museum": {
+        "bandit_index": 0.69831875,
+        "change_consensus": 0.24252968,
+        "consensus": 0.25710245,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.53413631,
+        "graph_consensus": 0.11728387,
+        "information_gain": 0.09434509,
+        "robust_activity": 0.61696721,
+        "trace": [
+          [
+            "page-hinkley",
+            0.57976508
+          ],
+          [
+            "cusum",
+            0.87643649
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.00195489
+          ],
+          [
+            "jsd",
+            0.05166099
+          ],
+          [
+            "wasserstein-1",
+            0.07208333
+          ],
+          [
+            "mmd-rbf",
+            0.18781997
+          ],
+          [
+            "pagerank",
+            0.33905923
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.12216944
+          ],
+          [
+            "huber",
+            0.61696721
+          ],
+          [
+            "hampel",
+            0.88888889
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.43569494,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01612637,
+      "tail_risk": 0.45466667,
+      "uncertainty": 0.01941174,
+      "utility": 0.44806107
+    },
+    {
+      "anomaly": 0.57029522,
+      "bayesian_surprise": 0.62906687,
+      "change_point": 0.29525776,
+      "change_probability": 0.64991396,
+      "content_yield": 0.7596881,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "entropy": 0.0,
+      "exploration": 0.39864532,
+      "full_name": "astral-sh/ruff",
+      "graph_influence": 0.11593847,
+      "momentum": 0.46706885,
+      "museum": {
+        "bandit_index": 0.69397562,
+        "change_consensus": 0.1672946,
+        "consensus": 0.22105027,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.5002621,
+        "graph_consensus": 0.11593847,
+        "information_gain": 0.05228222,
+        "robust_activity": 0.47777778,
+        "trace": [
+          [
+            "page-hinkley",
+            0.26124032
+          ],
+          [
+            "cusum",
+            0.67761216
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0273065
+          ],
+          [
+            "wasserstein-1",
+            0.03791667
+          ],
+          [
+            "mmd-rbf",
+            0.10693898
+          ],
+          [
+            "pagerank",
+            0.32870867
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10846523
+          ],
+          [
+            "huber",
+            0.47777778
+          ],
+          [
+            "hampel",
+            0.55555556
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.42470721,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01431741,
+      "tail_risk": 0.3674,
+      "uncertainty": 0.01854744,
+      "utility": 0.44531413
+    },
+    {
+      "anomaly": 0.71046602,
+      "bayesian_surprise": 0.67082201,
+      "change_point": 0.33776323,
+      "change_probability": 0.62487212,
+      "content_yield": 0.33020745,
+      "cost": 2,
+      "ecosystem": "ai",
+      "entropy": 0.24988229,
+      "exploration": 0.40746433,
+      "full_name": "huggingface/diffusers",
+      "graph_influence": 0.33725262,
+      "momentum": 0.50343389,
+      "museum": {
+        "bandit_index": 0.69549093,
+        "change_consensus": 0.23671363,
+        "consensus": 0.34174616,
+        "dependency_novelty": 0.515625,
+        "disagreement": 0.39616646,
+        "graph_consensus": 0.33725262,
+        "information_gain": 0.0727853,
+        "robust_activity": 0.40805312,
+        "trace": [
+          [
+            "page-hinkley",
+            0.51824984
+          ],
+          [
+            "cusum",
+            0.91314368
+          ],
+          [
+            "bocpd-beta",
+            0.04530767
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.00440972
+          ],
+          [
+            "jsd",
+            0.04235416
+          ],
+          [
+            "wasserstein-1",
+            0.07708333
+          ],
+          [
+            "mmd-rbf",
+            0.11614948
+          ],
+          [
+            "pagerank",
+            0.24719637
+          ],
+          [
+            "hits-hub",
+            1.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            1.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99955382
+          ],
+          [
+            "bayes-ucb",
+            0.99729225
+          ],
+          [
+            "information-deficit",
+            0.11547005
+          ],
+          [
+            "huber",
+            0.40805312
+          ],
+          [
+            "hampel",
+            0.66666667
+          ],
+          [
+            "minhash",
+            0.515625
+          ]
+        ]
+      },
+      "reasons": [
+        "uncertainty-exploration",
+        "likely-change",
+        "anomalous",
+        "high-surprise"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.42338954,
+      "security_focus": 0.33749202,
+      "structural_novelty": 0.50553032,
+      "tail_risk": 0.30238333,
+      "uncertainty": 0.03128232,
+      "utility": 0.43540642
+    },
+    {
+      "anomaly": 0.5876024,
+      "bayesian_surprise": 0.62978592,
+      "change_point": 0.13300783,
+      "change_probability": 0.64949745,
+      "content_yield": 0.68186308,
+      "cost": 3,
+      "ecosystem": "toolchain",
+      "entropy": 0.0,
+      "exploration": 0.40112991,
+      "full_name": "llvm/llvm-project",
+      "graph_influence": 0.22418751,
+      "momentum": 0.47181354,
+      "museum": {
+        "bandit_index": 0.69669217,
+        "change_consensus": 0.15110031,
+        "consensus": 0.23966582,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.53513387,
+        "graph_consensus": 0.22418751,
+        "information_gain": 0.00808314,
+        "robust_activity": 0.56983122,
+        "trace": [
+          [
+            "page-hinkley",
+            0.23963256
+          ],
+          [
+            "cusum",
+            0.58282522
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0
+          ],
+          [
+            "wasserstein-1",
+            0.00270833
+          ],
+          [
+            "mmd-rbf",
+            0.02605712
+          ],
+          [
+            "pagerank",
+            0.56855965
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.69806981
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.5
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11704115
+          ],
+          [
+            "huber",
+            0.56983122
+          ],
+          [
+            "hampel",
+            0.88888889
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.4255684,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01544943,
+      "tail_risk": 0.366675,
+      "uncertainty": 0.01884109,
+      "utility": 0.43413839
+    },
+    {
+      "anomaly": 0.58123888,
+      "bayesian_surprise": 0.62978592,
+      "change_point": 0.18218423,
+      "change_probability": 0.64949745,
+      "content_yield": 0.37883402,
+      "cost": 3,
+      "ecosystem": "kernel",
+      "entropy": 0.0,
+      "exploration": 0.39915611,
+      "full_name": "torvalds/linux",
+      "graph_influence": 0.26133684,
+      "momentum": 0.44230881,
+      "museum": {
+        "bandit_index": 0.69438683,
+        "change_consensus": 0.18291796,
+        "consensus": 0.23824126,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.49150983,
+        "graph_consensus": 0.26133684,
+        "information_gain": 0.01735188,
+        "robust_activity": 0.46462618,
+        "trace": [
+          [
+            "page-hinkley",
+            0.3090323
+          ],
+          [
+            "cusum",
+            0.73893869
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.00125488
+          ],
+          [
+            "wasserstein-1",
+            0.01833333
+          ],
+          [
+            "mmd-rbf",
+            0.04074085
+          ],
+          [
+            "pagerank",
+            0.77773015
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            4e-08
+          ],
+          [
+            "katz",
+            0.83289752
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.5
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10976426
+          ],
+          [
+            "huber",
+            0.46462618
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.42256551,
+      "security_focus": 0.88323953,
+      "structural_novelty": 0.01448888,
+      "tail_risk": 0.3714,
+      "uncertainty": 0.01884109,
+      "utility": 0.43107503
+    },
+    {
+      "anomaly": 0.46330977,
+      "bayesian_surprise": 0.62906687,
+      "change_point": 0.39851075,
+      "change_probability": 0.64991396,
+      "content_yield": 0.72020356,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "entropy": 0.0,
+      "exploration": 0.39814258,
+      "full_name": "astral-sh/uv",
+      "graph_influence": 0.11622197,
+      "momentum": 0.38684398,
+      "museum": {
+        "bandit_index": 0.69338548,
+        "change_consensus": 0.228645,
+        "consensus": 0.23646975,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.49064859,
+        "graph_consensus": 0.11622197,
+        "information_gain": 0.08105089,
+        "robust_activity": 0.48888889,
+        "trace": [
+          [
+            "page-hinkley",
+            0.44161104
+          ],
+          [
+            "cusum",
+            0.96596106
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.04763536
+          ],
+          [
+            "wasserstein-1",
+            0.07729167
+          ],
+          [
+            "mmd-rbf",
+            0.13838907
+          ],
+          [
+            "pagerank",
+            0.33088971
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10660036
+          ],
+          [
+            "huber",
+            0.48888889
+          ],
+          [
+            "hampel",
+            0.77777778
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.41091242,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01407125,
+      "tail_risk": 0.36395,
+      "uncertainty": 0.01854744,
+      "utility": 0.43085002
+    },
+    {
+      "anomaly": 0.57876967,
+      "bayesian_surprise": 0.63083885,
+      "change_point": 0.28069434,
+      "change_probability": 0.64888665,
+      "content_yield": 0.54947283,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.0,
+      "exploration": 0.40355335,
+      "full_name": "cloudflare/cloudflared",
+      "graph_influence": 0.1128234,
+      "momentum": 0.41750653,
+      "museum": {
+        "bandit_index": 0.69921721,
+        "change_consensus": 0.25337088,
+        "consensus": 0.23534249,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.53118944,
+        "graph_consensus": 0.1128234,
+        "information_gain": 0.01091462,
+        "robust_activity": 0.542048,
+        "trace": [
+          [
+            "page-hinkley",
+            0.60010909
+          ],
+          [
+            "cusum",
+            0.96322732
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0
+          ],
+          [
+            "wasserstein-1",
+            0.01520833
+          ],
+          [
+            "mmd-rbf",
+            0.02279306
+          ],
+          [
+            "pagerank",
+            0.30474346
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.125
+          ],
+          [
+            "huber",
+            0.542048
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.41436062,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.0165,
+      "tail_risk": 0.41433333,
+      "uncertainty": 0.01926296,
+      "utility": 0.42612123
+    },
+    {
+      "anomaly": 0.41141286,
+      "bayesian_surprise": 0.62978592,
+      "change_point": 0.14670651,
+      "change_probability": 0.64949745,
+      "content_yield": 0.65518003,
+      "cost": 2,
+      "ecosystem": "linux",
+      "entropy": 0.0,
+      "exploration": 0.3995213,
+      "full_name": "systemd/systemd",
+      "graph_influence": 0.17659068,
+      "momentum": 0.5159877,
+      "museum": {
+        "bandit_index": 0.69481327,
+        "change_consensus": 0.16692081,
+        "consensus": 0.23902395,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.49099176,
+        "graph_consensus": 0.17659068,
+        "information_gain": 0.08420158,
+        "robust_activity": 0.50318835,
+        "trace": [
+          [
+            "page-hinkley",
+            0.26390788
+          ],
+          [
+            "cusum",
+            0.6710995
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.04166667
+          ],
+          [
+            "wasserstein-1",
+            0.04666667
+          ],
+          [
+            "mmd-rbf",
+            0.19381244
+          ],
+          [
+            "pagerank",
+            0.29532495
+          ],
+          [
+            "hits-hub",
+            3e-08
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.5
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11111111
+          ],
+          [
+            "huber",
+            0.50318835
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.41350724,
+      "security_focus": 0.66250795,
+      "structural_novelty": 0.21175932,
+      "tail_risk": 0.374,
+      "uncertainty": 0.01884109,
+      "utility": 0.42524364
+    },
+    {
+      "anomaly": 0.47301655,
+      "bayesian_surprise": 0.62978592,
+      "change_point": 0.13757702,
+      "change_probability": 0.64949745,
+      "content_yield": 0.61623672,
+      "cost": 3,
+      "ecosystem": "cloud",
+      "entropy": 0.0,
+      "exploration": 0.40070362,
+      "full_name": "kubernetes/kubernetes",
+      "graph_influence": 0.11246185,
+      "momentum": 0.49496408,
+      "museum": {
+        "bandit_index": 0.69619417,
+        "change_consensus": 0.10323705,
+        "consensus": 0.21707991,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.50678498,
+        "graph_consensus": 0.11246185,
+        "information_gain": 0.08455519,
+        "robust_activity": 0.48638593,
+        "trace": [
+          [
+            "page-hinkley",
+            0.02343803
+          ],
+          [
+            "cusum",
+            0.5144631
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.06550785
+          ],
+          [
+            "wasserstein-1",
+            0.04291667
+          ],
+          [
+            "mmd-rbf",
+            0.16212134
+          ],
+          [
+            "pagerank",
+            0.30196193
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11547005
+          ],
+          [
+            "huber",
+            0.48638593
+          ],
+          [
+            "hampel",
+            0.55555556
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.41200015,
+      "security_focus": 0.79396302,
+      "structural_novelty": 0.01524205,
+      "tail_risk": 0.3934,
+      "uncertainty": 0.01884109,
+      "utility": 0.4202969
+    },
+    {
+      "anomaly": 0.4556847,
+      "bayesian_surprise": 0.62906687,
+      "change_point": 0.29861735,
+      "change_probability": 0.64991396,
+      "content_yield": 0.7026099,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "entropy": 0.0,
+      "exploration": 0.39830725,
+      "full_name": "pnpm/pnpm",
+      "graph_influence": 0.11324695,
+      "momentum": 0.47119319,
+      "museum": {
+        "bandit_index": 0.69357878,
+        "change_consensus": 0.16499244,
+        "consensus": 0.21633038,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.50735923,
+        "graph_consensus": 0.11324695,
+        "information_gain": 0.02835023,
+        "robust_activity": 0.47777778,
+        "trace": [
+          [
+            "page-hinkley",
+            0.276369
+          ],
+          [
+            "cusum",
+            0.6394952
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0
+          ],
+          [
+            "wasserstein-1",
+            0.014375
+          ],
+          [
+            "mmd-rbf",
+            0.08691621
+          ],
+          [
+            "pagerank",
+            0.30800199
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10721125
+          ],
+          [
+            "huber",
+            0.47777778
+          ],
+          [
+            "hampel",
+            0.55555556
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.4004906,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01415189,
+      "tail_risk": 0.33999167,
+      "uncertainty": 0.01854744,
+      "utility": 0.41992253
+    },
+    {
+      "anomaly": 0.44397678,
+      "bayesian_surprise": 0.62992551,
+      "change_point": 0.23633918,
+      "change_probability": 0.64941653,
+      "content_yield": 0.65318958,
+      "cost": 3,
+      "ecosystem": "ai",
+      "entropy": 0.0,
+      "exploration": 0.40231129,
+      "full_name": "tensorflow/tensorflow",
+      "graph_influence": 0.11377694,
+      "momentum": 0.48727134,
+      "museum": {
+        "bandit_index": 0.69803265,
+        "change_consensus": 0.13609498,
+        "consensus": 0.23078383,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.5362749,
+        "graph_consensus": 0.11377694,
+        "information_gain": 0.06772913,
+        "robust_activity": 0.57361507,
+        "trace": [
+          [
+            "page-hinkley",
+            0.01747707
+          ],
+          [
+            "cusum",
+            0.75420318
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.04297387
+          ],
+          [
+            "wasserstein-1",
+            0.028125
+          ],
+          [
+            "mmd-rbf",
+            0.15091246
+          ],
+          [
+            "pagerank",
+            0.31207936
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.12126781
+          ],
+          [
+            "huber",
+            0.57361507
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.41074764,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.01600735,
+      "tail_risk": 0.3454,
+      "uncertainty": 0.01889757,
+      "utility": 0.41901917
+    },
+    {
+      "anomaly": 0.80914413,
+      "bayesian_surprise": 0.74472044,
+      "change_point": 0.14857036,
+      "change_probability": 0.57525341,
+      "content_yield": 0.48626503,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.54356444,
+      "exploration": 0.41071353,
+      "full_name": "WireGuard/wireguard-go",
+      "graph_influence": 0.10827129,
+      "momentum": 0.4833046,
+      "museum": {
+        "bandit_index": 0.68686325,
+        "change_consensus": 0.08143492,
+        "consensus": 0.18344428,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.47358797,
+        "graph_consensus": 0.10827129,
+        "information_gain": 0.04732871,
+        "robust_activity": 0.3179132,
+        "trace": [
+          [
+            "page-hinkley",
+            0.09419691
+          ],
+          [
+            "cusum",
+            0.29548806
+          ],
+          [
+            "bocpd-beta",
+            0.0457993
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0
+          ],
+          [
+            "wasserstein-1",
+            0.019375
+          ],
+          [
+            "mmd-rbf",
+            0.15139997
+          ],
+          [
+            "pagerank",
+            0.26972263
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.98633083
+          ],
+          [
+            "bayes-ucb",
+            0.97298321
+          ],
+          [
+            "information-deficit",
+            0.11470787
+          ],
+          [
+            "huber",
+            0.3179132
+          ],
+          [
+            "hampel",
+            0.88888889
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "security-focus",
+        "uncertainty-exploration",
+        "anomalous",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.40607446,
+      "security_focus": 0.88323957,
+      "structural_novelty": 0.01514144,
+      "tail_risk": 0.26353333,
+      "uncertainty": 0.04563533,
+      "utility": 0.41759989
+    },
+    {
+      "anomaly": 0.40673203,
+      "bayesian_surprise": 0.63121581,
+      "change_point": 0.22387217,
+      "change_probability": 0.64866773,
+      "content_yield": 0.73212603,
+      "cost": 1,
+      "ecosystem": "security",
+      "entropy": 0.0,
+      "exploration": 0.39860143,
+      "full_name": "google/osv-scanner",
+      "graph_influence": 0.11056099,
+      "momentum": 0.54328232,
+      "museum": {
+        "bandit_index": 0.69338548,
+        "change_consensus": 0.21703355,
+        "consensus": 0.22418177,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.50288248,
+        "graph_consensus": 0.11056099,
+        "information_gain": 0.03095682,
+        "robust_activity": 0.47777778,
+        "trace": [
+          [
+            "page-hinkley",
+            0.38175505
+          ],
+          [
+            "cusum",
+            0.94349917
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.02171785
+          ],
+          [
+            "wasserstein-1",
+            0.02791667
+          ],
+          [
+            "mmd-rbf",
+            0.0484281
+          ],
+          [
+            "pagerank",
+            0.287338
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10660036
+          ],
+          [
+            "huber",
+            0.47777778
+          ],
+          [
+            "hampel",
+            0.55555556
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.39387244,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01407125,
+      "tail_risk": 0.4585,
+      "uncertainty": 0.01941174,
+      "utility": 0.41298324
+    },
+    {
+      "anomaly": 0.39764397,
+      "bayesian_surprise": 0.62906687,
+      "change_point": 0.39592495,
+      "change_probability": 0.64991396,
+      "content_yield": 0.62083244,
+      "cost": 1,
+      "ecosystem": "developer-tools",
+      "entropy": 0.0,
+      "exploration": 0.39881888,
+      "full_name": "vitejs/vite",
+      "graph_influence": 0.11248056,
+      "momentum": 0.443975,
+      "museum": {
+        "bandit_index": 0.69417937,
+        "change_consensus": 0.26540297,
+        "consensus": 0.23950203,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.49107347,
+        "graph_consensus": 0.11248056,
+        "information_gain": 0.07360632,
+        "robust_activity": 0.48333333,
+        "trace": [
+          [
+            "page-hinkley",
+            0.67930564
+          ],
+          [
+            "cusum",
+            0.95783859
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.04700928
+          ],
+          [
+            "wasserstein-1",
+            0.07270833
+          ],
+          [
+            "mmd-rbf",
+            0.11668037
+          ],
+          [
+            "pagerank",
+            0.30210588
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10910895
+          ],
+          [
+            "huber",
+            0.48333333
+          ],
+          [
+            "hampel",
+            0.66666667
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.39146728,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01440238,
+      "tail_risk": 0.35724167,
+      "uncertainty": 0.01854744,
+      "utility": 0.41046139
+    },
+    {
+      "anomaly": 0.52253908,
+      "bayesian_surprise": 0.63001982,
+      "change_point": 0.26933592,
+      "change_probability": 0.64936185,
+      "content_yield": 0.40195929,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "entropy": 0.0,
+      "exploration": 0.39851452,
+      "full_name": "modelcontextprotocol/python-sdk",
+      "graph_influence": 0.10966685,
+      "momentum": 0.44215996,
+      "museum": {
+        "bandit_index": 0.69357878,
+        "change_consensus": 0.15936163,
+        "consensus": 0.21053137,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.50200008,
+        "graph_consensus": 0.10966685,
+        "information_gain": 0.0233079,
+        "robust_activity": 0.45030943,
+        "trace": [
+          [
+            "page-hinkley",
+            0.18265991
+          ],
+          [
+            "cusum",
+            0.7199396
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0033755
+          ],
+          [
+            "wasserstein-1",
+            0.019375
+          ],
+          [
+            "mmd-rbf",
+            0.05796927
+          ],
+          [
+            "pagerank",
+            0.28045914
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.10721125
+          ],
+          [
+            "huber",
+            0.45030943
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "security-focus",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.39135621,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.01415189,
+      "tail_risk": 0.25531667,
+      "uncertainty": 0.01893563,
+      "utility": 0.41034493
+    },
+    {
+      "anomaly": 0.70046048,
+      "bayesian_surprise": 0.90012898,
+      "change_point": 0.36895953,
+      "change_probability": 0.4265542,
+      "content_yield": 0.83451665,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.73550858,
+      "exploration": 0.45589414,
+      "full_name": "haproxy/haproxy",
+      "graph_influence": 0.1091537,
+      "momentum": 0.51685854,
+      "museum": {
+        "bandit_index": 0.70513043,
+        "change_consensus": 0.28850735,
+        "consensus": 0.26412186,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.45192143,
+        "graph_consensus": 0.1091537,
+        "information_gain": 0.25687935,
+        "robust_activity": 0.41785254,
+        "trace": [
+          [
+            "page-hinkley",
+            0.76940437
+          ],
+          [
+            "cusum",
+            0.96943385
+          ],
+          [
+            "bocpd-beta",
+            0.04559335
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.04916667
+          ],
+          [
+            "jsd",
+            0.2101616
+          ],
+          [
+            "wasserstein-1",
+            0.18792857
+          ],
+          [
+            "mmd-rbf",
+            0.42805156
+          ],
+          [
+            "pagerank",
+            0.27651128
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.9903891
+          ],
+          [
+            "bayes-ucb",
+            0.95431677
+          ],
+          [
+            "information-deficit",
+            0.18257419
+          ],
+          [
+            "huber",
+            0.41785254
+          ],
+          [
+            "hampel",
+            0.77777778
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "anomalous",
+        "high-surprise"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.3967585,
+      "security_focus": 0.33749202,
+      "structural_novelty": 0.02409979,
+      "tail_risk": 0.3724125,
+      "uncertainty": 0.06711076,
+      "utility": 0.40801952
+    },
+    {
+      "anomaly": 0.68724991,
+      "bayesian_surprise": 0.65073434,
+      "change_point": 0.22308757,
+      "change_probability": 0.63714432,
+      "content_yield": 0.55288268,
+      "cost": 2,
+      "ecosystem": "ai",
+      "entropy": 0.14609425,
+      "exploration": 0.403821,
+      "full_name": "jax-ml/jax",
+      "graph_influence": 0.1077318,
+      "momentum": 0.4794344,
+      "museum": {
+        "bandit_index": 0.695131,
+        "change_consensus": 0.1907279,
+        "consensus": 0.21353635,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.46932157,
+        "graph_consensus": 0.1077318,
+        "information_gain": 0.0746509,
+        "robust_activity": 0.37560757,
+        "trace": [
+          [
+            "page-hinkley",
+            0.30383819
+          ],
+          [
+            "cusum",
+            0.81236374
+          ],
+          [
+            "bocpd-beta",
+            0.04496056
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.08469999
+          ],
+          [
+            "wasserstein-1",
+            0.04854167
+          ],
+          [
+            "mmd-rbf",
+            0.08884721
+          ],
+          [
+            "pagerank",
+            0.26557221
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99997063
+          ],
+          [
+            "bayes-ucb",
+            0.99946317
+          ],
+          [
+            "information-deficit",
+            0.11250879
+          ],
+          [
+            "huber",
+            0.37560757
+          ],
+          [
+            "hampel",
+            0.77777778
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "uncertainty-exploration",
+        "likely-change",
+        "anomalous",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.39409234,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01485116,
+      "tail_risk": 0.319675,
+      "uncertainty": 0.02596317,
+      "utility": 0.40527769
+    },
+    {
+      "anomaly": 0.80321484,
+      "bayesian_surprise": 0.77727952,
+      "change_point": 0.37806031,
+      "change_probability": 0.55049008,
+      "content_yield": 0.52118284,
+      "cost": 1,
+      "ecosystem": "security",
+      "entropy": 0.65002242,
+      "exploration": 0.40708848,
+      "full_name": "ossf/scorecard",
+      "graph_influence": 0.10725327,
+      "momentum": 0.52190382,
+      "museum": {
+        "bandit_index": 0.67757948,
+        "change_consensus": 0.22636423,
+        "consensus": 0.19177962,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.44776644,
+        "graph_consensus": 0.10725327,
+        "information_gain": 0.04613953,
+        "robust_activity": 0.2318862,
+        "trace": [
+          [
+            "page-hinkley",
+            0.47300717
+          ],
+          [
+            "cusum",
+            0.88260958
+          ],
+          [
+            "bocpd-beta",
+            0.04893126
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.02171785
+          ],
+          [
+            "wasserstein-1",
+            0.04270833
+          ],
+          [
+            "mmd-rbf",
+            0.08776477
+          ],
+          [
+            "pagerank",
+            0.26189074
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.97033036
+          ],
+          [
+            "bayes-ucb",
+            0.95439234
+          ],
+          [
+            "information-deficit",
+            0.10976426
+          ],
+          [
+            "huber",
+            0.2318862
+          ],
+          [
+            "hampel",
+            0.88888889
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "uncertainty-exploration",
+        "anomalous",
+        "high-surprise"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.38496937,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01448888,
+      "tail_risk": 0.44910833,
+      "uncertainty": 0.05056977,
+      "utility": 0.4036482
+    },
+    {
+      "anomaly": 0.39539404,
+      "bayesian_surprise": 0.63121581,
+      "change_point": 0.34127611,
+      "change_probability": 0.64866773,
+      "content_yield": 0.64709663,
+      "cost": 2,
+      "ecosystem": "security",
+      "entropy": 0.0,
+      "exploration": 0.40146253,
+      "full_name": "aquasecurity/trivy",
+      "graph_influence": 0.11193533,
+      "momentum": 0.51893272,
+      "museum": {
+        "bandit_index": 0.69669217,
+        "change_consensus": 0.22455309,
+        "consensus": 0.23200033,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.49372627,
+        "graph_consensus": 0.11193533,
+        "information_gain": 0.06816018,
+        "robust_activity": 0.47777778,
+        "trace": [
+          [
+            "page-hinkley",
+            0.41107448
+          ],
+          [
+            "cusum",
+            0.97354341
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.03724704
+          ],
+          [
+            "wasserstein-1",
+            0.06520833
+          ],
+          [
+            "mmd-rbf",
+            0.12013828
+          ],
+          [
+            "pagerank",
+            0.29791128
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11704115
+          ],
+          [
+            "huber",
+            0.47777778
+          ],
+          [
+            "hampel",
+            0.55555556
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.39176656,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01544943,
+      "tail_risk": 0.46865833,
+      "uncertainty": 0.01941174,
+      "utility": 0.4028859
+    },
+    {
+      "anomaly": 0.39134105,
+      "bayesian_surprise": 0.62908844,
+      "change_point": 0.31286662,
+      "change_probability": 0.64990148,
+      "content_yield": 0.73224621,
+      "cost": 2,
+      "ecosystem": "ai-runtime",
+      "entropy": 0.0,
+      "exploration": 0.39936371,
+      "full_name": "ggml-org/llama.cpp",
+      "graph_influence": 0.11219365,
+      "momentum": 0.4832366,
+      "museum": {
+        "bandit_index": 0.69481327,
+        "change_consensus": 0.15634664,
+        "consensus": 0.22434523,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.50343432,
+        "graph_consensus": 0.11219365,
+        "information_gain": 0.0718188,
+        "robust_activity": 0.49588826,
+        "trace": [
+          [
+            "page-hinkley",
+            0.25232574
+          ],
+          [
+            "cusum",
+            0.60534764
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.02116732
+          ],
+          [
+            "wasserstein-1",
+            0.01979167
+          ],
+          [
+            "mmd-rbf",
+            0.209515
+          ],
+          [
+            "pagerank",
+            0.29989862
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11111111
+          ],
+          [
+            "huber",
+            0.49588826
+          ],
+          [
+            "hampel",
+            0.77777778
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.3882022,
+      "security_focus": 0.33749232,
+      "structural_novelty": 0.01466667,
+      "tail_risk": 0.350725,
+      "uncertainty": 0.01855631,
+      "utility": 0.39922037
+    },
+    {
+      "anomaly": 0.71964704,
+      "bayesian_surprise": 0.51765991,
+      "change_point": 0.4494211,
+      "change_probability": 0.58800082,
+      "content_yield": 0.68886698,
+      "cost": 1,
+      "ecosystem": "ai-agents",
+      "entropy": 0.48206615,
+      "exploration": 0.40796467,
+      "full_name": "anthropics/anthropic-sdk-python",
+      "graph_influence": 0.11109407,
+      "momentum": 0.39057551,
+      "museum": {
+        "bandit_index": 0.68737465,
+        "change_consensus": 0.26912598,
+        "consensus": 0.21864562,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.4642736,
+        "graph_consensus": 0.11109407,
+        "information_gain": 0.05306429,
+        "robust_activity": 0.35572141,
+        "trace": [
+          [
+            "page-hinkley",
+            0.68334758
+          ],
+          [
+            "cusum",
+            0.98468619
+          ],
+          [
+            "bocpd-beta",
+            0.04971337
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.024491
+          ],
+          [
+            "wasserstein-1",
+            0.06520833
+          ],
+          [
+            "mmd-rbf",
+            0.08428234
+          ],
+          [
+            "pagerank",
+            0.29143915
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.98949952
+          ],
+          [
+            "bayes-ucb",
+            0.98092648
+          ],
+          [
+            "information-deficit",
+            0.10846523
+          ],
+          [
+            "huber",
+            0.35572141
+          ],
+          [
+            "hampel",
+            0.77777778
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "security-focus",
+        "uncertainty-exploration",
+        "anomalous",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.38036146,
+      "security_focus": 0.66250798,
+      "structural_novelty": 0.01431741,
+      "tail_risk": 0.39868333,
+      "uncertainty": 0.0426429,
+      "utility": 0.39881672
+    },
+    {
+      "anomaly": 0.41454548,
+      "bayesian_surprise": 0.62908844,
+      "change_point": 0.12804632,
+      "change_probability": 0.64990148,
+      "content_yield": 0.72228805,
+      "cost": 2,
+      "ecosystem": "language",
+      "entropy": 0.0,
+      "exploration": 0.39936371,
+      "full_name": "python/cpython",
+      "graph_influence": 0.10953295,
+      "momentum": 0.50880904,
+      "museum": {
+        "bandit_index": 0.69481327,
+        "change_consensus": 0.08784231,
+        "consensus": 0.20870496,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.51702888,
+        "graph_consensus": 0.10953295,
+        "information_gain": 0.05109861,
+        "robust_activity": 0.48634073,
+        "trace": [
+          [
+            "page-hinkley",
+            0.01389891
+          ],
+          [
+            "cusum",
+            0.42664488
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0211531
+          ],
+          [
+            "wasserstein-1",
+            0.01270833
+          ],
+          [
+            "mmd-rbf",
+            0.13997968
+          ],
+          [
+            "pagerank",
+            0.27942903
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11111111
+          ],
+          [
+            "huber",
+            0.48634073
+          ],
+          [
+            "hampel",
+            0.88888889
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.38653247,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01466667,
+      "tail_risk": 0.3454,
+      "uncertainty": 0.01855631,
+      "utility": 0.39750325
+    },
+    {
+      "anomaly": 0.4300841,
+      "bayesian_surprise": 0.62908844,
+      "change_point": 0.18255624,
+      "change_probability": 0.64990148,
+      "content_yield": 0.67085801,
+      "cost": 2,
+      "ecosystem": "language",
+      "entropy": 0.0,
+      "exploration": 0.39936371,
+      "full_name": "golang/go",
+      "graph_influence": 0.10746884,
+      "momentum": 0.50677674,
+      "museum": {
+        "bandit_index": 0.69481327,
+        "change_consensus": 0.20074824,
+        "consensus": 0.23412212,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.48163656,
+        "graph_consensus": 0.10746884,
+        "information_gain": 0.11584162,
+        "robust_activity": 0.4694605,
+        "trace": [
+          [
+            "page-hinkley",
+            0.33516969
+          ],
+          [
+            "cusum",
+            0.85793918
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.07222852
+          ],
+          [
+            "wasserstein-1",
+            0.07020833
+          ],
+          [
+            "mmd-rbf",
+            0.23869125
+          ],
+          [
+            "pagerank",
+            0.26354919
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11111111
+          ],
+          [
+            "huber",
+            0.4694605
+          ],
+          [
+            "hampel",
+            0.88888889
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "high-content-yield",
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.3803745,
+      "security_focus": 0.5,
+      "structural_novelty": 0.01466667,
+      "tail_risk": 0.3454,
+      "uncertainty": 0.01855631,
+      "utility": 0.3911705
+    },
+    {
+      "anomaly": 0.47088025,
+      "bayesian_surprise": 0.63083885,
+      "change_point": 0.31556381,
+      "change_probability": 0.64888665,
+      "content_yield": 0.55824218,
+      "cost": 2,
+      "ecosystem": "network",
+      "entropy": 0.0,
+      "exploration": 0.40205458,
+      "full_name": "SagerNet/sing-box",
+      "graph_influence": 0.10835236,
+      "momentum": 0.42086735,
+      "museum": {
+        "bandit_index": 0.69747911,
+        "change_consensus": 0.22358924,
+        "consensus": 0.22484119,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.47041171,
+        "graph_consensus": 0.10835236,
+        "information_gain": 0.08998903,
+        "robust_activity": 0.40132673,
+        "trace": [
+          [
+            "page-hinkley",
+            0.46178908
+          ],
+          [
+            "cusum",
+            0.88062673
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0538716
+          ],
+          [
+            "wasserstein-1",
+            0.0625
+          ],
+          [
+            "mmd-rbf",
+            0.17849708
+          ],
+          [
+            "pagerank",
+            0.27034637
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11952286
+          ],
+          [
+            "huber",
+            0.40132673
+          ],
+          [
+            "hampel",
+            0.77777778
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.37416348,
+      "security_focus": 0.33749202,
+      "structural_novelty": 0.01577702,
+      "tail_risk": 0.34260833,
+      "uncertainty": 0.01926296,
+      "utility": 0.38478319
+    },
+    {
+      "anomaly": 0.44173749,
+      "bayesian_surprise": 0.62927341,
+      "change_point": 0.11391538,
+      "change_probability": 0.64979437,
+      "content_yield": 0.39230765,
+      "cost": 2,
+      "ecosystem": "runtime",
+      "entropy": 0.0,
+      "exploration": 0.39940574,
+      "full_name": "denoland/deno",
+      "graph_influence": 0.10225065,
+      "momentum": 0.48726358,
+      "museum": {
+        "bandit_index": 0.69481327,
+        "change_consensus": 0.13567736,
+        "consensus": 0.20495273,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.50299179,
+        "graph_consensus": 0.10225065,
+        "information_gain": 0.02629464,
+        "robust_activity": 0.43951021,
+        "trace": [
+          [
+            "page-hinkley",
+            0.19586922
+          ],
+          [
+            "cusum",
+            0.5273972
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0211531
+          ],
+          [
+            "wasserstein-1",
+            0.01479167
+          ],
+          [
+            "mmd-rbf",
+            0.04669243
+          ],
+          [
+            "pagerank",
+            0.22340401
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11111111
+          ],
+          [
+            "huber",
+            0.43951021
+          ],
+          [
+            "hampel",
+            0.88888889
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.35474543,
+      "security_focus": 0.44402801,
+      "structural_novelty": 0.01466667,
+      "tail_risk": 0.23174167,
+      "uncertainty": 0.01863226,
+      "utility": 0.36481401
+    },
+    {
+      "anomaly": 0.51153641,
+      "bayesian_surprise": 0.63001982,
+      "change_point": 0.08793204,
+      "change_probability": 0.64936185,
+      "content_yield": 0.3400366,
+      "cost": 2,
+      "ecosystem": "ai-agents",
+      "entropy": 0.0,
+      "exploration": 0.40118502,
+      "full_name": "microsoft/autogen",
+      "graph_influence": 0.10050542,
+      "momentum": 0.50459736,
+      "museum": {
+        "bandit_index": 0.69669217,
+        "change_consensus": 0.11097648,
+        "consensus": 0.20475094,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.50642352,
+        "graph_consensus": 0.10050542,
+        "information_gain": 0.04185732,
+        "robust_activity": 0.44844768,
+        "trace": [
+          [
+            "page-hinkley",
+            0.14240644
+          ],
+          [
+            "cusum",
+            0.42564063
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.0211531
+          ],
+          [
+            "wasserstein-1",
+            0.02229167
+          ],
+          [
+            "mmd-rbf",
+            0.0952174
+          ],
+          [
+            "pagerank",
+            0.20997737
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.11704115
+          ],
+          [
+            "huber",
+            0.44844768
+          ],
+          [
+            "hampel",
+            1.0
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.35165093,
+      "security_focus": 0.33749202,
+      "structural_novelty": 0.01544943,
+      "tail_risk": 0.200075,
+      "uncertainty": 0.01893563,
+      "utility": 0.36163169
+    },
+    {
+      "anomaly": 0.68117335,
+      "bayesian_surprise": 0.62906687,
+      "change_point": 0.35871378,
+      "change_probability": 0.64991396,
+      "content_yield": 0.60179808,
+      "cost": 2,
+      "ecosystem": "developer-tools",
+      "entropy": 0.0,
+      "exploration": 0.40451027,
+      "full_name": "neovim/neovim",
+      "graph_influence": 0.10434755,
+      "momentum": 0.42957045,
+      "museum": {
+        "bandit_index": 0.70086549,
+        "change_consensus": 0.19554586,
+        "consensus": 0.2206917,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.46978516,
+        "graph_consensus": 0.10434755,
+        "information_gain": 0.10254249,
+        "robust_activity": 0.38911658,
+        "trace": [
+          [
+            "page-hinkley",
+            0.35239106
+          ],
+          [
+            "cusum",
+            0.78540441
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.05575842
+          ],
+          [
+            "wasserstein-1",
+            0.06333333
+          ],
+          [
+            "mmd-rbf",
+            0.22219167
+          ],
+          [
+            "pagerank",
+            0.23953611
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.13018891
+          ],
+          [
+            "huber",
+            0.38911658
+          ],
+          [
+            "hampel",
+            0.77777778
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "uncertainty-exploration",
+        "likely-change",
+        "anomalous",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.35142309,
+      "security_focus": 0.01798621,
+      "structural_novelty": 0.01718494,
+      "tail_risk": 0.31273333,
+      "uncertainty": 0.01854744,
+      "utility": 0.36139738
+    },
+    {
+      "anomaly": 0.59932997,
+      "bayesian_surprise": 0.62908844,
+      "change_point": 0.2672393,
+      "change_probability": 0.64990148,
+      "content_yield": 0.18702338,
+      "cost": 2,
+      "ecosystem": "ai-runtime",
+      "entropy": 0.0,
+      "exploration": 0.39993473,
+      "full_name": "ollama/ollama",
+      "graph_influence": 0.0992577,
+      "momentum": 0.45040641,
+      "museum": {
+        "bandit_index": 0.69548366,
+        "change_consensus": 0.20863718,
+        "consensus": 0.21794759,
+        "dependency_novelty": 0.0,
+        "disagreement": 0.46339576,
+        "graph_consensus": 0.0992577,
+        "information_gain": 0.0991796,
+        "robust_activity": 0.36876002,
+        "trace": [
+          [
+            "page-hinkley",
+            0.31773241
+          ],
+          [
+            "cusum",
+            0.96095342
+          ],
+          [
+            "bocpd-beta",
+            0.04416326
+          ],
+          [
+            "adwin",
+            0.0
+          ],
+          [
+            "theil-sen",
+            0.0
+          ],
+          [
+            "jsd",
+            0.08170217
+          ],
+          [
+            "wasserstein-1",
+            0.08291667
+          ],
+          [
+            "mmd-rbf",
+            0.1455554
+          ],
+          [
+            "pagerank",
+            0.20037827
+          ],
+          [
+            "hits-hub",
+            0.0
+          ],
+          [
+            "hits-authority",
+            0.0
+          ],
+          [
+            "katz",
+            0.5632421
+          ],
+          [
+            "brandes",
+            0.0
+          ],
+          [
+            "k-core",
+            0.0
+          ],
+          [
+            "tarjan-cycle",
+            0.0
+          ],
+          [
+            "ucb-v",
+            1.0
+          ],
+          [
+            "kl-ucb",
+            0.99999992
+          ],
+          [
+            "bayes-ucb",
+            0.99999318
+          ],
+          [
+            "information-deficit",
+            0.1132277
+          ],
+          [
+            "huber",
+            0.36876002
+          ],
+          [
+            "hampel",
+            0.88888889
+          ],
+          [
+            "minhash",
+            0.0
+          ]
+        ]
+      },
+      "reasons": [
+        "uncertainty-exploration",
+        "likely-change",
+        "high-surprise",
+        "algorithm-disagreement"
+      ],
+      "reliability": 1.0,
+      "risk_adjusted_utility": 0.3362052,
+      "security_focus": 0.33749232,
+      "structural_novelty": 0.01494606,
+      "tail_risk": 0.363375,
+      "uncertainty": 0.01855631,
+      "utility": 0.34574756
+    }
+  ],
+  "selected": [
+    "vllm-project/vllm",
+    "openai/openai-agents-python",
+    "rust-lang/rust",
+    "tailscale/tailscale",
+    "openai/openai-python",
+    "pytorch/pytorch",
+    "huggingface/transformers",
+    "nodejs/node",
+    "curl/curl",
+    "openssl/openssl",
+    "astral-sh/ruff",
+    "huggingface/diffusers",
+    "llvm/llvm-project",
+    "torvalds/linux",
+    "astral-sh/uv",
+    "cloudflare/cloudflared",
+    "systemd/systemd",
+    "kubernetes/kubernetes",
+    "pnpm/pnpm",
+    "tensorflow/tensorflow",
+    "WireGuard/wireguard-go",
+    "google/osv-scanner",
+    "vitejs/vite",
+    "modelcontextprotocol/python-sdk",
+    "haproxy/haproxy",
+    "jax-ml/jax",
+    "ossf/scorecard",
+    "aquasecurity/trivy",
+    "ggml-org/llama.cpp",
+    "anthropics/anthropic-sdk-python",
+    "python/cpython",
+    "golang/go",
+    "SagerNet/sing-box",
+    "denoland/deno",
+    "microsoft/autogen",
+    "neovim/neovim",
+    "ollama/ollama"
+  ],
+  "unchanged": []
+}
