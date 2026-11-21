@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **856000**
-- latest census cursor: **2551123**
+- total census repositories scanned: **864000**
+- latest census cursor: **2574655**
 - retained candidates: **200**
 - governed fork queue: **42**
 
@@ -26,8 +26,8 @@
 - **ZxAlif-ID/Flavenz-Kernel-Peridot** — score=0.897, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **SampleBlazkness/AdbHide-Kernel** — score=0.890, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **leemikepop/avd-kernelsu-x86_64** — score=0.888, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernelsu, keyword:susfs
+- **Najip/KernelSU_SUSFS_Samsung_SM-A325X** — score=0.884, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Raffxzr/DarkniusX** — score=0.883, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
-- **zacxyonly/zerobyte-kernel** — score=0.882, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 
 ### data-engineering
 
@@ -82,8 +82,8 @@
 - **keminar/anyproxy** — score=0.903, stars=33; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **hedioum/Hedioum-Pool-Tunnel** — score=0.897, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:vpn
 - **tokyoxpa3/5G-Proxy-Client** — score=0.894, stars=17; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
-- **v2macapp/noleaker** — score=0.880, stars=23; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
-- **SnishaperTeam/Snishaper-Droid** — score=0.868, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
+- **v2macapp/noleaker** — score=0.886, stars=40; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
+- **SnishaperTeam/Snishaper-Droid** — score=0.870, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
 
 ### security-sandbox
 
@@ -91,10 +91,10 @@
 - **getkern/kern** — score=0.875, stars=491; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:rootless
 - **Erio-Harrison/nanosandbox** — score=0.863, stars=8; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **exein-io/analyzer-scan** — score=0.848, stars=5; category:security-sandbox, keyword:security, keyword:container, keyword:vulnerability, keyword:sbom
+- **Steck43/isolation-layer** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **cokovali10-sketch/AegisRuntime** — score=0.829, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **whiskeyjimbo/bento** — score=0.820, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **Steck43/isolation-layer** — score=0.819, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **jkelly-dev1/agent-sandbox-escape** — score=0.799, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **souk4711/hakoniwa** — score=0.805, stars=96; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 
