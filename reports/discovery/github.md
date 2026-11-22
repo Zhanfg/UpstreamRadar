@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **896000**
-- latest census cursor: **2665935**
+- total census repositories scanned: **904000**
+- latest census cursor: **2687480**
 - retained candidates: **200**
-- governed fork queue: **43**
+- governed fork queue: **44**
 
 ## Top directions
 
@@ -32,8 +32,6 @@
 ### data-engineering
 
 - **apache/flink-cdc** — score=0.816, stars=6495; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
-- **faucet-hq/faucet-stream** — score=0.788, stars=23; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
-- **authorjapps/zerocode** — score=0.786, stars=1017; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, recently-active
 
 ### databases-storage
 
@@ -69,12 +67,11 @@
 - **dkhamsing/open-source-ios-apps** — score=0.818, stars=53343; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **NativeScript/SimDeck** — score=0.804, stars=161; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **Nikolai-Iakubovskii/app-paywall-pilot** — score=0.795, stars=40; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
-- **erkamyaman/unslopovich** — score=0.787, stars=231; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, recently-active
 
 ### networking
 
 - **HyNetworks/hysteria** — score=0.933, stars=22960; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:vpn
-- **yuhaiin/yuhaiin** — score=0.924, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
+- **yuhaiin/yuhaiin** — score=0.925, stars=170; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
 - **MiChongs/WutherCore** — score=0.905, stars=56; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:wireguard
 - **keminar/anyproxy** — score=0.903, stars=33; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **hedioum/Hedioum-Pool-Tunnel** — score=0.897, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:vpn
@@ -98,7 +95,7 @@
 - **ahmed-alnassif/GKID-Kernels** → android-kernel (score=0.945, license=GPL-3.0)
 - **HyNetworks/hysteria** → networking (score=0.933, license=MIT)
 - **DemonDamon/AgenticX** → ai-agents (score=0.933, license=Apache-2.0)
-- **yuhaiin/yuhaiin** → networking (score=0.924, license=MIT)
+- **yuhaiin/yuhaiin** → networking (score=0.925, license=MIT)
 - **wulawulu/learn-claude-code-rs** → ai-agents (score=0.924, license=MIT)
 - **context-labs/whip** → ai-agents (score=0.919, license=Apache-2.0)
 - **EvannZhongg/Nosis** → ai-agents (score=0.918, license=MIT)

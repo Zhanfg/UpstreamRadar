@@ -79,7 +79,7 @@
     "full_name": "yuhaiin/yuhaiin",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-19T10:03:38Z",
+    "pushed_at": "2026-11-22T21:07:00Z",
     "reasons": [
       "category:networking",
       "keyword:proxy",
@@ -90,7 +90,7 @@
       "recently-active",
       "license:MIT"
     ],
-    "score": 0.92415551,
+    "score": 0.92482498,
     "source_id": "154452483",
     "stars": 170,
     "url": "https://github.com/yuhaiin/yuhaiin"
@@ -559,7 +559,7 @@
     "full_name": "footprintjs/agentfootprint",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-04T19:44:29Z",
+    "pushed_at": "2026-11-22T23:36:02Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -567,12 +567,12 @@
       "keyword:tool-use",
       "keyword:orchestration",
       "keyword:llm",
-      "recently-active",
-      "license:MIT"
+      "keyword:rag",
+      "recently-active"
     ],
-    "score": 0.89317333,
+    "score": 0.89360406,
     "source_id": "1183666171",
-    "stars": 21,
+    "stars": 22,
     "url": "https://github.com/footprintjs/agentfootprint"
   },
   {
@@ -818,6 +818,30 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
+    "description": "Free, self-hosted AI coding assistant for VS Code — local Ollama models, Anthropic Claude, or any OpenAI-compatible server. Full agent loop with tool use, inline completions, and MCP support.",
+    "forks": 2,
+    "full_name": "nedonatelli/sidecar",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-22T18:28:07Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.88485177,
+    "source_id": "1200767773",
+    "stars": 9,
+    "url": "https://github.com/nedonatelli/sidecar"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
     "description": "Read-only-by-default MCP server for PostgreSQL. Query, introspect schemas, explain plans, health checks.",
     "forks": 3,
     "full_name": "YawLabs/postgres-mcp",
@@ -842,26 +866,26 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
-    "description": "Free, self-hosted AI coding assistant for VS Code — local Ollama models, Anthropic Claude, or any OpenAI-compatible server. Full agent loop with tool use, inline completions, and MCP support.",
-    "forks": 2,
-    "full_name": "nedonatelli/sidecar",
+    "description": "A complete coding agent you can build with: an embeddable TypeScript harness for purpose-specific coding agents.",
+    "forks": 0,
+    "full_name": "Vist233/Sakura",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-08T17:59:05Z",
+    "pushed_at": "2026-11-22T13:25:53Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
       "keyword:mcp",
       "keyword:tool-use",
+      "keyword:coding-agent",
       "keyword:llm",
       "recently-active",
-      "license:MIT",
-      "emerging"
+      "license:MIT"
     ],
-    "score": 0.88391632,
-    "source_id": "1200767773",
-    "stars": 8,
-    "url": "https://github.com/nedonatelli/sidecar"
+    "score": 0.88424663,
+    "source_id": "1114412567",
+    "stars": 23,
+    "url": "https://github.com/Vist233/Sakura"
   },
   {
     "auto_fork_eligible": false,
@@ -943,7 +967,7 @@
     "full_name": "YahyaHammad/Venastine-Research-Harness",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-11-18T10:20:25Z",
+    "pushed_at": "2026-11-22T21:48:32Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -954,7 +978,7 @@
       "recently-active",
       "license:Apache-2.0"
     ],
-    "score": 0.88046321,
+    "score": 0.88063655,
     "source_id": "1295369149",
     "stars": 7,
     "url": "https://github.com/YahyaHammad/Venastine-Research-Harness"
@@ -1366,6 +1390,28 @@
     "url": "https://github.com/laazizi/autoagent"
   },
   {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
+    "description": "Local-first Python runtime for tool-using AI agents, with CLI, API, memory, MCP, A2A, and inspectable execution surfaces.",
+    "forks": 49,
+    "full_name": "openminion/openminion",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-22T13:12:44Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.87267798,
+    "source_id": "1277944593",
+    "stars": 51,
+    "url": "https://github.com/openminion/openminion"
+  },
+  {
     "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "跑在自己电脑上的常驻 AI 伙伴：跨会话记忆（L0-L3 + 向量召回）、QQ/飞书/企微里像活人一样在场、定时任务、用自己的音色回语音、云端/本地模型混用。A resident AI companion that chats, remembers and gets things done.",
@@ -1388,29 +1434,6 @@
     "source_id": "1383307304",
     "stars": 4,
     "url": "https://github.com/momo-null/OmniAgent"
-  },
-  {
-    "auto_fork_eligible": true,
-    "category": "ai-agents",
-    "description": "Local-first Python runtime for tool-using AI agents, with CLI, API, memory, MCP, A2A, and inspectable execution surfaces.",
-    "forks": 46,
-    "full_name": "openminion/openminion",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-21T12:25:38Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.8721882,
-    "source_id": "1277944593",
-    "stars": 46,
-    "url": "https://github.com/openminion/openminion"
   },
   {
     "auto_fork_eligible": false,
@@ -1564,7 +1587,7 @@
     "full_name": "SnishaperTeam/Snishaper-Droid",
     "license_id": "AGPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-11-20T23:35:59Z",
+    "pushed_at": "2026-11-22T10:55:51Z",
     "reasons": [
       "category:networking",
       "keyword:proxy",
@@ -1575,7 +1598,7 @@
       "license:AGPL-3.0",
       "emerging"
     ],
-    "score": 0.87016798,
+    "score": 0.87019764,
     "source_id": "1427039713",
     "stars": 2,
     "url": "https://github.com/SnishaperTeam/Snishaper-Droid"
@@ -1706,7 +1729,7 @@
     "full_name": "limetry/limetry",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-10-11T18:25:45Z",
+    "pushed_at": "2026-11-22T23:32:24Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1717,7 +1740,7 @@
       "license:MIT",
       "emerging"
     ],
-    "score": 0.86727111,
+    "score": 0.86730423,
     "source_id": "1400464105",
     "stars": 1,
     "url": "https://github.com/limetry/limetry"
@@ -2249,6 +2272,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "ZhiFox (智狐): a hand-written AI agent harness in plain Python, no frameworks. A local-first personal assistant with terminal and web UI for Claude, GPT, Gemini and DeepSeek: tools with permission prompts, MCP, Skills, subagents, scheduled tasks, Telegram/Discord/Slack bots, browser and computer use. Learn how LLM agents really work.",
+    "forks": 0,
+    "full_name": "Akxan/zhifox-agent-harness",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-22T19:28:10Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:ai-agent",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.86299216,
+    "source_id": "1465298489",
+    "stars": 1,
+    "url": "https://github.com/Akxan/zhifox-agent-harness"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "A lean, readable AI coding agent for the terminal. TypeScript + Ink, multi-provider, streaming tool-use loop, interactive ask_user prompts, sessions, MCP, skills, and sub-agents.",
     "forks": 1,
     "full_name": "soumik183/bitacode",
@@ -2488,6 +2535,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Check or agree? A benchmark of whether tool-using AI agents verify a user's claim or agree with it, judged against verifiable ground truth (NASA/JPL Horizons, synthetic SQL data). Includes a read-only MCP server.",
+    "forks": 0,
+    "full_name": "vvanegasar/cielo-bench",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-22T22:31:36Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85650848,
+    "source_id": "1463675749",
+    "stars": 0,
+    "url": "https://github.com/vvanegasar/cielo-bench"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Function-calling quality gate for MCP/agent tools: scan tools and skills, lint description boundaries, and score model tool selection. Local-first CLI + MCP server.",
     "forks": 0,
     "full_name": "modelfunction/cli",
@@ -2607,6 +2678,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Securing a local tool-using AI agent (n8n + MCP + gpt-oss:20b on Ollama): threat model, garak scan of the model, and 24 attack cases measured against defenses V0 to V4. Work in progress.",
+    "forks": 0,
+    "full_name": "LuizStocco520/n8n-mcp-agent-security",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-22T18:02:31Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85613508,
+    "source_id": "1467510604",
+    "stars": 0,
+    "url": "https://github.com/LuizStocco520/n8n-mcp-agent-security"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "The LangGraph backend the agent_kit Flutter package was missing: plan/act/observe/reflect graph, 4 sandboxed tools, human approval before writes, MCP server — and an SSE protocol contract tested from Dart against the real published package.",
     "forks": 0,
     "full_name": "jayu1023/agent-kit-server",
@@ -2651,6 +2746,30 @@
     "source_id": "1415136799",
     "stars": 0,
     "url": "https://github.com/jazzpher/agentic-bot"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "A systematic AI Agent development tutorial covering LLM agents, RAG, tool use, memory systems, multi-agent systems, LangChain, LangGraph, MCP, and agentic RL.｜从零开始学 AI Agent 开发 | 系统、全面、实战导向的 Agent 开发教程 | 每日自动追踪 arXiv 最新论文 | Learn AI Agent Development from Scratch",
+    "forks": 0,
+    "full_name": "zhanzhaozzz/agent_learning",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-22T16:26:50Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:rag",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85600247,
+    "source_id": "1359646189",
+    "stars": 0,
+    "url": "https://github.com/zhanzhaozzz/agent_learning"
   },
   {
     "auto_fork_eligible": false,
@@ -2723,6 +2842,30 @@
     "source_id": "1198073711",
     "stars": 0,
     "url": "https://github.com/eggrollofchaos/hpml-assetopsbench-smart-grid-mcp"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "An open-source AI coding agent designed to unlock the full potential of LLMs through intelligent context management, adaptive memory, and efficient tool use.",
+    "forks": 0,
+    "full_name": "yuuichieguchi/MomongaCode",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-22T10:35:53Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:ai-agent",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.85551669,
+    "source_id": "1448481300",
+    "stars": 0,
+    "url": "https://github.com/yuuichieguchi/MomongaCode"
   },
   {
     "auto_fork_eligible": false,
@@ -3413,6 +3556,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Guardrails service for AI agents. Default-deny tool call evaluation with LLM safety analysis, priority-ordered decision matrix, and human-in-the-loop escalations. Session recording, behavioral analysis, MCP proxy, secret redaction, and real-time audit.",
+    "forks": 9,
+    "full_name": "fpytloun/intaris",
+    "license_id": "NOASSERTION",
+    "platform": "github",
+    "pushed_at": "2026-11-22T19:07:27Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.81871799,
+    "source_id": "1182558298",
+    "stars": 23,
+    "url": "https://github.com/fpytloun/intaris"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "mobile-crossplatform",
     "description": "3D & AR SDK for Jetpack Compose (Filament, ARCore), Compose Multiplatform, SwiftUI (RealityKit, ARKit) and the web, with Flutter and React Native bridges. The maintained successor to Google Sceneform. Opens glTF/GLB and USDZ, at real size in AR. Assistant-ready: MCP server, AGENTS.md and llms.txt.",
     "forks": 251,
@@ -3715,6 +3881,52 @@
     "source_id": "199128085",
     "stars": 92,
     "url": "https://github.com/IOsonata/IOsonata"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Governed agentic RAG and enterprise tool-use platform with LangGraph, LangChain, Model Context Protocol (MCP), and human-in-the-loop approval",
+    "forks": 0,
+    "full_name": "Sameer-Abbas001/AgentMatrix-Enterprise-Agentic-RAG",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-22T20:15:46Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:rag",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.81242994,
+    "source_id": "1463891225",
+    "stars": 0,
+    "url": "https://github.com/Sameer-Abbas001/AgentMatrix-Enterprise-Agentic-RAG"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Research-only harness measuring how tool scope, prompt defences and detectors affect indirect prompt injection against a tool-using Claude agent, with pre-registered hypotheses and 95% intervals.",
+    "forks": 0,
+    "full_name": "cmdaniel/scope-injection-eval",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-22T19:30:01Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.81236646,
+    "source_id": "1467656890",
+    "stars": 0,
+    "url": "https://github.com/cmdaniel/scope-injection-eval"
   },
   {
     "auto_fork_eligible": false,
@@ -4532,217 +4744,5 @@
     "source_id": "1151756302",
     "stars": 276,
     "url": "https://github.com/manishrjain/egres"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Samsung kernel source for s5e8835 devices (Exynos 1380). ",
-    "forks": 4,
-    "full_name": "TheBizarreAbhishek/android_kernel_samsung_s5e8835",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-11-15T06:01:49Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.79046073,
-    "source_id": "1282952332",
-    "stars": 3,
-    "url": "https://github.com/TheBizarreAbhishek/android_kernel_samsung_s5e8835"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "databases-storage",
-    "description": "Free, open-source native Rust database client: GPUI desktop app, CLI and read-only-by-default MCP server for Postgres, SQLite, MySQL, SQL Server, DuckDB, SurrealDB, MongoDB, Redis and DynamoDB.",
-    "forks": 1,
-    "full_name": "PhongGuy/dbento",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-18T17:09:32Z",
-    "reasons": [
-      "category:databases-storage",
-      "keyword:database",
-      "keyword:postgresql",
-      "keyword:postgres",
-      "keyword:mysql",
-      "keyword:sqlite",
-      "keyword:redis",
-      "recently-active"
-    ],
-    "score": 0.7900409,
-    "source_id": "1445110686",
-    "stars": 3,
-    "url": "https://github.com/PhongGuy/dbento"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "databases-storage",
-    "description": "Self-hosted MCP gateway: AI agents get audited, SSO-gated, read-only access to PostgreSQL, YugabyteDB, MongoDB and Redis/Dragonfly without ever holding a DB credential. AI-maintained by developerz.ai.",
-    "forks": 0,
-    "full_name": "developerz-ai/db-mcp-gateway",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-20T02:49:08Z",
-    "reasons": [
-      "category:databases-storage",
-      "keyword:database",
-      "keyword:postgresql",
-      "keyword:postgres",
-      "keyword:redis",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.78998266,
-    "source_id": "1250895974",
-    "stars": 5,
-    "url": "https://github.com/developerz-ai/db-mcp-gateway"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Rust OS-enforced network isolation for command trees. Strict on Linux, macOS, and OpenBSD; best-effort on Windows and FreeBSD.",
-    "forks": 0,
-    "full_name": "githubhjs/netless-rust",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-12T16:43:07Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.78924983,
-    "source_id": "1455559093",
-    "stars": 1,
-    "url": "https://github.com/githubhjs/netless-rust"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Cross-platform process isolation for untrusted test execution: one policy, Landlock/seccomp on Linux, sandbox-exec on macOS, Job Objects on Windows.",
-    "forks": 0,
-    "full_name": "zecordev/zecor-sandbox",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-16T03:45:56Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.78919608,
-    "source_id": "1351811885",
-    "stars": 0,
-    "url": "https://github.com/zecordev/zecor-sandbox"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "A lightweight Linux container runtime in Rust and C, with phase-adaptive isolation: permissions shrink as a workload moves from startup to serving, are enforced in the kernel with seccomp and BPF-LSM, and can never grow back.",
-    "forks": 0,
-    "full_name": "CXLD10/aegis",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-23T06:45:27Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "keyword:container",
-      "keyword:lsm",
-      "recently-active"
-    ],
-    "score": 0.78834608,
-    "source_id": "1421766501",
-    "stars": 0,
-    "url": "https://github.com/CXLD10/aegis"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "data-engineering",
-    "description": "The fast, config-driven way to move data in Rust — a native CLI and an embeddable Rust ETL library",
-    "forks": 8,
-    "full_name": "faucet-hq/faucet-stream",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-18T13:32:39Z",
-    "reasons": [
-      "category:data-engineering",
-      "keyword:data-pipeline",
-      "keyword:etl",
-      "keyword:kafka",
-      "keyword:streaming",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.78758807,
-    "source_id": "1189252746",
-    "stars": 23,
-    "url": "https://github.com/faucet-hq/faucet-stream"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "mobile-crossplatform",
-    "description": "Your app looks AI-generated. Dr. Unslopovich noticed. An agent skill that finds and fixes AI-looking UI and UX in mobile apps, web apps, and websites.",
-    "forks": 17,
-    "full_name": "erkamyaman/unslopovich",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-17T21:40:35Z",
-    "reasons": [
-      "category:mobile-crossplatform",
-      "keyword:flutter",
-      "keyword:react-native",
-      "keyword:swiftui",
-      "recently-active",
-      "license:MIT",
-      "community-signal"
-    ],
-    "score": 0.78714911,
-    "source_id": "1451803034",
-    "stars": 231,
-    "url": "https://github.com/erkamyaman/unslopovich"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "data-engineering",
-    "description": "zerocode-tdd is a community-developed, free, open-source, outcome-driven automated testing framework for Data Pipelines, ETL, REST API, Kafka(Data Streams), Databases and Load scenarios. all defined in simple JSON or YAML — with zero coding.",
-    "forks": 458,
-    "full_name": "authorjapps/zerocode",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-21T21:54:00Z",
-    "reasons": [
-      "category:data-engineering",
-      "keyword:data-pipeline",
-      "keyword:etl",
-      "keyword:kafka",
-      "recently-active",
-      "license:Apache-2.0",
-      "community-signal"
-    ],
-    "score": 0.78635439,
-    "source_id": "62640065",
-    "stars": 1017,
-    "url": "https://github.com/authorjapps/zerocode"
   }
 ]
