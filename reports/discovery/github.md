@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **888000**
-- latest census cursor: **2643039**
+- total census repositories scanned: **896000**
+- latest census cursor: **2665935**
 - retained candidates: **200**
 - governed fork queue: **43**
 
@@ -26,7 +26,7 @@
 - **ZxAlif-ID/Flavenz-Kernel-Peridot** — score=0.897, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **SampleBlazkness/AdbHide-Kernel** — score=0.890, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **leemikepop/avd-kernelsu-x86_64** — score=0.888, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernelsu, keyword:susfs
-- **Najip/KernelSU_SUSFS_Samsung_SM-A325X** — score=0.884, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **Najip/KernelSU_SUSFS_Samsung_SM-A325X** — score=0.888, stars=2; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Raffxzr/DarkniusX** — score=0.883, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 
 ### data-engineering

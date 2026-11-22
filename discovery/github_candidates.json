@@ -295,7 +295,7 @@
     "full_name": "sysretq0/android-kernel-builder",
     "license_id": "GPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-11-19T14:44:29Z",
+    "pushed_at": "2026-11-22T13:38:49Z",
     "reasons": [
       "category:android-kernel",
       "keyword:android",
@@ -306,7 +306,7 @@
       "license:GPL-3.0",
       "emerging"
     ],
-    "score": 0.90568285,
+    "score": 0.90582244,
     "source_id": "1357857090",
     "stars": 5,
     "url": "https://github.com/sysretq0/android-kernel-builder"
@@ -720,6 +720,30 @@
     "url": "https://github.com/leemikepop/avd-kernelsu-x86_64"
   },
   {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Android kernel for Samsung Galaxy A32 4G codename SM-A325x with xxKSU, fork of KernelSU by backslashxxx ported to non-GKI, ported NoMount LKM, and SUSFS by simonpunk ported to non-GKI by JackA1ltman. Tested using SM-A325F.",
+    "forks": 0,
+    "full_name": "Najip/KernelSU_SUSFS_Samsung_SM-A325X",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-22T16:25:53Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0"
+    ],
+    "score": 0.88816231,
+    "source_id": "1463546968",
+    "stars": 2,
+    "url": "https://github.com/Najip/KernelSU_SUSFS_Samsung_SM-A325X"
+  },
+  {
     "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "An open-source, self-hostable AI operating system and development workspace. Powered by Electron and React 19, it features multi-agent orchestration, full Model Context Protocol (MCP) support, native filesystem access, and an extensible tool ecosystem for autonomous software development.",
@@ -816,30 +840,6 @@
     "url": "https://github.com/YawLabs/postgres-mcp"
   },
   {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Android kernel for Samsung Galaxy A32 4G codename SM-A325x with xxKSU, fork of KernelSU by backslashxxx ported to non-GKI, ported NoMount LKM, and SUSFS by simonpunk ported to non-GKI by JackA1ltman. Tested using SM-A325F.",
-    "forks": 0,
-    "full_name": "Najip/KernelSU_SUSFS_Samsung_SM-A325X",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-21T08:27:56Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "license:GPL-2.0"
-    ],
-    "score": 0.88399009,
-    "source_id": "1463546968",
-    "stars": 1,
-    "url": "https://github.com/Najip/KernelSU_SUSFS_Samsung_SM-A325X"
-  },
-  {
     "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "Free, self-hosted AI coding assistant for VS Code — local Ollama models, Anthropic Claude, or any OpenAI-compatible server. Full agent loop with tool use, inline completions, and MCP support.",
@@ -890,6 +890,30 @@
   {
     "auto_fork_eligible": false,
     "category": "android-kernel",
+    "description": "NekoSU — KernelSU 临时 root（越狱模式）管理器，支持 GKI 5.x 与 4.x 内核",
+    "forks": 1,
+    "full_name": "laninenterline/NekoSU",
+    "license_id": "GPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-22T17:40:44Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-3.0"
+    ],
+    "score": 0.88197419,
+    "source_id": "1434146832",
+    "stars": 7,
+    "url": "https://github.com/laninenterline/NekoSU"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
     "description": "High-Efficiency & Battery-Oriented Custom Kernel (GKI 2.0 / KernelSU-Next) for Realme P3 5G (RMX5079 / dongfeng)",
     "forks": 0,
     "full_name": "zacxyonly/zerobyte-kernel",
@@ -910,30 +934,6 @@
     "source_id": "1422491577",
     "stars": 1,
     "url": "https://github.com/zacxyonly/zerobyte-kernel"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "NekoSU — KernelSU 临时 root（越狱模式）管理器，支持 GKI 5.x 与 4.x 内核",
-    "forks": 1,
-    "full_name": "laninenterline/NekoSU",
-    "license_id": "GPL-3.0",
-    "platform": "github",
-    "pushed_at": "2026-11-21T12:33:15Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "license:GPL-3.0"
-    ],
-    "score": 0.88068204,
-    "source_id": "1434146832",
-    "stars": 6,
-    "url": "https://github.com/laninenterline/NekoSU"
   },
   {
     "auto_fork_eligible": false,
@@ -1653,6 +1653,30 @@
     "url": "https://github.com/kusesad-1122/XinovaSU"
   },
   {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Artic Kernel — miatoll/joyeuse Android 12-17 non-GKI 4.14 kernel, KSU/SUSFS, per-ROM variants",
+    "forks": 0,
+    "full_name": "dwp29/artic-kernel-miatoll",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-22T14:35:22Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:ksu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0"
+    ],
+    "score": 0.86922901,
+    "source_id": "1467578633",
+    "stars": 0,
+    "url": "https://github.com/dwp29/artic-kernel-miatoll"
+  },
+  {
     "auto_fork_eligible": true,
     "category": "android-kernel",
     "description": "no patch kernel Support DroidSpaces.",
@@ -1660,7 +1684,7 @@
     "full_name": "Dere3046/_patchHarmony",
     "license_id": "GPL-2.0",
     "platform": "github",
-    "pushed_at": "2026-11-21T07:00:37Z",
+    "pushed_at": "2026-11-22T09:45:33Z",
     "reasons": [
       "category:android-kernel",
       "keyword:android",
@@ -1669,9 +1693,9 @@
       "recently-active",
       "license:GPL-2.0"
     ],
-    "score": 0.86817356,
+    "score": 0.86852573,
     "source_id": "1375991451",
-    "stars": 67,
+    "stars": 71,
     "url": "https://github.com/Dere3046/_patchHarmony"
   },
   {
@@ -1706,7 +1730,7 @@
     "full_name": "NeuralNomadsAI/CodeNomad",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-21T03:05:14Z",
+    "pushed_at": "2026-11-22T17:49:27Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1716,9 +1740,9 @@
       "license:MIT",
       "community-signal"
     ],
-    "score": 0.86683192,
+    "score": 0.86684505,
     "source_id": "1087925615",
-    "stars": 2679,
+    "stars": 2680,
     "url": "https://github.com/NeuralNomadsAI/CodeNomad"
   },
   {
@@ -2272,6 +2296,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "March r18 GKI kernel for the Foxxd A67L Gen 2, with KernelSU Next, SUSFS and NoMount.",
+    "forks": 0,
+    "full_name": "CyberspaceVii/kernel-a67lg2",
+    "license_id": "GPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-15T20:03:25Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-3.0"
+    ],
+    "score": 0.86041272,
+    "source_id": "1459193547",
+    "stars": 1,
+    "url": "https://github.com/CyberspaceVii/kernel-a67lg2"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "databases-storage",
     "description": "The Prisma ORM: write your application in TypeScript with human-readable queries instead of SQL. Host your database on Prisma Postgres and your app on Prisma Compute.",
     "forks": 2650,
@@ -2319,30 +2367,6 @@
   },
   {
     "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "March r18 GKI kernel for the Foxxd A67L Gen 2, with KernelSU Next, SUSFS and NoMount.",
-    "forks": 0,
-    "full_name": "CyberspaceVii/kernel-a67lg2",
-    "license_id": "GPL-3.0",
-    "platform": "github",
-    "pushed_at": "2026-11-15T20:03:25Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "license:GPL-3.0"
-    ],
-    "score": 0.85918672,
-    "source_id": "1459193547",
-    "stars": 0,
-    "url": "https://github.com/CyberspaceVii/kernel-a67lg2"
-  },
-  {
-    "auto_fork_eligible": false,
     "category": "networking",
     "description": "Independent Rust implementation of Hysteria 2 with QUIC, ECH, ACME, TUN, Realm, and cross-platform support.",
     "forks": 0,
@@ -2364,6 +2388,30 @@
     "source_id": "1301123185",
     "stars": 4,
     "url": "https://github.com/crapthings/hysteria-rust"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "SusFS LKM by uran - SUSFS v2.4.0 loadable kernel module for Android GKI",
+    "forks": 0,
+    "full_name": "UIRAN23/SusFS-LKM-by-uran",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-19T16:15:15Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.85684516,
+    "source_id": "1457525302",
+    "stars": 0,
+    "url": "https://github.com/UIRAN23/SusFS-LKM-by-uran"
   },
   {
     "auto_fork_eligible": false,
@@ -2508,6 +2556,29 @@
     "source_id": "1461115199",
     "stars": 0,
     "url": "https://github.com/haroonkhan02/agent-mcp-robotics"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "reconstruct kallsyms on ARM64 GKI, depends only on sprint_symbol.",
+    "forks": 8,
+    "full_name": "Dere3046/KallRecon",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-22T06:53:50Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.85618038,
+    "source_id": "1273660119",
+    "stars": 20,
+    "url": "https://github.com/Dere3046/KallRecon"
   },
   {
     "auto_fork_eligible": false,
@@ -3485,6 +3556,29 @@
   {
     "auto_fork_eligible": false,
     "category": "android-kernel",
+    "description": "Droidspaces-capable GKI 6.6.77 kernel for Xiaomi MIX Flip 2 (bixi)",
+    "forks": 0,
+    "full_name": "237389749/bixi-droidspaces-kernel",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-22T10:24:26Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.81458111,
+    "source_id": "1448396801",
+    "stars": 0,
+    "url": "https://github.com/237389749/bixi-droidspaces-kernel"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
     "description": "努比亚 Z60 Ultra（NX721J）Android 16 内核 · 支持 Droidspaces 容器与 Kali NetHunter · 星云OS 2.0.8 / 6.1.145",
     "forks": 0,
     "full_name": "HANPU5838/Nubia-Z60-Ultra-Droidspaces-Kernel",
@@ -3672,11 +3766,11 @@
     "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Embracing All Creation (Desktop) — Dedicated to the Harmonious Coexistence of Hundreds of DSH Plugins / 揽尽万象（桌面版） —— 致力于让数百个DSH插件和谐共存",
-    "forks": 94,
+    "forks": 98,
     "full_name": "Ebony-Vinyl/EAC-Desktop",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-20T15:02:28Z",
+    "pushed_at": "2026-11-22T08:54:27Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -3685,33 +3779,10 @@
       "license:MIT",
       "community-signal"
     ],
-    "score": 0.81086898,
+    "score": 0.81150492,
     "source_id": "1334373503",
-    "stars": 3706,
+    "stars": 3756,
     "url": "https://github.com/Ebony-Vinyl/EAC-Desktop"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Droidspaces-capable GKI 6.6.77 kernel for Xiaomi MIX Flip 2 (bixi)",
-    "forks": 0,
-    "full_name": "237389749/bixi-droidspaces-kernel",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-17T13:11:24Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "license:GPL-2.0",
-      "emerging"
-    ],
-    "score": 0.8106253,
-    "source_id": "1448396801",
-    "stars": 0,
-    "url": "https://github.com/237389749/bixi-droidspaces-kernel"
   },
   {
     "auto_fork_eligible": false,
@@ -3758,6 +3829,30 @@
     "source_id": "432844875",
     "stars": 4320,
     "url": "https://github.com/orioledb/orioledb"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "GKI android15-6.6 kernel for the Pixel 10 family (laguna) with KernelSU-Next, susfs and Droidspaces, built on GitHub Actions",
+    "forks": 1,
+    "full_name": "306bobby-android/306kernels-laguna",
+    "license_id": null,
+    "platform": "github",
+    "pushed_at": "2026-11-22T13:00:13Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.81024982,
+    "source_id": "1445063005",
+    "stars": 2,
+    "url": "https://github.com/306bobby-android/306kernels-laguna"
   },
   {
     "auto_fork_eligible": false,
@@ -4039,30 +4134,6 @@
   },
   {
     "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "GKI android15-6.6 kernel for the Pixel 10 family (laguna) with KernelSU-Next, susfs and Droidspaces, built on GitHub Actions",
-    "forks": 1,
-    "full_name": "306bobby-android/306kernels-laguna",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-11-16T03:55:56Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.80337518,
-    "source_id": "1445063005",
-    "stars": 2,
-    "url": "https://github.com/306bobby-android/306kernels-laguna"
-  },
-  {
-    "auto_fork_eligible": false,
     "category": "embedded-iot",
     "description": "Build voice and text devices for your Hermes Agent, with ESP32 firmware, a Linux client, and a desktop simulator.",
     "forks": 102,
@@ -4176,6 +4247,29 @@
     "source_id": "76594584",
     "stars": 2703,
     "url": "https://github.com/jfcoz/postgresqltuner"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "behi kernel — custom Linux 6.6 GKI kernel for Samsung Galaxy A14 4G (SM-A145P / a14m, Helio G80)",
+    "forks": 1,
+    "full_name": "Behrooz140/behi-kernel-sm-a145p",
+    "license_id": null,
+    "platform": "github",
+    "pushed_at": "2026-11-22T12:30:53Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.79906766,
+    "source_id": "1330957393",
+    "stars": 1,
+    "url": "https://github.com/Behrooz140/behi-kernel-sm-a145p"
   },
   {
     "auto_fork_eligible": false,
@@ -4323,6 +4417,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Custom Android 15 6.6 GKI kernel for Xiaomi POCO F7 / Redmi Turbo 4 Pro (onyx, SM8735) — BORE 7.0.1, BBRv3, ADIOS 3.3.0, Reflex 0.4.0, onyx_balance, Kcompressd 0.5, le9uo 1.15b, ntsync, KernelSU-Next + SuSFS v2.4.0",
+    "forks": 0,
+    "full_name": "riza220201/poco-f7-kernel",
+    "license_id": null,
+    "platform": "github",
+    "pushed_at": "2026-11-21T17:48:00Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.79400468,
+    "source_id": "1466806414",
+    "stars": 0,
+    "url": "https://github.com/riza220201/poco-f7-kernel"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Agentic security control plane for MCP and AI agent tool calls. MCP-native policy gateway with topology discovery and audit.",
     "forks": 0,
@@ -4344,29 +4462,6 @@
     "source_id": "1148198632",
     "stars": 6,
     "url": "https://github.com/paolovella/vellaveto"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "behi kernel — custom Linux 6.6 GKI kernel for Samsung Galaxy A14 4G (SM-A145P / a14m, Helio G80). KernelSU built in, Droidspaces-ready containers (namespaces, CAKE, MACVLAN, IPv6 NAT), SquashFS/NFS/CIFS, boot-image-only releases with a CI ABI gate that keeps stock /vendor modules loading.",
-    "forks": 1,
-    "full_name": "Behrooz140/behi-kernel-sm-a145p",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-11-18T06:02:48Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.79351151,
-    "source_id": "1330957393",
-    "stars": 0,
-    "url": "https://github.com/Behrooz140/behi-kernel-sm-a145p"
   },
   {
     "auto_fork_eligible": false,
@@ -4649,97 +4744,5 @@
     "source_id": "62640065",
     "stars": 1017,
     "url": "https://github.com/authorjapps/zerocode"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "🛡️ Safe AI Agents through Action Classifier",
-    "forks": 8,
-    "full_name": "Pro-GenAI/Agent-Action-Guard",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-11-18T03:17:55Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:orchestration",
-      "keyword:llm",
-      "keyword:ai-agent",
-      "recently-active"
-    ],
-    "score": 0.78596826,
-    "source_id": "1073621787",
-    "stars": 9,
-    "url": "https://github.com/Pro-GenAI/Agent-Action-Guard"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Production AI code review + autonomous web research agent. Claude tool-use loop over 4 Bright Data products (Web Unlocker · SERP API · Scraping Browser · MCP Server). HubSpot CRM hub, Lead Brief in Telegram with freshness buckets. Oracle Cloud free tier, $0/month, solo founder.",
-    "forks": 0,
-    "full_name": "ElenaRevicheva/AIPA_AITCF",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-11-18T14:09:09Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.7856728,
-    "source_id": "1073955768",
-    "stars": 2,
-    "url": "https://github.com/ElenaRevicheva/AIPA_AITCF"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Open-source text-to-SQL engine you tune and measure on your own database",
-    "forks": 16,
-    "full_name": "agenticfabriq/mnemiq",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-21T20:11:51Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.78530088,
-    "source_id": "1299994945",
-    "stars": 79,
-    "url": "https://github.com/agenticfabriq/mnemiq"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "devops-observability",
-    "description": "A observability platform for AI agents featuring execution tracing, logs, metrics, workflow visualization, and agent health monitoring. | SDK: https://pypi.org/project/asi-telemetry",
-    "forks": 2,
-    "full_name": "Devrithm-Labs/ASI-Telemetry",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-21T13:56:34Z",
-    "reasons": [
-      "category:devops-observability",
-      "keyword:observability",
-      "keyword:monitoring",
-      "keyword:tracing",
-      "keyword:metrics",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.78508688,
-    "source_id": "1404786627",
-    "stars": 1,
-    "url": "https://github.com/Devrithm-Labs/ASI-Telemetry"
   }
 ]
