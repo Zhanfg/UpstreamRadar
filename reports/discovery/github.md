@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **872000**
-- latest census cursor: **2597307**
+- total census repositories scanned: **880000**
+- latest census cursor: **2620265**
 - retained candidates: **200**
 - governed fork queue: **43**
 
@@ -33,6 +33,7 @@
 
 - **apache/flink-cdc** — score=0.816, stars=6495; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
 - **faucet-hq/faucet-stream** — score=0.788, stars=23; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, keyword:streaming
+- **authorjapps/zerocode** — score=0.786, stars=1017; category:data-engineering, keyword:data-pipeline, keyword:etl, keyword:kafka, recently-active
 
 ### databases-storage
 
@@ -60,6 +61,7 @@
 
 - **IOsonata/IOsonata** — score=0.813, stars=92; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
 - **Adolanium/hermes-gadget-sdk** — score=0.802, stars=561; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:raspberry-pi
+- **mytechnotalent/Embedded-Hacking** — score=0.791, stars=235; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, recently-active
 
 ### mobile-crossplatform
 
