@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **904000**
-- latest census cursor: **2687480**
+- total census repositories scanned: **912000**
+- latest census cursor: **2710700**
 - retained candidates: **200**
 - governed fork queue: **44**
 
@@ -39,10 +39,10 @@
 - **digoal/blog** — score=0.853, stars=8616; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **bytebase/dbhub** — score=0.847, stars=3890; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **amacneil/dbmate** — score=0.836, stars=7562; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **DokaDev/datarig** — score=0.835, stars=171; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **xo/usql** — score=0.834, stars=10175; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **stephenafamo/bob** — score=0.830, stars=1804; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **supabase/supabase** — score=0.825, stars=115178; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
-- **supabase/supabase-js** — score=0.823, stars=4611; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
 
 ### devops-observability
 
@@ -52,14 +52,13 @@
 - **replit/datacat** — score=0.830, stars=119; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **gma1k/podtrace** — score=0.825, stars=205; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:kubernetes
 - **deployex/observer_web** — score=0.819, stars=54; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
-- **apache/skywalking-banyandb** — score=0.814, stars=356; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **apache/skywalking-banyandb** — score=0.815, stars=356; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **kieker-monitoring/kieker** — score=0.804, stars=113; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, recently-active
 
 ### embedded-iot
 
 - **IOsonata/IOsonata** — score=0.813, stars=92; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
 - **Adolanium/hermes-gadget-sdk** — score=0.802, stars=561; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:raspberry-pi
-- **mytechnotalent/Embedded-Hacking** — score=0.791, stars=235; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, recently-active
 
 ### mobile-crossplatform
 
