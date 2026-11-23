@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **912000**
-- latest census cursor: **2710700**
+- total census repositories scanned: **920000**
+- latest census cursor: **2733197**
 - retained candidates: **200**
 - governed fork queue: **44**
 
@@ -64,7 +64,7 @@
 
 - **sceneview/sceneview** — score=0.819, stars=1379; category:mobile-crossplatform, keyword:flutter, keyword:swiftui, keyword:kotlin-multiplatform, keyword:ios
 - **dkhamsing/open-source-ios-apps** — score=0.818, stars=53343; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
-- **NativeScript/SimDeck** — score=0.804, stars=161; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
+- **NativeScript/SimDeck** — score=0.815, stars=161; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **Nikolai-Iakubovskii/app-paywall-pilot** — score=0.795, stars=40; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 
 ### networking
