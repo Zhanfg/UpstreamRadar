@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **928000**
-- latest census cursor: **2755687**
+- total census repositories scanned: **936000**
+- latest census cursor: **2778268**
 - retained candidates: **200**
 - governed fork queue: **44**
 
@@ -24,9 +24,9 @@
 - **Spring-bulid/MakoSU** — score=0.907, stars=18; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **sysretq0/android-kernel-builder** — score=0.906, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **ZxAlif-ID/Flavenz-Kernel-Peridot** — score=0.897, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **Najip/KernelSU_SUSFS_Samsung_SM-A325X** — score=0.891, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **SampleBlazkness/AdbHide-Kernel** — score=0.890, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **leemikepop/avd-kernelsu-x86_64** — score=0.888, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernelsu, keyword:susfs
-- **Najip/KernelSU_SUSFS_Samsung_SM-A325X** — score=0.888, stars=2; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **Raffxzr/DarkniusX** — score=0.883, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 
 ### data-engineering
@@ -65,7 +65,6 @@
 - **sceneview/sceneview** — score=0.819, stars=1379; category:mobile-crossplatform, keyword:flutter, keyword:swiftui, keyword:kotlin-multiplatform, keyword:ios
 - **dkhamsing/open-source-ios-apps** — score=0.818, stars=53343; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **NativeScript/SimDeck** — score=0.815, stars=161; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
-- **Nikolai-Iakubovskii/app-paywall-pilot** — score=0.795, stars=40; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 
 ### networking
 

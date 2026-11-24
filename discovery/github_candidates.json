@@ -624,6 +624,30 @@
     "url": "https://github.com/cofin/litestar-mcp"
   },
   {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Android kernel for Samsung Galaxy A32 4G codename SM-A325x with BakaSU, fork of KernelSU, ported NoMount LKM, and SUSFS by simonpunk ported to non-GKI by JackA1ltman. Tested using SM-A325F.",
+    "forks": 0,
+    "full_name": "Najip/KernelSU_SUSFS_Samsung_SM-A325X",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-24T12:02:02Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0"
+    ],
+    "score": 0.89060168,
+    "source_id": "1463546968",
+    "stars": 3,
+    "url": "https://github.com/Najip/KernelSU_SUSFS_Samsung_SM-A325X"
+  },
+  {
     "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "subs is an agent harness for the cloud. It runs an unprivileged agent loop and uses MCP servers for executing tools. Use it locally, remotely and with your team. You can customize everything.",
@@ -718,30 +742,6 @@
     "source_id": "1289147962",
     "stars": 4,
     "url": "https://github.com/leemikepop/avd-kernelsu-x86_64"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Android kernel for Samsung Galaxy A32 4G codename SM-A325x with xxKSU, fork of KernelSU by backslashxxx ported to non-GKI, ported NoMount LKM, and SUSFS by simonpunk ported to non-GKI by JackA1ltman. Tested using SM-A325F.",
-    "forks": 0,
-    "full_name": "Najip/KernelSU_SUSFS_Samsung_SM-A325X",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-22T16:25:53Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "keyword:susfs",
-      "recently-active",
-      "license:GPL-2.0"
-    ],
-    "score": 0.88816231,
-    "source_id": "1463546968",
-    "stars": 2,
-    "url": "https://github.com/Najip/KernelSU_SUSFS_Samsung_SM-A325X"
   },
   {
     "auto_fork_eligible": true,
@@ -1196,6 +1196,54 @@
     "source_id": "1172933443",
     "stars": 310,
     "url": "https://github.com/GreyhavenHQ/greywall"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "KernelSU v0.9.5 source + 4.9 non-GKI port preparation kit (Android 9 / kernel 4.9.117). NOT a flashable root package.",
+    "forks": 0,
+    "full_name": "lyu323/KernelSU-PD1901-4.9-port",
+    "license_id": "GPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-24T12:28:18Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "recently-active",
+      "license:GPL-3.0",
+      "emerging"
+    ],
+    "score": 0.87626154,
+    "source_id": "1470076807",
+    "stars": 0,
+    "url": "https://github.com/lyu323/KernelSU-PD1901-4.9-port"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "KernelSU on a non-GKI 4.19 kernel for Xiaomi Mi 10 Lite Zoom (vangogh / M2002J9E) on MIUI 13: MIUI vendor drivers built into the kernel to dodge the vendor-module ABI wall. Wi-Fi + root work, audio is the remaining gap.",
+    "forks": 0,
+    "full_name": "Vladivostok1017/vangogh-kernel-ksu",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-23T15:47:35Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:kernelsu",
+      "keyword:ksu",
+      "recently-active",
+      "license:GPL-2.0"
+    ],
+    "score": 0.87544759,
+    "source_id": "1468915497",
+    "stars": 0,
+    "url": "https://github.com/Vladivostok1017/vangogh-kernel-ksu"
   },
   {
     "auto_fork_eligible": true,
@@ -1676,6 +1724,28 @@
     "url": "https://github.com/kusesad-1122/XinovaSU"
   },
   {
+    "auto_fork_eligible": true,
+    "category": "android-kernel",
+    "description": "no patch kernel Support DroidSpaces.",
+    "forks": 41,
+    "full_name": "Dere3046/_patchHarmony",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-24T15:54:36Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "license:GPL-2.0"
+    ],
+    "score": 0.86931256,
+    "source_id": "1375991451",
+    "stars": 73,
+    "url": "https://github.com/Dere3046/_patchHarmony"
+  },
+  {
     "auto_fork_eligible": false,
     "category": "android-kernel",
     "description": "Artic Kernel — miatoll/joyeuse Android 12-17 non-GKI 4.14 kernel, KSU/SUSFS, per-ROM variants",
@@ -1698,28 +1768,6 @@
     "source_id": "1467578633",
     "stars": 0,
     "url": "https://github.com/dwp29/artic-kernel-miatoll"
-  },
-  {
-    "auto_fork_eligible": true,
-    "category": "android-kernel",
-    "description": "no patch kernel Support DroidSpaces.",
-    "forks": 41,
-    "full_name": "Dere3046/_patchHarmony",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-22T09:45:33Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "license:GPL-2.0"
-    ],
-    "score": 0.86852573,
-    "source_id": "1375991451",
-    "stars": 71,
-    "url": "https://github.com/Dere3046/_patchHarmony"
   },
   {
     "auto_fork_eligible": false,
@@ -1749,11 +1797,11 @@
     "auto_fork_eligible": true,
     "category": "ai-agents",
     "description": "CodeNomad: The command center that puts AI coding on steroids.",
-    "forks": 180,
+    "forks": 182,
     "full_name": "NeuralNomadsAI/CodeNomad",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-22T17:49:27Z",
+    "pushed_at": "2026-11-24T17:42:39Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1763,9 +1811,9 @@
       "license:MIT",
       "community-signal"
     ],
-    "score": 0.86684505,
+    "score": 0.86691464,
     "source_id": "1087925615",
-    "stars": 2680,
+    "stars": 2682,
     "url": "https://github.com/NeuralNomadsAI/CodeNomad"
   },
   {
@@ -2414,6 +2462,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "SusFS LKM by uran - SUSFS v2.4.0 loadable kernel module for Android GKI",
+    "forks": 0,
+    "full_name": "UIRAN23/SusFS-LKM-by-uran",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-22T19:49:08Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.85910369,
+    "source_id": "1457525302",
+    "stars": 0,
+    "url": "https://github.com/UIRAN23/SusFS-LKM-by-uran"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "networking",
     "description": "Independent Rust implementation of Hysteria 2 with QUIC, ECH, ACME, TUN, Realm, and cross-platform support.",
     "forks": 0,
@@ -2435,30 +2507,6 @@
     "source_id": "1301123185",
     "stars": 4,
     "url": "https://github.com/crapthings/hysteria-rust"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "SusFS LKM by uran - SUSFS v2.4.0 loadable kernel module for Android GKI",
-    "forks": 0,
-    "full_name": "UIRAN23/SusFS-LKM-by-uran",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-19T16:15:15Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:susfs",
-      "recently-active",
-      "license:GPL-2.0",
-      "emerging"
-    ],
-    "score": 0.85684516,
-    "source_id": "1457525302",
-    "stars": 0,
-    "url": "https://github.com/UIRAN23/SusFS-LKM-by-uran"
   },
   {
     "auto_fork_eligible": false,
@@ -3156,6 +3204,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "一加 Ace5 (PKG110) 自编译 GKI 内核 · SukiSU Nova 内置 + SUSFS + KPM | ColorOS 16.0.9.400 / Android 16 / 6.1.141-android14-11 | AI 参与构建与验证，刷机风险自负",
+    "forks": 0,
+    "full_name": "oopnv70-lab/Ace5-NovaKernel",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-24T10:05:59Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.83750259,
+    "source_id": "1467089604",
+    "stars": 1,
+    "url": "https://github.com/oopnv70-lab/Ace5-NovaKernel"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Check what your AI agents actually changed. AI agent safety for databases and health records: rules decide each tool call, a check compares what really changed with what the agent reported, and each action is sealed as a signed record anyone can check offline. Run npx deedglass and a simple local app opens in your browser. Apache-2.0 core.",
     "forks": 1,
@@ -3295,6 +3366,29 @@
     "source_id": "83678416",
     "stars": 10175,
     "url": "https://github.com/xo/usql"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Just another kernel rooting solution for android",
+    "forks": 3,
+    "full_name": "kelexine/mysu",
+    "license_id": "GPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-22T20:52:51Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "license:GPL-3.0",
+      "emerging"
+    ],
+    "score": 0.83145505,
+    "source_id": "1338122707",
+    "stars": 5,
+    "url": "https://github.com/kelexine/mysu"
   },
   {
     "auto_fork_eligible": false,
@@ -4350,6 +4444,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "GKI android15-6.6.118 custom kernel for Redmi Turbo 5 Max (dash, MT6991Z) — DroidSpaces + SukiSU Ultra (KPM+SUSFS), pinned stock base",
+    "forks": 0,
+    "full_name": "lakitu12/android_kernel_xiaomi_dash",
+    "license_id": "NOASSERTION",
+    "platform": "github",
+    "pushed_at": "2026-11-24T05:50:44Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:susfs",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.8056909,
+    "source_id": "1351262209",
+    "stars": 2,
+    "url": "https://github.com/lakitu12/android_kernel_xiaomi_dash"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "A mobile-only design skill for AI coding agents",
     "forks": 0,
@@ -4536,29 +4653,6 @@
   },
   {
     "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "GKI android15-6.6.118 custom kernel for Redmi Turbo 5 Max (dash, MT6991Z) — DroidSpaces + SukiSU Ultra (KPM+SUSFS), pinned stock base",
-    "forks": 0,
-    "full_name": "lakitu12/android_kernel_xiaomi_dash",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-11-17T03:55:13Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:susfs",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.80134865,
-    "source_id": "1351262209",
-    "stars": 2,
-    "url": "https://github.com/lakitu12/android_kernel_xiaomi_dash"
-  },
-  {
-    "auto_fork_eligible": false,
     "category": "networking",
     "description": "A cross-platform proxy client powered by Mihomo (formerly Clash.Meta), built with Qt Quick, featuring subscription management, proxy groups, custom routing rules, connection monitoring, and system proxy/TUN controls.",
     "forks": 0,
@@ -4649,101 +4743,5 @@
     "source_id": "1332732321",
     "stars": 0,
     "url": "https://github.com/jkelly-dev1/agent-sandbox-escape"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "networking",
-    "description": "A self-hosted solution to enable secure connectivity between devices across restricted networks like NAT or firewalls",
-    "forks": 19,
-    "full_name": "narrowlink/narrowlink",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-11-08T19:21:09Z",
-    "reasons": [
-      "category:networking",
-      "keyword:proxy",
-      "keyword:tun",
-      "keyword:quic",
-      "keyword:network",
-      "keyword:nat",
-      "recently-active",
-      "community-signal"
-    ],
-    "score": 0.79832466,
-    "source_id": "672664952",
-    "stars": 663,
-    "url": "https://github.com/narrowlink/narrowlink"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "devops-observability",
-    "description": "Elastic OpenTelemetry .NET Distribution",
-    "forks": 16,
-    "full_name": "elastic/elastic-otel-dotnet",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-19T16:15:29Z",
-    "reasons": [
-      "category:devops-observability",
-      "keyword:observability",
-      "keyword:monitoring",
-      "keyword:tracing",
-      "keyword:metrics",
-      "keyword:logging",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.79681596,
-    "source_id": "697318024",
-    "stars": 32,
-    "url": "https://github.com/elastic/elastic-otel-dotnet"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "mobile-crossplatform",
-    "description": "A framework for designing App Store-compliant subscription paywalls. 4 layers: AI skill (Claude/GPT/Cursor) + knowledge base (79 sourced benchmarks) + Python LTV tool + docs. 20-concept academic foundation (Kahneman + Layer 2). Flagship domain Paywall; expansion planned to Onboarding, Retention, Growth, Pricing, Reviews.",
-    "forks": 3,
-    "full_name": "Nikolai-Iakubovskii/app-paywall-pilot",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-20T10:18:29Z",
-    "reasons": [
-      "category:mobile-crossplatform",
-      "keyword:flutter",
-      "keyword:react-native",
-      "keyword:swiftui",
-      "keyword:ios",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.79543052,
-    "source_id": "1211816899",
-    "stars": 40,
-    "url": "https://github.com/Nikolai-Iakubovskii/app-paywall-pilot"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "🛡️ Laboratorio de aislamiento en Linux: ejecuta código, archivos y modelos de negocio ajenos bajo políticas declaradas, y emite evidencia firmada de qué controles se aplicaron de verdad en tu equipo. 36 casos en dos familias — sandboxes técnicos y mercado de capitales con dinero simulado. Experimental y educativo, no un producto de seguridad.",
-    "forks": 0,
-    "full_name": "vladimiracunadev-create/sandbox-labs",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-10-26T21:16:36Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "keyword:container",
-      "keyword:supply-chain",
-      "recently-active"
-    ],
-    "score": 0.79422424,
-    "source_id": "1324527220",
-    "stars": 0,
-    "url": "https://github.com/vladimiracunadev-create/sandbox-labs"
   }
 ]
