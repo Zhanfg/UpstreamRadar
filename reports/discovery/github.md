@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **944000**
-- latest census cursor: **2800748**
+- total census repositories scanned: **952000**
+- latest census cursor: **2822625**
 - retained candidates: **200**
-- governed fork queue: **44**
+- governed fork queue: **45**
 
 ## Top directions
 
@@ -15,8 +15,8 @@
 - **EvannZhongg/Nosis** — score=0.918, stars=206; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
 - **saigontechnology/AgentCrew** — score=0.917, stars=225; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ThreeMoonsLab/agents-shipgate** — score=0.913, stars=87; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
+- **ashishsinha1602/schemagate** — score=0.913, stars=127; category:ai-agents, keyword:agent, keyword:mcp, keyword:llm, keyword:rag
 - **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
-- **MerkyorLynn/Lynn** — score=0.908, stars=70; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 
 ### android-kernel
 
@@ -35,35 +35,34 @@
 
 ### databases-storage
 
-- **prisma/orm** — score=0.860, stars=47693; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **prisma/orm** — score=0.860, stars=47770; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **digoal/blog** — score=0.853, stars=8616; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **bytebase/dbhub** — score=0.847, stars=3890; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **amacneil/dbmate** — score=0.836, stars=7562; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **DokaDev/datarig** — score=0.835, stars=171; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **xo/usql** — score=0.834, stars=10175; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **stephenafamo/bob** — score=0.830, stars=1804; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
-- **supabase/supabase** — score=0.825, stars=115178; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, recently-active
+- **wannabespace/tamery** — score=0.829, stars=1473; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 
 ### devops-observability
 
 - **coroot/coroot** — score=0.855, stars=8024; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
-- **monoscope-tech/monoscope** — score=0.838, stars=2121; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
-- **DataDog/datadog-agent** — score=0.831, stars=3774; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **monoscope-tech/monoscope** — score=0.838, stars=2137; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **metrico/gigapipe** — score=0.835, stars=1725; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **DataDog/datadog-agent** — score=0.831, stars=3775; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **replit/datacat** — score=0.830, stars=119; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **gma1k/podtrace** — score=0.825, stars=205; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:kubernetes
 - **deployex/observer_web** — score=0.819, stars=54; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
-- **apache/skywalking-banyandb** — score=0.815, stars=356; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
-- **kieker-monitoring/kieker** — score=0.804, stars=113; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, recently-active
+- **logtide-dev/logtide** — score=0.816, stars=462; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 
 ### embedded-iot
 
 - **IOsonata/IOsonata** — score=0.813, stars=92; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:sensors
-- **Adolanium/hermes-gadget-sdk** — score=0.802, stars=561; category:embedded-iot, keyword:embedded, keyword:iot, keyword:firmware, keyword:raspberry-pi
 
 ### mobile-crossplatform
 
 - **sceneview/sceneview** — score=0.819, stars=1379; category:mobile-crossplatform, keyword:flutter, keyword:swiftui, keyword:kotlin-multiplatform, keyword:ios
-- **dkhamsing/open-source-ios-apps** — score=0.818, stars=53343; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
+- **dkhamsing/open-source-ios-apps** — score=0.818, stars=53465; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **NativeScript/SimDeck** — score=0.815, stars=161; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 
 ### networking
@@ -86,7 +85,6 @@
 - **Steck43/isolation-layer** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **whiskeyjimbo/bento** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **cokovali10-sketch/AegisRuntime** — score=0.829, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **souk4711/hakoniwa** — score=0.805, stars=96; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
 
@@ -99,6 +97,7 @@
 - **EvannZhongg/Nosis** → ai-agents (score=0.918, license=MIT)
 - **saigontechnology/AgentCrew** → ai-agents (score=0.917, license=Apache-2.0)
 - **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.913, license=Apache-2.0)
+- **ashishsinha1602/schemagate** → ai-agents (score=0.913, license=Apache-2.0)
 - **mikehasa/agentacct** → ai-agents (score=0.911, license=MIT)
 - **MerkyorLynn/Lynn** → ai-agents (score=0.908, license=Apache-2.0)
 - **Spring-bulid/MakoSU** → android-kernel (score=0.907, license=GPL-3.0)
@@ -109,6 +108,5 @@
 - **hedioum/Hedioum-Pool-Tunnel** → networking (score=0.897, license=GPL-3.0)
 - **CodeSoul-co/Hypha** → ai-agents (score=0.897, license=Apache-2.0)
 - **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
-- **ai-pivot/xbot** → ai-agents (score=0.895, license=MIT)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.

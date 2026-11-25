@@ -218,6 +218,30 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
+    "description": "Text-to-SQL access control: schema selection that gives the LLM only the tables the caller is allowed to read. Row-level-security-aware table pruning for LangChain, MCP and any SQL agent. Postgres, Oracle, MySQL, SQL Server. 75% fewer prompt tokens.",
+    "forks": 4,
+    "full_name": "ashishsinha1602/schemagate",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-25T13:07:48Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:rag",
+      "recently-active",
+      "license:Apache-2.0",
+      "community-signal"
+    ],
+    "score": 0.91288981,
+    "source_id": "1359274599",
+    "stars": 127,
+    "url": "https://github.com/ashishsinha1602/schemagate"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
     "description": "See what your coding agents did and what it cost. Breaks each task down into work steps — tools used, files changed, tests run, time and tokens spent. Local-first dashboard for Claude Code, Codex, OpenCode, and more. No login, no telemetry.",
     "forks": 82,
     "full_name": "mikehasa/agentacct",
@@ -2441,11 +2465,11 @@
     "auto_fork_eligible": false,
     "category": "databases-storage",
     "description": "The Prisma ORM: write your application in TypeScript with human-readable queries instead of SQL. Host your database on Prisma Postgres and your app on Prisma Compute.",
-    "forks": 2650,
+    "forks": 2620,
     "full_name": "prisma/orm",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-11-20T03:12:52Z",
+    "pushed_at": "2026-11-25T14:20:43Z",
     "reasons": [
       "category:databases-storage",
       "keyword:database",
@@ -2456,9 +2480,9 @@
       "recently-active",
       "license:Apache-2.0"
     ],
-    "score": 0.85999745,
+    "score": 0.8599981,
     "source_id": "192925833",
-    "stars": 47693,
+    "stars": 47770,
     "url": "https://github.com/prisma/orm"
   },
   {
@@ -3228,6 +3252,29 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Open-source, self-hosted observability and diagnostics for AI agents. Trace sessions, model usage, and memory with OpenTelemetry.",
+    "forks": 2,
+    "full_name": "antgroup/ai-vision",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-25T12:13:53Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:llm",
+      "keyword:llmops",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.83904356,
+    "source_id": "1456216979",
+    "stars": 7,
+    "url": "https://github.com/antgroup/ai-vision"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "networking",
     "description": "Secure, fast, and highly stealthy tunnel for censored networks.",
     "forks": 1,
@@ -3258,7 +3305,7 @@
     "full_name": "monoscope-tech/monoscope",
     "license_id": "AGPL-3.0",
     "platform": "github",
-    "pushed_at": "2026-11-18T17:15:06Z",
+    "pushed_at": "2026-11-25T14:22:08Z",
     "reasons": [
       "category:devops-observability",
       "keyword:observability",
@@ -3269,9 +3316,9 @@
       "license:AGPL-3.0",
       "community-signal"
     ],
-    "score": 0.83798304,
+    "score": 0.83805721,
     "source_id": "445620962",
-    "stars": 2121,
+    "stars": 2137,
     "url": "https://github.com/monoscope-tech/monoscope"
   },
   {
@@ -3343,6 +3390,30 @@
     "source_id": "46880661",
     "stars": 7562,
     "url": "https://github.com/amacneil/dbmate"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "devops-observability",
+    "description": "⭐️ The Open-Source Polyglot Observability Warehouse: Light, Fast, Cloud Native, Drop-in Grafana LGTMP alternative :rocket: Indie All-in-One Opentelemetry, Loki, Prometheus, Tempo, Pyroscope On-Prem Alternative :star: ",
+    "forks": 106,
+    "full_name": "metrico/gigapipe",
+    "license_id": "AGPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-24T20:42:02Z",
+    "reasons": [
+      "category:devops-observability",
+      "keyword:observability",
+      "keyword:monitoring",
+      "keyword:tracing",
+      "keyword:metrics",
+      "recently-active",
+      "license:AGPL-3.0",
+      "community-signal"
+    ],
+    "score": 0.83537395,
+    "source_id": "163185206",
+    "stars": 1725,
+    "url": "https://github.com/metrico/gigapipe"
   },
   {
     "auto_fork_eligible": false,
@@ -3490,11 +3561,11 @@
     "auto_fork_eligible": false,
     "category": "devops-observability",
     "description": "Main repository for Datadog Agent",
-    "forks": 1537,
+    "forks": 1542,
     "full_name": "DataDog/datadog-agent",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-11-20T12:49:29Z",
+    "pushed_at": "2026-11-25T14:21:50Z",
     "reasons": [
       "category:devops-observability",
       "keyword:observability",
@@ -3505,9 +3576,9 @@
       "recently-active",
       "license:Apache-2.0"
     ],
-    "score": 0.83115969,
+    "score": 0.83116798,
     "source_id": "49970739",
-    "stars": 3774,
+    "stars": 3775,
     "url": "https://github.com/DataDog/datadog-agent"
   },
   {
@@ -3584,6 +3655,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "databases-storage",
+    "description": "The database client for you and your agents. Postgres, MySQL, MariaDB, MSSQL, ClickHouse and SQLite.",
+    "forks": 107,
+    "full_name": "wannabespace/tamery",
+    "license_id": "AGPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-25T14:21:33Z",
+    "reasons": [
+      "category:databases-storage",
+      "keyword:database",
+      "keyword:postgresql",
+      "keyword:postgres",
+      "keyword:mysql",
+      "keyword:sqlite",
+      "recently-active",
+      "license:AGPL-3.0"
+    ],
+    "score": 0.82936038,
+    "source_id": "895089213",
+    "stars": 1473,
+    "url": "https://github.com/wannabespace/tamery"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "android-kernel",
     "description": "Sanitized public CI mirror for Lenovo TB322FC Android 15 GKI 6.6.111 ReSukiSU build",
     "forks": 3,
@@ -3633,11 +3728,11 @@
     "auto_fork_eligible": false,
     "category": "databases-storage",
     "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
-    "forks": 15133,
+    "forks": 15142,
     "full_name": "supabase/supabase",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-11-20T03:14:02Z",
+    "pushed_at": "2026-11-25T14:21:55Z",
     "reasons": [
       "category:databases-storage",
       "keyword:database",
@@ -3647,9 +3742,9 @@
       "license:Apache-2.0",
       "community-signal"
     ],
-    "score": 0.82534905,
+    "score": 0.82534979,
     "source_id": "214587193",
-    "stars": 115178,
+    "stars": 115467,
     "url": "https://github.com/supabase/supabase"
   },
   {
@@ -3772,6 +3867,52 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Read-only PostgreSQL MCP server for AI agents: ten DBA tools (SQL, EXPLAIN with hypothetical indexes, top queries, health checks, locks), bounded CSV results, one static Go binary. Drop-in replacement for crystaldba/postgres-mcp.",
+    "forks": 0,
+    "full_name": "a-lafon/postgres-dba-mcp",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-25T13:17:44Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.81935887,
+    "source_id": "1430021742",
+    "stars": 1,
+    "url": "https://github.com/a-lafon/postgres-dba-mcp"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "devops-observability",
+    "description": "[Production Safe] Phoenix Liveview Dashboard for Observability including Ports and Processes details, Tracing/Profiling with erlang debugger, Beam VM metrics and much more",
+    "forks": 3,
+    "full_name": "deployex/observer_web",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-25T11:31:26Z",
+    "reasons": [
+      "category:devops-observability",
+      "keyword:observability",
+      "keyword:monitoring",
+      "keyword:tracing",
+      "keyword:metrics",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.81926527,
+    "source_id": "923722875",
+    "stars": 54,
+    "url": "https://github.com/deployex/observer_web"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "OpenTelemetry-native agent observability: trace every LLM call, tool call and agent step, with cost per call, alerts, and Claude Code / Codex / Cursor session tracing. TypeScript SDK.",
     "forks": 0,
     "full_name": "glassflow/rius-sdk-typescript",
@@ -3791,29 +3932,6 @@
     "source_id": "1331873239",
     "stars": 1,
     "url": "https://github.com/glassflow/rius-sdk-typescript"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "devops-observability",
-    "description": "[Production Safe] Phoenix Liveview Dashboard for Observability including Ports and Processes details, Tracing/Profiling with erlang debugger, Beam VM metrics and much more",
-    "forks": 3,
-    "full_name": "deployex/observer_web",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-18T12:30:37Z",
-    "reasons": [
-      "category:devops-observability",
-      "keyword:observability",
-      "keyword:monitoring",
-      "keyword:tracing",
-      "keyword:metrics",
-      "recently-active",
-      "license:MIT"
-    ],
-    "score": 0.81910631,
-    "source_id": "923722875",
-    "stars": 54,
-    "url": "https://github.com/deployex/observer_web"
   },
   {
     "auto_fork_eligible": false,
@@ -3864,6 +3982,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "mobile-crossplatform",
+    "description": ":iphone: Collaborative List of Open-Source iOS Apps",
+    "forks": 6193,
+    "full_name": "dkhamsing/open-source-ios-apps",
+    "license_id": "CC0-1.0",
+    "platform": "github",
+    "pushed_at": "2026-11-25T13:29:06Z",
+    "reasons": [
+      "category:mobile-crossplatform",
+      "keyword:flutter",
+      "keyword:react-native",
+      "keyword:swiftui",
+      "keyword:ios",
+      "recently-active",
+      "license:CC0-1.0",
+      "community-signal"
+    ],
+    "score": 0.81822585,
+    "source_id": "29887499",
+    "stars": 53465,
+    "url": "https://github.com/dkhamsing/open-source-ios-apps"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Look up building permit status for King County, WA — searches across city + county jurisdictions. Agent-friendly: --pipe, --schema, tool.json.",
     "forks": 0,
@@ -3910,30 +4052,6 @@
   },
   {
     "auto_fork_eligible": false,
-    "category": "mobile-crossplatform",
-    "description": ":iphone: Collaborative List of Open-Source iOS Apps",
-    "forks": 6186,
-    "full_name": "dkhamsing/open-source-ios-apps",
-    "license_id": "CC0-1.0",
-    "platform": "github",
-    "pushed_at": "2026-11-18T12:57:28Z",
-    "reasons": [
-      "category:mobile-crossplatform",
-      "keyword:flutter",
-      "keyword:react-native",
-      "keyword:swiftui",
-      "keyword:ios",
-      "recently-active",
-      "license:CC0-1.0",
-      "community-signal"
-    ],
-    "score": 0.81794082,
-    "source_id": "29887499",
-    "stars": 53343,
-    "url": "https://github.com/dkhamsing/open-source-ios-apps"
-  },
-  {
-    "auto_fork_eligible": false,
     "category": "databases-storage",
     "description": "Database MCP server for MySQL, MariaDB, PostgreSQL, and SQLite -  with builtin PII redaction and write-prevention",
     "forks": 8,
@@ -3958,6 +4076,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "devops-observability",
+    "description": "🛡️ Open-source observability platform and SIEM. Logs, traces and metrics with OTLP ingestion and Sigma detection rules. Self-hosted, GDPR-ready alternative to Datadog, ELK and Splunk.",
+    "forks": 24,
+    "full_name": "logtide-dev/logtide",
+    "license_id": "AGPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-25T14:02:00Z",
+    "reasons": [
+      "category:devops-observability",
+      "keyword:observability",
+      "keyword:monitoring",
+      "keyword:tracing",
+      "keyword:metrics",
+      "recently-active",
+      "license:AGPL-3.0",
+      "community-signal"
+    ],
+    "score": 0.81568859,
+    "source_id": "1096779983",
+    "stars": 462,
+    "url": "https://github.com/logtide-dev/logtide"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "data-engineering",
     "description": "Flink CDC is a streaming data integration tool",
     "forks": 2209,
@@ -3979,6 +4121,29 @@
     "source_id": "282994686",
     "stars": 6495,
     "url": "https://github.com/apache/flink-cdc"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "databases-storage",
+    "description": "Supabase CLI. Manage postgres migrations, run Supabase locally, deploy edge functions. Postgres backups. Generating types from your database schema.",
+    "forks": 547,
+    "full_name": "supabase/cli",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-25T14:10:51Z",
+    "reasons": [
+      "category:databases-storage",
+      "keyword:database",
+      "keyword:postgresql",
+      "keyword:postgres",
+      "recently-active",
+      "license:MIT",
+      "community-signal"
+    ],
+    "score": 0.8150392,
+    "source_id": "314160187",
+    "stars": 2473,
+    "url": "https://github.com/supabase/cli"
   },
   {
     "auto_fork_eligible": false,
@@ -4027,29 +4192,6 @@
     "source_id": "1217713968",
     "stars": 161,
     "url": "https://github.com/NativeScript/SimDeck"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "databases-storage",
-    "description": "Supabase CLI. Manage postgres migrations, run Supabase locally, deploy edge functions. Postgres backups. Generating types from your database schema.",
-    "forks": 541,
-    "full_name": "supabase/cli",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-23T06:46:07Z",
-    "reasons": [
-      "category:databases-storage",
-      "keyword:database",
-      "keyword:postgresql",
-      "keyword:postgres",
-      "recently-active",
-      "license:MIT",
-      "community-signal"
-    ],
-    "score": 0.81491627,
-    "source_id": "314160187",
-    "stars": 2472,
-    "url": "https://github.com/supabase/cli"
   },
   {
     "auto_fork_eligible": false,
@@ -4541,11 +4683,11 @@
     "auto_fork_eligible": false,
     "category": "databases-storage",
     "description": "One advanced and mature open-source MPP (Massively Parallel Processing) database. Open source alternative to Greenplum Database.",
-    "forks": 277,
+    "forks": 279,
     "full_name": "apache/cloudberry",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-11-23T06:06:52Z",
+    "pushed_at": "2026-11-25T13:13:23Z",
     "reasons": [
       "category:databases-storage",
       "keyword:database",
@@ -4555,9 +4697,9 @@
       "license:Apache-2.0",
       "community-signal"
     ],
-    "score": 0.80583831,
+    "score": 0.80591667,
     "source_id": "644742603",
-    "stars": 1448,
+    "stars": 1449,
     "url": "https://github.com/apache/cloudberry"
   },
   {
@@ -4605,145 +4747,5 @@
     "source_id": "1359376796",
     "stars": 4,
     "url": "https://github.com/TiagoDanin/Trunative"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Ultimate Multi-Agent OS for Autonomous AI NPCs 2026",
-    "forks": 1,
-    "full_name": "israriqbal/agent-ecologies",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-11-19T18:49:04Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:ai-agent",
-      "recently-active",
-      "community-signal"
-    ],
-    "score": 0.804824,
-    "source_id": "1283015427",
-    "stars": 121,
-    "url": "https://github.com/israriqbal/agent-ecologies"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "security-sandbox",
-    "description": "Process isolation for Linux using namespaces, resource limits, cgroups, landlock and seccomp.",
-    "forks": 13,
-    "full_name": "souk4711/hakoniwa",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-11-21T00:44:49Z",
-    "reasons": [
-      "category:security-sandbox",
-      "keyword:sandbox",
-      "keyword:seccomp",
-      "keyword:isolation",
-      "keyword:security",
-      "keyword:rootless",
-      "recently-active"
-    ],
-    "score": 0.80450866,
-    "source_id": "515799661",
-    "stars": 96,
-    "url": "https://github.com/souk4711/hakoniwa"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "databases-storage",
-    "description": "The most popular Kubernetes Operator for PostgreSQL.",
-    "forks": 823,
-    "full_name": "cloudnative-pg/cloudnative-pg",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-23T07:07:35Z",
-    "reasons": [
-      "category:databases-storage",
-      "keyword:database",
-      "keyword:postgresql",
-      "keyword:postgres",
-      "recently-active",
-      "license:Apache-2.0",
-      "community-signal"
-    ],
-    "score": 0.80379286,
-    "source_id": "468311851",
-    "stars": 9647,
-    "url": "https://github.com/cloudnative-pg/cloudnative-pg"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "devops-observability",
-    "description": "Kieker is an observability framework, that consists of an monitoring and tracing agent, and compatible analysis tools",
-    "forks": 48,
-    "full_name": "kieker-monitoring/kieker",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-19T16:53:27Z",
-    "reasons": [
-      "category:devops-observability",
-      "keyword:observability",
-      "keyword:monitoring",
-      "keyword:tracing",
-      "recently-active",
-      "license:Apache-2.0",
-      "community-signal"
-    ],
-    "score": 0.8037375,
-    "source_id": "38052817",
-    "stars": 113,
-    "url": "https://github.com/kieker-monitoring/kieker"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "embedded-iot",
-    "description": "Build voice and text devices for your Hermes Agent, with ESP32 firmware, a Linux client, and a desktop simulator.",
-    "forks": 102,
-    "full_name": "Adolanium/hermes-gadget-sdk",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-20T07:00:42Z",
-    "reasons": [
-      "category:embedded-iot",
-      "keyword:embedded",
-      "keyword:iot",
-      "keyword:firmware",
-      "keyword:raspberry-pi",
-      "recently-active",
-      "license:MIT",
-      "community-signal"
-    ],
-    "score": 0.80212516,
-    "source_id": "1402986945",
-    "stars": 561,
-    "url": "https://github.com/Adolanium/hermes-gadget-sdk"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "databases-storage",
-    "description": "Embeddable Rust query engine unifying relational, full-text, vector, graph, and probabilistic retrieval under one typed algebra.",
-    "forks": 2,
-    "full_name": "cognica-io/uqa-engine",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-23T05:01:37Z",
-    "reasons": [
-      "category:databases-storage",
-      "keyword:database",
-      "keyword:postgresql",
-      "keyword:postgres",
-      "keyword:query-engine",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.80199106,
-    "source_id": "1229604562",
-    "stars": 10,
-    "url": "https://github.com/cognica-io/uqa-engine"
   }
 ]
