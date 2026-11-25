@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **936000**
-- latest census cursor: **2778268**
+- total census repositories scanned: **944000**
+- latest census cursor: **2800748**
 - retained candidates: **200**
 - governed fork queue: **44**
 
@@ -84,8 +84,8 @@
 - **Erio-Harrison/nanosandbox** — score=0.863, stars=8; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **exein-io/analyzer-scan** — score=0.848, stars=5; category:security-sandbox, keyword:security, keyword:container, keyword:vulnerability, keyword:sbom
 - **Steck43/isolation-layer** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
+- **whiskeyjimbo/bento** — score=0.835, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **cokovali10-sketch/AegisRuntime** — score=0.829, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
-- **whiskeyjimbo/bento** — score=0.820, stars=0; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 - **souk4711/hakoniwa** — score=0.805, stars=96; category:security-sandbox, keyword:sandbox, keyword:seccomp, keyword:isolation, keyword:security
 
 ## Fork queue
