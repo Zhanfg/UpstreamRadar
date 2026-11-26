@@ -1,0 +1,40 @@
+{
+  "action": {
+    "body": "changed=37\nerrors=0\ncoverage=0.9233\ncontent=0.6535\nfork_queue=46\n",
+    "key": "benchmark:2026-11-26:1",
+    "kind": "benchmark",
+    "priority": 1.0,
+    "reason": "real radar changes available for scheduler-quality measurement",
+    "title": "Activity Matrix benchmark snapshot"
+  },
+  "created_at": "2026-11-26T21:55:55+00:00",
+  "evidence": {
+    "changed_count": 37,
+    "content_opportunities": 8,
+    "content_score": 0.6535231,
+    "coverage_score": 0.92326943,
+    "error_count": 0,
+    "fork_queue_count": 46,
+    "observed_at": "2026-11-26T14:22:41Z",
+    "platform": "github",
+    "top_fields": [
+      "pushed_at",
+      "open_issues",
+      "forks",
+      "stars",
+      "size_kb"
+    ],
+    "top_impact": 4.55,
+    "top_name": "kubernetes/kubernetes",
+    "top_reasons": [
+      "accelerating",
+      "high-content-yield",
+      "security-focus",
+      "uncertainty-exploration",
+      "likely-change",
+      "anomalous",
+      "high-surprise",
+      "algorithm-disagreement"
+    ]
+  }
+}
