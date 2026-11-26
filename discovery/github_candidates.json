@@ -583,7 +583,7 @@
     "full_name": "footprintjs/agentfootprint",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-25T02:27:46Z",
+    "pushed_at": "2026-11-26T21:31:21Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -594,7 +594,7 @@
       "keyword:rag",
       "recently-active"
     ],
-    "score": 0.89360489,
+    "score": 0.89360582,
     "source_id": "1183666171",
     "stars": 22,
     "url": "https://github.com/footprintjs/agentfootprint"
@@ -938,6 +938,30 @@
   {
     "auto_fork_eligible": false,
     "category": "android-kernel",
+    "description": "Unofficial LineageOS 24.0 / Android 17 device tree for the iKKO MindOne (MediaTek MT6789 / Helio G99) on the Linux 6.18 GKI kernel — own AIDL audio, sensors, GNSS and camera services, in-tree V4L2 Codec2, 64-bit only. lineage-23.2 branch for Android 16 with Linux 6.12",
+    "forks": 0,
+    "full_name": "iasnezhkov/android_device_ikko_mindone",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-26T03:07:07Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:device-tree",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.88280957,
+    "source_id": "1372534919",
+    "stars": 1,
+    "url": "https://github.com/iasnezhkov/android_device_ikko_mindone"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
     "description": "NekoSU — KernelSU 临时 root（越狱模式）管理器，支持 GKI 5.x 与 4.x 内核",
     "forks": 1,
     "full_name": "laninenterline/NekoSU",
@@ -1008,6 +1032,30 @@
     "url": "https://github.com/YahyaHammad/Venastine-Research-Harness"
   },
   {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
+    "description": "Small wording changes in MCP tool descriptions can reorder LLM agent leaderboards. Pre-registered study on IBM AssetOpsBench: 10 models, 38,304 tool-selection decisions, open data and code.",
+    "forks": 0,
+    "full_name": "Mukkandi-Sridhar/SemanticDrift",
+    "license_id": "CC-BY-4.0",
+    "platform": "github",
+    "pushed_at": "2026-11-26T18:02:47Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:CC-BY-4.0",
+      "emerging"
+    ],
+    "score": 0.8796208,
+    "source_id": "1284076558",
+    "stars": 10,
+    "url": "https://github.com/Mukkandi-Sridhar/SemanticDrift"
+  },
+  {
     "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "An agent that compiles open-source libraries into verified MCP tools on demand, and keeps only the ones that pass a locked-down sandbox. Open-weight models only.",
@@ -1034,6 +1082,30 @@
   {
     "auto_fork_eligible": true,
     "category": "ai-agents",
+    "description": "Turn any URL into agent-callable MCP tools. One spec-compliant MCP server endpoint, no per-site build.",
+    "forks": 2,
+    "full_name": "New1Direction/webmcp-anything",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-26T14:10:43Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "recently-active",
+      "license:MIT"
+    ],
+    "score": 0.8792696,
+    "source_id": "1250482335",
+    "stars": 9,
+    "url": "https://github.com/New1Direction/webmcp-anything"
+  },
+  {
+    "auto_fork_eligible": true,
+    "category": "ai-agents",
     "description": "A customizable agent runtime system for external applications, with LangGraph-based agents, application integrations, Harness and Eval.",
     "forks": 0,
     "full_name": "Ling-ye/AgentStrata",
@@ -1054,30 +1126,6 @@
     "source_id": "1321844914",
     "stars": 9,
     "url": "https://github.com/Ling-ye/AgentStrata"
-  },
-  {
-    "auto_fork_eligible": true,
-    "category": "ai-agents",
-    "description": "Turn any URL into agent-callable MCP tools. One spec-compliant MCP server endpoint, no per-site build.",
-    "forks": 2,
-    "full_name": "New1Direction/webmcp-anything",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-10-27T16:12:26Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:tool-use",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:MIT"
-    ],
-    "score": 0.87809494,
-    "source_id": "1250482335",
-    "stars": 8,
-    "url": "https://github.com/New1Direction/webmcp-anything"
   },
   {
     "auto_fork_eligible": false,
@@ -1271,6 +1319,28 @@
   },
   {
     "auto_fork_eligible": true,
+    "category": "ai-agents",
+    "description": "Local-first Python runtime for tool-using AI agents, with CLI, API, memory, MCP, A2A, and inspectable execution surfaces.",
+    "forks": 58,
+    "full_name": "openminion/openminion",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-26T13:58:32Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.87541638,
+    "source_id": "1277944593",
+    "stars": 60,
+    "url": "https://github.com/openminion/openminion"
+  },
+  {
+    "auto_fork_eligible": true,
     "category": "security-sandbox",
     "description": "kern: fast, rootless container runtime and sandbox with no daemon. Runs untrusted code and AI agent tool calls under kernel-enforced isolation.",
     "forks": 12,
@@ -1392,30 +1462,6 @@
   {
     "auto_fork_eligible": false,
     "category": "android-kernel",
-    "description": "Unofficial LineageOS 24.0 / Android 17 device tree for the iKKO MindOne (MediaTek MT6789 / Helio G99) on the Linux 6.18 GKI kernel — own AIDL audio, sensors, GNSS and camera services, in-tree V4L2 Codec2, 64-bit only. lineage-23.2 branch for Android 16 with Linux 6.12",
-    "forks": 0,
-    "full_name": "iasnezhkov/android_device_ikko_mindone",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-14T13:10:25Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:device-tree",
-      "recently-active",
-      "license:Apache-2.0",
-      "emerging"
-    ],
-    "score": 0.87394951,
-    "source_id": "1372534919",
-    "stars": 1,
-    "url": "https://github.com/iasnezhkov/android_device_ikko_mindone"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
     "description": "Automated Android GKI build pipeline with ReSukiSU, SUSFS v2.3.0, ZeroMount, and Ring-0 Thermal Perf Engine",
     "forks": 0,
     "full_name": "Alfnnnnyy/GKI_KernelSU_SUSFS",
@@ -1460,28 +1506,6 @@
     "source_id": "1291448726",
     "stars": 2,
     "url": "https://github.com/laazizi/autoagent"
-  },
-  {
-    "auto_fork_eligible": true,
-    "category": "ai-agents",
-    "description": "Local-first Python runtime for tool-using AI agents, with CLI, API, memory, MCP, A2A, and inspectable execution surfaces.",
-    "forks": 52,
-    "full_name": "openminion/openminion",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-24T12:05:17Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.87340246,
-    "source_id": "1277944593",
-    "stars": 55,
-    "url": "https://github.com/openminion/openminion"
   },
   {
     "auto_fork_eligible": false,
@@ -1650,6 +1674,30 @@
     "source_id": "1456028606",
     "stars": 0,
     "url": "https://github.com/One4Lots/SUSFS4KSU-Next"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Lala Se Lab Tak Challenge: A 42-day, project-first path from IT job to AI Engineer. One reel, one project step and the day’s code, every day. Python basics, LLM APIs, a ticket summarizer, a RAG policy bot with evals, and a tool-using agent with MCP. Hinglish. By DevWithData.",
+    "forks": 1,
+    "full_name": "shashikantdev3/ai-engineer-42-days-challenge",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-26T11:54:55Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:rag",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.8704533,
+    "source_id": "1441119114",
+    "stars": 2,
+    "url": "https://github.com/shashikantdev3/ai-engineer-42-days-challenge"
   },
   {
     "auto_fork_eligible": false,
@@ -1872,7 +1920,7 @@
     "full_name": "BGMLAI/gate.cat",
     "license_id": "Apache-2.0",
     "platform": "github",
-    "pushed_at": "2026-11-19T14:30:11Z",
+    "pushed_at": "2026-11-26T15:26:54Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
@@ -1883,7 +1931,7 @@
       "license:Apache-2.0",
       "emerging"
     ],
-    "score": 0.86677046,
+    "score": 0.86677393,
     "source_id": "1289130385",
     "stars": 2,
     "url": "https://github.com/BGMLAI/gate.cat"
@@ -1958,6 +2006,30 @@
     "source_id": "1002625153",
     "stars": 182,
     "url": "https://github.com/rust-dd/tako"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "networking",
+    "description": "Production-ready QUIC network tunnel SDK & server written in Rust. Zero HoL blocking, Wi-Fi/LTE connection migration, and ready-to-use UniFFI bindings for iOS (Swift), Android (Kotlin), and Python",
+    "forks": 0,
+    "full_name": "Gekata322/quic-rust-tunnel-sdk",
+    "license_id": "AGPL-3.0",
+    "platform": "github",
+    "pushed_at": "2026-11-26T12:56:50Z",
+    "reasons": [
+      "category:networking",
+      "keyword:proxy",
+      "keyword:quic",
+      "keyword:network",
+      "keyword:vpn",
+      "recently-active",
+      "license:AGPL-3.0",
+      "emerging"
+    ],
+    "score": 0.86656627,
+    "source_id": "1472815383",
+    "stars": 2,
+    "url": "https://github.com/Gekata322/quic-rust-tunnel-sdk"
   },
   {
     "auto_fork_eligible": true,
@@ -2388,6 +2460,30 @@
     "source_id": "1465298489",
     "stars": 1,
     "url": "https://github.com/Akxan/zhifox-agent-harness"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "An open-source AI coding agent designed to unlock the full potential of LLMs through intelligent context management, adaptive memory, and efficient tool use.",
+    "forks": 0,
+    "full_name": "yuuichieguchi/MomongaCode",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-26T03:29:08Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:ai-agent",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.86183948,
+    "source_id": "1448481300",
+    "stars": 1,
+    "url": "https://github.com/yuuichieguchi/MomongaCode"
   },
   {
     "auto_fork_eligible": false,
@@ -2990,26 +3086,26 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
-    "description": "An open-source AI coding agent designed to unlock the full potential of LLMs through intelligent context management, adaptive memory, and efficient tool use.",
+    "description": "Guardrails for LLM agents in .NET: attribute-defined tools with strict schemas, host-bound identity, human approval for writes, audit, evals. Adapters for Claude (Anthropic SDK) and MCP.",
     "forks": 0,
-    "full_name": "yuuichieguchi/MomongaCode",
+    "full_name": "budaevb/agent-guardrails-dotnet",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-22T10:35:53Z",
+    "pushed_at": "2026-11-26T10:43:13Z",
     "reasons": [
       "category:ai-agents",
       "keyword:agent",
       "keyword:mcp",
+      "keyword:tool-use",
       "keyword:llm",
-      "keyword:ai-agent",
       "recently-active",
       "license:MIT",
       "emerging"
     ],
-    "score": 0.85551669,
-    "source_id": "1448481300",
+    "score": 0.85570111,
+    "source_id": "1472980959",
     "stars": 0,
-    "url": "https://github.com/yuuichieguchi/MomongaCode"
+    "url": "https://github.com/budaevb/agent-guardrails-dotnet"
   },
   {
     "auto_fork_eligible": false,
@@ -3225,6 +3321,29 @@
     "source_id": "1453620040",
     "stars": 0,
     "url": "https://github.com/haest-werk/haest"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "荣耀 WIN RT（AAK-AN00）自编译 GKI 内核 · SukiSU-Nova 内置 + SUSFS（可选）+ KPM（KernelPatch） | MagicOS 10.0 / Android 15 / 6.6.56 | AnyKernel3 / boot-only 双刷机包 | AI 参与构建与验证，刷机风险自负",
+    "forks": 0,
+    "full_name": "oopnv70-lab/AAK-AN00-NovaKernel",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-25T21:23:42Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:susfs",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.84007775,
+    "source_id": "1469333913",
+    "stars": 2,
+    "url": "https://github.com/oopnv70-lab/AAK-AN00-NovaKernel"
   },
   {
     "auto_fork_eligible": false,
@@ -3866,6 +3985,98 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "Linux 6.18 for the iKKO MindOne (MediaTek MT6789 / Helio G99) — device modules, DTB/DTBO and a Kleaf DDK build over Google's android17-6.18 GKI, with android16-6.12 kept as the previous line; an independent port, made without vendor support",
+    "forks": 2,
+    "full_name": "iasnezhkov/android_kernel_ikko_mindone",
+    "license_id": "NOASSERTION",
+    "platform": "github",
+    "pushed_at": "2026-11-26T03:07:04Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "keyword:device-tree",
+      "recently-active",
+      "emerging"
+    ],
+    "score": 0.82315239,
+    "source_id": "1372535099",
+    "stars": 9,
+    "url": "https://github.com/iasnezhkov/android_kernel_ikko_mindone"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "android-kernel",
+    "description": "努比亚 Z60 Ultra（NX721J）Android 16 内核 · 支持 Droidspaces 容器与 Kali NetHunter · 星云OS 2.0.8 / 6.1.145",
+    "forks": 0,
+    "full_name": "HANPU5838/Nubia-Z60-Ultra-Droidspaces-Kernel",
+    "license_id": "GPL-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-26T05:17:59Z",
+    "reasons": [
+      "category:android-kernel",
+      "keyword:android",
+      "keyword:gki",
+      "keyword:kernel",
+      "recently-active",
+      "license:GPL-2.0",
+      "emerging"
+    ],
+    "score": 0.82195198,
+    "source_id": "1448981873",
+    "stars": 0,
+    "url": "https://github.com/HANPU5838/Nubia-Z60-Ultra-Droidspaces-Kernel"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "🎬 StudioBench: Benchmarking Agentic Multimodal Large Language Models for Productive Audiovisual Creation",
+    "forks": 0,
+    "full_name": "OpenRaiser/StudioBench",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-26T06:11:43Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "keyword:llm",
+      "recently-active",
+      "license:Apache-2.0",
+      "emerging"
+    ],
+    "score": 0.82011228,
+    "source_id": "1451264999",
+    "stars": 3,
+    "url": "https://github.com/OpenRaiser/StudioBench"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
+    "description": "Claude Certified Architect Foundations exam-prep course: tested Python code for AI agents, Claude Agent SDK, tool use, MCP",
+    "forks": 0,
+    "full_name": "hereandnowai/claude-architect-course",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-26T21:00:43Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:tool-use",
+      "recently-active",
+      "license:MIT",
+      "emerging"
+    ],
+    "score": 0.81940544,
+    "source_id": "1473022649",
+    "stars": 1,
+    "url": "https://github.com/hereandnowai/claude-architect-course"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Read-only PostgreSQL MCP server for AI agents: ten DBA tools (SQL, EXPLAIN with hypothetical indexes, top queries, health checks, locks), bounded CSV results, one static Go binary. Drop-in replacement for crystaldba/postgres-mcp.",
     "forks": 0,
@@ -4218,29 +4429,6 @@
   },
   {
     "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "努比亚 Z60 Ultra（NX721J）Android 16 内核 · 支持 Droidspaces 容器与 Kali NetHunter · 星云OS 2.0.8 / 6.1.145",
-    "forks": 0,
-    "full_name": "HANPU5838/Nubia-Z60-Ultra-Droidspaces-Kernel",
-    "license_id": "GPL-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-15T02:55:10Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "recently-active",
-      "license:GPL-2.0",
-      "emerging"
-    ],
-    "score": 0.81400976,
-    "source_id": "1448981873",
-    "stars": 0,
-    "url": "https://github.com/HANPU5838/Nubia-Z60-Ultra-Droidspaces-Kernel"
-  },
-  {
-    "auto_fork_eligible": false,
     "category": "databases-storage",
     "description": "JSON-native TypeScript ORM for Bun, Browsers, Edge, Node, Workers",
     "forks": 5,
@@ -4426,29 +4614,6 @@
   },
   {
     "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Linux 6.18 for the iKKO MindOne (MediaTek MT6789 / Helio G99) — device modules, DTB/DTBO and a Kleaf DDK build over Google's android17-6.18 GKI, with android16-6.12 kept as the previous line; an independent port, made without vendor support",
-    "forks": 2,
-    "full_name": "iasnezhkov/android_kernel_ikko_mindone",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-11-14T13:10:09Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:device-tree",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.8121228,
-    "source_id": "1372535099",
-    "stars": 7,
-    "url": "https://github.com/iasnezhkov/android_kernel_ikko_mindone"
-  },
-  {
-    "auto_fork_eligible": false,
     "category": "ai-agents",
     "description": "Embracing All Creation (Desktop) — Dedicated to the Harmonious Coexistence of Hundreds of DSH Plugins / 揽尽万象（桌面版） —— 致力于让数百个DSH插件和谐共存",
     "forks": 98,
@@ -4585,167 +4750,5 @@
     "source_id": "772696310",
     "stars": 18,
     "url": "https://github.com/AnanthaRajuC/QueryAPIGate"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "MCP server for FXpeek: source-linked historical exchange rates (JSON/CSV) for AI agents and LLM tool use.",
-    "forks": 0,
-    "full_name": "Jenpo/fxpeek-mcp",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-18T11:28:29Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:mcp",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.8079798,
-    "source_id": "1367183861",
-    "stars": 0,
-    "url": "https://github.com/Jenpo/fxpeek-mcp"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "databases-storage",
-    "description": "A comprehensive Kotlin multiplatform toolkit for building server applications with Ktor.",
-    "forks": 3,
-    "full_name": "smyrgeorge/ktkit",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-18T15:21:05Z",
-    "reasons": [
-      "category:databases-storage",
-      "keyword:database",
-      "keyword:postgresql",
-      "keyword:postgres",
-      "keyword:mysql",
-      "keyword:sqlite",
-      "recently-active",
-      "license:MIT"
-    ],
-    "score": 0.8075738,
-    "source_id": "1120746390",
-    "stars": 43,
-    "url": "https://github.com/smyrgeorge/ktkit"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Pi extension for exporting OpenTelemetry data to your OTLP endpoint, with a self-hosted Grafana dashboard",
-    "forks": 0,
-    "full_name": "thomas-fazzari/pi-otlp",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-21T00:31:09Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:coding-agent",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.80654799,
-    "source_id": "1437698405",
-    "stars": 0,
-    "url": "https://github.com/thomas-fazzari/pi-otlp"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "Extra ZRAM compressors for stock Android GKI kernels, as loadable modules: lz4k, lz4kd, lz4k_oplus, lz4hc, 842, plus zram_list so module-provided algorithms appear in comp_algorithm. No kernel rebuild.",
-    "forks": 0,
-    "full_name": "misaka5202/zram-lkm",
-    "license_id": null,
-    "platform": "github",
-    "pushed_at": "2026-11-19T14:53:26Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:kernelsu",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.8062033,
-    "source_id": "1456924569",
-    "stars": 2,
-    "url": "https://github.com/misaka5202/zram-lkm"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "databases-storage",
-    "description": "One advanced and mature open-source MPP (Massively Parallel Processing) database. Open source alternative to Greenplum Database.",
-    "forks": 279,
-    "full_name": "apache/cloudberry",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-25T13:13:23Z",
-    "reasons": [
-      "category:databases-storage",
-      "keyword:database",
-      "keyword:postgresql",
-      "keyword:postgres",
-      "recently-active",
-      "license:Apache-2.0",
-      "community-signal"
-    ],
-    "score": 0.80591667,
-    "source_id": "644742603",
-    "stars": 1449,
-    "url": "https://github.com/apache/cloudberry"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "android-kernel",
-    "description": "GKI android15-6.6.118 custom kernel for Redmi Turbo 5 Max (dash, MT6991Z) — DroidSpaces + SukiSU Ultra (KPM+SUSFS), pinned stock base",
-    "forks": 0,
-    "full_name": "lakitu12/android_kernel_xiaomi_dash",
-    "license_id": "NOASSERTION",
-    "platform": "github",
-    "pushed_at": "2026-11-24T05:50:44Z",
-    "reasons": [
-      "category:android-kernel",
-      "keyword:android",
-      "keyword:gki",
-      "keyword:kernel",
-      "keyword:susfs",
-      "recently-active",
-      "emerging"
-    ],
-    "score": 0.8056909,
-    "source_id": "1351262209",
-    "stars": 2,
-    "url": "https://github.com/lakitu12/android_kernel_xiaomi_dash"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "A mobile-only design skill for AI coding agents",
-    "forks": 0,
-    "full_name": "TiagoDanin/Trunative",
-    "license_id": "MIT",
-    "platform": "github",
-    "pushed_at": "2026-11-21T15:34:40Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:coding-agent",
-      "keyword:llm",
-      "recently-active",
-      "license:MIT",
-      "emerging"
-    ],
-    "score": 0.80556859,
-    "source_id": "1359376796",
-    "stars": 4,
-    "url": "https://github.com/TiagoDanin/Trunative"
   }
 ]
