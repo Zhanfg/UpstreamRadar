@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **984000**
-- latest census cursor: **2909620**
+- total census repositories scanned: **992000**
+- latest census cursor: **2931302**
 - retained candidates: **200**
 - governed fork queue: **46**
 
@@ -47,7 +47,7 @@
 ### devops-observability
 
 - **coroot/coroot** — score=0.855, stars=8024; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
-- **monoscope-tech/monoscope** — score=0.838, stars=2137; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
+- **monoscope-tech/monoscope** — score=0.838, stars=2144; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **metrico/gigapipe** — score=0.835, stars=1725; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **DataDog/datadog-agent** — score=0.831, stars=3775; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
 - **replit/datacat** — score=0.830, stars=119; category:devops-observability, keyword:observability, keyword:monitoring, keyword:tracing, keyword:metrics
@@ -62,7 +62,7 @@
 ### mobile-crossplatform
 
 - **sceneview/sceneview** — score=0.819, stars=1379; category:mobile-crossplatform, keyword:flutter, keyword:swiftui, keyword:kotlin-multiplatform, keyword:ios
-- **dkhamsing/open-source-ios-apps** — score=0.818, stars=53465; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
+- **dkhamsing/open-source-ios-apps** — score=0.818, stars=53505; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 - **NativeScript/SimDeck** — score=0.815, stars=161; category:mobile-crossplatform, keyword:flutter, keyword:react-native, keyword:swiftui, keyword:ios
 
 ### networking
