@@ -2655,6 +2655,30 @@
   {
     "auto_fork_eligible": false,
     "category": "ai-agents",
+    "description": "Substrate - AI native, strongly-typed, real-time extensible data-substrate for agents and meat popsicles alike. Plugins declare typed namespaces; every type gets query, mutate and subscribe over HTTP, MCP, WebSocket and SSE with no handler code. Postgres + pgvector, semantic recall, runtime schema proposals.",
+    "forks": 0,
+    "full_name": "mnmal-ai/substrate",
+    "license_id": "Apache-2.0",
+    "platform": "github",
+    "pushed_at": "2026-11-27T03:49:52Z",
+    "reasons": [
+      "category:ai-agents",
+      "keyword:agent",
+      "keyword:mcp",
+      "keyword:llm",
+      "keyword:model-context-protocol",
+      "keyword:rag",
+      "recently-active",
+      "license:Apache-2.0"
+    ],
+    "score": 0.85656372,
+    "source_id": "1421610809",
+    "stars": 0,
+    "url": "https://github.com/mnmal-ai/substrate"
+  },
+  {
+    "auto_fork_eligible": false,
+    "category": "ai-agents",
     "description": "Provable limits on what an AI agent may do: post-quantum (ML-DSA-65) delegation grants, executor-side tool-call gate, signed receipts and tamper-evident audit for multi-agent systems. Pure Rust.",
     "forks": 0,
     "full_name": "exocognosis/pqsub",
@@ -2795,30 +2819,6 @@
     "source_id": "1454290315",
     "stars": 0,
     "url": "https://github.com/Muskaanmahadik10/factory-copilot"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "ai-agents",
-    "description": "Substrate - AI native, strongly-typed, real-time extensible data-substrate for agents and meat popsicles alike. Plugins declare typed namespaces; every type gets query, mutate and subscribe over HTTP, MCP, WebSocket and SSE with no handler code. Postgres + pgvector, semantic recall, runtime schema proposals.",
-    "forks": 0,
-    "full_name": "mnmal-ai/substrate",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-23T05:28:28Z",
-    "reasons": [
-      "category:ai-agents",
-      "keyword:agent",
-      "keyword:mcp",
-      "keyword:llm",
-      "keyword:model-context-protocol",
-      "keyword:rag",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.85642064,
-    "source_id": "1421610809",
-    "stars": 0,
-    "url": "https://github.com/mnmal-ai/substrate"
   },
   {
     "auto_fork_eligible": false,
@@ -3228,6 +3228,30 @@
   },
   {
     "auto_fork_eligible": false,
+    "category": "databases-storage",
+    "description": "Instant REST and MCP APIs for PostgreSQL and MySQL, on existing or new databases. CRUD, custom SQL routes, auth and ACL without writing a backend. Low-code, ⚡ realtime, high-performance. Native MySQL support since v2.5",
+    "forks": 327,
+    "full_name": "prest/prest",
+    "license_id": "MIT",
+    "platform": "github",
+    "pushed_at": "2026-11-27T02:18:42Z",
+    "reasons": [
+      "category:databases-storage",
+      "keyword:database",
+      "keyword:postgresql",
+      "keyword:postgres",
+      "keyword:mysql",
+      "recently-active",
+      "license:MIT",
+      "community-signal"
+    ],
+    "score": 0.85271983,
+    "source_id": "74436942",
+    "stars": 4642,
+    "url": "https://github.com/prest/prest"
+  },
+  {
+    "auto_fork_eligible": false,
     "category": "android-kernel",
     "description": "GKI2 5.10+ Kernels built with KernelSU & SUSFS",
     "forks": 6287,
@@ -3633,11 +3657,11 @@
     "auto_fork_eligible": false,
     "category": "databases-storage",
     "description": "Universal command-line interface for SQL databases",
-    "forks": 408,
+    "forks": 406,
     "full_name": "xo/usql",
     "license_id": "MIT",
     "platform": "github",
-    "pushed_at": "2026-11-19T23:10:41Z",
+    "pushed_at": "2026-11-27T02:00:16Z",
     "reasons": [
       "category:databases-storage",
       "keyword:database",
@@ -3648,9 +3672,9 @@
       "recently-active",
       "license:MIT"
     ],
-    "score": 0.83353099,
+    "score": 0.83365322,
     "source_id": "83678416",
-    "stars": 10175,
+    "stars": 10181,
     "url": "https://github.com/xo/usql"
   },
   {
@@ -4726,29 +4750,5 @@
     "source_id": "1330946337",
     "stars": 0,
     "url": "https://github.com/zhouchang1988/buddy-tauri"
-  },
-  {
-    "auto_fork_eligible": false,
-    "category": "databases-storage",
-    "description": "Self-hosted gateway that turns saved SQL queries into versioned REST endpoints with typed, injection-safe parameters. Scoped API keys and roles, per-user JWT sign-in with row-level binding, run history, live SSE events and an admin UI. Postgres, MySQL, ClickHouse, SQLite, DuckDB, H2, MongoDB and JDBC",
-    "forks": 3,
-    "full_name": "AnanthaRajuC/QueryAPIGate",
-    "license_id": "Apache-2.0",
-    "platform": "github",
-    "pushed_at": "2026-11-23T05:47:47Z",
-    "reasons": [
-      "category:databases-storage",
-      "keyword:database",
-      "keyword:postgresql",
-      "keyword:postgres",
-      "keyword:mysql",
-      "keyword:sqlite",
-      "recently-active",
-      "license:Apache-2.0"
-    ],
-    "score": 0.80901723,
-    "source_id": "772696310",
-    "stars": 18,
-    "url": "https://github.com/AnanthaRajuC/QueryAPIGate"
   }
 ]

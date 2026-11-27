@@ -1,7 +1,7 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **976000**
-- latest census cursor: **2888452**
+- total census repositories scanned: **984000**
+- latest census cursor: **2909620**
 - retained candidates: **200**
 - governed fork queue: **46**
 
@@ -37,12 +37,12 @@
 
 - **prisma/orm** — score=0.860, stars=47770; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **digoal/blog** — score=0.853, stars=8616; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **prest/prest** — score=0.853, stars=4642; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **bytebase/dbhub** — score=0.847, stars=3890; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **amacneil/dbmate** — score=0.836, stars=7562; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **DokaDev/datarig** — score=0.835, stars=171; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
-- **xo/usql** — score=0.834, stars=10175; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
+- **xo/usql** — score=0.834, stars=10181; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 - **stephenafamo/bob** — score=0.830, stars=1804; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
-- **wannabespace/tamery** — score=0.829, stars=1473; category:databases-storage, keyword:database, keyword:postgresql, keyword:postgres, keyword:mysql
 
 ### devops-observability
 
