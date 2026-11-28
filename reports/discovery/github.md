@@ -1,9 +1,9 @@
 # GitHub Discovery Garden
 
-- total census repositories scanned: **1008000**
-- latest census cursor: **2976601**
+- total census repositories scanned: **1016000**
+- latest census cursor: **2998686**
 - retained candidates: **200**
-- governed fork queue: **46**
+- governed fork queue: **47**
 
 ## Top directions
 
@@ -13,10 +13,10 @@
 - **wulawulu/learn-claude-code-rs** — score=0.924, stars=144; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **context-labs/whip** — score=0.919, stars=1104; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **EvannZhongg/Nosis** — score=0.918, stars=206; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:llm
+- **Balanov/uncut** — score=0.917, stars=104; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:coding-agent
 - **saigontechnology/AgentCrew** — score=0.917, stars=225; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ThreeMoonsLab/agents-shipgate** — score=0.913, stars=87; category:ai-agents, keyword:agent, keyword:mcp, keyword:tool-use, keyword:model-context-protocol
 - **ashishsinha1602/schemagate** — score=0.913, stars=127; category:ai-agents, keyword:agent, keyword:mcp, keyword:llm, keyword:rag
-- **mikehasa/agentacct** — score=0.911, stars=762; category:ai-agents, keyword:agent, keyword:mcp, keyword:coding-agent, keyword:llm
 
 ### android-kernel
 
@@ -27,7 +27,7 @@
 - **Najip/KernelSU_SUSFS_Samsung_SM-A325X** — score=0.891, stars=3; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **SampleBlazkness/AdbHide-Kernel** — score=0.890, stars=5; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
 - **leemikepop/avd-kernelsu-x86_64** — score=0.888, stars=4; category:android-kernel, keyword:android, keyword:gki, keyword:kernelsu, keyword:susfs
-- **Raffxzr/DarkniusX** — score=0.883, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:kernelsu
+- **iasnezhkov/android_device_ikko_mindone** — score=0.883, stars=1; category:android-kernel, keyword:android, keyword:gki, keyword:kernel, keyword:device-tree
 
 ### data-engineering
 
@@ -74,7 +74,7 @@
 - **hedioum/Hedioum-Pool-Tunnel** — score=0.897, stars=143; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:vpn
 - **tokyoxpa3/5G-Proxy-Client** — score=0.894, stars=17; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:tcp
 - **v2macapp/noleaker** — score=0.886, stars=40; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
-- **SnishaperTeam/Snishaper-Droid** — score=0.870, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
+- **SnishaperTeam/Snishaper-Droid** — score=0.871, stars=2; category:networking, keyword:proxy, keyword:tun, keyword:quic, keyword:dns
 
 ### security-sandbox
 
@@ -95,6 +95,7 @@
 - **wulawulu/learn-claude-code-rs** → ai-agents (score=0.924, license=MIT)
 - **context-labs/whip** → ai-agents (score=0.919, license=Apache-2.0)
 - **EvannZhongg/Nosis** → ai-agents (score=0.918, license=MIT)
+- **Balanov/uncut** → ai-agents (score=0.917, license=MIT)
 - **saigontechnology/AgentCrew** → ai-agents (score=0.917, license=Apache-2.0)
 - **ThreeMoonsLab/agents-shipgate** → ai-agents (score=0.913, license=Apache-2.0)
 - **ashishsinha1602/schemagate** → ai-agents (score=0.913, license=Apache-2.0)
@@ -107,6 +108,5 @@
 - **nibor1896/Crow** → ai-agents (score=0.898, license=MIT)
 - **hedioum/Hedioum-Pool-Tunnel** → networking (score=0.897, license=GPL-3.0)
 - **CodeSoul-co/Hypha** → ai-agents (score=0.897, license=Apache-2.0)
-- **MSKazemi/aobench** → ai-agents (score=0.896, license=Apache-2.0)
 
 Fork execution is intentionally separated from discovery so namespace, permissions, deduplication, and daily/weekly caps can be enforced safely.
